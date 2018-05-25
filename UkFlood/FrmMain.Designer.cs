@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,22 +36,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pct_logo = new System.Windows.Forms.PictureBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grid_quote_list = new System.Windows.Forms.DataGridView();
-            this.quoteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quoteReferenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quoteDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quoteStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_open = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dtquotelistBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quote_dataset = new UkFlood.Datasource.Quote_dataset();
-            this.adapter_quote_list = new UkFlood.Datasource.Quote_datasetTableAdapters.adapter_quote_list();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtquotelistBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quote_dataset)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,7 +74,6 @@
             this.grid_quote_list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grid_quote_list.AutoGenerateColumns = false;
             this.grid_quote_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.grid_quote_list.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.grid_quote_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -100,13 +87,7 @@
             this.grid_quote_list.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid_quote_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_quote_list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.quoteIDDataGridViewTextBoxColumn,
-            this.customerNameDataGridViewTextBoxColumn,
-            this.quoteReferenceDataGridViewTextBoxColumn,
-            this.quoteDateDataGridViewTextBoxColumn,
-            this.quoteStatusDataGridViewTextBoxColumn,
             this.btn_open});
-            this.grid_quote_list.DataSource = this.dtquotelistBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,7 +98,7 @@
             this.grid_quote_list.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_quote_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_quote_list.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_quote_list.Location = new System.Drawing.Point(274, 165);
+            this.grid_quote_list.Location = new System.Drawing.Point(283, 165);
             this.grid_quote_list.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_quote_list.Name = "grid_quote_list";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -133,41 +114,6 @@
             this.grid_quote_list.Size = new System.Drawing.Size(645, 323);
             this.grid_quote_list.TabIndex = 22;
             this.grid_quote_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_quote_list_CellContentClick);
-            // 
-            // quoteIDDataGridViewTextBoxColumn
-            // 
-            this.quoteIDDataGridViewTextBoxColumn.DataPropertyName = "Quote ID";
-            this.quoteIDDataGridViewTextBoxColumn.HeaderText = "Quote ID";
-            this.quoteIDDataGridViewTextBoxColumn.Name = "quoteIDDataGridViewTextBoxColumn";
-            this.quoteIDDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer Name";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.Width = 123;
-            // 
-            // quoteReferenceDataGridViewTextBoxColumn
-            // 
-            this.quoteReferenceDataGridViewTextBoxColumn.DataPropertyName = "Quote Reference";
-            this.quoteReferenceDataGridViewTextBoxColumn.HeaderText = "Quote Reference";
-            this.quoteReferenceDataGridViewTextBoxColumn.Name = "quoteReferenceDataGridViewTextBoxColumn";
-            this.quoteReferenceDataGridViewTextBoxColumn.Width = 128;
-            // 
-            // quoteDateDataGridViewTextBoxColumn
-            // 
-            this.quoteDateDataGridViewTextBoxColumn.DataPropertyName = "Quote Date";
-            this.quoteDateDataGridViewTextBoxColumn.HeaderText = "Quote Date";
-            this.quoteDateDataGridViewTextBoxColumn.Name = "quoteDateDataGridViewTextBoxColumn";
-            this.quoteDateDataGridViewTextBoxColumn.Width = 96;
-            // 
-            // quoteStatusDataGridViewTextBoxColumn
-            // 
-            this.quoteStatusDataGridViewTextBoxColumn.DataPropertyName = "Quote Status";
-            this.quoteStatusDataGridViewTextBoxColumn.HeaderText = "Quote Status";
-            this.quoteStatusDataGridViewTextBoxColumn.Name = "quoteStatusDataGridViewTextBoxColumn";
-            this.quoteStatusDataGridViewTextBoxColumn.Width = 105;
             // 
             // btn_open
             // 
@@ -185,20 +131,6 @@
             this.btn_open.Name = "btn_open";
             this.btn_open.Width = 52;
             // 
-            // dtquotelistBindingSource
-            // 
-            this.dtquotelistBindingSource.DataMember = "dt_quote_list";
-            this.dtquotelistBindingSource.DataSource = this.quote_dataset;
-            // 
-            // quote_dataset
-            // 
-            this.quote_dataset.DataSetName = "Quote_dataset";
-            this.quote_dataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // adapter_quote_list
-            // 
-            this.adapter_quote_list.ClearBeforeFill = true;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,12 +143,9 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
-            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtquotelistBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quote_dataset)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,16 +155,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pct_logo;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView grid_quote_list;
-        private Datasource.Quote_dataset quote_dataset;
-        private System.Windows.Forms.BindingSource dtquotelistBindingSource;
-        private Datasource.Quote_datasetTableAdapters.adapter_quote_list adapter_quote_list;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quoteIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quoteReferenceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quoteDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quoteStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn btn_open;
     }
 }

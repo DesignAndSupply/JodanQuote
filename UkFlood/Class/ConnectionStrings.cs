@@ -43,9 +43,24 @@ namespace Connection
                 sqlConnection.Close();
             sqlConnection.Dispose();
         }
+        public static SqlConnection GetConnection_dsl_flood_quote()
+        {
+            string connection_string = "Data Source = 192.168.0.150\\SQLEXPRESS; Initial Catalog = dsl_flood_quote; Integrated Security = False; User ID = sa; Password = Dodid1";
+            SqlConnection dsl_flood_quote = new SqlConnection(connection_string);
+            dsl_flood_quote.Open();
+            return dsl_flood_quote;
+        }
 
-
+        //-- code to make sure to close connection and dispose the object
+        public static void Dispose_dsl_flood_quote(SqlConnection sqlConnection)
+        {
+            if (sqlConnection.State == System.Data.ConnectionState.Open)
+                sqlConnection.Close();
+            sqlConnection.Dispose();
+        }
 
 
     }
+    
+
 }
