@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Jodan.ico</ApplicationIcon>
+    <ApplicationIcon>Other\Jodan.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,6 +54,12 @@
     <Compile Include="Class\Statements.cs" />
     <Compile Include="Class\UserInformation.cs" />
     <Compile Include="Class\Values.cs" />
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,7 +116,7 @@
     <None Include="Other\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Jodan.ico" />
+    <Content Include="Other\Jodan.ico" />
     <None Include="Resources\Jodan.png" />
     <None Include="Resources\JodanLogo.png" />
     <Content Include="Resources\logo_4rq_icon.ico" />

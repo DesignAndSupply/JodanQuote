@@ -1,0 +1,3 @@
+﻿1>------ Rebuild All started: Project: JodanQuote, Configuration: Debug Any CPU ------
+1>  JodanQuote -> S:\Design and Supply CSharp\Source Files\JodanQuote\Jodan Quote\JodanQuote\bin\Debug\JodanQuote.exe
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========

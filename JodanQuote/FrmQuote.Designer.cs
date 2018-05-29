@@ -36,16 +36,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pct_logo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.grid_quote_list = new System.Windows.Forms.DataGridView();
             this.btn_open = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -59,7 +59,6 @@
             // 
             // pct_logo
             // 
-            this.pct_logo.Image = global::JodanQuote.Properties.Resources.Logo;
             this.pct_logo.Location = new System.Drawing.Point(22, 22);
             this.pct_logo.Name = "pct_logo";
             this.pct_logo.Size = new System.Drawing.Size(123, 50);
@@ -73,32 +72,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1927, 100);
             this.panel1.TabIndex = 13;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(167, 1104);
-            this.panel3.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::JodanQuote.Properties.Resources.Jodan;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 75);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1927, 100);
-            this.panel4.TabIndex = 15;
             // 
             // grid_quote_list
             // 
@@ -161,6 +134,32 @@
             this.btn_open.Name = "btn_open";
             this.btn_open.Width = 52;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::JodanQuote.Properties.Resources.Jodan;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 86);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(167, 1104);
+            this.panel3.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1927, 100);
+            this.panel4.TabIndex = 15;
+            // 
             // FrmQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,9 +176,9 @@
             this.Text = "Quote";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,10 +188,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pct_logo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView grid_quote_list;
         private System.Windows.Forms.DataGridViewButtonColumn btn_open;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }
