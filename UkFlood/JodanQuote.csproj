@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B4010ED1-4F41-433F-BDBA-C34386335C9F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UkFlood</RootNamespace>
-    <AssemblyName>UkFlood</AssemblyName>
+    <RootNamespace>JodanQuote</RootNamespace>
+    <AssemblyName>JodanQuote</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo_4rq_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Jodan.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,16 +54,17 @@
     <Compile Include="Class\Statements.cs" />
     <Compile Include="Class\UserInformation.cs" />
     <Compile Include="Class\Values.cs" />
-    <Compile Include="Datasource\Quote_dataset.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Quote_dataset.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerSelect.Designer.cs">
+      <DependentUpon>FrmCustomerSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmQuote.cs">
       <SubType>Form</SubType>
@@ -75,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerSelect.resx">
+      <DependentUpon>FrmCustomerSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuote.resx">
       <DependentUpon>FrmQuote.cs</DependentUpon>
@@ -89,17 +93,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Datasource\Quote_dataset.xsc">
-      <DependentUpon>Quote_dataset.xsd</DependentUpon>
-    </None>
-    <None Include="Datasource\Quote_dataset.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Quote_dataset.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Datasource\Quote_dataset.xss">
-      <DependentUpon>Quote_dataset.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,10 +107,19 @@
     <None Include="Other\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo_4rq_icon.ico" />
+    <Content Include="Jodan.ico" />
+    <None Include="Resources\Jodan.png" />
+    <None Include="Resources\JodanLogo.png" />
+    <Content Include="Resources\logo_4rq_icon.ico" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\tick2.png" />
+    <None Include="Resources\New Record.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Datasource\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

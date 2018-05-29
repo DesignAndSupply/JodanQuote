@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UkFlood", "UkFlood\UkFlood.csproj", "{B4010ED1-4F41-433F-BDBA-C34386335C9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JodanQuote", "UkFlood\JodanQuote.csproj", "{B4010ED1-4F41-433F-BDBA-C34386335C9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

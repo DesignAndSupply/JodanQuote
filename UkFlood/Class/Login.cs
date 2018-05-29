@@ -7,7 +7,7 @@ using Connection;
 
 
 
-namespace StartUpClass
+namespace loginclass
 {
     public class Login
     {
@@ -79,14 +79,14 @@ namespace StartUpClass
                         globalSuperUser = false;
                     }
 
-                    ConnectionClass.Dispose_userdatabase(sqlConnection);
+                    ConnectionClass.Dispose_connection(sqlConnection);
                     return true;
 
                 }
                 else
                 {
                     ClearText(user, pass);
-                    ConnectionClass.Dispose_userdatabase(sqlConnection);
+                    ConnectionClass.Dispose_connection(sqlConnection);
                     return false;
                 }
 

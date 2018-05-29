@@ -1,4 +1,4 @@
-﻿namespace UkFlood
+﻿namespace JodanQuote
 {
     partial class FrmQuote
     {
@@ -59,7 +59,7 @@
             // 
             // pct_logo
             // 
-            this.pct_logo.Image = global::UkFlood.Properties.Resources.Logo;
+            this.pct_logo.Image = global::JodanQuote.Properties.Resources.Logo;
             this.pct_logo.Location = new System.Drawing.Point(22, 22);
             this.pct_logo.Name = "pct_logo";
             this.pct_logo.Size = new System.Drawing.Size(123, 50);
@@ -85,10 +85,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UkFlood.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 22);
+            this.pictureBox1.Image = global::JodanQuote.Properties.Resources.Jodan;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(142, 75);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
@@ -129,7 +129,7 @@
             this.grid_quote_list.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_quote_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_quote_list.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_quote_list.Location = new System.Drawing.Point(222, 154);
+            this.grid_quote_list.Location = new System.Drawing.Point(214, 149);
             this.grid_quote_list.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_quote_list.Name = "grid_quote_list";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

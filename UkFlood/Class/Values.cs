@@ -9,7 +9,8 @@ namespace values
     class Valuesclass
     {
 
-        public static string quote_id;
+        public static int project_id;
+
 
 
     }

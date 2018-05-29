@@ -12,7 +12,7 @@ using values;
 using Connection;
 using Statements;
 
-namespace UkFlood
+namespace JodanQuote
 {
     public partial class FrmMain : Form
     {
@@ -45,7 +45,7 @@ namespace UkFlood
        
             ada.Fill(dt_quote);
             grid_quote_list.DataSource = dt_quote;
-
+            ConnectionClass.Dispose_connection(conn);
         }
     
 
@@ -56,7 +56,7 @@ namespace UkFlood
             {
 
                 int i = e.RowIndex;
-                Valuesclass.quote_id = dt_quote.Rows[i][0].ToString();
+              //  Valuesclass.quote_id = dt_quote.Rows[i][0].ToString();
                 FrmQuote quote = new FrmQuote();
                 quote.Show();
 
@@ -65,6 +65,19 @@ namespace UkFlood
 
 
             }
+        }
+
+        private void btn_new_project_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand select_max_id = new SqlCommand(Statementsclass.select_max_id, conn);
+            object max_id = (Int32)select_max_id.ExecuteScalar();
+            if (max_id != null)
+            {
+                 Valuesclass.project_id = (Convert.ToInt32(max_id))+1;
+            }
+            FrmCustomerSelect customer = new FrmCustomerSelect();
+            customer.Show();
         }
     }
 }

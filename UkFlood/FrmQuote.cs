@@ -12,7 +12,7 @@ using Connection;
 using Statements;
 using values;
 
-namespace UkFlood
+namespace JodanQuote
 {
     public partial class FrmQuote : Form
     {
@@ -28,10 +28,11 @@ namespace UkFlood
         void Fill_data()
         {
 
-            SqlConnection conn = ConnectionClass.GetConnection_orderdatabase();
+            SqlConnection conn = ConnectionClass.GetConnection_dsl_flood_quote();
             SqlDataAdapter select_quote = new SqlDataAdapter(Statementsclass.select_quote, conn);
-            select_quote.SelectCommand.Parameters.AddWithValue("@quote_id", Valuesclass.quote_id);
+            select_quote.SelectCommand.Parameters.AddWithValue("@quote_id", Valuesclass.project_id);
             select_quote.Fill(dt_quote);
+            grid_quote_list.DataSource = dt_quote;
 
         }
 
