@@ -10,8 +10,9 @@ namespace values
     {
 
         public static int project_id;
-
-
+        public static int quote_id;
+        public static int item_id;
+        public static int customer_id;
 
     }
 }

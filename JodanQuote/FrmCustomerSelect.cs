@@ -43,13 +43,23 @@ namespace JodanQuote
 
         private void btn_complete_Click(object sender, EventArgs e)
         {
+            if (cmb_customers.SelectedValue == null)
+            {
+
+                MessageBox.Show("Please Select A Customer", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            Valuesclass.customer_id = Convert.ToInt32(cmb_customers.SelectedValue);
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlCommand insert_new_project = new SqlCommand(Statementsclass.insert_new_project, conn);
-            insert_new_project.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            insert_new_project.Parameters.AddWithValue("@customer_id", cmb_customers.SelectedValue);
+            insert_new_project.Parameters.AddWithValue("@quote_id", Valuesclass.quote_id);
+            insert_new_project.Parameters.AddWithValue("@customer_id", Valuesclass.customer_id);
             insert_new_project.Parameters.AddWithValue("@quote_date", DateTime.Now);
             insert_new_project.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
+            this.Hide();
+            FrmNewProject project = new FrmNewProject();
+            project.Show();
         }
     }
 }

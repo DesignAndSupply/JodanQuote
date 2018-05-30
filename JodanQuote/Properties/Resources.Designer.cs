@@ -63,6 +63,16 @@ namespace JodanQuote.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Email {
+            get {
+                object obj = ResourceManager.GetObject("Email", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Jodan {
             get {
                 object obj = ResourceManager.GetObject("Jodan", resourceCulture);
@@ -93,9 +103,29 @@ namespace JodanQuote.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap New_Record {
+        internal static System.Drawing.Bitmap NewRecord {
             get {
-                object obj = ResourceManager.GetObject("New Record", resourceCulture);
+                object obj = ResourceManager.GetObject("NewRecord", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Print_Small {
+            get {
+                object obj = ResourceManager.GetObject("Print Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ReturnArrow {
+            get {
+                object obj = ResourceManager.GetObject("ReturnArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

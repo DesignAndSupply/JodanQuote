@@ -72,6 +72,18 @@
     <Compile Include="FrmCustomerSelect.Designer.cs">
       <DependentUpon>FrmCustomerSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewItem.Designer.cs">
+      <DependentUpon>FrmNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewProject.Designer.cs">
+      <DependentUpon>FrmNewProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmQuote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,23 +101,29 @@
     <EmbeddedResource Include="FrmCustomerSelect.resx">
       <DependentUpon>FrmCustomerSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewItem.resx">
+      <DependentUpon>FrmNewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewProject.resx">
+      <DependentUpon>FrmNewProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmQuote.resx">
       <DependentUpon>FrmQuote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -117,12 +135,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Other\Jodan.ico" />
+    <None Include="Resources\ReturnArrow.png" />
+    <None Include="Resources\NewRecord.png" />
+    <None Include="Resources\Print Small.png" />
     <None Include="Resources\Jodan.png" />
     <None Include="Resources\JodanLogo.png" />
+    <None Include="Resources\Email.png" />
     <Content Include="Resources\logo_4rq_icon.ico" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\tick2.png" />
-    <None Include="Resources\New Record.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.png" />

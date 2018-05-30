@@ -41,11 +41,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_new_item = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -155,10 +157,27 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel4.Controls.Add(this.btn_new_item);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1927, 100);
             this.panel4.TabIndex = 15;
+            // 
+            // btn_new_item
+            // 
+            this.btn_new_item.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_new_item.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_new_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new_item.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_new_item.Image = global::JodanQuote.Properties.Resources.NewRecord;
+            this.btn_new_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_new_item.Location = new System.Drawing.Point(771, 26);
+            this.btn_new_item.Name = "btn_new_item";
+            this.btn_new_item.Size = new System.Drawing.Size(102, 42);
+            this.btn_new_item.TabIndex = 1;
+            this.btn_new_item.Text = "       Add New       Item";
+            this.btn_new_item.UseVisualStyleBackColor = false;
+            this.btn_new_item.Click += new System.EventHandler(this.btn_new_item_Click);
             // 
             // FrmQuote
             // 
@@ -171,6 +190,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quote";
@@ -179,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -193,5 +215,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btn_new_item;
     }
 }

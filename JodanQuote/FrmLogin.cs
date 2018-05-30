@@ -66,5 +66,11 @@ namespace JodanQuote
                 this.ActiveControl = txtPassword;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMain form = new FrmMain();
+            form.Show();
+        }
     }
 }

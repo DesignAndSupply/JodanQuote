@@ -34,19 +34,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_new_project = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pct_logo = new System.Windows.Forms.PictureBox();
             this.grid_quote_list = new System.Windows.Forms.DataGridView();
             this.btn_open = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lbl_description = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.txt_quote_id = new System.Windows.Forms.TextBox();
             this.txt_customer = new System.Windows.Forms.TextBox();
-            this.btn_new_project = new System.Windows.Forms.Button();
-            this.pct_logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,6 +58,23 @@
             this.panel1.Size = new System.Drawing.Size(1927, 100);
             this.panel1.TabIndex = 11;
             // 
+            // btn_new_project
+            // 
+            this.btn_new_project.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_new_project.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_new_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new_project.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_new_project.Image = global::JodanQuote.Properties.Resources.NewRecord;
+            this.btn_new_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_new_project.Location = new System.Drawing.Point(896, 31);
+            this.btn_new_project.Name = "btn_new_project";
+            this.btn_new_project.Size = new System.Drawing.Size(115, 42);
+            this.btn_new_project.TabIndex = 0;
+            this.btn_new_project.Text = "New Project";
+            this.btn_new_project.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_new_project.UseVisualStyleBackColor = false;
+            this.btn_new_project.Click += new System.EventHandler(this.btn_new_project_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -66,6 +83,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(167, 1104);
             this.panel2.TabIndex = 12;
+            // 
+            // pct_logo
+            // 
+            this.pct_logo.Image = global::JodanQuote.Properties.Resources.Jodan;
+            this.pct_logo.Location = new System.Drawing.Point(12, 12);
+            this.pct_logo.Name = "pct_logo";
+            this.pct_logo.Size = new System.Drawing.Size(151, 86);
+            this.pct_logo.TabIndex = 16;
+            this.pct_logo.TabStop = false;
             // 
             // grid_quote_list
             // 
@@ -169,32 +195,6 @@
             this.txt_customer.Size = new System.Drawing.Size(178, 20);
             this.txt_customer.TabIndex = 36;
             // 
-            // btn_new_project
-            // 
-            this.btn_new_project.BackColor = System.Drawing.Color.AliceBlue;
-            this.btn_new_project.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_new_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new_project.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_new_project.Image = global::JodanQuote.Properties.Resources.New_Record;
-            this.btn_new_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_new_project.Location = new System.Drawing.Point(896, 30);
-            this.btn_new_project.Name = "btn_new_project";
-            this.btn_new_project.Size = new System.Drawing.Size(115, 42);
-            this.btn_new_project.TabIndex = 0;
-            this.btn_new_project.Text = "New Project";
-            this.btn_new_project.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_new_project.UseVisualStyleBackColor = false;
-            this.btn_new_project.Click += new System.EventHandler(this.btn_new_project_Click);
-            // 
-            // pct_logo
-            // 
-            this.pct_logo.Image = global::JodanQuote.Properties.Resources.Jodan;
-            this.pct_logo.Location = new System.Drawing.Point(12, 12);
-            this.pct_logo.Name = "pct_logo";
-            this.pct_logo.Size = new System.Drawing.Size(151, 86);
-            this.pct_logo.TabIndex = 16;
-            this.pct_logo.TabStop = false;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,13 +209,15 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -33,14 +33,15 @@ namespace JodanQuote
             grid_quote_list.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_quote_list.EnableHeadersVisualStyles = false;
             btn_open.DisplayIndex = grid_quote_list.ColumnCount - 1;
-
+           
+ 
         }
 
         void Fill_data()
         {
 
 
-            SqlConnection conn = ConnectionClass.GetConnection_dsl_flood_quote();
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter ada = new SqlDataAdapter(Statementsclass.view_quote_list, conn);
        
             ada.Fill(dt_quote);
@@ -56,7 +57,8 @@ namespace JodanQuote
             {
 
                 int i = e.RowIndex;
-              //  Valuesclass.quote_id = dt_quote.Rows[i][0].ToString();
+                Valuesclass.project_id =Convert.ToInt32(dt_quote.Rows[i]["Id"].ToString());
+               // Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote ID"].ToString());
                 FrmQuote quote = new FrmQuote();
                 quote.Show();
 
@@ -70,12 +72,32 @@ namespace JodanQuote
         private void btn_new_project_Click(object sender, EventArgs e)
         {
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand select_max_id = new SqlCommand(Statementsclass.select_max_id, conn);
-            object max_id = (Int32)select_max_id.ExecuteScalar();
-            if (max_id != null)
+
+            SqlCommand select_max_project = new SqlCommand(Statementsclass.select_max_project_id, conn);
+            SqlDataReader read_max_project_id = select_max_project.ExecuteReader();
+            
+      
+            if (read_max_project_id.Read())
             {
-                 Valuesclass.project_id = (Convert.ToInt32(max_id))+1;
+                Valuesclass.project_id = (Convert.ToInt32(read_max_project_id["Project ID"])) + 1;
+                read_max_project_id.Close();
             }
+            ConnectionClass.Dispose_connection(conn);
+
+
+            SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand select_max_quote_id = new SqlCommand(Statementsclass.select_max_quote_id, conn2);
+            SqlDataReader read_max_quote_id = select_max_quote_id.ExecuteReader();
+
+            if (read_max_quote_id.Read())
+            {
+                Valuesclass.quote_id = (Convert.ToInt32(read_max_project_id["Quote ID"])) + 1;
+                read_max_quote_id.Close();
+            }
+         
+            ConnectionClass.Dispose_connection(conn2);
+          
+
             FrmCustomerSelect customer = new FrmCustomerSelect();
             customer.Show();
         }
