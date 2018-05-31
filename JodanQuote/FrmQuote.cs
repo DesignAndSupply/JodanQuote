@@ -27,42 +27,73 @@ namespace JodanQuote
         }
         void Fill_data()
         {
-
+            dt_quote.Clear();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter select_quote = new SqlDataAdapter(Statementsclass.select_quote, conn);
             select_quote.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
             select_quote.Fill(dt_quote);
             ConnectionClass.Dispose_connection(conn);
-            grid_quote_list.DataSource = dt_quote;
+            grid_items_on_quote.DataSource = dt_quote;
+            format();
+
+
+
+        }
+        void format()
+        {
+
+            grid_items_on_quote.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_items_on_quote.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            grid_items_on_quote.EnableHeadersVisualStyles = false;
+            btn_view.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
+
+            lbl_quote_id.Text = "Quote ID: " + Valuesclass.project_id.ToString();
+            txt_customer.Text = Valuesclass.customer_account_ref;
 
         }
 
         private void btn_new_item_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand select_max_item_id = new SqlCommand(Statementsclass.select_max_item_id, conn);
-            select_max_item_id.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            object check_item = (Int32)select_max_item_id.ExecuteScalar();
-
-            if(check_item != null)
+            DialogResult confirm = MessageBox.Show("Add New Item To This Quotation", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
             {
-                Valuesclass.item_id = Convert.ToInt32(check_item);
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand select_max_item_id = new SqlCommand(Statementsclass.select_max_item_id, conn);
+                select_max_item_id.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+                var check_item = select_max_item_id.ExecuteScalar();
+                if (string.IsNullOrWhiteSpace(check_item.ToString()))
+                {
+                    Valuesclass.max_item_id = 1;
 
 
+                }
+                else
+                {
+                    Valuesclass.max_item_id = Convert.ToInt32(check_item)+1;
+
+                }
+
+                SqlCommand insert_new_project_quote = new SqlCommand(Statementsclass.insert_new_project_quote, conn);
+                insert_new_project_quote.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+                insert_new_project_quote.Parameters.AddWithValue("@item_id", Valuesclass.max_item_id);
+                insert_new_project_quote.Parameters.AddWithValue("@quote_date", DateTime.Now);
+                insert_new_project_quote.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn);
+                Fill_data();
             }
+
             else
             {
-                Valuesclass.item_id = 1;
-
+                return;
             }
+        }
 
-            SqlCommand insert_new_project_quote = new SqlCommand(Statementsclass.insert_new_project_quote, conn);
-            insert_new_project_quote.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            insert_new_project_quote.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
-            insert_new_project_quote.Parameters.AddWithValue("@customer_id", Valuesclass.customer_id);
-            insert_new_project_quote.Parameters.AddWithValue("@quote_date", DateTime.Now);
-            ConnectionClass.Dispose_connection(conn);
-            Fill_data();
+    
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

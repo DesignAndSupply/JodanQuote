@@ -41,12 +41,14 @@ namespace JodanQuote
 
                 FrmMain form = new FrmMain();
                 form.Show();
-               // this.WindowState = FormWindowState.Minimized;
+                this.Hide();
 
             }
             else
             {
                 MessageBox.Show("Log in failed please try again!");
+                txtPassword.Text = "";
+                this.ActiveControl = txtPassword;
             }
         }
 
@@ -71,6 +73,7 @@ namespace JodanQuote
         {
             FrmMain form = new FrmMain();
             form.Show();
+            this.Hide();
         }
     }
 }

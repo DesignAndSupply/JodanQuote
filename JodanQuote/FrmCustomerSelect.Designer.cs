@@ -38,7 +38,7 @@
             // 
             this.cmb_customers.BackColor = System.Drawing.Color.AliceBlue;
             this.cmb_customers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_customers.DropDownHeight = 60;
+            this.cmb_customers.DropDownHeight = 152;
             this.cmb_customers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_customers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmb_customers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -46,7 +46,7 @@
             this.cmb_customers.FormattingEnabled = true;
             this.cmb_customers.IntegralHeight = false;
             this.cmb_customers.ItemHeight = 15;
-            this.cmb_customers.Location = new System.Drawing.Point(118, 103);
+            this.cmb_customers.Location = new System.Drawing.Point(119, 82);
             this.cmb_customers.MaxDropDownItems = 5;
             this.cmb_customers.Name = "cmb_customers";
             this.cmb_customers.Size = new System.Drawing.Size(206, 23);
@@ -60,7 +60,7 @@
             this.btn_complete.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_complete.Image = global::JodanQuote.Properties.Resources.tick2;
             this.btn_complete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_complete.Location = new System.Drawing.Point(335, 188);
+            this.btn_complete.Location = new System.Drawing.Point(345, 200);
             this.btn_complete.Name = "btn_complete";
             this.btn_complete.Size = new System.Drawing.Size(87, 38);
             this.btn_complete.TabIndex = 30;
@@ -73,7 +73,7 @@
             this.lbl_customer.AutoSize = true;
             this.lbl_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_customer.Location = new System.Drawing.Point(112, 52);
+            this.lbl_customer.Location = new System.Drawing.Point(112, 31);
             this.lbl_customer.Name = "lbl_customer";
             this.lbl_customer.Size = new System.Drawing.Size(223, 31);
             this.lbl_customer.TabIndex = 39;

@@ -11,8 +11,10 @@ namespace values
 
         public static int project_id;
         public static int quote_id;
+        public static int max_item_id;
+        public static string customer_name;
+        public static string customer_account_ref;
         public static int item_id;
-        public static int customer_id;
-
+        public static int revision_number;
     }
 }
