@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
 using Connection;
 using Statements;
 using values;
@@ -24,22 +25,51 @@ namespace JodanQuote
         {
             InitializeComponent();
             Fill_data();
+            Select_data();
         }
         void Fill_data()
         {
+
+
+
             dt_quote.Clear();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlDataAdapter select_quote = new SqlDataAdapter(Statementsclass.select_quote, conn);
-            select_quote.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            select_quote.Fill(dt_quote);
+            SqlDataAdapter select_quote_items = new SqlDataAdapter(Statementsclass.select_quote_items, conn);
+            select_quote_items.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            select_quote_items.Fill(dt_quote);
             ConnectionClass.Dispose_connection(conn);
             grid_items_on_quote.DataSource = dt_quote;
-            format();
+            Format();
 
 
 
         }
-        void format()
+        void Select_data()
+        {
+
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand select_quote_details = new SqlCommand(Statementsclass.select_quote_details,conn);
+            select_quote_details.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            SqlDataReader reader = select_quote_details.ExecuteReader();
+
+            if (reader.Read())
+            {
+
+                Valuesclass.project_ref = reader["project_ref"].ToString();
+                Valuesclass.quote_status = reader["quote_status"].ToString();
+
+
+                ConnectionClass.Dispose_connection(conn);
+            
+
+            }
+
+            txt_project_ref.Text= Valuesclass.project_ref;
+            cmb_quote_status.Text = Valuesclass.quote_status;
+
+        }
+        
+        void Format()
         {
 
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
@@ -48,7 +78,7 @@ namespace JodanQuote
             grid_items_on_quote.EnableHeadersVisualStyles = false;
             btn_view.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
 
-            lbl_quote_id.Text = "Quote ID: " + Valuesclass.project_id.ToString();
+            lbl_quote_id.Text = "Quote ID: " + Valuesclass.quote_id.ToString();
             txt_customer.Text = Valuesclass.customer_account_ref;
 
         }
@@ -81,6 +111,9 @@ namespace JodanQuote
                 insert_new_project_quote.ExecuteNonQuery();
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
+
+                FrmItem item = new FrmItem();
+                item.Show();
             }
 
             else
@@ -94,6 +127,49 @@ namespace JodanQuote
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btn_print_project_Click(object sender, EventArgs e)
+        {
+            string jodan_quote = "s:\\Design and Supply CSharp\\Word Documents\\Jodan Quote.docx";
+            System.Diagnostics.Process.Start(jodan_quote);
+
+
+        }
+
+        private void grid_items_on_quote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == grid_items_on_quote.Columns["btn_view"].Index && e.RowIndex >= 0)
+                {
+
+                    int i = e.RowIndex;
+                    //Valuesclass.qu = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dt_quote.Rows[i]["Item ID"].ToString());
+                    Valuesclass.revision_number = Convert.ToInt32(dt_quote.Rows[i]["Number Of Revisions"].ToString());
+                    FrmItem item = new FrmItem();
+                    item.Show();
+                    this.Hide();
+
+
+
+
+                }
+
+
+
+            }
+            catch
+            {
+
+            }
+           
+        }
+
+        private void FrmQuote_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmMain main = new FrmMain();
         }
     }
 }

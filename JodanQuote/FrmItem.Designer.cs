@@ -1,6 +1,6 @@
 ﻿namespace JodanQuote
 {
-    partial class FrmNewItem
+    partial class FrmItem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewItem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItem));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_revision = new System.Windows.Forms.Label();
@@ -42,6 +42,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +51,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lbl_revision);
             this.panel1.Controls.Add(this.btn_email_project);
@@ -77,13 +81,14 @@
             // lbl_revision
             // 
             this.lbl_revision.AutoSize = true;
-            this.lbl_revision.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_revision.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_revision.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_revision.Location = new System.Drawing.Point(559, 36);
+            this.lbl_revision.Location = new System.Drawing.Point(503, 35);
             this.lbl_revision.Name = "lbl_revision";
-            this.lbl_revision.Size = new System.Drawing.Size(22, 31);
+            this.lbl_revision.Size = new System.Drawing.Size(18, 25);
             this.lbl_revision.TabIndex = 47;
             this.lbl_revision.Text = ":";
+            this.lbl_revision.Visible = false;
             // 
             // btn_email_project
             // 
@@ -102,24 +107,26 @@
             // lbl_item
             // 
             this.lbl_item.AutoSize = true;
-            this.lbl_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_item.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_item.Location = new System.Drawing.Point(412, 36);
+            this.lbl_item.Location = new System.Drawing.Point(395, 54);
             this.lbl_item.Name = "lbl_item";
-            this.lbl_item.Size = new System.Drawing.Size(22, 31);
+            this.lbl_item.Size = new System.Drawing.Size(18, 25);
             this.lbl_item.TabIndex = 46;
             this.lbl_item.Text = ":";
+            this.lbl_item.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_quote
             // 
             this.lbl_quote.AutoSize = true;
-            this.lbl_quote.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_quote.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_quote.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_quote.Location = new System.Drawing.Point(267, 36);
+            this.lbl_quote.Location = new System.Drawing.Point(395, 20);
             this.lbl_quote.Name = "lbl_quote";
-            this.lbl_quote.Size = new System.Drawing.Size(22, 31);
+            this.lbl_quote.Size = new System.Drawing.Size(18, 25);
             this.lbl_quote.TabIndex = 47;
             this.lbl_quote.Text = ":";
+            this.lbl_quote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -178,7 +185,31 @@
             this.panel4.Size = new System.Drawing.Size(325, 227);
             this.panel4.TabIndex = 51;
             // 
-            // FrmNewItem
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label3.Location = new System.Drawing.Point(283, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 25);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Item ID:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label4.Location = new System.Drawing.Point(265, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 25);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Quote ID:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // FrmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,9 +225,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmNewItem";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Name = "FrmItem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Item";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmItem_FormClosed);
+ //           this.Load += new System.EventHandler(this.FrmItem_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -220,5 +253,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -39,7 +39,7 @@ namespace loginclass
         {
             if (string.IsNullOrEmpty(user))
             {
-                MessageBox.Show("Enter the user name!");
+                System.Windows.MessageBox.Show("Enter the user name!");
                 return false;
             }
             else

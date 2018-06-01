@@ -16,5 +16,7 @@ namespace values
         public static string customer_account_ref;
         public static int item_id;
         public static int revision_number;
+        public static string project_ref;
+        public static string quote_status;
     }
 }

@@ -33,8 +33,8 @@ namespace JodanQuote
             grid_quote_list.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_quote_list.EnableHeadersVisualStyles = false;
             btn_open.DisplayIndex = grid_quote_list.ColumnCount - 1;
-           
- 
+            grid_quote_list.Columns["Project ID"].Visible = false;
+
         }
 
         void Fill_data()
@@ -57,9 +57,9 @@ namespace JodanQuote
                 dt_quote.Clear();
                 SqlDataAdapter search_quote_customer = new SqlDataAdapter(Statementsclass.search_quote_customer, conn);
                 search_quote_customer.SelectCommand.Parameters.AddWithValue("@customer", txt_customer.Text.ToString());
-                search_quote_customer.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
+                search_quote_customer.SelectCommand.Parameters.AddWithValue("@quote_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
                 search_quote_customer.Fill(dt_quote);
-                Format();
+               // Format();
                 return;
 
 
@@ -71,7 +71,7 @@ namespace JodanQuote
                 SqlDataAdapter search_customer = new SqlDataAdapter(Statementsclass.search_customer, conn);
                 search_customer.SelectCommand.Parameters.AddWithValue("@customer", txt_customer.Text.ToString());
                 search_customer.Fill(dt_quote);
-                Format();
+               // Format();
                 return;
 
 
@@ -82,14 +82,15 @@ namespace JodanQuote
                 dt_quote.Clear();
               
                 SqlDataAdapter search_quote = new SqlDataAdapter(Statementsclass.search_quote, conn);
-                search_quote.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
+                search_quote.SelectCommand.Parameters.AddWithValue("@quote_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
                 search_quote.Fill(dt_quote);
-                Format();
+               // Format();
                 return;
 
             }
             if (txt_customer.Text == "" && txt_quote_id.Text == "")
             {
+                dt_quote.Clear();
                 Fill_data();
                 return;
 
@@ -104,20 +105,30 @@ namespace JodanQuote
 
         private void grid_quote_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (e.ColumnIndex == grid_quote_list.Columns["btn_open"].Index && e.RowIndex >= 0)
+            try
             {
+                if (e.ColumnIndex == grid_quote_list.Columns["btn_open"].Index && e.RowIndex >= 0)
+                {
 
-                int i = e.RowIndex;
-                Valuesclass.project_id =Convert.ToInt32(dt_quote.Rows[i]["Quote ID"].ToString());
-                Valuesclass.customer_account_ref = dt_quote.Rows[i]["Customer"].ToString();
-                // Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote ID"].ToString());
-                FrmQuote quote = new FrmQuote();
-                quote.Show();
+                    int i = e.RowIndex;
+                    Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote ID"].ToString());
+                    Valuesclass.customer_account_ref = dt_quote.Rows[i]["Customer"].ToString();
+                    Valuesclass.project_id = Convert.ToInt32(dt_quote.Rows[i]["Project ID"].ToString());
+                    FrmQuote quote = new FrmQuote();
+                    quote.Show();
 
 
 
 
+
+                }
+
+
+
+
+            }
+            catch
+            {
 
             }
         }
@@ -176,8 +187,15 @@ namespace JodanQuote
 
         private void pct_clear_Click(object sender, EventArgs e)
         {
+            dt_quote.Clear();
             txt_customer.Text = "";
             txt_quote_id.Text = "";
+            Fill_data();
+        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             Fill_data();
         }
     }

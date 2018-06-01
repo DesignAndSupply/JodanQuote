@@ -24,7 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -65,8 +65,14 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,6 +82,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\ConnectionStrings.cs" />
@@ -102,11 +109,11 @@
     <Compile Include="FrmCustomerSelect.Designer.cs">
       <DependentUpon>FrmCustomerSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNewItem.cs">
+    <Compile Include="FrmItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNewItem.Designer.cs">
-      <DependentUpon>FrmNewItem.cs</DependentUpon>
+    <Compile Include="FrmItem.Designer.cs">
+      <DependentUpon>FrmItem.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNewProject.cs">
       <SubType>Form</SubType>
@@ -131,8 +138,8 @@
     <EmbeddedResource Include="FrmCustomerSelect.resx">
       <DependentUpon>FrmCustomerSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNewItem.resx">
-      <DependentUpon>FrmNewItem.cs</DependentUpon>
+    <EmbeddedResource Include="FrmItem.resx">
+      <DependentUpon>FrmItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNewProject.resx">
       <DependentUpon>FrmNewProject.cs</DependentUpon>
@@ -145,7 +152,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="JodanQuote_TemporaryKey.pfx" />
+    <None Include="Other\JodanQuote_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Other\Jodan.ico" />
+    <None Include="Resources\Save.png" />
     <None Include="Resources\ReturnArrow.png" />
     <None Include="Resources\NewRecord.png" />
     <None Include="Resources\Print Small.png" />
@@ -181,7 +189,7 @@
     <None Include="Resources\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Datasource\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
