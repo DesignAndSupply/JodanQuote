@@ -9,9 +9,9 @@ namespace Statements
     class Statementsclass
     {
 
-        public static string select_quote = "SELECT ,[Item Id] ,[Revision Id] As [Number Of Revisions] , [Date Created] FROM [Jodan_quote].[dbo].[c_view_project_quotation] where [Quote ID] = @quote_id";
-        public static string select_quote_item_count = "SELECT [Project ID], [Quote ID], [Number Of Items],[Customer],[Date Created] From C_view_item_count Order By [Quote ID] Desc";
-        public static string select_quote_items = "SELECT item_id As [Item Id] ,revision_id As [Number Of Revisions], quote_date As [Date Created] FROM [Jodan_quote].[dbo].[quotation] where project_id = @project_id";
+        public static string select_quote_report = "SELECT [Project Id] ,[Item Id] , [Date Created] FROM [Jodan_quote].[dbo].[c_view_project_quotation] where [Project ID] = @Project";
+        public static string select_quote_item_count = "SELECT [Project ID], [Number Of Items],[Customer],[Date Created] From C_view_item_count Order By [Project ID] Desc";
+        public static string select_quote_items = "SELECT [Item ID] ,[Date Created] FROM [Jodan_quote].[dbo].[c_view_project_quotation] where [Project ID] = @project_id";
         //main menu search
 
         public static string search_quote = "SELECT dbo.quotation.id AS [Quote ID], dbo.project.customer_ref AS [Customer],  COUNT(dbo.quotation.item_id) AS [Number Of Items], dbo.project.date_created As [Date Created] " +

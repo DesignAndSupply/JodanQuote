@@ -44,6 +44,7 @@ namespace JodanQuote
 
 
         }
+
         void Select_data()
         {
 
@@ -71,14 +72,16 @@ namespace JodanQuote
         
         void Format()
         {
-
+            main_tab_project_additions.Appearance = TabAppearance.FlatButtons;
+            main_tab_project_additions.ItemSize = new Size(0, 1);
+            main_tab_project_additions.SizeMode = TabSizeMode.Fixed;
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_items_on_quote.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_items_on_quote.EnableHeadersVisualStyles = false;
             btn_view.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
 
-            lbl_quote_id.Text = "Quote ID: " + Valuesclass.quote_id.ToString();
+            lbl_quote_id.Text = "Project ID: " + Valuesclass.project_id.ToString();
             txt_customer.Text = Valuesclass.customer_account_ref;
 
         }
@@ -121,9 +124,7 @@ namespace JodanQuote
                 return;
             }
         }
-
-    
-
+            
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -131,8 +132,8 @@ namespace JodanQuote
 
         private void btn_print_project_Click(object sender, EventArgs e)
         {
-            string jodan_quote = "s:\\Design and Supply CSharp\\Word Documents\\Jodan Quote.docx";
-            System.Diagnostics.Process.Start(jodan_quote);
+            FrmQuoteReport report = new FrmQuoteReport();
+            report.Show();
 
 
         }
@@ -147,7 +148,7 @@ namespace JodanQuote
                     int i = e.RowIndex;
                     //Valuesclass.qu = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
                     Valuesclass.item_id = Convert.ToInt32(dt_quote.Rows[i]["Item ID"].ToString());
-                    Valuesclass.revision_number = Convert.ToInt32(dt_quote.Rows[i]["Number Of Revisions"].ToString());
+                    //Valuesclass.revision_number = Convert.ToInt32(dt_quote.Rows[i]["Number Of Revisions"].ToString());
                     FrmItem item = new FrmItem();
                     item.Show();
                     this.Hide();
@@ -170,6 +171,21 @@ namespace JodanQuote
         private void FrmQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMain main = new FrmMain();
+        }
+
+        private void btn_quote_details_Click(object sender, EventArgs e)
+        {
+            maintab_doors_on_quote.SelectedTab = tab_quote_details;
+        }
+
+        private void btn_additional_cost_Click(object sender, EventArgs e)
+        {
+            maintab_doors_on_quote.SelectedTab = tab_additonal_cost;
+        }
+
+        private void btn_notes_Click(object sender, EventArgs e)
+        {
+            maintab_doors_on_quote.SelectedTab = tab_notes;
         }
     }
 }

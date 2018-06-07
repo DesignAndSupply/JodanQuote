@@ -183,7 +183,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -380,6 +380,7 @@
             this.btn_notes.TabIndex = 60;
             this.btn_notes.Text = "Notes";
             this.btn_notes.UseVisualStyleBackColor = false;
+            this.btn_notes.Click += new System.EventHandler(this.btn_notes_Click);
             // 
             // btn_additional_cost
             // 
@@ -393,6 +394,7 @@
             this.btn_additional_cost.TabIndex = 58;
             this.btn_additional_cost.Text = "Additional Costs";
             this.btn_additional_cost.UseVisualStyleBackColor = false;
+            this.btn_additional_cost.Click += new System.EventHandler(this.btn_additional_cost_Click);
             // 
             // btn_quote_details
             // 
@@ -406,6 +408,7 @@
             this.btn_quote_details.TabIndex = 57;
             this.btn_quote_details.Text = "Quote Details";
             this.btn_quote_details.UseVisualStyleBackColor = false;
+            this.btn_quote_details.Click += new System.EventHandler(this.btn_quote_details_Click);
             // 
             // main_tab_project_additions
             // 

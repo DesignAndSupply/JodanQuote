@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dt_quote" targetNamespace="http://tempuri.org/dt_quote.xsd" xmlns:mstns="http://tempuri.org/dt_quote.xsd" xmlns="http://tempuri.org/dt_quote.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=DESIGNSVR3\SQLEXPRESS;Initial Catalog=Jodan_quote;Persist Security Info=True;User ID=sa;Password=Dodid1" IsAppSettingsProperty="false" Modifier="Public" Name="designsvr3\sqlexpress.Jodan_quote.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ada_quote" GeneratorDataComponentClassName="ada_quote" Name="c_view_item_count" UserDataComponentName="ada_quote">
+            <MainSource>
+              <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.c_view_project_quotation" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  [Project Id] , [Item ID] , [Date Created] FROM [Jodan_quote].[dbo].[c_view_project_quotation]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Date Created" DataSetColumn="Date Created" />
+              <Mapping SourceColumn="Project Id" DataSetColumn="Project Id" />
+              <Mapping SourceColumn="Item ID" DataSetColumn="Item ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dt_quote" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dt_quote" msprop:Generator_UserDSName="dt_quote">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="c_view_item_count" msprop:Generator_TableClassName="c_view_item_countDataTable" msprop:Generator_TableVarName="tablec_view_item_count" msprop:Generator_RowChangedName="c_view_item_countRowChanged" msprop:Generator_TablePropName="c_view_item_count" msprop:Generator_RowDeletingName="c_view_item_countRowDeleting" msprop:Generator_RowChangingName="c_view_item_countRowChanging" msprop:Generator_RowEvHandlerName="c_view_item_countRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_item_countRowDeleted" msprop:Generator_RowClassName="c_view_item_countRow" msprop:Generator_UserTableName="c_view_item_count" msprop:Generator_RowEvArgName="c_view_item_countRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date_x0020_Created" msprop:Generator_ColumnVarNameInTable="columnDate_Created" msprop:Generator_ColumnPropNameInRow="Date_Created" msprop:Generator_ColumnPropNameInTable="Date_CreatedColumn" msprop:Generator_UserColumnName="Date Created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Project_x0020_Id" msprop:Generator_ColumnVarNameInTable="columnProject_Id" msprop:Generator_ColumnPropNameInRow="Project_Id" msprop:Generator_ColumnPropNameInTable="Project_IdColumn" msprop:Generator_UserColumnName="Project Id" type="xs:int" minOccurs="0" />
+              <xs:element name="Item_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnItem_ID" msprop:Generator_ColumnPropNameInRow="Item_ID" msprop:Generator_ColumnPropNameInTable="Item_IDColumn" msprop:Generator_UserColumnName="Item ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

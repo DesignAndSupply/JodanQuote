@@ -33,7 +33,7 @@ namespace JodanQuote
             grid_quote_list.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_quote_list.EnableHeadersVisualStyles = false;
             btn_open.DisplayIndex = grid_quote_list.ColumnCount - 1;
-            grid_quote_list.Columns["Project ID"].Visible = false;
+           // grid_quote_list.Columns["Project ID"].Visible = false;
 
         }
 
@@ -111,7 +111,7 @@ namespace JodanQuote
                 {
 
                     int i = e.RowIndex;
-                    Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote ID"].ToString());
+                    //Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote ID"].ToString());
                     Valuesclass.customer_account_ref = dt_quote.Rows[i]["Customer"].ToString();
                     Valuesclass.project_id = Convert.ToInt32(dt_quote.Rows[i]["Project ID"].ToString());
                     FrmQuote quote = new FrmQuote();
@@ -127,9 +127,9 @@ namespace JodanQuote
 
 
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString(), "");
             }
         }
 
