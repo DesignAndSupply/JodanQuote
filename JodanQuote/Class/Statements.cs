@@ -9,6 +9,10 @@ namespace Statements
     class Statementsclass
     {
 
+
+        public static string quote_pdf_path = @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Saved\";
+       
+
         public static string select_quote_report = "SELECT [Project Id] ,[Item Id] , [Date Created] FROM [Jodan_quote].[dbo].[c_view_project_quotation] where [Project ID] = @Project";
         public static string select_quote_item_count = "SELECT [Project ID], [Number Of Items],[Customer],[Date Created] From C_view_item_count Order By [Project ID] Desc";
         public static string select_quote_items = "SELECT [Item ID] ,[Date Created] FROM [Jodan_quote].[dbo].[c_view_project_quotation] where [Project ID] = @project_id";
@@ -42,5 +46,10 @@ namespace Statements
         public static string insert_new_project_quote = "Insert into dbo.quotation (item_id ,project_id , quote_date, revision_id) Values (@item_id, @project_id, @quote_date, '1')";
 
         public static string update_project = "Update dbo.quotation SET project_ref = @project_ref, quote_status = @quote_status Where project_id = @project_id";
+
+        //email
+
+        public static string select_email_recipients = "Select name AS [Name], email As [Email] From Dbo.email_List";
+
     }
 }

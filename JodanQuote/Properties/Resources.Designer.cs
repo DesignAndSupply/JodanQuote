@@ -83,6 +83,16 @@ namespace JodanQuote.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Email_PDF {
+            get {
+                object obj = ResourceManager.GetObject("Email PDF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Jodan {
             get {
                 object obj = ResourceManager.GetObject("Jodan", resourceCulture);
@@ -116,6 +126,16 @@ namespace JodanQuote.Properties {
         internal static System.Drawing.Bitmap NewRecord {
             get {
                 object obj = ResourceManager.GetObject("NewRecord", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PDF {
+            get {
+                object obj = ResourceManager.GetObject("PDF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

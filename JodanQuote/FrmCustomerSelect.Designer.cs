@@ -93,6 +93,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmCustomerSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCustomerSelect_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

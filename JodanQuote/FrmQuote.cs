@@ -44,6 +44,7 @@ namespace JodanQuote
 
 
         }
+        
 
         void Select_data()
         {
@@ -171,6 +172,7 @@ namespace JodanQuote
         private void FrmQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMain main = new FrmMain();
+            main.Show();
         }
 
         private void btn_quote_details_Click(object sender, EventArgs e)

@@ -24,7 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -71,6 +71,9 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -94,11 +97,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\ConnectionStrings.cs" />
-    <Compile Include="Class\Date.cs" />
+    <Compile Include="Class\Functions.cs" />
     <Compile Include="Class\Login.cs" />
     <Compile Include="Class\Statements.cs" />
     <Compile Include="Class\UserInformation.cs" />
     <Compile Include="Class\Values.cs" />
+    <Compile Include="FrmMailQuote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMailQuote.Designer.cs">
+      <DependentUpon>FrmMailQuote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Other\dt_quote.cs">
       <DependentUpon>dt_quote.xsd</DependentUpon>
     </Compile>
@@ -157,6 +166,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmMailQuote.resx">
+      <DependentUpon>FrmMailQuote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrRptQuote.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrRptQuote.cs</LastGenOutput>
@@ -219,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Other\Jodan.ico" />
+    <None Include="Resources\PDF.png" />
     <None Include="Resources\Save.png" />
     <None Include="Resources\ReturnArrow.png" />
     <None Include="Resources\NewRecord.png" />
@@ -227,6 +240,8 @@
     <None Include="Resources\JodanLogo.png" />
     <None Include="Resources\Email.png" />
     <None Include="Resources\clear.png" />
+    <None Include="Resources\Email PDF.png" />
+    <Content Include="Other\Mail Sent.mp3" />
     <Content Include="Resources\logo_4rq_icon.ico" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\tick2.png" />
@@ -234,7 +249,25 @@
   <ItemGroup>
     <None Include="Resources\Logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
       <Visible>False</Visible>

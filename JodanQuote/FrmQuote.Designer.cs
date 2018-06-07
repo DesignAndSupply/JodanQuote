@@ -313,7 +313,7 @@
             // 
             this.btn_print_project.BackColor = System.Drawing.Color.AliceBlue;
             this.btn_print_project.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_print_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print_project.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_print_project.Image = global::JodanQuote.Properties.Resources.Print_Small;
             this.btn_print_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -321,7 +321,7 @@
             this.btn_print_project.Name = "btn_print_project";
             this.btn_print_project.Size = new System.Drawing.Size(95, 37);
             this.btn_print_project.TabIndex = 39;
-            this.btn_print_project.Text = "        Print           Project";
+            this.btn_print_project.Text = "            View               Quotation";
             this.btn_print_project.UseVisualStyleBackColor = false;
             this.btn_print_project.Click += new System.EventHandler(this.btn_print_project_Click);
             // 

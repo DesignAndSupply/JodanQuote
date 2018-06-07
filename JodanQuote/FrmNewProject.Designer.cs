@@ -103,15 +103,15 @@
             // 
             this.btn_email_project.BackColor = System.Drawing.Color.AliceBlue;
             this.btn_email_project.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_email_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_email_project.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btn_email_project.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_email_project.Image = global::JodanQuote.Properties.Resources.Email;
             this.btn_email_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_email_project.Location = new System.Drawing.Point(660, 27);
             this.btn_email_project.Name = "btn_email_project";
-            this.btn_email_project.Size = new System.Drawing.Size(88, 37);
+            this.btn_email_project.Size = new System.Drawing.Size(89, 37);
             this.btn_email_project.TabIndex = 41;
-            this.btn_email_project.Text = "      Email          Project";
+            this.btn_email_project.Text = "            Email              Project";
             this.btn_email_project.UseVisualStyleBackColor = false;
             // 
             // lbl_quote_id
@@ -129,13 +129,13 @@
             // 
             this.btn_back.BackColor = System.Drawing.Color.AliceBlue;
             this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_back.Image = global::JodanQuote.Properties.Resources.ReturnArrow;
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_back.Location = new System.Drawing.Point(1057, 27);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(95, 37);
+            this.btn_back.Size = new System.Drawing.Size(89, 37);
             this.btn_back.TabIndex = 40;
             this.btn_back.Text = "    Back";
             this.btn_back.UseVisualStyleBackColor = false;
@@ -145,13 +145,13 @@
             // 
             this.btn_save.BackColor = System.Drawing.Color.AliceBlue;
             this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btn_save.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_save.Image = global::JodanQuote.Properties.Resources.Save;
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_save.Location = new System.Drawing.Point(956, 27);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(95, 37);
+            this.btn_save.Size = new System.Drawing.Size(89, 37);
             this.btn_save.TabIndex = 40;
             this.btn_save.Text = "     Save";
             this.btn_save.UseVisualStyleBackColor = false;
@@ -161,13 +161,13 @@
             // 
             this.btn_new_item.BackColor = System.Drawing.Color.AliceBlue;
             this.btn_new_item.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_new_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new_item.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btn_new_item.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_new_item.Image = global::JodanQuote.Properties.Resources.NewRecord;
             this.btn_new_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_new_item.Location = new System.Drawing.Point(855, 27);
             this.btn_new_item.Name = "btn_new_item";
-            this.btn_new_item.Size = new System.Drawing.Size(95, 37);
+            this.btn_new_item.Size = new System.Drawing.Size(89, 37);
             this.btn_new_item.TabIndex = 40;
             this.btn_new_item.Text = " New Item";
             this.btn_new_item.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -178,15 +178,15 @@
             // 
             this.btn_print_project.BackColor = System.Drawing.Color.AliceBlue;
             this.btn_print_project.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_print_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print_project.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btn_print_project.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_print_project.Image = global::JodanQuote.Properties.Resources.Print_Small;
             this.btn_print_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_print_project.Location = new System.Drawing.Point(754, 27);
             this.btn_print_project.Name = "btn_print_project";
-            this.btn_print_project.Size = new System.Drawing.Size(95, 37);
+            this.btn_print_project.Size = new System.Drawing.Size(89, 37);
             this.btn_print_project.TabIndex = 39;
-            this.btn_print_project.Text = "        Print           Project";
+            this.btn_print_project.Text = "             Print               Project";
             this.btn_print_project.UseVisualStyleBackColor = false;
             // 
             // pictureBox1

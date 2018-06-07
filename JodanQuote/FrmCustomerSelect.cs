@@ -62,5 +62,11 @@ namespace JodanQuote
             FrmNewProject project = new FrmNewProject();
             project.Show();
         }
+
+        private void FrmCustomerSelect_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmMain main = new FrmMain();
+            main.Show();
+        }
     }
 }

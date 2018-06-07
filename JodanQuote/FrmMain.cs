@@ -116,7 +116,7 @@ namespace JodanQuote
                     Valuesclass.project_id = Convert.ToInt32(dt_quote.Rows[i]["Project ID"].ToString());
                     FrmQuote quote = new FrmQuote();
                     quote.Show();
-
+                    this.Hide();
 
 
 
