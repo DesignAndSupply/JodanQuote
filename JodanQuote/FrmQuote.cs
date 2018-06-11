@@ -81,15 +81,17 @@ namespace JodanQuote
             grid_items_on_quote.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_items_on_quote.EnableHeadersVisualStyles = false;
             btn_view.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
-
+            btn_delete_item.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             lbl_quote_id.Text = "Project ID: " + Valuesclass.project_id.ToString();
             txt_customer.Text = Valuesclass.customer_account_ref;
-
+             
+            grid_items_on_quote.Columns["Item Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            grid_items_on_quote.Columns["Item Date"].Width = 140;
         }
 
         private void btn_new_item_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Add New Item To This Quotation", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult confirm = MessageBox.Show("Add New Item To This Quotation?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
@@ -116,7 +118,7 @@ namespace JodanQuote
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
 
-                FrmItem item = new FrmItem();
+                FrmNewitem item = new FrmNewitem();
                 item.Show();
             }
 
@@ -129,13 +131,15 @@ namespace JodanQuote
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
+            FrmMain main = new FrmMain();
+            main.Show();
         }
 
         private void btn_print_project_Click(object sender, EventArgs e)
         {
             FrmQuoteReport report = new FrmQuoteReport();
             report.Show();
-
+            this.Hide();
 
         }
 
@@ -158,7 +162,27 @@ namespace JodanQuote
 
 
                 }
+                if (e.ColumnIndex == grid_items_on_quote.Columns["btn_delete_item"].Index && e.RowIndex >= 0)
+                {
 
+                    int i = e.RowIndex;
+                    DialogResult delete = MessageBox.Show("Delete Item From Project?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                    if(delete == DialogResult.Yes)
+                    {
+                        int item_id = Convert.ToInt32(grid_items_on_quote.Rows[i].Cells["Item ID"].Value.ToString());
+                        SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                        SqlCommand delete_quote_item = new SqlCommand(Statementsclass.delete_quote_item, conn);
+                        delete_quote_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+                        delete_quote_item.Parameters.AddWithValue("@item_id", item_id);
+                        delete_quote_item.ExecuteNonQuery();
+                        Fill_data();
+                        
+
+                    }
+
+
+                }
 
 
             }
@@ -188,6 +212,12 @@ namespace JodanQuote
         private void btn_notes_Click(object sender, EventArgs e)
         {
             maintab_doors_on_quote.SelectedTab = tab_notes;
+        }
+
+        private void btn_email_project_Click(object sender, EventArgs e)
+        {
+            FrmMailQuote mail = new FrmMailQuote();
+            mail.Show();
         }
     }
 }

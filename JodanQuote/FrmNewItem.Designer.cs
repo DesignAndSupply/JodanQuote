@@ -1,6 +1,6 @@
 ﻿namespace JodanQuote
 {
-    partial class FrmItem
+    partial class FrmNewitem
     {
         /// <summary>
         /// Required designer variable.
@@ -32,25 +32,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItem));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewitem));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,18 +87,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.grid_panel_info = new System.Windows.Forms.DataGridView();
-            this.extras_panel = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.extras_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extras_width = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extras_height = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extras_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label15 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.grid_extras = new System.Windows.Forms.DataGridView();
-            this.extra_description = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.extra_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extras_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extra_line_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.grid_freehand_extras = new System.Windows.Forms.DataGridView();
@@ -130,6 +121,15 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.extras_panel = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.extras_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extras_width = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extras_height = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extras_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extra_description = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.extra_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extras_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extra_line_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -608,7 +608,6 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grid_panel_info.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.grid_panel_info.RowHeadersVisible = false;
-            this.grid_panel_info.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.CornflowerBlue;
@@ -618,79 +617,6 @@
             this.grid_panel_info.Size = new System.Drawing.Size(334, 140);
             this.grid_panel_info.TabIndex = 56;
             this.grid_panel_info.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_panel_info_CellContentClick);
-            this.grid_panel_info.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_panel_info_CellEnter);
-            // 
-            // extras_panel
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extras_panel.DefaultCellStyle = dataGridViewCellStyle2;
-            this.extras_panel.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.extras_panel.HeaderText = "Panel";
-            this.extras_panel.Items.AddRange(new object[] {
-            "No Panel",
-            "Overpanel"});
-            this.extras_panel.Name = "extras_panel";
-            this.extras_panel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.extras_panel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.extras_panel.Width = 120;
-            // 
-            // extras_quantity
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = "0";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extras_quantity.DefaultCellStyle = dataGridViewCellStyle3;
-            this.extras_quantity.HeaderText = "Quantity";
-            this.extras_quantity.MaxInputLength = 3;
-            this.extras_quantity.Name = "extras_quantity";
-            this.extras_quantity.ReadOnly = true;
-            this.extras_quantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.extras_quantity.Width = 50;
-            // 
-            // extras_width
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extras_width.DefaultCellStyle = dataGridViewCellStyle4;
-            this.extras_width.HeaderText = "Width";
-            this.extras_width.Name = "extras_width";
-            this.extras_width.Width = 50;
-            // 
-            // extras_height
-            // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = "0";
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extras_height.DefaultCellStyle = dataGridViewCellStyle5;
-            this.extras_height.HeaderText = "Height";
-            this.extras_height.Name = "extras_height";
-            this.extras_height.Width = 50;
-            // 
-            // extras_area
-            // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = "0";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extras_area.DefaultCellStyle = dataGridViewCellStyle6;
-            this.extras_area.HeaderText = "Area";
-            this.extras_area.Name = "extras_area";
-            this.extras_area.Width = 50;
             // 
             // label15
             // 
@@ -753,70 +679,14 @@
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grid_extras.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.grid_extras.RowHeadersVisible = false;
-            this.grid_extras.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.grid_extras.RowsDefaultCellStyle = dataGridViewCellStyle17;
-            this.grid_extras.Size = new System.Drawing.Size(334, 130);
+            this.grid_extras.Size = new System.Drawing.Size(334, 140);
             this.grid_extras.TabIndex = 58;
-            // 
-            // extra_description
-            // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extra_description.DefaultCellStyle = dataGridViewCellStyle11;
-            this.extra_description.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.extra_description.HeaderText = "Description";
-            this.extra_description.Name = "extra_description";
-            this.extra_description.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.extra_description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.extra_description.Width = 120;
-            // 
-            // extra_qty
-            // 
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle12.Format = "N0";
-            dataGridViewCellStyle12.NullValue = "0";
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extra_qty.DefaultCellStyle = dataGridViewCellStyle12;
-            this.extra_qty.HeaderText = "Quantity";
-            this.extra_qty.Name = "extra_qty";
-            this.extra_qty.ReadOnly = true;
-            this.extra_qty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.extra_qty.Width = 55;
-            // 
-            // extras_description
-            // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = "0";
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extras_description.DefaultCellStyle = dataGridViewCellStyle13;
-            this.extras_description.HeaderText = "Price";
-            this.extras_description.Name = "extras_description";
-            this.extras_description.Width = 60;
-            // 
-            // extra_line_total
-            // 
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = "£0";
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.extra_line_total.DefaultCellStyle = dataGridViewCellStyle14;
-            this.extra_line_total.HeaderText = "Line Total";
-            this.extra_line_total.Name = "extra_line_total";
-            this.extra_line_total.Width = 90;
             // 
             // label16
             // 
@@ -1228,7 +1098,134 @@
             this.comboBox6.Size = new System.Drawing.Size(130, 21);
             this.comboBox6.TabIndex = 70;
             // 
-            // FrmItem
+            // extras_panel
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extras_panel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.extras_panel.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.extras_panel.HeaderText = "Panel";
+            this.extras_panel.Items.AddRange(new object[] {
+            "No Panel",
+            "Overpanel"});
+            this.extras_panel.Name = "extras_panel";
+            this.extras_panel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.extras_panel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.extras_panel.Width = 120;
+            // 
+            // extras_quantity
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "0";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extras_quantity.DefaultCellStyle = dataGridViewCellStyle3;
+            this.extras_quantity.HeaderText = "Quantity";
+            this.extras_quantity.MaxInputLength = 3;
+            this.extras_quantity.Name = "extras_quantity";
+            this.extras_quantity.ReadOnly = true;
+            this.extras_quantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.extras_quantity.Width = 50;
+            // 
+            // extras_width
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extras_width.DefaultCellStyle = dataGridViewCellStyle4;
+            this.extras_width.HeaderText = "Width";
+            this.extras_width.Name = "extras_width";
+            this.extras_width.Width = 50;
+            // 
+            // extras_height
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "0";
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extras_height.DefaultCellStyle = dataGridViewCellStyle5;
+            this.extras_height.HeaderText = "Height";
+            this.extras_height.Name = "extras_height";
+            this.extras_height.Width = 50;
+            // 
+            // extras_area
+            // 
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = "0";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extras_area.DefaultCellStyle = dataGridViewCellStyle6;
+            this.extras_area.HeaderText = "Area";
+            this.extras_area.Name = "extras_area";
+            this.extras_area.Width = 50;
+            // 
+            // extra_description
+            // 
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extra_description.DefaultCellStyle = dataGridViewCellStyle11;
+            this.extra_description.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.extra_description.HeaderText = "Description";
+            this.extra_description.Name = "extra_description";
+            this.extra_description.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.extra_description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.extra_description.Width = 120;
+            // 
+            // extra_qty
+            // 
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle12.Format = "N0";
+            dataGridViewCellStyle12.NullValue = "0";
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extra_qty.DefaultCellStyle = dataGridViewCellStyle12;
+            this.extra_qty.HeaderText = "Quantity";
+            this.extra_qty.Name = "extra_qty";
+            this.extra_qty.ReadOnly = true;
+            this.extra_qty.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.extra_qty.Width = 55;
+            // 
+            // extras_description
+            // 
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle13.Format = "C2";
+            dataGridViewCellStyle13.NullValue = "0";
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extras_description.DefaultCellStyle = dataGridViewCellStyle13;
+            this.extras_description.HeaderText = "Price";
+            this.extras_description.Name = "extras_description";
+            this.extras_description.Width = 60;
+            // 
+            // extra_line_total
+            // 
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle14.Format = "C2";
+            dataGridViewCellStyle14.NullValue = "£0";
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.extra_line_total.DefaultCellStyle = dataGridViewCellStyle14;
+            this.extra_line_total.HeaderText = "Line Total";
+            this.extra_line_total.Name = "extra_line_total";
+            this.extra_line_total.Width = 90;
+            // 
+            // FrmNewitem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1258,9 +1255,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmItem";
+            this.Name = "FrmNewitem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quote Item";
+            this.Text = "New Item";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmItem_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

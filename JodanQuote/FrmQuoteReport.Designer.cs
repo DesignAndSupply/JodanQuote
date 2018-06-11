@@ -69,9 +69,10 @@
             this.btn_email.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_email.Location = new System.Drawing.Point(918, 31);
             this.btn_email.Name = "btn_email";
+            this.btn_email.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.btn_email.Size = new System.Drawing.Size(98, 42);
             this.btn_email.TabIndex = 42;
-            this.btn_email.Text = "          Email              PDF       ";
+            this.btn_email.Text = "           Email                As   PDF       ";
             this.btn_email.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_email.UseVisualStyleBackColor = false;
             this.btn_email.Click += new System.EventHandler(this.btn_email_Click);
@@ -86,6 +87,7 @@
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_save.Location = new System.Drawing.Point(1022, 31);
             this.btn_save.Name = "btn_save";
+            this.btn_save.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.btn_save.Size = new System.Drawing.Size(98, 42);
             this.btn_save.TabIndex = 41;
             this.btn_save.Text = "         Save As               PDF       ";
@@ -111,6 +113,8 @@
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CrRptQuote1;
             this.crystalReportViewer1.ShowCloseButton = false;
+            this.crystalReportViewer1.ShowCopyButton = false;
+            this.crystalReportViewer1.ShowExportButton = false;
             this.crystalReportViewer1.ShowGotoPageButton = false;
             this.crystalReportViewer1.ShowGroupTreeButton = false;
             this.crystalReportViewer1.ShowLogo = false;
@@ -135,6 +139,7 @@
             this.Name = "FrmQuoteReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quotation Report";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmQuoteReport_FormClosed);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();
             this.ResumeLayout(false);

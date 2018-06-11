@@ -13,9 +13,9 @@ using Statements;
 
 namespace JodanQuote
 {
-    public partial class FrmItem : Form
+    public partial class FrmNewitem : Form
     {
-        public FrmItem()
+        public FrmNewitem()
         {
             InitializeComponent();
             Fill_data();
@@ -25,7 +25,7 @@ namespace JodanQuote
         {
 
             lbl_quote.Text =  Valuesclass.project_id.ToString();
-            lbl_item.Text =  Valuesclass.item_id.ToString();
+            lbl_item.Text =  Valuesclass.max_item_id.ToString();
            // lbl_revision.Text = "Revision Number:  " + Valuesclass.revision_number.ToString();
 
         }
@@ -62,27 +62,17 @@ namespace JodanQuote
         {
             try
             {
-              
+                if (e.ColumnIndex == grid_panel_info.Columns["extras_panel"].Index && e.RowIndex >= 0)
+                {
+
+                    grid_panel_info.BeginEdit(true);
+                    ((ComboBox)grid_panel_info.EditingControl).DroppedDown = true;
+                }
+
             }
             catch
             {
 
-
-            }
-
-        }
-
-      
-
-        private void grid_panel_info_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-              
-            }
-            catch (Exception )
-            {
-               
 
             }
         }

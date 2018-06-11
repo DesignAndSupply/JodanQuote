@@ -10,7 +10,7 @@ using System.Net.Mail;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using Outlook = Microsoft.Office.Interop.Outlook;
-
+using function;
 using values;
 using Connection;
 using Statements;
@@ -50,6 +50,27 @@ namespace JodanQuote
 
         }
 
+        void Send()
+        {
+            string path = @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF";
+
+            string recipients = string.Join("", Functionsclass.Emailrecipients);
+            Outlook.Application app = new Outlook.Application();
+            Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
+            mailItem.Subject = "Quote Number: " + Valuesclass.project_id;
+            mailItem.To = recipients;
+            //mailItem.Body = "Test";
+            mailItem.Attachments.Add(path);
+            mailItem.Importance = Outlook.OlImportance.olImportanceHigh;
+            mailItem.Display(false);
+
+
+
+
+
+
+        }
+
         private void btn_send_Click(object sender, EventArgs e)
         {
             try
@@ -62,7 +83,7 @@ namespace JodanQuote
 
                         string recipient = grid_email_recipients.Rows[i].Cells["Email"].Value.ToString();
 
-                        function.Functionsclass.Emailrecipients.Add(recipient + ";");
+                        Functionsclass.Emailrecipients.Add(recipient + ";");
                         
                       
 
@@ -77,14 +98,14 @@ namespace JodanQuote
                 WMPLib.WindowsMediaPlayer sent = new WMPLib.WindowsMediaPlayer();
                 sent.URL = @"\\designsvr1\apps\\Design and Supply CSharp\Sounds\Mail Sent.mp3";
                 sent.controls.play();
-                FrmQuoteReport.Send_quote();
+                Send();
 
             }
 
-            catch
+            catch(Exception ex)
             {
 
-                MessageBox.Show("Error", "");
+                MessageBox.Show(ex.ToString(), "");
 
             }
         }
@@ -115,6 +136,12 @@ namespace JodanQuote
 
             }
 
-        }
+      
+
+
+
     }
+
+}   
+
 

@@ -57,7 +57,7 @@
             this.chk_recipient});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
@@ -120,7 +120,7 @@
             this.Controls.Add(this.grid_email_recipients);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMailQuote";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mail Recipients";
             ((System.ComponentModel.ISupportInitialize)(this.grid_email_recipients)).EndInit();
             this.ResumeLayout(false);

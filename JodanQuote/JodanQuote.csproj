@@ -24,7 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Other\Jodan.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Jodan.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>825982D77D198453A6756D407920D92B5125112E</ManifestCertificateThumbprint>
@@ -102,6 +102,12 @@
     <Compile Include="Class\Statements.cs" />
     <Compile Include="Class\UserInformation.cs" />
     <Compile Include="Class\Values.cs" />
+    <Compile Include="FrmNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewItem.Designer.cs">
+      <DependentUpon>FrmNewItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMailQuote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmNewItem.resx">
+      <DependentUpon>FrmNewItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMailQuote.resx">
       <DependentUpon>FrmMailQuote.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,7 +239,6 @@
     <None Include="Other\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Other\Jodan.ico" />
     <None Include="Resources\PDF.png" />
     <None Include="Resources\Save.png" />
     <None Include="Resources\ReturnArrow.png" />
@@ -242,6 +250,8 @@
     <None Include="Resources\clear.png" />
     <None Include="Resources\Email PDF.png" />
     <Content Include="Other\Mail Sent.mp3" />
+    <None Include="Resources\imageedit_64_7343904532_Iri_icon.ico" />
+    <None Include="Resources\Jodan.ico" />
     <Content Include="Resources\logo_4rq_icon.ico" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\tick2.png" />

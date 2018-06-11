@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Outlook = Microsoft.Office.Interop.Outlook;
+using System.IO;
 using Connection;
 using Statements;
 using function;
@@ -43,7 +44,7 @@ namespace JodanQuote
 
         public static void Send_quote()
         {
-
+           
 
             string recipients = string.Join("", Functionsclass.Emailrecipients);
             Outlook.Application app = new Outlook.Application();
@@ -57,33 +58,47 @@ namespace JodanQuote
 
 
 
-
+          
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
 
             Save_PDF();
+            MessageBox.Show("  Quotation Saved Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btn_email_Click(object sender, EventArgs e)
         {
             FrmMailQuote mail = new FrmMailQuote();
             mail.Show();
-            //Save_PDF();
+            Save_PDF();
         }
         void Save_PDF()
         {
 
-            var folderPath = Statementsclass.quote_pdf_path;
+           string path = @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF";
 
-            CrRptQuote1.ExportToDisk(ExportFormatType.RPTR, @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Saved\" + Valuesclass.project_id + ".PDF");
-            MessageBox.Show("  Quotation Save Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           if (File.Exists(path)) 
+            {
 
+                File.Delete(path);
+                CrRptQuote1.ExportToDisk(ExportFormatType.RPTR,path);
+            }
+           
+            else
+            {
+
+                CrRptQuote1.ExportToDisk(ExportFormatType.RPTR, path);
+
+
+            }
         }
-       
 
-
-
+        private void FrmQuoteReport_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmQuote quote = new FrmQuote();
+            quote.Show();
+        }
     }
 }
