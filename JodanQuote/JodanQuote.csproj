@@ -24,7 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -102,6 +102,12 @@
     <Compile Include="Class\Statements.cs" />
     <Compile Include="Class\UserInformation.cs" />
     <Compile Include="Class\Values.cs" />
+    <Compile Include="FrmDimensions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDimensions.Designer.cs">
+      <DependentUpon>FrmDimensions.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,11 +158,11 @@
     <Compile Include="FrmItem.Designer.cs">
       <DependentUpon>FrmItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNewProject.cs">
+    <Compile Include="FrmNewquote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNewProject.Designer.cs">
-      <DependentUpon>FrmNewProject.cs</DependentUpon>
+    <Compile Include="FrmNewquote.Designer.cs">
+      <DependentUpon>FrmNewquote.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmQuote.cs">
       <SubType>Form</SubType>
@@ -172,6 +178,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDimensions.resx">
+      <DependentUpon>FrmDimensions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNewItem.resx">
       <DependentUpon>FrmNewItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,8 +203,8 @@
     <EmbeddedResource Include="FrmItem.resx">
       <DependentUpon>FrmItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNewProject.resx">
-      <DependentUpon>FrmNewProject.cs</DependentUpon>
+    <EmbeddedResource Include="FrmNewquote.resx">
+      <DependentUpon>FrmNewquote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuote.resx">
       <DependentUpon>FrmQuote.cs</DependentUpon>
@@ -239,6 +248,7 @@
     <None Include="Other\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\unlock.png" />
     <None Include="Resources\PDF.png" />
     <None Include="Resources\Save.png" />
     <None Include="Resources\ReturnArrow.png" />
@@ -252,6 +262,8 @@
     <Content Include="Other\Mail Sent.mp3" />
     <None Include="Resources\imageedit_64_7343904532_Iri_icon.ico" />
     <None Include="Resources\Jodan.ico" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\locked.png" />
     <Content Include="Resources\logo_4rq_icon.ico" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\tick2.png" />

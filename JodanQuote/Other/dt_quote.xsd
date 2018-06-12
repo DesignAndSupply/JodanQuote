@@ -12,7 +12,8 @@
               <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.c_view_project_quotation" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT  [Project Id] , [Item ID] , [Date Created] FROM [Jodan_quote].[dbo].[c_view_project_quotation]</CommandText>
+                    <CommandText>SELECT        [Project ID], [Item ID], [Date Created], [Door Type], [Door Reference], [Total Cost], [Item Date]
+FROM            c_view_project_quotation</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -20,8 +21,12 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="Date Created" DataSetColumn="Date Created" />
-              <Mapping SourceColumn="Project Id" DataSetColumn="Project Id" />
               <Mapping SourceColumn="Item ID" DataSetColumn="Item ID" />
+              <Mapping SourceColumn="Project ID" DataSetColumn="Project ID" />
+              <Mapping SourceColumn="Door Type" DataSetColumn="Door Type" />
+              <Mapping SourceColumn="Door Reference" DataSetColumn="Door Reference" />
+              <Mapping SourceColumn="Total Cost" DataSetColumn="Total Cost" />
+              <Mapping SourceColumn="Item Date" DataSetColumn="Item Date" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -33,12 +38,28 @@
   <xs:element name="dt_quote" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dt_quote" msprop:Generator_UserDSName="dt_quote">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="c_view_item_count" msprop:Generator_TableClassName="c_view_item_countDataTable" msprop:Generator_TableVarName="tablec_view_item_count" msprop:Generator_RowChangedName="c_view_item_countRowChanged" msprop:Generator_TablePropName="c_view_item_count" msprop:Generator_RowDeletingName="c_view_item_countRowDeleting" msprop:Generator_RowChangingName="c_view_item_countRowChanging" msprop:Generator_RowEvHandlerName="c_view_item_countRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_item_countRowDeleted" msprop:Generator_RowClassName="c_view_item_countRow" msprop:Generator_UserTableName="c_view_item_count" msprop:Generator_RowEvArgName="c_view_item_countRowChangeEvent">
+        <xs:element name="c_view_item_count" msprop:Generator_TableClassName="c_view_item_countDataTable" msprop:Generator_TableVarName="tablec_view_item_count" msprop:Generator_TablePropName="c_view_item_count" msprop:Generator_RowDeletingName="c_view_item_countRowDeleting" msprop:Generator_RowChangingName="c_view_item_countRowChanging" msprop:Generator_RowEvHandlerName="c_view_item_countRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_item_countRowDeleted" msprop:Generator_UserTableName="c_view_item_count" msprop:Generator_RowChangedName="c_view_item_countRowChanged" msprop:Generator_RowEvArgName="c_view_item_countRowChangeEvent" msprop:Generator_RowClassName="c_view_item_countRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Date_x0020_Created" msprop:Generator_ColumnVarNameInTable="columnDate_Created" msprop:Generator_ColumnPropNameInRow="Date_Created" msprop:Generator_ColumnPropNameInTable="Date_CreatedColumn" msprop:Generator_UserColumnName="Date Created" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Project_x0020_Id" msprop:Generator_ColumnVarNameInTable="columnProject_Id" msprop:Generator_ColumnPropNameInRow="Project_Id" msprop:Generator_ColumnPropNameInTable="Project_IdColumn" msprop:Generator_UserColumnName="Project Id" type="xs:int" minOccurs="0" />
               <xs:element name="Item_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnItem_ID" msprop:Generator_ColumnPropNameInRow="Item_ID" msprop:Generator_ColumnPropNameInTable="Item_IDColumn" msprop:Generator_UserColumnName="Item ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Project_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnProject_ID" msprop:Generator_ColumnPropNameInRow="Project_ID" msprop:Generator_ColumnPropNameInTable="Project_IDColumn" msprop:Generator_UserColumnName="Project ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Door_x0020_Type" msprop:Generator_ColumnVarNameInTable="columnDoor_Type" msprop:Generator_ColumnPropNameInRow="Door_Type" msprop:Generator_ColumnPropNameInTable="Door_TypeColumn" msprop:Generator_UserColumnName="Door Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Door_x0020_Reference" msprop:Generator_ColumnVarNameInTable="columnDoor_Reference" msprop:Generator_ColumnPropNameInRow="Door_Reference" msprop:Generator_ColumnPropNameInTable="Door_ReferenceColumn" msprop:Generator_UserColumnName="Door Reference" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total_x0020_Cost" msprop:Generator_ColumnVarNameInTable="columnTotal_Cost" msprop:Generator_ColumnPropNameInRow="Total_Cost" msprop:Generator_ColumnPropNameInTable="Total_CostColumn" msprop:Generator_UserColumnName="Total Cost" type="xs:double" minOccurs="0" />
+              <xs:element name="Item_x0020_Date" msprop:Generator_ColumnVarNameInTable="columnItem_Date" msprop:Generator_ColumnPropNameInRow="Item_Date" msprop:Generator_ColumnPropNameInTable="Item_DateColumn" msprop:Generator_UserColumnName="Item Date" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -15,12 +15,12 @@ using Connection;
 
 namespace JodanQuote
 {
-    public partial class FrmNewProject : Form
+    public partial class FrmNewquote : Form
     {
         DataTable dt_quote = new DataTable();
 
 
-        public FrmNewProject()
+        public FrmNewquote()
         {
             InitializeComponent();
             Fill_data();
@@ -162,7 +162,14 @@ namespace JodanQuote
             update_project.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
             update_project.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
-            MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btn_print_project_Click(object sender, EventArgs e)
+        {
+            FrmQuoteReport report = new FrmQuoteReport();
+            this.Hide();
+            report.Show();
         }
     }
 }

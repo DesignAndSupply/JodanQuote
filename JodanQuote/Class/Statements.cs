@@ -46,20 +46,22 @@ namespace Statements
         public static string select_max_project_id = "SELECT MAX(ID) AS [Project ID] From dbo.project";
         public static string select_max_quote_id = "SELECT MAX(id) AS [Quote ID] From dbo.quotation";
         public static string select_max_item_id = "SELECT MAX(item_id) AS [Item ID] From dbo.quotation WHERE Project_id = @project_id";
-        public static string select_quote_details = "SELECT project_ref,quote_status FROM dbo.quotation WHERE project_id =@project_id";
+        public static string select_quote_details = "SELECT project_ref,quote_status FROM dbo.project WHERE id =@project_id";
         public static string select_customer = "SELECT  dbo.SALES_LEDGER.NAME, dbo.SALES_LEDGER.account_ref FROM dbo.SALES_LEDGER WHERE(((dbo.SALES_LEDGER.flood_flag)= -1) AND((dbo.SALES_LEDGER.cust_lock_flag)= -1))";
-
+        public static string select_item_details = "SELECT structual_op_height,structual_op_width FROM dbo.quotation WHERE project_id =@project_id AND item_id = @item_id";
 
         public static string insert_new_project = "Insert into dbo.project ( customer_ref, item_date) Values ( @customer_id, @quote_date)";
-        public static string insert_new_project_quote = "Insert into dbo.quotation (item_id ,project_id , quote_date, revision_id) Values (@item_id, @project_id, @quote_date, '1')";
+        public static string insert_new_project_quote = "Insert into dbo.quotation (item_id ,project_id , item_date, revision_id) Values (@item_id, @project_id, @item_date, '1')";
 
-        public static string update_project = "Update dbo.quotation SET project_ref = @project_ref, quote_status = @quote_status Where project_id = @project_id";
+        public static string update_project = "Update dbo.project SET project_ref = @project_ref, quote_status = @quote_status Where id = @project_id";
 
         //email
 
         public static string select_email_recipients = "Select name AS [Name], email As [Email] From Dbo.email_List";
 
-        
 
+        // update
+
+        public static string update_dimensions = "Update dbo.quotation set structual_op_height = @height, structual_op_width = @width WHERE project_id = @project_id AND item_id =@item_id";
     }
 }

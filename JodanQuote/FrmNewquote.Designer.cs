@@ -1,6 +1,6 @@
 ﻿namespace JodanQuote
 {
-    partial class FrmNewProject
+    partial class FrmNewquote
     {
         /// <summary>
         /// Required designer variable.
@@ -32,18 +32,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewProject));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewquote));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_email_project = new System.Windows.Forms.Button();
+            this.btn_print_project = new System.Windows.Forms.Button();
+            this.txt_customer = new System.Windows.Forms.TextBox();
+            this.lbl_customer = new System.Windows.Forms.Label();
             this.lbl_quote_id = new System.Windows.Forms.Label();
+            this.btn_email_project = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_new_item = new System.Windows.Forms.Button();
-            this.btn_print_project = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_customer = new System.Windows.Forms.TextBox();
             this.main_tab_project_additions = new System.Windows.Forms.TabControl();
             this.tab_quote_details = new System.Windows.Forms.TabPage();
             this.cmb_quote_status = new System.Windows.Forms.ComboBox();
@@ -73,7 +73,6 @@
             this.pct_logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.main_tab_project_additions.SuspendLayout();
             this.tab_quote_details.SuspendLayout();
             this.tab_additonal_cost.SuspendLayout();
@@ -87,17 +86,71 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel1.Controls.Add(this.btn_email_project);
+            this.panel1.Controls.Add(this.btn_print_project);
+            this.panel1.Controls.Add(this.txt_customer);
+            this.panel1.Controls.Add(this.lbl_customer);
             this.panel1.Controls.Add(this.lbl_quote_id);
+            this.panel1.Controls.Add(this.btn_email_project);
             this.panel1.Controls.Add(this.btn_back);
             this.panel1.Controls.Add(this.btn_save);
             this.panel1.Controls.Add(this.btn_new_item);
-            this.panel1.Controls.Add(this.btn_print_project);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-3, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1927, 100);
             this.panel1.TabIndex = 17;
+            // 
+            // btn_print_project
+            // 
+            this.btn_print_project.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_print_project.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_print_project.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_print_project.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_print_project.Image = global::JodanQuote.Properties.Resources.Print_Small;
+            this.btn_print_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_print_project.Location = new System.Drawing.Point(762, 27);
+            this.btn_print_project.Name = "btn_print_project";
+            this.btn_print_project.Size = new System.Drawing.Size(98, 37);
+            this.btn_print_project.TabIndex = 48;
+            this.btn_print_project.Text = "            Print                  Quotation";
+            this.btn_print_project.UseVisualStyleBackColor = false;
+            this.btn_print_project.Click += new System.EventHandler(this.btn_print_project_Click);
+            // 
+            // txt_customer
+            // 
+            this.txt_customer.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_customer.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_customer.ForeColor = System.Drawing.Color.AliceBlue;
+            this.txt_customer.Location = new System.Drawing.Point(337, 66);
+            this.txt_customer.MaxLength = 15;
+            this.txt_customer.Name = "txt_customer";
+            this.txt_customer.Size = new System.Drawing.Size(192, 20);
+            this.txt_customer.TabIndex = 46;
+            this.txt_customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_customer
+            // 
+            this.lbl_customer.AutoSize = true;
+            this.lbl_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_customer.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_customer.Location = new System.Drawing.Point(197, 63);
+            this.lbl_customer.Name = "lbl_customer";
+            this.lbl_customer.Size = new System.Drawing.Size(134, 24);
+            this.lbl_customer.TabIndex = 47;
+            this.lbl_customer.Text = "Customer Ref :";
+            // 
+            // lbl_quote_id
+            // 
+            this.lbl_quote_id.AutoSize = true;
+            this.lbl_quote_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_quote_id.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_quote_id.Location = new System.Drawing.Point(228, 27);
+            this.lbl_quote_id.Name = "lbl_quote_id";
+            this.lbl_quote_id.Size = new System.Drawing.Size(102, 25);
+            this.lbl_quote_id.TabIndex = 45;
+            this.lbl_quote_id.Text = "Quote ID:";
             // 
             // btn_email_project
             // 
@@ -109,21 +162,10 @@
             this.btn_email_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_email_project.Location = new System.Drawing.Point(660, 27);
             this.btn_email_project.Name = "btn_email_project";
-            this.btn_email_project.Size = new System.Drawing.Size(89, 37);
+            this.btn_email_project.Size = new System.Drawing.Size(98, 37);
             this.btn_email_project.TabIndex = 41;
             this.btn_email_project.Text = "            Email              Project";
             this.btn_email_project.UseVisualStyleBackColor = false;
-            // 
-            // lbl_quote_id
-            // 
-            this.lbl_quote_id.AutoSize = true;
-            this.lbl_quote_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_quote_id.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_quote_id.Location = new System.Drawing.Point(229, 33);
-            this.lbl_quote_id.Name = "lbl_quote_id";
-            this.lbl_quote_id.Size = new System.Drawing.Size(131, 31);
-            this.lbl_quote_id.TabIndex = 42;
-            this.lbl_quote_id.Text = "Quote ID:";
             // 
             // btn_back
             // 
@@ -133,9 +175,9 @@
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_back.Image = global::JodanQuote.Properties.Resources.ReturnArrow;
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(1057, 27);
+            this.btn_back.Location = new System.Drawing.Point(1068, 27);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(89, 37);
+            this.btn_back.Size = new System.Drawing.Size(98, 37);
             this.btn_back.TabIndex = 40;
             this.btn_back.Text = "    Back";
             this.btn_back.UseVisualStyleBackColor = false;
@@ -149,9 +191,9 @@
             this.btn_save.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_save.Image = global::JodanQuote.Properties.Resources.Save;
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_save.Location = new System.Drawing.Point(956, 27);
+            this.btn_save.Location = new System.Drawing.Point(967, 27);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(89, 37);
+            this.btn_save.Size = new System.Drawing.Size(98, 37);
             this.btn_save.TabIndex = 40;
             this.btn_save.Text = "     Save";
             this.btn_save.UseVisualStyleBackColor = false;
@@ -165,29 +207,14 @@
             this.btn_new_item.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_new_item.Image = global::JodanQuote.Properties.Resources.NewRecord;
             this.btn_new_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_new_item.Location = new System.Drawing.Point(855, 27);
+            this.btn_new_item.Location = new System.Drawing.Point(866, 27);
             this.btn_new_item.Name = "btn_new_item";
-            this.btn_new_item.Size = new System.Drawing.Size(89, 37);
+            this.btn_new_item.Size = new System.Drawing.Size(98, 37);
             this.btn_new_item.TabIndex = 40;
             this.btn_new_item.Text = " New Item";
             this.btn_new_item.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_new_item.UseVisualStyleBackColor = false;
             this.btn_new_item.Click += new System.EventHandler(this.btn_new_item_Click);
-            // 
-            // btn_print_project
-            // 
-            this.btn_print_project.BackColor = System.Drawing.Color.AliceBlue;
-            this.btn_print_project.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_print_project.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_print_project.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_print_project.Image = global::JodanQuote.Properties.Resources.Print_Small;
-            this.btn_print_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print_project.Location = new System.Drawing.Point(754, 27);
-            this.btn_print_project.Name = "btn_print_project";
-            this.btn_print_project.Size = new System.Drawing.Size(89, 37);
-            this.btn_print_project.TabIndex = 39;
-            this.btn_print_project.Text = "             Print               Project";
-            this.btn_print_project.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -201,36 +228,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.txt_customer);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(167, 639);
             this.panel2.TabIndex = 23;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label8.Location = new System.Drawing.Point(9, 346);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 25);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Customer Ref:";
-            // 
-            // txt_customer
-            // 
-            this.txt_customer.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_customer.Location = new System.Drawing.Point(18, 380);
-            this.txt_customer.Multiline = true;
-            this.txt_customer.Name = "txt_customer";
-            this.txt_customer.Size = new System.Drawing.Size(123, 114);
-            this.txt_customer.TabIndex = 43;
-            this.txt_customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // main_tab_project_additions
             // 
@@ -509,6 +510,7 @@
             // 
             // grid_item_on_quote
             // 
+            this.grid_item_on_quote.AllowUserToAddRows = false;
             this.grid_item_on_quote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -536,7 +538,7 @@
             this.grid_item_on_quote.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_item_on_quote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_item_on_quote.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_item_on_quote.Location = new System.Drawing.Point(55, 33);
+            this.grid_item_on_quote.Location = new System.Drawing.Point(76, 36);
             this.grid_item_on_quote.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_item_on_quote.MaximumSize = new System.Drawing.Size(655, 323);
             this.grid_item_on_quote.MinimumSize = new System.Drawing.Size(505, 323);
@@ -570,7 +572,7 @@
             this.btn_view.HeaderText = "";
             this.btn_view.MinimumWidth = 50;
             this.btn_view.Name = "btn_view";
-            this.btn_view.Width = 52;
+            this.btn_view.Width = 50;
             // 
             // label6
             // 
@@ -592,7 +594,7 @@
             this.pct_logo.TabIndex = 18;
             this.pct_logo.TabStop = false;
             // 
-            // FrmNewProject
+            // FrmNewquote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -609,14 +611,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmNewProject";
+            this.Name = "FrmNewquote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Project";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.main_tab_project_additions.ResumeLayout(false);
             this.tab_quote_details.ResumeLayout(false);
             this.tab_quote_details.PerformLayout();
@@ -663,15 +663,15 @@
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_new_item;
-        private System.Windows.Forms.Button btn_print_project;
         private System.Windows.Forms.TabControl maintab_doors_on_quote;
         private System.Windows.Forms.TabPage tab_door_on_quote;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lbl_quote_id;
-        private System.Windows.Forms.TextBox txt_customer;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView grid_item_on_quote;
         private System.Windows.Forms.DataGridViewButtonColumn btn_view;
         private System.Windows.Forms.ComboBox cmb_quote_status;
+        private System.Windows.Forms.TextBox txt_customer;
+        private System.Windows.Forms.Label lbl_customer;
+        private System.Windows.Forms.Label lbl_quote_id;
+        private System.Windows.Forms.Button btn_print_project;
     }
 }

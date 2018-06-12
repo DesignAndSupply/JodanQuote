@@ -63,7 +63,7 @@
             // btn_new_project
             // 
             this.btn_new_project.BackColor = System.Drawing.Color.AliceBlue;
-            this.btn_new_project.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_new_project.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_new_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new_project.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_new_project.Image = global::JodanQuote.Properties.Resources.NewRecord;
@@ -100,7 +100,7 @@
             this.lbl_description.AutoSize = true;
             this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_description.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_description.Location = new System.Drawing.Point(364, 118);
+            this.lbl_description.Location = new System.Drawing.Point(431, 118);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(72, 15);
             this.lbl_description.TabIndex = 39;
@@ -111,11 +111,11 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_id.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_id.Location = new System.Drawing.Point(262, 118);
+            this.lbl_id.Location = new System.Drawing.Point(263, 118);
             this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(67, 15);
+            this.lbl_id.Size = new System.Drawing.Size(74, 15);
             this.lbl_id.TabIndex = 38;
-            this.lbl_id.Text = "Quote ID:";
+            this.lbl_id.Text = "Project ID:";
             // 
             // txt_quote_id
             // 
@@ -123,7 +123,7 @@
             this.txt_quote_id.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_quote_id.Location = new System.Drawing.Point(263, 135);
             this.txt_quote_id.Name = "txt_quote_id";
-            this.txt_quote_id.Size = new System.Drawing.Size(68, 20);
+            this.txt_quote_id.Size = new System.Drawing.Size(86, 20);
             this.txt_quote_id.TabIndex = 37;
             this.txt_quote_id.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_quote_id_KeyDown);
             // 
@@ -131,7 +131,7 @@
             // 
             this.txt_customer.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_customer.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_customer.Location = new System.Drawing.Point(360, 135);
+            this.txt_customer.Location = new System.Drawing.Point(427, 135);
             this.txt_customer.Name = "txt_customer";
             this.txt_customer.Size = new System.Drawing.Size(178, 20);
             this.txt_customer.TabIndex = 36;
@@ -141,7 +141,7 @@
             // 
             this.pct_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pct_clear.Image = global::JodanQuote.Properties.Resources.clear;
-            this.pct_clear.Location = new System.Drawing.Point(545, 134);
+            this.pct_clear.Location = new System.Drawing.Point(612, 134);
             this.pct_clear.Name = "pct_clear";
             this.pct_clear.Size = new System.Drawing.Size(26, 20);
             this.pct_clear.TabIndex = 40;
@@ -162,10 +162,11 @@
             this.btn_open.HeaderText = "";
             this.btn_open.MinimumWidth = 50;
             this.btn_open.Name = "btn_open";
-            this.btn_open.Width = 52;
+            this.btn_open.Width = 50;
             // 
             // grid_quote_list
             // 
+            this.grid_quote_list.AllowUserToAddRows = false;
             this.grid_quote_list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,7 +194,7 @@
             this.grid_quote_list.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_quote_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_quote_list.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_quote_list.Location = new System.Drawing.Point(261, 165);
+            this.grid_quote_list.Location = new System.Drawing.Point(261, 166);
             this.grid_quote_list.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_quote_list.MaximumSize = new System.Drawing.Size(655, 323);
             this.grid_quote_list.MinimumSize = new System.Drawing.Size(655, 323);

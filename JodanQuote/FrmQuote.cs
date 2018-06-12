@@ -19,14 +19,13 @@ namespace JodanQuote
     {
         public static DataTable dt_quote = new DataTable();
 
-
-
         public FrmQuote()
         {
             InitializeComponent();
             Fill_data();
             Select_data();
         }
+
         void Fill_data()
         {
 
@@ -44,7 +43,6 @@ namespace JodanQuote
 
 
         }
-        
 
         void Select_data()
         {
@@ -80,6 +78,7 @@ namespace JodanQuote
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_items_on_quote.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_items_on_quote.EnableHeadersVisualStyles = false;
+            grid_items_on_quote.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             btn_view.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             btn_delete_item.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             lbl_quote_id.Text = "Project ID: " + Valuesclass.project_id.ToString();
@@ -113,7 +112,7 @@ namespace JodanQuote
                 SqlCommand insert_new_project_quote = new SqlCommand(Statementsclass.insert_new_project_quote, conn);
                 insert_new_project_quote.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
                 insert_new_project_quote.Parameters.AddWithValue("@item_id", Valuesclass.max_item_id);
-                insert_new_project_quote.Parameters.AddWithValue("@quote_date", DateTime.Now);
+                insert_new_project_quote.Parameters.AddWithValue("@item_date", DateTime.Now);
                 insert_new_project_quote.ExecuteNonQuery();
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
@@ -186,9 +185,9 @@ namespace JodanQuote
 
 
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.ToString(), "");
             }
            
         }
@@ -201,23 +200,35 @@ namespace JodanQuote
 
         private void btn_quote_details_Click(object sender, EventArgs e)
         {
-            maintab_doors_on_quote.SelectedTab = tab_quote_details;
+            main_tab_project_additions.SelectedTab = tab_quote_details;
         }
 
         private void btn_additional_cost_Click(object sender, EventArgs e)
         {
-            maintab_doors_on_quote.SelectedTab = tab_additonal_cost;
+            main_tab_project_additions.SelectedTab = tab_additonal_cost;
         }
 
         private void btn_notes_Click(object sender, EventArgs e)
         {
-            maintab_doors_on_quote.SelectedTab = tab_notes;
+            main_tab_project_additions.SelectedTab = tab_notes;
         }
 
         private void btn_email_project_Click(object sender, EventArgs e)
         {
             FrmMailQuote mail = new FrmMailQuote();
             mail.Show();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand update_project = new SqlCommand(Statementsclass.update_project, conn);
+            update_project.Parameters.AddWithValue("@quote_status", cmb_quote_status.Text.ToString());
+            update_project.Parameters.AddWithValue("@project_ref", txt_project_ref.Text);
+            update_project.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            update_project.ExecuteNonQuery();
+            ConnectionClass.Dispose_connection(conn);
+            MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

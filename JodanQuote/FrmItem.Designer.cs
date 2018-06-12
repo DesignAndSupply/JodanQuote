@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -52,19 +53,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItem));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_back = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_printscren = new System.Windows.Forms.Button();
             this.lbl_revision = new System.Windows.Forms.Label();
-            this.btn_email_project = new System.Windows.Forms.Button();
+            this.btn_lock = new System.Windows.Forms.Button();
             this.lbl_item = new System.Windows.Forms.Label();
             this.lbl_quote = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel_customer_information = new System.Windows.Forms.Panel();
+            this.panel_door_input = new System.Windows.Forms.Panel();
+            this.btn_dimensions = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.cmb_fire_rating = new System.Windows.Forms.ComboBox();
             this.chk_stainless = new System.Windows.Forms.CheckBox();
@@ -85,7 +88,7 @@
             this.txt_structual_height = new System.Windows.Forms.TextBox();
             this.txt_structual_width = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_information = new System.Windows.Forms.Panel();
             this.grid_panel_info = new System.Windows.Forms.DataGridView();
             this.extras_panel = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.extras_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,19 +96,19 @@
             this.extras_height = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.extras_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label15 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel_extras = new System.Windows.Forms.Panel();
             this.grid_extras = new System.Windows.Forms.DataGridView();
             this.extra_description = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.extra_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.extras_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.extra_line_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel_freehand = new System.Windows.Forms.Panel();
             this.grid_freehand_extras = new System.Windows.Forms.DataGridView();
             this.freehand_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.freehand_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label17 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel_handle = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -113,7 +116,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel_stay = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -130,29 +133,32 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panel_door_input.SuspendLayout();
+            this.panel_information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_panel_info)).BeginInit();
-            this.panel6.SuspendLayout();
+            this.panel_extras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_extras)).BeginInit();
-            this.panel7.SuspendLayout();
+            this.panel_freehand.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_freehand_extras)).BeginInit();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.panel_handle.SuspendLayout();
+            this.panel_stay.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.btn_back);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_printscren);
             this.panel1.Controls.Add(this.lbl_revision);
-            this.panel1.Controls.Add(this.btn_email_project);
+            this.panel1.Controls.Add(this.btn_lock);
             this.panel1.Controls.Add(this.lbl_item);
             this.panel1.Controls.Add(this.lbl_quote);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -160,6 +166,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1927, 100);
             this.panel1.TabIndex = 18;
+            // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_back.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_back.Image = global::JodanQuote.Properties.Resources.ReturnArrow;
+            this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_back.Location = new System.Drawing.Point(1280, 30);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(98, 37);
+            this.btn_back.TabIndex = 50;
+            this.btn_back.Text = "    Back";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // label3
             // 
@@ -185,19 +207,21 @@
             this.label4.Text = "Quote ID:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button1
+            // btn_printscren
             // 
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.Image = global::JodanQuote.Properties.Resources.Email;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1183, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 37);
-            this.button1.TabIndex = 42;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_printscren.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_printscren.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_printscren.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_printscren.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_printscren.Image = global::JodanQuote.Properties.Resources.Email;
+            this.btn_printscren.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_printscren.Location = new System.Drawing.Point(1186, 30);
+            this.btn_printscren.Name = "btn_printscren";
+            this.btn_printscren.Size = new System.Drawing.Size(88, 37);
+            this.btn_printscren.TabIndex = 42;
+            this.btn_printscren.Text = "       Print          Screen";
+            this.btn_printscren.UseVisualStyleBackColor = false;
+            this.btn_printscren.Click += new System.EventHandler(this.btn_printscren_Click);
             // 
             // lbl_revision
             // 
@@ -211,19 +235,21 @@
             this.lbl_revision.Text = ":";
             this.lbl_revision.Visible = false;
             // 
-            // btn_email_project
+            // btn_lock
             // 
-            this.btn_email_project.BackColor = System.Drawing.Color.AliceBlue;
-            this.btn_email_project.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_email_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_email_project.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_email_project.Image = global::JodanQuote.Properties.Resources.Email;
-            this.btn_email_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_email_project.Location = new System.Drawing.Point(1089, 30);
-            this.btn_email_project.Name = "btn_email_project";
-            this.btn_email_project.Size = new System.Drawing.Size(88, 37);
-            this.btn_email_project.TabIndex = 41;
-            this.btn_email_project.UseVisualStyleBackColor = false;
+            this.btn_lock.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_lock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_lock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lock.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_lock.Image = global::JodanQuote.Properties.Resources.unlock;
+            this.btn_lock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_lock.Location = new System.Drawing.Point(1092, 30);
+            this.btn_lock.Name = "btn_lock";
+            this.btn_lock.Size = new System.Drawing.Size(88, 37);
+            this.btn_lock.TabIndex = 41;
+            this.btn_lock.Text = "     Unlock";
+            this.btn_lock.UseVisualStyleBackColor = false;
+            this.btn_lock.Click += new System.EventHandler(this.btn_lock_Click);
             // 
             // lbl_item
             // 
@@ -282,48 +308,67 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(207, 361);
+            this.label2.Location = new System.Drawing.Point(808, 495);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 49;
             this.label2.Text = "Door Input:";
             // 
-            // panel3
+            // panel_customer_information
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel3.Location = new System.Drawing.Point(196, 118);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(380, 240);
-            this.panel3.TabIndex = 50;
+            this.panel_customer_information.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_customer_information.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.panel_customer_information.Location = new System.Drawing.Point(196, 118);
+            this.panel_customer_information.Name = "panel_customer_information";
+            this.panel_customer_information.Size = new System.Drawing.Size(390, 240);
+            this.panel_customer_information.TabIndex = 50;
             // 
-            // panel4
+            // panel_door_input
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.cmb_fire_rating);
-            this.panel4.Controls.Add(this.chk_stainless);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.cmb_finish);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.cmb_outside_access);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.cmb_lock_type);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.cmb_door_type);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.txt_frame_height);
-            this.panel4.Controls.Add(this.txt_frame_width);
-            this.panel4.Controls.Add(this.txt_structual_height);
-            this.panel4.Controls.Add(this.txt_structual_width);
-            this.panel4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel4.Location = new System.Drawing.Point(196, 370);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(380, 337);
-            this.panel4.TabIndex = 51;
+            this.panel_door_input.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_door_input.Controls.Add(this.btn_dimensions);
+            this.panel_door_input.Controls.Add(this.label13);
+            this.panel_door_input.Controls.Add(this.cmb_fire_rating);
+            this.panel_door_input.Controls.Add(this.chk_stainless);
+            this.panel_door_input.Controls.Add(this.label12);
+            this.panel_door_input.Controls.Add(this.cmb_finish);
+            this.panel_door_input.Controls.Add(this.label11);
+            this.panel_door_input.Controls.Add(this.cmb_outside_access);
+            this.panel_door_input.Controls.Add(this.label10);
+            this.panel_door_input.Controls.Add(this.cmb_lock_type);
+            this.panel_door_input.Controls.Add(this.label9);
+            this.panel_door_input.Controls.Add(this.cmb_door_type);
+            this.panel_door_input.Controls.Add(this.label8);
+            this.panel_door_input.Controls.Add(this.label7);
+            this.panel_door_input.Controls.Add(this.label6);
+            this.panel_door_input.Controls.Add(this.label5);
+            this.panel_door_input.Controls.Add(this.txt_frame_height);
+            this.panel_door_input.Controls.Add(this.txt_frame_width);
+            this.panel_door_input.Controls.Add(this.txt_structual_height);
+            this.panel_door_input.Controls.Add(this.txt_structual_width);
+            this.panel_door_input.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.panel_door_input.Location = new System.Drawing.Point(196, 370);
+            this.panel_door_input.Name = "panel_door_input";
+            this.panel_door_input.Size = new System.Drawing.Size(390, 337);
+            this.panel_door_input.TabIndex = 51;
+            this.panel_door_input.Visible = false;
+            // 
+            // btn_dimensions
+            // 
+            this.btn_dimensions.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_dimensions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_dimensions.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dimensions.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_dimensions.Image = global::JodanQuote.Properties.Resources.Add;
+            this.btn_dimensions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dimensions.Location = new System.Drawing.Point(297, 63);
+            this.btn_dimensions.Name = "btn_dimensions";
+            this.btn_dimensions.Size = new System.Drawing.Size(86, 43);
+            this.btn_dimensions.TabIndex = 67;
+            this.btn_dimensions.Text = "     Enter         Dimensions";
+            this.btn_dimensions.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_dimensions.UseVisualStyleBackColor = false;
+            this.btn_dimensions.Click += new System.EventHandler(this.btn_dimensions_Click);
             // 
             // label13
             // 
@@ -368,7 +413,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(41, 242);
+            this.label12.Location = new System.Drawing.Point(17, 243);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 63;
@@ -386,7 +431,7 @@
             "Won",
             "Lost",
             "Removed"});
-            this.cmb_finish.Location = new System.Drawing.Point(182, 239);
+            this.cmb_finish.Location = new System.Drawing.Point(158, 240);
             this.cmb_finish.Name = "cmb_finish";
             this.cmb_finish.Size = new System.Drawing.Size(130, 21);
             this.cmb_finish.TabIndex = 62;
@@ -395,7 +440,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(41, 212);
+            this.label11.Location = new System.Drawing.Point(17, 213);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 13);
             this.label11.TabIndex = 61;
@@ -413,7 +458,7 @@
             "Won",
             "Lost",
             "Removed"});
-            this.cmb_outside_access.Location = new System.Drawing.Point(182, 209);
+            this.cmb_outside_access.Location = new System.Drawing.Point(158, 210);
             this.cmb_outside_access.Name = "cmb_outside_access";
             this.cmb_outside_access.Size = new System.Drawing.Size(130, 21);
             this.cmb_outside_access.TabIndex = 60;
@@ -422,7 +467,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(41, 182);
+            this.label10.Location = new System.Drawing.Point(17, 183);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 61;
@@ -440,7 +485,7 @@
             "Won",
             "Lost",
             "Removed"});
-            this.cmb_lock_type.Location = new System.Drawing.Point(182, 179);
+            this.cmb_lock_type.Location = new System.Drawing.Point(158, 180);
             this.cmb_lock_type.Name = "cmb_lock_type";
             this.cmb_lock_type.Size = new System.Drawing.Size(130, 21);
             this.cmb_lock_type.TabIndex = 60;
@@ -449,7 +494,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(41, 32);
+            this.label9.Location = new System.Drawing.Point(17, 33);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 13);
             this.label9.TabIndex = 59;
@@ -465,7 +510,7 @@
             this.cmb_door_type.Items.AddRange(new object[] {
             "Single Flood",
             "Double Flood"});
-            this.cmb_door_type.Location = new System.Drawing.Point(182, 28);
+            this.cmb_door_type.Location = new System.Drawing.Point(158, 29);
             this.cmb_door_type.Name = "cmb_door_type";
             this.cmb_door_type.Size = new System.Drawing.Size(130, 21);
             this.cmb_door_type.TabIndex = 58;
@@ -474,7 +519,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(41, 152);
+            this.label8.Location = new System.Drawing.Point(17, 153);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 13);
             this.label8.TabIndex = 57;
@@ -484,7 +529,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(41, 122);
+            this.label7.Location = new System.Drawing.Point(17, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 56;
@@ -494,7 +539,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(41, 92);
+            this.label6.Location = new System.Drawing.Point(17, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 13);
             this.label6.TabIndex = 55;
@@ -504,7 +549,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(41, 62);
+            this.label5.Location = new System.Drawing.Point(17, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 13);
             this.label5.TabIndex = 54;
@@ -514,7 +559,7 @@
             // 
             this.txt_frame_height.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_frame_height.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_frame_height.Location = new System.Drawing.Point(182, 149);
+            this.txt_frame_height.Location = new System.Drawing.Point(158, 150);
             this.txt_frame_height.Name = "txt_frame_height";
             this.txt_frame_height.Size = new System.Drawing.Size(130, 20);
             this.txt_frame_height.TabIndex = 52;
@@ -523,7 +568,7 @@
             // 
             this.txt_frame_width.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_frame_width.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_frame_width.Location = new System.Drawing.Point(182, 119);
+            this.txt_frame_width.Location = new System.Drawing.Point(158, 120);
             this.txt_frame_width.Name = "txt_frame_width";
             this.txt_frame_width.Size = new System.Drawing.Size(130, 20);
             this.txt_frame_width.TabIndex = 53;
@@ -532,7 +577,7 @@
             // 
             this.txt_structual_height.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_structual_height.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_structual_height.Location = new System.Drawing.Point(182, 89);
+            this.txt_structual_height.Location = new System.Drawing.Point(158, 90);
             this.txt_structual_height.Name = "txt_structual_height";
             this.txt_structual_height.Size = new System.Drawing.Size(130, 20);
             this.txt_structual_height.TabIndex = 52;
@@ -541,7 +586,7 @@
             // 
             this.txt_structual_width.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_structual_width.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_structual_width.Location = new System.Drawing.Point(182, 59);
+            this.txt_structual_width.Location = new System.Drawing.Point(158, 60);
             this.txt_structual_width.Name = "txt_structual_width";
             this.txt_structual_width.Size = new System.Drawing.Size(130, 20);
             this.txt_structual_width.TabIndex = 52;
@@ -557,15 +602,15 @@
             this.label14.TabIndex = 52;
             this.label14.Text = "Panel Information:";
             // 
-            // panel5
+            // panel_information
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.grid_panel_info);
-            this.panel5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel5.Location = new System.Drawing.Point(598, 118);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(380, 175);
-            this.panel5.TabIndex = 53;
+            this.panel_information.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_information.Controls.Add(this.grid_panel_info);
+            this.panel_information.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.panel_information.Location = new System.Drawing.Point(598, 118);
+            this.panel_information.Name = "panel_information";
+            this.panel_information.Size = new System.Drawing.Size(380, 175);
+            this.panel_information.TabIndex = 53;
             // 
             // grid_panel_info
             // 
@@ -703,15 +748,15 @@
             this.label15.TabIndex = 54;
             this.label15.Text = "Extras:";
             // 
-            // panel6
+            // panel_extras
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.grid_extras);
-            this.panel6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel6.Location = new System.Drawing.Point(598, 317);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(380, 175);
-            this.panel6.TabIndex = 55;
+            this.panel_extras.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_extras.Controls.Add(this.grid_extras);
+            this.panel_extras.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.panel_extras.Location = new System.Drawing.Point(598, 317);
+            this.panel_extras.Name = "panel_extras";
+            this.panel_extras.Size = new System.Drawing.Size(380, 175);
+            this.panel_extras.TabIndex = 55;
             // 
             // grid_extras
             // 
@@ -829,15 +874,15 @@
             this.label16.TabIndex = 56;
             this.label16.Text = "Freehand Extras:";
             // 
-            // panel7
+            // panel_freehand
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.grid_freehand_extras);
-            this.panel7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel7.Location = new System.Drawing.Point(594, 528);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(380, 175);
-            this.panel7.TabIndex = 57;
+            this.panel_freehand.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_freehand.Controls.Add(this.grid_freehand_extras);
+            this.panel_freehand.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.panel_freehand.Location = new System.Drawing.Point(594, 528);
+            this.panel_freehand.Name = "panel_freehand";
+            this.panel_freehand.Size = new System.Drawing.Size(380, 175);
+            this.panel_freehand.TabIndex = 57;
             // 
             // grid_freehand_extras
             // 
@@ -916,20 +961,20 @@
             this.label17.TabIndex = 58;
             this.label17.Text = "Handle Information:";
             // 
-            // panel8
+            // panel_handle
             // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.label24);
-            this.panel8.Controls.Add(this.comboBox4);
-            this.panel8.Controls.Add(this.label22);
-            this.panel8.Controls.Add(this.comboBox2);
-            this.panel8.Controls.Add(this.label21);
-            this.panel8.Controls.Add(this.comboBox1);
-            this.panel8.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel8.Location = new System.Drawing.Point(995, 118);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(380, 125);
-            this.panel8.TabIndex = 59;
+            this.panel_handle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_handle.Controls.Add(this.label24);
+            this.panel_handle.Controls.Add(this.comboBox4);
+            this.panel_handle.Controls.Add(this.label22);
+            this.panel_handle.Controls.Add(this.comboBox2);
+            this.panel_handle.Controls.Add(this.label21);
+            this.panel_handle.Controls.Add(this.comboBox1);
+            this.panel_handle.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.panel_handle.Location = new System.Drawing.Point(995, 118);
+            this.panel_handle.Name = "panel_handle";
+            this.panel_handle.Size = new System.Drawing.Size(380, 125);
+            this.panel_handle.TabIndex = 59;
             // 
             // label24
             // 
@@ -1017,18 +1062,18 @@
             this.label18.TabIndex = 60;
             this.label18.Text = "Stay Information:";
             // 
-            // panel9
+            // panel_stay
             // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.label23);
-            this.panel9.Controls.Add(this.comboBox3);
-            this.panel9.Controls.Add(this.label25);
-            this.panel9.Controls.Add(this.comboBox5);
-            this.panel9.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel9.Location = new System.Drawing.Point(995, 266);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(380, 125);
-            this.panel9.TabIndex = 61;
+            this.panel_stay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_stay.Controls.Add(this.label23);
+            this.panel_stay.Controls.Add(this.comboBox3);
+            this.panel_stay.Controls.Add(this.label25);
+            this.panel_stay.Controls.Add(this.comboBox5);
+            this.panel_stay.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.panel_stay.Location = new System.Drawing.Point(995, 266);
+            this.panel_stay.Name = "panel_stay";
+            this.panel_stay.Size = new System.Drawing.Size(380, 125);
+            this.panel_stay.TabIndex = 61;
             // 
             // label23
             // 
@@ -1228,6 +1273,10 @@
             this.comboBox6.Size = new System.Drawing.Size(130, 21);
             this.comboBox6.TabIndex = 70;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1235,26 +1284,26 @@
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1458, 730);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel_stay);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel_handle);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel_freehand);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel_extras);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel_information);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel_door_input);
+            this.Controls.Add(this.panel_customer_information);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1262,25 +1311,27 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quote Item";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmItem_FormClosed);
+            this.Shown += new System.EventHandler(this.FrmItem_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            this.panel_door_input.ResumeLayout(false);
+            this.panel_door_input.PerformLayout();
+            this.panel_information.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_panel_info)).EndInit();
-            this.panel6.ResumeLayout(false);
+            this.panel_extras.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_extras)).EndInit();
-            this.panel7.ResumeLayout(false);
+            this.panel_freehand.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_freehand_extras)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.panel_handle.ResumeLayout(false);
+            this.panel_handle.PerformLayout();
+            this.panel_stay.ResumeLayout(false);
+            this.panel_stay.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1289,17 +1340,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_email_project;
+        private System.Windows.Forms.Button btn_lock;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_revision;
         private System.Windows.Forms.Label lbl_item;
         private System.Windows.Forms.Label lbl_quote;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_printscren;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel_customer_information;
+        private System.Windows.Forms.Panel panel_door_input;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
@@ -1322,16 +1373,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmb_lock_type;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel_information;
         private System.Windows.Forms.DataGridView grid_panel_info;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel_extras;
         private System.Windows.Forms.DataGridView grid_extras;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel_freehand;
         private System.Windows.Forms.DataGridView grid_freehand_extras;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel_handle;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label22;
@@ -1339,7 +1390,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel_stay;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label25;
@@ -1367,5 +1418,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn extra_qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn extras_description;
         private System.Windows.Forms.DataGridViewTextBoxColumn extra_line_total;
+        private System.Windows.Forms.Button btn_dimensions;
+        private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
