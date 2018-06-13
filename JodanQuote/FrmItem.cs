@@ -24,7 +24,7 @@ namespace JodanQuote
         public FrmItem()
         {
             InitializeComponent();
-           
+          
         }
 
         private void FrmItem_Shown(object sender, EventArgs e)
@@ -37,7 +37,8 @@ namespace JodanQuote
 
         void Fill_data()
         {
-
+            this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
+      
             lbl_quote.Text =  Valuesclass.project_id.ToString();
             lbl_item.Text =  Valuesclass.item_id.ToString();
            // lbl_revision.Text = "Revision Number:  " + Valuesclass.revision_number.ToString();
@@ -64,6 +65,12 @@ namespace JodanQuote
             grid_panel_info.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_panel_info.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_panel_info.DefaultCellStyle.BackColor = Color.AliceBlue;
+
+            grid_hardware_on_item.EnableHeadersVisualStyles = false;
+            grid_hardware_on_item.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_hardware_on_item.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_hardware_on_item.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_hardware_on_item.DefaultCellStyle.BackColor = Color.AliceBlue;
 
         }
 
@@ -173,11 +180,18 @@ namespace JodanQuote
 
             if (reader.Read())
             {
-
                 txt_structual_height.Text = reader["structual_op_height"].ToString();
                 txt_structual_width.Text = reader["structual_op_width"].ToString();
-
-
+                txt_frame_width.Text = reader["frame_width"].ToString();
+                txt_frame_height.Text = reader["frame_height"].ToString();
+                //int structual_op_height = reader.GetInt32(reader.GetOrdinal("structual_op_height"));
+                //int structual_op_width = reader.GetInt32(reader.GetOrdinal("frame_width"));
+                //int frame_height = reader.GetInt32(reader.GetOrdinal("frame_height"));
+                //int frame_width = reader.GetInt32(reader.GetOrdinal("frame_width"));
+                //txt_structual_height.Text =reader
+                //txt_structual_width.Text = Convert.ToString(structual_op_width);
+                //txt_frame_height.Text = Convert.ToString(frame_height);
+                //txt_frame_width.Text = Convert.ToString(frame_width);
                 ConnectionClass.Dispose_connection(conn);
 
 
@@ -238,59 +252,72 @@ namespace JodanQuote
 
         private void btn_printscren_Click(object sender, EventArgs e)
         {
+            this.CenterToScreen();
+            int width = this.Width-50;
+            int height = this.Height-50;
+            string path = @"\\designsvr1\apps\Design and Supply CSharp\Source Files\JodanQuote\Temp Folder\Item Printscreen.JPG";
+            Bitmap printscreen = new Bitmap(width, height);
 
-            locked_identifiter = 1;
-            lock_controls();
-            
+            Graphics graphics = Graphics.FromImage(printscreen as Image);
+
+            graphics.CopyFromScreen(227, 150, 0, 0, printscreen.Size);
+
+            printscreen.Save(path, ImageFormat.Jpeg);
+
             PrintDocument pd = new PrintDocument();
-            pd.PrintPage += new PrintPageEventHandler(PrintImage);
-            PaperSize ps = new PaperSize();
-            ps.RawKind = (int)PaperKind.A4;
-            pd.DefaultPageSettings.PaperSize = ps;
             pd.DefaultPageSettings.Landscape = true;
             pd.DefaultPageSettings.Color = false;
+            pd.PrintPage += PrintPage;
             pd.Print();
-
-            //printscreen.Save(path, ImageFormat.Jpeg);
-
-            //  PrintDocument pd = new PrintDocument();
-            // pd.DefaultPageSettings.Landscape = true;
-            // pd.DefaultPageSettings.Color = false;
-
-            //  pd.PrintPage += PrintPage;
-            //  pd.Print();
-
-
-            //if (File.Exists(path))
-            //{
-
-            //    File.Delete(path);
-
-            //}
-
         }
-        void PrintImage(object o, PrintPageEventArgs e)
+
+        private void PrintPage(object o, PrintPageEventArgs e)
         {
-            int x = SystemInformation.WorkingArea.X;
-            int y = SystemInformation.WorkingArea.Y;
-            int width = this.Width;
-            int height = this.Height;
-
-            Rectangle bounds = new Rectangle(x, y, width, height);
-
-            Bitmap img = new Bitmap(width, height);
-
-            this.DrawToBitmap(img, bounds);
-            Point p = new Point(-200, -50);
-            e.Graphics.DrawImage(img, p);
+            System.Drawing.Image img = System.Drawing.Image.FromFile(@"\\designsvr1\apps\Design and Supply CSharp\Source Files\JodanQuote\Temp Folder\Item Printscreen.JPG");
+            Point loc = new Point(-210, -140);
+            e.Graphics.DrawImage(img, loc);
         }
-       
+
 
         private void btn_lock_Click(object sender, EventArgs e)
         {
             lock_controls();
 
 
+        }
+
+        private void txt_structual_height_TextChanged(object sender, EventArgs e)
+        {
+           // int value = Convert.ToInt32(txt_structual_height.Text)-10;
+           // txt_frame_height.Text = value.ToString();
+        }
+
+        private void txt_structual_width_TextChanged(object sender, EventArgs e)
+        {
+           // int value = Convert.ToInt32(txt_structual_width.Text)-6;
+           // txt_frame_width.Text = value.ToString();
+        }
+
+        private void btn_add_hardware_Click(object sender, EventArgs e)
+        {
+            FrmHardwareSelect select = new FrmHardwareSelect();
+            select.Show();
+        }
+
+       
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand update_quotation_item = new SqlCommand(Statementsclass.update_quotation_item, conn);
+            update_quotation_item.Parameters.AddWithValue("@structure_width", txt_structual_width.Text);
+            update_quotation_item.Parameters.AddWithValue("@structure_height", txt_structual_height.Text);
+            update_quotation_item.Parameters.AddWithValue("@frame_height", txt_frame_height.Text);
+            update_quotation_item.Parameters.AddWithValue("@frame_width", txt_frame_width.Text);
+            update_quotation_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            update_quotation_item.Parameters.AddWithValue("@item_id", lbl_item.Text);
+            update_quotation_item.ExecuteNonQuery();
+            ConnectionClass.Dispose_connection(conn);
         }
     }
 }

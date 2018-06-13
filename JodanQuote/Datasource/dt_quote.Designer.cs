@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace JodanQuote.Other {
+namespace JodanQuote.Datasource {
     
     
     /// <summary>
@@ -851,7 +851,7 @@ namespace JodanQuote.Other {
         }
     }
 }
-namespace JodanQuote.Other.dt_quoteTableAdapters {
+namespace JodanQuote.Datasource.dt_quoteTableAdapters {
     
     
     /// <summary>

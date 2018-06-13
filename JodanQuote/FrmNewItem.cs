@@ -230,13 +230,14 @@ namespace JodanQuote
 
 
             this.CenterToScreen();
-
+            int width = this.Width - 50;
+            int height = this.Height - 50;
             string path = @"\\designsvr1\apps\Design and Supply CSharp\Source Files\JodanQuote\Temp Folder\Item Printscreen.JPG";
-            Bitmap printscreen = new Bitmap(1425, 750);
+            Bitmap printscreen = new Bitmap(width, height);
 
             Graphics graphics = Graphics.FromImage(printscreen as Image);
 
-            graphics.CopyFromScreen(225, 150, 0, 0, printscreen.Size);
+            graphics.CopyFromScreen(227, 150, 0, 0, printscreen.Size);
 
             printscreen.Save(path, ImageFormat.Jpeg);
 
@@ -245,24 +246,44 @@ namespace JodanQuote
             pd.DefaultPageSettings.Color = false;
             pd.PrintPage += PrintPage;
             pd.Print();
-            if (File.Exists(path))
-            {
-
-                File.Delete(path);
-              
-            }
-
         }
 
         private void PrintPage(object o, PrintPageEventArgs e)
         {
             System.Drawing.Image img = System.Drawing.Image.FromFile(@"\\designsvr1\apps\Design and Supply CSharp\Source Files\JodanQuote\Temp Folder\Item Printscreen.JPG");
-            Point loc = new Point(100, 100);
+            Point loc = new Point(-210, -140);
             e.Graphics.DrawImage(img, loc);
         }
 
         private void btn_lock_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_add_hardware_Click(object sender, EventArgs e)
+        {
+            FrmHardwareSelect select = new FrmHardwareSelect();
+            select.Show();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand update_quotation_item = new SqlCommand(Statementsclass.update_quotation_item, conn);
+            update_quotation_item.Parameters.AddWithValue("@structure_width", txt_structual_width.Text);
+            update_quotation_item.Parameters.AddWithValue("@structure_height", txt_structual_height.Text);
+            update_quotation_item.Parameters.AddWithValue("@frame_height", txt_frame_height.Text);
+            update_quotation_item.Parameters.AddWithValue("@frame_width", txt_frame_width.Text);
+            update_quotation_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            update_quotation_item.Parameters.AddWithValue("@item_id", lbl_item.Text);
+            update_quotation_item.ExecuteNonQuery();
+            ConnectionClass.Dispose_connection(conn);
+        }
+
+        private void FrmNewitem_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dt_Hardware_Item.DT_Hardware_Item' table. You can move, or remove it, as needed.
+            this.ada_Hardware_Item.Fill(this.dt_Hardware_Item.DT_Hardware_Item);
 
         }
     }

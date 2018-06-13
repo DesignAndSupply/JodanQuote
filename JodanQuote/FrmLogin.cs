@@ -71,9 +71,17 @@ namespace JodanQuote
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmMain form = new FrmMain();
-            form.Show();
+            //FrmMain form = new FrmMain();
+            // form.Show();
+            FrmHardwareSelect select = new FrmHardwareSelect();
+            select.Show();
             this.Hide();
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+            this.ActiveControl = txtPassword;
         }
     }
 }

@@ -28,6 +28,8 @@ namespace JodanQuote
             SqlCommand update_dimensions = new SqlCommand(Statementsclass.update_dimensions, conn);
             update_dimensions.Parameters.AddWithValue("@height", txt_structual_height.Text);
             update_dimensions.Parameters.AddWithValue("@width", txt_structual_width.Text);
+            update_dimensions.Parameters.AddWithValue("@frame_height", (Convert.ToInt32(txt_structual_height.Text) - 10));
+            update_dimensions.Parameters.AddWithValue("@frame_width", (Convert.ToInt32(txt_structual_width.Text) - 6));
             update_dimensions.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
             update_dimensions.Parameters.AddWithValue("@item_id",Valuesclass.item_id);
             update_dimensions.ExecuteNonQuery();

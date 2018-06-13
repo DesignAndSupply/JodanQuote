@@ -48,6 +48,7 @@ namespace JodanQuote
             grid_quote_list.DataSource = dt_quote;
             ConnectionClass.Dispose_connection(conn);
         }
+
         void Search()
         {
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
@@ -100,8 +101,6 @@ namespace JodanQuote
 
 
         }
-
-
 
         private void grid_quote_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

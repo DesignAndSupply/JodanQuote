@@ -71,12 +71,13 @@
             this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btn_clear.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_clear.Location = new System.Drawing.Point(512, 230);
+            this.btn_clear.Location = new System.Drawing.Point(512, 233);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(75, 23);
             this.btn_clear.TabIndex = 19;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_login
             // 

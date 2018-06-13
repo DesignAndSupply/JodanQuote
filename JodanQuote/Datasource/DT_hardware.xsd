@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DT_hardware" targetNamespace="http://tempuri.org/DT_hardware.xsd" xmlns:mstns="http://tempuri.org/DT_hardware.xsd" xmlns="http://tempuri.org/DT_hardware.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=DESIGNSVR3\SQLEXPRESS;Initial Catalog=Jodan_quote;Persist Security Info=True;User ID=sa;Password=Dodid1" IsAppSettingsProperty="false" Modifier="Public" Name="designsvr3\sqlexpress.Jodan_quote.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_hardwareTableAdapter" GeneratorDataComponentClassName="c_view_hardwareTableAdapter" Name="c_view_hardware" UserDataComponentName="c_view_hardwareTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        LEFT(Description, 20) AS Description, Cost
+FROM            c_view_hardware</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Cost" DataSetColumn="Cost" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DT_hardware" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_hardware" msprop:Generator_UserDSName="DT_hardware">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="c_view_hardware" msprop:Generator_TableClassName="c_view_hardwareDataTable" msprop:Generator_TableVarName="tablec_view_hardware" msprop:Generator_RowChangedName="c_view_hardwareRowChanged" msprop:Generator_TablePropName="c_view_hardware" msprop:Generator_RowDeletingName="c_view_hardwareRowDeleting" msprop:Generator_RowChangingName="c_view_hardwareRowChanging" msprop:Generator_RowEvHandlerName="c_view_hardwareRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_hardwareRowDeleted" msprop:Generator_RowClassName="c_view_hardwareRow" msprop:Generator_UserTableName="c_view_hardware" msprop:Generator_RowEvArgName="c_view_hardwareRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cost" msprop:Generator_ColumnVarNameInTable="columnCost" msprop:Generator_ColumnPropNameInRow="Cost" msprop:Generator_ColumnPropNameInTable="CostColumn" msprop:Generator_UserColumnName="Cost" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

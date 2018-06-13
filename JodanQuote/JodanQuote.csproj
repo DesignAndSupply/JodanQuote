@@ -1,17 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4010ED1-4F41-433F-BDBA-C34386335C9F}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>JodanQuote</RootNamespace>
-    <AssemblyName>JodanQuote</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
     <PublishUrl>\\designsvr1\apps\Design and Supply CSharp\Jodan\Quote System\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
@@ -24,12 +14,31 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4010ED1-4F41-433F-BDBA-C34386335C9F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>JodanQuote</RootNamespace>
+    <AssemblyName>JodanQuote</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -102,11 +111,35 @@
     <Compile Include="Class\Statements.cs" />
     <Compile Include="Class\UserInformation.cs" />
     <Compile Include="Class\Values.cs" />
+    <Compile Include="Datasource\DT_customer.cs">
+      <DependentUpon>DT_customer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_customer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_customer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_hardware.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_hardware.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Dt_Hardware_Item.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dt_Hardware_Item.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmDimensions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDimensions.Designer.cs">
       <DependentUpon>FrmDimensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHardwareSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHardwareSelect.Designer.cs">
+      <DependentUpon>FrmHardwareSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNewItem.cs">
       <SubType>Form</SubType>
@@ -120,10 +153,10 @@
     <Compile Include="FrmMailQuote.Designer.cs">
       <DependentUpon>FrmMailQuote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Other\dt_quote.cs">
+    <Compile Include="Datasource\dt_quote.cs">
       <DependentUpon>dt_quote.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Other\dt_quote.Designer.cs">
+    <Compile Include="Datasource\dt_quote.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dt_quote.xsd</DependentUpon>
@@ -181,6 +214,9 @@
     <EmbeddedResource Include="FrmDimensions.resx">
       <DependentUpon>FrmDimensions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHardwareSelect.resx">
+      <DependentUpon>FrmHardwareSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNewItem.resx">
       <DependentUpon>FrmNewItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,15 +253,49 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Other\dt_quote.xsc">
+    <None Include="app.config" />
+    <None Include="Datasource\DT_customer.xsc">
+      <DependentUpon>DT_customer.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_customer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_customer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_customer.xss">
+      <DependentUpon>DT_customer.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_hardware.xsc">
+      <DependentUpon>DT_hardware.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_hardware.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_hardware.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_hardware.xss">
+      <DependentUpon>DT_hardware.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\Dt_Hardware_Item.xsc">
+      <DependentUpon>Dt_Hardware_Item.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\Dt_Hardware_Item.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dt_Hardware_Item.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\Dt_Hardware_Item.xss">
+      <DependentUpon>Dt_Hardware_Item.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\dt_quote.xsc">
       <DependentUpon>dt_quote.xsd</DependentUpon>
     </None>
-    <None Include="Other\dt_quote.xsd">
+    <None Include="Datasource\dt_quote.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dt_quote.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Other\dt_quote.xss">
+    <None Include="Datasource\dt_quote.xss">
       <DependentUpon>dt_quote.xsd</DependentUpon>
     </None>
     <None Include="Other\JodanQuote_TemporaryKey.pfx" />
@@ -305,5 +375,25 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
 </Project>

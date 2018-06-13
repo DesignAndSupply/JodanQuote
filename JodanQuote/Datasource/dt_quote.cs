@@ -1,7 +1,7 @@
 ﻿namespace JodanQuote.Other
 {
 }
-namespace JodanQuote.Other
+namespace JodanQuote.Datasource
 {
 
 

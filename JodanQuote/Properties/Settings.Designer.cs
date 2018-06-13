@@ -22,5 +22,16 @@ namespace JodanQuote.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=dsl_fitting;Persist Security In" +
+            "fo=True;User ID=sa;Password=Dodid1")]
+        public string dsl_fittingConnectionString {
+            get {
+                return ((string)(this["dsl_fittingConnectionString"]));
+            }
+        }
     }
 }
