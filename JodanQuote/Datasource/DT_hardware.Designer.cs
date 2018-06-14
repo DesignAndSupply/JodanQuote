@@ -283,6 +283,8 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnCost;
             
+            private global::System.Data.DataColumn columnid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public c_view_hardwareDataTable() {
@@ -334,6 +336,14 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -373,10 +383,18 @@ namespace JodanQuote.Datasource {
                 c_view_hardwareRow rowc_view_hardwareRow = ((c_view_hardwareRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Description,
-                        Cost};
+                        Cost,
+                        null};
                 rowc_view_hardwareRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowc_view_hardwareRow);
                 return rowc_view_hardwareRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public c_view_hardwareRow FindByid(int id) {
+                return ((c_view_hardwareRow)(this.Rows.Find(new object[] {
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -398,6 +416,7 @@ namespace JodanQuote.Datasource {
             internal void InitVars() {
                 this.columnDescription = base.Columns["Description"];
                 this.columnCost = base.Columns["Cost"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -407,7 +426,17 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnDescription);
                 this.columnCost = new global::System.Data.DataColumn("Cost", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCost);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
                 this.columnDescription.MaxLength = 100;
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -577,6 +606,17 @@ namespace JodanQuote.Datasource {
                 }
                 set {
                     this[this.tablec_view_hardware.CostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablec_view_hardware.idColumn]));
+                }
+                set {
+                    this[this.tablec_view_hardware.idColumn] = value;
                 }
             }
             
@@ -766,6 +806,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             tableMapping.DataSetTable = "c_view_hardware";
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Cost", "Cost");
+            tableMapping.ColumnMappings.Add("id", "id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -783,8 +824,8 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        LEFT(Description, 20) AS Description, Cost\r\nFROM            c_view_" +
-                "hardware";
+            this._commandCollection[0].CommandText = "SELECT        id, LEFT(Description, 20) AS Description, Cost\r\nFROM            c_v" +
+                "iew_hardware";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

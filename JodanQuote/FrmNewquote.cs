@@ -33,7 +33,7 @@ namespace JodanQuote
             lbl_username.Text = Login.globalFullName.ToString();
             txt_customer.Text = Valuesclass.customer_account_ref.ToString();
             txt_customer.TextAlign = HorizontalAlignment.Center;
-            lbl_quote_id.Text = "Quote ID:  " + Valuesclass.quote_id.ToString();
+            txt_quote.Text = Valuesclass.project_id.ToString();
             main_tab_project_additions.Appearance = TabAppearance.FlatButtons;
             main_tab_project_additions.ItemSize = new Size(0, 1);
             main_tab_project_additions.SizeMode = TabSizeMode.Fixed;
@@ -70,22 +70,27 @@ namespace JodanQuote
             if (string.IsNullOrWhiteSpace(check_item.ToString()))
             {
                 Valuesclass.max_item_id = 1;
-
+                Valuesclass.item_id = Valuesclass.max_item_id;
 
             }
             else
             {
                 Valuesclass.max_item_id = Convert.ToInt32(check_item) + 1;
-
+                Valuesclass.item_id = Valuesclass.max_item_id;
             }
 
             SqlCommand insert_new_project_quote = new SqlCommand(Statementsclass.insert_new_project_quote, conn);
             insert_new_project_quote.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
             insert_new_project_quote.Parameters.AddWithValue("@item_id", Valuesclass.max_item_id);
-            insert_new_project_quote.Parameters.AddWithValue("@quote_date", DateTime.Now);
+            insert_new_project_quote.Parameters.AddWithValue("@item_date", DateTime.Now);
+            insert_new_project_quote.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName);
             insert_new_project_quote.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
             Fill_data();
+           
+
+            FrmNewitem item = new FrmNewitem();
+            item.Show();
         }
 
         private void btn_quote_details_Click(object sender, EventArgs e)
@@ -115,6 +120,8 @@ namespace JodanQuote
             DialogResult confirm = MessageBox.Show("Add New Item To This Quotation", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
+                btn_save.PerformClick();
+
                 Insert_item();
                    
             }
@@ -133,8 +140,8 @@ namespace JodanQuote
 
                     int i = e.RowIndex;
                     Valuesclass.item_id = Convert.ToInt32(dt_quote.Rows[i]["Item ID"].ToString());
-                    Valuesclass.revision_number = Convert.ToInt32(dt_quote.Rows[i]["Number Of Revisions"].ToString());
-                    FrmItem item = new FrmItem();
+                    //Valuesclass.revision_number = Convert.ToInt32(dt_quote.Rows[i]["Number Of Revisions"].ToString());
+                    FrmNewitem item = new FrmNewitem();
                     item.Show();
 
 
@@ -146,9 +153,9 @@ namespace JodanQuote
 
 
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.ToString(), "");
             }
           
         }

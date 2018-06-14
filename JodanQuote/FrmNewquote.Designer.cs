@@ -71,6 +71,7 @@
             this.btn_view = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.pct_logo = new System.Windows.Forms.PictureBox();
+            this.txt_quote = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.main_tab_project_additions.SuspendLayout();
@@ -86,6 +87,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.txt_quote);
             this.panel1.Controls.Add(this.btn_print_project);
             this.panel1.Controls.Add(this.txt_customer);
             this.panel1.Controls.Add(this.lbl_customer);
@@ -121,12 +123,12 @@
             this.txt_customer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_customer.BackColor = System.Drawing.Color.CornflowerBlue;
             this.txt_customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_customer.Location = new System.Drawing.Point(337, 66);
+            this.txt_customer.Location = new System.Drawing.Point(378, 60);
             this.txt_customer.MaxLength = 15;
             this.txt_customer.Name = "txt_customer";
-            this.txt_customer.Size = new System.Drawing.Size(192, 20);
+            this.txt_customer.Size = new System.Drawing.Size(192, 22);
             this.txt_customer.TabIndex = 46;
             this.txt_customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -135,7 +137,7 @@
             this.lbl_customer.AutoSize = true;
             this.lbl_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_customer.Location = new System.Drawing.Point(197, 63);
+            this.lbl_customer.Location = new System.Drawing.Point(247, 57);
             this.lbl_customer.Name = "lbl_customer";
             this.lbl_customer.Size = new System.Drawing.Size(134, 24);
             this.lbl_customer.TabIndex = 47;
@@ -146,11 +148,11 @@
             this.lbl_quote_id.AutoSize = true;
             this.lbl_quote_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_quote_id.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_quote_id.Location = new System.Drawing.Point(228, 27);
+            this.lbl_quote_id.Location = new System.Drawing.Point(228, 21);
             this.lbl_quote_id.Name = "lbl_quote_id";
-            this.lbl_quote_id.Size = new System.Drawing.Size(102, 25);
+            this.lbl_quote_id.Size = new System.Drawing.Size(157, 25);
             this.lbl_quote_id.TabIndex = 45;
-            this.lbl_quote_id.Text = "Quote ID:";
+            this.lbl_quote_id.Text = "Quote Number:";
             // 
             // btn_email_project
             // 
@@ -511,6 +513,9 @@
             // grid_item_on_quote
             // 
             this.grid_item_on_quote.AllowUserToAddRows = false;
+            this.grid_item_on_quote.AllowUserToDeleteRows = false;
+            this.grid_item_on_quote.AllowUserToResizeColumns = false;
+            this.grid_item_on_quote.AllowUserToResizeRows = false;
             this.grid_item_on_quote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -538,9 +543,9 @@
             this.grid_item_on_quote.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_item_on_quote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_item_on_quote.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_item_on_quote.Location = new System.Drawing.Point(76, 36);
+            this.grid_item_on_quote.Location = new System.Drawing.Point(62, 29);
             this.grid_item_on_quote.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grid_item_on_quote.MaximumSize = new System.Drawing.Size(655, 323);
+            this.grid_item_on_quote.MaximumSize = new System.Drawing.Size(505, 323);
             this.grid_item_on_quote.MinimumSize = new System.Drawing.Size(505, 323);
             this.grid_item_on_quote.Name = "grid_item_on_quote";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -593,6 +598,20 @@
             this.pct_logo.Size = new System.Drawing.Size(151, 86);
             this.pct_logo.TabIndex = 18;
             this.pct_logo.TabStop = false;
+            // 
+            // txt_quote
+            // 
+            this.txt_quote.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_quote.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_quote.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_quote.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_quote.ForeColor = System.Drawing.Color.AliceBlue;
+            this.txt_quote.Location = new System.Drawing.Point(391, 25);
+            this.txt_quote.MaxLength = 15;
+            this.txt_quote.Name = "txt_quote";
+            this.txt_quote.Size = new System.Drawing.Size(192, 22);
+            this.txt_quote.TabIndex = 49;
+            this.txt_quote.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrmNewquote
             // 
@@ -673,5 +692,6 @@
         private System.Windows.Forms.Label lbl_customer;
         private System.Windows.Forms.Label lbl_quote_id;
         private System.Windows.Forms.Button btn_print_project;
+        private System.Windows.Forms.TextBox txt_quote;
     }
 }

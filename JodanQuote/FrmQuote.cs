@@ -81,7 +81,7 @@ namespace JodanQuote
             grid_items_on_quote.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             btn_view.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             btn_delete_item.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
-            lbl_quote_id.Text = "Project ID: " + Valuesclass.project_id.ToString();
+            txt_project.Text = Valuesclass.project_id.ToString();
             txt_customer.Text = Valuesclass.customer_account_ref;
              
             grid_items_on_quote.Columns["Item Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -93,6 +93,7 @@ namespace JodanQuote
             DialogResult confirm = MessageBox.Show("Add New Item To This Quotation?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
+                //btn_save.PerformClick();
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlCommand select_max_item_id = new SqlCommand(Statementsclass.select_max_item_id, conn);
                 select_max_item_id.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
@@ -113,6 +114,7 @@ namespace JodanQuote
                 insert_new_project_quote.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
                 insert_new_project_quote.Parameters.AddWithValue("@item_id", Valuesclass.max_item_id);
                 insert_new_project_quote.Parameters.AddWithValue("@item_date", DateTime.Now);
+                insert_new_project_quote.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName);
                 insert_new_project_quote.ExecuteNonQuery();
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();

@@ -71,10 +71,11 @@ namespace JodanQuote
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //FrmMain form = new FrmMain();
-            // form.Show();
-            FrmHardwareSelect select = new FrmHardwareSelect();
-            select.Show();
+            txtUsername.Text = "Ryan";
+            txtPassword.Text = "password";
+            btn_login.PerformClick();
+           // FrmHardwareSelect select = new FrmHardwareSelect();
+            //select.Show();
             this.Hide();
         }
 

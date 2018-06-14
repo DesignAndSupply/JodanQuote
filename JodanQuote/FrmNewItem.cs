@@ -37,10 +37,10 @@ namespace JodanQuote
         void Fill_data()
         {
 
-            lbl_quote.Text =  Valuesclass.project_id.ToString();
-            lbl_item.Text =  Valuesclass.max_item_id.ToString();
-           // lbl_revision.Text = "Revision Number:  " + Valuesclass.revision_number.ToString();
-
+            txt_project.Text =  Valuesclass.project_id.ToString();
+            txt_item.Text =  Valuesclass.max_item_id.ToString();
+            this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
+            this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.project_id, Valuesclass.item_id);
         }
 
         void Format()
@@ -64,6 +64,13 @@ namespace JodanQuote
             grid_panel_info.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_panel_info.DefaultCellStyle.BackColor = Color.AliceBlue;
 
+
+            grid_hardware_on_item.EnableHeadersVisualStyles = false;
+            grid_hardware_on_item.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_hardware_on_item.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_hardware_on_item.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_hardware_on_item.DefaultCellStyle.BackColor = Color.AliceBlue;
+
         }
 
         void Select_data()
@@ -71,7 +78,7 @@ namespace JodanQuote
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlCommand select_quote_details = new SqlCommand(Statementsclass.select_item_details, conn);
             select_quote_details.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            select_quote_details.Parameters.AddWithValue("@item_id", Convert.ToInt32(lbl_item.Text.ToString()));
+            select_quote_details.Parameters.AddWithValue("@item_id", Convert.ToInt32(txt_item.Text.ToString()));
             SqlDataReader reader = select_quote_details.ExecuteReader();
 
             if (reader.Read())
@@ -216,7 +223,7 @@ namespace JodanQuote
             FrmDimensions dimensions = new FrmDimensions();
             dimensions.Show();
             this.Hide();
-            Valuesclass.item_id = Convert.ToInt32(lbl_item.Text.ToString());
+            Valuesclass.item_id = Convert.ToInt32(txt_item.Text.ToString());
             Valuesclass.new_item_identifier = 1;
         }
 
@@ -257,11 +264,12 @@ namespace JodanQuote
 
         private void btn_lock_Click(object sender, EventArgs e)
         {
-
+            lock_controls();
         }
 
         private void btn_add_hardware_Click(object sender, EventArgs e)
         {
+            Valuesclass.new_item_identifier = 1;
             FrmHardwareSelect select = new FrmHardwareSelect();
             select.Show();
         }
@@ -275,16 +283,28 @@ namespace JodanQuote
             update_quotation_item.Parameters.AddWithValue("@frame_height", txt_frame_height.Text);
             update_quotation_item.Parameters.AddWithValue("@frame_width", txt_frame_width.Text);
             update_quotation_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            update_quotation_item.Parameters.AddWithValue("@item_id", lbl_item.Text);
+            update_quotation_item.Parameters.AddWithValue("@item_id", txt_item.Text);
             update_quotation_item.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
         }
 
-        private void FrmNewitem_Load(object sender, EventArgs e)
+        private void grid_hardware_on_item_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // TODO: This line of code loads data into the 'dt_Hardware_Item.DT_Hardware_Item' table. You can move, or remove it, as needed.
-            this.ada_Hardware_Item.Fill(this.dt_Hardware_Item.DT_Hardware_Item);
 
+            if (e.ColumnIndex == grid_hardware_on_item.Columns["btn_delete"].Index && e.RowIndex >= 0)
+            {
+                int i = e.RowIndex;
+                int ID = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["ID"].Value);
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand delete_item_hardware = new SqlCommand(Statementsclass.delete_item_hardware, conn);
+             
+                delete_item_hardware.Parameters.AddWithValue("@ID", ID);
+
+                delete_item_hardware.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn);
+                Fill_data();
+
+            }
         }
     }
 

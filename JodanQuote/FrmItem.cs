@@ -38,9 +38,9 @@ namespace JodanQuote
         void Fill_data()
         {
             this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
-      
-            lbl_quote.Text =  Valuesclass.project_id.ToString();
-            lbl_item.Text =  Valuesclass.item_id.ToString();
+            this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.project_id, Valuesclass.item_id);
+            txt_project.Text =  Valuesclass.project_id.ToString();
+            txt_item.Text =  Valuesclass.item_id.ToString();
            // lbl_revision.Text = "Revision Number:  " + Valuesclass.revision_number.ToString();
 
         }
@@ -120,6 +120,8 @@ namespace JodanQuote
                 btn_lock.Text = "     Unlock";
                 btn_lock.Image = JodanQuote.Properties.Resources.unlock;
                 btn_dimensions.Enabled = false;
+                txt_item.Enabled = true;
+                txt_project.Enabled = true;
             }
             else 
             {
@@ -175,7 +177,7 @@ namespace JodanQuote
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlCommand select_quote_details = new SqlCommand(Statementsclass.select_item_details, conn);
             select_quote_details.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            select_quote_details.Parameters.AddWithValue("@item_id", Convert.ToInt32(lbl_item.Text.ToString()));
+            select_quote_details.Parameters.AddWithValue("@item_id", Convert.ToInt32(txt_item.Text.ToString()));
             SqlDataReader reader = select_quote_details.ExecuteReader();
 
             if (reader.Read())
@@ -239,7 +241,7 @@ namespace JodanQuote
             FrmDimensions dimensions = new FrmDimensions();
             dimensions.Show();
             this.Hide();
-            Valuesclass.item_id = Convert.ToInt32(lbl_item.Text.ToString());
+            Valuesclass.item_id = Convert.ToInt32(txt_item.Text.ToString());
             Valuesclass.new_item_identifier = 0;
         }
 
@@ -300,6 +302,7 @@ namespace JodanQuote
 
         private void btn_add_hardware_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmHardwareSelect select = new FrmHardwareSelect();
             select.Show();
         }
@@ -315,9 +318,27 @@ namespace JodanQuote
             update_quotation_item.Parameters.AddWithValue("@frame_height", txt_frame_height.Text);
             update_quotation_item.Parameters.AddWithValue("@frame_width", txt_frame_width.Text);
             update_quotation_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            update_quotation_item.Parameters.AddWithValue("@item_id", lbl_item.Text);
+            update_quotation_item.Parameters.AddWithValue("@item_id", txt_item.Text);
             update_quotation_item.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
+        }
+
+       
+        private void grid_hardware_on_item_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == grid_hardware_on_item.Columns["btn_delete"].Index && e.RowIndex >= 0)
+            {
+                int i = e.RowIndex;
+                int ID = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["ID"].Value);
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand delete_item_hardware = new SqlCommand(Statementsclass.delete_item_hardware, conn);
+                delete_item_hardware.Parameters.AddWithValue("@ID", ID);
+
+                delete_item_hardware.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn);
+                Fill_data();
+
+            }
         }
     }
 }

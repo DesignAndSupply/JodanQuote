@@ -45,6 +45,7 @@
             this.btn_view = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_delete_item = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txt_project = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.txt_customer = new System.Windows.Forms.TextBox();
             this.lbl_customer = new System.Windows.Forms.Label();
@@ -165,6 +166,9 @@
             // grid_items_on_quote
             // 
             this.grid_items_on_quote.AllowUserToAddRows = false;
+            this.grid_items_on_quote.AllowUserToDeleteRows = false;
+            this.grid_items_on_quote.AllowUserToResizeColumns = false;
+            this.grid_items_on_quote.AllowUserToResizeRows = false;
             this.grid_items_on_quote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -245,6 +249,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel5.Controls.Add(this.txt_project);
             this.panel5.Controls.Add(this.btn_save);
             this.panel5.Controls.Add(this.txt_customer);
             this.panel5.Controls.Add(this.lbl_customer);
@@ -254,10 +259,23 @@
             this.panel5.Controls.Add(this.btn_new_item);
             this.panel5.Controls.Add(this.btn_print_project);
             this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Location = new System.Drawing.Point(-6, -1);
+            this.panel5.Location = new System.Drawing.Point(-1, -1);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1927, 100);
             this.panel5.TabIndex = 48;
+            // 
+            // txt_project
+            // 
+            this.txt_project.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_project.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_project.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_project.ForeColor = System.Drawing.Color.AliceBlue;
+            this.txt_project.Location = new System.Drawing.Point(372, 22);
+            this.txt_project.MaxLength = 15;
+            this.txt_project.Name = "txt_project";
+            this.txt_project.Size = new System.Drawing.Size(192, 22);
+            this.txt_project.TabIndex = 46;
             // 
             // btn_save
             // 
@@ -280,21 +298,20 @@
             this.txt_customer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_customer.BackColor = System.Drawing.Color.CornflowerBlue;
             this.txt_customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_customer.Location = new System.Drawing.Point(316, 59);
+            this.txt_customer.Location = new System.Drawing.Point(373, 53);
             this.txt_customer.MaxLength = 15;
             this.txt_customer.Name = "txt_customer";
-            this.txt_customer.Size = new System.Drawing.Size(192, 20);
+            this.txt_customer.Size = new System.Drawing.Size(192, 22);
             this.txt_customer.TabIndex = 43;
-            this.txt_customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_customer
             // 
             this.lbl_customer.AutoSize = true;
             this.lbl_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_customer.Location = new System.Drawing.Point(176, 56);
+            this.lbl_customer.Location = new System.Drawing.Point(229, 56);
             this.lbl_customer.Name = "lbl_customer";
             this.lbl_customer.Size = new System.Drawing.Size(134, 24);
             this.lbl_customer.TabIndex = 44;
@@ -324,9 +341,9 @@
             this.lbl_quote_id.ForeColor = System.Drawing.Color.AliceBlue;
             this.lbl_quote_id.Location = new System.Drawing.Point(207, 20);
             this.lbl_quote_id.Name = "lbl_quote_id";
-            this.lbl_quote_id.Size = new System.Drawing.Size(102, 25);
+            this.lbl_quote_id.Size = new System.Drawing.Size(157, 25);
             this.lbl_quote_id.TabIndex = 42;
-            this.lbl_quote_id.Text = "Quote ID:";
+            this.lbl_quote_id.Text = "Quote Number:";
             // 
             // btn_back
             // 
@@ -727,8 +744,9 @@
         private System.Windows.Forms.TabPage tab_notes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.DataGridViewButtonColumn btn_view;
         private System.Windows.Forms.DataGridViewImageColumn btn_delete_item;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.TextBox txt_project;
     }
 }
