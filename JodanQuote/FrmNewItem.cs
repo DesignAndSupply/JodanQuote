@@ -269,6 +269,7 @@ namespace JodanQuote
 
         private void btn_add_hardware_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Valuesclass.new_item_identifier = 1;
             FrmHardwareSelect select = new FrmHardwareSelect();
             select.Show();

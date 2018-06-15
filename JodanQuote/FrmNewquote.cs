@@ -19,7 +19,6 @@ namespace JodanQuote
     {
         DataTable dt_quote = new DataTable();
 
-
         public FrmNewquote()
         {
             InitializeComponent();
@@ -28,7 +27,7 @@ namespace JodanQuote
             Format();
         }
 
-       void Format()
+        void Format()
        {
             lbl_username.Text = Login.globalFullName.ToString();
             txt_customer.Text = Valuesclass.customer_account_ref.ToString();
@@ -45,6 +44,7 @@ namespace JodanQuote
             grid_item_on_quote.EnableHeadersVisualStyles = false;
             btn_view.DisplayIndex = grid_item_on_quote.ColumnCount - 1;
         }
+
         void Fill_data()
         {
 
@@ -58,6 +58,7 @@ namespace JodanQuote
             grid_item_on_quote.DataSource = dt_quote;
       
         }
+
         void Insert_item()
         {
            
@@ -89,7 +90,7 @@ namespace JodanQuote
             Fill_data();
            
 
-            FrmNewitem item = new FrmNewitem();
+            FrmItem item = new FrmItem();
             item.Show();
         }
 
@@ -123,7 +124,9 @@ namespace JodanQuote
                 btn_save.PerformClick();
 
                 Insert_item();
-                   
+                this.Hide();
+              
+               
             }
             else
             {

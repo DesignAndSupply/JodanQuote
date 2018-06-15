@@ -25,6 +25,18 @@ namespace JodanQuote
             Format();
            
         }
+        void Set_Value()
+        {
+
+            for (int i = 0; i < grid_hardware.Rows.Count; i++)
+            {
+
+                grid_hardware.Rows[i].Cells["hardware_quantity"].Value = 1;
+                grid_hardware.Rows[i].Cells["hardware_total"].Value = 0;
+
+            }
+
+        }
 
         void Fill_data()
         {
@@ -65,13 +77,7 @@ namespace JodanQuote
 
         private void FrmHardwareSelect_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < grid_hardware.Rows.Count; i++)
-            {
-
-
-                grid_hardware.Rows[i].Cells["hardware_quantity"].Value = 1;
-                grid_hardware.Rows[i].Cells["hardware_total"].Value = 0;
-            }
+            Set_Value();
         }
 
         private void grid_hardware_CellLeave(object sender, DataGridViewCellEventArgs e)
@@ -141,8 +147,8 @@ namespace JodanQuote
 
 
                 }
-               
-               
+
+                Set_Value();
 
 
             }
@@ -186,7 +192,7 @@ namespace JodanQuote
 
 
                 }
-
+                Set_Value();
             }
         }
 
@@ -264,7 +270,7 @@ namespace JodanQuote
 
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
-                insert_hardware.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+                insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
                 insert_hardware.Parameters.AddWithValue("@hardware_id", hardware_id);
                 insert_hardware.Parameters.AddWithValue("@hardware_description", hardware_description);
                 insert_hardware.Parameters.AddWithValue("@hardware_cost", hardware_cost);
@@ -278,7 +284,7 @@ namespace JodanQuote
 
 
             }
-            MessageBox.Show(grid_hardware_selected.RowCount + " Hardware items added", "  Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(grid_hardware_selected.RowCount + " Hardware Item(s) Added", "  Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if(Valuesclass.new_item_identifier==1)
             {
                 this.Hide();

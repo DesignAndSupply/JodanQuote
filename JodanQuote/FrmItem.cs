@@ -24,7 +24,7 @@ namespace JodanQuote
         public FrmItem()
         {
             InitializeComponent();
-          
+            lock_controls();
         }
 
         private void FrmItem_Shown(object sender, EventArgs e)
@@ -32,16 +32,19 @@ namespace JodanQuote
             Fill_data();
             Select_item_data();
             Format();
-            lock_controls();
+     
         }
 
         void Fill_data()
         {
+            this.dt_Hardware_Item.DT_Hardware_Item.Clear();
+            dt_Hardware_Item.EnforceConstraints = false;
+            this.ada_finish.Fill(this.dT_finish.dt_finish);
             this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
             this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.project_id, Valuesclass.item_id);
-            txt_project.Text =  Valuesclass.project_id.ToString();
-            txt_item.Text =  Valuesclass.item_id.ToString();
-           // lbl_revision.Text = "Revision Number:  " + Valuesclass.revision_number.ToString();
+            txt_project.Text = Valuesclass.project_id.ToString();
+            txt_item.Text = Valuesclass.item_id.ToString();
+
 
         }
 
@@ -280,7 +283,6 @@ namespace JodanQuote
             e.Graphics.DrawImage(img, loc);
         }
 
-
         private void btn_lock_Click(object sender, EventArgs e)
         {
             lock_controls();
@@ -329,7 +331,7 @@ namespace JodanQuote
             if (e.ColumnIndex == grid_hardware_on_item.Columns["btn_delete"].Index && e.RowIndex >= 0)
             {
                 int i = e.RowIndex;
-                int ID = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["ID"].Value);
+                int ID = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["quote_id"].Value);
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlCommand delete_item_hardware = new SqlCommand(Statementsclass.delete_item_hardware, conn);
                 delete_item_hardware.Parameters.AddWithValue("@ID", ID);
@@ -340,6 +342,15 @@ namespace JodanQuote
 
             }
         }
+
+        private void btn_add_hardware_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmHardwareSelect select = new FrmHardwareSelect();
+            select.Show();
+        }
+
+   
     }
 }
 

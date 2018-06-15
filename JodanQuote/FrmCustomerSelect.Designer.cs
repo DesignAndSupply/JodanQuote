@@ -46,7 +46,7 @@
             this.cmb_customers.FormattingEnabled = true;
             this.cmb_customers.IntegralHeight = false;
             this.cmb_customers.ItemHeight = 15;
-            this.cmb_customers.Location = new System.Drawing.Point(119, 82);
+            this.cmb_customers.Location = new System.Drawing.Point(120, 82);
             this.cmb_customers.MaxDropDownItems = 5;
             this.cmb_customers.Name = "cmb_customers";
             this.cmb_customers.Size = new System.Drawing.Size(206, 23);

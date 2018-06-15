@@ -283,13 +283,13 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnHardware_Cost;
             
-            private global::System.Data.DataColumn columnQuantity;
-            
             private global::System.Data.DataColumn columnTotal_Cost;
             
             private global::System.Data.DataColumn columnHardware_ID;
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnquantity;
+            
+            private global::System.Data.DataColumn columnid;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -342,14 +342,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn QuantityColumn {
-                get {
-                    return this.columnQuantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Total_CostColumn {
                 get {
                     return this.columnTotal_Cost;
@@ -366,9 +358,17 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn quantityColumn {
                 get {
-                    return this.columnID;
+                    return this.columnquantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
                 }
             }
             
@@ -409,15 +409,15 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow AddDT_Hardware_ItemRow(string Hardware_Description, double Hardware_Cost, int Quantity, double Total_Cost, int Hardware_ID, int ID) {
+            public DT_Hardware_ItemRow AddDT_Hardware_ItemRow(string Hardware_Description, double Hardware_Cost, double Total_Cost, int Hardware_ID, int quantity, int id) {
                 DT_Hardware_ItemRow rowDT_Hardware_ItemRow = ((DT_Hardware_ItemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Hardware_Description,
                         Hardware_Cost,
-                        Quantity,
                         Total_Cost,
                         Hardware_ID,
-                        ID};
+                        quantity,
+                        id};
                 rowDT_Hardware_ItemRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Hardware_ItemRow);
                 return rowDT_Hardware_ItemRow;
@@ -425,9 +425,9 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow FindByID(int ID) {
+            public DT_Hardware_ItemRow FindByid(int id) {
                 return ((DT_Hardware_ItemRow)(this.Rows.Find(new object[] {
-                            ID})));
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,10 +449,10 @@ namespace JodanQuote.Datasource {
             internal void InitVars() {
                 this.columnHardware_Description = base.Columns["Hardware Description"];
                 this.columnHardware_Cost = base.Columns["Hardware Cost"];
-                this.columnQuantity = base.Columns["Quantity"];
                 this.columnTotal_Cost = base.Columns["Total Cost"];
                 this.columnHardware_ID = base.Columns["Hardware ID"];
-                this.columnID = base.Columns["ID"];
+                this.columnquantity = base.Columns["quantity"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -462,19 +462,19 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnHardware_Description);
                 this.columnHardware_Cost = new global::System.Data.DataColumn("Hardware Cost", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHardware_Cost);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuantity);
                 this.columnTotal_Cost = new global::System.Data.DataColumn("Total Cost", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal_Cost);
                 this.columnHardware_ID = new global::System.Data.DataColumn("Hardware ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHardware_ID);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
+                this.columnquantity = new global::System.Data.DataColumn("quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnquantity);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
+                                this.columnid}, true));
                 this.columnHardware_Description.MaxLength = 50;
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
+                this.columnid.AllowDBNull = false;
+                this.columnid.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -650,22 +650,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Quantity {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.QuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.QuantityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public double Total_Cost {
                 get {
                     try {
@@ -698,12 +682,28 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
+            public int quantity {
                 get {
-                    return ((int)(this[this.tableDT_Hardware_Item.IDColumn]));
+                    try {
+                        return ((int)(this[this.tableDT_Hardware_Item.quantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'quantity\' in table \'DT_Hardware_Item\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableDT_Hardware_Item.IDColumn] = value;
+                    this[this.tableDT_Hardware_Item.quantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tableDT_Hardware_Item.idColumn]));
+                }
+                set {
+                    this[this.tableDT_Hardware_Item.idColumn] = value;
                 }
             }
             
@@ -733,18 +733,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsQuantityNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.QuantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetQuantityNull() {
-                this[this.tableDT_Hardware_Item.QuantityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsTotal_CostNull() {
                 return this.IsNull(this.tableDT_Hardware_Item.Total_CostColumn);
             }
@@ -765,6 +753,18 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetHardware_IDNull() {
                 this[this.tableDT_Hardware_Item.Hardware_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsquantityNull() {
+                return this.IsNull(this.tableDT_Hardware_Item.quantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetquantityNull() {
+                this[this.tableDT_Hardware_Item.quantityColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -929,10 +929,10 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             tableMapping.DataSetTable = "DT_Hardware_Item";
             tableMapping.ColumnMappings.Add("Hardware Description", "Hardware Description");
             tableMapping.ColumnMappings.Add("Hardware Cost", "Hardware Cost");
-            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
             tableMapping.ColumnMappings.Add("Total Cost", "Total Cost");
             tableMapping.ColumnMappings.Add("Hardware ID", "Hardware ID");
-            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("quantity", "quantity");
+            tableMapping.ColumnMappings.Add("id", "id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -950,28 +950,28 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ID, [Hardware ID], [Hardware Description], [Hardware Cost], Quantit" +
-                "y, [Total Cost]\r\nFROM            c_view_item_hardware\r\nWHERE        ([Quote ID] " +
-                "= @quote_id) AND ([Item ID] = @item_id)";
+            this._commandCollection[0].CommandText = "SELECT        [Hardware Description], [Hardware Cost], quantity, [Total Cost], id" +
+                ", [Hardware ID]\r\nFROM            c_view_item_hardware\r\nWHERE        ([Project ID" +
+                "] = @project_id) AND ([Item ID] = @item_ID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quote_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Quote ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@item_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Item ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Project ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@item_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Item ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Dt_Hardware_Item.DT_Hardware_ItemDataTable dataTable, global::System.Nullable<int> quote_id, global::System.Nullable<int> item_id) {
+        public virtual int Fill(Dt_Hardware_Item.DT_Hardware_ItemDataTable dataTable, global::System.Nullable<int> project_id, global::System.Nullable<int> item_ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((quote_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(quote_id.Value));
+            if ((project_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(project_id.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((item_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(item_id.Value));
+            if ((item_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(item_ID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -987,16 +987,16 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Dt_Hardware_Item.DT_Hardware_ItemDataTable GetData(global::System.Nullable<int> quote_id, global::System.Nullable<int> item_id) {
+        public virtual Dt_Hardware_Item.DT_Hardware_ItemDataTable GetData(global::System.Nullable<int> project_id, global::System.Nullable<int> item_ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((quote_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(quote_id.Value));
+            if ((project_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(project_id.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((item_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(item_id.Value));
+            if ((item_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(item_ID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;

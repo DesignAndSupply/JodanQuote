@@ -57,7 +57,7 @@ namespace JodanQuote
 
                 Valuesclass.project_ref = reader["project_ref"].ToString();
                 Valuesclass.quote_status = reader["quote_status"].ToString();
-
+            
 
                 ConnectionClass.Dispose_connection(conn);
             
@@ -68,7 +68,46 @@ namespace JodanQuote
             cmb_quote_status.Text = Valuesclass.quote_status;
 
         }
-        
+
+        void select_max_item()
+        {
+
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand select_max_item_id = new SqlCommand(Statementsclass.select_max_item_id, conn);
+            select_max_item_id.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            var check_item = select_max_item_id.ExecuteScalar();
+            if (string.IsNullOrWhiteSpace(check_item.ToString()))
+            {
+                Valuesclass.max_item_id = 1;
+
+
+            }
+            else
+            {
+                Valuesclass.max_item_id = Convert.ToInt32(check_item) + 1;
+                
+            }
+            Valuesclass.item_id = Valuesclass.max_item_id;
+            ConnectionClass.Dispose_connection(conn);
+
+        }
+        void Select_quote_id()
+        {
+
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand select_max_quote_id = new SqlCommand(Statementsclass.select_max_quote_id, conn);
+            SqlDataReader read_max_quote_id = select_max_quote_id.ExecuteReader();
+
+            if (read_max_quote_id.Read())
+            {
+                Valuesclass.quote_id = (Convert.ToInt32(read_max_quote_id["Quote ID"])) + 1;
+                read_max_quote_id.Close();
+            }
+
+            ConnectionClass.Dispose_connection(conn);
+
+        }
+
         void Format()
         {
             main_tab_project_additions.Appearance = TabAppearance.FlatButtons;
@@ -80,12 +119,44 @@ namespace JodanQuote
             grid_items_on_quote.EnableHeadersVisualStyles = false;
             grid_items_on_quote.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             btn_view.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
+            btn_copy.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             btn_delete_item.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             txt_project.Text = Valuesclass.project_id.ToString();
             txt_customer.Text = Valuesclass.customer_account_ref;
-             
+            //lbl_username.Text = loginclass.Login.globalFullName;
             grid_items_on_quote.Columns["Item Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             grid_items_on_quote.Columns["Item Date"].Width = 140;
+            grid_items_on_quote.Columns["Quote ID"].Visible = false;
+        }
+
+        void Copy_hardware()
+        {
+            DataTable dt_copy_hardware = new DataTable();
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlDataAdapter copy_hardware = new SqlDataAdapter(Statementsclass.copy_hardware, conn);
+            copy_hardware.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            copy_hardware.SelectCommand.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
+            copy_hardware.Fill(dt_copy_hardware);
+
+            for (int i = 0; i < dt_copy_hardware.Rows.Count; i++)
+            {
+
+                SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
+                insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
+                insert_hardware.Parameters.AddWithValue("@hardware_id", dt_copy_hardware.Rows[i]["Hardware ID"]);
+                insert_hardware.Parameters.AddWithValue("@hardware_description", dt_copy_hardware.Rows[i]["Hardware Description"]);
+                insert_hardware.Parameters.AddWithValue("@hardware_cost", dt_copy_hardware.Rows[i]["Hardware cost"]);
+                insert_hardware.Parameters.AddWithValue("@Quantity", dt_copy_hardware.Rows[i]["Quantity"]);
+                insert_hardware.Parameters.AddWithValue("@total_cost", dt_copy_hardware.Rows[i]["Total Cost"]);
+                insert_hardware.ExecuteNonQuery();
+
+
+
+            }
+
+            ConnectionClass.Dispose_connection(conn);
+
+
         }
 
         private void btn_new_item_Click(object sender, EventArgs e)
@@ -93,23 +164,9 @@ namespace JodanQuote
             DialogResult confirm = MessageBox.Show("Add New Item To This Quotation?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                //btn_save.PerformClick();
+                select_max_item();
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-                SqlCommand select_max_item_id = new SqlCommand(Statementsclass.select_max_item_id, conn);
-                select_max_item_id.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-                var check_item = select_max_item_id.ExecuteScalar();
-                if (string.IsNullOrWhiteSpace(check_item.ToString()))
-                {
-                    Valuesclass.max_item_id = 1;
-
-
-                }
-                else
-                {
-                    Valuesclass.max_item_id = Convert.ToInt32(check_item)+1;
-
-                }
-
+                
                 SqlCommand insert_new_project_quote = new SqlCommand(Statementsclass.insert_new_project_quote, conn);
                 insert_new_project_quote.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
                 insert_new_project_quote.Parameters.AddWithValue("@item_id", Valuesclass.max_item_id);
@@ -119,7 +176,7 @@ namespace JodanQuote
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
 
-                FrmNewitem item = new FrmNewitem();
+                FrmItem item = new FrmItem();
                 item.Show();
             }
 
@@ -152,9 +209,8 @@ namespace JodanQuote
                 {
 
                     int i = e.RowIndex;
-                    //Valuesclass.qu = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
+                    Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
                     Valuesclass.item_id = Convert.ToInt32(dt_quote.Rows[i]["Item ID"].ToString());
-                    //Valuesclass.revision_number = Convert.ToInt32(dt_quote.Rows[i]["Number Of Revisions"].ToString());
                     FrmItem item = new FrmItem();
                     item.Show();
                     this.Hide();
@@ -163,6 +219,7 @@ namespace JodanQuote
 
 
                 }
+
                 if (e.ColumnIndex == grid_items_on_quote.Columns["btn_delete_item"].Index && e.RowIndex >= 0)
                 {
 
@@ -184,6 +241,60 @@ namespace JodanQuote
 
 
                 }
+
+                if (e.ColumnIndex == grid_items_on_quote.Columns["btn_copy"].Index && e.RowIndex >= 0)
+                {
+                    int i = e.RowIndex;
+                    select_max_item();
+                    Select_quote_id();
+                    //Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dt_quote.Rows[i]["Item ID"].ToString());
+
+                    SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                    SqlCommand copy_item = new SqlCommand(Statementsclass.copy_item, conn);
+                    copy_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+                    copy_item.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
+                    SqlDataReader reader = copy_item.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+
+                        SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
+
+
+                        SqlCommand insert_copied_item = new SqlCommand(Statementsclass.insert_copied_item, conn2);
+                        insert_copied_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+                        insert_copied_item.Parameters.AddWithValue("@item_id", Valuesclass.max_item_id);
+                        insert_copied_item.Parameters.AddWithValue("@order_id", reader["order_id"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@item_date",DateTime.Now);
+                        insert_copied_item.Parameters.AddWithValue("@door_ref", reader["door_ref"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@door_type", reader["door_type"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@door_style", reader["door_style"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@structual_op_height", reader["structual_op_height"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@structual_op_width", reader["structual_op_width"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@frame_width", reader["frame_width"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@frame_height", reader["frame_height"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@total_cost", reader["total_cost"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@created_by",loginclass.Login.globalFullName);
+                        ConnectionClass.Dispose_connection(conn);
+
+
+
+                        insert_copied_item.ExecuteNonQuery();
+                        ConnectionClass.Dispose_connection(conn2);
+
+
+
+                    }
+                    Copy_hardware();
+                    Fill_data();
+
+
+                }
+
+
+
+
 
 
             }
@@ -232,5 +343,10 @@ namespace JodanQuote
             ConnectionClass.Dispose_connection(conn);
             MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+       
+
+
+
     }
 }

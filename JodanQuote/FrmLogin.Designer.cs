@@ -85,7 +85,7 @@
             this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btn_login.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_login.Location = new System.Drawing.Point(512, 198);
+            this.btn_login.Location = new System.Drawing.Point(512, 196);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(75, 23);
             this.btn_login.TabIndex = 18;
@@ -97,7 +97,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txtPassword.Location = new System.Drawing.Point(377, 232);
+            this.txtPassword.Location = new System.Drawing.Point(377, 233);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(129, 26);

@@ -119,10 +119,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_customer.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\DT_finish.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_finish.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasource\DT_hardware.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_hardware.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Dt_Hardware_Item.cs">
+      <DependentUpon>Dt_Hardware_Item.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasource\Dt_Hardware_Item.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -265,6 +273,17 @@
     <None Include="Datasource\DT_customer.xss">
       <DependentUpon>DT_customer.xsd</DependentUpon>
     </None>
+    <None Include="Datasource\DT_finish.xsc">
+      <DependentUpon>DT_finish.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_finish.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_finish.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_finish.xss">
+      <DependentUpon>DT_finish.xsd</DependentUpon>
+    </None>
     <None Include="Datasource\DT_hardware.xsc">
       <DependentUpon>DT_hardware.xsd</DependentUpon>
     </None>
@@ -318,6 +337,7 @@
     <None Include="Other\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Search%28Small%29.png" />
     <None Include="Resources\unlock.png" />
     <None Include="Resources\PDF.png" />
     <None Include="Resources\Save.png" />
@@ -336,6 +356,8 @@
     <None Include="Resources\locked.png" />
     <None Include="Resources\clear1.png" />
     <None Include="Resources\Bin.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\Copy%28small%29.png" />
     <Content Include="Resources\logo_4rq_icon.ico" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\tick2.png" />

@@ -45,7 +45,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label6.Location = new System.Drawing.Point(77, 130);
+            this.label6.Location = new System.Drawing.Point(77, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 13);
             this.label6.TabIndex = 59;
@@ -66,7 +66,7 @@
             // 
             this.txt_structual_height.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_structual_height.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_structual_height.Location = new System.Drawing.Point(218, 127);
+            this.txt_structual_height.Location = new System.Drawing.Point(218, 125);
             this.txt_structual_height.Name = "txt_structual_height";
             this.txt_structual_height.Size = new System.Drawing.Size(130, 20);
             this.txt_structual_height.TabIndex = 56;
@@ -75,7 +75,7 @@
             // 
             this.txt_structual_width.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_structual_width.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_structual_width.Location = new System.Drawing.Point(218, 97);
+            this.txt_structual_width.Location = new System.Drawing.Point(218, 96);
             this.txt_structual_width.Name = "txt_structual_width";
             this.txt_structual_width.Size = new System.Drawing.Size(130, 20);
             this.txt_structual_width.TabIndex = 57;
@@ -83,7 +83,7 @@
             // chk_panel
             // 
             this.chk_panel.AutoSize = true;
-            this.chk_panel.Location = new System.Drawing.Point(218, 161);
+            this.chk_panel.Location = new System.Drawing.Point(218, 158);
             this.chk_panel.Name = "chk_panel";
             this.chk_panel.Size = new System.Drawing.Size(15, 14);
             this.chk_panel.TabIndex = 60;
@@ -94,7 +94,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(77, 159);
+            this.label1.Location = new System.Drawing.Point(77, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 61;
@@ -106,7 +106,7 @@
             this.label2.BackColor = System.Drawing.Color.AliceBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(91, 43);
+            this.label2.Location = new System.Drawing.Point(89, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(240, 39);
             this.label2.TabIndex = 62;
