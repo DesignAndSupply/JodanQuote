@@ -317,6 +317,12 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnrevision_id;
             
+            private global::System.Data.DataColumn columnmarkup_material;
+            
+            private global::System.Data.DataColumn columnmarkup_hardware;
+            
+            private global::System.Data.DataColumn columnlabour_rate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_Item_DetailsDataTable() {
@@ -504,6 +510,30 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn markup_materialColumn {
+                get {
+                    return this.columnmarkup_material;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn markup_hardwareColumn {
+                get {
+                    return this.columnmarkup_hardware;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn labour_rateColumn {
+                get {
+                    return this.columnlabour_rate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -557,7 +587,10 @@ namespace JodanQuote.Datasource {
                         double total_cost, 
                         string created_by, 
                         double material_thickness, 
-                        int revision_id) {
+                        int revision_id, 
+                        double markup_material, 
+                        double markup_hardware, 
+                        double labour_rate) {
                 DT_Item_DetailsRow rowDT_Item_DetailsRow = ((DT_Item_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -578,7 +611,10 @@ namespace JodanQuote.Datasource {
                         total_cost,
                         created_by,
                         material_thickness,
-                        revision_id};
+                        revision_id,
+                        markup_material,
+                        markup_hardware,
+                        labour_rate};
                 rowDT_Item_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Item_DetailsRow);
                 return rowDT_Item_DetailsRow;
@@ -627,6 +663,9 @@ namespace JodanQuote.Datasource {
                 this.columncreated_by = base.Columns["created_by"];
                 this.columnmaterial_thickness = base.Columns["material_thickness"];
                 this.columnrevision_id = base.Columns["revision_id"];
+                this.columnmarkup_material = base.Columns["markup_material"];
+                this.columnmarkup_hardware = base.Columns["markup_hardware"];
+                this.columnlabour_rate = base.Columns["labour_rate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -670,6 +709,12 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnmaterial_thickness);
                 this.columnrevision_id = new global::System.Data.DataColumn("revision_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrevision_id);
+                this.columnmarkup_material = new global::System.Data.DataColumn("markup_material", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmarkup_material);
+                this.columnmarkup_hardware = new global::System.Data.DataColumn("markup_hardware", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmarkup_hardware);
+                this.columnlabour_rate = new global::System.Data.DataColumn("labour_rate", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlabour_rate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1126,6 +1171,54 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double markup_material {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Item_Details.markup_materialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'markup_material\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.markup_materialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double markup_hardware {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Item_Details.markup_hardwareColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'markup_hardware\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.markup_hardwareColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double labour_rate {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Item_Details.labour_rateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'labour_rate\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.labour_rateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isproject_idNull() {
                 return this.IsNull(this.tableDT_Item_Details.project_idColumn);
             }
@@ -1339,6 +1432,42 @@ namespace JodanQuote.Datasource {
             public void Setrevision_idNull() {
                 this[this.tableDT_Item_Details.revision_idColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ismarkup_materialNull() {
+                return this.IsNull(this.tableDT_Item_Details.markup_materialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setmarkup_materialNull() {
+                this[this.tableDT_Item_Details.markup_materialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ismarkup_hardwareNull() {
+                return this.IsNull(this.tableDT_Item_Details.markup_hardwareColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setmarkup_hardwareNull() {
+                this[this.tableDT_Item_Details.markup_hardwareColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Islabour_rateNull() {
+                return this.IsNull(this.tableDT_Item_Details.labour_rateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setlabour_rateNull() {
+                this[this.tableDT_Item_Details.labour_rateColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1519,6 +1648,9 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             tableMapping.ColumnMappings.Add("created_by", "created_by");
             tableMapping.ColumnMappings.Add("material_thickness", "material_thickness");
             tableMapping.ColumnMappings.Add("revision_id", "revision_id");
+            tableMapping.ColumnMappings.Add("markup_material", "markup_material");
+            tableMapping.ColumnMappings.Add("markup_hardware", "markup_hardware");
+            tableMapping.ColumnMappings.Add("labour_rate", "labour_rate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1537,7 +1669,7 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type, door_style, structual_op_height, structual_op_width, 
-                         frame_width, frame_height, finish_description, material_thickness, total_cost, created_by
+                         frame_width, frame_height, finish_description, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate
 FROM            Item
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)
 ORDER BY revision_id DESC";

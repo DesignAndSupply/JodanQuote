@@ -69,7 +69,7 @@
             this.txt_structual_height.Location = new System.Drawing.Point(218, 125);
             this.txt_structual_height.Name = "txt_structual_height";
             this.txt_structual_height.Size = new System.Drawing.Size(130, 20);
-            this.txt_structual_height.TabIndex = 56;
+            this.txt_structual_height.TabIndex = 2;
             // 
             // txt_structual_width
             // 
@@ -78,7 +78,7 @@
             this.txt_structual_width.Location = new System.Drawing.Point(218, 96);
             this.txt_structual_width.Name = "txt_structual_width";
             this.txt_structual_width.Size = new System.Drawing.Size(130, 20);
-            this.txt_structual_width.TabIndex = 57;
+            this.txt_structual_width.TabIndex = 1;
             // 
             // chk_panel
             // 

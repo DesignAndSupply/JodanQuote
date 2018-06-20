@@ -23,6 +23,7 @@ namespace JodanQuote
             InitializeComponent();
             Fill_data();
             Select_data();
+            Format();
         }
 
         void Fill_data()
@@ -105,10 +106,7 @@ namespace JodanQuote
             main_tab_project_additions.Appearance = TabAppearance.FlatButtons;
             main_tab_project_additions.ItemSize = new Size(0, 1);
             main_tab_project_additions.SizeMode = TabSizeMode.Fixed;
-            grid_items_on_quote.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
-            grid_items_on_quote.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            grid_items_on_quote.EnableHeadersVisualStyles = false;
+           
             grid_items_on_quote.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             btn_view.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             btn_copy.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
@@ -209,9 +207,9 @@ namespace JodanQuote
                 {
 
                     int i = e.RowIndex;
-                    Valuesclass.quote_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Quote_Id"].ToString());
-                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item_ID"].ToString());
-                    Valuesclass.revision_number = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Revision_Number"].ToString());
+                    Valuesclass.quote_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Quote ID"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item ID"].ToString());
+                    Valuesclass.revision_number = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Revision Number"].ToString());
                     //select_max_revison();
                     Valuesclass.new_item_identifier = 0;
                     FrmItem item = new FrmItem();

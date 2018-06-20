@@ -14,7 +14,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -437,6 +437,7 @@
     <None Include="Resources\Bin.png" />
     <None Include="Resources\Copy.png" />
     <None Include="Resources\Copy%28small%29.png" />
+    <None Include="Resources\Add1.png" />
     <Content Include="Resources\logo_4rq_icon.ico" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\tick2.png" />

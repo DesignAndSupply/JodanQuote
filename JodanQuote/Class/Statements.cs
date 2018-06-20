@@ -60,8 +60,10 @@ namespace Statements
         public static string Select_materials = "SELECT description, material_id FROM C_View_Item_Material";
         public static string insert_new_project = "Insert into dbo.project (customer_ref, date_created) Values ( @customer_id, @quote_date)";
         public static string insert_new_project_quote = "Insert into dbo.item (item_id ,project_id , item_date, revision_id,created_by,markup_material,markup_hardware,labour_rate) Values (@item_id, @project_id, @item_date, '1',@created_by,@markup_material,@markup_hardware,@labour_rate)";
-        public static string revise_item = "Insert into dbo.item (item_id ,project_id , item_date, revision_id,material_id,finish_id,door_ref,door_type,door_style,structual_op_height,structual_op_width,frame_width,frame_height,finish_description,material_thickness,total_cost,created_by)" +
-                                          " Values (@item_id ,@project_id , @item_date, @revision_id,@material_id,@finish_id,@door_ref,@door_type,@door_style,@structual_op_height,@structual_op_width,@frame_width,@frame_height,@finish_description,@material_thickness,@total_cost,@created_by)";
+        public static string revise_item = "Insert into dbo.item (item_id ,project_id , item_date, revision_id,material_id,finish_id,door_ref,door_type,door_style,structual_op_height,structual_op_width,frame_width,frame_height,finish_description,material_thickness,total_cost,created_by," +
+                                           "markup_material, markup_hardware, labour_rate )" +
+                                          "Values (@item_id ,@project_id , @item_date, @revision_id,@material_id,@finish_id,@door_ref,@door_type,@door_style,@structual_op_height,@structual_op_width,@frame_width,@frame_height,@finish_description,@material_thickness,@total_cost,@created_by" +
+                                                     "@markup_material,@markup_hardware,@labour_rate)";
         public static string select_setting = "SELECT markup_hardware, markup_material, labour_rate from dbo.setting WHERE ID = 1";
         public static string update_project = "Update dbo.project SET project_ref = @project_ref, quote_status = @quote_status Where id = @project_id";
         public static string update_quotation_item = "Update dbo.item SET structual_op_height = @structure_height, structual_op_width = @structure_width," +

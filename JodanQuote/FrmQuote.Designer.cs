@@ -215,7 +215,7 @@
             this.grid_items_on_quote.DataSource = this.dTQuoteItemsBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
@@ -678,6 +678,7 @@
             // 
             // Item_id
             // 
+            this.Item_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Item_id.DataPropertyName = "Item ID";
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -685,12 +686,13 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.Item_id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Item_id.FillWeight = 58.38951F;
             this.Item_id.HeaderText = "Item ID";
             this.Item_id.Name = "Item_id";
-            this.Item_id.Width = 85;
             // 
             // revision_number
             // 
+            this.revision_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.revision_number.DataPropertyName = "Revision Number";
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -698,12 +700,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.revision_number.DefaultCellStyle = dataGridViewCellStyle3;
+            this.revision_number.FillWeight = 60.83147F;
             this.revision_number.HeaderText = "Revision Number";
             this.revision_number.Name = "revision_number";
-            this.revision_number.Width = 141;
             // 
             // dateCreatedDataGridViewTextBoxColumn
             // 
+            this.dateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "Date Created";
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -711,12 +714,13 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.dateCreatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dateCreatedDataGridViewTextBoxColumn.FillWeight = 88.38951F;
             this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created";
             this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            this.dateCreatedDataGridViewTextBoxColumn.Width = 118;
             // 
             // createdByDataGridViewTextBoxColumn
             // 
+            this.createdByDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.createdByDataGridViewTextBoxColumn.DataPropertyName = "Created By";
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -724,9 +728,9 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.createdByDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.createdByDataGridViewTextBoxColumn.FillWeight = 88.38951F;
             this.createdByDataGridViewTextBoxColumn.HeaderText = "Created By";
             this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
-            this.createdByDataGridViewTextBoxColumn.Width = 105;
             // 
             // btn_view
             // 

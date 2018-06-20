@@ -51,7 +51,7 @@ namespace JodanQuote
             {
                 dT_Door_Type.Clear();
                 this.dt_Hardware_Item.DT_Hardware_Item.Clear();
-                this.dT_Item_Material._DT_Item_Material.Clear();
+                this.dT_Material.DT_materials.Clear();
                 dt_Hardware_Item.EnforceConstraints = false;
                
                 this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
@@ -69,6 +69,23 @@ namespace JodanQuote
             txt_project.Text = Valuesclass.project_id.ToString();
             txt_item.Text = Valuesclass.item_id.ToString();
             txt_revision.Text = Valuesclass.revision_number.ToString();
+            Refresh_Data();
+
+        }
+
+        void Refresh_Data()
+        {
+            double total = 0;
+            for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
+            {
+
+                total += Convert.ToDouble(grid_hardware_on_item.Rows[i].Cells["Total_cost"].Value);
+
+
+            }
+            txt_hardwarel_cost.Text ="£" + total.ToString();
+            
+
         }
 
         void Edit_Items()
@@ -217,6 +234,7 @@ namespace JodanQuote
                 btn_lock.Text = "       lock";
                 btn_lock.Image = JodanQuote.Properties.Resources.locked;
                 btn_dimensions.Enabled = true;
+                Edit_Items();
             }
 
 
@@ -409,6 +427,7 @@ namespace JodanQuote
             //this.Hide();
             FrmHardwareSelect select = new FrmHardwareSelect();
             select.ShowDialog();
+            Fill_data();
         }
 
         private void cmb_material_SelectedValueChanged(object sender, EventArgs e)
@@ -457,6 +476,11 @@ namespace JodanQuote
                     string total_cost = dT_Item_Details._DT_Item_Details.Rows[0]["total_cost"].ToString();
                     string material_thickness = dT_Item_Details._DT_Item_Details.Rows[0]["material_thickness"].ToString();
                     string finish_description = dT_Item_Details._DT_Item_Details.Rows[0]["finish_description"].ToString();
+                    string markup_hardware = dT_Item_Details._DT_Item_Details.Rows[0]["markup_hardware"].ToString();
+                    string markeup_material = dT_Item_Details._DT_Item_Details.Rows[0]["markup_material"].ToString();
+                    string labour_rate = dT_Item_Details._DT_Item_Details.Rows[0]["labour_rate"].ToString();
+
+
 
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand revise_item = new SqlCommand(Statementsclass.revise_item, conn);
@@ -477,6 +501,9 @@ namespace JodanQuote
                     revise_item.Parameters.AddWithValue("@material_thickness", material_thickness);
                     revise_item.Parameters.AddWithValue("@total_cost", total_cost);
                     revise_item.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName);
+                    revise_item.Parameters.AddWithValue("@markup_hardware", markup_hardware);
+                    revise_item.Parameters.AddWithValue("@markeup_material", markeup_material);
+                    revise_item.Parameters.AddWithValue("@labour_rate", labour_rate);
                     revise_item.ExecuteNonQuery();
                     ConnectionClass.Dispose_connection(conn);
                     Valuesclass.revision_number = Revision + 1;
@@ -487,7 +514,7 @@ namespace JodanQuote
                 
                 dT_Door_Type.Clear();
                 this.dt_Hardware_Item.DT_Hardware_Item.Clear();
-                this.dT_Item_Material._DT_Item_Material.Clear();
+                this.dT_Material.DT_materials.Clear();
                 dt_Hardware_Item.EnforceConstraints = false;
                 this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
                 this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
@@ -496,7 +523,7 @@ namespace JodanQuote
 
             else
             {
-
+                return;
             }
             locked_identifiter = 1;
             Fill_data();
@@ -504,6 +531,22 @@ namespace JodanQuote
             Edit_Items();
         }
 
+        private void FrmItem_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dT_Material1.DT_materials' table. You can move, or remove it, as needed.
+            this.ada_materials.Fill(this.dT_Material.DT_materials);
+
+        }
+
+        private void grid_hardware_on_item_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                Refresh_Data();
+            }
+
+
+        }
     }
 }
 

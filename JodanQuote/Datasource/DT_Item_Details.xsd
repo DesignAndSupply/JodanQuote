@@ -13,7 +13,7 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type, door_style, structual_op_height, structual_op_width, 
-                         frame_width, frame_height, finish_description, material_thickness, total_cost, created_by
+                         frame_width, frame_height, finish_description, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate
 FROM            Item
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)
 ORDER BY revision_id DESC</CommandText>
@@ -46,6 +46,9 @@ ORDER BY revision_id DESC</CommandText>
               <Mapping SourceColumn="created_by" DataSetColumn="created_by" />
               <Mapping SourceColumn="material_thickness" DataSetColumn="material_thickness" />
               <Mapping SourceColumn="revision_id" DataSetColumn="revision_id" />
+              <Mapping SourceColumn="markup_material" DataSetColumn="markup_material" />
+              <Mapping SourceColumn="markup_hardware" DataSetColumn="markup_hardware" />
+              <Mapping SourceColumn="labour_rate" DataSetColumn="labour_rate" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -109,6 +112,9 @@ ORDER BY revision_id DESC</CommandText>
               </xs:element>
               <xs:element name="material_thickness" msprop:Generator_ColumnVarNameInTable="columnmaterial_thickness" msprop:Generator_ColumnPropNameInRow="material_thickness" msprop:Generator_ColumnPropNameInTable="material_thicknessColumn" msprop:Generator_UserColumnName="material_thickness" type="xs:double" minOccurs="0" />
               <xs:element name="revision_id" msprop:Generator_ColumnVarNameInTable="columnrevision_id" msprop:Generator_ColumnPropNameInRow="revision_id" msprop:Generator_ColumnPropNameInTable="revision_idColumn" msprop:Generator_UserColumnName="revision_id" type="xs:int" minOccurs="0" />
+              <xs:element name="markup_material" msprop:Generator_ColumnVarNameInTable="columnmarkup_material" msprop:Generator_ColumnPropNameInRow="markup_material" msprop:Generator_ColumnPropNameInTable="markup_materialColumn" msprop:Generator_UserColumnName="markup_material" type="xs:double" minOccurs="0" />
+              <xs:element name="markup_hardware" msprop:Generator_ColumnVarNameInTable="columnmarkup_hardware" msprop:Generator_ColumnPropNameInRow="markup_hardware" msprop:Generator_ColumnPropNameInTable="markup_hardwareColumn" msprop:Generator_UserColumnName="markup_hardware" type="xs:double" minOccurs="0" />
+              <xs:element name="labour_rate" msprop:Generator_ColumnVarNameInTable="columnlabour_rate" msprop:Generator_ColumnPropNameInRow="labour_rate" msprop:Generator_ColumnPropNameInTable="labour_rateColumn" msprop:Generator_UserColumnName="labour_rate" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
