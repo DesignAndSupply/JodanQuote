@@ -110,7 +110,7 @@
             this.grid_hardware.DefaultCellStyle = dataGridViewCellStyle6;
             this.grid_hardware.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_hardware.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_hardware.Location = new System.Drawing.Point(29, 80);
+            this.grid_hardware.Location = new System.Drawing.Point(29, 73);
             this.grid_hardware.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_hardware.MaximumSize = new System.Drawing.Size(480, 465);
             this.grid_hardware.MinimumSize = new System.Drawing.Size(480, 465);
@@ -212,7 +212,7 @@
             // 
             this.pct_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pct_clear.Image = global::JodanQuote.Properties.Resources.clear;
-            this.pct_clear.Location = new System.Drawing.Point(342, 44);
+            this.pct_clear.Location = new System.Drawing.Point(354, 38);
             this.pct_clear.Name = "pct_clear";
             this.pct_clear.Size = new System.Drawing.Size(26, 20);
             this.pct_clear.TabIndex = 73;
@@ -224,7 +224,7 @@
             this.lbl_description.AutoSize = true;
             this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_description.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_description.Location = new System.Drawing.Point(173, 26);
+            this.lbl_description.Location = new System.Drawing.Point(185, 19);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(41, 15);
             this.lbl_description.TabIndex = 72;
@@ -235,7 +235,7 @@
             this.lbl_des.AutoSize = true;
             this.lbl_des.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_des.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_des.Location = new System.Drawing.Point(44, 28);
+            this.lbl_des.Location = new System.Drawing.Point(32, 19);
             this.lbl_des.Name = "lbl_des";
             this.lbl_des.Size = new System.Drawing.Size(84, 15);
             this.lbl_des.TabIndex = 71;
@@ -245,9 +245,9 @@
             // 
             this.txt_description.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_description.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_description.Location = new System.Drawing.Point(44, 45);
+            this.txt_description.Location = new System.Drawing.Point(32, 38);
             this.txt_description.Name = "txt_description";
-            this.txt_description.Size = new System.Drawing.Size(86, 20);
+            this.txt_description.Size = new System.Drawing.Size(110, 20);
             this.txt_description.TabIndex = 70;
             this.txt_description.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_description_KeyDown);
             // 
@@ -258,7 +258,7 @@
             this.cmb_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_type.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_type.FormattingEnabled = true;
-            this.cmb_type.Location = new System.Drawing.Point(173, 44);
+            this.cmb_type.Location = new System.Drawing.Point(188, 37);
             this.cmb_type.Name = "cmb_type";
             this.cmb_type.Size = new System.Drawing.Size(163, 21);
             this.cmb_type.TabIndex = 74;
@@ -301,7 +301,7 @@
             this.grid_hardware_selected.DefaultCellStyle = dataGridViewCellStyle13;
             this.grid_hardware_selected.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_hardware_selected.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_hardware_selected.Location = new System.Drawing.Point(554, 80);
+            this.grid_hardware_selected.Location = new System.Drawing.Point(543, 71);
             this.grid_hardware_selected.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_hardware_selected.MaximumSize = new System.Drawing.Size(345, 465);
             this.grid_hardware_selected.MinimumSize = new System.Drawing.Size(345, 465);
@@ -345,15 +345,17 @@
             // 
             // Description
             // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Description.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Description.FillWeight = 123.181F;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
-            this.Description.Width = 119;
             // 
             // Quantity
             // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.CornflowerBlue;
@@ -362,28 +364,31 @@
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.Quantity.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Quantity.FillWeight = 123.181F;
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 95;
             // 
             // Total
             // 
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle12.Format = "C2";
             dataGridViewCellStyle12.NullValue = null;
             this.Total.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Total.FillWeight = 123.181F;
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
-            this.Total.Width = 71;
             // 
             // btn_delete
             // 
+            this.btn_delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.btn_delete.FillWeight = 30.45685F;
             this.btn_delete.HeaderText = "";
             this.btn_delete.Image = global::JodanQuote.Properties.Resources.clear;
+            this.btn_delete.MinimumWidth = 15;
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btn_delete.Width = 5;
             // 
             // btn_add_hardware
             // 
@@ -393,7 +398,7 @@
             this.btn_add_hardware.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_add_hardware.Image = global::JodanQuote.Properties.Resources.Save;
             this.btn_add_hardware.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_hardware.Location = new System.Drawing.Point(926, 505);
+            this.btn_add_hardware.Location = new System.Drawing.Point(911, 505);
             this.btn_add_hardware.Name = "btn_add_hardware";
             this.btn_add_hardware.Size = new System.Drawing.Size(98, 37);
             this.btn_add_hardware.TabIndex = 76;
@@ -409,7 +414,7 @@
             this.btn_clear.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_clear.Image = global::JodanQuote.Properties.Resources.Bin;
             this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clear.Location = new System.Drawing.Point(926, 462);
+            this.btn_clear.Location = new System.Drawing.Point(911, 462);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(98, 37);
             this.btn_clear.TabIndex = 77;
@@ -425,7 +430,7 @@
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_back.Image = global::JodanQuote.Properties.Resources.ReturnArrow;
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(926, 419);
+            this.btn_back.Location = new System.Drawing.Point(911, 419);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(98, 37);
             this.btn_back.TabIndex = 78;
@@ -438,7 +443,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1055, 580);
+            this.ClientSize = new System.Drawing.Size(1038, 558);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_add_hardware);
@@ -453,6 +458,7 @@
             this.Name = "FrmHardwareSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Hardware";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmHardwareSelect_FormClosed);
             this.Load += new System.EventHandler(this.FrmHardwareSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_hardware)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewhardwareBindingSource)).EndInit();
@@ -477,12 +483,6 @@
         private Datasource.DT_hardwareTableAdapters.c_view_hardwareTableAdapter c_view_hardwareTableAdapter;
         private System.Windows.Forms.DataGridView grid_hardware_selected;
         private System.Windows.Forms.Button btn_add_hardware;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewImageColumn btn_delete;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.DataGridViewTextBoxColumn hardware_id;
@@ -491,5 +491,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hardware_quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn hardware_total;
         private System.Windows.Forms.DataGridViewButtonColumn btn_add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewImageColumn btn_delete;
     }
 }

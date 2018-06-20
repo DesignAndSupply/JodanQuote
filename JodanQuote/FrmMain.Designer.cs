@@ -100,7 +100,7 @@
             this.lbl_description.AutoSize = true;
             this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_description.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_description.Location = new System.Drawing.Point(431, 118);
+            this.lbl_description.Location = new System.Drawing.Point(446, 118);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(72, 15);
             this.lbl_description.TabIndex = 39;
@@ -131,7 +131,7 @@
             // 
             this.txt_customer.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_customer.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_customer.Location = new System.Drawing.Point(427, 135);
+            this.txt_customer.Location = new System.Drawing.Point(442, 135);
             this.txt_customer.Name = "txt_customer";
             this.txt_customer.Size = new System.Drawing.Size(178, 20);
             this.txt_customer.TabIndex = 36;
@@ -141,7 +141,7 @@
             // 
             this.pct_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pct_clear.Image = global::JodanQuote.Properties.Resources.clear;
-            this.pct_clear.Location = new System.Drawing.Point(612, 134);
+            this.pct_clear.Location = new System.Drawing.Point(627, 134);
             this.pct_clear.Name = "pct_clear";
             this.pct_clear.Size = new System.Drawing.Size(26, 20);
             this.pct_clear.TabIndex = 40;
@@ -167,6 +167,9 @@
             // grid_quote_list
             // 
             this.grid_quote_list.AllowUserToAddRows = false;
+            this.grid_quote_list.AllowUserToDeleteRows = false;
+            this.grid_quote_list.AllowUserToResizeColumns = false;
+            this.grid_quote_list.AllowUserToResizeRows = false;
             this.grid_quote_list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

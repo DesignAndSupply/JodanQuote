@@ -19,6 +19,9 @@ namespace values
         public static int revision_number;
         public static string project_ref;
         public static string quote_status;
-        
+        public static int markup_material;
+        public static int markup_hardware;
+        public static int labour_rate;
+
     }
 }

@@ -14,7 +14,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>27</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -119,6 +119,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_customer.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\DT_Door_Type.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Door_Type.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasource\DT_finish.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +142,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dt_Hardware_Item.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\DT_Item_Details.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Item_Details.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_Item_Material.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Item_Material.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_Material.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Material.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_Material_Thickness.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Material_Thickness.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Settings.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmDimensions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,12 +178,6 @@
     </Compile>
     <Compile Include="FrmHardwareSelect.Designer.cs">
       <DependentUpon>FrmHardwareSelect.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmNewItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmNewItem.Designer.cs">
-      <DependentUpon>FrmNewItem.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMailQuote.cs">
       <SubType>Form</SubType>
@@ -199,12 +223,6 @@
     <Compile Include="FrmItem.Designer.cs">
       <DependentUpon>FrmItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNewquote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmNewquote.Designer.cs">
-      <DependentUpon>FrmNewquote.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmQuote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,9 +243,6 @@
     <EmbeddedResource Include="FrmHardwareSelect.resx">
       <DependentUpon>FrmHardwareSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNewItem.resx">
-      <DependentUpon>FrmNewItem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmMailQuote.resx">
       <DependentUpon>FrmMailQuote.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,9 +261,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmItem.resx">
       <DependentUpon>FrmItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmNewquote.resx">
-      <DependentUpon>FrmNewquote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuote.resx">
       <DependentUpon>FrmQuote.cs</DependentUpon>
@@ -272,6 +284,17 @@
     </None>
     <None Include="Datasource\DT_customer.xss">
       <DependentUpon>DT_customer.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Door_Type.xsc">
+      <DependentUpon>DT_Door_Type.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Door_Type.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Door_Type.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Door_Type.xss">
+      <DependentUpon>DT_Door_Type.xsd</DependentUpon>
     </None>
     <None Include="Datasource\DT_finish.xsc">
       <DependentUpon>DT_finish.xsd</DependentUpon>
@@ -306,6 +329,50 @@
     <None Include="Datasource\Dt_Hardware_Item.xss">
       <DependentUpon>Dt_Hardware_Item.xsd</DependentUpon>
     </None>
+    <None Include="Datasource\DT_Item_Details.xsc">
+      <DependentUpon>DT_Item_Details.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Item_Details.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Item_Details.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Item_Details.xss">
+      <DependentUpon>DT_Item_Details.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Item_Material.xsc">
+      <DependentUpon>DT_Item_Material.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Item_Material.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Item_Material.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Item_Material.xss">
+      <DependentUpon>DT_Item_Material.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Material.xsc">
+      <DependentUpon>DT_Material.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Material.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Material.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Material.xss">
+      <DependentUpon>DT_Material.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Material_Thickness.xsc">
+      <DependentUpon>DT_Material_Thickness.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Material_Thickness.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Material_Thickness.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Material_Thickness.xss">
+      <DependentUpon>DT_Material_Thickness.xsd</DependentUpon>
+    </None>
     <None Include="Datasource\dt_quote.xsc">
       <DependentUpon>dt_quote.xsd</DependentUpon>
     </None>
@@ -316,6 +383,17 @@
     </None>
     <None Include="Datasource\dt_quote.xss">
       <DependentUpon>dt_quote.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Settings.xsc">
+      <DependentUpon>DT_Settings.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Settings.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Settings.xss">
+      <DependentUpon>DT_Settings.xsd</DependentUpon>
     </None>
     <None Include="Other\JodanQuote_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -337,6 +415,7 @@
     <None Include="Other\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Revise.png" />
     <None Include="Resources\Search%28Small%29.png" />
     <None Include="Resources\unlock.png" />
     <None Include="Resources\PDF.png" />
@@ -401,10 +480,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
-    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
       <Private>True</Private>

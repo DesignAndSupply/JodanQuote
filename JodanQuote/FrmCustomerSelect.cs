@@ -55,11 +55,11 @@ namespace JodanQuote
             SqlCommand insert_new_project = new SqlCommand(Statementsclass.insert_new_project, conn);
             insert_new_project.Parameters.AddWithValue("@customer_id", Valuesclass.customer_account_ref);
             insert_new_project.Parameters.AddWithValue("@quote_date", DateTime.Now);
-          //  insert_new_project.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName.ToString());
+            insert_new_project.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName.ToString());
             insert_new_project.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
             this.Hide();
-            FrmNewquote project = new FrmNewquote();
+            FrmQuote project = new FrmQuote();
             project.Show();
         }
 

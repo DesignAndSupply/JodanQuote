@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DT_Door_Type" targetNamespace="http://tempuri.org/DT_Door_Type.xsd" xmlns:mstns="http://tempuri.org/DT_Door_Type.xsd" xmlns="http://tempuri.org/DT_Door_Type.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=DESIGNSVR3\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" IsAppSettingsProperty="false" Modifier="Assembly" Name="designsvr3\sqlexpress.Jodan_quote.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ADA_door_styles" GeneratorDataComponentClassName="ADA_door_styles" Name="DT_door_styles" UserDataComponentName="ADA_door_styles">
+            <MainSource>
+              <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, description, double_door
+FROM            dsl.dbo.view_door_styles
+ORDER BY obsolete, sort</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="double_door" DataSetColumn="double_door" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DT_Door_Type" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Door_Type" msprop:Generator_UserDSName="DT_Door_Type">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_door_styles" msprop:Generator_TableClassName="DT_door_stylesDataTable" msprop:Generator_TableVarName="tableDT_door_styles" msprop:Generator_TablePropName="DT_door_styles" msprop:Generator_RowDeletingName="DT_door_stylesRowDeleting" msprop:Generator_RowChangingName="DT_door_stylesRowChanging" msprop:Generator_RowEvHandlerName="DT_door_stylesRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_door_stylesRowDeleted" msprop:Generator_UserTableName="DT_door_styles" msprop:Generator_RowChangedName="DT_door_stylesRowChanged" msprop:Generator_RowEvArgName="DT_door_stylesRowChangeEvent" msprop:Generator_RowClassName="DT_door_stylesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:short" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="57" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="double_door" msprop:Generator_ColumnVarNameInTable="columndouble_door" msprop:Generator_ColumnPropNameInRow="double_door" msprop:Generator_ColumnPropNameInTable="double_doorColumn" msprop:Generator_UserColumnName="double_door" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DT_door_styles" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -36,22 +36,12 @@ namespace JodanQuote
             ConnectionClass.Dispose_connection(conn);
 
             this.Hide();
-            if (Valuesclass.new_item_identifier == 1)
-            {
-
-
-                FrmNewitem newitem = new FrmNewitem();
-               newitem.Show();
-
-            }
-            else 
-            {
+           
 
 
                 FrmItem item = new FrmItem();
                 item.Show();
 
-            }
         }
     }
 }

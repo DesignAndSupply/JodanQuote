@@ -285,18 +285,11 @@ namespace JodanQuote
 
             }
             MessageBox.Show(grid_hardware_selected.RowCount + " Hardware Item(s) Added", "  Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if(Valuesclass.new_item_identifier==1)
-            {
-                this.Hide();
-                FrmNewitem item = new FrmNewitem();
-                item.Show();
-            }
-            else
-            {
-                this.Hide();
-                FrmItem item = new FrmItem();
-                item.Show();
-            }
+           
+             this.Hide();
+             FrmItem item = new FrmItem();
+             item.Show();
+           
 
         }
 
@@ -312,6 +305,9 @@ namespace JodanQuote
             item.Show();
         }
 
-       
+        private void FrmHardwareSelect_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            btn_back.PerformClick();
+        }
     }
 }

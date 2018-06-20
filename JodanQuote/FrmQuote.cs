@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
 using Connection;
 using Statements;
 using values;
@@ -17,7 +16,7 @@ namespace JodanQuote
 {
     public partial class FrmQuote : Form
     {
-        public static DataTable dt_quote = new DataTable();
+        //public static DataTable dt_quote = new DataTable();
 
         public FrmQuote()
         {
@@ -30,16 +29,7 @@ namespace JodanQuote
         {
 
 
-
-            dt_quote.Clear();
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlDataAdapter select_quote_items = new SqlDataAdapter(Statementsclass.select_quote_items, conn);
-            select_quote_items.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            select_quote_items.Fill(dt_quote);
-            ConnectionClass.Dispose_connection(conn);
-            grid_items_on_quote.DataSource = dt_quote;
-            Format();
-
+            this.ada_quote.Fill(dt_quote.DT_Quote_Items, Valuesclass.project_id);
 
 
         }
@@ -66,6 +56,7 @@ namespace JodanQuote
 
             txt_project_ref.Text= Valuesclass.project_ref;
             cmb_quote_status.Text = Valuesclass.quote_status;
+            txt_project.Text = Valuesclass.project_id.ToString();
 
         }
 
@@ -85,12 +76,13 @@ namespace JodanQuote
             else
             {
                 Valuesclass.max_item_id = Convert.ToInt32(check_item) + 1;
-                
+
             }
             Valuesclass.item_id = Valuesclass.max_item_id;
             ConnectionClass.Dispose_connection(conn);
-
+            //select_max_revison();
         }
+
         void Select_quote_id()
         {
 
@@ -123,10 +115,12 @@ namespace JodanQuote
             btn_delete_item.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             txt_project.Text = Valuesclass.project_id.ToString();
             txt_customer.Text = Valuesclass.customer_account_ref;
-            //lbl_username.Text = loginclass.Login.globalFullName;
-            grid_items_on_quote.Columns["Item Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            grid_items_on_quote.Columns["Item Date"].Width = 140;
-            grid_items_on_quote.Columns["Quote ID"].Visible = false;
+            grid_items_on_quote.EnableHeadersVisualStyles = false;
+            grid_items_on_quote.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_items_on_quote.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_items_on_quote.DefaultCellStyle.BackColor = Color.AliceBlue;
+
         }
 
         void Copy_hardware()
@@ -161,21 +155,27 @@ namespace JodanQuote
 
         private void btn_new_item_Click(object sender, EventArgs e)
         {
+           
+            Valuesclass.new_item_identifier = 1;
             DialogResult confirm = MessageBox.Show("Add New Item To This Quotation?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
+                Valuesclass.revision_number = 1;
                 select_max_item();
+                this.ada_setting.Fill(dT_Settings.DT_Setting);
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-                
                 SqlCommand insert_new_project_quote = new SqlCommand(Statementsclass.insert_new_project_quote, conn);
                 insert_new_project_quote.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
                 insert_new_project_quote.Parameters.AddWithValue("@item_id", Valuesclass.max_item_id);
                 insert_new_project_quote.Parameters.AddWithValue("@item_date", DateTime.Now);
                 insert_new_project_quote.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName);
+                insert_new_project_quote.Parameters.AddWithValue("@markup_material", dT_Settings.DT_Setting.Rows[0]["markup_material"].ToString());
+                insert_new_project_quote.Parameters.AddWithValue("@markup_hardware", dT_Settings.DT_Setting.Rows[0]["markup_hardware"].ToString());
+                insert_new_project_quote.Parameters.AddWithValue("@labour_rate", dT_Settings.DT_Setting.Rows[0]["labour_rate"].ToString());
                 insert_new_project_quote.ExecuteNonQuery();
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
-
+                this.Hide();
                 FrmItem item = new FrmItem();
                 item.Show();
             }
@@ -209,8 +209,11 @@ namespace JodanQuote
                 {
 
                     int i = e.RowIndex;
-                    Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
-                    Valuesclass.item_id = Convert.ToInt32(dt_quote.Rows[i]["Item ID"].ToString());
+                    Valuesclass.quote_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Quote_Id"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item_ID"].ToString());
+                    Valuesclass.revision_number = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Revision_Number"].ToString());
+                    //select_max_revison();
+                    Valuesclass.new_item_identifier = 0;
                     FrmItem item = new FrmItem();
                     item.Show();
                     this.Hide();
@@ -248,7 +251,7 @@ namespace JodanQuote
                     select_max_item();
                     Select_quote_id();
                     //Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
-                    Valuesclass.item_id = Convert.ToInt32(dt_quote.Rows[i]["Item ID"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item ID"].ToString());
 
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand copy_item = new SqlCommand(Statementsclass.copy_item, conn);
@@ -344,9 +347,9 @@ namespace JodanQuote
             MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-       
-
-
-
+        private void FrmQuote_Shown(object sender, EventArgs e)
+        {
+            Fill_data();
+        }
     }
 }

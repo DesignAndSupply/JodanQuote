@@ -20,17 +20,17 @@ namespace JodanQuote.Datasource {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Dt_Hardware_Item")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DT_Material_Thickness")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Dt_Hardware_Item : global::System.Data.DataSet {
+    public partial class DT_Material_Thickness : global::System.Data.DataSet {
         
-        private DT_Hardware_ItemDataTable tableDT_Hardware_Item;
+        private DT_Material_ThicknessDataTable tableDT_Material_Thickness;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Dt_Hardware_Item() {
+        public DT_Material_Thickness() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace JodanQuote.Datasource {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected Dt_Hardware_Item(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DT_Material_Thickness(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace JodanQuote.Datasource {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DT_Hardware_Item"] != null)) {
-                    base.Tables.Add(new DT_Hardware_ItemDataTable(ds.Tables["DT_Hardware_Item"]));
+                if ((ds.Tables["DT_Material_Thickness"] != null)) {
+                    base.Tables.Add(new DT_Material_ThicknessDataTable(ds.Tables["DT_Material_Thickness"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace JodanQuote.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DT_Hardware_ItemDataTable DT_Hardware_Item {
+        public DT_Material_ThicknessDataTable _DT_Material_Thickness {
             get {
-                return this.tableDT_Hardware_Item;
+                return this.tableDT_Material_Thickness;
             }
         }
         
@@ -127,7 +127,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Dt_Hardware_Item cln = ((Dt_Hardware_Item)(base.Clone()));
+            DT_Material_Thickness cln = ((DT_Material_Thickness)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace JodanQuote.Datasource {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DT_Hardware_Item"] != null)) {
-                    base.Tables.Add(new DT_Hardware_ItemDataTable(ds.Tables["DT_Hardware_Item"]));
+                if ((ds.Tables["DT_Material_Thickness"] != null)) {
+                    base.Tables.Add(new DT_Material_ThicknessDataTable(ds.Tables["DT_Material_Thickness"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDT_Hardware_Item = ((DT_Hardware_ItemDataTable)(base.Tables["DT_Hardware_Item"]));
+            this.tableDT_Material_Thickness = ((DT_Material_ThicknessDataTable)(base.Tables["DT_Material_Thickness"]));
             if ((initTable == true)) {
-                if ((this.tableDT_Hardware_Item != null)) {
-                    this.tableDT_Hardware_Item.InitVars();
+                if ((this.tableDT_Material_Thickness != null)) {
+                    this.tableDT_Material_Thickness.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Dt_Hardware_Item";
+            this.DataSetName = "DT_Material_Thickness";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Dt_Hardware_Item.xsd";
+            this.Namespace = "http://tempuri.org/DT_Material_Thickness.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDT_Hardware_Item = new DT_Hardware_ItemDataTable();
-            base.Tables.Add(this.tableDT_Hardware_Item);
+            this.tableDT_Material_Thickness = new DT_Material_ThicknessDataTable();
+            base.Tables.Add(this.tableDT_Material_Thickness);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeDT_Hardware_Item() {
+        private bool ShouldSerialize_DT_Material_Thickness() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Dt_Hardware_Item ds = new Dt_Hardware_Item();
+            DT_Material_Thickness ds = new DT_Material_Thickness();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,23 @@ namespace JodanQuote.Datasource {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void DT_Hardware_ItemRowChangeEventHandler(object sender, DT_Hardware_ItemRowChangeEvent e);
+        public delegate void DT_Material_ThicknessRowChangeEventHandler(object sender, DT_Material_ThicknessRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DT_Hardware_ItemDataTable : global::System.Data.TypedTableBase<DT_Hardware_ItemRow> {
+        public partial class DT_Material_ThicknessDataTable : global::System.Data.TypedTableBase<DT_Material_ThicknessRow> {
             
-            private global::System.Data.DataColumn columnHardware_Description;
+            private global::System.Data.DataColumn columnthickness;
             
-            private global::System.Data.DataColumn columnHardware_Cost;
-            
-            private global::System.Data.DataColumn columnTotal_Cost;
-            
-            private global::System.Data.DataColumn columnHardware_ID;
-            
-            private global::System.Data.DataColumn columnquantity;
-            
-            private global::System.Data.DataColumn columnItem_Hardware_ID;
-            
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnmaterial_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemDataTable() {
-                this.TableName = "DT_Hardware_Item";
+            public DT_Material_ThicknessDataTable() {
+                this.TableName = "DT_Material_Thickness";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +294,7 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DT_Hardware_ItemDataTable(global::System.Data.DataTable table) {
+            internal DT_Material_ThicknessDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,64 +311,24 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected DT_Hardware_ItemDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DT_Material_ThicknessDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Hardware_DescriptionColumn {
+            public global::System.Data.DataColumn thicknessColumn {
                 get {
-                    return this.columnHardware_Description;
+                    return this.columnthickness;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Hardware_CostColumn {
+            public global::System.Data.DataColumn material_idColumn {
                 get {
-                    return this.columnHardware_Cost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Total_CostColumn {
-                get {
-                    return this.columnTotal_Cost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Hardware_IDColumn {
-                get {
-                    return this.columnHardware_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn quantityColumn {
-                get {
-                    return this.columnquantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Item_Hardware_IDColumn {
-                get {
-                    return this.columnItem_Hardware_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
+                    return this.columnmaterial_id;
                 }
             }
             
@@ -393,51 +343,46 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow this[int index] {
+            public DT_Material_ThicknessRow this[int index] {
                 get {
-                    return ((DT_Hardware_ItemRow)(this.Rows[index]));
+                    return ((DT_Material_ThicknessRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DT_Hardware_ItemRowChangeEventHandler DT_Hardware_ItemRowChanging;
+            public event DT_Material_ThicknessRowChangeEventHandler DT_Material_ThicknessRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DT_Hardware_ItemRowChangeEventHandler DT_Hardware_ItemRowChanged;
+            public event DT_Material_ThicknessRowChangeEventHandler DT_Material_ThicknessRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DT_Hardware_ItemRowChangeEventHandler DT_Hardware_ItemRowDeleting;
+            public event DT_Material_ThicknessRowChangeEventHandler DT_Material_ThicknessRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DT_Hardware_ItemRowChangeEventHandler DT_Hardware_ItemRowDeleted;
+            public event DT_Material_ThicknessRowChangeEventHandler DT_Material_ThicknessRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddDT_Hardware_ItemRow(DT_Hardware_ItemRow row) {
+            public void AddDT_Material_ThicknessRow(DT_Material_ThicknessRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow AddDT_Hardware_ItemRow(string Hardware_Description, double Hardware_Cost, double Total_Cost, int Hardware_ID, int quantity, int Item_Hardware_ID, int ID) {
-                DT_Hardware_ItemRow rowDT_Hardware_ItemRow = ((DT_Hardware_ItemRow)(this.NewRow()));
+            public DT_Material_ThicknessRow AddDT_Material_ThicknessRow(decimal thickness, short material_id) {
+                DT_Material_ThicknessRow rowDT_Material_ThicknessRow = ((DT_Material_ThicknessRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Hardware_Description,
-                        Hardware_Cost,
-                        Total_Cost,
-                        Hardware_ID,
-                        quantity,
-                        Item_Hardware_ID,
-                        ID};
-                rowDT_Hardware_ItemRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDT_Hardware_ItemRow);
-                return rowDT_Hardware_ItemRow;
+                        thickness,
+                        material_id};
+                rowDT_Material_ThicknessRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_Material_ThicknessRow);
+                return rowDT_Material_ThicknessRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DT_Hardware_ItemDataTable cln = ((DT_Hardware_ItemDataTable)(base.Clone()));
+                DT_Material_ThicknessDataTable cln = ((DT_Material_ThicknessDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -445,68 +390,52 @@ namespace JodanQuote.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DT_Hardware_ItemDataTable();
+                return new DT_Material_ThicknessDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnHardware_Description = base.Columns["Hardware Description"];
-                this.columnHardware_Cost = base.Columns["Hardware Cost"];
-                this.columnTotal_Cost = base.Columns["Total Cost"];
-                this.columnHardware_ID = base.Columns["Hardware ID"];
-                this.columnquantity = base.Columns["quantity"];
-                this.columnItem_Hardware_ID = base.Columns["Item Hardware ID"];
-                this.columnID = base.Columns["ID"];
+                this.columnthickness = base.Columns["thickness"];
+                this.columnmaterial_id = base.Columns["material_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnHardware_Description = new global::System.Data.DataColumn("Hardware Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardware_Description);
-                this.columnHardware_Cost = new global::System.Data.DataColumn("Hardware Cost", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardware_Cost);
-                this.columnTotal_Cost = new global::System.Data.DataColumn("Total Cost", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Cost);
-                this.columnHardware_ID = new global::System.Data.DataColumn("Hardware ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardware_ID);
-                this.columnquantity = new global::System.Data.DataColumn("quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnquantity);
-                this.columnItem_Hardware_ID = new global::System.Data.DataColumn("Item Hardware ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnItem_Hardware_ID);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, false));
-                this.columnHardware_Description.MaxLength = 50;
-                this.columnID.Unique = true;
+                this.columnthickness = new global::System.Data.DataColumn("thickness", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnthickness);
+                this.columnmaterial_id = new global::System.Data.DataColumn("material_id", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmaterial_id);
+                this.columnmaterial_id.AllowDBNull = false;
+                this.ExtendedProperties.Add("Generator_TablePropName", "_DT_Material_Thickness");
+                this.ExtendedProperties.Add("Generator_UserTableName", "DT_Material_Thickness");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow NewDT_Hardware_ItemRow() {
-                return ((DT_Hardware_ItemRow)(this.NewRow()));
+            public DT_Material_ThicknessRow NewDT_Material_ThicknessRow() {
+                return ((DT_Material_ThicknessRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DT_Hardware_ItemRow(builder);
+                return new DT_Material_ThicknessRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DT_Hardware_ItemRow);
+                return typeof(DT_Material_ThicknessRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DT_Hardware_ItemRowChanged != null)) {
-                    this.DT_Hardware_ItemRowChanged(this, new DT_Hardware_ItemRowChangeEvent(((DT_Hardware_ItemRow)(e.Row)), e.Action));
+                if ((this.DT_Material_ThicknessRowChanged != null)) {
+                    this.DT_Material_ThicknessRowChanged(this, new DT_Material_ThicknessRowChangeEvent(((DT_Material_ThicknessRow)(e.Row)), e.Action));
                 }
             }
             
@@ -514,8 +443,8 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DT_Hardware_ItemRowChanging != null)) {
-                    this.DT_Hardware_ItemRowChanging(this, new DT_Hardware_ItemRowChangeEvent(((DT_Hardware_ItemRow)(e.Row)), e.Action));
+                if ((this.DT_Material_ThicknessRowChanging != null)) {
+                    this.DT_Material_ThicknessRowChanging(this, new DT_Material_ThicknessRowChangeEvent(((DT_Material_ThicknessRow)(e.Row)), e.Action));
                 }
             }
             
@@ -523,8 +452,8 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DT_Hardware_ItemRowDeleted != null)) {
-                    this.DT_Hardware_ItemRowDeleted(this, new DT_Hardware_ItemRowChangeEvent(((DT_Hardware_ItemRow)(e.Row)), e.Action));
+                if ((this.DT_Material_ThicknessRowDeleted != null)) {
+                    this.DT_Material_ThicknessRowDeleted(this, new DT_Material_ThicknessRowChangeEvent(((DT_Material_ThicknessRow)(e.Row)), e.Action));
                 }
             }
             
@@ -532,14 +461,14 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DT_Hardware_ItemRowDeleting != null)) {
-                    this.DT_Hardware_ItemRowDeleting(this, new DT_Hardware_ItemRowChangeEvent(((DT_Hardware_ItemRow)(e.Row)), e.Action));
+                if ((this.DT_Material_ThicknessRowDeleting != null)) {
+                    this.DT_Material_ThicknessRowDeleting(this, new DT_Material_ThicknessRowChangeEvent(((DT_Material_ThicknessRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveDT_Hardware_ItemRow(DT_Hardware_ItemRow row) {
+            public void RemoveDT_Material_ThicknessRow(DT_Material_ThicknessRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -548,7 +477,7 @@ namespace JodanQuote.Datasource {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Dt_Hardware_Item ds = new Dt_Hardware_Item();
+                DT_Material_Thickness ds = new DT_Material_Thickness();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -566,7 +495,7 @@ namespace JodanQuote.Datasource {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DT_Hardware_ItemDataTable";
+                attribute2.FixedValue = "DT_Material_ThicknessDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -610,212 +539,54 @@ namespace JodanQuote.Datasource {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DT_Hardware_ItemRow : global::System.Data.DataRow {
+        public partial class DT_Material_ThicknessRow : global::System.Data.DataRow {
             
-            private DT_Hardware_ItemDataTable tableDT_Hardware_Item;
+            private DT_Material_ThicknessDataTable tableDT_Material_Thickness;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DT_Hardware_ItemRow(global::System.Data.DataRowBuilder rb) : 
+            internal DT_Material_ThicknessRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDT_Hardware_Item = ((DT_Hardware_ItemDataTable)(this.Table));
+                this.tableDT_Material_Thickness = ((DT_Material_ThicknessDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Hardware_Description {
+            public decimal thickness {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Hardware_Item.Hardware_DescriptionColumn]));
+                        return ((decimal)(this[this.tableDT_Material_Thickness.thicknessColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Hardware Description\' in table \'DT_Hardware_Item\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'thickness\' in table \'DT_Material_Thickness\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Hardware_Item.Hardware_DescriptionColumn] = value;
+                    this[this.tableDT_Material_Thickness.thicknessColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Hardware_Cost {
+            public short material_id {
                 get {
-                    try {
-                        return ((double)(this[this.tableDT_Hardware_Item.Hardware_CostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Hardware Cost\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
+                    return ((short)(this[this.tableDT_Material_Thickness.material_idColumn]));
                 }
                 set {
-                    this[this.tableDT_Hardware_Item.Hardware_CostColumn] = value;
+                    this[this.tableDT_Material_Thickness.material_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Total_Cost {
-                get {
-                    try {
-                        return ((double)(this[this.tableDT_Hardware_Item.Total_CostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Total Cost\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.Total_CostColumn] = value;
-                }
+            public bool IsthicknessNull() {
+                return this.IsNull(this.tableDT_Material_Thickness.thicknessColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Hardware_ID {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.Hardware_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Hardware ID\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.Hardware_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int quantity {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.quantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'quantity\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.quantityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Item_Hardware_ID {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.Item_Hardware_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Item Hardware ID\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.Item_Hardware_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsHardware_DescriptionNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Hardware_DescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetHardware_DescriptionNull() {
-                this[this.tableDT_Hardware_Item.Hardware_DescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsHardware_CostNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Hardware_CostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetHardware_CostNull() {
-                this[this.tableDT_Hardware_Item.Hardware_CostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTotal_CostNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Total_CostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTotal_CostNull() {
-                this[this.tableDT_Hardware_Item.Total_CostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsHardware_IDNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Hardware_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetHardware_IDNull() {
-                this[this.tableDT_Hardware_Item.Hardware_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsquantityNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.quantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetquantityNull() {
-                this[this.tableDT_Hardware_Item.quantityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsItem_Hardware_IDNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Item_Hardware_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetItem_Hardware_IDNull() {
-                this[this.tableDT_Hardware_Item.Item_Hardware_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIDNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIDNull() {
-                this[this.tableDT_Hardware_Item.IDColumn] = global::System.Convert.DBNull;
+            public void SetthicknessNull() {
+                this[this.tableDT_Material_Thickness.thicknessColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -823,22 +594,22 @@ namespace JodanQuote.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class DT_Hardware_ItemRowChangeEvent : global::System.EventArgs {
+        public class DT_Material_ThicknessRowChangeEvent : global::System.EventArgs {
             
-            private DT_Hardware_ItemRow eventRow;
+            private DT_Material_ThicknessRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRowChangeEvent(DT_Hardware_ItemRow row, global::System.Data.DataRowAction action) {
+            public DT_Material_ThicknessRowChangeEvent(DT_Material_ThicknessRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow Row {
+            public DT_Material_ThicknessRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -854,7 +625,7 @@ namespace JodanQuote.Datasource {
         }
     }
 }
-namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
+namespace JodanQuote.Datasource.DT_Material_ThicknessTableAdapters {
     
     
     /// <summary>
@@ -866,7 +637,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Ada_Hardware_Item : global::System.ComponentModel.Component {
+    public partial class Ada_material_thickness : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -880,7 +651,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Ada_Hardware_Item() {
+        public Ada_material_thickness() {
             this.ClearBeforeFill = true;
         }
         
@@ -977,14 +748,9 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DT_Hardware_Item";
-            tableMapping.ColumnMappings.Add("Hardware Description", "Hardware Description");
-            tableMapping.ColumnMappings.Add("Hardware Cost", "Hardware Cost");
-            tableMapping.ColumnMappings.Add("Total Cost", "Total Cost");
-            tableMapping.ColumnMappings.Add("Hardware ID", "Hardware ID");
-            tableMapping.ColumnMappings.Add("quantity", "quantity");
-            tableMapping.ColumnMappings.Add("Item Hardware ID", "Item Hardware ID");
-            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.DataSetTable = "DT_Material_Thickness";
+            tableMapping.ColumnMappings.Add("thickness", "thickness");
+            tableMapping.ColumnMappings.Add("material_id", "material_id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -992,8 +758,8 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;Persist Security In" +
-                "fo=True;User ID=sa;Password=Dodid1";
+            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password" +
+                "=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1002,25 +768,19 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [Hardware Description], [Hardware Cost], quantity, [Total Cost], [H" +
-                "ardware ID], [Item Hardware ID], ID\r\nFROM            C_View_Item_Hardware\r\nWHERE" +
-                "        ([Item Hardware ID] = @quote_id)";
+            this._commandCollection[0].CommandText = "SELECT        material_id, thickness\r\nFROM            C_View_Material_Thickness\r\n" +
+                "WHERE        (material_id = @material_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quote_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Item Hardware ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@material_id", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "material_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Dt_Hardware_Item.DT_Hardware_ItemDataTable dataTable, global::System.Nullable<int> quote_id) {
+        public virtual int Fill(DT_Material_Thickness.DT_Material_ThicknessDataTable dataTable, short material_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((quote_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(quote_id.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(material_id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1032,15 +792,10 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Dt_Hardware_Item.DT_Hardware_ItemDataTable GetData(global::System.Nullable<int> quote_id) {
+        public virtual DT_Material_Thickness.DT_Material_ThicknessDataTable GetData(short material_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((quote_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(quote_id.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            Dt_Hardware_Item.DT_Hardware_ItemDataTable dataTable = new Dt_Hardware_Item.DT_Hardware_ItemDataTable();
+            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(material_id));
+            DT_Material_Thickness.DT_Material_ThicknessDataTable dataTable = new DT_Material_Thickness.DT_Material_ThicknessDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1114,7 +869,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(Dt_Hardware_Item dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DT_Material_Thickness dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1124,7 +879,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(Dt_Hardware_Item dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DT_Material_Thickness dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1134,7 +889,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(Dt_Hardware_Item dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DT_Material_Thickness dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1168,7 +923,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(Dt_Hardware_Item dataSet) {
+        public virtual int UpdateAll(DT_Material_Thickness dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

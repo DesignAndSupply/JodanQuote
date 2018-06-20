@@ -20,17 +20,17 @@ namespace JodanQuote.Datasource {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Dt_Hardware_Item")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DT_Settings")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Dt_Hardware_Item : global::System.Data.DataSet {
+    public partial class DT_Settings : global::System.Data.DataSet {
         
-        private DT_Hardware_ItemDataTable tableDT_Hardware_Item;
+        private DT_SettingDataTable tableDT_Setting;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Dt_Hardware_Item() {
+        public DT_Settings() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace JodanQuote.Datasource {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected Dt_Hardware_Item(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DT_Settings(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace JodanQuote.Datasource {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DT_Hardware_Item"] != null)) {
-                    base.Tables.Add(new DT_Hardware_ItemDataTable(ds.Tables["DT_Hardware_Item"]));
+                if ((ds.Tables["DT_Setting"] != null)) {
+                    base.Tables.Add(new DT_SettingDataTable(ds.Tables["DT_Setting"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace JodanQuote.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DT_Hardware_ItemDataTable DT_Hardware_Item {
+        public DT_SettingDataTable DT_Setting {
             get {
-                return this.tableDT_Hardware_Item;
+                return this.tableDT_Setting;
             }
         }
         
@@ -127,7 +127,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Dt_Hardware_Item cln = ((Dt_Hardware_Item)(base.Clone()));
+            DT_Settings cln = ((DT_Settings)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace JodanQuote.Datasource {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DT_Hardware_Item"] != null)) {
-                    base.Tables.Add(new DT_Hardware_ItemDataTable(ds.Tables["DT_Hardware_Item"]));
+                if ((ds.Tables["DT_Setting"] != null)) {
+                    base.Tables.Add(new DT_SettingDataTable(ds.Tables["DT_Setting"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDT_Hardware_Item = ((DT_Hardware_ItemDataTable)(base.Tables["DT_Hardware_Item"]));
+            this.tableDT_Setting = ((DT_SettingDataTable)(base.Tables["DT_Setting"]));
             if ((initTable == true)) {
-                if ((this.tableDT_Hardware_Item != null)) {
-                    this.tableDT_Hardware_Item.InitVars();
+                if ((this.tableDT_Setting != null)) {
+                    this.tableDT_Setting.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Dt_Hardware_Item";
+            this.DataSetName = "DT_Settings";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Dt_Hardware_Item.xsd";
+            this.Namespace = "http://tempuri.org/DT_Settings.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDT_Hardware_Item = new DT_Hardware_ItemDataTable();
-            base.Tables.Add(this.tableDT_Hardware_Item);
+            this.tableDT_Setting = new DT_SettingDataTable();
+            base.Tables.Add(this.tableDT_Setting);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeDT_Hardware_Item() {
+        private bool ShouldSerializeDT_Setting() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Dt_Hardware_Item ds = new Dt_Hardware_Item();
+            DT_Settings ds = new DT_Settings();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,25 @@ namespace JodanQuote.Datasource {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void DT_Hardware_ItemRowChangeEventHandler(object sender, DT_Hardware_ItemRowChangeEvent e);
+        public delegate void DT_SettingRowChangeEventHandler(object sender, DT_SettingRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DT_Hardware_ItemDataTable : global::System.Data.TypedTableBase<DT_Hardware_ItemRow> {
+        public partial class DT_SettingDataTable : global::System.Data.TypedTableBase<DT_SettingRow> {
             
-            private global::System.Data.DataColumn columnHardware_Description;
+            private global::System.Data.DataColumn columnmarkup_hardware;
             
-            private global::System.Data.DataColumn columnHardware_Cost;
+            private global::System.Data.DataColumn columnmarkup_material;
             
-            private global::System.Data.DataColumn columnTotal_Cost;
-            
-            private global::System.Data.DataColumn columnHardware_ID;
-            
-            private global::System.Data.DataColumn columnquantity;
-            
-            private global::System.Data.DataColumn columnItem_Hardware_ID;
-            
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnlabour_rate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemDataTable() {
-                this.TableName = "DT_Hardware_Item";
+            public DT_SettingDataTable() {
+                this.TableName = "DT_Setting";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +296,7 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DT_Hardware_ItemDataTable(global::System.Data.DataTable table) {
+            internal DT_SettingDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,64 +313,32 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected DT_Hardware_ItemDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DT_SettingDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Hardware_DescriptionColumn {
+            public global::System.Data.DataColumn markup_hardwareColumn {
                 get {
-                    return this.columnHardware_Description;
+                    return this.columnmarkup_hardware;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Hardware_CostColumn {
+            public global::System.Data.DataColumn markup_materialColumn {
                 get {
-                    return this.columnHardware_Cost;
+                    return this.columnmarkup_material;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Total_CostColumn {
+            public global::System.Data.DataColumn labour_rateColumn {
                 get {
-                    return this.columnTotal_Cost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Hardware_IDColumn {
-                get {
-                    return this.columnHardware_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn quantityColumn {
-                get {
-                    return this.columnquantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Item_Hardware_IDColumn {
-                get {
-                    return this.columnItem_Hardware_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
+                    return this.columnlabour_rate;
                 }
             }
             
@@ -393,51 +353,47 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow this[int index] {
+            public DT_SettingRow this[int index] {
                 get {
-                    return ((DT_Hardware_ItemRow)(this.Rows[index]));
+                    return ((DT_SettingRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DT_Hardware_ItemRowChangeEventHandler DT_Hardware_ItemRowChanging;
+            public event DT_SettingRowChangeEventHandler DT_SettingRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DT_Hardware_ItemRowChangeEventHandler DT_Hardware_ItemRowChanged;
+            public event DT_SettingRowChangeEventHandler DT_SettingRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DT_Hardware_ItemRowChangeEventHandler DT_Hardware_ItemRowDeleting;
+            public event DT_SettingRowChangeEventHandler DT_SettingRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DT_Hardware_ItemRowChangeEventHandler DT_Hardware_ItemRowDeleted;
+            public event DT_SettingRowChangeEventHandler DT_SettingRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddDT_Hardware_ItemRow(DT_Hardware_ItemRow row) {
+            public void AddDT_SettingRow(DT_SettingRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow AddDT_Hardware_ItemRow(string Hardware_Description, double Hardware_Cost, double Total_Cost, int Hardware_ID, int quantity, int Item_Hardware_ID, int ID) {
-                DT_Hardware_ItemRow rowDT_Hardware_ItemRow = ((DT_Hardware_ItemRow)(this.NewRow()));
+            public DT_SettingRow AddDT_SettingRow(double markup_hardware, double markup_material, double labour_rate) {
+                DT_SettingRow rowDT_SettingRow = ((DT_SettingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Hardware_Description,
-                        Hardware_Cost,
-                        Total_Cost,
-                        Hardware_ID,
-                        quantity,
-                        Item_Hardware_ID,
-                        ID};
-                rowDT_Hardware_ItemRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDT_Hardware_ItemRow);
-                return rowDT_Hardware_ItemRow;
+                        markup_hardware,
+                        markup_material,
+                        labour_rate};
+                rowDT_SettingRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDT_SettingRow);
+                return rowDT_SettingRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DT_Hardware_ItemDataTable cln = ((DT_Hardware_ItemDataTable)(base.Clone()));
+                DT_SettingDataTable cln = ((DT_SettingDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -445,68 +401,52 @@ namespace JodanQuote.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DT_Hardware_ItemDataTable();
+                return new DT_SettingDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnHardware_Description = base.Columns["Hardware Description"];
-                this.columnHardware_Cost = base.Columns["Hardware Cost"];
-                this.columnTotal_Cost = base.Columns["Total Cost"];
-                this.columnHardware_ID = base.Columns["Hardware ID"];
-                this.columnquantity = base.Columns["quantity"];
-                this.columnItem_Hardware_ID = base.Columns["Item Hardware ID"];
-                this.columnID = base.Columns["ID"];
+                this.columnmarkup_hardware = base.Columns["markup_hardware"];
+                this.columnmarkup_material = base.Columns["markup_material"];
+                this.columnlabour_rate = base.Columns["labour_rate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnHardware_Description = new global::System.Data.DataColumn("Hardware Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardware_Description);
-                this.columnHardware_Cost = new global::System.Data.DataColumn("Hardware Cost", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardware_Cost);
-                this.columnTotal_Cost = new global::System.Data.DataColumn("Total Cost", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Cost);
-                this.columnHardware_ID = new global::System.Data.DataColumn("Hardware ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHardware_ID);
-                this.columnquantity = new global::System.Data.DataColumn("quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnquantity);
-                this.columnItem_Hardware_ID = new global::System.Data.DataColumn("Item Hardware ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnItem_Hardware_ID);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, false));
-                this.columnHardware_Description.MaxLength = 50;
-                this.columnID.Unique = true;
+                this.columnmarkup_hardware = new global::System.Data.DataColumn("markup_hardware", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmarkup_hardware);
+                this.columnmarkup_material = new global::System.Data.DataColumn("markup_material", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmarkup_material);
+                this.columnlabour_rate = new global::System.Data.DataColumn("labour_rate", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlabour_rate);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow NewDT_Hardware_ItemRow() {
-                return ((DT_Hardware_ItemRow)(this.NewRow()));
+            public DT_SettingRow NewDT_SettingRow() {
+                return ((DT_SettingRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DT_Hardware_ItemRow(builder);
+                return new DT_SettingRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DT_Hardware_ItemRow);
+                return typeof(DT_SettingRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DT_Hardware_ItemRowChanged != null)) {
-                    this.DT_Hardware_ItemRowChanged(this, new DT_Hardware_ItemRowChangeEvent(((DT_Hardware_ItemRow)(e.Row)), e.Action));
+                if ((this.DT_SettingRowChanged != null)) {
+                    this.DT_SettingRowChanged(this, new DT_SettingRowChangeEvent(((DT_SettingRow)(e.Row)), e.Action));
                 }
             }
             
@@ -514,8 +454,8 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DT_Hardware_ItemRowChanging != null)) {
-                    this.DT_Hardware_ItemRowChanging(this, new DT_Hardware_ItemRowChangeEvent(((DT_Hardware_ItemRow)(e.Row)), e.Action));
+                if ((this.DT_SettingRowChanging != null)) {
+                    this.DT_SettingRowChanging(this, new DT_SettingRowChangeEvent(((DT_SettingRow)(e.Row)), e.Action));
                 }
             }
             
@@ -523,8 +463,8 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DT_Hardware_ItemRowDeleted != null)) {
-                    this.DT_Hardware_ItemRowDeleted(this, new DT_Hardware_ItemRowChangeEvent(((DT_Hardware_ItemRow)(e.Row)), e.Action));
+                if ((this.DT_SettingRowDeleted != null)) {
+                    this.DT_SettingRowDeleted(this, new DT_SettingRowChangeEvent(((DT_SettingRow)(e.Row)), e.Action));
                 }
             }
             
@@ -532,14 +472,14 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DT_Hardware_ItemRowDeleting != null)) {
-                    this.DT_Hardware_ItemRowDeleting(this, new DT_Hardware_ItemRowChangeEvent(((DT_Hardware_ItemRow)(e.Row)), e.Action));
+                if ((this.DT_SettingRowDeleting != null)) {
+                    this.DT_SettingRowDeleting(this, new DT_SettingRowChangeEvent(((DT_SettingRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveDT_Hardware_ItemRow(DT_Hardware_ItemRow row) {
+            public void RemoveDT_SettingRow(DT_SettingRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -548,7 +488,7 @@ namespace JodanQuote.Datasource {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Dt_Hardware_Item ds = new Dt_Hardware_Item();
+                DT_Settings ds = new DT_Settings();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -566,7 +506,7 @@ namespace JodanQuote.Datasource {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DT_Hardware_ItemDataTable";
+                attribute2.FixedValue = "DT_SettingDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -610,212 +550,99 @@ namespace JodanQuote.Datasource {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DT_Hardware_ItemRow : global::System.Data.DataRow {
+        public partial class DT_SettingRow : global::System.Data.DataRow {
             
-            private DT_Hardware_ItemDataTable tableDT_Hardware_Item;
+            private DT_SettingDataTable tableDT_Setting;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DT_Hardware_ItemRow(global::System.Data.DataRowBuilder rb) : 
+            internal DT_SettingRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDT_Hardware_Item = ((DT_Hardware_ItemDataTable)(this.Table));
+                this.tableDT_Setting = ((DT_SettingDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Hardware_Description {
+            public double markup_hardware {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_Hardware_Item.Hardware_DescriptionColumn]));
+                        return ((double)(this[this.tableDT_Setting.markup_hardwareColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Hardware Description\' in table \'DT_Hardware_Item\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'markup_hardware\' in table \'DT_Setting\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Hardware_Item.Hardware_DescriptionColumn] = value;
+                    this[this.tableDT_Setting.markup_hardwareColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Hardware_Cost {
+            public double markup_material {
                 get {
                     try {
-                        return ((double)(this[this.tableDT_Hardware_Item.Hardware_CostColumn]));
+                        return ((double)(this[this.tableDT_Setting.markup_materialColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Hardware Cost\' in table \'DT_Hardware_Item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'markup_material\' in table \'DT_Setting\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Hardware_Item.Hardware_CostColumn] = value;
+                    this[this.tableDT_Setting.markup_materialColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Total_Cost {
+            public double labour_rate {
                 get {
                     try {
-                        return ((double)(this[this.tableDT_Hardware_Item.Total_CostColumn]));
+                        return ((double)(this[this.tableDT_Setting.labour_rateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Total Cost\' in table \'DT_Hardware_Item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'labour_rate\' in table \'DT_Setting\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Hardware_Item.Total_CostColumn] = value;
+                    this[this.tableDT_Setting.labour_rateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Hardware_ID {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.Hardware_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Hardware ID\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.Hardware_IDColumn] = value;
-                }
+            public bool Ismarkup_hardwareNull() {
+                return this.IsNull(this.tableDT_Setting.markup_hardwareColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int quantity {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.quantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'quantity\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.quantityColumn] = value;
-                }
+            public void Setmarkup_hardwareNull() {
+                this[this.tableDT_Setting.markup_hardwareColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Item_Hardware_ID {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.Item_Hardware_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Item Hardware ID\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.Item_Hardware_IDColumn] = value;
-                }
+            public bool Ismarkup_materialNull() {
+                return this.IsNull(this.tableDT_Setting.markup_materialColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Hardware_Item.IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'DT_Hardware_Item\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Hardware_Item.IDColumn] = value;
-                }
+            public void Setmarkup_materialNull() {
+                this[this.tableDT_Setting.markup_materialColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsHardware_DescriptionNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Hardware_DescriptionColumn);
+            public bool Islabour_rateNull() {
+                return this.IsNull(this.tableDT_Setting.labour_rateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetHardware_DescriptionNull() {
-                this[this.tableDT_Hardware_Item.Hardware_DescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsHardware_CostNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Hardware_CostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetHardware_CostNull() {
-                this[this.tableDT_Hardware_Item.Hardware_CostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTotal_CostNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Total_CostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTotal_CostNull() {
-                this[this.tableDT_Hardware_Item.Total_CostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsHardware_IDNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Hardware_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetHardware_IDNull() {
-                this[this.tableDT_Hardware_Item.Hardware_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsquantityNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.quantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetquantityNull() {
-                this[this.tableDT_Hardware_Item.quantityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsItem_Hardware_IDNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.Item_Hardware_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetItem_Hardware_IDNull() {
-                this[this.tableDT_Hardware_Item.Item_Hardware_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIDNull() {
-                return this.IsNull(this.tableDT_Hardware_Item.IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIDNull() {
-                this[this.tableDT_Hardware_Item.IDColumn] = global::System.Convert.DBNull;
+            public void Setlabour_rateNull() {
+                this[this.tableDT_Setting.labour_rateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -823,22 +650,22 @@ namespace JodanQuote.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class DT_Hardware_ItemRowChangeEvent : global::System.EventArgs {
+        public class DT_SettingRowChangeEvent : global::System.EventArgs {
             
-            private DT_Hardware_ItemRow eventRow;
+            private DT_SettingRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRowChangeEvent(DT_Hardware_ItemRow row, global::System.Data.DataRowAction action) {
+            public DT_SettingRowChangeEvent(DT_SettingRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Hardware_ItemRow Row {
+            public DT_SettingRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -854,7 +681,7 @@ namespace JodanQuote.Datasource {
         }
     }
 }
-namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
+namespace JodanQuote.Datasource.DT_SettingsTableAdapters {
     
     
     /// <summary>
@@ -866,7 +693,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Ada_Hardware_Item : global::System.ComponentModel.Component {
+    public partial class ada_setting : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -880,7 +707,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Ada_Hardware_Item() {
+        public ada_setting() {
             this.ClearBeforeFill = true;
         }
         
@@ -897,7 +724,7 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
+        public global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -977,23 +804,27 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DT_Hardware_Item";
-            tableMapping.ColumnMappings.Add("Hardware Description", "Hardware Description");
-            tableMapping.ColumnMappings.Add("Hardware Cost", "Hardware Cost");
-            tableMapping.ColumnMappings.Add("Total Cost", "Total Cost");
-            tableMapping.ColumnMappings.Add("Hardware ID", "Hardware ID");
-            tableMapping.ColumnMappings.Add("quantity", "quantity");
-            tableMapping.ColumnMappings.Add("Item Hardware ID", "Item Hardware ID");
-            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.DataSetTable = "DT_Setting";
+            tableMapping.ColumnMappings.Add("markup_hardware", "markup_hardware");
+            tableMapping.ColumnMappings.Add("markup_material", "markup_material");
+            tableMapping.ColumnMappings.Add("labour_rate", "labour_rate");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Settings] ([markup_hardware], [markup_material], [labour_rate]) VALU" +
+                "ES (@markup_hardware, @markup_material, @labour_rate)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@markup_hardware", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "markup_hardware", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@markup_material", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "markup_material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@labour_rate", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "labour_rate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;Persist Security In" +
-                "fo=True;User ID=sa;Password=Dodid1";
+            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password" +
+                "=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1002,25 +833,17 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [Hardware Description], [Hardware Cost], quantity, [Total Cost], [H" +
-                "ardware ID], [Item Hardware ID], ID\r\nFROM            C_View_Item_Hardware\r\nWHERE" +
-                "        ([Item Hardware ID] = @quote_id)";
+            this._commandCollection[0].CommandText = "SELECT        markup_hardware, markup_material, labour_rate\r\nFROM            Sett" +
+                "ings\r\nORDER BY Id DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quote_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Item Hardware ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Dt_Hardware_Item.DT_Hardware_ItemDataTable dataTable, global::System.Nullable<int> quote_id) {
+        public virtual int Fill(DT_Settings.DT_SettingDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((quote_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(quote_id.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1032,17 +855,79 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Dt_Hardware_Item.DT_Hardware_ItemDataTable GetData(global::System.Nullable<int> quote_id) {
+        public virtual DT_Settings.DT_SettingDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((quote_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(quote_id.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            Dt_Hardware_Item.DT_Hardware_ItemDataTable dataTable = new Dt_Hardware_Item.DT_Hardware_ItemDataTable();
+            DT_Settings.DT_SettingDataTable dataTable = new DT_Settings.DT_SettingDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DT_Settings.DT_SettingDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DT_Settings dataSet) {
+            return this.Adapter.Update(dataSet, "DT_Setting");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<double> markup_hardware, global::System.Nullable<double> markup_material, global::System.Nullable<double> labour_rate) {
+            if ((markup_hardware.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((double)(markup_hardware.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((markup_material.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((double)(markup_material.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((labour_rate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(labour_rate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
         }
     }
     
@@ -1058,6 +943,8 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private ada_setting _ada_setting;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1070,6 +957,20 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ada_setting ada_setting {
+            get {
+                return this._ada_setting;
+            }
+            set {
+                this._ada_setting = value;
             }
         }
         
@@ -1092,6 +993,10 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._ada_setting != null) 
+                            && (this._ada_setting.Connection != null))) {
+                    return this._ada_setting.Connection;
+                }
                 return null;
             }
             set {
@@ -1105,6 +1010,9 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._ada_setting != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -1114,8 +1022,17 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(Dt_Hardware_Item dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DT_Settings dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._ada_setting != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DT_Setting.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._ada_setting.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -1124,8 +1041,16 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(Dt_Hardware_Item dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DT_Settings dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._ada_setting != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DT_Setting.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._ada_setting.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -1134,8 +1059,16 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(Dt_Hardware_Item dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DT_Settings dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._ada_setting != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DT_Setting.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._ada_setting.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -1168,12 +1101,17 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(Dt_Hardware_Item dataSet) {
+        public virtual int UpdateAll(DT_Settings dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._ada_setting != null) 
+                        && (this.MatchTableAdapterConnection(this._ada_setting.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1207,6 +1145,15 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._ada_setting != null)) {
+                    revertConnections.Add(this._ada_setting, this._ada_setting.Connection);
+                    this._ada_setting.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._ada_setting.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._ada_setting.Adapter.AcceptChangesDuringUpdate) {
+                        this._ada_setting.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._ada_setting.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1264,6 +1211,10 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._ada_setting != null)) {
+                    this._ada_setting.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ada_setting]));
+                    this._ada_setting.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
