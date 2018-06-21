@@ -160,6 +160,7 @@
             this.Name = "FrmDimensions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dimensions";
+         //   this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDimensions_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

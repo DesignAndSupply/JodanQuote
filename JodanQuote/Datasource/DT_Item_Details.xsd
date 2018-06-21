@@ -13,7 +13,8 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type, door_style, structual_op_height, structual_op_width, 
-                         frame_width, frame_height, finish_description, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate
+                         frame_width, frame_height, finish_description, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, 
+                         labour_cost, material_cost
 FROM            Item
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)
 ORDER BY revision_id DESC</CommandText>
@@ -49,6 +50,9 @@ ORDER BY revision_id DESC</CommandText>
               <Mapping SourceColumn="markup_material" DataSetColumn="markup_material" />
               <Mapping SourceColumn="markup_hardware" DataSetColumn="markup_hardware" />
               <Mapping SourceColumn="labour_rate" DataSetColumn="labour_rate" />
+              <Mapping SourceColumn="hardware_cost" DataSetColumn="hardware_cost" />
+              <Mapping SourceColumn="labour_cost" DataSetColumn="labour_cost" />
+              <Mapping SourceColumn="material_cost" DataSetColumn="material_cost" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -115,6 +119,9 @@ ORDER BY revision_id DESC</CommandText>
               <xs:element name="markup_material" msprop:Generator_ColumnVarNameInTable="columnmarkup_material" msprop:Generator_ColumnPropNameInRow="markup_material" msprop:Generator_ColumnPropNameInTable="markup_materialColumn" msprop:Generator_UserColumnName="markup_material" type="xs:double" minOccurs="0" />
               <xs:element name="markup_hardware" msprop:Generator_ColumnVarNameInTable="columnmarkup_hardware" msprop:Generator_ColumnPropNameInRow="markup_hardware" msprop:Generator_ColumnPropNameInTable="markup_hardwareColumn" msprop:Generator_UserColumnName="markup_hardware" type="xs:double" minOccurs="0" />
               <xs:element name="labour_rate" msprop:Generator_ColumnVarNameInTable="columnlabour_rate" msprop:Generator_ColumnPropNameInRow="labour_rate" msprop:Generator_ColumnPropNameInTable="labour_rateColumn" msprop:Generator_UserColumnName="labour_rate" type="xs:double" minOccurs="0" />
+              <xs:element name="hardware_cost" msprop:Generator_ColumnVarNameInTable="columnhardware_cost" msprop:Generator_ColumnPropNameInRow="hardware_cost" msprop:Generator_ColumnPropNameInTable="hardware_costColumn" msprop:Generator_UserColumnName="hardware_cost" type="xs:double" minOccurs="0" />
+              <xs:element name="labour_cost" msprop:Generator_ColumnVarNameInTable="columnlabour_cost" msprop:Generator_ColumnPropNameInRow="labour_cost" msprop:Generator_ColumnPropNameInTable="labour_costColumn" msprop:Generator_UserColumnName="labour_cost" type="xs:double" minOccurs="0" />
+              <xs:element name="material_cost" msprop:Generator_ColumnVarNameInTable="columnmaterial_cost" msprop:Generator_ColumnPropNameInRow="material_cost" msprop:Generator_ColumnPropNameInTable="material_costColumn" msprop:Generator_UserColumnName="material_cost" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

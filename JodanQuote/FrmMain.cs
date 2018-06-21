@@ -58,7 +58,7 @@ namespace JodanQuote
                 dt_quote.Clear();
                 SqlDataAdapter search_quote_customer = new SqlDataAdapter(Statementsclass.search_quote_customer, conn);
                 search_quote_customer.SelectCommand.Parameters.AddWithValue("@customer", txt_customer.Text.ToString());
-                search_quote_customer.SelectCommand.Parameters.AddWithValue("@quote_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
+                search_quote_customer.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
                 search_quote_customer.Fill(dt_quote);
                // Format();
                 return;
@@ -83,7 +83,7 @@ namespace JodanQuote
                 dt_quote.Clear();
               
                 SqlDataAdapter search_quote = new SqlDataAdapter(Statementsclass.search_quote, conn);
-                search_quote.SelectCommand.Parameters.AddWithValue("@quote_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
+                search_quote.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
                 search_quote.Fill(dt_quote);
                // Format();
                 return;

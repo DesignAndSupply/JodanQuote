@@ -16,14 +16,15 @@ namespace JodanQuote
 {
     public partial class FrmQuote : Form
     {
-        //public static DataTable dt_quote = new DataTable();
+        public static int locked_identifiter = 1;
 
         public FrmQuote()
         {
             InitializeComponent();
             Fill_data();
-            Select_data();
+            btn_edit.PerformClick();
             Format();
+            
         }
 
         void Fill_data()
@@ -31,34 +32,10 @@ namespace JodanQuote
 
 
             this.ada_quote.Fill(dt_quote.DT_Quote_Items, Valuesclass.project_id);
+            this.c_View_StatusTableAdapter.Fill(this.dT_Status.C_View_Status);
 
-
-        }
-
-        void Select_data()
-        {
-
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand select_quote_details = new SqlCommand(Statementsclass.select_quote_details,conn);
-            select_quote_details.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            SqlDataReader reader = select_quote_details.ExecuteReader();
-
-            if (reader.Read())
-            {
-
-                Valuesclass.project_ref = reader["project_ref"].ToString();
-                Valuesclass.quote_status = reader["quote_status"].ToString();
-            
-
-                ConnectionClass.Dispose_connection(conn);
-            
-
-            }
-
-            txt_project_ref.Text= Valuesclass.project_ref;
-            cmb_quote_status.Text = Valuesclass.quote_status;
-            txt_project.Text = Valuesclass.project_id.ToString();
-
+            Valuesclass.project_ref = txt_project_ref.Text;
+            Valuesclass.quote_status = cmb_quote_status.Text;
         }
 
         void select_max_item()
@@ -151,6 +128,21 @@ namespace JodanQuote
 
         }
 
+        void Save()
+        {
+
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand update_project = new SqlCommand(Statementsclass.update_project, conn);
+            update_project.Parameters.AddWithValue("@quote_status", cmb_quote_status.Text.ToString());
+            update_project.Parameters.AddWithValue("@project_ref", txt_project_ref.Text);
+            update_project.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            update_project.ExecuteNonQuery();
+            ConnectionClass.Dispose_connection(conn);
+            MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Fill_data();
+
+        }
+
         private void btn_new_item_Click(object sender, EventArgs e)
         {
            
@@ -208,7 +200,7 @@ namespace JodanQuote
 
                     int i = e.RowIndex;
                     Valuesclass.quote_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Quote ID"].ToString());
-                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item ID"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
                     Valuesclass.revision_number = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Revision Number"].ToString());
                     //select_max_revison();
                     Valuesclass.new_item_identifier = 0;
@@ -229,7 +221,7 @@ namespace JodanQuote
 
                     if(delete == DialogResult.Yes)
                     {
-                        int item_id = Convert.ToInt32(grid_items_on_quote.Rows[i].Cells["Item ID"].Value.ToString());
+                        int item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
                         SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                         SqlCommand delete_quote_item = new SqlCommand(Statementsclass.delete_quote_item, conn);
                         delete_quote_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
@@ -249,7 +241,7 @@ namespace JodanQuote
                     select_max_item();
                     Select_quote_id();
                     //Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
-                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item ID"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
 
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand copy_item = new SqlCommand(Statementsclass.copy_item, conn);
@@ -277,6 +269,12 @@ namespace JodanQuote
                         insert_copied_item.Parameters.AddWithValue("@frame_height", reader["frame_height"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@total_cost", reader["total_cost"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@created_by",loginclass.Login.globalFullName);
+                        insert_copied_item.Parameters.AddWithValue("@markup_material", reader["markup_material"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@material_cost", reader["material_cost"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@markup_hardware", reader["markup_hardware"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@hardware_cost", reader["hardware_cost"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@labour_rate", reader["labour_rate"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@labour_cost", reader["labour_cost"].ToString());
                         ConnectionClass.Dispose_connection(conn);
 
 
@@ -289,7 +287,7 @@ namespace JodanQuote
                     }
                     Copy_hardware();
                     Fill_data();
-
+                    MessageBox.Show("Item Copy Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
 
@@ -330,24 +328,46 @@ namespace JodanQuote
         private void btn_email_project_Click(object sender, EventArgs e)
         {
             FrmMailQuote mail = new FrmMailQuote();
-            mail.Show();
-        }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand update_project = new SqlCommand(Statementsclass.update_project, conn);
-            update_project.Parameters.AddWithValue("@quote_status", cmb_quote_status.Text.ToString());
-            update_project.Parameters.AddWithValue("@project_ref", txt_project_ref.Text);
-            update_project.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            update_project.ExecuteNonQuery();
-            ConnectionClass.Dispose_connection(conn);
-            MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            mail.ShowDialog();
         }
 
         private void FrmQuote_Shown(object sender, EventArgs e)
         {
             Fill_data();
         }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            if (locked_identifiter == 0)
+            {
+                Save();
+                main_tab_project_additions.Enabled = false;
+                locked_identifiter = 1;
+                btn_edit.Text = "         Edit            Details";
+                btn_edit.Image = JodanQuote.Properties.Resources.Revise;
+
+                cmb_quote_status.Visible = false;
+                txt_quote_status.Visible = true;
+
+            }
+
+            else
+            {
+
+               
+                main_tab_project_additions.Enabled = true;
+             
+                locked_identifiter = 0;
+                btn_edit.Text = "         Save         Quotation";
+                btn_edit.Image = JodanQuote.Properties.Resources.Save;
+                cmb_quote_status.Visible = true;
+                txt_quote_status.Visible = false;
+            }
+
+            Fill_data();
+        }
+
+       
     }
+    
 }

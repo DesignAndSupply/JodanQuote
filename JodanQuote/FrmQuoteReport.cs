@@ -26,6 +26,9 @@ namespace JodanQuote
         {
             InitializeComponent();
             Fill_data();
+            Save_PDF();
+
+
         }
         void Fill_data()
 
@@ -33,7 +36,7 @@ namespace JodanQuote
             DataSet ds = new DataSet();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter select_quote_report = new SqlDataAdapter(Statementsclass.select_quote_report, conn);
-            select_quote_report.SelectCommand.Parameters.AddWithValue("@project", Valuesclass.project_id);
+            select_quote_report.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
             select_quote_report.Fill(ds);
             CrRptQuote1.SetDataSource(ds.Tables[0]);
             ConnectionClass.Dispose_connection(conn);
@@ -42,19 +45,29 @@ namespace JodanQuote
 
         }
 
-        public static void Send_quote()
+         void Send_quote()
         {
-           
+
+            Save_PDF();
+            FrmMailQuote mail = new FrmMailQuote();
+            mail.ShowDialog();
+
+            
+            string path = @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF";
 
             string recipients = string.Join("", Functionsclass.Emailrecipients);
             Outlook.Application app = new Outlook.Application();
             Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
             mailItem.Subject = "Quote Number: " + Valuesclass.project_id;
             mailItem.To = recipients;
-            mailItem.Body = "Test";
-          //  mailItem.Attachments.Add(CrRptQuote1);
+            //mailItem.Body = "Test";
+            mailItem.Attachments.Add(path);
             mailItem.Importance = Outlook.OlImportance.olImportanceHigh;
             mailItem.Display(false);
+
+
+            
+          
 
 
 
@@ -74,7 +87,7 @@ namespace JodanQuote
             mail.Show();
             Save_PDF();
         }
-        void Save_PDF()
+         void Save_PDF()
         {
 
            string path = @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF";

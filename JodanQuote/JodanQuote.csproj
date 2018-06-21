@@ -14,7 +14,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -167,6 +167,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_Settings.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\DT_Status.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Status.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmDimensions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +242,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="FrmDimensions.resx">
       <DependentUpon>FrmDimensions.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,6 +400,17 @@
     </None>
     <None Include="Datasource\DT_Settings.xss">
       <DependentUpon>DT_Settings.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Status.xsc">
+      <DependentUpon>DT_Status.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Status.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Status.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Status.xss">
+      <DependentUpon>DT_Status.xsd</DependentUpon>
     </None>
     <None Include="Other\JodanQuote_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

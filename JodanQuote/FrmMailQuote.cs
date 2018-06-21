@@ -27,6 +27,7 @@ namespace JodanQuote
             Format();
 
         }
+
         void Fill_data()
         {
 
@@ -39,6 +40,7 @@ namespace JodanQuote
 
 
         }
+
         void Format()
         {
             grid_email_recipients.EnableHeadersVisualStyles = false;
@@ -51,7 +53,13 @@ namespace JodanQuote
         }
 
         void Send()
+
+
         {
+
+            FrmQuoteReport report = new FrmQuoteReport();
+            report.Show();
+            report.Hide();
             string path = @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF";
 
             string recipients = string.Join("", Functionsclass.Emailrecipients);
@@ -73,6 +81,7 @@ namespace JodanQuote
 
         private void btn_send_Click(object sender, EventArgs e)
         {
+            Functionsclass.Emailrecipients.Clear();
             try
             {
                 for (int i = 0; i < grid_email_recipients.Rows.Count; i++)
@@ -83,7 +92,7 @@ namespace JodanQuote
 
                         string recipient = grid_email_recipients.Rows[i].Cells["Email"].Value.ToString();
 
-                        Functionsclass.Emailrecipients.Add(recipient + ";");
+                         Functionsclass.Emailrecipients.Add(recipient + ";");
                         
                       
 
@@ -99,7 +108,7 @@ namespace JodanQuote
                 sent.URL = @"\\designsvr1\apps\\Design and Supply CSharp\Sounds\Mail Sent.mp3";
                 sent.controls.play();
                 Send();
-
+                this.Hide();
             }
 
             catch(Exception ex)

@@ -46,11 +46,19 @@
             this.maintab_doors_on_quote = new System.Windows.Forms.TabControl();
             this.tab_door_on_quote = new System.Windows.Forms.TabPage();
             this.grid_items_on_quote = new System.Windows.Forms.DataGridView();
+            this.Item_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.revision_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_view = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_copy = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_delete_item = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Quote_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dTQuoteItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dt_quote = new JodanQuote.Datasource.dt_quote();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnl_header = new System.Windows.Forms.Panel();
+            this.btn_edit = new System.Windows.Forms.Button();
             this.txt_project = new System.Windows.Forms.TextBox();
-            this.btn_save = new System.Windows.Forms.Button();
             this.txt_customer = new System.Windows.Forms.TextBox();
             this.lbl_customer = new System.Windows.Forms.Label();
             this.btn_email_project = new System.Windows.Forms.Button();
@@ -65,13 +73,14 @@
             this.btn_quote_details = new System.Windows.Forms.Button();
             this.main_tab_project_additions = new System.Windows.Forms.TabControl();
             this.tab_quote_details = new System.Windows.Forms.TabPage();
+            this.txt_quote_status = new System.Windows.Forms.TextBox();
+            this.txt_created = new System.Windows.Forms.TextBox();
             this.cmb_quote_status = new System.Windows.Forms.ComboBox();
+            this.cViewStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dT_Status = new JodanQuote.Datasource.DT_Status();
             this.txt_project_ref = new System.Windows.Forms.TextBox();
-            this.txt_note = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_username = new System.Windows.Forms.Label();
             this.lbl_box = new System.Windows.Forms.Label();
             this.tab_additonal_cost = new System.Windows.Forms.TabPage();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -84,14 +93,7 @@
             this.ada_setting = new JodanQuote.Datasource.DT_SettingsTableAdapters.ada_setting();
             this.dT_Settings = new JodanQuote.Datasource.DT_Settings();
             this.ada_quote = new JodanQuote.Datasource.dt_quoteTableAdapters.ada_quote();
-            this.Item_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.revision_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_view = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_copy = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_delete_item = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Quote_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c_View_StatusTableAdapter = new JodanQuote.Datasource.DT_StatusTableAdapters.C_View_StatusTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -100,10 +102,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_items_on_quote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTQuoteItemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_quote)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.pnl_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.main_tab_project_additions.SuspendLayout();
             this.tab_quote_details.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cViewStatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_Status)).BeginInit();
             this.tab_additonal_cost.SuspendLayout();
             this.tab_notes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Settings)).BeginInit();
@@ -215,15 +219,15 @@
             this.grid_items_on_quote.DataSource = this.dTQuoteItemsBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grid_items_on_quote.DefaultCellStyle = dataGridViewCellStyle7;
             this.grid_items_on_quote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_items_on_quote.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_items_on_quote.Location = new System.Drawing.Point(100, 69);
+            this.grid_items_on_quote.Location = new System.Drawing.Point(96, 69);
             this.grid_items_on_quote.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_items_on_quote.Name = "grid_items_on_quote";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -240,6 +244,105 @@
             this.grid_items_on_quote.TabIndex = 24;
             this.grid_items_on_quote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_items_on_quote_CellContentClick);
             // 
+            // Item_id
+            // 
+            this.Item_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Item_id.DataPropertyName = "Item ID";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.Item_id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Item_id.FillWeight = 58.38951F;
+            this.Item_id.HeaderText = "Item ID";
+            this.Item_id.Name = "Item_id";
+            // 
+            // revision_number
+            // 
+            this.revision_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.revision_number.DataPropertyName = "Revision Number";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.revision_number.DefaultCellStyle = dataGridViewCellStyle3;
+            this.revision_number.FillWeight = 60.83147F;
+            this.revision_number.HeaderText = "Revision Number";
+            this.revision_number.Name = "revision_number";
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "Date Created";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.dateCreatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dateCreatedDataGridViewTextBoxColumn.FillWeight = 88.38951F;
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created";
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            // 
+            // createdByDataGridViewTextBoxColumn
+            // 
+            this.createdByDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "Created By";
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.createdByDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.createdByDataGridViewTextBoxColumn.FillWeight = 88.38951F;
+            this.createdByDataGridViewTextBoxColumn.HeaderText = "Created By";
+            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
+            // 
+            // btn_view
+            // 
+            this.btn_view.HeaderText = "";
+            this.btn_view.Image = global::JodanQuote.Properties.Resources.Search_Small_;
+            this.btn_view.Name = "btn_view";
+            this.btn_view.ToolTipText = "View Item";
+            this.btn_view.Width = 5;
+            // 
+            // btn_copy
+            // 
+            this.btn_copy.HeaderText = "";
+            this.btn_copy.Image = global::JodanQuote.Properties.Resources.Copy_small_;
+            this.btn_copy.MinimumWidth = 7;
+            this.btn_copy.Name = "btn_copy";
+            this.btn_copy.ToolTipText = "Copy Item";
+            this.btn_copy.Width = 7;
+            // 
+            // btn_delete_item
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.NullValue = "  ";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_delete_item.DefaultCellStyle = dataGridViewCellStyle6;
+            this.btn_delete_item.HeaderText = "";
+            this.btn_delete_item.Image = global::JodanQuote.Properties.Resources.clear;
+            this.btn_delete_item.MinimumWidth = 7;
+            this.btn_delete_item.Name = "btn_delete_item";
+            this.btn_delete_item.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btn_delete_item.ToolTipText = "Delete Item";
+            this.btn_delete_item.Width = 7;
+            // 
+            // Quote_ID
+            // 
+            this.Quote_ID.DataPropertyName = "Quote ID";
+            this.Quote_ID.HeaderText = "Quote ID";
+            this.Quote_ID.Name = "Quote_ID";
+            this.Quote_ID.Visible = false;
+            this.Quote_ID.Width = 89;
+            // 
             // dTQuoteItemsBindingSource
             // 
             this.dTQuoteItemsBindingSource.DataMember = "DT_Quote_Items";
@@ -250,29 +353,46 @@
             this.dt_quote.DataSetName = "dt_quote";
             this.dt_quote.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel5
+            // pnl_header
             // 
-            this.panel5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel5.Controls.Add(this.txt_project);
-            this.panel5.Controls.Add(this.btn_save);
-            this.panel5.Controls.Add(this.txt_customer);
-            this.panel5.Controls.Add(this.lbl_customer);
-            this.panel5.Controls.Add(this.btn_email_project);
-            this.panel5.Controls.Add(this.lbl_quote_id);
-            this.panel5.Controls.Add(this.btn_back);
-            this.panel5.Controls.Add(this.btn_new_item);
-            this.panel5.Controls.Add(this.btn_print_project);
-            this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Location = new System.Drawing.Point(-1, -1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1927, 100);
-            this.panel5.TabIndex = 48;
+            this.pnl_header.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnl_header.Controls.Add(this.btn_edit);
+            this.pnl_header.Controls.Add(this.txt_project);
+            this.pnl_header.Controls.Add(this.txt_customer);
+            this.pnl_header.Controls.Add(this.lbl_customer);
+            this.pnl_header.Controls.Add(this.btn_email_project);
+            this.pnl_header.Controls.Add(this.lbl_quote_id);
+            this.pnl_header.Controls.Add(this.btn_back);
+            this.pnl_header.Controls.Add(this.btn_new_item);
+            this.pnl_header.Controls.Add(this.btn_print_project);
+            this.pnl_header.Controls.Add(this.pictureBox3);
+            this.pnl_header.Location = new System.Drawing.Point(-1, -1);
+            this.pnl_header.Name = "pnl_header";
+            this.pnl_header.Size = new System.Drawing.Size(1927, 100);
+            this.pnl_header.TabIndex = 48;
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_edit.Image = global::JodanQuote.Properties.Resources.Revise;
+            this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_edit.Location = new System.Drawing.Point(915, 28);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(98, 37);
+            this.btn_edit.TabIndex = 47;
+            this.btn_edit.Text = "         Edit            Details";
+            this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // txt_project
             // 
             this.txt_project.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_project.BackColor = System.Drawing.Color.CornflowerBlue;
             this.txt_project.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_project.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTQuoteItemsBindingSource, "Project ID", true));
             this.txt_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_project.ForeColor = System.Drawing.Color.AliceBlue;
             this.txt_project.Location = new System.Drawing.Point(385, 22);
@@ -281,27 +401,12 @@
             this.txt_project.Size = new System.Drawing.Size(192, 22);
             this.txt_project.TabIndex = 46;
             // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.AliceBlue;
-            this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_save.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_save.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_save.Image = global::JodanQuote.Properties.Resources.Save;
-            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_save.Location = new System.Drawing.Point(919, 28);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(98, 37);
-            this.btn_save.TabIndex = 45;
-            this.btn_save.Text = "         Update           Quote";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
             // txt_customer
             // 
             this.txt_customer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_customer.BackColor = System.Drawing.Color.CornflowerBlue;
             this.txt_customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTQuoteItemsBindingSource, "customer_ref", true));
             this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_customer.ForeColor = System.Drawing.Color.AliceBlue;
             this.txt_customer.Location = new System.Drawing.Point(386, 53);
@@ -329,7 +434,7 @@
             this.btn_email_project.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_email_project.Image = global::JodanQuote.Properties.Resources.Email;
             this.btn_email_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_email_project.Location = new System.Drawing.Point(721, 28);
+            this.btn_email_project.Location = new System.Drawing.Point(717, 28);
             this.btn_email_project.Name = "btn_email_project";
             this.btn_email_project.Size = new System.Drawing.Size(98, 37);
             this.btn_email_project.TabIndex = 41;
@@ -373,7 +478,7 @@
             this.btn_new_item.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_new_item.Image = global::JodanQuote.Properties.Resources.NewRecord;
             this.btn_new_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_new_item.Location = new System.Drawing.Point(1018, 28);
+            this.btn_new_item.Location = new System.Drawing.Point(1017, 28);
             this.btn_new_item.Name = "btn_new_item";
             this.btn_new_item.Size = new System.Drawing.Size(98, 37);
             this.btn_new_item.TabIndex = 40;
@@ -390,7 +495,7 @@
             this.btn_print_project.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_print_project.Image = global::JodanQuote.Properties.Resources.Print_Small;
             this.btn_print_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print_project.Location = new System.Drawing.Point(820, 28);
+            this.btn_print_project.Location = new System.Drawing.Point(817, 28);
             this.btn_print_project.Name = "btn_print_project";
             this.btn_print_project.Size = new System.Drawing.Size(98, 37);
             this.btn_print_project.TabIndex = 39;
@@ -463,6 +568,7 @@
             this.main_tab_project_additions.Controls.Add(this.tab_quote_details);
             this.main_tab_project_additions.Controls.Add(this.tab_additonal_cost);
             this.main_tab_project_additions.Controls.Add(this.tab_notes);
+            this.main_tab_project_additions.Enabled = false;
             this.main_tab_project_additions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.main_tab_project_additions.Location = new System.Drawing.Point(175, 117);
             this.main_tab_project_additions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -473,13 +579,12 @@
             // 
             // tab_quote_details
             // 
+            this.tab_quote_details.Controls.Add(this.txt_quote_status);
+            this.tab_quote_details.Controls.Add(this.txt_created);
             this.tab_quote_details.Controls.Add(this.cmb_quote_status);
             this.tab_quote_details.Controls.Add(this.txt_project_ref);
-            this.tab_quote_details.Controls.Add(this.txt_note);
             this.tab_quote_details.Controls.Add(this.label4);
             this.tab_quote_details.Controls.Add(this.label3);
-            this.tab_quote_details.Controls.Add(this.label2);
-            this.tab_quote_details.Controls.Add(this.lbl_username);
             this.tab_quote_details.Controls.Add(this.lbl_box);
             this.tab_quote_details.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.tab_quote_details.Location = new System.Drawing.Point(4, 24);
@@ -490,45 +595,63 @@
             this.tab_quote_details.Text = "Quote Details";
             this.tab_quote_details.UseVisualStyleBackColor = true;
             // 
+            // txt_quote_status
+            // 
+            this.txt_quote_status.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTQuoteItemsBindingSource, "quote_status", true));
+            this.txt_quote_status.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_quote_status.Location = new System.Drawing.Point(36, 207);
+            this.txt_quote_status.Name = "txt_quote_status";
+            this.txt_quote_status.Size = new System.Drawing.Size(181, 21);
+            this.txt_quote_status.TabIndex = 44;
+            // 
+            // txt_created
+            // 
+            this.txt_created.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTQuoteItemsBindingSource, "Created By", true));
+            this.txt_created.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_created.Location = new System.Drawing.Point(36, 62);
+            this.txt_created.Name = "txt_created";
+            this.txt_created.Size = new System.Drawing.Size(181, 21);
+            this.txt_created.TabIndex = 43;
+            // 
             // cmb_quote_status
             // 
+            this.cmb_quote_status.DataSource = this.cViewStatusBindingSource;
+            this.cmb_quote_status.DisplayMember = "description";
             this.cmb_quote_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_quote_status.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmb_quote_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_quote_status.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_quote_status.FormattingEnabled = true;
-            this.cmb_quote_status.Items.AddRange(new object[] {
-            "Pending",
-            "Won",
-            "Lost",
-            "Removed"});
-            this.cmb_quote_status.Location = new System.Drawing.Point(25, 276);
+            this.cmb_quote_status.Location = new System.Drawing.Point(37, 207);
             this.cmb_quote_status.Name = "cmb_quote_status";
-            this.cmb_quote_status.Size = new System.Drawing.Size(163, 21);
+            this.cmb_quote_status.Size = new System.Drawing.Size(181, 21);
             this.cmb_quote_status.TabIndex = 42;
+            this.cmb_quote_status.ValueMember = "description";
+            // 
+            // cViewStatusBindingSource
+            // 
+            this.cViewStatusBindingSource.DataMember = "C_View_Status";
+            this.cViewStatusBindingSource.DataSource = this.dT_Status;
+            // 
+            // dT_Status
+            // 
+            this.dT_Status.DataSetName = "DT_Status";
+            this.dT_Status.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txt_project_ref
             // 
             this.txt_project_ref.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_project_ref.Location = new System.Drawing.Point(24, 180);
+            this.txt_project_ref.Location = new System.Drawing.Point(36, 133);
             this.txt_project_ref.Name = "txt_project_ref";
             this.txt_project_ref.Size = new System.Drawing.Size(181, 21);
             this.txt_project_ref.TabIndex = 41;
-            // 
-            // txt_note
-            // 
-            this.txt_note.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_note.Location = new System.Drawing.Point(24, 117);
-            this.txt_note.Name = "txt_note";
-            this.txt_note.Size = new System.Drawing.Size(181, 21);
-            this.txt_note.TabIndex = 31;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(23, 231);
+            this.label4.Location = new System.Drawing.Point(37, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 40;
@@ -539,40 +662,18 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label3.Location = new System.Drawing.Point(25, 163);
+            this.label3.Location = new System.Drawing.Point(36, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 13);
             this.label3.TabIndex = 39;
             this.label3.Text = "Project Reference:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(25, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 13);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Customer Quote Ref:";
-            // 
-            // lbl_username
-            // 
-            this.lbl_username.AutoSize = true;
-            this.lbl_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_username.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_username.Location = new System.Drawing.Point(105, 55);
-            this.lbl_username.Name = "lbl_username";
-            this.lbl_username.Size = new System.Drawing.Size(55, 13);
-            this.lbl_username.TabIndex = 37;
-            this.lbl_username.Text = "Username";
             // 
             // lbl_box
             // 
             this.lbl_box.AutoSize = true;
             this.lbl_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_box.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_box.Location = new System.Drawing.Point(25, 55);
+            this.lbl_box.Location = new System.Drawing.Point(36, 46);
             this.lbl_box.Name = "lbl_box";
             this.lbl_box.Size = new System.Drawing.Size(73, 13);
             this.lbl_box.TabIndex = 37;
@@ -676,104 +777,9 @@
             // 
             this.ada_quote.ClearBeforeFill = true;
             // 
-            // Item_id
+            // c_View_StatusTableAdapter
             // 
-            this.Item_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Item_id.DataPropertyName = "Item ID";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.Item_id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Item_id.FillWeight = 58.38951F;
-            this.Item_id.HeaderText = "Item ID";
-            this.Item_id.Name = "Item_id";
-            // 
-            // revision_number
-            // 
-            this.revision_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.revision_number.DataPropertyName = "Revision Number";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.revision_number.DefaultCellStyle = dataGridViewCellStyle3;
-            this.revision_number.FillWeight = 60.83147F;
-            this.revision_number.HeaderText = "Revision Number";
-            this.revision_number.Name = "revision_number";
-            // 
-            // dateCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "Date Created";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.dateCreatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dateCreatedDataGridViewTextBoxColumn.FillWeight = 88.38951F;
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created";
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            // 
-            // createdByDataGridViewTextBoxColumn
-            // 
-            this.createdByDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "Created By";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.createdByDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.createdByDataGridViewTextBoxColumn.FillWeight = 88.38951F;
-            this.createdByDataGridViewTextBoxColumn.HeaderText = "Created By";
-            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
-            // 
-            // btn_view
-            // 
-            this.btn_view.HeaderText = "";
-            this.btn_view.Image = global::JodanQuote.Properties.Resources.Search_Small_;
-            this.btn_view.Name = "btn_view";
-            this.btn_view.ToolTipText = "View Item";
-            this.btn_view.Width = 5;
-            // 
-            // btn_copy
-            // 
-            this.btn_copy.HeaderText = "";
-            this.btn_copy.Image = global::JodanQuote.Properties.Resources.Copy_small_;
-            this.btn_copy.MinimumWidth = 7;
-            this.btn_copy.Name = "btn_copy";
-            this.btn_copy.ToolTipText = "Copy Item";
-            this.btn_copy.Width = 7;
-            // 
-            // btn_delete_item
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.NullValue = "  ";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_delete_item.DefaultCellStyle = dataGridViewCellStyle6;
-            this.btn_delete_item.HeaderText = "";
-            this.btn_delete_item.Image = global::JodanQuote.Properties.Resources.clear;
-            this.btn_delete_item.MinimumWidth = 7;
-            this.btn_delete_item.Name = "btn_delete_item";
-            this.btn_delete_item.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btn_delete_item.ToolTipText = "Delete Item";
-            this.btn_delete_item.Width = 7;
-            // 
-            // Quote_ID
-            // 
-            this.Quote_ID.DataPropertyName = "Quote ID";
-            this.Quote_ID.HeaderText = "Quote ID";
-            this.Quote_ID.Name = "Quote_ID";
-            this.Quote_ID.Visible = false;
-            this.Quote_ID.Width = 89;
+            this.c_View_StatusTableAdapter.ClearBeforeFill = true;
             // 
             // FrmQuote
             // 
@@ -787,7 +793,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.maintab_doors_on_quote);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.pnl_header);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -807,12 +813,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_items_on_quote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTQuoteItemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_quote)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.pnl_header.ResumeLayout(false);
+            this.pnl_header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.main_tab_project_additions.ResumeLayout(false);
             this.tab_quote_details.ResumeLayout(false);
             this.tab_quote_details.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cViewStatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_Status)).EndInit();
             this.tab_additonal_cost.ResumeLayout(false);
             this.tab_additonal_cost.PerformLayout();
             this.tab_notes.ResumeLayout(false);
@@ -832,7 +840,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabControl maintab_doors_on_quote;
         private System.Windows.Forms.TabPage tab_door_on_quote;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnl_header;
         private System.Windows.Forms.Button btn_email_project;
         private System.Windows.Forms.Label lbl_quote_id;
         private System.Windows.Forms.Button btn_back;
@@ -850,11 +858,8 @@
         private System.Windows.Forms.TabPage tab_quote_details;
         private System.Windows.Forms.ComboBox cmb_quote_status;
         private System.Windows.Forms.TextBox txt_project_ref;
-        private System.Windows.Forms.TextBox txt_note;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbl_username;
         private System.Windows.Forms.Label lbl_box;
         private System.Windows.Forms.TabPage tab_additonal_cost;
         private System.Windows.Forms.TextBox textBox3;
@@ -864,7 +869,6 @@
         private System.Windows.Forms.TabPage tab_notes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.TextBox txt_project;
         private Datasource.DT_SettingsTableAdapters.ada_setting ada_setting;
         private Datasource.DT_Settings dT_Settings;
@@ -879,5 +883,11 @@
         private System.Windows.Forms.DataGridViewImageColumn btn_copy;
         private System.Windows.Forms.DataGridViewImageColumn btn_delete_item;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quote_ID;
+        private System.Windows.Forms.TextBox txt_created;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.TextBox txt_quote_status;
+        private Datasource.DT_Status dT_Status;
+        private System.Windows.Forms.BindingSource cViewStatusBindingSource;
+        private Datasource.DT_StatusTableAdapters.C_View_StatusTableAdapter c_View_StatusTableAdapter;
     }
 }

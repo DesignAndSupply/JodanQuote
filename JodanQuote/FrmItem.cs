@@ -38,7 +38,7 @@ namespace JodanQuote
             locked_identifiter = 0;
             Fill_data();
             Format();
-
+            //Refresh_Data();
         }
 
         void Fill_data()
@@ -57,8 +57,8 @@ namespace JodanQuote
                 this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
                 this.ada_Item_Details.Fill(dT_Item_Details._DT_Item_Details, Valuesclass.project_id, Valuesclass.item_id, Valuesclass.revision_number);
 
-
-                //this.ada_finish.Fill(this.dT_finish.dt_finish);
+               
+              
             }
             else
             {
@@ -66,15 +66,16 @@ namespace JodanQuote
 
             }
 
-            txt_project.Text = Valuesclass.project_id.ToString();
-            txt_item.Text = Valuesclass.item_id.ToString();
-            txt_revision.Text = Valuesclass.revision_number.ToString();
-            Refresh_Data();
+            
+           // Refresh_Data();
+
 
         }
 
         void Refresh_Data()
         {
+
+
             double total = 0;
             for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
             {
@@ -83,8 +84,44 @@ namespace JodanQuote
 
 
             }
-            txt_hardwarel_cost.Text ="£" + total.ToString();
-            
+            txt_hardware_cost.Text ="£" + total.ToString();
+
+            if (string.IsNullOrEmpty(txt_hardware_cost.Text))
+            {
+                txt_hardware_cost.Text = "£0";
+
+            }
+            if (string.IsNullOrEmpty(txt_material_cost.Text))
+            {
+                txt_material_cost.Text = "£0";
+
+            }
+            if (string.IsNullOrEmpty(txt_labour_cost.Text))
+            {
+                txt_labour_cost.Text = "£0";
+            }
+
+            txt_project.Text = Valuesclass.project_id.ToString();
+            txt_item.Text = Valuesclass.item_id.ToString();
+            txt_revision.Text = Valuesclass.revision_number.ToString();
+
+            double hardware_markup =Convert.ToDouble(txt_hardware_markup.Text);
+            double hardware_cost = Convert.ToDouble(Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty)));
+            double sales_hardware = total * hardware_markup;
+            txt_hardware_sales_cost.Text = "£" + Convert.ToString(sales_hardware);
+          
+            double material_markup = Convert.ToDouble(txt_material_markup.Text);
+            double material_cost = Convert.ToDouble(Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty)));
+            double sales_material = material_cost * material_markup;
+            txt_material_sales_cost.Text = "£" + Convert.ToString(sales_material);
+            txt_material_cost.Text = "£" + material_cost;
+
+            double labour_markup =Convert.ToDouble(txt_labour_markup.Text);
+            double labour_cost = Convert.ToDouble(Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
+            double sales_labour= labour_markup * labour_cost;
+            txt_labour_sales_cost.Text = "£" + Convert.ToString(sales_labour);
+            txt_labour_cost.Text = "£" + labour_cost;
+
 
         }
 
@@ -185,10 +222,14 @@ namespace JodanQuote
                 btn_lock.Text = "     Unlock";
                 btn_lock.Image = JodanQuote.Properties.Resources.unlock;
                 btn_dimensions.Enabled = false;
-                txt_item.Enabled = true;
+                btn_printscren.Enabled = false;
+                btn_revise.Enabled = false;
+                btn_save.Enabled = false;
+                btn_lock.Enabled = true;
                 txt_project.Enabled = true;
                 txt_revision.Enabled = true;
-                btn_lock.Enabled = true;
+                txt_item.Enabled = true;
+
             }
             else
             {
@@ -230,6 +271,11 @@ namespace JodanQuote
 
 
                 }
+                btn_dimensions.Enabled = true;
+                btn_printscren.Enabled = true;
+                btn_revise.Enabled = true;
+                btn_save.Enabled = true;
+                btn_lock.Enabled = true;
                 locked_identifiter = 0;
                 btn_lock.Text = "       lock";
                 btn_lock.Image = JodanQuote.Properties.Resources.locked;
@@ -322,10 +368,10 @@ namespace JodanQuote
         private void btn_dimensions_Click(object sender, EventArgs e)
         {
             FrmDimensions dimensions = new FrmDimensions();
-            dimensions.Show();
-            this.Hide();
+            dimensions.ShowDialog();
+            //this.Hide();
             Valuesclass.item_id = Convert.ToInt32(txt_item.Text.ToString());
-            Valuesclass.new_item_identifier = 0;
+          
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -338,8 +384,8 @@ namespace JodanQuote
         private void btn_printscren_Click(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            int width = this.Width-50;
-            int height = this.Height-50;
+            int width = this.Width-45;
+            int height = this.Height- 45;
             string path = @"\\designsvr1\apps\Design and Supply CSharp\Source Files\JodanQuote\Temp Folder\Item Printscreen.JPG";
             Bitmap printscreen = new Bitmap(width, height);
 
@@ -391,6 +437,14 @@ namespace JodanQuote
        
         private void btn_save_Click(object sender, EventArgs e)
         {
+            Refresh_Data();
+
+
+
+            int material_id = Convert.ToInt16(((DataRowView)cmb_material.SelectedItem)["id"]);
+            string material_cost = Convert.ToString(txt_material_sales_cost.Text.Replace("£", string.Empty));
+            string hardware_cost = Convert.ToString(txt_hardware_sales_cost.Text.Replace("£", string.Empty));
+            string labour_cost = Convert.ToString(txt_labour_sales_cost.Text.Replace("£", string.Empty));
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlCommand update_quotation_item = new SqlCommand(Statementsclass.update_quotation_item, conn);
             update_quotation_item.Parameters.AddWithValue("@structure_width", txt_structual_width.Text);
@@ -398,11 +452,21 @@ namespace JodanQuote
             update_quotation_item.Parameters.AddWithValue("@frame_height", txt_frame_height.Text);
             update_quotation_item.Parameters.AddWithValue("@frame_width", txt_frame_width.Text);
             update_quotation_item.Parameters.AddWithValue("@material_thickness", cmb_material_thickness.Text);
-            update_quotation_item.Parameters.AddWithValue("@material_id", cmb_material.SelectedValue);
+            update_quotation_item.Parameters.AddWithValue("@material_id", material_id);
+            update_quotation_item.Parameters.AddWithValue("@markup_hardware",txt_hardware_markup.Text );
+            update_quotation_item.Parameters.AddWithValue("@markup_material", txt_material_markup.Text);
+            update_quotation_item.Parameters.AddWithValue("@labour_rate",txt_labour_markup.Text );
+            update_quotation_item.Parameters.AddWithValue("@hardware_cost", hardware_cost);
+            update_quotation_item.Parameters.AddWithValue("@material_cost", material_cost);
+            update_quotation_item.Parameters.AddWithValue("@labour_cost", labour_cost);
             update_quotation_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
             update_quotation_item.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
+            update_quotation_item.Parameters.AddWithValue("@revision_id", Valuesclass.revision_number);
+           
             update_quotation_item.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
+            MessageBox.Show("Item Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lock_controls();
         }
                
         private void grid_hardware_on_item_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -477,10 +541,11 @@ namespace JodanQuote
                     string material_thickness = dT_Item_Details._DT_Item_Details.Rows[0]["material_thickness"].ToString();
                     string finish_description = dT_Item_Details._DT_Item_Details.Rows[0]["finish_description"].ToString();
                     string markup_hardware = dT_Item_Details._DT_Item_Details.Rows[0]["markup_hardware"].ToString();
-                    string markeup_material = dT_Item_Details._DT_Item_Details.Rows[0]["markup_material"].ToString();
+                    string markup_material = dT_Item_Details._DT_Item_Details.Rows[0]["markup_material"].ToString();
                     string labour_rate = dT_Item_Details._DT_Item_Details.Rows[0]["labour_rate"].ToString();
-
-
+                    string material_cost = dT_Item_Details._DT_Item_Details.Rows[0]["material_cost"].ToString();
+                    string hardware_cost = dT_Item_Details._DT_Item_Details.Rows[0]["hardware_cost"].ToString();
+                    string labour_cost = dT_Item_Details._DT_Item_Details.Rows[0]["labour_cost"].ToString();
 
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand revise_item = new SqlCommand(Statementsclass.revise_item, conn);
@@ -502,8 +567,11 @@ namespace JodanQuote
                     revise_item.Parameters.AddWithValue("@total_cost", total_cost);
                     revise_item.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName);
                     revise_item.Parameters.AddWithValue("@markup_hardware", markup_hardware);
-                    revise_item.Parameters.AddWithValue("@markeup_material", markeup_material);
+                    revise_item.Parameters.AddWithValue("@markup_material", markup_material);
                     revise_item.Parameters.AddWithValue("@labour_rate", labour_rate);
+                    revise_item.Parameters.AddWithValue("@hardware_cost", hardware_cost);
+                    revise_item.Parameters.AddWithValue("@material_cost", material_cost);
+                    revise_item.Parameters.AddWithValue("@labour_cost", labour_cost);
                     revise_item.ExecuteNonQuery();
                     ConnectionClass.Dispose_connection(conn);
                     Valuesclass.revision_number = Revision + 1;
@@ -531,21 +599,99 @@ namespace JodanQuote
             Edit_Items();
         }
 
-        private void FrmItem_Load(object sender, EventArgs e)
+        private void grid_hardware_on_item_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            // TODO: This line of code loads data into the 'dT_Material1.DT_materials' table. You can move, or remove it, as needed.
-            this.ada_materials.Fill(this.dT_Material.DT_materials);
+            if(dT_Item_Details.Tables[0].Rows.Count <0)
+
+            {
+                if (e.ColumnIndex == 2)
+                {
+                    Refresh_Data();
+                }
+
+
+            }
+           
+
 
         }
 
-        private void grid_hardware_on_item_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void txt_material_markup_TextChanged(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == 2)
+            try
             {
                 Refresh_Data();
+
             }
+            catch
+            {
 
+            }
+        }
 
+        private void txt_hardware_markup_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Refresh_Data();
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txt_labour_markup_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Refresh_Data();
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txt_material_cost_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Refresh_Data();
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txt_hardware_cost_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Refresh_Data();
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txt_labour_cost_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Refresh_Data();
+
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -178,7 +178,7 @@
             this.grid_quote_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.AliceBlue;
@@ -197,7 +197,7 @@
             this.grid_quote_list.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_quote_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_quote_list.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_quote_list.Location = new System.Drawing.Point(261, 166);
+            this.grid_quote_list.Location = new System.Drawing.Point(261, 167);
             this.grid_quote_list.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_quote_list.MaximumSize = new System.Drawing.Size(655, 323);
             this.grid_quote_list.MinimumSize = new System.Drawing.Size(655, 323);

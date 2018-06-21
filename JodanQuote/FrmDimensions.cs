@@ -43,5 +43,7 @@ namespace JodanQuote
                 item.Show();
 
         }
+
+       
     }
 }

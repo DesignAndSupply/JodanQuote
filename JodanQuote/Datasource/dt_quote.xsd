@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.c_view_project_quotation" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [Item ID], [Revision Number], [Date Created], [Created By], [Quote ID]
+                    <CommandText>SELECT        [Item ID], [Revision Number], [Date Created], [Created By], [Quote ID], [Project ID], customer_ref, site_ref, quote_status, project_ref
 FROM            c_view_project_quotation
 WHERE        ([Project ID] = @project_id)</CommandText>
                     <Parameters>
@@ -28,6 +28,11 @@ WHERE        ([Project ID] = @project_id)</CommandText>
               <Mapping SourceColumn="Revision Number" DataSetColumn="Revision Number" />
               <Mapping SourceColumn="Created By" DataSetColumn="Created By" />
               <Mapping SourceColumn="Quote ID" DataSetColumn="Quote ID" />
+              <Mapping SourceColumn="Project ID" DataSetColumn="Project ID" />
+              <Mapping SourceColumn="customer_ref" DataSetColumn="customer_ref" />
+              <Mapping SourceColumn="site_ref" DataSetColumn="site_ref" />
+              <Mapping SourceColumn="quote_status" DataSetColumn="quote_status" />
+              <Mapping SourceColumn="project_ref" DataSetColumn="project_ref" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -53,6 +58,35 @@ WHERE        ([Project ID] = @project_id)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Quote_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnQuote_ID" msprop:Generator_ColumnPropNameInRow="Quote_ID" msprop:Generator_ColumnPropNameInTable="Quote_IDColumn" msprop:Generator_UserColumnName="Quote ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Project_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnProject_ID" msprop:Generator_ColumnPropNameInRow="Project_ID" msprop:Generator_ColumnPropNameInTable="Project_IDColumn" msprop:Generator_UserColumnName="Project ID" type="xs:int" minOccurs="0" />
+              <xs:element name="customer_ref" msprop:Generator_ColumnVarNameInTable="columncustomer_ref" msprop:Generator_ColumnPropNameInRow="customer_ref" msprop:Generator_ColumnPropNameInTable="customer_refColumn" msprop:Generator_UserColumnName="customer_ref" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="site_ref" msprop:Generator_ColumnVarNameInTable="columnsite_ref" msprop:Generator_ColumnPropNameInRow="site_ref" msprop:Generator_ColumnPropNameInTable="site_refColumn" msprop:Generator_UserColumnName="site_ref" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quote_status" msprop:Generator_ColumnVarNameInTable="columnquote_status" msprop:Generator_ColumnPropNameInRow="quote_status" msprop:Generator_ColumnPropNameInTable="quote_statusColumn" msprop:Generator_UserColumnName="quote_status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="project_ref" msprop:Generator_ColumnVarNameInTable="columnproject_ref" msprop:Generator_ColumnPropNameInRow="project_ref" msprop:Generator_ColumnPropNameInTable="project_refColumn" msprop:Generator_UserColumnName="project_ref" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
