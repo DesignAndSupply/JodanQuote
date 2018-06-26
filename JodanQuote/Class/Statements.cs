@@ -64,7 +64,7 @@ namespace Statements
         public static string select_setting = "SELECT markup_hardware, markup_material, labour_rate from dbo.setting WHERE ID = 1";
         public static string update_project = "Update dbo.project SET project_ref = @project_ref, quote_status = @quote_status Where id = @project_id";
         public static string update_quotation_item = "Update dbo.item SET structual_op_height = @structure_height, structual_op_width = @structure_width," +
-                                                     "frame_height = @frame_height, frame_width = @frame_width,"+
+                                                     "frame_height = @frame_height, frame_width = @frame_width , door_type = @door_type, finish_id = @finish_id," +
                                                      "material_id = @material_id, material_thickness = @material_thickness, markup_hardware = @markup_hardware, markup_material = @markup_material, labour_rate = @labour_rate, hardware_cost = @hardware_cost, material_cost = @material_cost, labour_cost= @labour_cost" +
                                                      " Where project_id = @project_id AND Item_id = @item_id AND revision_id = @revision_id";
 

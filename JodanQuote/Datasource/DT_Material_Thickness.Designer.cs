@@ -281,8 +281,6 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnthickness;
             
-            private global::System.Data.DataColumn columnmaterial_id;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_Material_ThicknessDataTable() {
@@ -326,14 +324,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn material_idColumn {
-                get {
-                    return this.columnmaterial_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -369,11 +359,10 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Material_ThicknessRow AddDT_Material_ThicknessRow(decimal thickness, short material_id) {
+            public DT_Material_ThicknessRow AddDT_Material_ThicknessRow(decimal thickness) {
                 DT_Material_ThicknessRow rowDT_Material_ThicknessRow = ((DT_Material_ThicknessRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        thickness,
-                        material_id};
+                        thickness};
                 rowDT_Material_ThicknessRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Material_ThicknessRow);
                 return rowDT_Material_ThicknessRow;
@@ -397,7 +386,6 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnthickness = base.Columns["thickness"];
-                this.columnmaterial_id = base.Columns["material_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -405,9 +393,6 @@ namespace JodanQuote.Datasource {
             private void InitClass() {
                 this.columnthickness = new global::System.Data.DataColumn("thickness", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnthickness);
-                this.columnmaterial_id = new global::System.Data.DataColumn("material_id", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmaterial_id);
-                this.columnmaterial_id.AllowDBNull = false;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_DT_Material_Thickness");
                 this.ExtendedProperties.Add("Generator_UserTableName", "DT_Material_Thickness");
             }
@@ -563,17 +548,6 @@ namespace JodanQuote.Datasource {
                 }
                 set {
                     this[this.tableDT_Material_Thickness.thicknessColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short material_id {
-                get {
-                    return ((short)(this[this.tableDT_Material_Thickness.material_idColumn]));
-                }
-                set {
-                    this[this.tableDT_Material_Thickness.material_idColumn] = value;
                 }
             }
             
@@ -750,7 +724,6 @@ namespace JodanQuote.Datasource.DT_Material_ThicknessTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DT_Material_Thickness";
             tableMapping.ColumnMappings.Add("thickness", "thickness");
-            tableMapping.ColumnMappings.Add("material_id", "material_id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -768,8 +741,8 @@ namespace JodanQuote.Datasource.DT_Material_ThicknessTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        material_id, thickness\r\nFROM            C_View_Material_Thickness\r\n" +
-                "WHERE        (material_id = @material_id)";
+            this._commandCollection[0].CommandText = "SELECT        thickness\r\nFROM            C_View_Material_Thickness\r\nWHERE        " +
+                "(material_id = @material_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@material_id", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "material_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

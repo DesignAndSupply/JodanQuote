@@ -19,11 +19,22 @@ namespace JodanQuote
         public FrmDimensions()
         {
             InitializeComponent();
+            txt_structual_height.Text =Convert.ToString(Valuesclass.dimension_height);
+            txt_structual_width.Text = Convert.ToString(Valuesclass.dimension_width);
         }
 
         private void btn_complete_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(txt_structual_height.Text))
+            {
+                MessageBox.Show(" Please Enter A Structual Height Value", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (string.IsNullOrEmpty(txt_structual_width.Text))
+            {
+                MessageBox.Show(" Please Enter A Structual Width Value", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlCommand update_dimensions = new SqlCommand(Statementsclass.update_dimensions, conn);
             update_dimensions.Parameters.AddWithValue("@height", txt_structual_height.Text);
@@ -39,8 +50,7 @@ namespace JodanQuote
            
 
 
-                FrmItem item = new FrmItem();
-                item.Show();
+              
 
         }
 
