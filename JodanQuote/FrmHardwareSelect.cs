@@ -287,10 +287,7 @@ namespace JodanQuote
             MessageBox.Show(grid_hardware_selected.RowCount + " Hardware Item(s) Added", "  Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
            
              this.Hide();
-             FrmItem item = new FrmItem();
-             item.Show();
-           
-
+            
         }
 
         private void btn_clear_Click(object sender, EventArgs e)

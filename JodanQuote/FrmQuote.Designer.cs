@@ -73,7 +73,6 @@
             this.btn_quote_details = new System.Windows.Forms.Button();
             this.main_tab_project_additions = new System.Windows.Forms.TabControl();
             this.tab_quote_details = new System.Windows.Forms.TabPage();
-            this.txt_quote_status = new System.Windows.Forms.TextBox();
             this.txt_created = new System.Windows.Forms.TextBox();
             this.cmb_quote_status = new System.Windows.Forms.ComboBox();
             this.cViewStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -82,6 +81,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_box = new System.Windows.Forms.Label();
+            this.txt_quote_status = new System.Windows.Forms.TextBox();
             this.tab_additonal_cost = new System.Windows.Forms.TabPage();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -275,7 +275,7 @@
             // dateCreatedDataGridViewTextBoxColumn
             // 
             this.dateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "Date Created";
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "Item Date";
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
@@ -341,7 +341,7 @@
             this.Quote_ID.HeaderText = "Quote ID";
             this.Quote_ID.Name = "Quote_ID";
             this.Quote_ID.Visible = false;
-            this.Quote_ID.Width = 89;
+            this.Quote_ID.Width = 86;
             // 
             // dTQuoteItemsBindingSource
             // 
@@ -579,13 +579,13 @@
             // 
             // tab_quote_details
             // 
-            this.tab_quote_details.Controls.Add(this.txt_quote_status);
             this.tab_quote_details.Controls.Add(this.txt_created);
             this.tab_quote_details.Controls.Add(this.cmb_quote_status);
             this.tab_quote_details.Controls.Add(this.txt_project_ref);
             this.tab_quote_details.Controls.Add(this.label4);
             this.tab_quote_details.Controls.Add(this.label3);
             this.tab_quote_details.Controls.Add(this.lbl_box);
+            this.tab_quote_details.Controls.Add(this.txt_quote_status);
             this.tab_quote_details.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.tab_quote_details.Location = new System.Drawing.Point(4, 24);
             this.tab_quote_details.Name = "tab_quote_details";
@@ -594,15 +594,6 @@
             this.tab_quote_details.TabIndex = 0;
             this.tab_quote_details.Text = "Quote Details";
             this.tab_quote_details.UseVisualStyleBackColor = true;
-            // 
-            // txt_quote_status
-            // 
-            this.txt_quote_status.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTQuoteItemsBindingSource, "quote_status", true));
-            this.txt_quote_status.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_quote_status.Location = new System.Drawing.Point(36, 207);
-            this.txt_quote_status.Name = "txt_quote_status";
-            this.txt_quote_status.Size = new System.Drawing.Size(181, 21);
-            this.txt_quote_status.TabIndex = 44;
             // 
             // txt_created
             // 
@@ -678,6 +669,15 @@
             this.lbl_box.Size = new System.Drawing.Size(73, 13);
             this.lbl_box.TabIndex = 37;
             this.lbl_box.Text = "Created By:";
+            // 
+            // txt_quote_status
+            // 
+            this.txt_quote_status.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTQuoteItemsBindingSource, "quote_status", true));
+            this.txt_quote_status.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_quote_status.Location = new System.Drawing.Point(36, 207);
+            this.txt_quote_status.Name = "txt_quote_status";
+            this.txt_quote_status.Size = new System.Drawing.Size(181, 21);
+            this.txt_quote_status.TabIndex = 44;
             // 
             // tab_additonal_cost
             // 
@@ -875,6 +875,12 @@
         private System.Windows.Forms.BindingSource dTQuoteItemsBindingSource;
         private Datasource.dt_quote dt_quote;
         private Datasource.dt_quoteTableAdapters.ada_quote ada_quote;
+        private System.Windows.Forms.TextBox txt_created;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.TextBox txt_quote_status;
+        private Datasource.DT_Status dT_Status;
+        private System.Windows.Forms.BindingSource cViewStatusBindingSource;
+        private Datasource.DT_StatusTableAdapters.C_View_StatusTableAdapter c_View_StatusTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn revision_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
@@ -883,11 +889,5 @@
         private System.Windows.Forms.DataGridViewImageColumn btn_copy;
         private System.Windows.Forms.DataGridViewImageColumn btn_delete_item;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quote_ID;
-        private System.Windows.Forms.TextBox txt_created;
-        private System.Windows.Forms.Button btn_edit;
-        private System.Windows.Forms.TextBox txt_quote_status;
-        private Datasource.DT_Status dT_Status;
-        private System.Windows.Forms.BindingSource cViewStatusBindingSource;
-        private Datasource.DT_StatusTableAdapters.C_View_StatusTableAdapter c_View_StatusTableAdapter;
     }
 }

@@ -19,7 +19,10 @@ namespace values
         public static int revision_number;
         public static string project_ref;
         public static string quote_status;
-        public static int dimension_width;
-        public static int dimension_height;
+        public static int dimension_width = 0;
+        public static int dimension_height = 0;
+        public static int locked_identifiter;
+
+        public static  List<object> Calculate_material_list = new List<object>(new object[] { "project_id", "item_id", "revision_id","Material Description", "Material_thickness", "door_type", "structual_op_width", "structual_op_height", });
     }
 }

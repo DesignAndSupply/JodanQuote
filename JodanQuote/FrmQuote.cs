@@ -33,7 +33,7 @@ namespace JodanQuote
 
             this.ada_quote.Fill(dt_quote.DT_Quote_Items, Valuesclass.project_id);
             this.c_View_StatusTableAdapter.Fill(this.dT_Status.C_View_Status);
-
+            grid_items_on_quote.DataSource = this.dt_quote.DT_Quote_Items;
             Valuesclass.project_ref = txt_project_ref.Text;
             Valuesclass.quote_status = cmb_quote_status.Text;
         }
@@ -204,6 +204,7 @@ namespace JodanQuote
                     Valuesclass.revision_number = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Revision Number"].ToString());
                     //select_max_revison();
                     Valuesclass.new_item_identifier = 0;
+                    Valuesclass.locked_identifiter = 0;
                     FrmItem item = new FrmItem();
                     item.Show();
                     this.Hide();
@@ -297,9 +298,9 @@ namespace JodanQuote
 
 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.ToString(), "");
+               // MessageBox.Show(ex.ToString(), "");
             }
            
         }
@@ -362,12 +363,16 @@ namespace JodanQuote
                 btn_edit.Image = JodanQuote.Properties.Resources.Save;
                 cmb_quote_status.Visible = true;
                 txt_quote_status.Visible = false;
+               // cmb_quote_status.Text = dt_quote.DT_Quote_Items.Rows[0]["quote_status"].ToString();
             }
 
             Fill_data();
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Fill_data();
+        }
     }
     
 }

@@ -19,33 +19,30 @@ namespace JodanQuote
 {
     public partial class FrmItem : Form
     {
-        static int locked_identifiter = 0;
 
         public FrmItem()
         {
             InitializeComponent();
-            
-            if (Valuesclass.new_item_identifier == 0)
+
+            if (Valuesclass.new_item_identifier == 1)
             {
-                
-                lock_controls();
+                Valuesclass.locked_identifiter = 1;
 
             }
-
+            lock_controls();
         }
 
         private void FrmItem_Shown(object sender, EventArgs e)
         {
-            locked_identifiter = 0;
+            
             Fill_data();
             Format();
-            //Refresh_Data();
+         
         }
 
         void Fill_data()
         {
-            //txt_project.Text = Valuesclass.project_id.ToString();
-            //txt_item.Text = Valuesclass.item_id.ToString();
+           
             this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
 
             if (Valuesclass.new_item_identifier == 0)
@@ -63,6 +60,7 @@ namespace JodanQuote
             }
             else
             {
+
                 Edit_Items();
 
             }
@@ -152,7 +150,11 @@ namespace JodanQuote
             cmb_finish.Visible = false;
             cmb_door_type_edit.Visible = true;
             cmb_door_type.Visible = false;
-            cmb_material_edit.SelectedIndex = 1;
+           // cmb_material_edit.SelectedIndex = 1;
+
+            txt_item.Text = Convert.ToString(Valuesclass.item_id);
+            txt_project.Text = Convert.ToString(Valuesclass.project_id);
+            txt_revision.Text = Convert.ToString(Valuesclass.revision_number);
         }
 
         void Format()
@@ -182,88 +184,168 @@ namespace JodanQuote
             grid_hardware_on_item.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_hardware_on_item.DefaultCellStyle.BackColor = Color.AliceBlue;
 
+        
+
         }
 
         void Calculate_Cost()
         {
-            DataTable table = new DataTable();
-            String sql = "C_Calculate_Material_Cost";
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand command = new SqlCommand(sql, conn);
-            SqlDataAdapter da = new SqlDataAdapter(command);
-            
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@project_id", dT_Item_Details._DT_Item_Details.Rows[0]["project_id"].ToString());
-            command.Parameters.AddWithValue("@item_id", dT_Item_Details._DT_Item_Details.Rows[0]["item_id"].ToString());
-            command.Parameters.AddWithValue("@revision_id", dT_Item_Details._DT_Item_Details.Rows[0]["revision_id"].ToString());
-            command.Parameters.AddWithValue("@material_description", dT_Item_Details._DT_Item_Details.Rows[0]["Material Description"].ToString());
-            command.Parameters.AddWithValue("@Material_thickness",Convert.ToDouble(dT_Item_Details._DT_Item_Details.Rows[0]["Material_thickness"]));
-            command.Parameters.AddWithValue("@door_type",Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["door_type"].ToString()));
-            command.Parameters.AddWithValue("@structual_op_width", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["structual_op_width"]));
-            command.Parameters.AddWithValue("@structual_op_height", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["structual_op_height"]));
-         
-            da.Fill(table);
-            int total_cost = 0;
-
-            for (int i = 2; i <= 5; ++i)
+            if (dT_Item_Details._DT_Item_Details.Rows.Count > 0 )
             {
-               // MessageBox.Show(table.Rows[0][i].ToString(),"");
+
+                txt_list.Text = "";
+                txt_warning.Visible = false;
+                for (var i = 0; i < Valuesclass.Calculate_material_list.Count; i++)
+
+                {
+                    object val = dT_Item_Details._DT_Item_Details.Rows[0][Convert.ToString(Valuesclass.Calculate_material_list[i])];
+                    if (val == DBNull.Value)
+                    {
+                        string Null_column ="- " + Valuesclass.Calculate_material_list[i].ToString().Replace("_", " ");
+                        txt_list.AppendText(Environment.NewLine);
+                        txt_list.Text = txt_list.Text + Null_column.ToString();
 
 
-                total_cost += Convert.ToInt32(table.Rows[0][i].ToString());
+                    }
+
+                }
+                if (txt_list.Text != "")
+                {
+
+                    txt_warning.Visible = true;
+                    return;
+
+                }
+
+
+                DataTable table = new DataTable();
+                String sql = "C_Calculate_Material_Cost";
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand command = new SqlCommand(sql, conn);
+                SqlDataAdapter da = new SqlDataAdapter(command);
+
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@project_id", dT_Item_Details._DT_Item_Details.Rows[0]["project_id"].ToString());
+                command.Parameters.AddWithValue("@item_id", dT_Item_Details._DT_Item_Details.Rows[0]["item_id"].ToString());
+                command.Parameters.AddWithValue("@revision_id", dT_Item_Details._DT_Item_Details.Rows[0]["revision_id"].ToString());
+                command.Parameters.AddWithValue("@material_description", dT_Item_Details._DT_Item_Details.Rows[0]["Material Description"].ToString());
+                command.Parameters.AddWithValue("@Material_thickness", Convert.ToDouble(dT_Item_Details._DT_Item_Details.Rows[0]["Material_thickness"]));
+                command.Parameters.AddWithValue("@door_type", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["door_type"].ToString()));
+                command.Parameters.AddWithValue("@structual_op_width", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["structual_op_width"]));
+                command.Parameters.AddWithValue("@structual_op_height", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["structual_op_height"]));
+
+                da.Fill(table);
+                double total_cost = 0;
+
+                for (int i = 2; i <= 5; ++i)
+                {
+                    // MessageBox.Show(table.Rows[0][i].ToString(),"");
+
+
+                    total_cost += Convert.ToDouble(table.Rows[0][i].ToString());
+
+
+                }
+
+                txt_material_cost.Text = total_cost.ToString();
+                ConnectionClass.Dispose_connection(conn);
+
+                dataGridView1.DataSource = table;
+
+
 
 
             }
+          
 
-            txt_material_cost.Text = total_cost.ToString();
-            ConnectionClass.Dispose_connection(conn);
-
-            dataGridView1.DataSource = table;
 
         }
 
         void Calculate_Cost_Edit_Mode()
         {
-            DataTable table = new DataTable();
-            String sql = "C_Calculate_Material_Cost";
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand command = new SqlCommand(sql, conn);
-            SqlDataAdapter da = new SqlDataAdapter(command);
-
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@project_id", dT_Item_Details._DT_Item_Details.Rows[0]["project_id"].ToString());
-            command.Parameters.AddWithValue("@item_id", dT_Item_Details._DT_Item_Details.Rows[0]["item_id"].ToString());
-            command.Parameters.AddWithValue("@revision_id", dT_Item_Details._DT_Item_Details.Rows[0]["revision_id"].ToString());
-            command.Parameters.AddWithValue("@material_description", cmb_material_edit.Text);
-            command.Parameters.AddWithValue("@Material_thickness",Convert.ToDouble(cmb_material_thickness_edit.Text));
-            command.Parameters.AddWithValue("@door_type", cmb_door_type_edit.SelectedValue);
-            command.Parameters.AddWithValue("@structual_op_width", Convert.ToInt32(txt_structual_width.Text));
-            command.Parameters.AddWithValue("@structual_op_height", Convert.ToInt32(txt_structual_height.Text));
-            da.Fill(table);
-            int total_cost = 0;
-
-            for (int i = 2; i <= 5; ++i)
+            try
             {
-                // MessageBox.Show(table.Rows[0][i].ToString(),"");
+                if (dT_Item_Details._DT_Item_Details.Rows.Count > 0)
+                {
+
+                    txt_list.Text = "";
+                    txt_warning.Visible = false;
+
+                    for (var i = 0; i < Valuesclass.Calculate_material_list.Count; i++)
+
+                    {
+                        object val = dT_Item_Details._DT_Item_Details.Rows[0][Convert.ToString(Valuesclass.Calculate_material_list[i])];
+                        if (val == DBNull.Value)
+                        {
+                            string Null_column = "- " + Valuesclass.Calculate_material_list[i].ToString().Replace("_", " ");
+                            txt_list.AppendText(Environment.NewLine);
+                            txt_list.Text = txt_list.Text + Null_column.ToString();
 
 
-                total_cost += Convert.ToInt32(table.Rows[0][i].ToString());
+                        }
 
+                    }
+                    if (txt_list.Text != "")
+                    {
+
+                        txt_warning.Visible = true;
+                        return;
+
+                    }
+
+
+
+                    DataTable table = new DataTable();
+                    String sql = "C_Calculate_Material_Cost";
+                    SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                    SqlCommand command = new SqlCommand(sql, conn);
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@project_id", dT_Item_Details._DT_Item_Details.Rows[0]["project_id"].ToString());
+                    command.Parameters.AddWithValue("@item_id", dT_Item_Details._DT_Item_Details.Rows[0]["item_id"].ToString());
+                    command.Parameters.AddWithValue("@revision_id", dT_Item_Details._DT_Item_Details.Rows[0]["revision_id"].ToString());
+                    command.Parameters.AddWithValue("@material_description", cmb_material_edit.Text);
+                    command.Parameters.AddWithValue("@Material_thickness", Convert.ToDouble(cmb_material_thickness_edit.Text));
+                    command.Parameters.AddWithValue("@door_type", cmb_door_type_edit.SelectedValue);
+                    command.Parameters.AddWithValue("@structual_op_width", Convert.ToInt32(txt_structual_width.Text));
+                    command.Parameters.AddWithValue("@structual_op_height", Convert.ToInt32(txt_structual_height.Text));
+                    da.Fill(table);
+                    double total_cost = 0;
+
+                    for (int i = 2; i <= 5; ++i)
+                    {
+                        // MessageBox.Show(table.Rows[0][i].ToString(),"");
+
+
+                        total_cost += Convert.ToDouble(table.Rows[0][i].ToString());
+
+
+                    }
+
+                    txt_material_cost.Text = total_cost.ToString();
+                    ConnectionClass.Dispose_connection(conn);
+
+                    dataGridView1.DataSource = table;
+                    return;
+                }
 
             }
-
-            txt_material_cost.Text = total_cost.ToString();
-            ConnectionClass.Dispose_connection(conn);
-
-            dataGridView1.DataSource = table;
-
+          
+             catch(Exception)
+            {
+               return;
+            }
         }
 
         void lock_controls()
         {
-            if (locked_identifiter == 0)
+           
+
+            if (Valuesclass.locked_identifiter == 0)
             {
-                
+
                 panel_door_input.Enabled = false;
                 panel_extras.Enabled = false;
                 panel_freehand.Enabled = false;
@@ -277,18 +359,20 @@ namespace JodanQuote
                 btn_add_hardware.Enabled = true;
                 btn_dimensions.Enabled = true;
                 btn_lock.Enabled = true;
-                locked_identifiter = 1;
+                Valuesclass.locked_identifiter = 1;
                 btn_lock.Text = "         Unlock";
                 btn_lock.Image = JodanQuote.Properties.Resources.unlock;
-                cmb_material_thickness_edit.Visible = false;
+
                 cmb_material_thickness.Visible = true;
-                cmb_material_edit.Visible = false;
+                cmb_material_thickness_edit.Visible = false;
                 cmb_material.Visible = true;
-                cmb_finish_edit.Visible = false;
+                cmb_material_edit.Visible = false;
                 cmb_finish.Visible = true;
-                cmb_door_type_edit.Visible = false;
+                cmb_finish_edit.Visible = false;
                 cmb_door_type.Visible = true;
+                cmb_door_type_edit.Visible = false;
                 Fill_data();
+
                 return;
 
             }
@@ -306,11 +390,51 @@ namespace JodanQuote
                 btn_revise.Enabled = true;
                 btn_printscren.Enabled = true;
                 btn_save.Enabled = true;
-                locked_identifiter = 0;
+                Valuesclass.locked_identifiter = 0;
+
                 Edit_Items();
+
+               
+
+                if (cmb_door_type.SelectedItem != null  )
+                {
+                    cmb_door_type_edit.SelectedItem = cmb_door_type.SelectedItem;
+
+                }
+                else
+                {
+                    cmb_door_type_edit.SelectedIndex = 0;
+                }
+                if (cmb_material.SelectedItem != null == true)
+                {
+                   
+                    cmb_material_edit.SelectedItem = cmb_material.SelectedItem;
+                    Fill_material_thickness();
+
+                }
+                else
+                {
+                    cmb_material_edit.SelectedValue = 0;
+                    Fill_material_thickness();
+                }
+                if (cmb_material_thickness.SelectedItem != null)
+                {
+                    cmb_material_thickness_edit.SelectedItem = cmb_material_thickness.SelectedItem;
+
+                }
+                else
+                {
+                    Fill_material_thickness();
+                }
+
+
+
+
+
 
                 return;
             }
+
         }
 
         void Max_Quote()
@@ -359,6 +483,25 @@ namespace JodanQuote
 
         }
 
+        void Fill_material_thickness()
+        {
+           
+
+            if (cmb_material_edit.Visible == true && cmb_material_edit.SelectedItem != null == true)
+            {
+
+                Int16 id = Convert.ToInt16(((DataRowView)cmb_material_edit.SelectedItem)["id"]);
+                dT_Material_Thickness.EnforceConstraints = false;
+                ada_material_thickness.Fill(dT_Material_Thickness._DT_Material_Thickness, id);
+                cmb_material_thickness_edit.DataBindings.Clear();
+                cmb_material_thickness_edit.DataSource = dT_Material_Thickness._DT_Material_Thickness;
+                cmb_material_thickness_edit.DisplayMember = "thickness";
+                Calculate_Cost_Edit_Mode();
+
+            }
+
+        }
+
         private void FrmItem_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMain main = new FrmMain();
@@ -367,14 +510,25 @@ namespace JodanQuote
 
         private void btn_dimensions_Click(object sender, EventArgs e)
         {
-            Valuesclass.dimension_height = Convert.ToInt32(txt_structual_height.Text);
-            Valuesclass.dimension_width = Convert.ToInt32(txt_structual_width.Text);
+            if(txt_frame_height.Text != null && txt_frame_width.Text != null)
+            {
+                Valuesclass.dimension_height = Convert.ToInt32(txt_structual_height.Text);
+                Valuesclass.dimension_width = Convert.ToInt32(txt_structual_width.Text);
+
+            }
+            else
+            {
+                Valuesclass.dimension_height = 0;
+                Valuesclass.dimension_width = 0;
+
+            }
+
             Valuesclass.item_id = Convert.ToInt32(txt_item.Text.ToString());
             FrmDimensions dimensions = new FrmDimensions();
             dimensions.ShowDialog();
             Fill_data();
             Refresh_Data();
-            locked_identifiter = 1;
+            Valuesclass.locked_identifiter = 1;
             lock_controls();
             Calculate_Cost();
         
@@ -434,7 +588,27 @@ namespace JodanQuote
         {
             Refresh_Data();
 
+            foreach(Control cntrl in panel_door_input.Controls)
+            {
+                if(cntrl is ComboBox)
+                {
+                    ComboBox cmb = cntrl as ComboBox;
 
+                    if (string.IsNullOrEmpty(cmb.Text))
+                    {
+
+                        cntrl.Text = "";
+                    }
+                    if (cmb.SelectedItem == null && cmb.Visible == true)
+                    {
+                        MessageBox.Show("Please Ensure All Door Input Boxes Have A Value", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                }
+             
+
+            }
 
             int material_id = Convert.ToInt16(((DataRowView)cmb_material_edit.SelectedItem)["id"]);
             string materialthickness = cmb_material_thickness_edit.Text;
@@ -445,7 +619,7 @@ namespace JodanQuote
             string labour_cost = Convert.ToString(txt_labour_sales_cost.Text.Replace("£", string.Empty));
 
          
-           SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlCommand update_quotation_item = new SqlCommand(Statementsclass.update_quotation_item, conn);
             update_quotation_item.Parameters.AddWithValue("@structure_width", txt_structual_width.Text);
             update_quotation_item.Parameters.AddWithValue("@structure_height", txt_structual_height.Text);
@@ -468,7 +642,9 @@ namespace JodanQuote
             update_quotation_item.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
             MessageBox.Show("Item Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Valuesclass.new_item_identifier = 0;
             lock_controls();
+            Fill_data();
         }
                
         private void grid_hardware_on_item_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -493,10 +669,11 @@ namespace JodanQuote
             //this.Hide();
             FrmHardwareSelect select = new FrmHardwareSelect();
             select.ShowDialog();
+            Valuesclass.new_item_identifier = 0;
             Fill_data();
         }
 
-         private void btn_revise_Click(object sender, EventArgs e)
+        private void btn_revise_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show("Are you Sure You Want To Revise This Item?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
@@ -574,7 +751,7 @@ namespace JodanQuote
             {
                 return;
             }
-            locked_identifiter = 1;
+            Valuesclass.locked_identifiter = 1;
             Fill_data();
             lock_controls();
             Edit_Items();
@@ -677,20 +854,8 @@ namespace JodanQuote
 
         private void cmb_material_edit_SelectedValueChanged(object sender, EventArgs e)
         {
-
-            if (cmb_material_edit.Visible == true && cmb_material_edit.SelectedItem!=null)
-            {
-
-                Int16 id = Convert.ToInt16(((DataRowView)cmb_material_edit.SelectedItem)["id"]);
-                dT_Material_Thickness.EnforceConstraints = false;
-                ada_material_thickness.Fill(dT_Material_Thickness._DT_Material_Thickness, id);
-                cmb_material_thickness_edit.DataBindings.Clear();
-                cmb_material_thickness_edit.DataSource = dT_Material_Thickness._DT_Material_Thickness;
-                cmb_material_thickness_edit.DisplayMember = "thickness";
-                Calculate_Cost_Edit_Mode();
-
-            }
-
+            Fill_material_thickness();
+            Calculate_Cost_Edit_Mode();
         }
 
         private void cmb_door_type_edit_SelectedValueChanged(object sender, EventArgs e)
@@ -715,6 +880,8 @@ namespace JodanQuote
 
             }
         }
+
+        
     }
     
     

@@ -80,6 +80,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_add_hardware = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_list = new System.Windows.Forms.TextBox();
+            this.txt_warning = new System.Windows.Forms.TextBox();
             this.dTMaterialThicknessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Material_Thickness = new JodanQuote.Datasource.DT_Material_Thickness();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,8 +101,6 @@
             this.freehand_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.freehand_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_door_input = new System.Windows.Forms.Panel();
-            this.cmb_material_thickness = new System.Windows.Forms.ComboBox();
-            this.cmb_material = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -108,9 +108,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cmb_finish = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cmb_door_type_edit = new System.Windows.Forms.ComboBox();
-            this.dTdoorstylesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dT_Door_Type = new JodanQuote.Datasource.DT_Door_Type();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -123,10 +120,15 @@
             this.cmb_finish_edit = new System.Windows.Forms.ComboBox();
             this.dtfinishBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_finish = new JodanQuote.Datasource.DT_finish();
-            this.cmb_door_type = new System.Windows.Forms.ComboBox();
             this.cmb_material_edit = new System.Windows.Forms.ComboBox();
             this.dTmaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Material = new JodanQuote.Datasource.DT_Material();
+            this.cmb_material_thickness = new System.Windows.Forms.ComboBox();
+            this.cmb_door_type_edit = new System.Windows.Forms.ComboBox();
+            this.dTdoorstylesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dT_Door_Type = new JodanQuote.Datasource.DT_Door_Type();
+            this.cmb_door_type = new System.Windows.Forms.ComboBox();
+            this.cmb_material = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel_information = new System.Windows.Forms.Panel();
             this.grid_panel_info = new System.Windows.Forms.DataGridView();
@@ -188,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dTItemDetailsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Item_Details)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dTMaterialThicknessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Material_Thickness)).BeginInit();
             this.panel_customer_information.SuspendLayout();
@@ -195,12 +198,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dT_customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_freehand_extras)).BeginInit();
             this.panel_door_input.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dTdoorstylesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dT_Door_Type)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfinishBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_finish)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTmaterialsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Material)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dTdoorstylesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_Door_Type)).BeginInit();
             this.panel_information.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_panel_info)).BeginInit();
             this.panel_extras.SuspendLayout();
@@ -444,10 +447,44 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.txt_list);
+            this.panel2.Controls.Add(this.txt_warning);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(167, 812);
             this.panel2.TabIndex = 24;
+            // 
+            // txt_list
+            // 
+            this.txt_list.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_list.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_list.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "project_id", true));
+            this.txt_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_list.ForeColor = System.Drawing.Color.AliceBlue;
+            this.txt_list.Location = new System.Drawing.Point(12, 173);
+            this.txt_list.MaxLength = 15;
+            this.txt_list.Multiline = true;
+            this.txt_list.Name = "txt_list";
+            this.txt_list.Size = new System.Drawing.Size(140, 245);
+            this.txt_list.TabIndex = 71;
+            // 
+            // txt_warning
+            // 
+            this.txt_warning.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_warning.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_warning.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_warning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_warning.ForeColor = System.Drawing.Color.AliceBlue;
+            this.txt_warning.Location = new System.Drawing.Point(12, 120);
+            this.txt_warning.MaxLength = 15;
+            this.txt_warning.Multiline = true;
+            this.txt_warning.Name = "txt_warning";
+            this.txt_warning.Size = new System.Drawing.Size(140, 59);
+            this.txt_warning.TabIndex = 70;
+            this.txt_warning.Text = "Item Is Missing Key Field Values!";
+            this.txt_warning.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_warning.Visible = false;
             // 
             // dTMaterialThicknessBindingSource
             // 
@@ -664,7 +701,6 @@
             // panel_door_input
             // 
             this.panel_door_input.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_door_input.Controls.Add(this.cmb_material_thickness);
             this.panel_door_input.Controls.Add(this.label2);
             this.panel_door_input.Controls.Add(this.label13);
             this.panel_door_input.Controls.Add(this.label30);
@@ -672,7 +708,6 @@
             this.panel_door_input.Controls.Add(this.label12);
             this.panel_door_input.Controls.Add(this.cmb_finish);
             this.panel_door_input.Controls.Add(this.label9);
-            this.panel_door_input.Controls.Add(this.cmb_door_type_edit);
             this.panel_door_input.Controls.Add(this.label8);
             this.panel_door_input.Controls.Add(this.label7);
             this.panel_door_input.Controls.Add(this.label6);
@@ -683,45 +718,16 @@
             this.panel_door_input.Controls.Add(this.txt_structual_width);
             this.panel_door_input.Controls.Add(this.cmb_material_thickness_edit);
             this.panel_door_input.Controls.Add(this.cmb_finish_edit);
-            this.panel_door_input.Controls.Add(this.cmb_door_type);
             this.panel_door_input.Controls.Add(this.cmb_material_edit);
+            this.panel_door_input.Controls.Add(this.cmb_material_thickness);
+            this.panel_door_input.Controls.Add(this.cmb_door_type_edit);
+            this.panel_door_input.Controls.Add(this.cmb_door_type);
             this.panel_door_input.Controls.Add(this.cmb_material);
             this.panel_door_input.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.panel_door_input.Location = new System.Drawing.Point(172, 363);
             this.panel_door_input.Name = "panel_door_input";
             this.panel_door_input.Size = new System.Drawing.Size(411, 337);
             this.panel_door_input.TabIndex = 51;
-            // 
-            // cmb_material_thickness
-            // 
-            this.cmb_material_thickness.DataSource = this.dTItemDetailsBindingSource;
-            this.cmb_material_thickness.DisplayMember = "material_thickness";
-            this.cmb_material_thickness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_material_thickness.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_material_thickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_material_thickness.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_material_thickness.FormattingEnabled = true;
-            this.cmb_material_thickness.Location = new System.Drawing.Point(141, 191);
-            this.cmb_material_thickness.Name = "cmb_material_thickness";
-            this.cmb_material_thickness.Size = new System.Drawing.Size(157, 21);
-            this.cmb_material_thickness.TabIndex = 77;
-            this.cmb_material_thickness.SelectedValueChanged += new System.EventHandler(this.cmb_material_thickness_SelectedValueChanged);
-            // 
-            // cmb_material
-            // 
-            this.cmb_material.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "Material Description", true));
-            this.cmb_material.DataSource = this.dTItemDetailsBindingSource;
-            this.cmb_material.DisplayMember = "Material Description";
-            this.cmb_material.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_material.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_material.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_material.FormattingEnabled = true;
-            this.cmb_material.Location = new System.Drawing.Point(142, 163);
-            this.cmb_material.Name = "cmb_material";
-            this.cmb_material.Size = new System.Drawing.Size(157, 21);
-            this.cmb_material.TabIndex = 76;
-            this.cmb_material.ValueMember = "material_id";
             // 
             // label2
             // 
@@ -806,36 +812,6 @@
             this.label9.TabIndex = 59;
             this.label9.Text = "Door Type:";
             // 
-            // cmb_door_type_edit
-            // 
-            this.cmb_door_type_edit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "door_type", true));
-            this.cmb_door_type_edit.DataSource = this.dTdoorstylesBindingSource;
-            this.cmb_door_type_edit.DisplayMember = "description";
-            this.cmb_door_type_edit.DropDownHeight = 70;
-            this.cmb_door_type_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_door_type_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_door_type_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_door_type_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_door_type_edit.FormattingEnabled = true;
-            this.cmb_door_type_edit.IntegralHeight = false;
-            this.cmb_door_type_edit.ItemHeight = 13;
-            this.cmb_door_type_edit.Location = new System.Drawing.Point(142, 32);
-            this.cmb_door_type_edit.Name = "cmb_door_type_edit";
-            this.cmb_door_type_edit.Size = new System.Drawing.Size(157, 21);
-            this.cmb_door_type_edit.TabIndex = 58;
-            this.cmb_door_type_edit.ValueMember = "id";
-            this.cmb_door_type_edit.SelectedValueChanged += new System.EventHandler(this.cmb_door_type_edit_SelectedValueChanged);
-            // 
-            // dTdoorstylesBindingSource
-            // 
-            this.dTdoorstylesBindingSource.DataMember = "DT_door_styles";
-            this.dTdoorstylesBindingSource.DataSource = this.dT_Door_Type;
-            // 
-            // dT_Door_Type
-            // 
-            this.dT_Door_Type.DataSetName = "DT_Door_Type";
-            this.dT_Door_Type.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -886,6 +862,7 @@
             this.txt_frame_height.ReadOnly = true;
             this.txt_frame_height.Size = new System.Drawing.Size(157, 20);
             this.txt_frame_height.TabIndex = 52;
+            this.txt_frame_height.Text = "0";
             // 
             // txt_frame_width
             // 
@@ -897,6 +874,7 @@
             this.txt_frame_width.ReadOnly = true;
             this.txt_frame_width.Size = new System.Drawing.Size(157, 20);
             this.txt_frame_width.TabIndex = 53;
+            this.txt_frame_width.Text = "0";
             // 
             // txt_structual_height
             // 
@@ -908,6 +886,7 @@
             this.txt_structual_height.ReadOnly = true;
             this.txt_structual_height.Size = new System.Drawing.Size(157, 20);
             this.txt_structual_height.TabIndex = 52;
+            this.txt_structual_height.Text = "0";
             // 
             // txt_structual_width
             // 
@@ -919,6 +898,7 @@
             this.txt_structual_width.ReadOnly = true;
             this.txt_structual_width.Size = new System.Drawing.Size(157, 20);
             this.txt_structual_width.TabIndex = 52;
+            this.txt_structual_width.Text = "0";
             // 
             // cmb_material_thickness_edit
             // 
@@ -934,6 +914,7 @@
             this.cmb_material_thickness_edit.Name = "cmb_material_thickness_edit";
             this.cmb_material_thickness_edit.Size = new System.Drawing.Size(157, 21);
             this.cmb_material_thickness_edit.TabIndex = 78;
+            this.cmb_material_thickness_edit.ValueMember = "thickness";
             this.cmb_material_thickness_edit.Visible = false;
             // 
             // cmb_finish_edit
@@ -962,26 +943,9 @@
             this.dT_finish.DataSetName = "DT_finish";
             this.dT_finish.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cmb_door_type
-            // 
-            this.cmb_door_type.DataSource = this.dTItemDetailsBindingSource;
-            this.cmb_door_type.DisplayMember = "Door Type Description";
-            this.cmb_door_type.DropDownHeight = 70;
-            this.cmb_door_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_door_type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_door_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_door_type.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_door_type.FormattingEnabled = true;
-            this.cmb_door_type.IntegralHeight = false;
-            this.cmb_door_type.ItemHeight = 13;
-            this.cmb_door_type.Location = new System.Drawing.Point(142, 32);
-            this.cmb_door_type.Name = "cmb_door_type";
-            this.cmb_door_type.Size = new System.Drawing.Size(157, 21);
-            this.cmb_door_type.TabIndex = 81;
-            this.cmb_door_type.ValueMember = "door_type";
-            // 
             // cmb_material_edit
             // 
+            this.cmb_material_edit.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dTmaterialsBindingSource, "id", true));
             this.cmb_material_edit.DataSource = this.dTmaterialsBindingSource;
             this.cmb_material_edit.DisplayMember = "description";
             this.cmb_material_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1006,6 +970,86 @@
             // 
             this.dT_Material.DataSetName = "DT_Material";
             this.dT_Material.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmb_material_thickness
+            // 
+            this.cmb_material_thickness.DataSource = this.dTItemDetailsBindingSource;
+            this.cmb_material_thickness.DisplayMember = "material_thickness";
+            this.cmb_material_thickness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_material_thickness.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_material_thickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_material_thickness.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_material_thickness.FormattingEnabled = true;
+            this.cmb_material_thickness.Location = new System.Drawing.Point(141, 191);
+            this.cmb_material_thickness.Name = "cmb_material_thickness";
+            this.cmb_material_thickness.Size = new System.Drawing.Size(157, 21);
+            this.cmb_material_thickness.TabIndex = 77;
+            this.cmb_material_thickness.ValueMember = "material_thickness";
+            this.cmb_material_thickness.SelectedValueChanged += new System.EventHandler(this.cmb_material_thickness_SelectedValueChanged);
+            // 
+            // cmb_door_type_edit
+            // 
+            this.cmb_door_type_edit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "door_type", true));
+            this.cmb_door_type_edit.DataSource = this.dTdoorstylesBindingSource;
+            this.cmb_door_type_edit.DisplayMember = "description";
+            this.cmb_door_type_edit.DropDownHeight = 70;
+            this.cmb_door_type_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_door_type_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_door_type_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_door_type_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_door_type_edit.FormattingEnabled = true;
+            this.cmb_door_type_edit.IntegralHeight = false;
+            this.cmb_door_type_edit.ItemHeight = 13;
+            this.cmb_door_type_edit.Location = new System.Drawing.Point(142, 32);
+            this.cmb_door_type_edit.Name = "cmb_door_type_edit";
+            this.cmb_door_type_edit.Size = new System.Drawing.Size(157, 21);
+            this.cmb_door_type_edit.TabIndex = 58;
+            this.cmb_door_type_edit.ValueMember = "id";
+            this.cmb_door_type_edit.SelectedValueChanged += new System.EventHandler(this.cmb_door_type_edit_SelectedValueChanged);
+            // 
+            // dTdoorstylesBindingSource
+            // 
+            this.dTdoorstylesBindingSource.DataMember = "DT_door_styles";
+            this.dTdoorstylesBindingSource.DataSource = this.dT_Door_Type;
+            // 
+            // dT_Door_Type
+            // 
+            this.dT_Door_Type.DataSetName = "DT_Door_Type";
+            this.dT_Door_Type.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmb_door_type
+            // 
+            this.cmb_door_type.DataSource = this.dTItemDetailsBindingSource;
+            this.cmb_door_type.DisplayMember = "Door Type Description";
+            this.cmb_door_type.DropDownHeight = 70;
+            this.cmb_door_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_door_type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_door_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_door_type.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_door_type.FormattingEnabled = true;
+            this.cmb_door_type.IntegralHeight = false;
+            this.cmb_door_type.ItemHeight = 13;
+            this.cmb_door_type.Location = new System.Drawing.Point(142, 32);
+            this.cmb_door_type.Name = "cmb_door_type";
+            this.cmb_door_type.Size = new System.Drawing.Size(157, 21);
+            this.cmb_door_type.TabIndex = 81;
+            this.cmb_door_type.ValueMember = "door_type";
+            // 
+            // cmb_material
+            // 
+            this.cmb_material.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "Material Description", true));
+            this.cmb_material.DataSource = this.dTItemDetailsBindingSource;
+            this.cmb_material.DisplayMember = "Material Description";
+            this.cmb_material.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_material.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_material.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_material.FormattingEnabled = true;
+            this.cmb_material.Location = new System.Drawing.Point(142, 163);
+            this.cmb_material.Name = "cmb_material";
+            this.cmb_material.Size = new System.Drawing.Size(157, 21);
+            this.cmb_material.TabIndex = 76;
+            this.cmb_material.ValueMember = "material_id";
             // 
             // label14
             // 
@@ -1618,6 +1662,7 @@
             this.txt_labour_sales_cost.ReadOnly = true;
             this.txt_labour_sales_cost.Size = new System.Drawing.Size(98, 20);
             this.txt_labour_sales_cost.TabIndex = 85;
+            this.txt_labour_sales_cost.Text = "0";
             this.txt_labour_sales_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label26
@@ -1639,6 +1684,7 @@
             this.txt_material_sales_cost.ReadOnly = true;
             this.txt_material_sales_cost.Size = new System.Drawing.Size(98, 20);
             this.txt_material_sales_cost.TabIndex = 83;
+            this.txt_material_sales_cost.Text = "0";
             this.txt_material_sales_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_hardware_sales_cost
@@ -1650,6 +1696,7 @@
             this.txt_hardware_sales_cost.ReadOnly = true;
             this.txt_hardware_sales_cost.Size = new System.Drawing.Size(98, 20);
             this.txt_hardware_sales_cost.TabIndex = 82;
+            this.txt_hardware_sales_cost.Text = "0";
             this.txt_hardware_sales_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_labour_cost
@@ -1674,6 +1721,7 @@
             this.txt_labour_markup.Name = "txt_labour_markup";
             this.txt_labour_markup.Size = new System.Drawing.Size(98, 20);
             this.txt_labour_markup.TabIndex = 79;
+            this.txt_labour_markup.Text = "0";
             this.txt_labour_markup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_labour_markup.TextChanged += new System.EventHandler(this.txt_labour_markup_TextChanged);
             // 
@@ -1751,6 +1799,7 @@
             this.txt_material_markup.Name = "txt_material_markup";
             this.txt_material_markup.Size = new System.Drawing.Size(98, 20);
             this.txt_material_markup.TabIndex = 73;
+            this.txt_material_markup.Text = "0";
             this.txt_material_markup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_material_markup.TextChanged += new System.EventHandler(this.txt_material_markup_TextChanged);
             // 
@@ -1763,6 +1812,7 @@
             this.txt_hardware_markup.Name = "txt_hardware_markup";
             this.txt_hardware_markup.Size = new System.Drawing.Size(98, 20);
             this.txt_hardware_markup.TabIndex = 71;
+            this.txt_hardware_markup.Text = "0";
             this.txt_hardware_markup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_hardware_markup.TextChanged += new System.EventHandler(this.txt_hardware_markup_TextChanged);
             // 
@@ -1812,6 +1862,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dTItemDetailsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Item_Details)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dTMaterialThicknessBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Material_Thickness)).EndInit();
             this.panel_customer_information.ResumeLayout(false);
@@ -1821,12 +1873,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_freehand_extras)).EndInit();
             this.panel_door_input.ResumeLayout(false);
             this.panel_door_input.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dTdoorstylesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dT_Door_Type)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfinishBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_finish)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTmaterialsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Material)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dTdoorstylesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_Door_Type)).EndInit();
             this.panel_information.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_panel_info)).EndInit();
             this.panel_extras.ResumeLayout(false);
@@ -1977,6 +2029,8 @@
         private System.Windows.Forms.BindingSource dtfinishBindingSource;
         private System.Windows.Forms.ComboBox cmb_door_type;
         private System.Windows.Forms.BindingSource dTdoorstylesBindingSource;
+        private System.Windows.Forms.TextBox txt_warning;
+        private System.Windows.Forms.TextBox txt_list;
         //  private Datasource.DT_Material dT_Item;
         //    private Datasource.DT_ItemTableAdapters.//C_View_Item_DetailsTableAdapter c_View_Item_DetailsTableAdapter;
     }
