@@ -76,7 +76,7 @@ namespace JodanQuote
             for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
             {
 
-                total += Convert.ToDouble(grid_hardware_on_item.Rows[i].Cells["Total_cost"].Value);
+                total += Convert.ToDouble(grid_hardware_on_item.Rows[i].Cells["total"].Value);
 
 
             }
@@ -155,6 +155,7 @@ namespace JodanQuote
             txt_item.Text = Convert.ToString(Valuesclass.item_id);
             txt_project.Text = Convert.ToString(Valuesclass.project_id);
             txt_revision.Text = Convert.ToString(Valuesclass.revision_number);
+            Combobox_values();
         }
 
         void Format()
@@ -394,39 +395,9 @@ namespace JodanQuote
 
                 Edit_Items();
 
-               
 
-                if (cmb_door_type.SelectedItem != null  )
-                {
-                    cmb_door_type_edit.SelectedItem = cmb_door_type.SelectedItem;
-
-                }
-                else
-                {
-                    cmb_door_type_edit.SelectedIndex = 0;
-                }
-                if (cmb_material.SelectedItem != null == true)
-                {
-                   
-                    cmb_material_edit.SelectedItem = cmb_material.SelectedItem;
-                    Fill_material_thickness();
-
-                }
-                else
-                {
-                    cmb_material_edit.SelectedValue = 0;
-                    Fill_material_thickness();
-                }
-                if (cmb_material_thickness.SelectedItem != null)
-                {
-                    cmb_material_thickness_edit.SelectedItem = cmb_material_thickness.SelectedItem;
-
-                }
-                else
-                {
-                    Fill_material_thickness();
-                }
-
+                Combobox_values();
+                    
 
 
 
@@ -435,6 +406,46 @@ namespace JodanQuote
                 return;
             }
 
+        }
+
+        void Combobox_values()
+        {
+
+
+
+            if (cmb_door_type.Text != null)
+            {
+               
+
+                cmb_door_type_edit.Text = cmb_door_type.Text;
+
+            }
+            else
+            {
+                cmb_door_type_edit.SelectedIndex = 1;
+            }
+            if (cmb_material.Text != null && cmb_material.Text != "")
+            {
+
+                cmb_material_edit.Text = cmb_material.Text;
+                Fill_material_thickness();
+
+            }
+            else
+            {
+                cmb_material_edit.SelectedIndex = 1;
+                Fill_material_thickness();
+            }
+            if(cmb_finish.Text!=null)
+            {
+
+                cmb_finish_edit.Text = cmb_finish.Text;
+            }
+            else
+            {
+                cmb_finish_edit.SelectedIndex = 1;
+            }
+            
         }
 
         void Max_Quote()
@@ -524,12 +535,16 @@ namespace JodanQuote
             }
 
             Valuesclass.item_id = Convert.ToInt32(txt_item.Text.ToString());
+
             FrmDimensions dimensions = new FrmDimensions();
             dimensions.ShowDialog();
+            Valuesclass.new_item_identifier = 0;
+            Valuesclass.locked_identifiter = 0;
+            lock_controls();
             Fill_data();
             Refresh_Data();
-            Valuesclass.locked_identifiter = 1;
-            lock_controls();
+          
+           // Combobox_values();
             Calculate_Cost();
         
           
@@ -647,23 +662,6 @@ namespace JodanQuote
             Fill_data();
         }
                
-        private void grid_hardware_on_item_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == grid_hardware_on_item.Columns["btn_delete"].Index && e.RowIndex >= 0)
-            {
-                int i = e.RowIndex;
-                int ID = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["Id_Item_hardware"].Value);
-                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-                SqlCommand delete_item_hardware = new SqlCommand(Statementsclass.delete_item_hardware, conn);
-                delete_item_hardware.Parameters.AddWithValue("@ID", ID);
-
-                delete_item_hardware.ExecuteNonQuery();
-                ConnectionClass.Dispose_connection(conn);
-                Fill_data();
-
-            }
-        }
-
         private void btn_add_hardware_Click_1(object sender, EventArgs e)
         {
             //this.Hide();
@@ -671,6 +669,7 @@ namespace JodanQuote
             select.ShowDialog();
             Valuesclass.new_item_identifier = 0;
             Fill_data();
+            Edit_Items();
         }
 
         private void btn_revise_Click(object sender, EventArgs e)
@@ -872,7 +871,7 @@ namespace JodanQuote
 
         private void cmb_material_thickness_SelectedValueChanged(object sender, EventArgs e)
         {
-            if(cmb_material_thickness_edit.Visible == true && cmb_material_thickness_edit.SelectedItem != null)
+            if(cmb_material_thickness_edit.Visible == true && cmb_material_thickness_edit.Text != null)
             {
 
                 Calculate_Cost_Edit_Mode();
@@ -881,7 +880,23 @@ namespace JodanQuote
             }
         }
 
-        
+        private void grid_hardware_on_item_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.ColumnIndex == grid_hardware_on_item.Columns["btn_delete"].Index && e.RowIndex >= 0)
+            {
+                int i = e.RowIndex;
+                int ID = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["id_hardware_item"].Value);
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand delete_item_hardware = new SqlCommand(Statementsclass.delete_item_hardware, conn);
+                delete_item_hardware.Parameters.AddWithValue("@ID", ID);
+                delete_item_hardware.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn);
+                Fill_data();
+                Edit_Items();
+
+            }
+        }
     }
     
     

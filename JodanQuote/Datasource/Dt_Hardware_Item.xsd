@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.C_View_Item_Hardware" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [Hardware Description], [Hardware Cost], quantity, [Total Cost], [Hardware ID], [Item Hardware ID], ID
+                    <CommandText>SELECT        [Hardware Description], [Hardware Cost], quantity, [Total Cost], [Hardware ID], [Item Hardware ID], id
 FROM            C_View_Item_Hardware
 WHERE        ([Item Hardware ID] = @quote_id)</CommandText>
                     <Parameters>
@@ -29,7 +29,7 @@ WHERE        ([Item Hardware ID] = @quote_id)</CommandText>
               <Mapping SourceColumn="Hardware ID" DataSetColumn="Hardware ID" />
               <Mapping SourceColumn="quantity" DataSetColumn="quantity" />
               <Mapping SourceColumn="Item Hardware ID" DataSetColumn="Item Hardware ID" />
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -41,7 +41,7 @@ WHERE        ([Item Hardware ID] = @quote_id)</CommandText>
   <xs:element name="Dt_Hardware_Item" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Dt_Hardware_Item" msprop:Generator_UserDSName="Dt_Hardware_Item">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_Hardware_Item" msprop:Generator_TableClassName="DT_Hardware_ItemDataTable" msprop:Generator_TableVarName="tableDT_Hardware_Item" msprop:Generator_RowChangedName="DT_Hardware_ItemRowChanged" msprop:Generator_TablePropName="DT_Hardware_Item" msprop:Generator_RowDeletingName="DT_Hardware_ItemRowDeleting" msprop:Generator_RowChangingName="DT_Hardware_ItemRowChanging" msprop:Generator_RowEvHandlerName="DT_Hardware_ItemRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Hardware_ItemRowDeleted" msprop:Generator_RowClassName="DT_Hardware_ItemRow" msprop:Generator_UserTableName="DT_Hardware_Item" msprop:Generator_RowEvArgName="DT_Hardware_ItemRowChangeEvent">
+        <xs:element name="DT_Hardware_Item" msprop:Generator_TableClassName="DT_Hardware_ItemDataTable" msprop:Generator_TableVarName="tableDT_Hardware_Item" msprop:Generator_TablePropName="DT_Hardware_Item" msprop:Generator_RowDeletingName="DT_Hardware_ItemRowDeleting" msprop:Generator_RowChangingName="DT_Hardware_ItemRowChanging" msprop:Generator_RowEvHandlerName="DT_Hardware_ItemRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Hardware_ItemRowDeleted" msprop:Generator_UserTableName="DT_Hardware_Item" msprop:Generator_RowChangedName="DT_Hardware_ItemRowChanged" msprop:Generator_RowEvArgName="DT_Hardware_ItemRowChangeEvent" msprop:Generator_RowClassName="DT_Hardware_ItemRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Hardware_x0020_Description" msprop:Generator_ColumnVarNameInTable="columnHardware_Description" msprop:Generator_ColumnPropNameInRow="Hardware_Description" msprop:Generator_ColumnPropNameInTable="Hardware_DescriptionColumn" msprop:Generator_UserColumnName="Hardware Description" minOccurs="0">
@@ -56,15 +56,15 @@ WHERE        ([Item Hardware ID] = @quote_id)</CommandText>
               <xs:element name="Hardware_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnHardware_ID" msprop:Generator_ColumnPropNameInRow="Hardware_ID" msprop:Generator_ColumnPropNameInTable="Hardware_IDColumn" msprop:Generator_UserColumnName="Hardware ID" type="xs:int" minOccurs="0" />
               <xs:element name="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_UserColumnName="quantity" type="xs:int" minOccurs="0" />
               <xs:element name="Item_x0020_Hardware_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnItem_Hardware_ID" msprop:Generator_ColumnPropNameInRow="Item_Hardware_ID" msprop:Generator_ColumnPropNameInTable="Item_Hardware_IDColumn" msprop:Generator_UserColumnName="Item Hardware ID" type="xs:int" minOccurs="0" />
-              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1">
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DT_Hardware_Item" />
-      <xs:field xpath="mstns:ID" />
+      <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
 </xs:schema>

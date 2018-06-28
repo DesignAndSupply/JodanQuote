@@ -103,8 +103,7 @@ namespace JodanQuote
             DataTable dt_copy_hardware = new DataTable();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter copy_hardware = new SqlDataAdapter(Statementsclass.copy_hardware, conn);
-            copy_hardware.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            copy_hardware.SelectCommand.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
+            copy_hardware.SelectCommand.Parameters.AddWithValue("@ID", Valuesclass.id);
             copy_hardware.Fill(dt_copy_hardware);
 
             for (int i = 0; i < dt_copy_hardware.Rows.Count; i++)
@@ -286,6 +285,7 @@ namespace JodanQuote
 
 
                     }
+                    Valuesclass.id = Convert.ToInt32(grid_items_on_quote.Rows[i].Cells["Quote_ID"].Value);
                     Copy_hardware();
                     Fill_data();
                     MessageBox.Show("Item Copy Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -298,9 +298,9 @@ namespace JodanQuote
 
 
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-               // MessageBox.Show(ex.ToString(), "");
+                MessageBox.Show(ex.ToString(), "");
             }
            
         }

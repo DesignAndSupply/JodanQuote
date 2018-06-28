@@ -53,7 +53,7 @@ namespace Statements
         public static string select_customer = "SELECT  dbo.SALES_LEDGER.NAME, dbo.SALES_LEDGER.account_ref FROM dbo.SALES_LEDGER WHERE(((dbo.SALES_LEDGER.flood_flag)= -1) AND((dbo.SALES_LEDGER.cust_lock_flag)= -1))";
         public static string select_item_details = "SELECT structual_op_height,structual_op_width,frame_width,frame_height FROM dbo.item WHERE project_id =@project_id AND item_id = @item_id";
         public static string copy_item = " Select * From dbo.item Where Item_id =@item_id AND project_id = @project_Id";
-        public static string copy_hardware = "SELECT [Hardware Description], [Hardware ID],[Hardware Cost],[Quantity],[Total Cost] from C_VIEW_ITEM_HARDWARE WHERE [Project ID] = @project_id AND [ITEM ID] = @item_id";
+        public static string copy_hardware = "SELECT [Hardware Description], [Hardware ID],[Hardware Cost],[Quantity],[Total Cost] from C_VIEW_ITEM_HARDWARE WHERE [Item Hardware ID] = @ID";
         public static string Select_materials = "SELECT description, material_id FROM C_View_Item_Material";
         public static string insert_new_project = "Insert into dbo.project (customer_ref, date_created) Values ( @customer_id, @quote_date)";
         public static string insert_new_project_quote = "Insert into dbo.item (item_id ,project_id , item_date, revision_id,created_by,markup_material,markup_hardware,labour_rate) Values (@item_id, @project_id, @item_date, '1',@created_by,@markup_material,@markup_hardware,@labour_rate)";
