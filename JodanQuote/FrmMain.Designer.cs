@@ -100,7 +100,7 @@
             this.lbl_description.AutoSize = true;
             this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_description.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_description.Location = new System.Drawing.Point(446, 118);
+            this.lbl_description.Location = new System.Drawing.Point(479, 118);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(72, 15);
             this.lbl_description.TabIndex = 39;
@@ -131,7 +131,7 @@
             // 
             this.txt_customer.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_customer.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_customer.Location = new System.Drawing.Point(442, 135);
+            this.txt_customer.Location = new System.Drawing.Point(475, 135);
             this.txt_customer.Name = "txt_customer";
             this.txt_customer.Size = new System.Drawing.Size(178, 20);
             this.txt_customer.TabIndex = 36;
@@ -141,7 +141,7 @@
             // 
             this.pct_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pct_clear.Image = global::JodanQuote.Properties.Resources.clear;
-            this.pct_clear.Location = new System.Drawing.Point(627, 134);
+            this.pct_clear.Location = new System.Drawing.Point(660, 134);
             this.pct_clear.Name = "pct_clear";
             this.pct_clear.Size = new System.Drawing.Size(26, 20);
             this.pct_clear.TabIndex = 40;
@@ -199,8 +199,8 @@
             this.grid_quote_list.GridColor = System.Drawing.Color.CornflowerBlue;
             this.grid_quote_list.Location = new System.Drawing.Point(261, 167);
             this.grid_quote_list.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grid_quote_list.MaximumSize = new System.Drawing.Size(655, 323);
-            this.grid_quote_list.MinimumSize = new System.Drawing.Size(655, 323);
+            this.grid_quote_list.MaximumSize = new System.Drawing.Size(655, 328);
+            this.grid_quote_list.MinimumSize = new System.Drawing.Size(655, 328);
             this.grid_quote_list.Name = "grid_quote_list";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -213,7 +213,7 @@
             this.grid_quote_list.RowHeadersVisible = false;
             this.grid_quote_list.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_quote_list.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_quote_list.Size = new System.Drawing.Size(655, 323);
+            this.grid_quote_list.Size = new System.Drawing.Size(655, 328);
             this.grid_quote_list.TabIndex = 22;
             this.grid_quote_list.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_quote_list_CellContentClick);
             // 

@@ -76,7 +76,7 @@ namespace JodanQuote
             for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
             {
 
-                total += Convert.ToDouble(grid_hardware_on_item.Rows[i].Cells["total"].Value);
+                total += Convert.ToDouble(grid_hardware_on_item.Rows[i].Cells["hardware_cost_total"].Value);
 
 
             }
@@ -541,6 +541,7 @@ namespace JodanQuote
             Valuesclass.new_item_identifier = 0;
             Valuesclass.locked_identifiter = 0;
             lock_controls();
+
             Fill_data();
             Refresh_Data();
           
@@ -615,6 +616,19 @@ namespace JodanQuote
                         cntrl.Text = "";
                     }
                     if (cmb.SelectedItem == null && cmb.Visible == true)
+                    {
+                        MessageBox.Show("Please Ensure All Door Input Boxes Have A Value", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                }
+                if(cntrl is TextBox)
+                {
+
+
+                    TextBox text = cntrl as TextBox;
+
+                    if (string.IsNullOrEmpty(text.Text) && text.Visible == true)
                     {
                         MessageBox.Show("Please Ensure All Door Input Boxes Have A Value", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -883,10 +897,10 @@ namespace JodanQuote
         private void grid_hardware_on_item_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.ColumnIndex == grid_hardware_on_item.Columns["btn_delete"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == grid_hardware_on_item.Columns["btn_delete_hardware"].Index && e.RowIndex >= 0)
             {
                 int i = e.RowIndex;
-                int ID = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["id_hardware_item"].Value);
+                int ID = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["delete_id"].Value);
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlCommand delete_item_hardware = new SqlCommand(Statementsclass.delete_item_hardware, conn);
                 delete_item_hardware.Parameters.AddWithValue("@ID", ID);
@@ -894,6 +908,29 @@ namespace JodanQuote
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
                 Edit_Items();
+
+            }
+        }
+
+        private void cmb_material_edit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_material_edit.Visible == true && cmb_material_edit.SelectedItem != null)
+            {
+
+                Calculate_Cost_Edit_Mode();
+
+
+            }
+        }
+
+        private void cmb_material_thickness_edit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cmb_material_thickness_edit.Visible == true && cmb_material_thickness_edit.SelectedItem != null)
+            {
+
+                Calculate_Cost_Edit_Mode();
+
 
             }
         }

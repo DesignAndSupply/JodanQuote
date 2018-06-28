@@ -69,8 +69,8 @@ namespace Statements
                                                      " Where project_id = @project_id AND Item_id = @item_id AND revision_id = @revision_id";
 
         public static string insert_hardware = "Insert into dbo.item_hardware(item_id,hardware_id,hardware_description,hardware_cost,quantity,total_cost) Values (@id,@hardware_id,@hardware_description,@hardware_cost,@quantity,@total_cost)";
-        public static string insert_copied_item = "Insert into dbo.item (project_id,item_id ,order_id , item_date ,door_ref ,door_type, door_style, structual_op_height, structual_op_width, frame_width, frame_height,total_cost,created_by,revision_id,markup_material,material_cost,markup_hardware,hardware_cost,labour_rate,labour_cost) " +
-                                                  "Values (@project_id,@item_id,@order_id ,@item_date ,@door_ref ,@door_type, @door_style, @structual_op_height, @structual_op_width, @frame_width, @frame_height, @total_cost,@created_by,1,@markup_material,@material_cost,@markup_hardware,@hardware_cost,@labour_rate,@labour_cost)";
+        public static string insert_copied_item = "Insert into dbo.item (project_id,item_id ,order_id , item_date ,material_id,finish_id,door_ref ,door_type, door_style, structual_op_height, structual_op_width, frame_width, frame_height,finish_description,material_thickness,total_cost,created_by,revision_id,markup_material,material_cost,markup_hardware,hardware_cost,labour_rate,labour_cost) " +
+                                                  "Values (@project_id,@item_id,@order_id ,@item_date ,@material_id,@finish_id, @door_ref ,@door_type, @door_style, @structual_op_height, @structual_op_width, @frame_width, @frame_height,@finish_description,@material_thickness, @total_cost,@created_by,1,@markup_material,@material_cost,@markup_hardware,@hardware_cost,@labour_rate,@labour_cost)";
         //email
 
         public static string select_email_recipients = "Select name AS [Name], email As [Email] From Dbo.email_List";

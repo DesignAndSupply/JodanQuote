@@ -94,6 +94,9 @@
             this.dT_Settings = new JodanQuote.Datasource.DT_Settings();
             this.ada_quote = new JodanQuote.Datasource.dt_quoteTableAdapters.ada_quote();
             this.c_View_StatusTableAdapter = new JodanQuote.Datasource.DT_StatusTableAdapters.C_View_StatusTableAdapter();
+            this.dT_customer = new JodanQuote.Datasource.DT_customer();
+            this.sALESLEDGERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sALES_LEDGERTableAdapter = new JodanQuote.Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -111,6 +114,8 @@
             this.tab_additonal_cost.SuspendLayout();
             this.tab_notes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Settings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sALESLEDGERBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -393,12 +398,12 @@
             this.txt_project.BackColor = System.Drawing.Color.CornflowerBlue;
             this.txt_project.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_project.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTQuoteItemsBindingSource, "Project ID", true));
-            this.txt_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_project.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_project.Location = new System.Drawing.Point(385, 22);
+            this.txt_project.Location = new System.Drawing.Point(385, 25);
             this.txt_project.MaxLength = 15;
             this.txt_project.Name = "txt_project";
-            this.txt_project.Size = new System.Drawing.Size(192, 22);
+            this.txt_project.Size = new System.Drawing.Size(200, 15);
             this.txt_project.TabIndex = 46;
             // 
             // txt_customer
@@ -406,13 +411,13 @@
             this.txt_customer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_customer.BackColor = System.Drawing.Color.CornflowerBlue;
             this.txt_customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTQuoteItemsBindingSource, "customer_ref", true));
-            this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "NAME", true));
+            this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_customer.Location = new System.Drawing.Point(386, 53);
+            this.txt_customer.Location = new System.Drawing.Point(386, 56);
             this.txt_customer.MaxLength = 15;
             this.txt_customer.Name = "txt_customer";
-            this.txt_customer.Size = new System.Drawing.Size(192, 22);
+            this.txt_customer.Size = new System.Drawing.Size(200, 15);
             this.txt_customer.TabIndex = 43;
             // 
             // lbl_customer
@@ -420,11 +425,11 @@
             this.lbl_customer.AutoSize = true;
             this.lbl_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_customer.Location = new System.Drawing.Point(233, 56);
+            this.lbl_customer.Location = new System.Drawing.Point(216, 53);
             this.lbl_customer.Name = "lbl_customer";
-            this.lbl_customer.Size = new System.Drawing.Size(134, 24);
+            this.lbl_customer.Size = new System.Drawing.Size(152, 24);
             this.lbl_customer.TabIndex = 44;
-            this.lbl_customer.Text = "Customer Ref :";
+            this.lbl_customer.Text = "Customer Name:";
             // 
             // btn_email_project
             // 
@@ -781,6 +786,20 @@
             // 
             this.c_View_StatusTableAdapter.ClearBeforeFill = true;
             // 
+            // dT_customer
+            // 
+            this.dT_customer.DataSetName = "DT_customer";
+            this.dT_customer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sALESLEDGERBindingSource
+            // 
+            this.sALESLEDGERBindingSource.DataMember = "SALES_LEDGER";
+            this.sALESLEDGERBindingSource.DataSource = this.dT_customer;
+            // 
+            // sALES_LEDGERTableAdapter
+            // 
+            this.sALES_LEDGERTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -826,6 +845,8 @@
             this.tab_notes.ResumeLayout(false);
             this.tab_notes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sALESLEDGERBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -889,5 +910,8 @@
         private System.Windows.Forms.DataGridViewImageColumn btn_copy;
         private System.Windows.Forms.DataGridViewImageColumn btn_delete_item;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quote_ID;
+        private System.Windows.Forms.BindingSource sALESLEDGERBindingSource;
+        private Datasource.DT_customer dT_customer;
+        private Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter sALES_LEDGERTableAdapter;
     }
 }
