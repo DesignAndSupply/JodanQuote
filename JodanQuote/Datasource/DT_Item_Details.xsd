@@ -16,7 +16,7 @@
                          Item.door_style, Item.structual_op_height, Item.structual_op_width, Item.frame_width, Item.frame_height, Item.material_thickness, Item.total_cost, Item.created_by, 
                          Item.markup_material, Item.markup_hardware, Item.labour_rate, Item.hardware_cost, Item.labour_cost, Item.material_cost, 
                          dsl.dbo.view_door_styles.description AS [Door Type Description], dsl.dbo.materials.description AS [Material Description], 
-                         C_View_Item_Finish.description AS [Finish Description]
+                         C_View_Item_Finish.description AS [Finish Description], Item.paint_cost
 FROM            C_View_Item_Finish RIGHT OUTER JOIN
                          Item ON C_View_Item_Finish.item_id = Item.item_id LEFT OUTER JOIN
                          dsl.dbo.materials ON Item.material_id = dsl.dbo.materials.id LEFT OUTER JOIN
@@ -60,6 +60,7 @@ ORDER BY Item.revision_id DESC</CommandText>
               <Mapping SourceColumn="Door Type Description" DataSetColumn="Door Type Description" />
               <Mapping SourceColumn="Material Description" DataSetColumn="Material Description" />
               <Mapping SourceColumn="Finish Description" DataSetColumn="Finish Description" />
+              <Mapping SourceColumn="paint_cost" DataSetColumn="paint_cost" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -71,7 +72,7 @@ ORDER BY Item.revision_id DESC</CommandText>
   <xs:element name="DT_Item_Details" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Item_Details" msprop:Generator_UserDSName="DT_Item_Details">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_Item_Details" msprop:Generator_TableClassName="DT_Item_DetailsDataTable" msprop:Generator_TableVarName="tableDT_Item_Details" msprop:Generator_TablePropName="_DT_Item_Details" msprop:Generator_RowDeletingName="DT_Item_DetailsRowDeleting" msprop:Generator_RowChangingName="DT_Item_DetailsRowChanging" msprop:Generator_RowEvHandlerName="DT_Item_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Item_DetailsRowDeleted" msprop:Generator_UserTableName="DT_Item_Details" msprop:Generator_RowChangedName="DT_Item_DetailsRowChanged" msprop:Generator_RowEvArgName="DT_Item_DetailsRowChangeEvent" msprop:Generator_RowClassName="DT_Item_DetailsRow">
+        <xs:element name="DT_Item_Details" msprop:Generator_TableClassName="DT_Item_DetailsDataTable" msprop:Generator_TableVarName="tableDT_Item_Details" msprop:Generator_RowChangedName="DT_Item_DetailsRowChanged" msprop:Generator_TablePropName="_DT_Item_Details" msprop:Generator_RowDeletingName="DT_Item_DetailsRowDeleting" msprop:Generator_RowChangingName="DT_Item_DetailsRowChanging" msprop:Generator_RowEvHandlerName="DT_Item_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Item_DetailsRowDeleted" msprop:Generator_RowClassName="DT_Item_DetailsRow" msprop:Generator_UserTableName="DT_Item_Details" msprop:Generator_RowEvArgName="DT_Item_DetailsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -143,6 +144,7 @@ ORDER BY Item.revision_id DESC</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="paint_cost" msprop:Generator_ColumnVarNameInTable="columnpaint_cost" msprop:Generator_ColumnPropNameInRow="paint_cost" msprop:Generator_ColumnPropNameInTable="paint_costColumn" msprop:Generator_UserColumnName="paint_cost" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

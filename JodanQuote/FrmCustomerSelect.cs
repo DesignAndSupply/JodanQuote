@@ -28,7 +28,7 @@ namespace JodanQuote
 
         {
             DataTable dt_customer = new DataTable();
-            SqlConnection conn = ConnectionClass.GetConnection_dsl_fitting();
+            SqlConnection conn = ConnectionClass.GetConnection_orderdatabase();
             SqlDataAdapter select_customer = new SqlDataAdapter(Statementsclass.select_customer, conn);
             select_customer.Fill(dt_customer);
             cmb_customers.DataSource = dt_customer;

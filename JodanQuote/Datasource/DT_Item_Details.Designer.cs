@@ -333,6 +333,8 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnFinish_Description;
             
+            private global::System.Data.DataColumn columnpaint_cost;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_Item_DetailsDataTable() {
@@ -584,6 +586,14 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn paint_costColumn {
+                get {
+                    return this.columnpaint_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -645,7 +655,8 @@ namespace JodanQuote.Datasource {
                         double material_cost, 
                         string Door_Type_Description, 
                         string Material_Description, 
-                        string Finish_Description) {
+                        string Finish_Description, 
+                        double paint_cost) {
                 DT_Item_DetailsRow rowDT_Item_DetailsRow = ((DT_Item_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -674,7 +685,8 @@ namespace JodanQuote.Datasource {
                         material_cost,
                         Door_Type_Description,
                         Material_Description,
-                        Finish_Description};
+                        Finish_Description,
+                        paint_cost};
                 rowDT_Item_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Item_DetailsRow);
                 return rowDT_Item_DetailsRow;
@@ -731,6 +743,7 @@ namespace JodanQuote.Datasource {
                 this.columnDoor_Type_Description = base.Columns["Door Type Description"];
                 this.columnMaterial_Description = base.Columns["Material Description"];
                 this.columnFinish_Description = base.Columns["Finish Description"];
+                this.columnpaint_cost = base.Columns["paint_cost"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -790,6 +803,8 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnMaterial_Description);
                 this.columnFinish_Description = new global::System.Data.DataColumn("Finish Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFinish_Description);
+                this.columnpaint_cost = new global::System.Data.DataColumn("paint_cost", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpaint_cost);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1379,6 +1394,22 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double paint_cost {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Item_Details.paint_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'paint_cost\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.paint_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isproject_idNull() {
                 return this.IsNull(this.tableDT_Item_Details.project_idColumn);
             }
@@ -1688,6 +1719,18 @@ namespace JodanQuote.Datasource {
             public void SetFinish_DescriptionNull() {
                 this[this.tableDT_Item_Details.Finish_DescriptionColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ispaint_costNull() {
+                return this.IsNull(this.tableDT_Item_Details.paint_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setpaint_costNull() {
+                this[this.tableDT_Item_Details.paint_costColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1876,6 +1919,7 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             tableMapping.ColumnMappings.Add("Door Type Description", "Door Type Description");
             tableMapping.ColumnMappings.Add("Material Description", "Material Description");
             tableMapping.ColumnMappings.Add("Finish Description", "Finish Description");
+            tableMapping.ColumnMappings.Add("paint_cost", "paint_cost");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1897,7 +1941,7 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
                          Item.door_style, Item.structual_op_height, Item.structual_op_width, Item.frame_width, Item.frame_height, Item.material_thickness, Item.total_cost, Item.created_by, 
                          Item.markup_material, Item.markup_hardware, Item.labour_rate, Item.hardware_cost, Item.labour_cost, Item.material_cost, 
                          dsl.dbo.view_door_styles.description AS [Door Type Description], dsl.dbo.materials.description AS [Material Description], 
-                         C_View_Item_Finish.description AS [Finish Description]
+                         C_View_Item_Finish.description AS [Finish Description], Item.paint_cost
 FROM            C_View_Item_Finish RIGHT OUTER JOIN
                          Item ON C_View_Item_Finish.item_id = Item.item_id LEFT OUTER JOIN
                          dsl.dbo.materials ON Item.material_id = dsl.dbo.materials.id LEFT OUTER JOIN
