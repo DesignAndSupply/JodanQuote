@@ -1042,7 +1042,8 @@ SELECT ACCOUNT_REF, NAME, ADDRESS_1, ADDRESS_2, ADDRESS_3, ADDRESS_4, TELEPHONE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::JodanQuote.Properties.Settings.Default.dsl_fittingConnectionString;
+            this._connection.ConnectionString = "Data Source=192.168.0.150\\SQLEXPRESS;Initial Catalog=order_database;Persist Secur" +
+                "ity Info=True;User ID=sa;Password=Dodid1";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1052,22 +1053,22 @@ SELECT ACCOUNT_REF, NAME, ADDRESS_1, ADDRESS_2, ADDRESS_3, ADDRESS_4, TELEPHONE 
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        ACCOUNT_REF, NAME, ADDRESS_1, ADDRESS_2, ADDRESS_3, ADDRESS_4, TELE" +
-                "PHONE\r\nFROM            SALES_LEDGER\r\nWHERE        (ACCOUNT_REF = @account_ref)";
+                "PHONE\r\nFROM            SALES_LEDGER\r\nWHERE        (ACCOUNT_REF = @name)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@account_ref", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ACCOUNT_REF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ACCOUNT_REF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DT_customer.SALES_LEDGERDataTable dataTable, string account_ref) {
+        public virtual int Fill(DT_customer.SALES_LEDGERDataTable dataTable, string name) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((account_ref == null)) {
-                throw new global::System.ArgumentNullException("account_ref");
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(account_ref));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1080,13 +1081,13 @@ SELECT ACCOUNT_REF, NAME, ADDRESS_1, ADDRESS_2, ADDRESS_3, ADDRESS_4, TELEPHONE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DT_customer.SALES_LEDGERDataTable GetData(string account_ref) {
+        public virtual DT_customer.SALES_LEDGERDataTable GetData(string name) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((account_ref == null)) {
-                throw new global::System.ArgumentNullException("account_ref");
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(account_ref));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
             }
             DT_customer.SALES_LEDGERDataTable dataTable = new DT_customer.SALES_LEDGERDataTable();
             this.Adapter.Fill(dataTable);

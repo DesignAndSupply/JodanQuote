@@ -28,8 +28,8 @@ namespace JodanQuote
         }
 
         void Fill_data()
-        {
-
+        {     
+            
 
             this.ada_quote.Fill(dt_quote.DT_Quote_Items, Valuesclass.project_id);
             this.c_View_StatusTableAdapter.Fill(this.dT_Status.C_View_Status);
@@ -91,7 +91,7 @@ namespace JodanQuote
             btn_copy.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             btn_delete_item.DisplayIndex = grid_items_on_quote.ColumnCount - 1;
             txt_project.Text = Valuesclass.project_id.ToString();
-            txt_customer.Text = Valuesclass.customer_account_ref;
+            txt_customer.Text = Valuesclass.customer_name;
             grid_items_on_quote.EnableHeadersVisualStyles = false;
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
@@ -392,6 +392,84 @@ namespace JodanQuote
         private void button1_Click(object sender, EventArgs e)
         {
             Fill_data();
+        }
+
+        private void btn_convert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+              
+                FrmCustomerSelect select = new FrmCustomerSelect();
+                select.ShowDialog();
+
+                SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand copy_project = new SqlCommand(Statementsclass.copy_project, conn2);
+                copy_project.Parameters.AddWithValue("@project_Id", Valuesclass.project_id);
+                SqlDataReader reader = copy_project.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+
+
+
+                    SqlConnection conn3 = ConnectionClass.GetConnection_jodan_quote();
+                
+                    SqlCommand insert_copied_project = new SqlCommand(Statementsclass.insert_copied_project, conn3);
+
+
+                    insert_copied_project.Parameters.AddWithValue("@customer_ref", Valuesclass.customer_account_ref);
+                    insert_copied_project.Parameters.AddWithValue("@site_ref", reader["site_ref"].ToString());
+                    insert_copied_project.Parameters.AddWithValue("@project_ref", reader["project_ref"].ToString());
+                    insert_copied_project.Parameters.AddWithValue("@date_created", DateTime.Now);
+                    insert_copied_project.Parameters.AddWithValue("@quote_status", reader["quote_status"].ToString());
+                    insert_copied_project.ExecuteNonQuery();
+
+                    ConnectionClass.Dispose_connection(conn3);
+                    ConnectionClass.Dispose_connection(conn2);
+
+                    MessageBox.Show("Quotation Successfully Converted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+
+
+                }
+
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+
+                SqlCommand select_max_project = new SqlCommand(Statementsclass.select_max_project_id, conn);
+                SqlDataReader read_max_project_id = select_max_project.ExecuteReader();
+
+
+                if (read_max_project_id.Read())
+                {
+                    Valuesclass.project_id = (Convert.ToInt32(read_max_project_id["Project ID"]));
+                    read_max_project_id.Close();
+                }
+                ConnectionClass.Dispose_connection(conn);
+
+                dT_customer.Clear();
+                dt_quote.Clear();
+                this.dT_customer.SALES_LEDGER.Clear();
+                this.dt_quote.DT_Quote_Items.Clear();
+                dT_customer.EnforceConstraints = false;
+             
+                this.ada_quote.Fill(dt_quote.DT_Quote_Items, Valuesclass.project_id);
+                this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
+                txt_customer.Text = Valuesclass.customer_name;
+                Format();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString(), "");
+
+            }
+
+            
+
+
         }
     }
     

@@ -21,6 +21,7 @@ namespace JodanQuote
             InitializeComponent();
             txt_structual_height.Text =Convert.ToString(Valuesclass.dimension_height);
             txt_structual_width.Text = Convert.ToString(Valuesclass.dimension_width);
+            this.ControlBox = false;
         }
 
         private void btn_complete_Click(object sender, EventArgs e)
@@ -54,6 +55,12 @@ namespace JodanQuote
 
         }
 
-       
+        private void txt_structual_height_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                btn_complete.PerformClick();
+            }
+        }
     }
 }

@@ -198,6 +198,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dt_quote.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\CrRptQuote.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -251,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMailQuote.resx">
       <DependentUpon>FrmMailQuote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrRptQuote.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -417,11 +431,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -432,6 +441,7 @@
     <None Include="Other\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Settings.png" />
     <None Include="Resources\Revise.png" />
     <None Include="Resources\Search%28Small%29.png" />
     <None Include="Resources\unlock.png" />
@@ -455,6 +465,19 @@
     <None Include="Resources\Copy.png" />
     <None Include="Resources\Copy%28small%29.png" />
     <None Include="Resources\Add1.png" />
+    <None Include="Resources\Filter_Blue.png" />
+    <None Include="Resources\Filter_Blue1.png" />
+    <None Include="Resources\Filter_Blue2.png" />
+    <None Include="Resources\Convert.png" />
+    <None Include="Resources\blue_filter.png" />
+    <None Include="Resources\blue_filter1.png" />
+    <None Include="Resources\blue_filter2.png" />
+    <None Include="Resources\blue_filter3.png" />
+    <None Include="Resources\Filter_Blue3.png" />
+    <None Include="Resources\blue_filter4.png" />
+    <None Include="Resources\Filter Blue.png" />
+    <None Include="Resources\Filter Blue1.png" />
+    <None Include="Resources\Filter Blue2.png" />
     <Content Include="Resources\logo_4rq_icon.ico" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\tick2.png" />

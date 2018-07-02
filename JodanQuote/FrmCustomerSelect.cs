@@ -19,6 +19,7 @@ namespace JodanQuote
     {
         public FrmCustomerSelect()
         {
+            this.ControlBox = false;
             InitializeComponent();
             Fill_data();
         }
@@ -51,22 +52,13 @@ namespace JodanQuote
             }
             Valuesclass.customer_account_ref =  cmb_customers.SelectedValue.ToString();
             Valuesclass.customer_name = cmb_customers.Text.ToString();
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand insert_new_project = new SqlCommand(Statementsclass.insert_new_project, conn);
-            insert_new_project.Parameters.AddWithValue("@customer_id", Valuesclass.customer_account_ref);
-            insert_new_project.Parameters.AddWithValue("@quote_date", DateTime.Now);
-            insert_new_project.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName.ToString());
-            insert_new_project.ExecuteNonQuery();
-            ConnectionClass.Dispose_connection(conn);
             this.Hide();
-            FrmQuote project = new FrmQuote();
-            project.Show();
+         
         }
 
         private void FrmCustomerSelect_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmMain main = new FrmMain();
-            main.Show();
+            return;
         }
     }
 }

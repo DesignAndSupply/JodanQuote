@@ -70,6 +70,7 @@
             this.txt_structual_height.Name = "txt_structual_height";
             this.txt_structual_height.Size = new System.Drawing.Size(130, 20);
             this.txt_structual_height.TabIndex = 2;
+            this.txt_structual_height.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_structual_height_KeyDown);
             // 
             // txt_structual_width
             // 
@@ -160,7 +161,6 @@
             this.Name = "FrmDimensions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dimensions";
-         //   this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDimensions_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

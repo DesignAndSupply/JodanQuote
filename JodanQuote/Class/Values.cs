@@ -23,7 +23,7 @@ namespace values
         public static int dimension_height = 0;
         public static int locked_identifiter;
         public static int id;
-
+        public static int jodan_y_n = 1;
         public static  List<object> Calculate_material_list = new List<object>(new object[] { "project_id", "item_id", "revision_id","Material Description", "Material_thickness", "door_type", "structual_op_width", "structual_op_height", });
     }
 }

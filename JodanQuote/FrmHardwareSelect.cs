@@ -70,7 +70,7 @@ namespace JodanQuote
             grid_hardware_selected.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_hardware_selected.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_hardware_selected.DefaultCellStyle.BackColor = Color.AliceBlue;
-
+            this.ControlBox = false;
 
            
         }

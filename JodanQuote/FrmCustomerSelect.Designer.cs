@@ -56,7 +56,7 @@
             // 
             this.btn_complete.BackColor = System.Drawing.Color.AliceBlue;
             this.btn_complete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_complete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_complete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_complete.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_complete.Image = global::JodanQuote.Properties.Resources.tick2;
             this.btn_complete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -64,7 +64,7 @@
             this.btn_complete.Name = "btn_complete";
             this.btn_complete.Size = new System.Drawing.Size(87, 38);
             this.btn_complete.TabIndex = 30;
-            this.btn_complete.Text = "     Create       Project";
+            this.btn_complete.Text = "   Complete";
             this.btn_complete.UseVisualStyleBackColor = false;
             this.btn_complete.Click += new System.EventHandler(this.btn_complete_Click);
             // 

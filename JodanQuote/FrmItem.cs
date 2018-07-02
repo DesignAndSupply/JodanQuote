@@ -47,7 +47,7 @@ namespace JodanQuote
             this.dT_Material.DT_materials.Clear();
             dt_Hardware_Item.EnforceConstraints = false;
             this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
-            this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
+            this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_name);
             this.ada_Item_Details.Fill(dT_Item_Details._DT_Item_Details, Valuesclass.project_id, Valuesclass.item_id, Valuesclass.revision_number);
             dT_Door_Type.Clear();
             //this.dt_Hardware_Item.DT_Hardware_Item.Clear();
@@ -257,12 +257,6 @@ namespace JodanQuote
 
         void Format()
         {
-
-            grid_extras.EnableHeadersVisualStyles = false;
-            grid_extras.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_extras.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
-            grid_extras.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_extras.DefaultCellStyle.BackColor = Color.AliceBlue;
 
             grid_freehand_extras.EnableHeadersVisualStyles = false;
             grid_freehand_extras.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
@@ -515,7 +509,7 @@ namespace JodanQuote
             {
 
                 panel_door_input.Enabled = false;
-                panel_extras.Enabled = false;
+                //panel_extras.Enabled = false;
                 panel_freehand.Enabled = false;
                 panel_information.Enabled = false;
                 panel_freehand.Enabled = false;
@@ -547,7 +541,7 @@ namespace JodanQuote
             else
             {
                 panel_door_input.Enabled = true;
-                panel_extras.Enabled = true;
+                //panel_extras.Enabled = true;
                 panel_freehand.Enabled = true;
                 panel_information.Enabled = true;
                 panel_freehand.Enabled = true;
@@ -674,6 +668,7 @@ namespace JodanQuote
                 cmb_material_thickness_edit.DataBindings.Clear();
                 cmb_material_thickness_edit.DataSource = dT_Material_Thickness._DT_Material_Thickness;
                 cmb_material_thickness_edit.DisplayMember = "thickness";
+                cmb_material_thickness_edit.Text = "1.5";
                 Calculate_Cost_Edit_Mode();
 
             }
@@ -865,6 +860,7 @@ namespace JodanQuote
             lock_controls();
             Fill_data();
             Calculate_Cost();
+            btn_back.PerformClick();
         }
                
         private void btn_add_hardware_Click_1(object sender, EventArgs e)
