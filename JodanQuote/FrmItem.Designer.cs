@@ -84,9 +84,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel_customer_information = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
-            this.txt_telephone = new System.Windows.Forms.TextBox();
-            this.sALESLEDGERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dT_customer = new JodanQuote.Datasource.DT_customer();
+            this.txt_postcode = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_customer = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -137,7 +135,6 @@
             this.panel_freehand = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.sALES_LEDGERTableAdapter = new JodanQuote.Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter();
             this.panel_handle = new System.Windows.Forms.Panel();
             this.grid_hardware_on_item = new System.Windows.Forms.DataGridView();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -196,6 +193,9 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.item_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ada_Hardware_Item = new JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters.Ada_Hardware_Item();
+            this.dT_customer = new JodanQuote.Datasource.DT_customer();
+            this.sALESLEDGERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sALES_LEDGERTableAdapter = new JodanQuote.Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter();
             this.pnl_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTItemDetailsBindingSource)).BeginInit();
@@ -205,8 +205,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dTMaterialThicknessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Material_Thickness)).BeginInit();
             this.panel_customer_information.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sALESLEDGERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dT_customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_freehand_extras)).BeginInit();
             this.panel_door_input.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dTdoorstylesBindingSource)).BeginInit();
@@ -223,6 +221,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dTHardwareItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_Hardware_Item)).BeginInit();
             this.panel_total.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sALESLEDGERBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_main
@@ -278,10 +278,9 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(464, 17);
+            this.dataGridView1.Location = new System.Drawing.Point(221, 26);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(443, 150);
-            this.dataGridView1.MinimumSize = new System.Drawing.Size(243, 150);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(4443, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -295,7 +294,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(693, 47);
             this.dataGridView1.TabIndex = 71;
             this.dataGridView1.Visible = false;
             // 
@@ -588,7 +587,7 @@
             // 
             this.panel_customer_information.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_customer_information.Controls.Add(this.label18);
-            this.panel_customer_information.Controls.Add(this.txt_telephone);
+            this.panel_customer_information.Controls.Add(this.txt_postcode);
             this.panel_customer_information.Controls.Add(this.label11);
             this.panel_customer_information.Controls.Add(this.txt_customer);
             this.panel_customer_information.Controls.Add(this.label10);
@@ -609,30 +608,20 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(119, 184);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(71, 13);
+            this.label18.Size = new System.Drawing.Size(65, 13);
             this.label18.TabIndex = 64;
-            this.label18.Text = "Telephone:";
+            this.label18.Text = "PostCode:";
             // 
-            // txt_telephone
+            // txt_postcode
             // 
-            this.txt_telephone.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_telephone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "TELEPHONE", true));
-            this.txt_telephone.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_telephone.Location = new System.Drawing.Point(209, 181);
-            this.txt_telephone.Name = "txt_telephone";
-            this.txt_telephone.ReadOnly = true;
-            this.txt_telephone.Size = new System.Drawing.Size(130, 20);
-            this.txt_telephone.TabIndex = 63;
-            // 
-            // sALESLEDGERBindingSource
-            // 
-            this.sALESLEDGERBindingSource.DataMember = "SALES_LEDGER";
-            this.sALESLEDGERBindingSource.DataSource = this.dT_customer;
-            // 
-            // dT_customer
-            // 
-            this.dT_customer.DataSetName = "DT_customer";
-            this.dT_customer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.txt_postcode.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_postcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "postcode", true));
+            this.txt_postcode.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_postcode.Location = new System.Drawing.Point(209, 181);
+            this.txt_postcode.Name = "txt_postcode";
+            this.txt_postcode.ReadOnly = true;
+            this.txt_postcode.Size = new System.Drawing.Size(130, 20);
+            this.txt_postcode.TabIndex = 63;
             // 
             // label11
             // 
@@ -647,7 +636,7 @@
             // txt_customer
             // 
             this.txt_customer.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "NAME", true));
+            this.txt_customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "customer_name", true));
             this.txt_customer.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_customer.Location = new System.Drawing.Point(106, 26);
             this.txt_customer.Name = "txt_customer";
@@ -668,7 +657,7 @@
             // txt_address_4
             // 
             this.txt_address_4.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_address_4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "ADDRESS_4", true));
+            this.txt_address_4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "address_line_4", true));
             this.txt_address_4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_address_4.Location = new System.Drawing.Point(106, 143);
             this.txt_address_4.Name = "txt_address_4";
@@ -679,7 +668,7 @@
             // txt_address_3
             // 
             this.txt_address_3.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_address_3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "ADDRESS_3", true));
+            this.txt_address_3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "address_line_3", true));
             this.txt_address_3.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_address_3.Location = new System.Drawing.Point(106, 113);
             this.txt_address_3.Name = "txt_address_3";
@@ -690,7 +679,7 @@
             // txt_address_2
             // 
             this.txt_address_2.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_address_2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.sALESLEDGERBindingSource, "ADDRESS_2", true));
+            this.txt_address_2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "address_line_2", true));
             this.txt_address_2.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_address_2.Location = new System.Drawing.Point(106, 83);
             this.txt_address_2.Name = "txt_address_2";
@@ -701,7 +690,7 @@
             // txt_address_1
             // 
             this.txt_address_1.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_address_1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "ADDRESS_1", true));
+            this.txt_address_1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "address_line_1", true));
             this.txt_address_1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_address_1.Location = new System.Drawing.Point(106, 53);
             this.txt_address_1.Name = "txt_address_1";
@@ -1304,10 +1293,6 @@
             this.label17.TabIndex = 58;
             this.label17.Text = "Hardware:";
             // 
-            // sALES_LEDGERTableAdapter
-            // 
-            this.sALES_LEDGERTableAdapter.ClearBeforeFill = true;
-            // 
             // panel_handle
             // 
             this.panel_handle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -1907,6 +1892,20 @@
             // 
             this.ada_Hardware_Item.ClearBeforeFill = true;
             // 
+            // dT_customer
+            // 
+            this.dT_customer.DataSetName = "DT_customer";
+            this.dT_customer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sALESLEDGERBindingSource
+            // 
+            this.sALESLEDGERBindingSource.DataMember = "SALES_LEDGER";
+            this.sALESLEDGERBindingSource.DataSource = this.dT_customer;
+            // 
+            // sALES_LEDGERTableAdapter
+            // 
+            this.sALES_LEDGERTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1948,8 +1947,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dT_Material_Thickness)).EndInit();
             this.panel_customer_information.ResumeLayout(false);
             this.panel_customer_information.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sALESLEDGERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dT_customer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_freehand_extras)).EndInit();
             this.panel_door_input.ResumeLayout(false);
             this.panel_door_input.PerformLayout();
@@ -1968,6 +1965,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dt_Hardware_Item)).EndInit();
             this.panel_total.ResumeLayout(false);
             this.panel_total.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sALESLEDGERBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2021,12 +2020,9 @@
         private System.Windows.Forms.TextBox txt_address_2;
         private System.Windows.Forms.TextBox txt_address_1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txt_telephone;
+        private System.Windows.Forms.TextBox txt_postcode;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_customer;
-        private System.Windows.Forms.BindingSource sALESLEDGERBindingSource;
-        private Datasource.DT_customer dT_customer;
-        private Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter sALES_LEDGERTableAdapter;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn projectIDDataGridViewTextBoxColumn;
@@ -2124,6 +2120,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_hardware;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemHardwareIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn delete_id;
+        private System.Windows.Forms.BindingSource sALESLEDGERBindingSource;
+        private Datasource.DT_customer dT_customer;
+        private Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter sALES_LEDGERTableAdapter;
         //  private Datasource.DT_Material dT_Item;
         //    private Datasource.DT_ItemTableAdapters.//C_View_Item_DetailsTableAdapter c_View_Item_DetailsTableAdapter;
     }

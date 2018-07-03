@@ -29,7 +29,7 @@ namespace JodanQuote
 
         {
             DataTable dt_customer = new DataTable();
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_order();
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter select_customer = new SqlDataAdapter(Statementsclass.select_customer, conn);
             select_customer.Fill(dt_customer);
             cmb_customers.DataSource = dt_customer;

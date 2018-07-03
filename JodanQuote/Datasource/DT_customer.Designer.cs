@@ -279,8 +279,6 @@ namespace JodanQuote.Datasource {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SALES_LEDGERDataTable : global::System.Data.TypedTableBase<SALES_LEDGERRow> {
             
-            private global::System.Data.DataColumn columnid;
-            
             private global::System.Data.DataColumn columncustomer_name;
             
             private global::System.Data.DataColumn columnaddress_line_1;
@@ -292,12 +290,6 @@ namespace JodanQuote.Datasource {
             private global::System.Data.DataColumn columnaddress_line_4;
             
             private global::System.Data.DataColumn columnpostcode;
-            
-            private global::System.Data.DataColumn columncontact_name;
-            
-            private global::System.Data.DataColumn columncontact_number;
-            
-            private global::System.Data.DataColumn columnsecondary_invoice_custome_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -330,14 +322,6 @@ namespace JodanQuote.Datasource {
             protected SALES_LEDGERDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -390,30 +374,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn contact_nameColumn {
-                get {
-                    return this.columncontact_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn contact_numberColumn {
-                get {
-                    return this.columncontact_number;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn secondary_invoice_custome_idColumn {
-                get {
-                    return this.columnsecondary_invoice_custome_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,29 +409,18 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SALES_LEDGERRow AddSALES_LEDGERRow(string customer_name, string address_line_1, string address_line_2, string address_line_3, string address_line_4, string postcode, string contact_name, string contact_number, short secondary_invoice_custome_id) {
+            public SALES_LEDGERRow AddSALES_LEDGERRow(string customer_name, string address_line_1, string address_line_2, string address_line_3, string address_line_4, string postcode) {
                 SALES_LEDGERRow rowSALES_LEDGERRow = ((SALES_LEDGERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         customer_name,
                         address_line_1,
                         address_line_2,
                         address_line_3,
                         address_line_4,
-                        postcode,
-                        contact_name,
-                        contact_number,
-                        secondary_invoice_custome_id};
+                        postcode};
                 rowSALES_LEDGERRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSALES_LEDGERRow);
                 return rowSALES_LEDGERRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SALES_LEDGERRow FindByid(int id) {
-                return ((SALES_LEDGERRow)(this.Rows.Find(new object[] {
-                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,23 +440,17 @@ namespace JodanQuote.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
                 this.columncustomer_name = base.Columns["customer_name"];
                 this.columnaddress_line_1 = base.Columns["address_line_1"];
                 this.columnaddress_line_2 = base.Columns["address_line_2"];
                 this.columnaddress_line_3 = base.Columns["address_line_3"];
                 this.columnaddress_line_4 = base.Columns["address_line_4"];
                 this.columnpostcode = base.Columns["postcode"];
-                this.columncontact_name = base.Columns["contact_name"];
-                this.columncontact_number = base.Columns["contact_number"];
-                this.columnsecondary_invoice_custome_id = base.Columns["secondary_invoice_custome_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
                 this.columncustomer_name = new global::System.Data.DataColumn("customer_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncustomer_name);
                 this.columnaddress_line_1 = new global::System.Data.DataColumn("address_line_1", typeof(string), null, global::System.Data.MappingType.Element);
@@ -520,28 +463,12 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnaddress_line_4);
                 this.columnpostcode = new global::System.Data.DataColumn("postcode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpostcode);
-                this.columncontact_name = new global::System.Data.DataColumn("contact_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncontact_name);
-                this.columncontact_number = new global::System.Data.DataColumn("contact_number", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncontact_number);
-                this.columnsecondary_invoice_custome_id = new global::System.Data.DataColumn("secondary_invoice_custome_id", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsecondary_invoice_custome_id);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
-                this.columnid.Unique = true;
                 this.columncustomer_name.MaxLength = 100;
                 this.columnaddress_line_1.MaxLength = 30;
                 this.columnaddress_line_2.MaxLength = 30;
                 this.columnaddress_line_3.MaxLength = 30;
                 this.columnaddress_line_4.MaxLength = 30;
                 this.columnpostcode.MaxLength = 10;
-                this.columncontact_name.MaxLength = 30;
-                this.columncontact_number.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -684,17 +611,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tableSALES_LEDGER.idColumn]));
-                }
-                set {
-                    this[this.tableSALES_LEDGER.idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string customer_name {
                 get {
                     try {
@@ -791,55 +707,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string contact_name {
-                get {
-                    try {
-                        return ((string)(this[this.tableSALES_LEDGER.contact_nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'contact_name\' in table \'SALES_LEDGER\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSALES_LEDGER.contact_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string contact_number {
-                get {
-                    try {
-                        return ((string)(this[this.tableSALES_LEDGER.contact_numberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'contact_number\' in table \'SALES_LEDGER\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSALES_LEDGER.contact_numberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short secondary_invoice_custome_id {
-                get {
-                    try {
-                        return ((short)(this[this.tableSALES_LEDGER.secondary_invoice_custome_idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'secondary_invoice_custome_id\' in table \'SALES_LEDGER\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableSALES_LEDGER.secondary_invoice_custome_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Iscustomer_nameNull() {
                 return this.IsNull(this.tableSALES_LEDGER.customer_nameColumn);
             }
@@ -908,42 +775,6 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpostcodeNull() {
                 this[this.tableSALES_LEDGER.postcodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Iscontact_nameNull() {
-                return this.IsNull(this.tableSALES_LEDGER.contact_nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setcontact_nameNull() {
-                this[this.tableSALES_LEDGER.contact_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Iscontact_numberNull() {
-                return this.IsNull(this.tableSALES_LEDGER.contact_numberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setcontact_numberNull() {
-                this[this.tableSALES_LEDGER.contact_numberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Issecondary_invoice_custome_idNull() {
-                return this.IsNull(this.tableSALES_LEDGER.secondary_invoice_custome_idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setsecondary_invoice_custome_idNull() {
-                this[this.tableSALES_LEDGER.secondary_invoice_custome_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1106,114 +937,21 @@ namespace JodanQuote.Datasource.DT_customerTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SALES_LEDGER";
-            tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("customer_name", "customer_name");
             tableMapping.ColumnMappings.Add("address_line_1", "address_line_1");
             tableMapping.ColumnMappings.Add("address_line_2", "address_line_2");
             tableMapping.ColumnMappings.Add("address_line_3", "address_line_3");
             tableMapping.ColumnMappings.Add("address_line_4", "address_line_4");
             tableMapping.ColumnMappings.Add("postcode", "postcode");
-            tableMapping.ColumnMappings.Add("contact_name", "contact_name");
-            tableMapping.ColumnMappings.Add("contact_number", "contact_number");
-            tableMapping.ColumnMappings.Add("secondary_invoice_custome_id", "secondary_invoice_custome_id");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [jodan_customer] WHERE (([id] = @Original_id) AND ((@IsNull_customer_name = 1 AND [customer_name] IS NULL) OR ([customer_name] = @Original_customer_name)) AND ((@IsNull_address_line_1 = 1 AND [address_line_1] IS NULL) OR ([address_line_1] = @Original_address_line_1)) AND ((@IsNull_address_line_2 = 1 AND [address_line_2] IS NULL) OR ([address_line_2] = @Original_address_line_2)) AND ((@IsNull_address_line_3 = 1 AND [address_line_3] IS NULL) OR ([address_line_3] = @Original_address_line_3)) AND ((@IsNull_address_line_4 = 1 AND [address_line_4] IS NULL) OR ([address_line_4] = @Original_address_line_4)) AND ((@IsNull_postcode = 1 AND [postcode] IS NULL) OR ([postcode] = @Original_postcode)) AND ((@IsNull_contact_name = 1 AND [contact_name] IS NULL) OR ([contact_name] = @Original_contact_name)) AND ((@IsNull_contact_number = 1 AND [contact_number] IS NULL) OR ([contact_number] = @Original_contact_number)) AND ((@IsNull_secondary_invoice_custome_id = 1 AND [secondary_invoice_custome_id] IS NULL) OR ([secondary_invoice_custome_id] = @Original_secondary_invoice_custome_id)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_customer_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "customer_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_customer_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "customer_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address_line_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address_line_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address_line_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address_line_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address_line_3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address_line_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address_line_4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address_line_4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_postcode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "postcode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_postcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "postcode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_contact_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contact_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_contact_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contact_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_secondary_invoice_custome_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "secondary_invoice_custome_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_secondary_invoice_custome_id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "secondary_invoice_custome_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [jodan_customer] ([customer_name], [address_line_1], [address_line_2], [address_line_3], [address_line_4], [postcode], [contact_name], [contact_number], [secondary_invoice_custome_id]) VALUES (@customer_name, @address_line_1, @address_line_2, @address_line_3, @address_line_4, @postcode, @contact_name, @contact_number, @secondary_invoice_custome_id);
-SELECT id, customer_name, address_line_1, address_line_2, address_line_3, address_line_4, postcode, contact_name, contact_number, secondary_invoice_custome_id FROM jodan_customer WHERE (id = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@customer_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "customer_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address_line_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address_line_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address_line_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address_line_4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@postcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "postcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contact_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contact_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@secondary_invoice_custome_id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "secondary_invoice_custome_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [jodan_customer] SET [customer_name] = @customer_name, [address_line_1] = " +
-                "@address_line_1, [address_line_2] = @address_line_2, [address_line_3] = @address" +
-                "_line_3, [address_line_4] = @address_line_4, [postcode] = @postcode, [contact_na" +
-                "me] = @contact_name, [contact_number] = @contact_number, [secondary_invoice_cust" +
-                "ome_id] = @secondary_invoice_custome_id WHERE (([id] = @Original_id) AND ((@IsNu" +
-                "ll_customer_name = 1 AND [customer_name] IS NULL) OR ([customer_name] = @Origina" +
-                "l_customer_name)) AND ((@IsNull_address_line_1 = 1 AND [address_line_1] IS NULL)" +
-                " OR ([address_line_1] = @Original_address_line_1)) AND ((@IsNull_address_line_2 " +
-                "= 1 AND [address_line_2] IS NULL) OR ([address_line_2] = @Original_address_line_" +
-                "2)) AND ((@IsNull_address_line_3 = 1 AND [address_line_3] IS NULL) OR ([address_" +
-                "line_3] = @Original_address_line_3)) AND ((@IsNull_address_line_4 = 1 AND [addre" +
-                "ss_line_4] IS NULL) OR ([address_line_4] = @Original_address_line_4)) AND ((@IsN" +
-                "ull_postcode = 1 AND [postcode] IS NULL) OR ([postcode] = @Original_postcode)) A" +
-                "ND ((@IsNull_contact_name = 1 AND [contact_name] IS NULL) OR ([contact_name] = @" +
-                "Original_contact_name)) AND ((@IsNull_contact_number = 1 AND [contact_number] IS" +
-                " NULL) OR ([contact_number] = @Original_contact_number)) AND ((@IsNull_secondary" +
-                "_invoice_custome_id = 1 AND [secondary_invoice_custome_id] IS NULL) OR ([seconda" +
-                "ry_invoice_custome_id] = @Original_secondary_invoice_custome_id)));\r\nSELECT id, " +
-                "customer_name, address_line_1, address_line_2, address_line_3, address_line_4, p" +
-                "ostcode, contact_name, contact_number, secondary_invoice_custome_id FROM jodan_c" +
-                "ustomer WHERE (id = @id)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@customer_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "customer_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address_line_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address_line_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address_line_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address_line_4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@postcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "postcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contact_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contact_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@secondary_invoice_custome_id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "secondary_invoice_custome_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_customer_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "customer_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_customer_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "customer_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address_line_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address_line_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address_line_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address_line_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address_line_3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address_line_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_address_line_4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_address_line_4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address_line_4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_postcode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "postcode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_postcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "postcode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_contact_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contact_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_contact_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contact_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contact_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_secondary_invoice_custome_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "secondary_invoice_custome_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_secondary_invoice_custome_id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "secondary_invoice_custome_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::JodanQuote.Properties.Settings.Default.jodan_orderConnectionString;
+            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password" +
+                "=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1222,10 +960,9 @@ SELECT id, customer_name, address_line_1, address_line_2, address_line_3, addres
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        id, customer_name, address_line_1, address_line_2, address_line_3, address_line_4, postcode, contact_name, contact_number, 
-                         secondary_invoice_custome_id
-FROM            jodan_customer
-WHERE        (customer_name = @name)";
+            this._commandCollection[0].CommandText = "SELECT        customer_name, address_line_1, address_line_2, address_line_3, addr" +
+                "ess_line_4, postcode\r\nFROM            C_View_Jodan_Customer\r\nWHERE        (custo" +
+                "mer_name = @name)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "customer_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1265,35 +1002,6 @@ WHERE        (customer_name = @name)";
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DT_customer.SALES_LEDGERDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DT_customer dataSet) {
-            return this.Adapter.Update(dataSet, "SALES_LEDGER");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
     }
     
     /// <summary>
@@ -1308,8 +1016,6 @@ WHERE        (customer_name = @name)";
         
         private UpdateOrderOption _updateOrder;
         
-        private SALES_LEDGERTableAdapter _sALES_LEDGERTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1322,20 +1028,6 @@ WHERE        (customer_name = @name)";
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public SALES_LEDGERTableAdapter SALES_LEDGERTableAdapter {
-            get {
-                return this._sALES_LEDGERTableAdapter;
-            }
-            set {
-                this._sALES_LEDGERTableAdapter = value;
             }
         }
         
@@ -1358,10 +1050,6 @@ WHERE        (customer_name = @name)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._sALES_LEDGERTableAdapter != null) 
-                            && (this._sALES_LEDGERTableAdapter.Connection != null))) {
-                    return this._sALES_LEDGERTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1375,9 +1063,6 @@ WHERE        (customer_name = @name)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._sALES_LEDGERTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1389,15 +1074,6 @@ WHERE        (customer_name = @name)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(DT_customer dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._sALES_LEDGERTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SALES_LEDGER.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sALES_LEDGERTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1408,14 +1084,6 @@ WHERE        (customer_name = @name)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(DT_customer dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._sALES_LEDGERTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SALES_LEDGER.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sALES_LEDGERTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1426,14 +1094,6 @@ WHERE        (customer_name = @name)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(DT_customer dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._sALES_LEDGERTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SALES_LEDGER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sALES_LEDGERTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1473,11 +1133,6 @@ WHERE        (customer_name = @name)";
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._sALES_LEDGERTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sALES_LEDGERTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -1510,15 +1165,6 @@ WHERE        (customer_name = @name)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._sALES_LEDGERTableAdapter != null)) {
-                    revertConnections.Add(this._sALES_LEDGERTableAdapter, this._sALES_LEDGERTableAdapter.Connection);
-                    this._sALES_LEDGERTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._sALES_LEDGERTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._sALES_LEDGERTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sALES_LEDGERTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sALES_LEDGERTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1576,10 +1222,6 @@ WHERE        (customer_name = @name)";
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._sALES_LEDGERTableAdapter != null)) {
-                    this._sALES_LEDGERTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sALES_LEDGERTableAdapter]));
-                    this._sALES_LEDGERTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

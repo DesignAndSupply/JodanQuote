@@ -32,14 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuote));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pct_logo = new System.Windows.Forms.PictureBox();
@@ -49,6 +49,15 @@
             this.maintab_doors_on_quote = new System.Windows.Forms.TabControl();
             this.tab_door_on_quote = new System.Windows.Forms.TabPage();
             this.grid_items_on_quote = new System.Windows.Forms.DataGridView();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.revision_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.created_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_view = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_copy = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_delete_item = new System.Windows.Forms.DataGridViewImageColumn();
+            this.quote_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dTQuoteItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dt_quote = new JodanQuote.Datasource.dt_quote();
             this.pnl_header = new System.Windows.Forms.Panel();
@@ -90,20 +99,11 @@
             this.dT_Settings = new JodanQuote.Datasource.DT_Settings();
             this.ada_quote = new JodanQuote.Datasource.dt_quoteTableAdapters.ada_quote();
             this.c_View_StatusTableAdapter = new JodanQuote.Datasource.DT_StatusTableAdapters.C_View_StatusTableAdapter();
-            this.sALES_LEDGERTableAdapter = new JodanQuote.Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter();
             this.Item_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.revision_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.revision_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.created_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_view = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_copy = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_delete_item = new System.Windows.Forms.DataGridViewImageColumn();
-            this.quote_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sALES_LEDGERTableAdapter = new JodanQuote.Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -257,6 +257,93 @@
             this.grid_items_on_quote.TabIndex = 24;
             this.grid_items_on_quote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_items_on_quote_CellContentClick);
             // 
+            // Item
+            // 
+            this.Item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Item.DataPropertyName = "Item ID";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Item.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Item.FillWeight = 20F;
+            this.Item.HeaderText = "Item Number";
+            this.Item.Name = "Item";
+            // 
+            // revision_id
+            // 
+            this.revision_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.revision_id.DataPropertyName = "Revision Number";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.revision_id.DefaultCellStyle = dataGridViewCellStyle3;
+            this.revision_id.FillWeight = 20F;
+            this.revision_id.HeaderText = "Revision Number";
+            this.revision_id.Name = "revision_id";
+            // 
+            // itemDateDataGridViewTextBoxColumn
+            // 
+            this.itemDateDataGridViewTextBoxColumn.DataPropertyName = "Item Date";
+            this.itemDateDataGridViewTextBoxColumn.HeaderText = "Item Date";
+            this.itemDateDataGridViewTextBoxColumn.Name = "itemDateDataGridViewTextBoxColumn";
+            this.itemDateDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // created_by
+            // 
+            this.created_by.DataPropertyName = "Created By";
+            this.created_by.HeaderText = "Created By";
+            this.created_by.Name = "created_by";
+            this.created_by.Width = 105;
+            // 
+            // totalCostDataGridViewTextBoxColumn
+            // 
+            this.totalCostDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.totalCostDataGridViewTextBoxColumn.DataPropertyName = "Total Cost";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.totalCostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.totalCostDataGridViewTextBoxColumn.FillWeight = 25F;
+            this.totalCostDataGridViewTextBoxColumn.HeaderText = " Total Cost";
+            this.totalCostDataGridViewTextBoxColumn.Name = "totalCostDataGridViewTextBoxColumn";
+            // 
+            // btn_view
+            // 
+            this.btn_view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.NullValue = "Open";
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_view.DefaultCellStyle = dataGridViewCellStyle5;
+            this.btn_view.FillWeight = 12F;
+            this.btn_view.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_view.HeaderText = "";
+            this.btn_view.Name = "btn_view";
+            this.btn_view.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // btn_copy
+            // 
+            this.btn_copy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.btn_copy.FillWeight = 10F;
+            this.btn_copy.HeaderText = "";
+            this.btn_copy.Image = global::JodanQuote.Properties.Resources.Copy_small_;
+            this.btn_copy.Name = "btn_copy";
+            // 
+            // btn_delete_item
+            // 
+            this.btn_delete_item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.btn_delete_item.FillWeight = 10F;
+            this.btn_delete_item.HeaderText = "";
+            this.btn_delete_item.Image = global::JodanQuote.Properties.Resources.clear;
+            this.btn_delete_item.Name = "btn_delete_item";
+            // 
+            // quote_id
+            // 
+            this.quote_id.DataPropertyName = "Quote ID";
+            this.quote_id.HeaderText = "Quote ID";
+            this.quote_id.Name = "quote_id";
+            this.quote_id.Visible = false;
+            this.quote_id.Width = 89;
+            // 
             // dTQuoteItemsBindingSource
             // 
             this.dTQuoteItemsBindingSource.DataMember = "DT_Quote_Items";
@@ -338,7 +425,7 @@
             this.txt_customer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_customer.BackColor = System.Drawing.Color.CornflowerBlue;
             this.txt_customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "NAME", true));
+            this.txt_customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sALESLEDGERBindingSource, "customer_name", true));
             this.txt_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_customer.ForeColor = System.Drawing.Color.AliceBlue;
             this.txt_customer.Location = new System.Drawing.Point(386, 56);
@@ -701,10 +788,6 @@
             // 
             this.c_View_StatusTableAdapter.ClearBeforeFill = true;
             // 
-            // sALES_LEDGERTableAdapter
-            // 
-            this.sALES_LEDGERTableAdapter.ClearBeforeFill = true;
-            // 
             // Item_id
             // 
             this.Item_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -761,92 +844,9 @@
             this.createdByDataGridViewTextBoxColumn.HeaderText = "Created By";
             this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
             // 
-            // Item
+            // sALES_LEDGERTableAdapter
             // 
-            this.Item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Item.DataPropertyName = "Item ID";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Item.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Item.FillWeight = 20F;
-            this.Item.HeaderText = "Item Number";
-            this.Item.Name = "Item";
-            // 
-            // revision_id
-            // 
-            this.revision_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.revision_id.DataPropertyName = "Revision Number";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.revision_id.DefaultCellStyle = dataGridViewCellStyle3;
-            this.revision_id.FillWeight = 20F;
-            this.revision_id.HeaderText = "Revision Number";
-            this.revision_id.Name = "revision_id";
-            // 
-            // itemDateDataGridViewTextBoxColumn
-            // 
-            this.itemDateDataGridViewTextBoxColumn.DataPropertyName = "Item Date";
-            this.itemDateDataGridViewTextBoxColumn.HeaderText = "Item Date";
-            this.itemDateDataGridViewTextBoxColumn.Name = "itemDateDataGridViewTextBoxColumn";
-            this.itemDateDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // created_by
-            // 
-            this.created_by.DataPropertyName = "Created By";
-            this.created_by.HeaderText = "Created By";
-            this.created_by.Name = "created_by";
-            this.created_by.Width = 114;
-            // 
-            // totalCostDataGridViewTextBoxColumn
-            // 
-            this.totalCostDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.totalCostDataGridViewTextBoxColumn.DataPropertyName = "Total Cost";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.totalCostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.totalCostDataGridViewTextBoxColumn.FillWeight = 25F;
-            this.totalCostDataGridViewTextBoxColumn.HeaderText = " Total Cost";
-            this.totalCostDataGridViewTextBoxColumn.Name = "totalCostDataGridViewTextBoxColumn";
-            // 
-            // btn_view
-            // 
-            this.btn_view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.NullValue = "Open";
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_view.DefaultCellStyle = dataGridViewCellStyle5;
-            this.btn_view.FillWeight = 12F;
-            this.btn_view.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_view.HeaderText = "";
-            this.btn_view.Name = "btn_view";
-            this.btn_view.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // btn_copy
-            // 
-            this.btn_copy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.btn_copy.FillWeight = 10F;
-            this.btn_copy.HeaderText = "";
-            this.btn_copy.Image = global::JodanQuote.Properties.Resources.Copy_small_;
-            this.btn_copy.Name = "btn_copy";
-            // 
-            // btn_delete_item
-            // 
-            this.btn_delete_item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.btn_delete_item.FillWeight = 10F;
-            this.btn_delete_item.HeaderText = "";
-            this.btn_delete_item.Image = global::JodanQuote.Properties.Resources.clear;
-            this.btn_delete_item.Name = "btn_delete_item";
-            // 
-            // quote_id
-            // 
-            this.quote_id.DataPropertyName = "Quote ID";
-            this.quote_id.HeaderText = "Quote ID";
-            this.quote_id.Name = "quote_id";
-            this.quote_id.Visible = false;
-            this.quote_id.Width = 89;
+            this.sALES_LEDGERTableAdapter.ClearBeforeFill = true;
             // 
             // FrmQuote
             // 
@@ -949,9 +949,6 @@
         private System.Windows.Forms.BindingSource cViewStatusBindingSource;
         private Datasource.DT_StatusTableAdapters.C_View_StatusTableAdapter c_View_StatusTableAdapter;
         private System.Windows.Forms.Button btn_convert;
-        private System.Windows.Forms.BindingSource sALESLEDGERBindingSource;
-        private Datasource.DT_customer dT_customer;
-        private Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter sALES_LEDGERTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn revision_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
@@ -967,5 +964,8 @@
         private System.Windows.Forms.DataGridViewImageColumn btn_copy;
         private System.Windows.Forms.DataGridViewImageColumn btn_delete_item;
         private System.Windows.Forms.DataGridViewTextBoxColumn quote_id;
+        private System.Windows.Forms.BindingSource sALESLEDGERBindingSource;
+        private Datasource.DT_customer dT_customer;
+        private Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter sALES_LEDGERTableAdapter;
     }
 }

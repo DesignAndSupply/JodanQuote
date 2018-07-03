@@ -79,6 +79,7 @@ namespace JodanQuote
             ConnectionClass.Dispose_connection(conn);
 
         }
+
         void Select_max_project_id()
         {
 

@@ -69,44 +69,49 @@ namespace JodanQuote
         void Search()
         {
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            DateTime d =  DateTime.Today;
+            String today = d.ToShortDateString();
 
-            if (txt_customer.Text != "" && txt_quote_id.Text != "" && date_start.Text.ToString() == "00/00/0000" && date_end.Text.ToString() == "00/00/0000")
+            if (txt_customer.Text != "" && txt_quote_id.Text != "" && txt_reference.Text == "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
                 dt_quote.Clear();
                 SqlDataAdapter search_quote_customer = new SqlDataAdapter(Statementsclass.search_quote_customer, conn);
                 search_quote_customer.SelectCommand.Parameters.AddWithValue("@customer", txt_customer.Text.ToString());
                 search_quote_customer.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
+                search_quote_customer.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
                 search_quote_customer.Fill(dt_quote);
                // Format();
                 return;
 
 
             }
-            if (txt_customer.Text != "" && txt_quote_id.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == "00/00/0000" && date_end.Text.ToString() == "00/00/0000")
+            if (txt_customer.Text != "" && txt_quote_id.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
                 SqlDataAdapter search_customer = new SqlDataAdapter(Statementsclass.search_customer, conn);
                 search_customer.SelectCommand.Parameters.AddWithValue("@customer", txt_customer.Text.ToString());
+                search_customer.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
                 search_customer.Fill(dt_quote);
                // Format();
                 return;
 
 
             }
-            if (txt_quote_id.Text != "" && txt_customer.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == "00/00/0000" && date_end.Text.ToString() == "00/00/0000")
+            if (txt_quote_id.Text != "" && txt_customer.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
               
                 SqlDataAdapter search_quote = new SqlDataAdapter(Statementsclass.search_quote, conn);
                 search_quote.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
+                search_quote.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
                 search_quote.Fill(dt_quote);
                // Format();
                 return;
 
             }
-            if (txt_quote_id.Text != "" && txt_customer.Text != "" && txt_reference.Text != "" && date_start.Text.ToString() == "00/00/0000" && date_end.Text.ToString() == "00/00/0000")
+            if (txt_quote_id.Text != "" && txt_customer.Text != "" && txt_reference.Text != "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
@@ -115,26 +120,29 @@ namespace JodanQuote
                 search_quote_customer_reference.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
                 search_quote_customer_reference.SelectCommand.Parameters.AddWithValue("@customer", txt_customer.Text.ToString());
                 search_quote_customer_reference.SelectCommand.Parameters.AddWithValue("@reference", txt_reference.Text.ToString());
-            
+                search_quote_customer_reference.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
+
                 search_quote_customer_reference.Fill(dt_quote);
                  Format();
                 return;
 
             }
-            if (txt_quote_id.Text == "" && txt_customer.Text == "" && txt_reference.Text != "" && date_start.Text.ToString() == DateTime.Now.ToShortDateString() && date_end.Text.ToString() == DateTime.Now.ToShortDateString())
+
+            if (txt_quote_id.Text == "" && txt_customer.Text == "" && txt_reference.Text != "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
 
                 SqlDataAdapter search_reference = new SqlDataAdapter(Statementsclass.search_reference, conn);
                 search_reference.SelectCommand.Parameters.AddWithValue("@reference", txt_reference.Text.ToString());
+                search_reference.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
 
                 search_reference.Fill(dt_quote);
                 Format();
                 return;
 
             }
-            if (txt_quote_id.Text != "" && txt_customer.Text == "" && txt_reference.Text != "" && date_start.Text.ToString() == "00/00/0000" && date_end.Text.ToString() == "00/00/0000")
+            if (txt_quote_id.Text != "" && txt_customer.Text == "" && txt_reference.Text != "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
@@ -142,26 +150,27 @@ namespace JodanQuote
                 SqlDataAdapter search_quote_reference = new SqlDataAdapter(Statementsclass.search_quote_reference, conn);
                 search_quote_reference.SelectCommand.Parameters.AddWithValue("@reference", txt_reference.Text.ToString());
                 search_quote_reference.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
+                search_quote_reference.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
                 search_quote_reference.Fill(dt_quote);
                 Format();
                 return;
 
             }
-            if (txt_quote_id.Text == "" && txt_customer.Text != "" && txt_reference.Text != "" && date_start.Text.ToString() == "00/00/0000" && date_end.Text.ToString() == "00/00/0000" )
+            if (txt_quote_id.Text == "" && txt_customer.Text != "" && txt_reference.Text != "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
 
-                SqlDataAdapter search_customer_reference = new SqlDataAdapter(Statementsclass.search_quote_customer_reference, conn);
+                SqlDataAdapter search_customer_reference = new SqlDataAdapter(Statementsclass.search_customer_reference, conn);
                 search_customer_reference.SelectCommand.Parameters.AddWithValue("@customer", txt_customer.Text.ToString());
                 search_customer_reference.SelectCommand.Parameters.AddWithValue("@reference", txt_reference.Text.ToString());
-
+                search_customer_reference.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
                 search_customer_reference.Fill(dt_quote);
                 Format();
                 return;
 
             }
-            if (txt_customer.Text == "" && txt_quote_id.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == "00/00/0000" && date_end.Text.ToString() == "00/00/0000")
+            if (txt_customer.Text == "" && txt_quote_id.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
                 dt_quote.Clear();
                 Fill_data();
@@ -231,8 +240,8 @@ namespace JodanQuote
             }
 
 
-            Valuesclass.customer_account_ref = "Jodan";
-            Valuesclass.customer_name = "JODAN CONTRACTS";
+            Valuesclass.customer_account_ref = "JODAN CONTRACTS LTD                                         ";
+            Valuesclass.customer_name = "JODAN CONTRACTS LTD                                         ";
             SqlCommand insert_new_project = new SqlCommand(Statementsclass.insert_new_project, conn2);
             insert_new_project.Parameters.AddWithValue("@customer_id", Valuesclass.customer_account_ref);
             insert_new_project.Parameters.AddWithValue("@quote_date", DateTime.Now);
@@ -320,6 +329,11 @@ namespace JodanQuote
         {
             FrmSettings settings = new FrmSettings();
             settings.ShowDialog();
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

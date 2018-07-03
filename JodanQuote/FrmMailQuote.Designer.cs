@@ -116,8 +116,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(659, 405);
-            this.Controls.Add(this.btn_send);
             this.Controls.Add(this.grid_email_recipients);
+            this.Controls.Add(this.btn_send);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMailQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -14,35 +14,38 @@ namespace Statements
        
 
         public static string select_quote_report = "SELECT [Item ID], [Revision Number], [Date Created], [Created By], [Quote ID], [Project ID] FROM c_view_project_quotation WHERE([Project ID] = @project_id)";
-        public static string select_quote_item_count = "SELECT [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value] From C_view_item_count WHERE jodan_y_n = @jodan_Y_N";
+        public static string select_quote_item_count = "SELECT [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value] From C_view_item_count WHERE jodan_y_n = @jodan_Y_N Order By[Project ID] Desc";
         public static string select_quote_items = "SELECT [Quote ID],[Item ID] ,[Item Date],[Revision Number] FROM [Jodan_quote].[dbo].[c_view_project_quotation] where [Project ID] = @project_id ORder By [Item ID] DESC";
         public static string select_stock_category = "SELECT * from C_view_stock_category";
         public static string Search_stock_category = "SELECT * from C_view_hardware WHERE category = @category";
         public static string Search_stock_category_description = "SELECT * from C_view_hardware WHERE category = @category AND Description LIKE '%' + @description + '%' ";
         public static string Search_stock_description = "SELECT * from C_view_hardware WHERE Description LIKE '%' + @description + '%' ";
+
         //main menu search
 
-        public static string search_quote = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE[project id] = @project_id Order By[Project ID] Desc";
+        public static string search_quote = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE[project id] = @project_id AND jodan_y_n = @jodan_Y_N Order By[Project ID] Desc";
 
                 
-        public static string search_quote_customer_reference = "SELECT [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [project id] = @project_id  AND  [Customer Name]   like  '%' + @customer + '%' " +
+        public static string search_quote_customer_reference = "SELECT [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [project id] = @project_id  AND  [Customer Name]   like  '%' + @customer + '%' AND jodan_y_n = @jodan_Y_N " +
                                                      "AND [Project Reference]   like  '%' + @Reference + '%'Order By[Project ID] Desc";
 
-        public static string search_quote_reference = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value] From C_view_item_count WHERE [project id] = @project_id " +
-                                                   "AND [Project Reference]   like  '%' + @Reference + '%'Order By[Project ID] Desc";
+        public static string search_quote_reference = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value] From C_view_item_count WHERE [project id] = @project_id AND jodan_y_n = @jodan_Y_N " +
+                                                   "AND [Project Reference]   like  '%' + @Reference + '%' Order By[Project ID] Desc";
 
-        public static string search_customer_reference = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value] From C_view_item_count WHERE  [Customer Name]   like  '%' + @customer + '%' " +
-                                                   "AND [Project Reference]   like  '%' + @Reference + '%'Order By[Project ID] Desc";
+        public static string search_customer_reference = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value] From C_view_item_count WHERE  [Customer Name]   like  '%' + @customer + '%' AND jodan_y_n = @jodan_Y_N " +
+                                                   "AND [Project Reference]   like  '%' + @Reference + '%' Order By[Project ID] Desc";
 
-        public static string search_reference = "SELECT [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [Project Reference] like  '%' + @Reference + " +
-                                                  " '%'Order By[Project ID] Desc";
+        public static string search_reference = "SELECT [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [Project Reference] like  '%' + @Reference + '%'  AND jodan_y_n = @jodan_Y_N " +
+                                                  " Order By[Project ID] Desc";
 
 
-        public static string search_quote_customer = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [project id] = @project_id  AND  [Customer Name]   like  '%' + @customer + '%' " +
+        public static string search_quote_customer = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [project id] = @project_id  AND  [Customer Name]   like  '%' + @customer + '%' AND jodan_y_n = @jodan_Y_N " +
                                                      "Order By[Project ID] Desc";
 
-        public static string search_customer = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [Customer Name] like  '%' + @customer + '%' " +
+        public static string search_customer = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [Customer Name] like  '%' + @customer + '%'  AND jodan_y_n = @jodan_Y_N " +
                                                      "Order By[Project ID] Desc";
+
+
 
         public static string view_quote_list = "SELECT id AS [ID],  customer_ref As [Customer], date_created As [Date Created]  from dbo.project ORDER BY [id] DESC ";
 
@@ -59,7 +62,7 @@ namespace Statements
         public static string select_max_revision_id = "SELECT MAX(Revision_id) As [Revision ID] From dbo.item WHERE Project_id = @project_id AND item_id =@item_ID";
         public static string select_quote_details = "SELECT project_ref,quote_status FROM dbo.project WHERE id =@project_id";
         public static string Select_door_type = "SELECT id, description, double_door FROM dsl.dbo.view_door_styles ORDER BY obsolete";
-        public static string select_customer = "SELECT  dbo.jodan_customer.customer_name From dbo.jodan_customer";
+        public static string select_customer = "SELECT  * From C_View_Jodan_customer";
         public static string select_item_details = "SELECT structual_op_height,structual_op_width,frame_width,frame_height FROM dbo.item WHERE project_id =@project_id AND item_id = @item_id";
         public static string copy_project = " Select * From dbo.project Where id =@project_id";
         public static string copy_item = " Select * From dbo.item Where Item_id =@item_id AND project_id = @project_Id";
