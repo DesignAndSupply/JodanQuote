@@ -33,5 +33,16 @@ namespace JodanQuote.Properties {
                 return ((string)(this["dsl_fittingConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=jodan_order;Persist Security In" +
+            "fo=True;User ID=sa;Password=Dodid1")]
+        public string jodan_orderConnectionString {
+            get {
+                return ((string)(this["jodan_orderConnectionString"]));
+            }
+        }
     }
 }

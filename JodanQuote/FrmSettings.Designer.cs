@@ -32,33 +32,124 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSettings));
             this.dT_customer1 = new JodanQuote.Datasource.DT_customer();
-            this.grid_settings = new System.Windows.Forms.DataGridView();
+            this.dTSettingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dT_Settings = new JodanQuote.Datasource.DT_Settings();
             this.pct_logo = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.date_modified = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ada_setting = new JodanQuote.Datasource.DT_SettingsTableAdapters.ada_setting();
+            this.tab_settings = new System.Windows.Forms.TabControl();
+            this.tab_markup = new System.Windows.Forms.TabPage();
+            this.tab_stock = new System.Windows.Forms.TabPage();
+            this.grid_settings = new System.Windows.Forms.DataGridView();
             this.markup_hardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_modified = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markup_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labour_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.single_extra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.double_extra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.single_flood_extra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.double_flood_extra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dTSettingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dT_Settings = new JodanQuote.Datasource.DT_Settings();
-            this.ada_setting = new JodanQuote.Datasource.DT_SettingsTableAdapters.ada_setting();
+            this.grid_stock = new System.Windows.Forms.DataGridView();
+            this.dT_hardware = new JodanQuote.Datasource.DT_hardware();
+            this.cviewhardwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.c_view_hardwareTableAdapter = new JodanQuote.Datasource.DT_hardwareTableAdapters.c_view_hardwareTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chk_jodan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dT_customer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_settings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTSettingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Settings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
+            this.tab_settings.SuspendLayout();
+            this.tab_markup.SuspendLayout();
+            this.tab_stock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_settings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_stock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_hardware)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewhardwareBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dT_customer1
             // 
             this.dT_customer1.DataSetName = "DT_customer";
             this.dT_customer1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dTSettingBindingSource
+            // 
+            this.dTSettingBindingSource.DataMember = "DT_Setting";
+            this.dTSettingBindingSource.DataSource = this.dT_Settings;
+            // 
+            // dT_Settings
+            // 
+            this.dT_Settings.DataSetName = "DT_Settings";
+            this.dT_Settings.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pct_logo
+            // 
+            this.pct_logo.Image = global::JodanQuote.Properties.Resources.Jodan;
+            this.pct_logo.Location = new System.Drawing.Point(22, 12);
+            this.pct_logo.Name = "pct_logo";
+            this.pct_logo.Size = new System.Drawing.Size(151, 86);
+            this.pct_logo.TabIndex = 69;
+            this.pct_logo.TabStop = false;
+            // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_save.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_save.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_save.Image = global::JodanQuote.Properties.Resources.Save;
+            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_save.Location = new System.Drawing.Point(535, 29);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(98, 37);
+            this.btn_save.TabIndex = 70;
+            this.btn_save.Text = "     Save";
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // ada_setting
+            // 
+            this.ada_setting.ClearBeforeFill = true;
+            // 
+            // tab_settings
+            // 
+            this.tab_settings.Controls.Add(this.tab_markup);
+            this.tab_settings.Controls.Add(this.tab_stock);
+            this.tab_settings.Location = new System.Drawing.Point(22, 124);
+            this.tab_settings.Name = "tab_settings";
+            this.tab_settings.SelectedIndex = 0;
+            this.tab_settings.Size = new System.Drawing.Size(1101, 394);
+            this.tab_settings.TabIndex = 71;
+            // 
+            // tab_markup
+            // 
+            this.tab_markup.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.tab_markup.Controls.Add(this.grid_settings);
+            this.tab_markup.Location = new System.Drawing.Point(4, 22);
+            this.tab_markup.Name = "tab_markup";
+            this.tab_markup.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_markup.Size = new System.Drawing.Size(1093, 368);
+            this.tab_markup.TabIndex = 0;
+            this.tab_markup.Text = "Markup";
+            // 
+            // tab_stock
+            // 
+            this.tab_stock.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.tab_stock.Controls.Add(this.grid_stock);
+            this.tab_stock.Location = new System.Drawing.Point(4, 22);
+            this.tab_stock.Name = "tab_stock";
+            this.tab_stock.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_stock.Size = new System.Drawing.Size(1093, 368);
+            this.tab_stock.TabIndex = 1;
+            this.tab_stock.Text = "Stock";
             // 
             // grid_settings
             // 
@@ -102,7 +193,7 @@
             this.grid_settings.DefaultCellStyle = dataGridViewCellStyle2;
             this.grid_settings.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_settings.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_settings.Location = new System.Drawing.Point(49, 135);
+            this.grid_settings.Location = new System.Drawing.Point(18, 40);
             this.grid_settings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_settings.MaximumSize = new System.Drawing.Size(7055, 328);
             this.grid_settings.Name = "grid_settings";
@@ -118,45 +209,20 @@
             this.grid_settings.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_settings.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.grid_settings.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.grid_settings.Size = new System.Drawing.Size(600, 71);
-            this.grid_settings.TabIndex = 23;
-            // 
-            // pct_logo
-            // 
-            this.pct_logo.Image = global::JodanQuote.Properties.Resources.Jodan;
-            this.pct_logo.Location = new System.Drawing.Point(22, 12);
-            this.pct_logo.Name = "pct_logo";
-            this.pct_logo.Size = new System.Drawing.Size(151, 86);
-            this.pct_logo.TabIndex = 69;
-            this.pct_logo.TabStop = false;
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.AliceBlue;
-            this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_save.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_save.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_save.Image = global::JodanQuote.Properties.Resources.Save;
-            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_save.Location = new System.Drawing.Point(535, 29);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(98, 37);
-            this.btn_save.TabIndex = 70;
-            this.btn_save.Text = "     Save";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // date_modified
-            // 
-            this.date_modified.DataPropertyName = "date_modified";
-            this.date_modified.HeaderText = "Date Modified";
-            this.date_modified.Name = "date_modified";
+            this.grid_settings.Size = new System.Drawing.Size(1049, 296);
+            this.grid_settings.TabIndex = 72;
             // 
             // markup_hardware
             // 
             this.markup_hardware.DataPropertyName = "markup_hardware";
             this.markup_hardware.HeaderText = "Markup Hardware";
             this.markup_hardware.Name = "markup_hardware";
+            // 
+            // date_modified
+            // 
+            this.date_modified.DataPropertyName = "date_modified";
+            this.date_modified.HeaderText = "Date Modified";
+            this.date_modified.Name = "date_modified";
             // 
             // markup_material
             // 
@@ -194,51 +260,142 @@
             this.double_flood_extra.HeaderText = "Double Flood Extra";
             this.double_flood_extra.Name = "double_flood_extra";
             // 
-            // dTSettingBindingSource
+            // grid_stock
             // 
-            this.dTSettingBindingSource.DataMember = "DT_Setting";
-            this.dTSettingBindingSource.DataSource = this.dT_Settings;
+            this.grid_stock.AllowUserToAddRows = false;
+            this.grid_stock.AllowUserToDeleteRows = false;
+            this.grid_stock.AllowUserToResizeColumns = false;
+            this.grid_stock.AllowUserToResizeRows = false;
+            this.grid_stock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid_stock.AutoGenerateColumns = false;
+            this.grid_stock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grid_stock.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.grid_stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.grid_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.chk_jodan});
+            this.grid_stock.DataSource = this.cviewhardwareBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_stock.DefaultCellStyle = dataGridViewCellStyle5;
+            this.grid_stock.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.grid_stock.GridColor = System.Drawing.Color.CornflowerBlue;
+            this.grid_stock.Location = new System.Drawing.Point(22, 36);
+            this.grid_stock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.grid_stock.MaximumSize = new System.Drawing.Size(7055, 328);
+            this.grid_stock.Name = "grid_stock";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_stock.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.grid_stock.RowHeadersVisible = false;
+            this.grid_stock.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grid_stock.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_stock.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.grid_stock.Size = new System.Drawing.Size(1049, 296);
+            this.grid_stock.TabIndex = 73;
             // 
-            // dT_Settings
+            // dT_hardware
             // 
-            this.dT_Settings.DataSetName = "DT_Settings";
-            this.dT_Settings.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dT_hardware.DataSetName = "DT_hardware";
+            this.dT_hardware.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ada_setting
+            // cviewhardwareBindingSource
             // 
-            this.ada_setting.ClearBeforeFill = true;
+            this.cviewhardwareBindingSource.DataMember = "c_view_hardware";
+            this.cviewhardwareBindingSource.DataSource = this.dT_hardware;
+            // 
+            // c_view_hardwareTableAdapter
+            // 
+            this.c_view_hardwareTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // chk_jodan
+            // 
+            this.chk_jodan.HeaderText = "";
+            this.chk_jodan.Name = "chk_jodan";
             // 
             // FrmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(686, 316);
+            this.ClientSize = new System.Drawing.Size(1135, 541);
+            this.Controls.Add(this.tab_settings);
             this.Controls.Add(this.pct_logo);
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.grid_settings);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.FrmSettings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dT_customer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_settings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTSettingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();
+            this.tab_settings.ResumeLayout(false);
+            this.tab_markup.ResumeLayout(false);
+            this.tab_stock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_stock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_hardware)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewhardwareBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Datasource.DT_customer dT_customer1;
-        private System.Windows.Forms.DataGridView grid_settings;
         private Datasource.DT_Settings dT_Settings;
         private System.Windows.Forms.BindingSource dTSettingBindingSource;
         private Datasource.DT_SettingsTableAdapters.ada_setting ada_setting;
         private System.Windows.Forms.DataGridViewTextBoxColumn datedmodifiedDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pct_logo;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.TabControl tab_settings;
+        private System.Windows.Forms.TabPage tab_markup;
+        private System.Windows.Forms.DataGridView grid_settings;
         private System.Windows.Forms.DataGridViewTextBoxColumn markup_hardware;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_modified;
         private System.Windows.Forms.DataGridViewTextBoxColumn markup_material;
@@ -247,5 +404,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn double_extra;
         private System.Windows.Forms.DataGridViewTextBoxColumn single_flood_extra;
         private System.Windows.Forms.DataGridViewTextBoxColumn double_flood_extra;
+        private System.Windows.Forms.TabPage tab_stock;
+        private System.Windows.Forms.DataGridView grid_stock;
+        private Datasource.DT_hardware dT_hardware;
+        private System.Windows.Forms.BindingSource cviewhardwareBindingSource;
+        private Datasource.DT_hardwareTableAdapters.c_view_hardwareTableAdapter c_view_hardwareTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chk_jodan;
     }
 }

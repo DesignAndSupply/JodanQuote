@@ -23,8 +23,9 @@ namespace JodanQuote
         public FrmItem()
         {
             InitializeComponent();
-
-           // Fill_data();
+            Fill_data();
+            Calculate_Cost();
+            Format();
             if (Valuesclass.new_item_identifier == 1)
             {
                 Valuesclass.locked_identifiter = 1;
@@ -161,32 +162,38 @@ namespace JodanQuote
                 txt_hardware_cost.Text = "£" + hardware;
                 txt_labour_cost.Text = "£" + labour;
 
+                try
+                {
+                    double hardware_markup = Convert.ToDouble(txt_hardware_markup.Text);
+                    double hardware_cost = Convert.ToDouble(Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty)));
+                    double sales_hardware = total * hardware_markup;
+                    txt_hardware_sales_cost.Text = "£" + Convert.ToString(sales_hardware);
+
+                    double material_markup = Convert.ToDouble(txt_material_markup.Text);
+                    double material_cost = Convert.ToDouble(Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty)));
+                    double sales_material = material_cost * material_markup;
+                    txt_material_sales_cost.Text = "£" + Convert.ToString(sales_material);
+                    txt_material_cost.Text = "£" + material_cost;
+
+                    double labour_markup = Convert.ToDouble(txt_labour_markup.Text);
+                    double labour_cost = Convert.ToDouble(Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
 
 
+                    double sales_labour = labour_markup * Convert.ToInt32(labour_cost);
+                    txt_labour_sales_cost.Text = "£" + Convert.ToString(sales_labour);
+                    txt_labour_cost.Text = "£" + labour_cost;
 
-                double hardware_markup = Convert.ToDouble(txt_hardware_markup.Text);
-                double hardware_cost = Convert.ToDouble(Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty)));
-                double sales_hardware = total * hardware_markup;
-                txt_hardware_sales_cost.Text = "£" + Convert.ToString(sales_hardware);
+                    double paint_cost = Convert.ToDouble(Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty)));
 
-                double material_markup = Convert.ToDouble(txt_material_markup.Text);
-                double material_cost = Convert.ToDouble(Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty)));
-                double sales_material = material_cost * material_markup;
-                txt_material_sales_cost.Text = "£" + Convert.ToString(sales_material);
-                txt_material_cost.Text = "£" + material_cost;
+                    double item_total = (sales_labour + sales_hardware + paint_cost + sales_material);
+                    txt_item_total.Text = "£" + Convert.ToString(item_total);
+                }
 
-                double labour_markup = Convert.ToDouble(txt_labour_markup.Text);
-                double labour_cost = Convert.ToDouble(Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
-                
-         
-                double sales_labour = labour_markup *Convert.ToInt32(labour_cost);
-                txt_labour_sales_cost.Text = "£" + Convert.ToString(sales_labour);
-                txt_labour_cost.Text = "£" + labour_cost;
-
-                double paint_cost = Convert.ToDouble(Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty)));
-
-                double item_total = (sales_labour + sales_hardware + paint_cost + sales_material);
-                txt_item_total.Text = "£" + Convert.ToString(item_total);
+                catch
+                {
+                    return;
+                }
+               
 
 
 

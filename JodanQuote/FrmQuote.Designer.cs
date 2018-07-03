@@ -103,7 +103,7 @@
             this.btn_view = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_copy = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_delete_item = new System.Windows.Forms.DataGridViewImageColumn();
-            this.quoteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quote_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -228,7 +228,7 @@
             this.btn_view,
             this.btn_copy,
             this.btn_delete_item,
-            this.quoteIDDataGridViewTextBoxColumn});
+            this.quote_id});
             this.grid_items_on_quote.DataSource = this.dTQuoteItemsBindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
@@ -818,7 +818,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
             this.btn_view.DefaultCellStyle = dataGridViewCellStyle5;
-            this.btn_view.FillWeight = 15F;
+            this.btn_view.FillWeight = 12F;
             this.btn_view.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_view.HeaderText = "";
             this.btn_view.Name = "btn_view";
@@ -840,13 +840,13 @@
             this.btn_delete_item.Image = global::JodanQuote.Properties.Resources.clear;
             this.btn_delete_item.Name = "btn_delete_item";
             // 
-            // quoteIDDataGridViewTextBoxColumn
+            // quote_id
             // 
-            this.quoteIDDataGridViewTextBoxColumn.DataPropertyName = "Quote ID";
-            this.quoteIDDataGridViewTextBoxColumn.HeaderText = "Quote ID";
-            this.quoteIDDataGridViewTextBoxColumn.Name = "quoteIDDataGridViewTextBoxColumn";
-            this.quoteIDDataGridViewTextBoxColumn.Visible = false;
-            this.quoteIDDataGridViewTextBoxColumn.Width = 89;
+            this.quote_id.DataPropertyName = "Quote ID";
+            this.quote_id.HeaderText = "Quote ID";
+            this.quote_id.Name = "quote_id";
+            this.quote_id.Visible = false;
+            this.quote_id.Width = 89;
             // 
             // FrmQuote
             // 
@@ -966,6 +966,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn btn_view;
         private System.Windows.Forms.DataGridViewImageColumn btn_copy;
         private System.Windows.Forms.DataGridViewImageColumn btn_delete_item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quoteIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quote_id;
     }
 }

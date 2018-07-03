@@ -520,14 +520,13 @@
             this.txt_list.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_list.BackColor = System.Drawing.Color.CornflowerBlue;
             this.txt_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_list.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "project_id", true));
             this.txt_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_list.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_list.Location = new System.Drawing.Point(12, 173);
+            this.txt_list.Location = new System.Drawing.Point(6, 173);
             this.txt_list.MaxLength = 15;
             this.txt_list.Multiline = true;
             this.txt_list.Name = "txt_list";
-            this.txt_list.Size = new System.Drawing.Size(140, 245);
+            this.txt_list.Size = new System.Drawing.Size(154, 325);
             this.txt_list.TabIndex = 71;
             // 
             // txt_warning

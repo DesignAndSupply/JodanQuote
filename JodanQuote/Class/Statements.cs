@@ -59,10 +59,11 @@ namespace Statements
         public static string select_max_revision_id = "SELECT MAX(Revision_id) As [Revision ID] From dbo.item WHERE Project_id = @project_id AND item_id =@item_ID";
         public static string select_quote_details = "SELECT project_ref,quote_status FROM dbo.project WHERE id =@project_id";
         public static string Select_door_type = "SELECT id, description, double_door FROM dsl.dbo.view_door_styles ORDER BY obsolete";
-        public static string select_customer = "SELECT  dbo.SALES_LEDGER.NAME, dbo.SALES_LEDGER.account_ref FROM dbo.SALES_LEDGER";
+        public static string select_customer = "SELECT  dbo.jodan_customer.customer_name From dbo.jodan_customer";
         public static string select_item_details = "SELECT structual_op_height,structual_op_width,frame_width,frame_height FROM dbo.item WHERE project_id =@project_id AND item_id = @item_id";
         public static string copy_project = " Select * From dbo.project Where id =@project_id";
         public static string copy_item = " Select * From dbo.item Where Item_id =@item_id AND project_id = @project_Id";
+        public static string copy_item_convert = " Select * From dbo.C_View_Item_Max_revision Where project_id = @project_Id";
         public static string copy_hardware = "SELECT [Hardware Description], [Hardware ID],[Hardware Cost],[Quantity],[Total Cost] from C_VIEW_ITEM_HARDWARE WHERE [Item Hardware ID] = @ID";
         public static string Select_materials = "SELECT description, material_id FROM C_View_Item_Material";
         public static string insert_new_project = "Insert into dbo.project (customer_ref, date_created,jodan_y_n) Values (@customer_id, @quote_date,1)";

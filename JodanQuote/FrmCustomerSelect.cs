@@ -29,12 +29,12 @@ namespace JodanQuote
 
         {
             DataTable dt_customer = new DataTable();
-            SqlConnection conn = ConnectionClass.GetConnection_orderdatabase();
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_order();
             SqlDataAdapter select_customer = new SqlDataAdapter(Statementsclass.select_customer, conn);
             select_customer.Fill(dt_customer);
             cmb_customers.DataSource = dt_customer;
-            cmb_customers.DisplayMember = "Name";
-            cmb_customers.ValueMember = "account_ref";
+            cmb_customers.DisplayMember = "customer_name";
+            cmb_customers.ValueMember = "customer_name";
             cmb_customers.SelectedIndex = -1;
             cmb_customers.MaxDropDownItems = 5;
  

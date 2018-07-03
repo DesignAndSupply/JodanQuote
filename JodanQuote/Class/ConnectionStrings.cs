@@ -58,6 +58,14 @@ namespace Connection
             jodan_quote.Open();
             return jodan_quote;
         }
+
+        public static SqlConnection GetConnection_jodan_order()
+        {
+            string connection_string = "Data Source = 192.168.0.150\\SQLEXPRESS;Initial Catalog = jodan_order; Integrated Security = False; User ID = sa; Password=Dodid1;";
+            SqlConnection order_database = new SqlConnection(connection_string);
+            order_database.Open();
+            return order_database;
+        }
         //-- code to make sure to close connection and dispose the object
         public static void Dispose_connection(SqlConnection sqlConnection)
         {

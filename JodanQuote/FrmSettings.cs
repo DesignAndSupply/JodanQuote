@@ -53,5 +53,12 @@ namespace JodanQuote
             MessageBox.Show("   Settings Successfully Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
         }
+
+        private void FrmSettings_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dT_hardware.c_view_hardware' table. You can move, or remove it, as needed.
+            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+
+        }
     }
 }

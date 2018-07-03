@@ -183,8 +183,8 @@ namespace JodanQuote
 
                     int i = e.RowIndex;
                     //Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote ID"].ToString());
-                    Valuesclass.customer_name = dt_quote.Rows[i]["Customer Name"].ToString();
-                    Valuesclass.project_id = Convert.ToInt32(dt_quote.Rows[i]["Project ID"].ToString());
+                    Valuesclass.customer_name = grid_quote_list.Rows[i].Cells["Customer Name"].Value.ToString();
+                    Valuesclass.project_id = Convert.ToInt32(grid_quote_list.Rows[i].Cells["Project ID"].Value);
                     FrmQuote quote = new FrmQuote();
                     quote.Show();
                     this.Hide();
@@ -292,12 +292,15 @@ namespace JodanQuote
             {
                 Valuesclass.jodan_y_n = 1;
                 btn_filter.Text = "        Filter            Jodan";
+                pct_logo.Image = JodanQuote.Properties.Resources.Jodan;
+                pct_logo.Location = new Point(5,8);
             }
             else
             {
                 Valuesclass.jodan_y_n = 0;
                 btn_filter.Text = "        Filter            Others";
-             
+                pct_logo.Image = JodanQuote.Properties.Resources.Logo;
+                pct_logo.Location = new Point(20, 28);
 
             }
 
