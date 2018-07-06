@@ -14,7 +14,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>62</ApplicationRevision>
+    <ApplicationRevision>75</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -152,6 +152,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_Item_Material.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\DT_Jam_Styles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Jam_Styles.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasource\DT_Material.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,6 +166,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_Material_Thickness.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_Ratings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Ratings.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasource\DT_Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -203,6 +213,12 @@
     </Compile>
     <Compile Include="FrmSettings.Designer.cs">
       <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSkins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSkins.Designer.cs">
+      <DependentUpon>FrmSkins.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -265,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSettings.resx">
       <DependentUpon>FrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSkins.resx">
+      <DependentUpon>FrmSkins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrRptQuote.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -371,6 +390,17 @@
     <None Include="Datasource\DT_Item_Material.xss">
       <DependentUpon>DT_Item_Material.xsd</DependentUpon>
     </None>
+    <None Include="Datasource\DT_Jam_Styles.xsc">
+      <DependentUpon>DT_Jam_Styles.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Jam_Styles.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Jam_Styles.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Jam_Styles.xss">
+      <DependentUpon>DT_Jam_Styles.xsd</DependentUpon>
+    </None>
     <None Include="Datasource\DT_Material.xsc">
       <DependentUpon>DT_Material.xsd</DependentUpon>
     </None>
@@ -403,6 +433,17 @@
     </None>
     <None Include="Datasource\dt_quote.xss">
       <DependentUpon>dt_quote.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Ratings.xsc">
+      <DependentUpon>DT_Ratings.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Ratings.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Ratings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Ratings.xss">
+      <DependentUpon>DT_Ratings.xsd</DependentUpon>
     </None>
     <None Include="Datasource\DT_Settings.xsc">
       <DependentUpon>DT_Settings.xsd</DependentUpon>

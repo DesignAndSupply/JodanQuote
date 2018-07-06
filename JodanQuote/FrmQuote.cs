@@ -438,9 +438,9 @@ namespace JodanQuote
 
 
             }
-            catch(Exception )
+            catch(Exception ex )
             {
-               // MessageBox.Show(ex.ToString(), "");
+                MessageBox.Show(ex.ToString(), "");
             }
            
         }

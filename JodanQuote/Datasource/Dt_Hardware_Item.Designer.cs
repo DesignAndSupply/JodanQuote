@@ -993,21 +993,21 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [Hardware Description], [Hardware Cost], quantity, [Total Cost], [H" +
-                "ardware ID], [Item Hardware ID], id\r\nFROM            C_View_Item_Hardware\r\nWHERE" +
-                "        ([Item Hardware ID] = @quote_id)";
+            this._commandCollection[0].CommandText = "SELECT        [Item Hardware ID], [Hardware ID], [Hardware Description], [Hardwar" +
+                "e Cost], quantity, [Total Cost], id\r\nFROM            C_View_Item_Hardware\r\nWHERE" +
+                "        ([Item Hardware ID] = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quote_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Item Hardware ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Item Hardware ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Dt_Hardware_Item.DT_Hardware_ItemDataTable dataTable, global::System.Nullable<int> quote_id) {
+        public virtual int Fill(Dt_Hardware_Item.DT_Hardware_ItemDataTable dataTable, global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((quote_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(quote_id.Value));
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -1023,10 +1023,10 @@ namespace JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Dt_Hardware_Item.DT_Hardware_ItemDataTable GetData(global::System.Nullable<int> quote_id) {
+        public virtual Dt_Hardware_Item.DT_Hardware_ItemDataTable GetData(global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((quote_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(quote_id.Value));
+            if ((id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;

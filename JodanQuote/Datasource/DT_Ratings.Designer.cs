@@ -20,17 +20,19 @@ namespace JodanQuote.Datasource {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DT_hardware")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DT_Ratings")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DT_hardware : global::System.Data.DataSet {
+    public partial class DT_Ratings : global::System.Data.DataSet {
         
-        private c_view_hardwareDataTable tablec_view_hardware;
+        private C_View_Fire_RatingsDataTable tableC_View_Fire_Ratings;
+        
+        private C_View_Security_RatingDataTable tableC_View_Security_Rating;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public DT_hardware() {
+        public DT_Ratings() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +43,7 @@ namespace JodanQuote.Datasource {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected DT_hardware(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DT_Ratings(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +56,11 @@ namespace JodanQuote.Datasource {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["c_view_hardware"] != null)) {
-                    base.Tables.Add(new c_view_hardwareDataTable(ds.Tables["c_view_hardware"]));
+                if ((ds.Tables["C_View_Fire_Ratings"] != null)) {
+                    base.Tables.Add(new C_View_Fire_RatingsDataTable(ds.Tables["C_View_Fire_Ratings"]));
+                }
+                if ((ds.Tables["C_View_Security_Rating"] != null)) {
+                    base.Tables.Add(new C_View_Security_RatingDataTable(ds.Tables["C_View_Security_Rating"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +84,19 @@ namespace JodanQuote.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public c_view_hardwareDataTable c_view_hardware {
+        public C_View_Fire_RatingsDataTable C_View_Fire_Ratings {
             get {
-                return this.tablec_view_hardware;
+                return this.tableC_View_Fire_Ratings;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public C_View_Security_RatingDataTable C_View_Security_Rating {
+            get {
+                return this.tableC_View_Security_Rating;
             }
         }
         
@@ -127,7 +142,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DT_hardware cln = ((DT_hardware)(base.Clone()));
+            DT_Ratings cln = ((DT_Ratings)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +167,11 @@ namespace JodanQuote.Datasource {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["c_view_hardware"] != null)) {
-                    base.Tables.Add(new c_view_hardwareDataTable(ds.Tables["c_view_hardware"]));
+                if ((ds.Tables["C_View_Fire_Ratings"] != null)) {
+                    base.Tables.Add(new C_View_Fire_RatingsDataTable(ds.Tables["C_View_Fire_Ratings"]));
+                }
+                if ((ds.Tables["C_View_Security_Rating"] != null)) {
+                    base.Tables.Add(new C_View_Security_RatingDataTable(ds.Tables["C_View_Security_Rating"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +206,16 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablec_view_hardware = ((c_view_hardwareDataTable)(base.Tables["c_view_hardware"]));
+            this.tableC_View_Fire_Ratings = ((C_View_Fire_RatingsDataTable)(base.Tables["C_View_Fire_Ratings"]));
             if ((initTable == true)) {
-                if ((this.tablec_view_hardware != null)) {
-                    this.tablec_view_hardware.InitVars();
+                if ((this.tableC_View_Fire_Ratings != null)) {
+                    this.tableC_View_Fire_Ratings.InitVars();
+                }
+            }
+            this.tableC_View_Security_Rating = ((C_View_Security_RatingDataTable)(base.Tables["C_View_Security_Rating"]));
+            if ((initTable == true)) {
+                if ((this.tableC_View_Security_Rating != null)) {
+                    this.tableC_View_Security_Rating.InitVars();
                 }
             }
         }
@@ -199,18 +223,26 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DT_hardware";
+            this.DataSetName = "DT_Ratings";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DT_hardware.xsd";
+            this.Namespace = "http://tempuri.org/DT_Ratings.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablec_view_hardware = new c_view_hardwareDataTable();
-            base.Tables.Add(this.tablec_view_hardware);
+            this.tableC_View_Fire_Ratings = new C_View_Fire_RatingsDataTable();
+            base.Tables.Add(this.tableC_View_Fire_Ratings);
+            this.tableC_View_Security_Rating = new C_View_Security_RatingDataTable();
+            base.Tables.Add(this.tableC_View_Security_Rating);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializec_view_hardware() {
+        private bool ShouldSerializeC_View_Fire_Ratings() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeC_View_Security_Rating() {
             return false;
         }
         
@@ -225,7 +257,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DT_hardware ds = new DT_hardware();
+            DT_Ratings ds = new DT_Ratings();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +302,26 @@ namespace JodanQuote.Datasource {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void c_view_hardwareRowChangeEventHandler(object sender, c_view_hardwareRowChangeEvent e);
+        public delegate void C_View_Fire_RatingsRowChangeEventHandler(object sender, C_View_Fire_RatingsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void C_View_Security_RatingRowChangeEventHandler(object sender, C_View_Security_RatingRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class c_view_hardwareDataTable : global::System.Data.TypedTableBase<c_view_hardwareRow> {
-            
-            private global::System.Data.DataColumn columnDescription;
-            
-            private global::System.Data.DataColumn columnCost;
+        public partial class C_View_Fire_RatingsDataTable : global::System.Data.TypedTableBase<C_View_Fire_RatingsRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnjodan_stock;
+            private global::System.Data.DataColumn columndescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareDataTable() {
-                this.TableName = "c_view_hardware";
+            public C_View_Fire_RatingsDataTable() {
+                this.TableName = "C_View_Fire_Ratings";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +329,7 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal c_view_hardwareDataTable(global::System.Data.DataTable table) {
+            internal C_View_Fire_RatingsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,25 +346,9 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected c_view_hardwareDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected C_View_Fire_RatingsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
-                get {
-                    return this.columnDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CostColumn {
-                get {
-                    return this.columnCost;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -346,9 +361,9 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn jodan_stockColumn {
+            public global::System.Data.DataColumn descriptionColumn {
                 get {
-                    return this.columnjodan_stock;
+                    return this.columndescription;
                 }
             }
             
@@ -363,55 +378,46 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow this[int index] {
+            public C_View_Fire_RatingsRow this[int index] {
                 get {
-                    return ((c_view_hardwareRow)(this.Rows[index]));
+                    return ((C_View_Fire_RatingsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event c_view_hardwareRowChangeEventHandler c_view_hardwareRowChanging;
+            public event C_View_Fire_RatingsRowChangeEventHandler C_View_Fire_RatingsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event c_view_hardwareRowChangeEventHandler c_view_hardwareRowChanged;
+            public event C_View_Fire_RatingsRowChangeEventHandler C_View_Fire_RatingsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event c_view_hardwareRowChangeEventHandler c_view_hardwareRowDeleting;
+            public event C_View_Fire_RatingsRowChangeEventHandler C_View_Fire_RatingsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event c_view_hardwareRowChangeEventHandler c_view_hardwareRowDeleted;
+            public event C_View_Fire_RatingsRowChangeEventHandler C_View_Fire_RatingsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Addc_view_hardwareRow(c_view_hardwareRow row) {
+            public void AddC_View_Fire_RatingsRow(C_View_Fire_RatingsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow Addc_view_hardwareRow(string Description, double Cost, short jodan_stock) {
-                c_view_hardwareRow rowc_view_hardwareRow = ((c_view_hardwareRow)(this.NewRow()));
+            public C_View_Fire_RatingsRow AddC_View_Fire_RatingsRow(int id, string description) {
+                C_View_Fire_RatingsRow rowC_View_Fire_RatingsRow = ((C_View_Fire_RatingsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Description,
-                        Cost,
-                        null,
-                        jodan_stock};
-                rowc_view_hardwareRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowc_view_hardwareRow);
-                return rowc_view_hardwareRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow FindByid(int id) {
-                return ((c_view_hardwareRow)(this.Rows.Find(new object[] {
-                            id})));
+                        id,
+                        description};
+                rowC_View_Fire_RatingsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowC_View_Fire_RatingsRow);
+                return rowC_View_Fire_RatingsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                c_view_hardwareDataTable cln = ((c_view_hardwareDataTable)(base.Clone()));
+                C_View_Fire_RatingsDataTable cln = ((C_View_Fire_RatingsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -419,64 +425,52 @@ namespace JodanQuote.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new c_view_hardwareDataTable();
+                return new C_View_Fire_RatingsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnDescription = base.Columns["Description"];
-                this.columnCost = base.Columns["Cost"];
                 this.columnid = base.Columns["id"];
-                this.columnjodan_stock = base.Columns["jodan_stock"];
+                this.columndescription = base.Columns["description"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.columnCost = new global::System.Data.DataColumn("Cost", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCost);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnjodan_stock = new global::System.Data.DataColumn("jodan_stock", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnjodan_stock);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
-                this.columnDescription.MaxLength = 100;
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
+                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription);
                 this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
-                this.columnid.Unique = true;
+                this.columndescription.AllowDBNull = false;
+                this.columndescription.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow Newc_view_hardwareRow() {
-                return ((c_view_hardwareRow)(this.NewRow()));
+            public C_View_Fire_RatingsRow NewC_View_Fire_RatingsRow() {
+                return ((C_View_Fire_RatingsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new c_view_hardwareRow(builder);
+                return new C_View_Fire_RatingsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(c_view_hardwareRow);
+                return typeof(C_View_Fire_RatingsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.c_view_hardwareRowChanged != null)) {
-                    this.c_view_hardwareRowChanged(this, new c_view_hardwareRowChangeEvent(((c_view_hardwareRow)(e.Row)), e.Action));
+                if ((this.C_View_Fire_RatingsRowChanged != null)) {
+                    this.C_View_Fire_RatingsRowChanged(this, new C_View_Fire_RatingsRowChangeEvent(((C_View_Fire_RatingsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -484,8 +478,8 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.c_view_hardwareRowChanging != null)) {
-                    this.c_view_hardwareRowChanging(this, new c_view_hardwareRowChangeEvent(((c_view_hardwareRow)(e.Row)), e.Action));
+                if ((this.C_View_Fire_RatingsRowChanging != null)) {
+                    this.C_View_Fire_RatingsRowChanging(this, new C_View_Fire_RatingsRowChangeEvent(((C_View_Fire_RatingsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -493,8 +487,8 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.c_view_hardwareRowDeleted != null)) {
-                    this.c_view_hardwareRowDeleted(this, new c_view_hardwareRowChangeEvent(((c_view_hardwareRow)(e.Row)), e.Action));
+                if ((this.C_View_Fire_RatingsRowDeleted != null)) {
+                    this.C_View_Fire_RatingsRowDeleted(this, new C_View_Fire_RatingsRowChangeEvent(((C_View_Fire_RatingsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -502,14 +496,14 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.c_view_hardwareRowDeleting != null)) {
-                    this.c_view_hardwareRowDeleting(this, new c_view_hardwareRowChangeEvent(((c_view_hardwareRow)(e.Row)), e.Action));
+                if ((this.C_View_Fire_RatingsRowDeleting != null)) {
+                    this.C_View_Fire_RatingsRowDeleting(this, new C_View_Fire_RatingsRowChangeEvent(((C_View_Fire_RatingsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Removec_view_hardwareRow(c_view_hardwareRow row) {
+            public void RemoveC_View_Fire_RatingsRow(C_View_Fire_RatingsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -518,7 +512,7 @@ namespace JodanQuote.Datasource {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DT_hardware ds = new DT_hardware();
+                DT_Ratings ds = new DT_Ratings();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -536,7 +530,299 @@ namespace JodanQuote.Datasource {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "c_view_hardwareDataTable";
+                attribute2.FixedValue = "C_View_Fire_RatingsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class C_View_Security_RatingDataTable : global::System.Data.TypedTableBase<C_View_Security_RatingRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columndescription;
+            
+            private global::System.Data.DataColumn columndefault_cost_single;
+            
+            private global::System.Data.DataColumn columndefault_cost_double;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public C_View_Security_RatingDataTable() {
+                this.TableName = "C_View_Security_Rating";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal C_View_Security_RatingDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected C_View_Security_RatingDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn descriptionColumn {
+                get {
+                    return this.columndescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn default_cost_singleColumn {
+                get {
+                    return this.columndefault_cost_single;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn default_cost_doubleColumn {
+                get {
+                    return this.columndefault_cost_double;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public C_View_Security_RatingRow this[int index] {
+                get {
+                    return ((C_View_Security_RatingRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event C_View_Security_RatingRowChangeEventHandler C_View_Security_RatingRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event C_View_Security_RatingRowChangeEventHandler C_View_Security_RatingRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event C_View_Security_RatingRowChangeEventHandler C_View_Security_RatingRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event C_View_Security_RatingRowChangeEventHandler C_View_Security_RatingRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddC_View_Security_RatingRow(C_View_Security_RatingRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public C_View_Security_RatingRow AddC_View_Security_RatingRow(int id, string description, decimal default_cost_single, decimal default_cost_double) {
+                C_View_Security_RatingRow rowC_View_Security_RatingRow = ((C_View_Security_RatingRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id,
+                        description,
+                        default_cost_single,
+                        default_cost_double};
+                rowC_View_Security_RatingRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowC_View_Security_RatingRow);
+                return rowC_View_Security_RatingRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                C_View_Security_RatingDataTable cln = ((C_View_Security_RatingDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new C_View_Security_RatingDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columndescription = base.Columns["description"];
+                this.columndefault_cost_single = base.Columns["default_cost_single"];
+                this.columndefault_cost_double = base.Columns["default_cost_double"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription);
+                this.columndefault_cost_single = new global::System.Data.DataColumn("default_cost_single", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndefault_cost_single);
+                this.columndefault_cost_double = new global::System.Data.DataColumn("default_cost_double", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndefault_cost_double);
+                this.columnid.AllowDBNull = false;
+                this.columndescription.AllowDBNull = false;
+                this.columndescription.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public C_View_Security_RatingRow NewC_View_Security_RatingRow() {
+                return ((C_View_Security_RatingRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new C_View_Security_RatingRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(C_View_Security_RatingRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.C_View_Security_RatingRowChanged != null)) {
+                    this.C_View_Security_RatingRowChanged(this, new C_View_Security_RatingRowChangeEvent(((C_View_Security_RatingRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.C_View_Security_RatingRowChanging != null)) {
+                    this.C_View_Security_RatingRowChanging(this, new C_View_Security_RatingRowChangeEvent(((C_View_Security_RatingRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.C_View_Security_RatingRowDeleted != null)) {
+                    this.C_View_Security_RatingRowDeleted(this, new C_View_Security_RatingRowChangeEvent(((C_View_Security_RatingRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.C_View_Security_RatingRowDeleting != null)) {
+                    this.C_View_Security_RatingRowDeleting(this, new C_View_Security_RatingRowChangeEvent(((C_View_Security_RatingRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveC_View_Security_RatingRow(C_View_Security_RatingRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DT_Ratings ds = new DT_Ratings();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "C_View_Security_RatingDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -580,110 +866,132 @@ namespace JodanQuote.Datasource {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class c_view_hardwareRow : global::System.Data.DataRow {
+        public partial class C_View_Fire_RatingsRow : global::System.Data.DataRow {
             
-            private c_view_hardwareDataTable tablec_view_hardware;
+            private C_View_Fire_RatingsDataTable tableC_View_Fire_Ratings;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal c_view_hardwareRow(global::System.Data.DataRowBuilder rb) : 
+            internal C_View_Fire_RatingsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablec_view_hardware = ((c_view_hardwareDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Description {
-                get {
-                    try {
-                        return ((string)(this[this.tablec_view_hardware.DescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'c_view_hardware\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablec_view_hardware.DescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Cost {
-                get {
-                    try {
-                        return ((double)(this[this.tablec_view_hardware.CostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cost\' in table \'c_view_hardware\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablec_view_hardware.CostColumn] = value;
-                }
+                this.tableC_View_Fire_Ratings = ((C_View_Fire_RatingsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tablec_view_hardware.idColumn]));
+                    return ((int)(this[this.tableC_View_Fire_Ratings.idColumn]));
                 }
                 set {
-                    this[this.tablec_view_hardware.idColumn] = value;
+                    this[this.tableC_View_Fire_Ratings.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short jodan_stock {
+            public string description {
+                get {
+                    return ((string)(this[this.tableC_View_Fire_Ratings.descriptionColumn]));
+                }
+                set {
+                    this[this.tableC_View_Fire_Ratings.descriptionColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class C_View_Security_RatingRow : global::System.Data.DataRow {
+            
+            private C_View_Security_RatingDataTable tableC_View_Security_Rating;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal C_View_Security_RatingRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableC_View_Security_Rating = ((C_View_Security_RatingDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tableC_View_Security_Rating.idColumn]));
+                }
+                set {
+                    this[this.tableC_View_Security_Rating.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string description {
+                get {
+                    return ((string)(this[this.tableC_View_Security_Rating.descriptionColumn]));
+                }
+                set {
+                    this[this.tableC_View_Security_Rating.descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal default_cost_single {
                 get {
                     try {
-                        return ((short)(this[this.tablec_view_hardware.jodan_stockColumn]));
+                        return ((decimal)(this[this.tableC_View_Security_Rating.default_cost_singleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'jodan_stock\' in table \'c_view_hardware\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'default_cost_single\' in table \'C_View_Security_Rating\' is D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tablec_view_hardware.jodan_stockColumn] = value;
+                    this[this.tableC_View_Security_Rating.default_cost_singleColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tablec_view_hardware.DescriptionColumn);
+            public decimal default_cost_double {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableC_View_Security_Rating.default_cost_doubleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'default_cost_double\' in table \'C_View_Security_Rating\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableC_View_Security_Rating.default_cost_doubleColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tablec_view_hardware.DescriptionColumn] = global::System.Convert.DBNull;
+            public bool Isdefault_cost_singleNull() {
+                return this.IsNull(this.tableC_View_Security_Rating.default_cost_singleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCostNull() {
-                return this.IsNull(this.tablec_view_hardware.CostColumn);
+            public void Setdefault_cost_singleNull() {
+                this[this.tableC_View_Security_Rating.default_cost_singleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCostNull() {
-                this[this.tablec_view_hardware.CostColumn] = global::System.Convert.DBNull;
+            public bool Isdefault_cost_doubleNull() {
+                return this.IsNull(this.tableC_View_Security_Rating.default_cost_doubleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isjodan_stockNull() {
-                return this.IsNull(this.tablec_view_hardware.jodan_stockColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setjodan_stockNull() {
-                this[this.tablec_view_hardware.jodan_stockColumn] = global::System.Convert.DBNull;
+            public void Setdefault_cost_doubleNull() {
+                this[this.tableC_View_Security_Rating.default_cost_doubleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -691,22 +999,56 @@ namespace JodanQuote.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class c_view_hardwareRowChangeEvent : global::System.EventArgs {
+        public class C_View_Fire_RatingsRowChangeEvent : global::System.EventArgs {
             
-            private c_view_hardwareRow eventRow;
+            private C_View_Fire_RatingsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRowChangeEvent(c_view_hardwareRow row, global::System.Data.DataRowAction action) {
+            public C_View_Fire_RatingsRowChangeEvent(C_View_Fire_RatingsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow Row {
+            public C_View_Fire_RatingsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class C_View_Security_RatingRowChangeEvent : global::System.EventArgs {
+            
+            private C_View_Security_RatingRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public C_View_Security_RatingRowChangeEvent(C_View_Security_RatingRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public C_View_Security_RatingRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -722,7 +1064,7 @@ namespace JodanQuote.Datasource {
         }
     }
 }
-namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
+namespace JodanQuote.Datasource.DT_RatingsTableAdapters {
     
     
     /// <summary>
@@ -734,7 +1076,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class c_view_hardwareTableAdapter : global::System.ComponentModel.Component {
+    public partial class C_View_Fire_RatingsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -748,7 +1090,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public c_view_hardwareTableAdapter() {
+        public C_View_Fire_RatingsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -765,7 +1107,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public global::System.Data.SqlClient.SqlConnection Connection {
+        internal global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -845,11 +1187,9 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "c_view_hardware";
-            tableMapping.ColumnMappings.Add("Description", "Description");
-            tableMapping.ColumnMappings.Add("Cost", "Cost");
+            tableMapping.DataSetTable = "C_View_Fire_Ratings";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("jodan_stock", "jodan_stock");
+            tableMapping.ColumnMappings.Add("description", "description");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -857,8 +1197,8 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;Persist Security In" +
-                "fo=True;User ID=sa;Password=Dodid1";
+            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password" +
+                "=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -867,8 +1207,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, LEFT(Description, 25) AS Description, Cost, jodan_stock\r\nFROM  " +
-                "          c_view_hardware";
+            this._commandCollection[0].CommandText = "SELECT        id, description\r\nFROM            C_View_Fire_Ratings";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -876,7 +1215,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DT_hardware.c_view_hardwareDataTable dataTable) {
+        public virtual int Fill(DT_Ratings.C_View_Fire_RatingsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -889,9 +1228,181 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DT_hardware.c_view_hardwareDataTable GetData() {
+        public virtual DT_Ratings.C_View_Fire_RatingsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DT_hardware.c_view_hardwareDataTable dataTable = new DT_hardware.c_view_hardwareDataTable();
+            DT_Ratings.C_View_Fire_RatingsDataTable dataTable = new DT_Ratings.C_View_Fire_RatingsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class C_View_Security_RatingTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public C_View_Security_RatingTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "C_View_Security_Rating";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("description", "description");
+            tableMapping.ColumnMappings.Add("default_cost_single", "default_cost_single");
+            tableMapping.ColumnMappings.Add("default_cost_double", "default_cost_double");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password" +
+                "=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        id, description, default_cost_single, default_cost_double\r\nFROM    " +
+                "        C_View_Security_Rating";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DT_Ratings.C_View_Security_RatingDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DT_Ratings.C_View_Security_RatingDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DT_Ratings.C_View_Security_RatingDataTable dataTable = new DT_Ratings.C_View_Security_RatingDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -965,7 +1476,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(DT_hardware dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DT_Ratings dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -975,7 +1486,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(DT_hardware dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DT_Ratings dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -985,7 +1496,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(DT_hardware dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DT_Ratings dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1019,7 +1530,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(DT_hardware dataSet) {
+        public virtual int UpdateAll(DT_Ratings dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

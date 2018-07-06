@@ -20,17 +20,17 @@ namespace JodanQuote.Datasource {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DT_hardware")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DT_Jam_Styles")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DT_hardware : global::System.Data.DataSet {
+    public partial class DT_Jam_Styles : global::System.Data.DataSet {
         
-        private c_view_hardwareDataTable tablec_view_hardware;
+        private C_View_Jam_StylesDataTable tableC_View_Jam_Styles;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public DT_hardware() {
+        public DT_Jam_Styles() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace JodanQuote.Datasource {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected DT_hardware(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DT_Jam_Styles(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace JodanQuote.Datasource {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["c_view_hardware"] != null)) {
-                    base.Tables.Add(new c_view_hardwareDataTable(ds.Tables["c_view_hardware"]));
+                if ((ds.Tables["C_View_Jam_Styles"] != null)) {
+                    base.Tables.Add(new C_View_Jam_StylesDataTable(ds.Tables["C_View_Jam_Styles"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace JodanQuote.Datasource {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public c_view_hardwareDataTable c_view_hardware {
+        public C_View_Jam_StylesDataTable C_View_Jam_Styles {
             get {
-                return this.tablec_view_hardware;
+                return this.tableC_View_Jam_Styles;
             }
         }
         
@@ -127,7 +127,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DT_hardware cln = ((DT_hardware)(base.Clone()));
+            DT_Jam_Styles cln = ((DT_Jam_Styles)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace JodanQuote.Datasource {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["c_view_hardware"] != null)) {
-                    base.Tables.Add(new c_view_hardwareDataTable(ds.Tables["c_view_hardware"]));
+                if ((ds.Tables["C_View_Jam_Styles"] != null)) {
+                    base.Tables.Add(new C_View_Jam_StylesDataTable(ds.Tables["C_View_Jam_Styles"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablec_view_hardware = ((c_view_hardwareDataTable)(base.Tables["c_view_hardware"]));
+            this.tableC_View_Jam_Styles = ((C_View_Jam_StylesDataTable)(base.Tables["C_View_Jam_Styles"]));
             if ((initTable == true)) {
-                if ((this.tablec_view_hardware != null)) {
-                    this.tablec_view_hardware.InitVars();
+                if ((this.tableC_View_Jam_Styles != null)) {
+                    this.tableC_View_Jam_Styles.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DT_hardware";
+            this.DataSetName = "DT_Jam_Styles";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DT_hardware.xsd";
+            this.Namespace = "http://tempuri.org/DT_Jam_Styles.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablec_view_hardware = new c_view_hardwareDataTable();
-            base.Tables.Add(this.tablec_view_hardware);
+            this.tableC_View_Jam_Styles = new C_View_Jam_StylesDataTable();
+            base.Tables.Add(this.tableC_View_Jam_Styles);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializec_view_hardware() {
+        private bool ShouldSerializeC_View_Jam_Styles() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DT_hardware ds = new DT_hardware();
+            DT_Jam_Styles ds = new DT_Jam_Styles();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,27 @@ namespace JodanQuote.Datasource {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void c_view_hardwareRowChangeEventHandler(object sender, c_view_hardwareRowChangeEvent e);
+        public delegate void C_View_Jam_StylesRowChangeEventHandler(object sender, C_View_Jam_StylesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class c_view_hardwareDataTable : global::System.Data.TypedTableBase<c_view_hardwareRow> {
-            
-            private global::System.Data.DataColumn columnDescription;
-            
-            private global::System.Data.DataColumn columnCost;
+        public partial class C_View_Jam_StylesDataTable : global::System.Data.TypedTableBase<C_View_Jam_StylesRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnjodan_stock;
+            private global::System.Data.DataColumn columndescription;
+            
+            private global::System.Data.DataColumn columndefault_jamb_width;
+            
+            private global::System.Data.DataColumn columndefault_jamb_depth;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareDataTable() {
-                this.TableName = "c_view_hardware";
+            public C_View_Jam_StylesDataTable() {
+                this.TableName = "C_View_Jam_Styles";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +298,7 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal c_view_hardwareDataTable(global::System.Data.DataTable table) {
+            internal C_View_Jam_StylesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,25 +315,9 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected c_view_hardwareDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected C_View_Jam_StylesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
-                get {
-                    return this.columnDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CostColumn {
-                get {
-                    return this.columnCost;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -346,9 +330,25 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn jodan_stockColumn {
+            public global::System.Data.DataColumn descriptionColumn {
                 get {
-                    return this.columnjodan_stock;
+                    return this.columndescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn default_jamb_widthColumn {
+                get {
+                    return this.columndefault_jamb_width;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn default_jamb_depthColumn {
+                get {
+                    return this.columndefault_jamb_depth;
                 }
             }
             
@@ -363,55 +363,55 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow this[int index] {
+            public C_View_Jam_StylesRow this[int index] {
                 get {
-                    return ((c_view_hardwareRow)(this.Rows[index]));
+                    return ((C_View_Jam_StylesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event c_view_hardwareRowChangeEventHandler c_view_hardwareRowChanging;
+            public event C_View_Jam_StylesRowChangeEventHandler C_View_Jam_StylesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event c_view_hardwareRowChangeEventHandler c_view_hardwareRowChanged;
+            public event C_View_Jam_StylesRowChangeEventHandler C_View_Jam_StylesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event c_view_hardwareRowChangeEventHandler c_view_hardwareRowDeleting;
+            public event C_View_Jam_StylesRowChangeEventHandler C_View_Jam_StylesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event c_view_hardwareRowChangeEventHandler c_view_hardwareRowDeleted;
+            public event C_View_Jam_StylesRowChangeEventHandler C_View_Jam_StylesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Addc_view_hardwareRow(c_view_hardwareRow row) {
+            public void AddC_View_Jam_StylesRow(C_View_Jam_StylesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow Addc_view_hardwareRow(string Description, double Cost, short jodan_stock) {
-                c_view_hardwareRow rowc_view_hardwareRow = ((c_view_hardwareRow)(this.NewRow()));
+            public C_View_Jam_StylesRow AddC_View_Jam_StylesRow(string description, byte default_jamb_width, byte default_jamb_depth) {
+                C_View_Jam_StylesRow rowC_View_Jam_StylesRow = ((C_View_Jam_StylesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Description,
-                        Cost,
                         null,
-                        jodan_stock};
-                rowc_view_hardwareRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowc_view_hardwareRow);
-                return rowc_view_hardwareRow;
+                        description,
+                        default_jamb_width,
+                        default_jamb_depth};
+                rowC_View_Jam_StylesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowC_View_Jam_StylesRow);
+                return rowC_View_Jam_StylesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow FindByid(int id) {
-                return ((c_view_hardwareRow)(this.Rows.Find(new object[] {
+            public C_View_Jam_StylesRow FindByid(short id) {
+                return ((C_View_Jam_StylesRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                c_view_hardwareDataTable cln = ((c_view_hardwareDataTable)(base.Clone()));
+                C_View_Jam_StylesDataTable cln = ((C_View_Jam_StylesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -419,64 +419,65 @@ namespace JodanQuote.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new c_view_hardwareDataTable();
+                return new C_View_Jam_StylesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnDescription = base.Columns["Description"];
-                this.columnCost = base.Columns["Cost"];
                 this.columnid = base.Columns["id"];
-                this.columnjodan_stock = base.Columns["jodan_stock"];
+                this.columndescription = base.Columns["description"];
+                this.columndefault_jamb_width = base.Columns["default_jamb_width"];
+                this.columndefault_jamb_depth = base.Columns["default_jamb_depth"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.columnCost = new global::System.Data.DataColumn("Cost", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCost);
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnjodan_stock = new global::System.Data.DataColumn("jodan_stock", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnjodan_stock);
+                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription);
+                this.columndefault_jamb_width = new global::System.Data.DataColumn("default_jamb_width", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndefault_jamb_width);
+                this.columndefault_jamb_depth = new global::System.Data.DataColumn("default_jamb_depth", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndefault_jamb_depth);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
-                this.columnDescription.MaxLength = 100;
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columndescription.AllowDBNull = false;
+                this.columndescription.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow Newc_view_hardwareRow() {
-                return ((c_view_hardwareRow)(this.NewRow()));
+            public C_View_Jam_StylesRow NewC_View_Jam_StylesRow() {
+                return ((C_View_Jam_StylesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new c_view_hardwareRow(builder);
+                return new C_View_Jam_StylesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(c_view_hardwareRow);
+                return typeof(C_View_Jam_StylesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.c_view_hardwareRowChanged != null)) {
-                    this.c_view_hardwareRowChanged(this, new c_view_hardwareRowChangeEvent(((c_view_hardwareRow)(e.Row)), e.Action));
+                if ((this.C_View_Jam_StylesRowChanged != null)) {
+                    this.C_View_Jam_StylesRowChanged(this, new C_View_Jam_StylesRowChangeEvent(((C_View_Jam_StylesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -484,8 +485,8 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.c_view_hardwareRowChanging != null)) {
-                    this.c_view_hardwareRowChanging(this, new c_view_hardwareRowChangeEvent(((c_view_hardwareRow)(e.Row)), e.Action));
+                if ((this.C_View_Jam_StylesRowChanging != null)) {
+                    this.C_View_Jam_StylesRowChanging(this, new C_View_Jam_StylesRowChangeEvent(((C_View_Jam_StylesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -493,8 +494,8 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.c_view_hardwareRowDeleted != null)) {
-                    this.c_view_hardwareRowDeleted(this, new c_view_hardwareRowChangeEvent(((c_view_hardwareRow)(e.Row)), e.Action));
+                if ((this.C_View_Jam_StylesRowDeleted != null)) {
+                    this.C_View_Jam_StylesRowDeleted(this, new C_View_Jam_StylesRowChangeEvent(((C_View_Jam_StylesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -502,14 +503,14 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.c_view_hardwareRowDeleting != null)) {
-                    this.c_view_hardwareRowDeleting(this, new c_view_hardwareRowChangeEvent(((c_view_hardwareRow)(e.Row)), e.Action));
+                if ((this.C_View_Jam_StylesRowDeleting != null)) {
+                    this.C_View_Jam_StylesRowDeleting(this, new C_View_Jam_StylesRowChangeEvent(((C_View_Jam_StylesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Removec_view_hardwareRow(c_view_hardwareRow row) {
+            public void RemoveC_View_Jam_StylesRow(C_View_Jam_StylesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -518,7 +519,7 @@ namespace JodanQuote.Datasource {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DT_hardware ds = new DT_hardware();
+                DT_Jam_Styles ds = new DT_Jam_Styles();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -536,7 +537,7 @@ namespace JodanQuote.Datasource {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "c_view_hardwareDataTable";
+                attribute2.FixedValue = "C_View_Jam_StylesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -580,110 +581,95 @@ namespace JodanQuote.Datasource {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class c_view_hardwareRow : global::System.Data.DataRow {
+        public partial class C_View_Jam_StylesRow : global::System.Data.DataRow {
             
-            private c_view_hardwareDataTable tablec_view_hardware;
+            private C_View_Jam_StylesDataTable tableC_View_Jam_Styles;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal c_view_hardwareRow(global::System.Data.DataRowBuilder rb) : 
+            internal C_View_Jam_StylesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablec_view_hardware = ((c_view_hardwareDataTable)(this.Table));
+                this.tableC_View_Jam_Styles = ((C_View_Jam_StylesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Description {
+            public short id {
+                get {
+                    return ((short)(this[this.tableC_View_Jam_Styles.idColumn]));
+                }
+                set {
+                    this[this.tableC_View_Jam_Styles.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string description {
+                get {
+                    return ((string)(this[this.tableC_View_Jam_Styles.descriptionColumn]));
+                }
+                set {
+                    this[this.tableC_View_Jam_Styles.descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte default_jamb_width {
                 get {
                     try {
-                        return ((string)(this[this.tablec_view_hardware.DescriptionColumn]));
+                        return ((byte)(this[this.tableC_View_Jam_Styles.default_jamb_widthColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'c_view_hardware\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'default_jamb_width\' in table \'C_View_Jam_Styles\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tablec_view_hardware.DescriptionColumn] = value;
+                    this[this.tableC_View_Jam_Styles.default_jamb_widthColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Cost {
+            public byte default_jamb_depth {
                 get {
                     try {
-                        return ((double)(this[this.tablec_view_hardware.CostColumn]));
+                        return ((byte)(this[this.tableC_View_Jam_Styles.default_jamb_depthColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cost\' in table \'c_view_hardware\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'default_jamb_depth\' in table \'C_View_Jam_Styles\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tablec_view_hardware.CostColumn] = value;
+                    this[this.tableC_View_Jam_Styles.default_jamb_depthColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tablec_view_hardware.idColumn]));
-                }
-                set {
-                    this[this.tablec_view_hardware.idColumn] = value;
-                }
+            public bool Isdefault_jamb_widthNull() {
+                return this.IsNull(this.tableC_View_Jam_Styles.default_jamb_widthColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short jodan_stock {
-                get {
-                    try {
-                        return ((short)(this[this.tablec_view_hardware.jodan_stockColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'jodan_stock\' in table \'c_view_hardware\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablec_view_hardware.jodan_stockColumn] = value;
-                }
+            public void Setdefault_jamb_widthNull() {
+                this[this.tableC_View_Jam_Styles.default_jamb_widthColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tablec_view_hardware.DescriptionColumn);
+            public bool Isdefault_jamb_depthNull() {
+                return this.IsNull(this.tableC_View_Jam_Styles.default_jamb_depthColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tablec_view_hardware.DescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCostNull() {
-                return this.IsNull(this.tablec_view_hardware.CostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCostNull() {
-                this[this.tablec_view_hardware.CostColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isjodan_stockNull() {
-                return this.IsNull(this.tablec_view_hardware.jodan_stockColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setjodan_stockNull() {
-                this[this.tablec_view_hardware.jodan_stockColumn] = global::System.Convert.DBNull;
+            public void Setdefault_jamb_depthNull() {
+                this[this.tableC_View_Jam_Styles.default_jamb_depthColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -691,22 +677,22 @@ namespace JodanQuote.Datasource {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class c_view_hardwareRowChangeEvent : global::System.EventArgs {
+        public class C_View_Jam_StylesRowChangeEvent : global::System.EventArgs {
             
-            private c_view_hardwareRow eventRow;
+            private C_View_Jam_StylesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRowChangeEvent(c_view_hardwareRow row, global::System.Data.DataRowAction action) {
+            public C_View_Jam_StylesRowChangeEvent(C_View_Jam_StylesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow Row {
+            public C_View_Jam_StylesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -722,7 +708,7 @@ namespace JodanQuote.Datasource {
         }
     }
 }
-namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
+namespace JodanQuote.Datasource.DT_Jam_StylesTableAdapters {
     
     
     /// <summary>
@@ -734,7 +720,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class c_view_hardwareTableAdapter : global::System.ComponentModel.Component {
+    public partial class Ada_Jamb_Styles : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -748,7 +734,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public c_view_hardwareTableAdapter() {
+        public Ada_Jamb_Styles() {
             this.ClearBeforeFill = true;
         }
         
@@ -765,7 +751,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public global::System.Data.SqlClient.SqlConnection Connection {
+        internal global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -845,11 +831,11 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "c_view_hardware";
-            tableMapping.ColumnMappings.Add("Description", "Description");
-            tableMapping.ColumnMappings.Add("Cost", "Cost");
+            tableMapping.DataSetTable = "C_View_Jam_Styles";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("jodan_stock", "jodan_stock");
+            tableMapping.ColumnMappings.Add("description", "description");
+            tableMapping.ColumnMappings.Add("default_jamb_width", "default_jamb_width");
+            tableMapping.ColumnMappings.Add("default_jamb_depth", "default_jamb_depth");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -857,8 +843,8 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;Persist Security In" +
-                "fo=True;User ID=sa;Password=Dodid1";
+            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password" +
+                "=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -867,8 +853,8 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, LEFT(Description, 25) AS Description, Cost, jodan_stock\r\nFROM  " +
-                "          c_view_hardware";
+            this._commandCollection[0].CommandText = "SELECT        id, description, default_jamb_width, default_jamb_depth\r\nFROM      " +
+                "      C_View_Jam_Styles";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -876,7 +862,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DT_hardware.c_view_hardwareDataTable dataTable) {
+        public virtual int Fill(DT_Jam_Styles.C_View_Jam_StylesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -889,9 +875,9 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DT_hardware.c_view_hardwareDataTable GetData() {
+        public virtual DT_Jam_Styles.C_View_Jam_StylesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DT_hardware.c_view_hardwareDataTable dataTable = new DT_hardware.c_view_hardwareDataTable();
+            DT_Jam_Styles.C_View_Jam_StylesDataTable dataTable = new DT_Jam_Styles.C_View_Jam_StylesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -965,7 +951,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(DT_hardware dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DT_Jam_Styles dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -975,7 +961,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(DT_hardware dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DT_Jam_Styles dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -985,7 +971,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(DT_hardware dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DT_Jam_Styles dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1019,7 +1005,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(DT_hardware dataSet) {
+        public virtual int UpdateAll(DT_Jam_Styles dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

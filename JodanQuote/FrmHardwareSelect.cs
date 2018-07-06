@@ -64,8 +64,9 @@ namespace JodanQuote
             grid_hardware.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_hardware.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_hardware.DefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_hardware.Columns["hardware_Id"].Visible = false;
 
-            grid_hardware_selected.EnableHeadersVisualStyles = false;
+          grid_hardware_selected.EnableHeadersVisualStyles = false;
             grid_hardware_selected.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_hardware_selected.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_hardware_selected.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
@@ -77,6 +78,8 @@ namespace JodanQuote
 
         private void FrmHardwareSelect_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dT_hardware.c_view_hardware' table. You can move, or remove it, as needed.
+            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
             Set_Value();
         }
 
@@ -298,13 +301,8 @@ namespace JodanQuote
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmItem item = new FrmItem();
-            item.Show();
+        
         }
 
-        private void FrmHardwareSelect_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            btn_back.PerformClick();
-        }
     }
 }

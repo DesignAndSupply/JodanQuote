@@ -240,7 +240,7 @@
             this.grid_items_on_quote.DefaultCellStyle = dataGridViewCellStyle6;
             this.grid_items_on_quote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_items_on_quote.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_items_on_quote.Location = new System.Drawing.Point(19, 65);
+            this.grid_items_on_quote.Location = new System.Drawing.Point(19, 66);
             this.grid_items_on_quote.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_items_on_quote.Name = "grid_items_on_quote";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

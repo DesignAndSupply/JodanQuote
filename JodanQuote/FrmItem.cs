@@ -19,7 +19,6 @@ namespace JodanQuote
 {
     public partial class FrmItem : Form
     {
-
         public FrmItem()
         {
             InitializeComponent();
@@ -51,12 +50,8 @@ namespace JodanQuote
             this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_name);
             this.ada_Item_Details.Fill(dT_Item_Details._DT_Item_Details, Valuesclass.project_id, Valuesclass.item_id, Valuesclass.revision_number);
             dT_Door_Type.Clear();
-            //this.dt_Hardware_Item.DT_Hardware_Item.Clear();
-           // grid_hardware_on_item.DataSource = dt_Hardware_Item.DT_Hardware_Item();
-
-
-
-
+          
+            
             double total = 0;
             for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
             {
@@ -112,6 +107,10 @@ namespace JodanQuote
                 string material = (Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty)));
                 string hardware = (Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty)));
                 string labour = (Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
+                string fire = (Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
+                string security = (Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
+                string jamb_width = (Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty)));
+                string jamb_height = (Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty)));
 
                 if (material_sales == "")
                 {
@@ -153,6 +152,28 @@ namespace JodanQuote
 
                     labour_sales = "0";
                 }
+
+                if (fire == "")
+                {
+                    fire = "0";
+
+                }
+                if (security == "")
+                {
+                    security = "0";
+
+                }
+                if (jamb_height == "")
+                {
+                    jamb_height = "0";
+
+                }
+                if (jamb_width == "")
+                {
+                    jamb_width = "0";
+
+                }
+
                 txt_material_sales_cost.Text = "£" + material_sales;
                 txt_hardware_sales_cost.Text = "£" + hardware_sales;
                 txt_paint_total.Text = "£" + paint_sales;
@@ -161,6 +182,10 @@ namespace JodanQuote
                 txt_material_cost.Text = "£" + material;
                 txt_hardware_cost.Text = "£" + hardware;
                 txt_labour_cost.Text = "£" + labour;
+                txt_fire.Text = "£" + fire;
+                txt_security.Text = "£" + security;
+                txt_jamb_height.Text = jamb_height + "mm";
+                txt_jamb_width.Text = jamb_width + "mm";
 
                 try
                 {
@@ -177,7 +202,8 @@ namespace JodanQuote
 
                     double labour_markup = Convert.ToDouble(txt_labour_markup.Text);
                     double labour_cost = Convert.ToDouble(Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
-
+                    double security_cost = Convert.ToDouble(Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
+                    double fire_cost = Convert.ToDouble(Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
 
                     double sales_labour = labour_markup * Convert.ToInt32(labour_cost);
                     txt_labour_sales_cost.Text = "£" + Convert.ToString(sales_labour);
@@ -185,7 +211,11 @@ namespace JodanQuote
 
                     double paint_cost = Convert.ToDouble(Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty)));
 
-                    double item_total = (sales_labour + sales_hardware + paint_cost + sales_material);
+                    // add fire + security cost here
+
+
+
+                    double item_total = (sales_labour + sales_hardware + paint_cost + sales_material)+security_cost + fire_cost;
                     txt_item_total.Text = "£" + Convert.ToString(item_total);
                 }
 
@@ -209,8 +239,9 @@ namespace JodanQuote
         {
 
             this.ada_finish.Fill(dT_finish.dt_finish);
-          
 
+            this.c_View_Security_RatingTableAdapter.Fill(this.dT_Ratings.C_View_Security_Rating);
+            this.c_View_Fire_RatingsTableAdapter.Fill(this.dT_Ratings.C_View_Fire_Ratings);
 
             ConnectionClass.Dispose_connection(ada_materials.Connection);
             ada_materials.Connection = ConnectionClass.GetConnection_jodan_quote();
@@ -219,7 +250,11 @@ namespace JodanQuote
             cmb_material_edit.DisplayMember = "description";
             cmb_material_edit.ValueMember = "id";
             cmb_material_edit.TabIndex = 1;
-           
+
+            this.ada_Jamb_Styles.Fill(this.dT_Jam_Styles.C_View_Jam_Styles);
+            cmb_jam_style_edit.DataSource = this.dT_Jam_Styles.C_View_Jam_Styles;
+            cmb_jam_style_edit.DisplayMember = "description";
+            cmb_jam_style_edit.ValueMember = "id";
 
             this.ada_door_styles.Fill(dT_Door_Type.DT_door_styles);
             cmb_door_type_edit.DataSource = dT_Door_Type.DT_door_styles;
@@ -234,7 +269,12 @@ namespace JodanQuote
             cmb_finish.Visible = false;
             cmb_door_type_edit.Visible = true;
             cmb_door_type.Visible = false;
-           // cmb_material_edit.SelectedIndex = 1;
+            cmb_fire_edit.Visible = true;
+            cmb_fire.Visible = false;
+            cmb_security_edit.Visible = true;
+            cmb_security.Visible = false;
+            cmb_jam_style_edit.Visible = true;
+            cmb_jam_style.Visible = false;
 
             txt_item.Text = Convert.ToString(Valuesclass.item_id);
             txt_project.Text = Convert.ToString(Valuesclass.project_id);
@@ -246,6 +286,10 @@ namespace JodanQuote
             txt_paint_total.Text = "£" + (Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty)));
             txt_labour_sales_cost.Text = "£" + (Convert.ToString(txt_labour_sales_cost.Text.Replace("£", string.Empty)));
             txt_item_total.Text = "£" + (Convert.ToString(txt_item_total.Text.Replace("£", string.Empty)));
+            txt_security.Text = "£" + (Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
+            txt_fire.Text = "£" + (Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
+            txt_jamb_height.Text = (Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty))) + "mm";
+            txt_jamb_width.Text = (Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty))) + "mm";
 
             double total = 0;
             for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
@@ -257,9 +301,7 @@ namespace JodanQuote
             }
             txt_hardware_cost.Text = "£" + total.ToString();
             Calculate_Cost();
-            txt_material_cost.Text = "£" + (Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty)));
-            txt_hardware_cost.Text = "£" + (Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty)));
-            txt_labour_cost.Text = "£" + (Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
+         
         }
 
         void Format()
@@ -271,11 +313,6 @@ namespace JodanQuote
             grid_freehand_extras.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_freehand_extras.DefaultCellStyle.BackColor = Color.AliceBlue;
 
-            grid_panel_info.EnableHeadersVisualStyles = false;
-            grid_panel_info.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_panel_info.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
-            grid_panel_info.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_panel_info.DefaultCellStyle.BackColor = Color.AliceBlue;
 
             grid_hardware_on_item.EnableHeadersVisualStyles = false;
             grid_hardware_on_item.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
@@ -291,7 +328,7 @@ namespace JodanQuote
         {
             if (dT_Item_Details._DT_Item_Details.Rows.Count > 0)
             {
-
+                DataTable dt = new DataTable();
                 txt_list.Text = "";
                 txt_warning.Visible = false;
                 for (var i = 0; i < Valuesclass.Calculate_material_list.Count; i++)
@@ -317,7 +354,7 @@ namespace JodanQuote
                 }
 
 
-                DataTable table = new DataTable();
+             
                 String sql = "C_Calculate_Material_Cost";
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlCommand command = new SqlCommand(sql, conn);
@@ -334,7 +371,15 @@ namespace JodanQuote
                 command.Parameters.AddWithValue("@structual_op_width", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["structual_op_width"]));
                 command.Parameters.AddWithValue("@structual_op_height", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["structual_op_height"]));
                 command.Parameters.AddWithValue("@finish_description", Convert.ToString(dT_Item_Details._DT_Item_Details.Rows[0]["Finish Description"]));
-                da.Fill(table);
+                command.Parameters.AddWithValue("@fire_rating_id", Convert.ToInt32(cmb_fire_edit.SelectedValue));
+                command.Parameters.AddWithValue("@security_rating_id", Convert.ToString(cmb_security_edit.SelectedValue));
+
+
+               //
+                da.Fill(dt);
+                ConnectionClass.Dispose_connection(conn);
+
+              
                 double total_cost = 0;
 
                 for (int i = 2; i <= 5; ++i)
@@ -342,16 +387,17 @@ namespace JodanQuote
                     // MessageBox.Show(table.Rows[0][i].ToString(),"");
 
 
-                    total_cost += Convert.ToDouble(table.Rows[0][i].ToString());
+                    total_cost += Convert.ToDouble(dt.Rows[0][i].ToString());
 
 
                 }
 
+             
                 txt_material_cost.Text = "£" + total_cost.ToString();
-                txt_paint_total.Text = "£" + Convert.ToString(table.Rows[0]["paint_cost"]);
-                ConnectionClass.Dispose_connection(conn);
+                txt_paint_total.Text = "£" + Convert.ToString(dt.Rows[0]["paint_cost"]);
+                
 
-                dataGridView1.DataSource = table;
+               
 
 
                 
@@ -363,6 +409,11 @@ namespace JodanQuote
             string material = (Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty)));
             string hardware =  (Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty)));
             string labour =  (Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
+            string fire = (Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
+            string security = (Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
+            string jamb_width = (Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty)));
+            string jamb_height = (Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty)));
+
 
             if (material_sales == "")
             {
@@ -404,7 +455,29 @@ namespace JodanQuote
 
                 labour_sales = "0";
             }
-            txt_material_sales_cost.Text = "£" + material_sales;
+
+            if (fire == "")
+            {
+
+                fire = "0";
+            }
+            if (security == "")
+            {
+
+                security = "0";
+            }
+            if (jamb_height == "")
+             {
+                jamb_height = "0";
+
+             }
+            if (jamb_width == "")
+            {
+                jamb_width = "0";
+
+            }
+
+             txt_material_sales_cost.Text = "£" + material_sales;
             txt_hardware_sales_cost.Text = "£" + hardware_sales;
             txt_paint_total.Text = "£" + paint_sales;
             txt_labour_sales_cost.Text = "£" + labour_sales;
@@ -412,8 +485,11 @@ namespace JodanQuote
             txt_material_cost.Text = "£" + material;
             txt_hardware_cost.Text = "£" + hardware;
             txt_labour_cost.Text = "£" + labour;
+            txt_fire.Text = "£" + fire;
+            txt_security.Text = "£" + security;
+            txt_jamb_width.Text = jamb_width + "mm";
+            txt_jamb_height.Text = jamb_height + "mm";
 
-       
 
             }
 
@@ -462,7 +538,7 @@ namespace JodanQuote
 
 
 
-                    DataTable table = new DataTable();
+                  //  DataTable table = new DataTable();
                     String sql = "C_Calculate_Material_Cost";
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand command = new SqlCommand(sql, conn);
@@ -478,33 +554,36 @@ namespace JodanQuote
                     command.Parameters.AddWithValue("@structual_op_width", Convert.ToInt32(txt_structual_width.Text));
                     command.Parameters.AddWithValue("@structual_op_height", Convert.ToInt32(txt_structual_height.Text));
                     command.Parameters.AddWithValue("@finish_description", Convert.ToString(cmb_finish_edit.Text));
-                    da.Fill(table);
+                    command.Parameters.AddWithValue("@fire_rating_id", Convert.ToInt32(cmb_fire_edit.SelectedValue));
+                    command.Parameters.AddWithValue("@security_rating_id", Convert.ToString(cmb_security_edit.SelectedValue));
+                    function.Functionsclass.dt_skins.Clear();
+                    da.Fill(function.Functionsclass.dt_skins);
+                    if (function.Functionsclass.dt_skins.Rows.Count < 0)
+                    {
+                        return;
+                    }
                     double total_cost = 0;
 
                     for (int i = 2; i <= 5; ++i)
                     {
-                        // MessageBox.Show(table.Rows[0][i].ToString(),"");
 
-
-                        total_cost += Convert.ToDouble(table.Rows[0][i].ToString());
-
+                        total_cost += Convert.ToDouble(function.Functionsclass.dt_skins.Rows[0][i].ToString());
 
                     }
 
                     txt_material_cost.Text = "£" + total_cost.ToString();
-                    txt_paint_total.Text = "£" + Convert.ToString(table.Rows[0]["paint_cost"]);
-
+                    txt_paint_total.Text = "£" + Convert.ToString(function.Functionsclass.dt_skins.Rows[0]["paint_cost"]);
+                    txt_security.Text = "£" + Convert.ToString(function.Functionsclass.dt_skins.Rows[0]["security_cost"]);
+                    txt_fire.Text = "£" + Convert.ToString(function.Functionsclass.dt_skins.Rows[0]["fire_cost"]);
                     ConnectionClass.Dispose_connection(conn);
-
-                    dataGridView1.DataSource = table;
                     return;
                 }
 
             }
           
-             catch
+             catch(Exception)
             {
-                
+                //MessageBox.Show(ex.ToString(), "");
             }
         }
 
@@ -516,11 +595,12 @@ namespace JodanQuote
             {
 
                 panel_door_input.Enabled = false;
-                //panel_extras.Enabled = false;
+                panel_spec.Enabled = false;
                 panel_freehand.Enabled = false;
-                panel_information.Enabled = false;
+                panel_spec.Enabled = false;
                 panel_freehand.Enabled = false;
                 panel_total.Enabled = false;
+                panel_handle.Enabled = false;
                 btn_save.Enabled = false;
                 btn_revise.Enabled = false;
                 btn_printscren.Enabled = false;
@@ -540,6 +620,12 @@ namespace JodanQuote
                 cmb_finish_edit.Visible = false;
                 cmb_door_type.Visible = true;
                 cmb_door_type_edit.Visible = false;
+                cmb_security_edit.Visible = false;
+                cmb_security.Visible = true;
+                cmb_fire_edit.Visible = false;
+                cmb_fire.Visible = true;
+                cmb_jam_style_edit.Visible = false;
+                cmb_jam_style.Visible = true;
                 Fill_data();
           
                 return;
@@ -548,9 +634,9 @@ namespace JodanQuote
             else
             {
                 panel_door_input.Enabled = true;
-                //panel_extras.Enabled = true;
+                panel_handle.Enabled = true;
                 panel_freehand.Enabled = true;
-                panel_information.Enabled = true;
+                panel_spec.Enabled = true;
                 panel_freehand.Enabled = true;
                 panel_total.Enabled = true;
                 btn_lock.Text = "        Lock";
@@ -613,7 +699,36 @@ namespace JodanQuote
             {
                 cmb_finish_edit.SelectedIndex = 1;
             }
-            
+            if (cmb_fire.Text != null)
+            {
+
+                cmb_fire_edit.Text = cmb_fire.Text;
+            }
+            else
+            {
+                cmb_fire_edit.SelectedIndex = 1;
+            }
+            if (cmb_security.Text != null)
+            {
+
+                cmb_security_edit.Text = cmb_security.Text;
+            }
+            else
+            {
+                cmb_security_edit.SelectedIndex = 1;
+            }
+            if (cmb_jam_style.Text != null)
+            {
+
+                cmb_jam_style_edit.Text = cmb_jam_style.Text;
+            }
+            else
+            {
+                cmb_jam_style.SelectedIndex = 1;
+            }
+
+
+
         }
 
         void Max_Quote()
@@ -678,6 +793,20 @@ namespace JodanQuote
                 cmb_material_thickness_edit.Text = "1.5";
                 Calculate_Cost_Edit_Mode();
 
+            }
+
+        }
+        void Fill_jamb_details()
+        {
+
+
+            if (cmb_jam_style_edit.Visible == true && cmb_jam_style_edit.SelectedItem != null == true)
+            {
+
+                Int16 id = Convert.ToInt16(((DataRowView)cmb_jam_style_edit.SelectedItem)["id"]);
+                dT_Material_Thickness.EnforceConstraints = false;
+                txt_jamb_height.Text = dT_Jam_Styles.C_View_Jam_Styles.Rows[id-1]["default_jamb_depth"].ToString() + "mm";
+                txt_jamb_width.Text = dT_Jam_Styles.C_View_Jam_Styles.Rows[id-1]["default_jamb_width"].ToString() + "mm";
             }
 
         }
@@ -832,11 +961,18 @@ namespace JodanQuote
             string materialthickness = cmb_material_thickness_edit.Text;
             int finish_id = Convert.ToInt16(((DataRowView)cmb_finish_edit.SelectedItem)["id"]);
             int door_type_id = Convert.ToInt16(((DataRowView)cmb_door_type_edit.SelectedItem)["id"]);
+            int jamb_style_id = Convert.ToInt16(((DataRowView)cmb_jam_style_edit.SelectedItem)["id"]);
+            int fire_rating_id = Convert.ToInt16(((DataRowView)cmb_fire_edit.SelectedItem)["id"]);
+            int security_rating_id = Convert.ToInt16(((DataRowView)cmb_security_edit.SelectedItem)["id"]);
             string material_cost = Convert.ToString(txt_material_sales_cost.Text.Replace("£", string.Empty));
             string hardware_cost = Convert.ToString(txt_hardware_sales_cost.Text.Replace("£", string.Empty));
             string labour_cost = Convert.ToString(txt_labour_sales_cost.Text.Replace("£", string.Empty));
             string paint_total = Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty));
             string total_cost = Convert.ToString(txt_item_total.Text.Replace("£", string.Empty));
+            string fire_cost = Convert.ToString(txt_fire.Text.Replace("£", string.Empty));
+            string security_cost = Convert.ToString(txt_security.Text.Replace("£", string.Empty));
+            string jamb_width = Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty));
+            string jamb_height = Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty));
 
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlCommand update_quotation_item = new SqlCommand(Statementsclass.update_quotation_item, conn);
@@ -845,14 +981,21 @@ namespace JodanQuote
             update_quotation_item.Parameters.AddWithValue("@frame_height", txt_frame_height.Text);
             update_quotation_item.Parameters.AddWithValue("@frame_width", txt_frame_width.Text);
             update_quotation_item.Parameters.AddWithValue("@finish_id", finish_id);
+            update_quotation_item.Parameters.AddWithValue("@fire_id", fire_rating_id);
+            update_quotation_item.Parameters.AddWithValue("@security_rating_id", security_rating_id);
             update_quotation_item.Parameters.AddWithValue("@material_thickness", materialthickness);
             update_quotation_item.Parameters.AddWithValue("@material_id", material_id);
+            update_quotation_item.Parameters.AddWithValue("@jamb_style_id", jamb_style_id);
+            update_quotation_item.Parameters.AddWithValue("@jamb_width", jamb_width);
+            update_quotation_item.Parameters.AddWithValue("@jamb_height", jamb_height);
             update_quotation_item.Parameters.AddWithValue("@markup_hardware",txt_hardware_markup.Text );
             update_quotation_item.Parameters.AddWithValue("@door_type", door_type_id);
             update_quotation_item.Parameters.AddWithValue("@markup_material", txt_material_markup.Text);
             update_quotation_item.Parameters.AddWithValue("@labour_rate",txt_labour_markup.Text ); 
             update_quotation_item.Parameters.AddWithValue("@hardware_cost", hardware_cost);
             update_quotation_item.Parameters.AddWithValue("@material_cost", material_cost);
+            update_quotation_item.Parameters.AddWithValue("@fire_rating_cost", fire_cost);
+            update_quotation_item.Parameters.AddWithValue("@security_rating_cost", security_cost);
             update_quotation_item.Parameters.AddWithValue("@labour_cost", labour_cost);
             update_quotation_item.Parameters.AddWithValue("@paint_cost", paint_total);
             update_quotation_item.Parameters.AddWithValue("@total_cost", total_cost);
@@ -944,7 +1087,7 @@ namespace JodanQuote
                     revise_item.ExecuteNonQuery();
                     ConnectionClass.Dispose_connection(conn);
                     Valuesclass.revision_number = Revision + 1;
-
+                    MessageBox.Show("Item Successfully Revised", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 Max_Quote();
                 Copy_Hardware();
@@ -953,7 +1096,7 @@ namespace JodanQuote
                 this.dt_Hardware_Item.DT_Hardware_Item.Clear();
                 this.dT_Material.DT_materials.Clear();
                 dt_Hardware_Item.EnforceConstraints = false;
-                this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
+                this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_name);
                 this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
                 this.ada_Item_Details.Fill(dT_Item_Details._DT_Item_Details, Valuesclass.project_id, Valuesclass.item_id, Valuesclass.revision_number);
             }
@@ -1004,7 +1147,7 @@ namespace JodanQuote
         {
             try
             {
-               // Calculate_Cost_Edit_Mode();
+         
                 Refresh_Data();
 
             }
@@ -1111,7 +1254,7 @@ namespace JodanQuote
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
                 Edit_Items();
-
+                Calculate_Cost_Edit_Mode();
             }
         }
 
@@ -1148,8 +1291,126 @@ namespace JodanQuote
 
             }
         }
+
+        private void grid_hardware_on_item_CellValueChanged_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == grid_hardware_on_item.Columns["hardware_cost_sale"].Index && e.RowIndex >= 0)
+                {
+                //    int i = e.RowIndex;
+                //    double cost = Convert.ToDouble(grid_hardware_on_item.Rows[i].Cells["hardware_cost_sale"].Value);
+                //    int quantity = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["quantity_hardware"].Value);
+
+                //    grid_hardware_on_item.Rows[i].Cells["hardware_cost_total"].Value = cost * quantity;
+                //    Refresh_Data();
+
+                }
+
+                if (e.ColumnIndex == grid_hardware_on_item.Columns["quantity_hardware"].Index && e.RowIndex >= 0)
+                {
+                    int i = e.RowIndex;
+                    double cost = Convert.ToDouble(grid_hardware_on_item.Rows[i].Cells["hardware_cost_sale"].Value);
+                    int quantity = Convert.ToInt32(grid_hardware_on_item.Rows[i].Cells["quantity_hardware"].Value);
+
+                    grid_hardware_on_item.Rows[i].Cells["hardware_cost_total"].Value = cost * quantity;
+                    SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                    SqlCommand update_hardware_item = new SqlCommand(Statementsclass.update_hardware_item, conn);
+                    update_hardware_item.Parameters.AddWithValue("@quantity", quantity);
+                    update_hardware_item.Parameters.AddWithValue("@total_cost", grid_hardware_on_item.Rows[i].Cells["hardware_cost_total"].Value);
+                    update_hardware_item.Parameters.AddWithValue("@id", grid_hardware_on_item.Rows[i].Cells["delete_id"].Value);
+                    update_hardware_item.ExecuteNonQuery();
+                    Refresh_Data();
+
+                }
+            }
+            catch (Exception )
+            {
+              //  MessageBox.Show(ex.ToString(), "");
+            }
+        
+
+        }
+
+        private void cmb_fire_edit_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmb_fire_edit.Visible == true && cmb_fire_edit.SelectedItem != null)
+            {
+
+                Calculate_Cost_Edit_Mode();
+                Refresh_Data();
+              
+
+            }
+        }
+
+        private void cmb_security_edit_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmb_security_edit.Visible == true && cmb_security_edit.SelectedItem != null)
+            {
+
+                Calculate_Cost_Edit_Mode();
+                Refresh_Data();
+
+            }
+        }
+
+        private void btn_view_skins_Click(object sender, EventArgs e)
+        {
+            Calculate_Cost();
+            FrmSkins skins = new FrmSkins();
+            skins.ShowDialog();
+        }
+
+        private void cmb_jam_style_edit_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(cmb_jam_style_edit.Visible == true && cmb_jam_style_edit.SelectedItem != null)
+            {
+
+                Fill_jamb_details();
+            }
+        }
+
+        private void label36_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label34_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    
     
 }
 

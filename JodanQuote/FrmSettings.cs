@@ -20,6 +20,7 @@ namespace JodanQuote
         {
             InitializeComponent();
             this.ada_setting.Fill(this.dT_Settings.DT_Setting);
+            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
             Format();
         }
 
@@ -27,11 +28,15 @@ namespace JodanQuote
         void Format()
         {
 
-            grid_settings.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_settings.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_settings.ColumnHeadersDefaultCellStyle.ForeColor = Color.AliceBlue;
+            grid_settings.ColumnHeadersDefaultCellStyle.BackColor = Color.CornflowerBlue;
             grid_settings.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_settings.EnableHeadersVisualStyles = false;
-
+            grid_stock.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_stock.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_stock.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            grid_stock.EnableHeadersVisualStyles = false;
+            grid_stock.Columns["id"].Visible = false;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -54,11 +59,6 @@ namespace JodanQuote
             this.Hide();
         }
 
-        private void FrmSettings_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dT_hardware.c_view_hardware' table. You can move, or remove it, as needed.
-            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
-
-        }
+       
     }
 }

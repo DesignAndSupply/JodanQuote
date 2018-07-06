@@ -301,15 +301,16 @@ namespace JodanQuote
             {
                 Valuesclass.jodan_y_n = 1;
                 btn_filter.Text = "        Filter            Jodan";
-                pct_logo.Image = JodanQuote.Properties.Resources.Jodan;
-                pct_logo.Location = new Point(5,8);
+                pct_logo.Image = JodanQuote.Properties.Resources.Logo;
+                pct_logo.Location = new Point(20, 28);
+         
             }
             else
             {
                 Valuesclass.jodan_y_n = 0;
                 btn_filter.Text = "        Filter            Others";
-                pct_logo.Image = JodanQuote.Properties.Resources.Logo;
-                pct_logo.Location = new Point(20, 28);
+                pct_logo.Image = JodanQuote.Properties.Resources.Jodan;
+                pct_logo.Location = new Point(5, 8);
 
             }
 

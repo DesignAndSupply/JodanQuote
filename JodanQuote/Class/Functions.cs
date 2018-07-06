@@ -22,8 +22,9 @@ namespace function
         public static List<DateTime> listofweekdays = new List<DateTime>();
         public static List<String> Emailrecipients = new List<string>();
 
-       
 
+      //  DataSet ds_skins = new DataSet();
+        public static DataTable dt_skins = new DataTable();
 
     }
 
