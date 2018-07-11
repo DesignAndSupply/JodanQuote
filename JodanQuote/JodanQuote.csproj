@@ -14,7 +14,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>75</ApplicationRevision>
+    <ApplicationRevision>81</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -142,6 +142,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dt_Hardware_Item.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\DT_Item_Add_On.cs">
+      <DependentUpon>DT_Item_Add_On.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_Item_Add_On.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Item_Add_On.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasource\DT_Item_Details.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,6 +189,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_Status.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddOnSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddOnSelect.Designer.cs">
+      <DependentUpon>FrmAddOnSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDimensions.cs">
       <SubType>Form</SubType>
@@ -270,6 +284,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="FrmAddOnSelect.resx">
+      <DependentUpon>FrmAddOnSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDimensions.resx">
       <DependentUpon>FrmDimensions.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +384,17 @@
     </None>
     <None Include="Datasource\Dt_Hardware_Item.xss">
       <DependentUpon>Dt_Hardware_Item.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Item_Add_On.xsc">
+      <DependentUpon>DT_Item_Add_On.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\DT_Item_Add_On.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Item_Add_On.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\DT_Item_Add_On.xss">
+      <DependentUpon>DT_Item_Add_On.xsd</DependentUpon>
     </None>
     <None Include="Datasource\DT_Item_Details.xsc">
       <DependentUpon>DT_Item_Details.xsd</DependentUpon>

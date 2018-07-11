@@ -295,8 +295,6 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columndoor_ref;
             
-            private global::System.Data.DataColumn columndoor_type;
-            
             private global::System.Data.DataColumn columndoor_style;
             
             private global::System.Data.DataColumn columnstructual_op_height;
@@ -327,8 +325,6 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnmaterial_cost;
             
-            private global::System.Data.DataColumn columnDoor_Type_Description;
-            
             private global::System.Data.DataColumn columnMaterial_Description;
             
             private global::System.Data.DataColumn columnFinish_Description;
@@ -341,8 +337,6 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnfire_rating_id;
             
-            private global::System.Data.DataColumn columnsecurity_rating_id;
-            
             private global::System.Data.DataColumn columnSecurity_Rating;
             
             private global::System.Data.DataColumn columnFire_Rating;
@@ -354,6 +348,12 @@ namespace JodanQuote.Datasource {
             private global::System.Data.DataColumn columnjamb_height;
             
             private global::System.Data.DataColumn columnJamb_Style;
+            
+            private global::System.Data.DataColumn columndoor_type_id;
+            
+            private global::System.Data.DataColumn columnDoor_Type_Description;
+            
+            private global::System.Data.DataColumn columnsecurity_rating_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -449,14 +449,6 @@ namespace JodanQuote.Datasource {
             public global::System.Data.DataColumn door_refColumn {
                 get {
                     return this.columndoor_ref;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn door_typeColumn {
-                get {
-                    return this.columndoor_type;
                 }
             }
             
@@ -582,14 +574,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Door_Type_DescriptionColumn {
-                get {
-                    return this.columnDoor_Type_Description;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Material_DescriptionColumn {
                 get {
                     return this.columnMaterial_Description;
@@ -633,14 +617,6 @@ namespace JodanQuote.Datasource {
             public global::System.Data.DataColumn fire_rating_idColumn {
                 get {
                     return this.columnfire_rating_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn security_rating_idColumn {
-                get {
-                    return this.columnsecurity_rating_id;
                 }
             }
             
@@ -694,6 +670,30 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn door_type_idColumn {
+                get {
+                    return this.columndoor_type_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Door_Type_DescriptionColumn {
+                get {
+                    return this.columnDoor_Type_Description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn security_rating_idColumn {
+                get {
+                    return this.columnsecurity_rating_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -737,7 +737,6 @@ namespace JodanQuote.Datasource {
                         int finish_id, 
                         System.DateTime item_date, 
                         string door_ref, 
-                        string door_type, 
                         string door_style, 
                         int structual_op_height, 
                         int structual_op_width, 
@@ -753,20 +752,21 @@ namespace JodanQuote.Datasource {
                         double hardware_cost, 
                         double labour_cost, 
                         double material_cost, 
-                        string Door_Type_Description, 
                         string Material_Description, 
                         string Finish_Description, 
                         double paint_cost, 
                         double fire_rating_cost, 
                         double security_rating_cost, 
                         int fire_rating_id, 
-                        int security_rating_id, 
                         string Security_Rating, 
                         string Fire_Rating, 
                         int jamb_style_id, 
                         int jamb_width, 
                         int jamb_height, 
-                        string Jamb_Style) {
+                        string Jamb_Style, 
+                        int door_type_id, 
+                        double Door_Type_Description, 
+                        double security_rating_id) {
                 DT_Item_DetailsRow rowDT_Item_DetailsRow = ((DT_Item_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -777,7 +777,6 @@ namespace JodanQuote.Datasource {
                         finish_id,
                         item_date,
                         door_ref,
-                        door_type,
                         door_style,
                         structual_op_height,
                         structual_op_width,
@@ -793,20 +792,21 @@ namespace JodanQuote.Datasource {
                         hardware_cost,
                         labour_cost,
                         material_cost,
-                        Door_Type_Description,
                         Material_Description,
                         Finish_Description,
                         paint_cost,
                         fire_rating_cost,
                         security_rating_cost,
                         fire_rating_id,
-                        security_rating_id,
                         Security_Rating,
                         Fire_Rating,
                         jamb_style_id,
                         jamb_width,
                         jamb_height,
-                        Jamb_Style};
+                        Jamb_Style,
+                        door_type_id,
+                        Door_Type_Description,
+                        security_rating_id};
                 rowDT_Item_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Item_DetailsRow);
                 return rowDT_Item_DetailsRow;
@@ -844,7 +844,6 @@ namespace JodanQuote.Datasource {
                 this.columnfinish_id = base.Columns["finish_id"];
                 this.columnitem_date = base.Columns["item_date"];
                 this.columndoor_ref = base.Columns["door_ref"];
-                this.columndoor_type = base.Columns["door_type"];
                 this.columndoor_style = base.Columns["door_style"];
                 this.columnstructual_op_height = base.Columns["structual_op_height"];
                 this.columnstructual_op_width = base.Columns["structual_op_width"];
@@ -860,20 +859,21 @@ namespace JodanQuote.Datasource {
                 this.columnhardware_cost = base.Columns["hardware_cost"];
                 this.columnlabour_cost = base.Columns["labour_cost"];
                 this.columnmaterial_cost = base.Columns["material_cost"];
-                this.columnDoor_Type_Description = base.Columns["Door Type Description"];
                 this.columnMaterial_Description = base.Columns["Material Description"];
                 this.columnFinish_Description = base.Columns["Finish Description"];
                 this.columnpaint_cost = base.Columns["paint_cost"];
                 this.columnfire_rating_cost = base.Columns["fire_rating_cost"];
                 this.columnsecurity_rating_cost = base.Columns["security_rating_cost"];
                 this.columnfire_rating_id = base.Columns["fire_rating_id"];
-                this.columnsecurity_rating_id = base.Columns["security_rating_id"];
                 this.columnSecurity_Rating = base.Columns["Security Rating"];
                 this.columnFire_Rating = base.Columns["Fire Rating"];
                 this.columnjamb_style_id = base.Columns["jamb_style_id"];
                 this.columnjamb_width = base.Columns["jamb_width"];
                 this.columnjamb_height = base.Columns["jamb_height"];
                 this.columnJamb_Style = base.Columns["Jamb Style"];
+                this.columndoor_type_id = base.Columns["door_type_id"];
+                this.columnDoor_Type_Description = base.Columns["Door Type Description"];
+                this.columnsecurity_rating_id = base.Columns["security_rating_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -895,8 +895,6 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnitem_date);
                 this.columndoor_ref = new global::System.Data.DataColumn("door_ref", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndoor_ref);
-                this.columndoor_type = new global::System.Data.DataColumn("door_type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndoor_type);
                 this.columndoor_style = new global::System.Data.DataColumn("door_style", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndoor_style);
                 this.columnstructual_op_height = new global::System.Data.DataColumn("structual_op_height", typeof(int), null, global::System.Data.MappingType.Element);
@@ -927,8 +925,6 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnlabour_cost);
                 this.columnmaterial_cost = new global::System.Data.DataColumn("material_cost", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmaterial_cost);
-                this.columnDoor_Type_Description = new global::System.Data.DataColumn("Door Type Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDoor_Type_Description);
                 this.columnMaterial_Description = new global::System.Data.DataColumn("Material Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaterial_Description);
                 this.columnFinish_Description = new global::System.Data.DataColumn("Finish Description", typeof(string), null, global::System.Data.MappingType.Element);
@@ -941,8 +937,6 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnsecurity_rating_cost);
                 this.columnfire_rating_id = new global::System.Data.DataColumn("fire_rating_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfire_rating_id);
-                this.columnsecurity_rating_id = new global::System.Data.DataColumn("security_rating_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsecurity_rating_id);
                 this.columnSecurity_Rating = new global::System.Data.DataColumn("Security Rating", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSecurity_Rating);
                 this.columnFire_Rating = new global::System.Data.DataColumn("Fire Rating", typeof(string), null, global::System.Data.MappingType.Element);
@@ -955,6 +949,12 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnjamb_height);
                 this.columnJamb_Style = new global::System.Data.DataColumn("Jamb Style", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJamb_Style);
+                this.columndoor_type_id = new global::System.Data.DataColumn("door_type_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndoor_type_id);
+                this.columnDoor_Type_Description = new global::System.Data.DataColumn("Door Type Description", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoor_Type_Description);
+                this.columnsecurity_rating_id = new global::System.Data.DataColumn("security_rating_id", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsecurity_rating_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -964,11 +964,8 @@ namespace JodanQuote.Datasource {
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
                 this.columndoor_ref.MaxLength = 30;
-                this.columndoor_type.MaxLength = 30;
                 this.columndoor_style.MaxLength = 30;
                 this.columncreated_by.MaxLength = 30;
-                this.columnDoor_Type_Description.ReadOnly = true;
-                this.columnDoor_Type_Description.MaxLength = 57;
                 this.columnMaterial_Description.MaxLength = 50;
                 this.columnFinish_Description.MaxLength = 25;
                 this.columnSecurity_Rating.MaxLength = 50;
@@ -1241,22 +1238,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string door_type {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_Item_Details.door_typeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'door_type\' in table \'DT_Item_Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Item_Details.door_typeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string door_style {
                 get {
                     try {
@@ -1497,23 +1478,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Door_Type_Description {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_Item_Details.Door_Type_DescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Door Type Description\' in table \'DT_Item_Details\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Item_Details.Door_Type_DescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Material_Description {
                 get {
                     try {
@@ -1607,22 +1571,6 @@ namespace JodanQuote.Datasource {
                 }
                 set {
                     this[this.tableDT_Item_Details.fire_rating_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int security_rating_id {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Item_Details.security_rating_idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'security_rating_id\' in table \'DT_Item_Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Item_Details.security_rating_idColumn] = value;
                 }
             }
             
@@ -1724,6 +1672,55 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int door_type_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Item_Details.door_type_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'door_type_id\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.door_type_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double Door_Type_Description {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Item_Details.Door_Type_DescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Door Type Description\' in table \'DT_Item_Details\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.Door_Type_DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double security_rating_id {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Item_Details.security_rating_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'security_rating_id\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.security_rating_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isproject_idNull() {
                 return this.IsNull(this.tableDT_Item_Details.project_idColumn);
             }
@@ -1804,18 +1801,6 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setdoor_refNull() {
                 this[this.tableDT_Item_Details.door_refColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isdoor_typeNull() {
-                return this.IsNull(this.tableDT_Item_Details.door_typeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setdoor_typeNull() {
-                this[this.tableDT_Item_Details.door_typeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2000,18 +1985,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDoor_Type_DescriptionNull() {
-                return this.IsNull(this.tableDT_Item_Details.Door_Type_DescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDoor_Type_DescriptionNull() {
-                this[this.tableDT_Item_Details.Door_Type_DescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsMaterial_DescriptionNull() {
                 return this.IsNull(this.tableDT_Item_Details.Material_DescriptionColumn);
             }
@@ -2084,18 +2057,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Issecurity_rating_idNull() {
-                return this.IsNull(this.tableDT_Item_Details.security_rating_idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setsecurity_rating_idNull() {
-                this[this.tableDT_Item_Details.security_rating_idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSecurity_RatingNull() {
                 return this.IsNull(this.tableDT_Item_Details.Security_RatingColumn);
             }
@@ -2164,6 +2125,42 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetJamb_StyleNull() {
                 this[this.tableDT_Item_Details.Jamb_StyleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isdoor_type_idNull() {
+                return this.IsNull(this.tableDT_Item_Details.door_type_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setdoor_type_idNull() {
+                this[this.tableDT_Item_Details.door_type_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDoor_Type_DescriptionNull() {
+                return this.IsNull(this.tableDT_Item_Details.Door_Type_DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDoor_Type_DescriptionNull() {
+                this[this.tableDT_Item_Details.Door_Type_DescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issecurity_rating_idNull() {
+                return this.IsNull(this.tableDT_Item_Details.security_rating_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsecurity_rating_idNull() {
+                this[this.tableDT_Item_Details.security_rating_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2334,7 +2331,6 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             tableMapping.ColumnMappings.Add("finish_id", "finish_id");
             tableMapping.ColumnMappings.Add("item_date", "item_date");
             tableMapping.ColumnMappings.Add("door_ref", "door_ref");
-            tableMapping.ColumnMappings.Add("door_type", "door_type");
             tableMapping.ColumnMappings.Add("door_style", "door_style");
             tableMapping.ColumnMappings.Add("structual_op_height", "structual_op_height");
             tableMapping.ColumnMappings.Add("structual_op_width", "structual_op_width");
@@ -2350,20 +2346,21 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             tableMapping.ColumnMappings.Add("hardware_cost", "hardware_cost");
             tableMapping.ColumnMappings.Add("labour_cost", "labour_cost");
             tableMapping.ColumnMappings.Add("material_cost", "material_cost");
-            tableMapping.ColumnMappings.Add("Door Type Description", "Door Type Description");
             tableMapping.ColumnMappings.Add("Material Description", "Material Description");
             tableMapping.ColumnMappings.Add("Finish Description", "Finish Description");
             tableMapping.ColumnMappings.Add("paint_cost", "paint_cost");
             tableMapping.ColumnMappings.Add("fire_rating_cost", "fire_rating_cost");
             tableMapping.ColumnMappings.Add("security_rating_cost", "security_rating_cost");
             tableMapping.ColumnMappings.Add("fire_rating_id", "fire_rating_id");
-            tableMapping.ColumnMappings.Add("security_rating_id", "security_rating_id");
             tableMapping.ColumnMappings.Add("Security Rating", "Security Rating");
             tableMapping.ColumnMappings.Add("Fire Rating", "Fire Rating");
             tableMapping.ColumnMappings.Add("jamb_style_id", "jamb_style_id");
             tableMapping.ColumnMappings.Add("jamb_width", "jamb_width");
             tableMapping.ColumnMappings.Add("jamb_height", "jamb_height");
             tableMapping.ColumnMappings.Add("Jamb Style", "Jamb Style");
+            tableMapping.ColumnMappings.Add("door_type_id", "door_type_id");
+            tableMapping.ColumnMappings.Add("Door Type Description", "Door Type Description");
+            tableMapping.ColumnMappings.Add("security_rating_id", "security_rating_id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2381,10 +2378,10 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type, door_style, structual_op_height, structual_op_width, 
+            this._commandCollection[0].CommandText = @"SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, 
                          frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
-                         [Door Type Description], [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, security_rating_id, 
-                         [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style]
+                         addon_cost AS [Door Type Description], [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost
+                         security_rating_id, [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style]
 FROM            C_View_Item_Details
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;

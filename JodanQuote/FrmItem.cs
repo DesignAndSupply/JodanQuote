@@ -49,10 +49,12 @@ namespace JodanQuote
             this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
             this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_name);
             this.ada_Item_Details.Fill(dT_Item_Details._DT_Item_Details, Valuesclass.project_id, Valuesclass.item_id, Valuesclass.revision_number);
+            this.c_View_Item_Add_OnTableAdapter.Fill(this.dT_Item_Add_On.C_View_Item_Add_On,Valuesclass.quote_id);
             dT_Door_Type.Clear();
           
             
             double total = 0;
+            double addon_total = 0;
             for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
             {
 
@@ -60,7 +62,15 @@ namespace JodanQuote
 
 
             }
+            for (int i = 0; i < grid_addon.Rows.Count; ++i)
+            {
+
+                addon_total += Convert.ToDouble(grid_addon.Rows[i].Cells["addon_total_cost"].Value);
+
+
+            }
             txt_hardware_cost.Text = "£" + total.ToString();
+            txt_addon.Text = "£" + addon_total.ToString();
             Calculate_Cost();
           
 
@@ -81,9 +91,10 @@ namespace JodanQuote
         {
             if(panel_total.Enabled == true)
             {
-               
+
 
                 double total = 0;
+                double addon_total = 0;
                 for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
                 {
 
@@ -91,9 +102,16 @@ namespace JodanQuote
 
 
                 }
-                txt_hardware_cost.Text = "£" + total.ToString();
+                for (int i = 0; i < grid_addon.Rows.Count; ++i)
+                {
 
-              
+                    addon_total += Convert.ToDouble(grid_addon.Rows[i].Cells["addon_total_cost"].Value);
+
+
+                }
+                txt_hardware_cost.Text = "£" + total.ToString();
+                txt_addon.Text = "£" + addon_total.ToString();
+
 
                 txt_project.Text = Valuesclass.project_id.ToString();
                 txt_item.Text = Valuesclass.item_id.ToString();
@@ -106,6 +124,7 @@ namespace JodanQuote
                 string total_sales = (Convert.ToString(txt_item_total.Text.Replace("£", string.Empty)));
                 string material = (Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty)));
                 string hardware = (Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty)));
+                string addon = (Convert.ToString(txt_addon.Text.Replace("£", string.Empty)));
                 string labour = (Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
                 string fire = (Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
                 string security = (Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
@@ -173,6 +192,11 @@ namespace JodanQuote
                     jamb_width = "0";
 
                 }
+                if (addon == "")
+                {
+                    addon = "0";
+
+                }
 
                 txt_material_sales_cost.Text = "£" + material_sales;
                 txt_hardware_sales_cost.Text = "£" + hardware_sales;
@@ -181,6 +205,7 @@ namespace JodanQuote
                 txt_item_total.Text = "£" + total_sales;
                 txt_material_cost.Text = "£" + material;
                 txt_hardware_cost.Text = "£" + hardware;
+                txt_addon.Text = "£" + addon;
                 txt_labour_cost.Text = "£" + labour;
                 txt_fire.Text = "£" + fire;
                 txt_security.Text = "£" + security;
@@ -210,12 +235,11 @@ namespace JodanQuote
                     txt_labour_cost.Text = "£" + labour_cost;
 
                     double paint_cost = Convert.ToDouble(Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty)));
+                    double addon_cost = Convert.ToDouble(Convert.ToString(txt_addon.Text.Replace("£", string.Empty)));
+                   
 
-                    // add fire + security cost here
 
-
-
-                    double item_total = (sales_labour + sales_hardware + paint_cost + sales_material)+security_cost + fire_cost;
+                    double item_total = (sales_labour + sales_hardware + paint_cost + sales_material)+security_cost + fire_cost+ addon_cost;
                     txt_item_total.Text = "£" + Convert.ToString(item_total);
                 }
 
@@ -286,12 +310,14 @@ namespace JodanQuote
             txt_paint_total.Text = "£" + (Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty)));
             txt_labour_sales_cost.Text = "£" + (Convert.ToString(txt_labour_sales_cost.Text.Replace("£", string.Empty)));
             txt_item_total.Text = "£" + (Convert.ToString(txt_item_total.Text.Replace("£", string.Empty)));
+            txt_addon.Text = "£" + (Convert.ToString(txt_addon.Text.Replace("£", string.Empty)));
             txt_security.Text = "£" + (Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
             txt_fire.Text = "£" + (Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
             txt_jamb_height.Text = (Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty))) + "mm";
             txt_jamb_width.Text = (Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty))) + "mm";
 
             double total = 0;
+            double addon_total =0;
             for (int i = 0; i < grid_hardware_on_item.Rows.Count; ++i)
             {
 
@@ -299,7 +325,15 @@ namespace JodanQuote
 
 
             }
+            for (int i = 0; i < grid_addon.Rows.Count; ++i)
+            {
+
+                addon_total += Convert.ToDouble(grid_addon.Rows[i].Cells["addon_total_cost"].Value);
+
+
+            }
             txt_hardware_cost.Text = "£" + total.ToString();
+            txt_addon.Text = "£" + addon_total.ToString();
             Calculate_Cost();
          
         }
@@ -307,11 +341,11 @@ namespace JodanQuote
         void Format()
         {
 
-            grid_freehand_extras.EnableHeadersVisualStyles = false;
-            grid_freehand_extras.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_freehand_extras.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
-            grid_freehand_extras.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_freehand_extras.DefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_addon.EnableHeadersVisualStyles = false;
+            grid_addon.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_addon.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_addon.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
+            grid_addon.DefaultCellStyle.BackColor = Color.AliceBlue;
 
 
             grid_hardware_on_item.EnableHeadersVisualStyles = false;
@@ -367,7 +401,7 @@ namespace JodanQuote
                 command.Parameters.AddWithValue("@revision_id", dT_Item_Details._DT_Item_Details.Rows[0]["revision_id"].ToString());
                 command.Parameters.AddWithValue("@material_description", dT_Item_Details._DT_Item_Details.Rows[0]["Material Description"].ToString());
                 command.Parameters.AddWithValue("@Material_thickness", Convert.ToDouble(dT_Item_Details._DT_Item_Details.Rows[0]["Material_thickness"]));
-                command.Parameters.AddWithValue("@door_type", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["door_type"].ToString()));
+                command.Parameters.AddWithValue("@door_type", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["door_type_id"].ToString()));
                 command.Parameters.AddWithValue("@structual_op_width", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["structual_op_width"]));
                 command.Parameters.AddWithValue("@structual_op_height", Convert.ToInt32(dT_Item_Details._DT_Item_Details.Rows[0]["structual_op_height"]));
                 command.Parameters.AddWithValue("@finish_description", Convert.ToString(dT_Item_Details._DT_Item_Details.Rows[0]["Finish Description"]));
@@ -413,7 +447,9 @@ namespace JodanQuote
             string security = (Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
             string jamb_width = (Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty)));
             string jamb_height = (Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty)));
-
+            string addon = (Convert.ToString(txt_addon.Text.Replace("£", string.Empty)));
+              
+           
 
             if (material_sales == "")
             {
@@ -443,6 +479,11 @@ namespace JodanQuote
             if (hardware == "")
             {
                 hardware = "0";
+
+            }
+            if (addon == "")
+            {
+                addon = "0";
 
             }
             if (labour == "")
@@ -477,7 +518,7 @@ namespace JodanQuote
 
             }
 
-             txt_material_sales_cost.Text = "£" + material_sales;
+            txt_material_sales_cost.Text = "£" + material_sales;
             txt_hardware_sales_cost.Text = "£" + hardware_sales;
             txt_paint_total.Text = "£" + paint_sales;
             txt_labour_sales_cost.Text = "£" + labour_sales;
@@ -485,6 +526,7 @@ namespace JodanQuote
             txt_material_cost.Text = "£" + material;
             txt_hardware_cost.Text = "£" + hardware;
             txt_labour_cost.Text = "£" + labour;
+             txt_addon.Text = "£" + addon;
             txt_fire.Text = "£" + fire;
             txt_security.Text = "£" + security;
             txt_jamb_width.Text = jamb_width + "mm";
@@ -593,12 +635,12 @@ namespace JodanQuote
 
             if (Valuesclass.locked_identifiter == 0)
             {
-
+                
                 panel_door_input.Enabled = false;
                 panel_spec.Enabled = false;
-                panel_freehand.Enabled = false;
+                panel_addon.Enabled = false;
                 panel_spec.Enabled = false;
-                panel_freehand.Enabled = false;
+                panel_addon.Enabled = false;
                 panel_total.Enabled = false;
                 panel_handle.Enabled = false;
                 btn_save.Enabled = false;
@@ -635,9 +677,9 @@ namespace JodanQuote
             {
                 panel_door_input.Enabled = true;
                 panel_handle.Enabled = true;
-                panel_freehand.Enabled = true;
+                panel_addon.Enabled = true;
                 panel_spec.Enabled = true;
-                panel_freehand.Enabled = true;
+                panel_addon.Enabled = true;
                 panel_total.Enabled = true;
                 btn_lock.Text = "        Lock";
                 btn_lock.Image = JodanQuote.Properties.Resources.locked;
@@ -841,25 +883,7 @@ namespace JodanQuote
             string dorr = cmb_door_type_edit.Text;
         
             ConnectionClass.Dispose_connection(ada_materials.Connection);
-           // this.ada_finish.Fill(dT_finish.dt_finish);
-            // ada_materials.Connection = ConnectionClass.GetConnection_jodan_quote();
-            // this.ada_materials.Fill(dT_Material.DT_materials);
-            // cmb_material_edit.DataSource = dT_Material.DT_materials;
-            // cmb_material_edit.DisplayMember = "description";
-            // cmb_material_edit.ValueMember = "id";
-            // cmb_material_edit.TabIndex = 1;
-            //this.ada_door_styles.Fill(dT_Door_Type.DT_door_styles);
-            // cmb_door_type_edit.DataSource = dT_Door_Type.DT_door_styles;
-            // cmb_door_type_edit.DisplayMember = "description";
-            // cmb_door_type_edit.ValueMember = "id";
-            // cmb_material_thickness_edit.Visible = true;
-            // cmb_material_thickness.Visible = false;
-            // cmb_material_edit.Visible = true;
-            // cmb_material.Visible = false;
-            // cmb_finish_edit.Visible = true;
-            // cmb_finish.Visible = false;
-            // cmb_door_type_edit.Visible = true;
-            // cmb_door_type.Visible = false;
+       
           
             ada_Item_Details.Fill(dT_Item_Details._DT_Item_Details,Valuesclass.project_id,Valuesclass.item_id,Valuesclass.revision_number);
             ada_door_styles.Fill(dT_Door_Type.DT_door_styles);
@@ -1371,45 +1395,33 @@ namespace JodanQuote
             }
         }
 
-        private void label36_Click(object sender, EventArgs e)
-        {
+      
 
+        private void btn_add_item_Click(object sender, EventArgs e)
+        {
+            Valuesclass.structual_op_width =Convert.ToInt32(txt_structual_width.Text);
+            FrmAddOnSelect addon = new FrmAddOnSelect();
+            addon.ShowDialog();
+            this.c_View_Item_Add_OnTableAdapter.Fill(this.dT_Item_Add_On.C_View_Item_Add_On, Valuesclass.quote_id);
         }
 
-        private void label34_Click(object sender, EventArgs e)
+        private void grid_addon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == grid_addon.Columns["btn_delete_addon"].Index && e.RowIndex >= 0)
+            {
+                int i = e.RowIndex;
+                int ID = Convert.ToInt32(grid_addon.Rows[i].Cells["addon_id"].Value);
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand delete_item_addon = new SqlCommand(Statementsclass.delete_item_addon, conn);
+                delete_item_addon.Parameters.AddWithValue("@ID", ID);
+                delete_item_addon.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn);
+                this.c_View_Item_Add_OnTableAdapter.Fill(this.dT_Item_Add_On.C_View_Item_Add_On, Valuesclass.quote_id);
+                // will probably need to add total for addons to total cost here
+            }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
     
 }
