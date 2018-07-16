@@ -14,8 +14,8 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, 
                          frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
-                         addon_cost AS [Door Type Description], [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost
-                         security_rating_id, [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style]
+                         addon_cost , [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, 
+                         addon_cost AS security_rating_id, [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description]
 FROM            C_View_Item_Details
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)</CommandText>
                     <Parameters>
@@ -64,8 +64,9 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
               <Mapping SourceColumn="jamb_height" DataSetColumn="jamb_height" />
               <Mapping SourceColumn="Jamb Style" DataSetColumn="Jamb Style" />
               <Mapping SourceColumn="door_type_id" DataSetColumn="door_type_id" />
-              <Mapping SourceColumn="Door Type Description" DataSetColumn="Door Type Description" />
               <Mapping SourceColumn="security_rating_id" DataSetColumn="security_rating_id" />
+              <Mapping SourceColumn="addon_cost" DataSetColumn="addon_cost" />
+              <Mapping SourceColumn="Door Type Description" DataSetColumn="Door Type Description" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -77,7 +78,7 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
   <xs:element name="DT_Item_Details" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Item_Details" msprop:Generator_UserDSName="DT_Item_Details">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_Item_Details" msprop:Generator_TableClassName="DT_Item_DetailsDataTable" msprop:Generator_TableVarName="tableDT_Item_Details" msprop:Generator_RowChangedName="DT_Item_DetailsRowChanged" msprop:Generator_TablePropName="_DT_Item_Details" msprop:Generator_RowDeletingName="DT_Item_DetailsRowDeleting" msprop:Generator_RowChangingName="DT_Item_DetailsRowChanging" msprop:Generator_RowEvHandlerName="DT_Item_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Item_DetailsRowDeleted" msprop:Generator_RowClassName="DT_Item_DetailsRow" msprop:Generator_UserTableName="DT_Item_Details" msprop:Generator_RowEvArgName="DT_Item_DetailsRowChangeEvent">
+        <xs:element name="DT_Item_Details" msprop:Generator_TableClassName="DT_Item_DetailsDataTable" msprop:Generator_TableVarName="tableDT_Item_Details" msprop:Generator_TablePropName="_DT_Item_Details" msprop:Generator_RowDeletingName="DT_Item_DetailsRowDeleting" msprop:Generator_RowChangingName="DT_Item_DetailsRowChanging" msprop:Generator_RowEvHandlerName="DT_Item_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Item_DetailsRowDeleted" msprop:Generator_UserTableName="DT_Item_Details" msprop:Generator_RowChangedName="DT_Item_DetailsRowChanged" msprop:Generator_RowEvArgName="DT_Item_DetailsRowChangeEvent" msprop:Generator_RowClassName="DT_Item_DetailsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -164,8 +165,15 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
                 </xs:simpleType>
               </xs:element>
               <xs:element name="door_type_id" msprop:Generator_ColumnVarNameInTable="columndoor_type_id" msprop:Generator_ColumnPropNameInRow="door_type_id" msprop:Generator_ColumnPropNameInTable="door_type_idColumn" msprop:Generator_UserColumnName="door_type_id" type="xs:int" minOccurs="0" />
-              <xs:element name="Door_x0020_Type_x0020_Description" msprop:Generator_ColumnVarNameInTable="columnDoor_Type_Description" msprop:Generator_ColumnPropNameInRow="Door_Type_Description" msprop:Generator_ColumnPropNameInTable="Door_Type_DescriptionColumn" msprop:Generator_UserColumnName="Door Type Description" type="xs:double" minOccurs="0" />
               <xs:element name="security_rating_id" msprop:Generator_ColumnVarNameInTable="columnsecurity_rating_id" msprop:Generator_ColumnPropNameInRow="security_rating_id" msprop:Generator_ColumnPropNameInTable="security_rating_idColumn" msprop:Generator_UserColumnName="security_rating_id" type="xs:double" minOccurs="0" />
+              <xs:element name="addon_cost" msprop:Generator_ColumnVarNameInTable="columnaddon_cost" msprop:Generator_ColumnPropNameInRow="addon_cost" msprop:Generator_ColumnPropNameInTable="addon_costColumn" msprop:Generator_UserColumnName="addon_cost" type="xs:double" minOccurs="0" />
+              <xs:element name="Door_x0020_Type_x0020_Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDoor_Type_Description" msprop:Generator_ColumnPropNameInRow="Door_Type_Description" msprop:Generator_ColumnPropNameInTable="Door_Type_DescriptionColumn" msprop:Generator_UserColumnName="Door Type Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="57" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

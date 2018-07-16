@@ -838,6 +838,7 @@ namespace JodanQuote
             }
 
         }
+
         void Fill_jamb_details()
         {
 
@@ -1382,7 +1383,7 @@ namespace JodanQuote
         private void btn_view_skins_Click(object sender, EventArgs e)
         {
             Calculate_Cost();
-            FrmSkins skins = new FrmSkins();
+            FrmViewSkins skins = new FrmViewSkins();
             skins.ShowDialog();
         }
 
@@ -1421,7 +1422,17 @@ namespace JodanQuote
             }
         }
 
-        
+        private void btn_view_addons_Click(object sender, EventArgs e)
+        {
+            FrmViewAddon view = new FrmViewAddon();
+            view.ShowDialog();
+        }
+
+        private void btn_view_skins_Click_1(object sender, EventArgs e)
+        {
+            FrmViewSkins skins = new FrmViewSkins();
+            skins.ShowDialog();
+        }
     }
     
 }

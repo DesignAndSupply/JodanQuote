@@ -14,7 +14,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>81</ApplicationRevision>
+    <ApplicationRevision>82</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -228,11 +228,17 @@
     <Compile Include="FrmSettings.Designer.cs">
       <DependentUpon>FrmSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSkins.cs">
+    <Compile Include="FrmViewSkins.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSkins.Designer.cs">
-      <DependentUpon>FrmSkins.cs</DependentUpon>
+    <Compile Include="FrmViewSkins.Designer.cs">
+      <DependentUpon>FrmViewSkins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmViewAddon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmViewAddon.Designer.cs">
+      <DependentUpon>FrmViewAddon.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -299,8 +305,11 @@
     <EmbeddedResource Include="FrmSettings.resx">
       <DependentUpon>FrmSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSkins.resx">
-      <DependentUpon>FrmSkins.cs</DependentUpon>
+    <EmbeddedResource Include="FrmViewSkins.resx">
+      <DependentUpon>FrmViewSkins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmViewAddon.resx">
+      <DependentUpon>FrmViewAddon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrRptQuote.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

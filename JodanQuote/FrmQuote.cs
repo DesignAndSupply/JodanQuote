@@ -398,7 +398,7 @@ namespace JodanQuote
                         insert_copied_item.Parameters.AddWithValue("@finish_id", finish_id);
                         insert_copied_item.Parameters.AddWithValue("@item_date",DateTime.Now);
                         insert_copied_item.Parameters.AddWithValue("@door_ref", reader["door_ref"].ToString());
-                        insert_copied_item.Parameters.AddWithValue("@door_type", reader["door_type"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@door_type", reader["door_type_id"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@door_style", reader["door_style"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@structual_op_height", reader["structual_op_height"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@structual_op_width", reader["structual_op_width"].ToString());
