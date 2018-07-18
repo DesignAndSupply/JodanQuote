@@ -52,7 +52,7 @@ namespace JodanQuote
             cmb_type.SelectedIndex = -1;
             ConnectionClass.Dispose_connection(conn);
             
-            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
         
         }
         
@@ -79,7 +79,7 @@ namespace JodanQuote
         private void FrmHardwareSelect_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dT_hardware.c_view_hardware' table. You can move, or remove it, as needed.
-            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
             Set_Value();
         }
 
@@ -133,7 +133,7 @@ namespace JodanQuote
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.Clear();
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = Statementsclass.Search_stock_category;
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
-                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
                     grid_hardware.DataSource = dT_hardware.c_view_hardware;
 
                 }
@@ -143,7 +143,7 @@ namespace JodanQuote
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = Statementsclass.Search_stock_category_description;
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
-                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
                     grid_hardware.DataSource = dT_hardware.c_view_hardware;
                     
 
@@ -164,7 +164,7 @@ namespace JodanQuote
            
             c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.Clear();
             c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = "SELECT LEFT(Description, 20) AS Description, Cost FROM c_view_hardware";
-            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
             grid_hardware.DataSource = dT_hardware.c_view_hardware;
         }
 
@@ -178,7 +178,7 @@ namespace JodanQuote
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.Clear();
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = Statementsclass.Search_stock_description;
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
-                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
                     grid_hardware.DataSource = dT_hardware.c_view_hardware;
 
                 }
@@ -188,7 +188,7 @@ namespace JodanQuote
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = Statementsclass.Search_stock_category_description;
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
                     c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
-                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
                     grid_hardware.DataSource = dT_hardware.c_view_hardware;
 
 

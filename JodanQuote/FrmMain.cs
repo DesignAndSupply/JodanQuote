@@ -34,8 +34,10 @@ namespace JodanQuote
             grid_quote_list.EnableHeadersVisualStyles = false;
             btn_open.DisplayIndex = grid_quote_list.ColumnCount - 1;
             grid_quote_list.Columns["Project ID"].FillWeight = 52;
+            grid_quote_list.Columns["Project ID"].HeaderText = "  Project    ID";
             grid_quote_list.Columns["Number Of Items"].FillWeight = 53;
             grid_quote_list.Columns["Total Value"].FillWeight = 40;
+            grid_quote_list.Columns["Total Value"].DefaultCellStyle.NullValue = "£0";
             grid_quote_list.Columns["Project Reference"].FillWeight = 68;
             grid_quote_list.Columns["Date Created"].FillWeight = 53;
             grid_quote_list.Columns["Customer Name"].FillWeight = 110;

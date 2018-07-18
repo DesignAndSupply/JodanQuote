@@ -45,6 +45,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHardwareSelect));
             this.grid_hardware = new System.Windows.Forms.DataGridView();
+            this.cviewhardwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dT_hardware = new JodanQuote.Datasource.DT_hardware();
             this.pct_clear = new System.Windows.Forms.PictureBox();
             this.lbl_description = new System.Windows.Forms.Label();
             this.lbl_des = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@
             this.btn_add_hardware = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
-            this.dT_hardware = new JodanQuote.Datasource.DT_hardware();
-            this.cviewhardwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.c_view_hardwareTableAdapter = new JodanQuote.Datasource.DT_hardwareTableAdapters.c_view_hardwareTableAdapter();
             this.hardware_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hardware_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,10 +70,10 @@
             this.hardware_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_add = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid_hardware)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewhardwareBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_hardware)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pct_clear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_hardware_selected)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dT_hardware)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewhardwareBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grid_hardware
@@ -131,6 +131,16 @@
             this.grid_hardware.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_CellContentClick);
             this.grid_hardware.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_CellEndEdit);
             this.grid_hardware.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_CellLeave);
+            // 
+            // cviewhardwareBindingSource
+            // 
+            this.cviewhardwareBindingSource.DataMember = "c_view_hardware";
+            this.cviewhardwareBindingSource.DataSource = this.dT_hardware;
+            // 
+            // dT_hardware
+            // 
+            this.dT_hardware.DataSetName = "DT_hardware";
+            this.dT_hardware.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pct_clear
             // 
@@ -358,16 +368,6 @@
             this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
-            // dT_hardware
-            // 
-            this.dT_hardware.DataSetName = "DT_hardware";
-            this.dT_hardware.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cviewhardwareBindingSource
-            // 
-            this.cviewhardwareBindingSource.DataMember = "c_view_hardware";
-            this.cviewhardwareBindingSource.DataSource = this.dT_hardware;
-            // 
             // c_view_hardwareTableAdapter
             // 
             this.c_view_hardwareTableAdapter.ClearBeforeFill = true;
@@ -422,6 +422,7 @@
             this.hardware_total.HeaderText = "Total";
             this.hardware_total.Name = "hardware_total";
             this.hardware_total.ReadOnly = true;
+            this.hardware_total.Visible = false;
             this.hardware_total.Width = 71;
             // 
             // btn_add
@@ -460,10 +461,10 @@
             this.Text = "Select Hardware";
             this.Load += new System.EventHandler(this.FrmHardwareSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_hardware)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewhardwareBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_hardware)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pct_clear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_hardware_selected)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dT_hardware)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewhardwareBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

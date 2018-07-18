@@ -546,7 +546,7 @@ namespace JodanQuote
                 if (dT_Item_Details._DT_Item_Details.Rows.Count < 0 )
                 {
 
-                    return;
+                  //  return;
                 }
 
                 else
@@ -769,7 +769,11 @@ namespace JodanQuote
                 cmb_jam_style.SelectedIndex = 1;
             }
 
+            if(cmb_material_thickness.Text != null)
+            {
 
+                cmb_material_thickness_edit.Text = cmb_material_thickness.Text;
+            }
 
         }
 
@@ -1248,7 +1252,7 @@ namespace JodanQuote
             {
 
                 Calculate_Cost_Edit_Mode();
-
+                Refresh_Data();
 
             }
 
@@ -1404,6 +1408,7 @@ namespace JodanQuote
             FrmAddOnSelect addon = new FrmAddOnSelect();
             addon.ShowDialog();
             this.c_View_Item_Add_OnTableAdapter.Fill(this.dT_Item_Add_On.C_View_Item_Add_On, Valuesclass.quote_id);
+            Refresh_Data();
         }
 
         private void grid_addon_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1418,7 +1423,7 @@ namespace JodanQuote
                 delete_item_addon.ExecuteNonQuery();
                 ConnectionClass.Dispose_connection(conn);
                 this.c_View_Item_Add_OnTableAdapter.Fill(this.dT_Item_Add_On.C_View_Item_Add_On, Valuesclass.quote_id);
-                // will probably need to add total for addons to total cost here
+                Refresh_Data();
             }
         }
 
@@ -1433,6 +1438,8 @@ namespace JodanQuote
             FrmViewSkins skins = new FrmViewSkins();
             skins.ShowDialog();
         }
+
+       
     }
     
 }

@@ -148,7 +148,7 @@
             // 
             this.addonwidthDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.addonwidthDataGridViewTextBoxColumn.DataPropertyName = "add_on_width";
-            this.addonwidthDataGridViewTextBoxColumn.HeaderText = " Addon   Width";
+            this.addonwidthDataGridViewTextBoxColumn.HeaderText = " Addon Width";
             this.addonwidthDataGridViewTextBoxColumn.Name = "addonwidthDataGridViewTextBoxColumn";
             this.addonwidthDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -156,7 +156,7 @@
             // 
             this.addonheightDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.addonheightDataGridViewTextBoxColumn.DataPropertyName = "add_on_height";
-            this.addonheightDataGridViewTextBoxColumn.HeaderText = " Addon  Height";
+            this.addonheightDataGridViewTextBoxColumn.HeaderText = "Addon Height";
             this.addonheightDataGridViewTextBoxColumn.Name = "addonheightDataGridViewTextBoxColumn";
             this.addonheightDataGridViewTextBoxColumn.ReadOnly = true;
             // 

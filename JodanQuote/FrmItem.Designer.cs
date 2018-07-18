@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItem));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItem));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.txt_revision = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -115,12 +116,12 @@
             this.cmb_material_edit = new System.Windows.Forms.ComboBox();
             this.dTmaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Material = new JodanQuote.Datasource.DT_Material();
-            this.cmb_door_type = new System.Windows.Forms.ComboBox();
             this.cmb_door_type_edit = new System.Windows.Forms.ComboBox();
             this.dTdoorstylesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Door_Type = new JodanQuote.Datasource.DT_Door_Type();
             this.cmb_jam_style_edit = new System.Windows.Forms.ComboBox();
             this.cmb_material_thickness_edit = new System.Windows.Forms.ComboBox();
+            this.cmb_door_type = new System.Windows.Forms.ComboBox();
             this.dtfinishBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_finish = new JodanQuote.Datasource.DT_finish();
             this.label12 = new System.Windows.Forms.Label();
@@ -301,7 +302,7 @@
             this.btn_revise.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_revise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_revise.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_revise.Image = global::JodanQuote.Properties.Resources.Revise;
+            this.btn_revise.Image = ((System.Drawing.Image)(resources.GetObject("btn_revise.Image")));
             this.btn_revise.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_revise.Location = new System.Drawing.Point(1060, 26);
             this.btn_revise.Name = "btn_revise";
@@ -359,7 +360,7 @@
             this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_back.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_back.Image = global::JodanQuote.Properties.Resources.ReturnArrow;
+            this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_back.Location = new System.Drawing.Point(1372, 26);
             this.btn_back.Name = "btn_back";
@@ -399,7 +400,7 @@
             this.btn_printscren.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_printscren.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_printscren.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_printscren.Image = global::JodanQuote.Properties.Resources.Email;
+            this.btn_printscren.Image = ((System.Drawing.Image)(resources.GetObject("btn_printscren.Image")));
             this.btn_printscren.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_printscren.Location = new System.Drawing.Point(956, 26);
             this.btn_printscren.Name = "btn_printscren";
@@ -439,7 +440,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::JodanQuote.Properties.Resources.Jodan;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 86);
@@ -702,34 +703,34 @@
             this.btn_delete_addon,
             this.addon_id});
             this.grid_addon.DataSource = this.cViewItemAddOnBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_addon.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_addon.DefaultCellStyle = dataGridViewCellStyle5;
             this.grid_addon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_addon.GridColor = System.Drawing.Color.CornflowerBlue;
             this.grid_addon.Location = new System.Drawing.Point(11, 19);
             this.grid_addon.Name = "grid_addon";
             this.grid_addon.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_addon.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.grid_addon.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_addon.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.grid_addon.RowHeadersVisible = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.grid_addon.Size = new System.Drawing.Size(347, 221);
             this.grid_addon.TabIndex = 58;
             this.grid_addon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_addon_CellContentClick);
@@ -738,8 +739,10 @@
             // 
             this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.descriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.descriptionDataGridViewTextBoxColumn.FillWeight = 70F;
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = " Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -747,8 +750,8 @@
             // 
             this.qtyDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.qtyDataGridViewTextBoxColumn.DataPropertyName = "qty";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.qtyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.qtyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.qtyDataGridViewTextBoxColumn.FillWeight = 20F;
             this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
             this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
@@ -758,9 +761,9 @@
             // 
             this.addon_total_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.addon_total_cost.DataPropertyName = "unit_material_cost";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.addon_total_cost.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.addon_total_cost.DefaultCellStyle = dataGridViewCellStyle4;
             this.addon_total_cost.FillWeight = 30F;
             this.addon_total_cost.HeaderText = "Total Cost";
             this.addon_total_cost.Name = "addon_total_cost";
@@ -771,7 +774,7 @@
             this.btn_delete_addon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.btn_delete_addon.FillWeight = 20F;
             this.btn_delete_addon.HeaderText = "";
-            this.btn_delete_addon.Image = global::JodanQuote.Properties.Resources.clear;
+            this.btn_delete_addon.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete_addon.Image")));
             this.btn_delete_addon.Name = "btn_delete_addon";
             this.btn_delete_addon.ReadOnly = true;
             // 
@@ -817,13 +820,13 @@
             this.panel_door_input.Controls.Add(this.txt_structual_height);
             this.panel_door_input.Controls.Add(this.txt_structual_width);
             this.panel_door_input.Controls.Add(this.cmb_material_thickness);
-            this.panel_door_input.Controls.Add(this.cmb_jam_style);
             this.panel_door_input.Controls.Add(this.cmb_material);
             this.panel_door_input.Controls.Add(this.cmb_material_edit);
-            this.panel_door_input.Controls.Add(this.cmb_door_type);
             this.panel_door_input.Controls.Add(this.cmb_door_type_edit);
             this.panel_door_input.Controls.Add(this.cmb_jam_style_edit);
             this.panel_door_input.Controls.Add(this.cmb_material_thickness_edit);
+            this.panel_door_input.Controls.Add(this.cmb_door_type);
+            this.panel_door_input.Controls.Add(this.cmb_jam_style);
             this.panel_door_input.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.panel_door_input.Location = new System.Drawing.Point(172, 352);
             this.panel_door_input.Name = "panel_door_input";
@@ -1105,24 +1108,6 @@
             this.dT_Material.DataSetName = "DT_Material";
             this.dT_Material.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cmb_door_type
-            // 
-            this.cmb_door_type.DataSource = this.dTItemDetailsBindingSource;
-            this.cmb_door_type.DisplayMember = "Door Type Description";
-            this.cmb_door_type.DropDownHeight = 70;
-            this.cmb_door_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_door_type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_door_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_door_type.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_door_type.FormattingEnabled = true;
-            this.cmb_door_type.IntegralHeight = false;
-            this.cmb_door_type.ItemHeight = 13;
-            this.cmb_door_type.Location = new System.Drawing.Point(142, 26);
-            this.cmb_door_type.Name = "cmb_door_type";
-            this.cmb_door_type.Size = new System.Drawing.Size(157, 21);
-            this.cmb_door_type.TabIndex = 81;
-            this.cmb_door_type.ValueMember = "door_type_id";
-            // 
             // cmb_door_type_edit
             // 
             this.cmb_door_type_edit.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dTdoorstylesBindingSource, "id", true));
@@ -1155,6 +1140,8 @@
             // 
             // cmb_jam_style_edit
             // 
+            this.cmb_jam_style_edit.DataSource = this.cViewJamStylesBindingSource;
+            this.cmb_jam_style_edit.DisplayMember = "description";
             this.cmb_jam_style_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_jam_style_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmb_jam_style_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1164,6 +1151,7 @@
             this.cmb_jam_style_edit.Name = "cmb_jam_style_edit";
             this.cmb_jam_style_edit.Size = new System.Drawing.Size(157, 21);
             this.cmb_jam_style_edit.TabIndex = 82;
+            this.cmb_jam_style_edit.ValueMember = "id";
             this.cmb_jam_style_edit.SelectedValueChanged += new System.EventHandler(this.cmb_jam_style_edit_SelectedValueChanged);
             // 
             // cmb_material_thickness_edit
@@ -1183,6 +1171,24 @@
             this.cmb_material_thickness_edit.ValueMember = "thickness";
             this.cmb_material_thickness_edit.Visible = false;
             this.cmb_material_thickness_edit.SelectedIndexChanged += new System.EventHandler(this.cmb_material_thickness_edit_SelectedIndexChanged);
+            // 
+            // cmb_door_type
+            // 
+            this.cmb_door_type.DataSource = this.dTItemDetailsBindingSource;
+            this.cmb_door_type.DisplayMember = "Door Type Description";
+            this.cmb_door_type.DropDownHeight = 70;
+            this.cmb_door_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_door_type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_door_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_door_type.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_door_type.FormattingEnabled = true;
+            this.cmb_door_type.IntegralHeight = false;
+            this.cmb_door_type.ItemHeight = 13;
+            this.cmb_door_type.Location = new System.Drawing.Point(142, 26);
+            this.cmb_door_type.Name = "cmb_door_type";
+            this.cmb_door_type.Size = new System.Drawing.Size(157, 21);
+            this.cmb_door_type.TabIndex = 81;
+            this.cmb_door_type.ValueMember = "door_type_id";
             // 
             // dtfinishBindingSource
             // 
@@ -1324,14 +1330,14 @@
             this.grid_hardware_on_item.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.grid_hardware_on_item.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.grid_hardware_on_item.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_hardware_on_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_hardware_on_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.grid_hardware_on_item.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_hardware_on_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hardwareDescriptionDataGridViewTextBoxColumn2,
@@ -1343,14 +1349,14 @@
             this.delete_id,
             this.btn_delete_hardware});
             this.grid_hardware_on_item.DataSource = this.dTHardwareItemBindingSource;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_hardware_on_item.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_hardware_on_item.DefaultCellStyle = dataGridViewCellStyle12;
             this.grid_hardware_on_item.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_hardware_on_item.GridColor = System.Drawing.Color.CornflowerBlue;
             this.grid_hardware_on_item.Location = new System.Drawing.Point(7, 30);
@@ -1358,14 +1364,14 @@
             this.grid_hardware_on_item.MaximumSize = new System.Drawing.Size(493, 200);
             this.grid_hardware_on_item.MinimumSize = new System.Drawing.Size(443, 200);
             this.grid_hardware_on_item.Name = "grid_hardware_on_item";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_hardware_on_item.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_hardware_on_item.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.grid_hardware_on_item.RowHeadersVisible = false;
             this.grid_hardware_on_item.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_hardware_on_item.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1385,10 +1391,10 @@
             // 
             this.hardware_cost_sale.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost_sale.DataPropertyName = "Hardware Cost";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.hardware_cost_sale.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.hardware_cost_sale.DefaultCellStyle = dataGridViewCellStyle9;
             this.hardware_cost_sale.FillWeight = 57.36304F;
             this.hardware_cost_sale.HeaderText = "Hardware Cost";
             this.hardware_cost_sale.Name = "hardware_cost_sale";
@@ -1397,8 +1403,8 @@
             // 
             this.quantity_hardware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.quantity_hardware.DataPropertyName = "quantity";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.quantity_hardware.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.quantity_hardware.DefaultCellStyle = dataGridViewCellStyle10;
             this.quantity_hardware.FillWeight = 49.16832F;
             this.quantity_hardware.HeaderText = "Quantity";
             this.quantity_hardware.Name = "quantity_hardware";
@@ -1407,9 +1413,9 @@
             // 
             this.hardware_cost_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost_total.DataPropertyName = "Total Cost";
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.hardware_cost_total.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.hardware_cost_total.DefaultCellStyle = dataGridViewCellStyle11;
             this.hardware_cost_total.FillWeight = 50F;
             this.hardware_cost_total.HeaderText = "Total Cost";
             this.hardware_cost_total.Name = "hardware_cost_total";
@@ -1443,7 +1449,7 @@
             this.btn_delete_hardware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.btn_delete_hardware.FillWeight = 13.36671F;
             this.btn_delete_hardware.HeaderText = "";
-            this.btn_delete_hardware.Image = global::JodanQuote.Properties.Resources.clear;
+            this.btn_delete_hardware.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete_hardware.Image")));
             this.btn_delete_hardware.Name = "btn_delete_hardware";
             // 
             // dTHardwareItemBindingSource
@@ -1710,6 +1716,7 @@
             // txt_labour_markup
             // 
             this.txt_labour_markup.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_labour_markup.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "labour_rate", true));
             this.txt_labour_markup.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_labour_markup.Location = new System.Drawing.Point(139, 88);
             this.txt_labour_markup.Name = "txt_labour_markup";
@@ -1786,6 +1793,7 @@
             // txt_material_markup
             // 
             this.txt_material_markup.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_material_markup.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "markup_material", true));
             this.txt_material_markup.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_material_markup.Location = new System.Drawing.Point(139, 28);
             this.txt_material_markup.Name = "txt_material_markup";
@@ -1798,6 +1806,7 @@
             // txt_hardware_markup
             // 
             this.txt_hardware_markup.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_hardware_markup.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "markup_hardware", true));
             this.txt_hardware_markup.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_hardware_markup.Location = new System.Drawing.Point(139, 58);
             this.txt_hardware_markup.Name = "txt_hardware_markup";
@@ -1821,8 +1830,8 @@
             // 
             this.hardware_description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_description.DataPropertyName = "Hardware Description";
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hardware_description.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hardware_description.DefaultCellStyle = dataGridViewCellStyle14;
             this.hardware_description.HeaderText = "Hardware Description";
             this.hardware_description.Name = "hardware_description";
             // 
@@ -1830,10 +1839,10 @@
             // 
             this.hardware_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost.DataPropertyName = "Hardware Cost";
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.hardware_cost.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.hardware_cost.DefaultCellStyle = dataGridViewCellStyle15;
             this.hardware_cost.HeaderText = "Hardware Cost";
             this.hardware_cost.Name = "hardware_cost";
             // 
@@ -1841,10 +1850,10 @@
             // 
             this.total_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.total_cost.DataPropertyName = "Total Cost";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.Format = "C2";
-            dataGridViewCellStyle15.NullValue = null;
-            this.total_cost.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.Format = "C2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.total_cost.DefaultCellStyle = dataGridViewCellStyle16;
             this.total_cost.HeaderText = "Total Cost";
             this.total_cost.Name = "total_cost";
             // 
@@ -1852,8 +1861,8 @@
             // 
             this.qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.qty.DataPropertyName = "quantity";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.qty.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.qty.DefaultCellStyle = dataGridViewCellStyle17;
             this.qty.HeaderText = "Quantity";
             this.qty.Name = "qty";
             // 
@@ -2397,16 +2406,16 @@
         private System.Windows.Forms.TextBox txt_addon;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button btn_view_addons;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addon_total_cost;
-        private System.Windows.Forms.DataGridViewImageColumn btn_delete_addon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addon_id;
         private System.Windows.Forms.BindingSource dTItemDetailsBindingSource;
         private Datasource.DT_Item_Details dT_Item_Details;
         private Datasource.DT_Item_DetailsTableAdapters.Ada_Item_Details ada_Item_Details;
         private System.Windows.Forms.BindingSource cViewItemAddOnBindingSource;
         private Datasource.DT_Item_Add_OnTableAdapters.C_View_Item_Add_OnTableAdapter c_View_Item_Add_OnTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addon_total_cost;
+        private System.Windows.Forms.DataGridViewImageColumn btn_delete_addon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addon_id;
         //  private Datasource.DT_Material dT_Item;
         //    private Datasource.DT_ItemTableAdapters.//C_View_Item_DetailsTableAdapter c_View_Item_DetailsTableAdapter;
     }

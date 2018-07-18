@@ -25,6 +25,8 @@ namespace values
         public static int id;
         public static int jodan_y_n = 1;
         public static int structual_op_width;
+        public static int double_single;
+        public static float converted_cost;
         public static  List<object> Calculate_material_list = new List<object>(new object[] { "project_id", "item_id", "revision_id","Material Description", "Material_thickness", "door_type_id", "structual_op_width", "structual_op_height", });
     }
 }

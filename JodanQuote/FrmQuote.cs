@@ -28,14 +28,14 @@ namespace JodanQuote
         }
 
         void Fill_data()
-        {     
-            
+        {
 
-            this.ada_quote.Fill(dt_quote.DT_Quote_Items, Valuesclass.project_id);
+            dT_Quote.EnforceConstraints = false;
+            this.ada_quote_items.Fill(dT_Quote.DT_Quote_Items, Valuesclass.project_id);
             this.c_View_StatusTableAdapter.Fill(this.dT_Status.C_View_Status);
             this.ada_setting.Fill(dT_Settings.DT_Setting);
-            this.sALES_LEDGERTableAdapter.Fill(this.dT_customer.SALES_LEDGER,(dt_quote.DT_Quote_Items.Rows[0]["customer_ref"].ToString()));
-            grid_items_on_quote.DataSource = this.dt_quote.DT_Quote_Items;
+            this.sALES_LEDGERTableAdapter.Fill(this.dT_customer.SALES_LEDGER,(dT_Quote.DT_Quote_Items.Rows[0]["customer_ref"].ToString()));
+            grid_items_on_quote.DataSource = this.dT_Quote.DT_Quote_Items;
             Valuesclass.project_ref = txt_project_ref.Text;
             Valuesclass.quote_status = cmb_quote_status.Text;
         }
@@ -116,7 +116,10 @@ namespace JodanQuote
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_items_on_quote.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_items_on_quote.DefaultCellStyle.BackColor = Color.AliceBlue;
-
+            if(Valuesclass.jodan_y_n == 0)
+            {
+                btn_convert.Visible = false;
+            }
         }
 
         void Copy_hardware()
@@ -157,7 +160,7 @@ namespace JodanQuote
             DataTable dt_copy_hardware = new DataTable();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter copy_hardware = new SqlDataAdapter(Statementsclass.copy_hardware, conn);
-            copy_hardware.SelectCommand.Parameters.AddWithValue("@ID", dt_quote.DT_Quote_Items.Rows[0]["Quote ID"]);
+            copy_hardware.SelectCommand.Parameters.AddWithValue("@ID", dT_Quote.DT_Quote_Items.Rows[0]["Quote ID"]);
             copy_hardware.Fill(dt_copy_hardware);
 
             for (int i = 0; i < dt_copy_hardware.Rows.Count; i++)
@@ -184,39 +187,69 @@ namespace JodanQuote
 
 
         }
-
+       
         void Copy_Item()
         {
             DataTable dt_copy_item = new DataTable();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter copy_item_convert = new SqlDataAdapter(Statementsclass.copy_item_convert, conn);
-            copy_item_convert.SelectCommand.Parameters.AddWithValue("@project_Id", dt_quote.DT_Quote_Items.Rows[0]["Project ID"]);
+            copy_item_convert.SelectCommand.Parameters.AddWithValue("@project_Id", dT_Quote.DT_Quote_Items.Rows[0]["Project ID"]);
             copy_item_convert.Fill(dt_copy_item);
 
 
             for (int i = 0; i < dt_copy_item.Rows.Count; i++)
             {
 
-                
-
+                    
+                    int? door_type_id = ((dt_copy_item.Rows[i]["door_type_id"]) as int?) ?? 0;
                     int? order_id = ((dt_copy_item.Rows[i]["order_id"]) as int?) ?? 0;
                     int? material_id = ((dt_copy_item.Rows[i]["material_id"]) as int?) ?? 0;
                     int? finish_id = ((dt_copy_item.Rows[i]["finish_id"]) as int?) ?? 0;
                     int? material_thickness = ((dt_copy_item.Rows[i]["material_thickness"]) as int?) ?? 0;
                     double? total_cost = ((dt_copy_item.Rows[i]["total_cost"]) as double?) ?? 0;
+                    double converted_cost = 0;
+                   SqlConnection conn3 = ConnectionClass.GetConnection_dsl();
+                   SqlCommand Select_door_type = new SqlCommand(Statementsclass.Select_door_type, conn3);
+                   Select_door_type.Parameters.AddWithValue("@id", door_type_id);
+                   SqlDataReader read_door_type = Select_door_type.ExecuteReader();
+
+                   if (read_door_type.Read())
+                   {
+                    string door_style= (Convert.ToString(read_door_type["description"])) ;
+                    Valuesclass.double_single = (Convert.ToInt32(read_door_type["double_door"]));
+                    read_door_type.Close();
+                   }
                     SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
 
 
                     SqlCommand insert_copied_item = new SqlCommand(Statementsclass.insert_copied_item, conn2);
 
+
+                    if(Valuesclass.double_single == 1)
+                     {
+
+                    converted_cost = Convert.ToInt32(dT_Settings.DT_Setting.Rows[0]["double_extra"].ToString());
+                     
+        
+                     }
+                    else 
+                    {
+
+                    converted_cost = Convert.ToInt32(dT_Settings.DT_Setting.Rows[0]["single_extra"].ToString());
+
+
+                     }
+
+
+                    double? converted_total_cost = total_cost + converted_cost;
                     insert_copied_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-                    insert_copied_item.Parameters.AddWithValue("@item_id", dt_copy_item.Rows[i]["item_id"]);
+                    insert_copied_item.Parameters.AddWithValue("@item_id",i+1);
                     insert_copied_item.Parameters.AddWithValue("@order_id", order_id);
                     insert_copied_item.Parameters.AddWithValue("@material_id", material_id);
                     insert_copied_item.Parameters.AddWithValue("@finish_id", finish_id);
                     insert_copied_item.Parameters.AddWithValue("@item_date", DateTime.Now);
                     insert_copied_item.Parameters.AddWithValue("@door_ref", dt_copy_item.Rows[i]["door_ref"]);
-                    insert_copied_item.Parameters.AddWithValue("@door_type", dt_copy_item.Rows[i]["door_type"]);
+                    insert_copied_item.Parameters.AddWithValue("@door_type", door_type_id );
                     insert_copied_item.Parameters.AddWithValue("@door_style", dt_copy_item.Rows[i]["door_style"]);
                     insert_copied_item.Parameters.AddWithValue("@structual_op_height", dt_copy_item.Rows[i]["structual_op_height"]);
                     insert_copied_item.Parameters.AddWithValue("@structual_op_width", dt_copy_item.Rows[i]["structual_op_width"]);
@@ -224,7 +257,6 @@ namespace JodanQuote
                     insert_copied_item.Parameters.AddWithValue("@frame_height", dt_copy_item.Rows[i]["frame_height"]);
                     insert_copied_item.Parameters.AddWithValue("@finish_description", dt_copy_item.Rows[i]["finish_description"]);
                     insert_copied_item.Parameters.AddWithValue("@material_thickness", material_thickness);
-                    insert_copied_item.Parameters.AddWithValue("@total_cost", total_cost);
                     insert_copied_item.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName);
                     insert_copied_item.Parameters.AddWithValue("@markup_material", dt_copy_item.Rows[i]["markup_material"]);
                     insert_copied_item.Parameters.AddWithValue("@material_cost", dt_copy_item.Rows[i]["material_cost"]);
@@ -232,7 +264,8 @@ namespace JodanQuote
                     insert_copied_item.Parameters.AddWithValue("@hardware_cost", dt_copy_item.Rows[i]["hardware_cost"]);
                     insert_copied_item.Parameters.AddWithValue("@labour_rate", dt_copy_item.Rows[i]["labour_rate"]);
                     insert_copied_item.Parameters.AddWithValue("@labour_cost", dt_copy_item.Rows[i]["labour_cost"]);
-
+                    insert_copied_item.Parameters.AddWithValue("@converted_cost", converted_cost);
+                    insert_copied_item.Parameters.AddWithValue("@total_cost", converted_total_cost);
                     ConnectionClass.Dispose_connection(conn);
 
 
@@ -261,6 +294,7 @@ namespace JodanQuote
             update_project.Parameters.AddWithValue("@quote_status", cmb_quote_status.Text.ToString());
             update_project.Parameters.AddWithValue("@project_ref", txt_project_ref.Text);
             update_project.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            update_project.Parameters.AddWithValue("@project_notes", txt_notes.Text);
             update_project.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
             MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -325,9 +359,9 @@ namespace JodanQuote
                 {
 
                     int i = e.RowIndex;
-                    Valuesclass.quote_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Quote ID"].ToString());
-                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
-                    Valuesclass.revision_number = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Revision Number"].ToString());
+                    Valuesclass.quote_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Quote ID"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
+                    Valuesclass.revision_number = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Revision Number"].ToString());
                     //select_max_revison();
                     Valuesclass.new_item_identifier = 0;
                     Valuesclass.locked_identifiter = 0;
@@ -348,11 +382,10 @@ namespace JodanQuote
 
                     if(delete == DialogResult.Yes)
                     {
-                        int item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
+                        int item_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Quote ID"].ToString());
                         SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                         SqlCommand delete_quote_item = new SqlCommand(Statementsclass.delete_quote_item, conn);
-                        delete_quote_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-                        delete_quote_item.Parameters.AddWithValue("@item_id", item_id);
+                        delete_quote_item.Parameters.AddWithValue("@id", item_id);
                         delete_quote_item.ExecuteNonQuery();
                         Fill_data();
                         
@@ -367,25 +400,22 @@ namespace JodanQuote
                     int i = e.RowIndex;
                     select_max_item();
                     Select_quote_id();
-                    //Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote Id"].ToString());
-                    Valuesclass.item_id = Convert.ToInt32(dt_quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
 
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand copy_item = new SqlCommand(Statementsclass.copy_item, conn);
-                    copy_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-                    copy_item.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
+                    copy_item.Parameters.AddWithValue("@id", grid_items_on_quote.Rows[i].Cells["Quote_ID"].Value);
                     SqlDataReader reader = copy_item.ExecuteReader();
 
                     if (reader.Read())
                     {
 
-                        //  int? material_id = Convert.ToInt32(reader.GetOrdinal["material_id"]);
-
                         int? order_id = (reader["order_id"] as int?)?? 0;
                         int? material_id = (reader["material_id"] as int?) ?? 0;
                         int? finish_id = (reader["finish_id"] as int?) ?? 0;
                         int? material_thickness = (reader["material_thickness"] as int?) ?? 0;
-                        float? total_cost = (reader["total_cost"] as float?) ?? 0; 
+                        double total_cost = Convert.ToDouble((reader["total_cost"].ToString()));
+                        double? converted_cost = Convert.ToDouble((reader["converted_cost"]as double? )?? 0);
                         SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
                         
                       
@@ -413,6 +443,7 @@ namespace JodanQuote
                         insert_copied_item.Parameters.AddWithValue("@markup_hardware", reader["markup_hardware"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@hardware_cost", reader["hardware_cost"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@labour_rate", reader["labour_rate"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@converted_cost", converted_cost);
                         insert_copied_item.Parameters.AddWithValue("@labour_cost", reader["labour_cost"].ToString());
 
                         ConnectionClass.Dispose_connection(conn);
@@ -440,7 +471,7 @@ namespace JodanQuote
             }
             catch(Exception ex )
             {
-                MessageBox.Show(ex.ToString(), "");
+               // MessageBox.Show(ex.ToString(), "");
             }
            
         }
@@ -521,7 +552,7 @@ namespace JodanQuote
                 
                 SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
                 SqlCommand copy_project = new SqlCommand(Statementsclass.copy_project, conn2);
-                copy_project.Parameters.AddWithValue("@project_Id", dt_quote.DT_Quote_Items.Rows[0]["Project ID"]);
+                copy_project.Parameters.AddWithValue("@project_Id", dT_Quote.DT_Quote_Items.Rows[0]["Project ID"]);
                 SqlDataReader reader = copy_project.ExecuteReader();
 
                 if (reader.Read())
@@ -556,12 +587,12 @@ namespace JodanQuote
                 Copy_Item();
                 Copy_converted_hardware();
                 dT_customer.Clear();
-                dt_quote.Clear();
+                dT_Quote.Clear();
                 this.dT_customer.SALES_LEDGER.Clear();
-                this.dt_quote.DT_Quote_Items.Clear();
+                this.dT_Quote.DT_Quote_Items.Clear();
                 dT_customer.EnforceConstraints = false;
              
-                this.ada_quote.Fill(dt_quote.DT_Quote_Items, Valuesclass.project_id);
+                this.ada_quote_items.Fill(dT_Quote.DT_Quote_Items, Valuesclass.project_id);
                 this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
                 txt_customer.Text = Valuesclass.customer_name;
                 Format();

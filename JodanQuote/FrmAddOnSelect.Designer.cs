@@ -170,7 +170,7 @@
             this.txt_height.Location = new System.Drawing.Point(201, 179);
             this.txt_height.Name = "txt_height";
             this.txt_height.Size = new System.Drawing.Size(186, 20);
-            this.txt_height.TabIndex = 82;
+            this.txt_height.TabIndex = 6;
             this.txt_height.Text = "0";
             // 
             // txt_width
@@ -180,7 +180,7 @@
             this.txt_width.Location = new System.Drawing.Point(201, 149);
             this.txt_width.Name = "txt_width";
             this.txt_width.Size = new System.Drawing.Size(186, 20);
-            this.txt_width.TabIndex = 83;
+            this.txt_width.TabIndex = 5;
             this.txt_width.Text = "0";
             // 
             // cmb_material_thickness_edit
@@ -195,7 +195,7 @@
             this.cmb_material_thickness_edit.Location = new System.Drawing.Point(201, 118);
             this.cmb_material_thickness_edit.Name = "cmb_material_thickness_edit";
             this.cmb_material_thickness_edit.Size = new System.Drawing.Size(186, 21);
-            this.cmb_material_thickness_edit.TabIndex = 90;
+            this.cmb_material_thickness_edit.TabIndex = 4;
             this.cmb_material_thickness_edit.ValueMember = "thickness";
             // 
             // dTMaterialThicknessBindingSource
@@ -220,7 +220,7 @@
             this.cmb_material_edit.Location = new System.Drawing.Point(201, 87);
             this.cmb_material_edit.Name = "cmb_material_edit";
             this.cmb_material_edit.Size = new System.Drawing.Size(186, 21);
-            this.cmb_material_edit.TabIndex = 91;
+            this.cmb_material_edit.TabIndex = 3;
             this.cmb_material_edit.ValueMember = "id";
             this.cmb_material_edit.SelectedValueChanged += new System.EventHandler(this.cmb_material_edit_SelectedValueChanged);
             // 
@@ -239,7 +239,6 @@
             this.chk_removable.Appearance = System.Windows.Forms.Appearance.Button;
             this.chk_removable.AutoSize = true;
             this.chk_removable.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cViewAddonsBindingSource, "can_be_removable", true));
-            this.chk_removable.Enabled = false;
             this.chk_removable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chk_removable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chk_removable.ForeColor = System.Drawing.Color.AliceBlue;
@@ -265,7 +264,6 @@
             this.chk_coating.Appearance = System.Windows.Forms.Appearance.Button;
             this.chk_coating.AutoSize = true;
             this.chk_coating.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cViewAddonsBindingSource, "default_powder_coat_unit", true));
-            this.chk_coating.Enabled = false;
             this.chk_coating.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chk_coating.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chk_coating.ForeColor = System.Drawing.Color.AliceBlue;
@@ -307,7 +305,7 @@
             this.cmb_add_on_type.Location = new System.Drawing.Point(201, 56);
             this.cmb_add_on_type.Name = "cmb_add_on_type";
             this.cmb_add_on_type.Size = new System.Drawing.Size(186, 21);
-            this.cmb_add_on_type.TabIndex = 95;
+            this.cmb_add_on_type.TabIndex = 2;
             this.cmb_add_on_type.ValueMember = "id";
             this.cmb_add_on_type.SelectedIndexChanged += new System.EventHandler(this.cmb_add_on_type_SelectedIndexChanged);
             this.cmb_add_on_type.SelectedValueChanged += new System.EventHandler(this.cmb_add_on_type_SelectedValueChanged);
@@ -335,7 +333,7 @@
             this.cmb_addon_material_type.Location = new System.Drawing.Point(201, 25);
             this.cmb_addon_material_type.Name = "cmb_addon_material_type";
             this.cmb_addon_material_type.Size = new System.Drawing.Size(186, 21);
-            this.cmb_addon_material_type.TabIndex = 99;
+            this.cmb_addon_material_type.TabIndex = 1;
             this.cmb_addon_material_type.ValueMember = "id";
             this.cmb_addon_material_type.SelectedValueChanged += new System.EventHandler(this.cmb_addon_material_type_SelectedValueChanged);
             // 
@@ -359,7 +357,7 @@
             this.txt_qty.Location = new System.Drawing.Point(201, 209);
             this.txt_qty.Name = "txt_qty";
             this.txt_qty.Size = new System.Drawing.Size(186, 20);
-            this.txt_qty.TabIndex = 100;
+            this.txt_qty.TabIndex = 7;
             this.txt_qty.Text = "0";
             // 
             // txt_position
@@ -369,7 +367,7 @@
             this.txt_position.Location = new System.Drawing.Point(201, 239);
             this.txt_position.Name = "txt_position";
             this.txt_position.Size = new System.Drawing.Size(186, 20);
-            this.txt_position.TabIndex = 101;
+            this.txt_position.TabIndex = 8;
             // 
             // btn_structure_width
             // 

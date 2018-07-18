@@ -14,7 +14,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>82</ApplicationRevision>
+    <ApplicationRevision>89</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -129,6 +129,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_finish.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\DT_hardware.cs">
+      <DependentUpon>DT_hardware.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasource\DT_hardware.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,6 +178,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DT_Material_Thickness.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasource\DT_Quote.cs">
+      <DependentUpon>DT_Quote.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\DT_Quote.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DT_Quote.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasource\DT_Ratings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,14 +224,6 @@
     </Compile>
     <Compile Include="FrmMailQuote.Designer.cs">
       <DependentUpon>FrmMailQuote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Datasource\dt_quote.cs">
-      <DependentUpon>dt_quote.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Datasource\dt_quote.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dt_quote.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmSettings.cs">
       <SubType>Form</SubType>
@@ -411,7 +414,6 @@
     <None Include="Datasource\DT_Item_Details.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DT_Item_Details.Designer.cs</LastGenOutput>
     </None>
     <None Include="Datasource\DT_Item_Details.xss">
       <DependentUpon>DT_Item_Details.xsd</DependentUpon>
@@ -460,16 +462,16 @@
     <None Include="Datasource\DT_Material_Thickness.xss">
       <DependentUpon>DT_Material_Thickness.xsd</DependentUpon>
     </None>
-    <None Include="Datasource\dt_quote.xsc">
-      <DependentUpon>dt_quote.xsd</DependentUpon>
+    <None Include="Datasource\DT_Quote.xsc">
+      <DependentUpon>DT_Quote.xsd</DependentUpon>
     </None>
-    <None Include="Datasource\dt_quote.xsd">
+    <None Include="Datasource\DT_Quote.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dt_quote.Designer.cs</LastGenOutput>
+      <LastGenOutput>DT_Quote.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Datasource\dt_quote.xss">
-      <DependentUpon>dt_quote.xsd</DependentUpon>
+    <None Include="Datasource\DT_Quote.xss">
+      <DependentUpon>DT_Quote.xsd</DependentUpon>
     </None>
     <None Include="Datasource\DT_Ratings.xsc">
       <DependentUpon>DT_Ratings.xsd</DependentUpon>

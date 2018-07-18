@@ -20,9 +20,9 @@ namespace JodanQuote.Datasource {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dt_quote")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DT_Quote")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dt_quote : global::System.Data.DataSet {
+    public partial class DT_Quote : global::System.Data.DataSet {
         
         private DT_Quote_ItemsDataTable tableDT_Quote_Items;
         
@@ -30,7 +30,7 @@ namespace JodanQuote.Datasource {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public dt_quote() {
+        public DT_Quote() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace JodanQuote.Datasource {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected dt_quote(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DT_Quote(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dt_quote cln = ((dt_quote)(base.Clone()));
+            DT_Quote cln = ((DT_Quote)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dt_quote";
+            this.DataSetName = "DT_Quote";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dt_quote.xsd";
+            this.Namespace = "http://tempuri.org/DT_Quote.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableDT_Quote_Items = new DT_Quote_ItemsDataTable();
@@ -225,7 +225,7 @@ namespace JodanQuote.Datasource {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dt_quote ds = new dt_quote();
+            DT_Quote ds = new DT_Quote();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -279,31 +279,37 @@ namespace JodanQuote.Datasource {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DT_Quote_ItemsDataTable : global::System.Data.TypedTableBase<DT_Quote_ItemsRow> {
             
-            private global::System.Data.DataColumn columnDate_Created;
+            private global::System.Data.DataColumn columnProject_ID;
+            
+            private global::System.Data.DataColumn columnQuote_ID;
             
             private global::System.Data.DataColumn columnItem_ID;
             
             private global::System.Data.DataColumn columnRevision_Number;
             
+            private global::System.Data.DataColumn columnDate_Created;
+            
+            private global::System.Data.DataColumn columnDoor_Type;
+            
+            private global::System.Data.DataColumn columnDoor_Reference;
+            
+            private global::System.Data.DataColumn columnTotal_Cost;
+            
+            private global::System.Data.DataColumn columnItem_Date;
+            
             private global::System.Data.DataColumn columnCreated_By;
-            
-            private global::System.Data.DataColumn columnQuote_ID;
-            
-            private global::System.Data.DataColumn columnProject_ID;
             
             private global::System.Data.DataColumn columncustomer_ref;
             
             private global::System.Data.DataColumn columnsite_ref;
             
-            private global::System.Data.DataColumn columnquote_status;
-            
             private global::System.Data.DataColumn columnproject_ref;
             
-            private global::System.Data.DataColumn columnItem_Date;
+            private global::System.Data.DataColumn columnquote_status;
             
-            private global::System.Data.DataColumn columnTotal_Cost;
+            private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnDoor_Type;
+            private global::System.Data.DataColumn columnproject_notes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -340,9 +346,17 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Date_CreatedColumn {
+            public global::System.Data.DataColumn Project_IDColumn {
                 get {
-                    return this.columnDate_Created;
+                    return this.columnProject_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Quote_IDColumn {
+                get {
+                    return this.columnQuote_ID;
                 }
             }
             
@@ -364,25 +378,49 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Date_CreatedColumn {
+                get {
+                    return this.columnDate_Created;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Door_TypeColumn {
+                get {
+                    return this.columnDoor_Type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Door_ReferenceColumn {
+                get {
+                    return this.columnDoor_Reference;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Total_CostColumn {
+                get {
+                    return this.columnTotal_Cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Item_DateColumn {
+                get {
+                    return this.columnItem_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn Created_ByColumn {
                 get {
                     return this.columnCreated_By;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Quote_IDColumn {
-                get {
-                    return this.columnQuote_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Project_IDColumn {
-                get {
-                    return this.columnProject_ID;
                 }
             }
             
@@ -404,14 +442,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn quote_statusColumn {
-                get {
-                    return this.columnquote_status;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn project_refColumn {
                 get {
                     return this.columnproject_ref;
@@ -420,25 +450,25 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Item_DateColumn {
+            public global::System.Data.DataColumn quote_statusColumn {
                 get {
-                    return this.columnItem_Date;
+                    return this.columnquote_status;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Total_CostColumn {
+            public global::System.Data.DataColumn IDColumn {
                 get {
-                    return this.columnTotal_Cost;
+                    return this.columnID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Door_TypeColumn {
+            public global::System.Data.DataColumn project_notesColumn {
                 get {
-                    return this.columnDoor_Type;
+                    return this.columnproject_notes;
                 }
             }
             
@@ -479,25 +509,51 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_Quote_ItemsRow AddDT_Quote_ItemsRow(System.DateTime Date_Created, int Item_ID, int Revision_Number, string Created_By, int Quote_ID, int Project_ID, string customer_ref, string site_ref, string quote_status, string project_ref, System.DateTime Item_Date, double Total_Cost, int Door_Type) {
+            public DT_Quote_ItemsRow AddDT_Quote_ItemsRow(
+                        int Project_ID, 
+                        int Quote_ID, 
+                        int Item_ID, 
+                        int Revision_Number, 
+                        System.DateTime Date_Created, 
+                        int Door_Type, 
+                        string Door_Reference, 
+                        double Total_Cost, 
+                        System.DateTime Item_Date, 
+                        string Created_By, 
+                        string customer_ref, 
+                        string site_ref, 
+                        string project_ref, 
+                        string quote_status, 
+                        int ID, 
+                        string project_notes) {
                 DT_Quote_ItemsRow rowDT_Quote_ItemsRow = ((DT_Quote_ItemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Date_Created,
+                        Project_ID,
+                        Quote_ID,
                         Item_ID,
                         Revision_Number,
+                        Date_Created,
+                        Door_Type,
+                        Door_Reference,
+                        Total_Cost,
+                        Item_Date,
                         Created_By,
-                        Quote_ID,
-                        Project_ID,
                         customer_ref,
                         site_ref,
-                        quote_status,
                         project_ref,
-                        Item_Date,
-                        Total_Cost,
-                        Door_Type};
+                        quote_status,
+                        ID,
+                        project_notes};
                 rowDT_Quote_ItemsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Quote_ItemsRow);
                 return rowDT_Quote_ItemsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DT_Quote_ItemsRow FindByProject_ID(int Project_ID) {
+                return ((DT_Quote_ItemsRow)(this.Rows.Find(new object[] {
+                            Project_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -517,59 +573,71 @@ namespace JodanQuote.Datasource {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnDate_Created = base.Columns["Date Created"];
+                this.columnProject_ID = base.Columns["Project ID"];
+                this.columnQuote_ID = base.Columns["Quote ID"];
                 this.columnItem_ID = base.Columns["Item ID"];
                 this.columnRevision_Number = base.Columns["Revision Number"];
+                this.columnDate_Created = base.Columns["Date Created"];
+                this.columnDoor_Type = base.Columns["Door Type"];
+                this.columnDoor_Reference = base.Columns["Door Reference"];
+                this.columnTotal_Cost = base.Columns["Total Cost"];
+                this.columnItem_Date = base.Columns["Item Date"];
                 this.columnCreated_By = base.Columns["Created By"];
-                this.columnQuote_ID = base.Columns["Quote ID"];
-                this.columnProject_ID = base.Columns["Project ID"];
                 this.columncustomer_ref = base.Columns["customer_ref"];
                 this.columnsite_ref = base.Columns["site_ref"];
-                this.columnquote_status = base.Columns["quote_status"];
                 this.columnproject_ref = base.Columns["project_ref"];
-                this.columnItem_Date = base.Columns["Item Date"];
-                this.columnTotal_Cost = base.Columns["Total Cost"];
-                this.columnDoor_Type = base.Columns["Door Type"];
+                this.columnquote_status = base.Columns["quote_status"];
+                this.columnID = base.Columns["ID"];
+                this.columnproject_notes = base.Columns["project_notes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnDate_Created = new global::System.Data.DataColumn("Date Created", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate_Created);
+                this.columnProject_ID = new global::System.Data.DataColumn("Project ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProject_ID);
+                this.columnQuote_ID = new global::System.Data.DataColumn("Quote ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuote_ID);
                 this.columnItem_ID = new global::System.Data.DataColumn("Item ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItem_ID);
                 this.columnRevision_Number = new global::System.Data.DataColumn("Revision Number", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRevision_Number);
+                this.columnDate_Created = new global::System.Data.DataColumn("Date Created", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate_Created);
+                this.columnDoor_Type = new global::System.Data.DataColumn("Door Type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoor_Type);
+                this.columnDoor_Reference = new global::System.Data.DataColumn("Door Reference", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoor_Reference);
+                this.columnTotal_Cost = new global::System.Data.DataColumn("Total Cost", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal_Cost);
+                this.columnItem_Date = new global::System.Data.DataColumn("Item Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_Date);
                 this.columnCreated_By = new global::System.Data.DataColumn("Created By", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreated_By);
-                this.columnQuote_ID = new global::System.Data.DataColumn("Quote ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuote_ID);
-                this.columnProject_ID = new global::System.Data.DataColumn("Project ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProject_ID);
                 this.columncustomer_ref = new global::System.Data.DataColumn("customer_ref", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncustomer_ref);
                 this.columnsite_ref = new global::System.Data.DataColumn("site_ref", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsite_ref);
-                this.columnquote_status = new global::System.Data.DataColumn("quote_status", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnquote_status);
                 this.columnproject_ref = new global::System.Data.DataColumn("project_ref", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproject_ref);
-                this.columnItem_Date = new global::System.Data.DataColumn("Item Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnItem_Date);
-                this.columnTotal_Cost = new global::System.Data.DataColumn("Total Cost", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Cost);
-                this.columnDoor_Type = new global::System.Data.DataColumn("Door Type", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDoor_Type);
+                this.columnquote_status = new global::System.Data.DataColumn("quote_status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnquote_status);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnproject_notes = new global::System.Data.DataColumn("project_notes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproject_notes);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnQuote_ID}, false));
-                this.columnCreated_By.MaxLength = 30;
-                this.columnQuote_ID.Unique = true;
+                                this.columnProject_ID}, true));
                 this.columnProject_ID.AllowDBNull = false;
+                this.columnProject_ID.Unique = true;
+                this.columnQuote_ID.AllowDBNull = false;
+                this.columnDoor_Reference.MaxLength = 50;
+                this.columnCreated_By.MaxLength = 50;
                 this.columncustomer_ref.MaxLength = 50;
                 this.columnsite_ref.MaxLength = 50;
-                this.columnquote_status.MaxLength = 50;
                 this.columnproject_ref.MaxLength = 50;
+                this.columnquote_status.MaxLength = 50;
+                this.columnproject_notes.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -637,7 +705,7 @@ namespace JodanQuote.Datasource {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dt_quote ds = new dt_quote();
+                DT_Quote ds = new DT_Quote();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -712,17 +780,23 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Date_Created {
+            public int Project_ID {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableDT_Quote_Items.Date_CreatedColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Date Created\' in table \'DT_Quote_Items\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableDT_Quote_Items.Project_IDColumn]));
                 }
                 set {
-                    this[this.tableDT_Quote_Items.Date_CreatedColumn] = value;
+                    this[this.tableDT_Quote_Items.Project_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Quote_ID {
+                get {
+                    return ((int)(this[this.tableDT_Quote_Items.Quote_IDColumn]));
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Quote_IDColumn] = value;
                 }
             }
             
@@ -760,6 +834,86 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Date_Created {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDT_Quote_Items.Date_CreatedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date Created\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Date_CreatedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Door_Type {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Quote_Items.Door_TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Door Type\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Door_TypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Door_Reference {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Quote_Items.Door_ReferenceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Door Reference\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Door_ReferenceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double Total_Cost {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Quote_Items.Total_CostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total Cost\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Total_CostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Item_Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDT_Quote_Items.Item_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Item Date\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Item_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Created_By {
                 get {
                     try {
@@ -771,33 +925,6 @@ namespace JodanQuote.Datasource {
                 }
                 set {
                     this[this.tableDT_Quote_Items.Created_ByColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Quote_ID {
-                get {
-                    try {
-                        return ((int)(this[this.tableDT_Quote_Items.Quote_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quote ID\' in table \'DT_Quote_Items\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Quote_Items.Quote_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Project_ID {
-                get {
-                    return ((int)(this[this.tableDT_Quote_Items.Project_IDColumn]));
-                }
-                set {
-                    this[this.tableDT_Quote_Items.Project_IDColumn] = value;
                 }
             }
             
@@ -835,22 +962,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string quote_status {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_Quote_Items.quote_statusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'quote_status\' in table \'DT_Quote_Items\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_Quote_Items.quote_statusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string project_ref {
                 get {
                     try {
@@ -867,62 +978,50 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Item_Date {
+            public string quote_status {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDT_Quote_Items.Item_DateColumn]));
+                        return ((string)(this[this.tableDT_Quote_Items.quote_statusColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Item Date\' in table \'DT_Quote_Items\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'quote_status\' in table \'DT_Quote_Items\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Quote_Items.Item_DateColumn] = value;
+                    this[this.tableDT_Quote_Items.quote_statusColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Total_Cost {
+            public int ID {
                 get {
                     try {
-                        return ((double)(this[this.tableDT_Quote_Items.Total_CostColumn]));
+                        return ((int)(this[this.tableDT_Quote_Items.IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Total Cost\' in table \'DT_Quote_Items\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'DT_Quote_Items\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Quote_Items.Total_CostColumn] = value;
+                    this[this.tableDT_Quote_Items.IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Door_Type {
+            public string project_notes {
                 get {
                     try {
-                        return ((int)(this[this.tableDT_Quote_Items.Door_TypeColumn]));
+                        return ((string)(this[this.tableDT_Quote_Items.project_notesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Door Type\' in table \'DT_Quote_Items\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'project_notes\' in table \'DT_Quote_Items\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_Quote_Items.Door_TypeColumn] = value;
+                    this[this.tableDT_Quote_Items.project_notesColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDate_CreatedNull() {
-                return this.IsNull(this.tableDT_Quote_Items.Date_CreatedColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDate_CreatedNull() {
-                this[this.tableDT_Quote_Items.Date_CreatedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -951,6 +1050,66 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDate_CreatedNull() {
+                return this.IsNull(this.tableDT_Quote_Items.Date_CreatedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDate_CreatedNull() {
+                this[this.tableDT_Quote_Items.Date_CreatedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDoor_TypeNull() {
+                return this.IsNull(this.tableDT_Quote_Items.Door_TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDoor_TypeNull() {
+                this[this.tableDT_Quote_Items.Door_TypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDoor_ReferenceNull() {
+                return this.IsNull(this.tableDT_Quote_Items.Door_ReferenceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDoor_ReferenceNull() {
+                this[this.tableDT_Quote_Items.Door_ReferenceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTotal_CostNull() {
+                return this.IsNull(this.tableDT_Quote_Items.Total_CostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTotal_CostNull() {
+                this[this.tableDT_Quote_Items.Total_CostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsItem_DateNull() {
+                return this.IsNull(this.tableDT_Quote_Items.Item_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetItem_DateNull() {
+                this[this.tableDT_Quote_Items.Item_DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCreated_ByNull() {
                 return this.IsNull(this.tableDT_Quote_Items.Created_ByColumn);
             }
@@ -959,18 +1118,6 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCreated_ByNull() {
                 this[this.tableDT_Quote_Items.Created_ByColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsQuote_IDNull() {
-                return this.IsNull(this.tableDT_Quote_Items.Quote_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetQuote_IDNull() {
-                this[this.tableDT_Quote_Items.Quote_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -999,18 +1146,6 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isquote_statusNull() {
-                return this.IsNull(this.tableDT_Quote_Items.quote_statusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setquote_statusNull() {
-                this[this.tableDT_Quote_Items.quote_statusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isproject_refNull() {
                 return this.IsNull(this.tableDT_Quote_Items.project_refColumn);
             }
@@ -1023,38 +1158,38 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsItem_DateNull() {
-                return this.IsNull(this.tableDT_Quote_Items.Item_DateColumn);
+            public bool Isquote_statusNull() {
+                return this.IsNull(this.tableDT_Quote_Items.quote_statusColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetItem_DateNull() {
-                this[this.tableDT_Quote_Items.Item_DateColumn] = global::System.Convert.DBNull;
+            public void Setquote_statusNull() {
+                this[this.tableDT_Quote_Items.quote_statusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTotal_CostNull() {
-                return this.IsNull(this.tableDT_Quote_Items.Total_CostColumn);
+            public bool IsIDNull() {
+                return this.IsNull(this.tableDT_Quote_Items.IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTotal_CostNull() {
-                this[this.tableDT_Quote_Items.Total_CostColumn] = global::System.Convert.DBNull;
+            public void SetIDNull() {
+                this[this.tableDT_Quote_Items.IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDoor_TypeNull() {
-                return this.IsNull(this.tableDT_Quote_Items.Door_TypeColumn);
+            public bool Isproject_notesNull() {
+                return this.IsNull(this.tableDT_Quote_Items.project_notesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDoor_TypeNull() {
-                this[this.tableDT_Quote_Items.Door_TypeColumn] = global::System.Convert.DBNull;
+            public void Setproject_notesNull() {
+                this[this.tableDT_Quote_Items.project_notesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1093,7 +1228,7 @@ namespace JodanQuote.Datasource {
         }
     }
 }
-namespace JodanQuote.Datasource.dt_quoteTableAdapters {
+namespace JodanQuote.Datasource.DT_QuoteTableAdapters {
     
     
     /// <summary>
@@ -1105,7 +1240,7 @@ namespace JodanQuote.Datasource.dt_quoteTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ada_quote : global::System.ComponentModel.Component {
+    public partial class ada_quote_items : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1119,7 +1254,7 @@ namespace JodanQuote.Datasource.dt_quoteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public ada_quote() {
+        public ada_quote_items() {
             this.ClearBeforeFill = true;
         }
         
@@ -1136,7 +1271,7 @@ namespace JodanQuote.Datasource.dt_quoteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public global::System.Data.SqlClient.SqlConnection Connection {
+        internal global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -1217,19 +1352,22 @@ namespace JodanQuote.Datasource.dt_quoteTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DT_Quote_Items";
-            tableMapping.ColumnMappings.Add("Date Created", "Date Created");
+            tableMapping.ColumnMappings.Add("Project ID", "Project ID");
+            tableMapping.ColumnMappings.Add("Quote ID", "Quote ID");
             tableMapping.ColumnMappings.Add("Item ID", "Item ID");
             tableMapping.ColumnMappings.Add("Revision Number", "Revision Number");
+            tableMapping.ColumnMappings.Add("Date Created", "Date Created");
+            tableMapping.ColumnMappings.Add("Door Type", "Door Type");
+            tableMapping.ColumnMappings.Add("Door Reference", "Door Reference");
+            tableMapping.ColumnMappings.Add("Total Cost", "Total Cost");
+            tableMapping.ColumnMappings.Add("Item Date", "Item Date");
             tableMapping.ColumnMappings.Add("Created By", "Created By");
-            tableMapping.ColumnMappings.Add("Quote ID", "Quote ID");
-            tableMapping.ColumnMappings.Add("Project ID", "Project ID");
             tableMapping.ColumnMappings.Add("customer_ref", "customer_ref");
             tableMapping.ColumnMappings.Add("site_ref", "site_ref");
-            tableMapping.ColumnMappings.Add("quote_status", "quote_status");
             tableMapping.ColumnMappings.Add("project_ref", "project_ref");
-            tableMapping.ColumnMappings.Add("Item Date", "Item Date");
-            tableMapping.ColumnMappings.Add("Total Cost", "Total Cost");
-            tableMapping.ColumnMappings.Add("Door Type", "Door Type");
+            tableMapping.ColumnMappings.Add("quote_status", "quote_status");
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("project_notes", "project_notes");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1237,8 +1375,8 @@ namespace JodanQuote.Datasource.dt_quoteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;Persist Security In" +
-                "fo=True;User ID=sa;Password=Dodid1";
+            this._connection.ConnectionString = "Data Source=DESIGNSVR3\\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password" +
+                "=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1247,9 +1385,9 @@ namespace JodanQuote.Datasource.dt_quoteTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        [Item ID], [Revision Number], [Date Created], [Created By], [Quote ID], [Project ID], customer_ref, [Door Type], site_ref, quote_status, project_ref, [Item Date], 
-                         [Total Cost]
-FROM            c_view_project_quotation
+            this._commandCollection[0].CommandText = @"SELECT        [Project ID], [Quote ID], [Item ID], [Revision Number], [Date Created], [Door Type], [Door Reference], [Total Cost], [Item Date], [Created By], customer_ref, site_ref, 
+                         project_ref, quote_status, ID, project_notes
+FROM            C_View_Project_Quotation
 WHERE        ([Project ID] = @project_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Project ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1259,7 +1397,7 @@ WHERE        ([Project ID] = @project_id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dt_quote.DT_Quote_ItemsDataTable dataTable, int project_id) {
+        public virtual int Fill(DT_Quote.DT_Quote_ItemsDataTable dataTable, int project_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(project_id));
             if ((this.ClearBeforeFill == true)) {
@@ -1273,10 +1411,10 @@ WHERE        ([Project ID] = @project_id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dt_quote.DT_Quote_ItemsDataTable GetData(int project_id) {
+        public virtual DT_Quote.DT_Quote_ItemsDataTable GetData(int project_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(project_id));
-            dt_quote.DT_Quote_ItemsDataTable dataTable = new dt_quote.DT_Quote_ItemsDataTable();
+            DT_Quote.DT_Quote_ItemsDataTable dataTable = new DT_Quote.DT_Quote_ItemsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1350,7 +1488,7 @@ WHERE        ([Project ID] = @project_id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(dt_quote dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DT_Quote dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1360,7 +1498,7 @@ WHERE        ([Project ID] = @project_id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(dt_quote dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DT_Quote dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1370,7 +1508,7 @@ WHERE        ([Project ID] = @project_id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(dt_quote dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DT_Quote dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1404,7 +1542,7 @@ WHERE        ([Project ID] = @project_id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(dt_quote dataSet) {
+        public virtual int UpdateAll(DT_Quote dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

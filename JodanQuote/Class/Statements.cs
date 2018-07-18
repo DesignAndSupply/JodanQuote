@@ -25,7 +25,7 @@ namespace Statements
 
         public static string search_quote = "SELECT  [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE[project id] = @project_id AND jodan_y_n = @jodan_Y_N Order By[Project ID] Desc";
 
-                
+      
         public static string search_quote_customer_reference = "SELECT [Project ID], [Project Reference],[Customer Name], [Date Created],[Number Of Items],[Total Value]From C_view_item_count WHERE [project id] = @project_id  AND  [Customer Name]   like  '%' + @customer + '%' AND jodan_y_n = @jodan_Y_N " +
                                                      "AND [Project Reference]   like  '%' + @Reference + '%'Order By[Project ID] Desc";
 
@@ -52,7 +52,7 @@ namespace Statements
 
         //delete statements
 
-        public static string delete_quote_item = "DELETE From dbo.item Where Item_id = @item_id AND project_id = @project_Id ";
+        public static string delete_quote_item = "DELETE From dbo.item Where id = @id ";
         public static string delete_item_hardware= "DELETE From dbo.item_hardware Where ID = @ID ";
         public static string delete_item_addon= "DELETE From dbo.item_add_ons Where ID = @ID ";
         //Lookup Values
@@ -65,7 +65,7 @@ namespace Statements
         public static string select_customer = "SELECT  * From C_View_Jodan_customer";
         public static string select_item_details = "SELECT structual_op_height,structual_op_width,frame_width,frame_height FROM dbo.item WHERE project_id =@project_id AND item_id = @item_id";
         public static string copy_project = " Select * From dbo.project Where id =@project_id";
-        public static string copy_item = " Select * From dbo.item Where Item_id =@item_id AND project_id = @project_Id";
+        public static string copy_item = " Select * From dbo.item Where id =@id";
         public static string copy_item_convert = " Select * From dbo.C_View_Item_Max_revision Where project_id = @project_Id";
         public static string copy_hardware = "SELECT [Hardware Description], [Hardware ID],[Hardware Cost],[Quantity],[Total Cost] from C_VIEW_ITEM_HARDWARE WHERE [Item Hardware ID] = @ID";
         public static string Select_materials = "SELECT description, material_id FROM C_View_Item_Material";
@@ -76,7 +76,7 @@ namespace Statements
                                            "Values (@item_id ,@project_id , @item_date, @revision_id,@material_id,@finish_id,@door_ref,@door_type,@door_style,@structual_op_height,@structual_op_width,@frame_width,@frame_height,@finish_description,@material_thickness,@created_by," +
                                            "@markup_material,@markup_hardware,@labour_rate,@hardware_cost,@material_cost,@labour_cost,@oaint_cost,@total_cost)";
         public static string select_setting = "SELECT markup_hardware, markup_material, labour_rate from dbo.setting WHERE ID = 1";
-        public static string update_project = "Update dbo.project SET project_ref = @project_ref, quote_status = @quote_status Where id = @project_id";
+        public static string update_project = "Update dbo.project SET project_ref = @project_ref, quote_status = @quote_status, project_notes = @project_notes Where id = @project_id";
         public static string update_quotation_item = "Update dbo.item SET structual_op_height = @structure_height, structual_op_width = @structure_width, fire_rating_cost = @fire_rating_cost, security_rating_cost = @security_rating_cost,jamb_style_id = @jamb_style_id, jamb_width = @jamb_width, jamb_height = @jamb_height," +
                                                      "frame_height = @frame_height, frame_width = @frame_width , door_type_id = @door_type, finish_id = @finish_id, material_id = @material_id, fire_rating_id = @fire_id, security_rating_id = @security_rating_id, material_thickness = @material_thickness," +
                                                      "markup_hardware = @markup_hardware, markup_material = @markup_material, labour_rate = @labour_rate, hardware_cost = @hardware_cost, material_cost = @material_cost, labour_cost= @labour_cost, paint_cost = @paint_cost, total_cost = @total_cost " +
@@ -85,13 +85,13 @@ namespace Statements
         public static string insert_hardware = "Insert into dbo.item_hardware(item_id,hardware_id,hardware_description,hardware_cost,quantity,total_cost) Values (@id,@hardware_id,@hardware_description,@hardware_cost,@quantity,@total_cost)";
         public static string insert_add_on = "	INSERT INTO add_ons (item_id,add_on_id,add_on_width,add_on_height,material_id,material_thickness,add_on_material_id,material_cost,labour_hours,labour_cost,position,removable,powder_coated,powder_coat_cost,qty,unit_material_cost)" +
                                                   "VALUES (@quotation_id, @add_on_id, @add_on_width, @add_on_height, @material_id, @material_thickness,  @add_on_material_id, @material_cost, @labour_hours, @labour_cost, @position,@removable, @powder_coated, @powder_coat_cost, @qty, @unit_material_cost)";
-        public static string insert_copied_item = "Insert into dbo.item (project_id,item_id ,order_id , item_date ,material_id,finish_id,door_ref ,door_type_id, door_style, structual_op_height, structual_op_width, frame_width, frame_height,finish_description,material_thickness,total_cost,created_by,revision_id,markup_material,material_cost,markup_hardware,hardware_cost,labour_rate,labour_cost) " +
-                                                  "Values (@project_id,@item_id,@order_id ,@item_date ,@material_id,@finish_id, @door_ref ,@door_type, @door_style, @structual_op_height, @structual_op_width, @frame_width, @frame_height,@finish_description,@material_thickness, @total_cost,@created_by,1,@markup_material,@material_cost,@markup_hardware,@hardware_cost,@labour_rate,@labour_cost)";
+        public static string insert_copied_item = "Insert into dbo.item (project_id,item_id ,order_id , item_date ,material_id,finish_id,door_ref ,door_type_id, door_style, structual_op_height, structual_op_width, frame_width, frame_height,finish_description,material_thickness,created_by,revision_id,markup_material,material_cost,markup_hardware,hardware_cost,labour_rate,labour_cost,converted_cost,total_cost) " +
+                                                  "Values (@project_id,@item_id,@order_id ,@item_date ,@material_id,@finish_id, @door_ref ,@door_type, @door_style, @structual_op_height, @structual_op_width, @frame_width, @frame_height,@finish_description,@material_thickness, @created_by,1,@markup_material,@material_cost,@markup_hardware,@hardware_cost,@labour_rate,@labour_cost,@converted_cost,@total_cost)";
         public static string insert_copied_project = "Insert into dbo.project (customer_ref,site_ref,project_ref,date_created,quote_status,jodan_y_N) Values (@customer_ref,@site_ref,@project_ref,@date_created,@quote_status,0)";
 
         public static string update_settings = "Insert into dbo.Settings(markup_hardware,markup_material,labour_rate,single_extra,double_extra,single_flood_extra,double_flood_extra,date_modified) "+
                                                  "Values(@markup_hardware,@markup_material,@labour_rate,@single_extra,@double_extra,@single_flood_extra,@double_flood_extra,@date_modified)";
-
+        public static string update_stock = "Update dbo.Stock Set jodan_stock = 1 WHERE id = @id";
         //email
 
         public static string select_email_recipients = "Select name AS [Name], email As [Email] From Dbo.email_List";

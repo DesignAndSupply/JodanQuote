@@ -38,8 +38,14 @@ namespace Connection
             dsl_flood_quote.Open();
             return dsl_flood_quote;
         }
-              
-     
+
+        public static SqlConnection GetConnection_dsl()
+        {
+            string connection_string = "Data Source = 192.168.0.150\\SQLEXPRESS; Initial Catalog = dsl; Integrated Security = False; User ID = sa; Password = Dodid1";
+            SqlConnection user_database = new SqlConnection(connection_string);
+            user_database.Open();
+            return user_database;
+        }
 
         public static SqlConnection GetConnection_dsl_fitting()
         {

@@ -1,11 +1,17 @@
-﻿namespace JodanQuote.Other
+﻿namespace JodanQuote.Datasource
 {
+
+
+    partial class DT_Quote
+    {
+    }
 }
-namespace JodanQuote.Datasource
+
+namespace JodanQuote.Datasource.DT_QuoteTableAdapters
 {
 
 
-    public partial class dt_quote
+    public partial class ada_quote_items
     {
     }
 }

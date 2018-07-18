@@ -868,16 +868,23 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        id, LEFT(Description, 25) AS Description, Cost, jodan_stock\r\nFROM  " +
-                "          c_view_hardware";
+                "          c_view_hardware\r\nwhere jodan_stock = @jodan_stock";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jodan_stock", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "jodan_stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DT_hardware.c_view_hardwareDataTable dataTable) {
+        public virtual int Fill(DT_hardware.c_view_hardwareDataTable dataTable, global::System.Nullable<short> jodan_stock) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((jodan_stock.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((short)(jodan_stock.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -889,8 +896,14 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DT_hardware.c_view_hardwareDataTable GetData() {
+        public virtual DT_hardware.c_view_hardwareDataTable GetData(global::System.Nullable<short> jodan_stock) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((jodan_stock.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((short)(jodan_stock.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             DT_hardware.c_view_hardwareDataTable dataTable = new DT_hardware.c_view_hardwareDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

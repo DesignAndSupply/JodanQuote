@@ -18,9 +18,16 @@ namespace JodanQuote
     {
         public FrmSettings()
         {
+           
             InitializeComponent();
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+
+            SqlDataAdapter hardware = new SqlDataAdapter("SELECT id, LEFT(Description, 25) AS Description, Cost  FROM c_view_hardware WHERE(jodan_stock IS NULL)", conn);
+            DataTable dt = new DataTable();
+            hardware.Fill(dt);
+            grid_stock.DataSource = dt;
             this.ada_setting.Fill(this.dT_Settings.DT_Setting);
-            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware);
+ 
             Format();
         }
 
@@ -32,11 +39,17 @@ namespace JodanQuote
             grid_settings.ColumnHeadersDefaultCellStyle.BackColor = Color.CornflowerBlue;
             grid_settings.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_settings.EnableHeadersVisualStyles = false;
-            grid_stock.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_stock.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+            grid_stock.ColumnHeadersDefaultCellStyle.ForeColor = Color.AliceBlue;
+            grid_stock.ColumnHeadersDefaultCellStyle.BackColor = Color.CornflowerBlue;
+            grid_stock.DefaultCellStyle.ForeColor = Color.AliceBlue;
             grid_stock.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_stock.EnableHeadersVisualStyles = false;
-            grid_stock.Columns["id"].Visible = false;
+            grid_stock.Columns["ID"].Visible = false;
+            grid_stock.Columns["Cost"].DefaultCellStyle.Format = "C2";
+            grid_stock.Columns["chk_jodan"].DefaultCellStyle.Format = "C2";
+            grid_stock.Columns["chk_jodan"].DisplayIndex = grid_stock.ColumnCount - 1;
+            
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -53,6 +66,22 @@ namespace JodanQuote
             update_settings.Parameters.AddWithValue("@date_modified",DateTime.Now);
             update_settings.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
+
+            SqlConnection conn2 = ConnectionClass.GetConnection_orderdatabase();
+            for (int i = 0; i < grid_stock.Rows.Count; i++)
+            {
+                if (grid_stock.Rows[i].Cells["chk_jodan"].Value == chk_jodan.TrueValue)
+                {
+
+                    SqlCommand update_stock = new SqlCommand(Statementsclass.update_stock, conn2);
+                    update_stock.Parameters.AddWithValue("@id", grid_stock.Rows[i].Cells["ID"].Value);
+                    update_stock.ExecuteNonQuery();
+
+
+                }
+            }
+
+            ConnectionClass.Dispose_connection(conn2);
 
 
             MessageBox.Show("   Settings Successfully Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
