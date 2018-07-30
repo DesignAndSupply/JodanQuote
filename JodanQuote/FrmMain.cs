@@ -17,6 +17,7 @@ namespace JodanQuote
     public partial class FrmMain : Form
     {
         DataTable dt_quote = new DataTable();
+
         public FrmMain()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace JodanQuote
             Format();
           
         }
+
         void Format()
         {
           
@@ -34,10 +36,12 @@ namespace JodanQuote
             grid_quote_list.EnableHeadersVisualStyles = false;
             btn_open.DisplayIndex = grid_quote_list.ColumnCount - 1;
             grid_quote_list.Columns["Project ID"].FillWeight = 52;
-            grid_quote_list.Columns["Project ID"].HeaderText = "  Project    ID";
+            grid_quote_list.Columns["Project ID"].HeaderText = "  Project    Number";
             grid_quote_list.Columns["Number Of Items"].FillWeight = 53;
+            grid_quote_list.Columns["Number Of Items"].HeaderText = " Number  Of Items";
             grid_quote_list.Columns["Total Value"].FillWeight = 40;
             grid_quote_list.Columns["Total Value"].DefaultCellStyle.NullValue = "£0";
+            grid_quote_list.Columns["Total Value"].HeaderText = " Total  Value";
             grid_quote_list.Columns["Project Reference"].FillWeight = 68;
             grid_quote_list.Columns["Date Created"].FillWeight = 53;
             grid_quote_list.Columns["Customer Name"].FillWeight = 110;
@@ -193,7 +197,7 @@ namespace JodanQuote
                 {
 
                     int i = e.RowIndex;
-                    //Valuesclass.quote_id = Convert.ToInt32(dt_quote.Rows[i]["Quote ID"].ToString());
+                    Valuesclass.new_item_identifier = 0; 
                     Valuesclass.customer_name = grid_quote_list.Rows[i].Cells["Customer Name"].Value.ToString();
                     Valuesclass.project_id = Convert.ToInt32(grid_quote_list.Rows[i].Cells["Project ID"].Value);
                     FrmQuote quote = new FrmQuote();
@@ -241,7 +245,7 @@ namespace JodanQuote
                 read_max_quote_id.Close();
             }
 
-
+            Valuesclass.new_item_identifier = 1;
             Valuesclass.customer_account_ref = "JODAN CONTRACTS LTD                                         ";
             Valuesclass.customer_name = "JODAN CONTRACTS LTD                                         ";
             SqlCommand insert_new_project = new SqlCommand(Statementsclass.insert_new_project, conn2);
@@ -255,12 +259,6 @@ namespace JodanQuote
             project.Show();
         }
 
-    
-          
-
-  
-        
-
         private void txt_quote_id_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
@@ -268,7 +266,6 @@ namespace JodanQuote
                 Search();
             }
         }
-
 
         private void txt_customer_KeyDown(object sender, KeyEventArgs e)
         {

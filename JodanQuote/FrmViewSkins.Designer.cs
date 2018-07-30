@@ -61,7 +61,6 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Format = "C2";
             dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
@@ -69,7 +68,7 @@
             this.grid_skins.DefaultCellStyle = dataGridViewCellStyle2;
             this.grid_skins.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_skins.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_skins.Location = new System.Drawing.Point(12, 40);
+            this.grid_skins.Location = new System.Drawing.Point(13, 24);
             this.grid_skins.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_skins.MaximumSize = new System.Drawing.Size(4443, 150);
             this.grid_skins.Name = "grid_skins";
@@ -85,7 +84,7 @@
             this.grid_skins.RowHeadersVisible = false;
             this.grid_skins.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_skins.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_skins.Size = new System.Drawing.Size(992, 63);
+            this.grid_skins.Size = new System.Drawing.Size(1079, 97);
             this.grid_skins.TabIndex = 72;
             // 
             // FrmViewSkins
@@ -93,7 +92,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1018, 149);
+            this.ClientSize = new System.Drawing.Size(1105, 149);
             this.Controls.Add(this.grid_skins);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmViewSkins";

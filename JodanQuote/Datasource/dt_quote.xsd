@@ -12,8 +12,7 @@
               <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.C_View_Project_Quotation" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [Project ID], [Quote ID], [Item ID], [Revision Number], [Date Created], [Door Type], [Door Reference], [Total Cost], [Item Date], [Created By], customer_ref, site_ref, 
-                         project_ref, quote_status, ID, project_notes
+                    <CommandText>SELECT     *
 FROM            C_View_Project_Quotation
 WHERE        ([Project ID] = @project_id)</CommandText>
                     <Parameters>
@@ -40,6 +39,7 @@ WHERE        ([Project ID] = @project_id)</CommandText>
               <Mapping SourceColumn="quote_status" DataSetColumn="quote_status" />
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="project_notes" DataSetColumn="project_notes" />
+              <Mapping SourceColumn="item_notes" DataSetColumn="item_notes" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -51,11 +51,11 @@ WHERE        ([Project ID] = @project_id)</CommandText>
   <xs:element name="DT_Quote" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Quote" msprop:Generator_UserDSName="DT_Quote">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_Quote_Items" msprop:Generator_TableClassName="DT_Quote_ItemsDataTable" msprop:Generator_TableVarName="tableDT_Quote_Items" msprop:Generator_RowChangedName="DT_Quote_ItemsRowChanged" msprop:Generator_TablePropName="DT_Quote_Items" msprop:Generator_RowDeletingName="DT_Quote_ItemsRowDeleting" msprop:Generator_RowChangingName="DT_Quote_ItemsRowChanging" msprop:Generator_RowEvHandlerName="DT_Quote_ItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Quote_ItemsRowDeleted" msprop:Generator_RowClassName="DT_Quote_ItemsRow" msprop:Generator_UserTableName="DT_Quote_Items" msprop:Generator_RowEvArgName="DT_Quote_ItemsRowChangeEvent">
+        <xs:element name="DT_Quote_Items" msprop:Generator_TableClassName="DT_Quote_ItemsDataTable" msprop:Generator_TableVarName="tableDT_Quote_Items" msprop:Generator_TablePropName="DT_Quote_Items" msprop:Generator_RowDeletingName="DT_Quote_ItemsRowDeleting" msprop:Generator_RowChangingName="DT_Quote_ItemsRowChanging" msprop:Generator_RowEvHandlerName="DT_Quote_ItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Quote_ItemsRowDeleted" msprop:Generator_UserTableName="DT_Quote_Items" msprop:Generator_RowChangedName="DT_Quote_ItemsRowChanged" msprop:Generator_RowEvArgName="DT_Quote_ItemsRowChangeEvent" msprop:Generator_RowClassName="DT_Quote_ItemsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Project_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnProject_ID" msprop:Generator_ColumnPropNameInRow="Project_ID" msprop:Generator_ColumnPropNameInTable="Project_IDColumn" msprop:Generator_UserColumnName="Project ID" type="xs:int" />
-              <xs:element name="Quote_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnQuote_ID" msprop:Generator_ColumnPropNameInRow="Quote_ID" msprop:Generator_ColumnPropNameInTable="Quote_IDColumn" msprop:Generator_UserColumnName="Quote ID" type="xs:int" />
+              <xs:element name="Quote_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnQuote_ID" msprop:Generator_ColumnPropNameInRow="Quote_ID" msprop:Generator_ColumnPropNameInTable="Quote_IDColumn" msprop:Generator_UserColumnName="Quote ID" type="xs:int" minOccurs="0" />
               <xs:element name="Item_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnItem_ID" msprop:Generator_ColumnPropNameInRow="Item_ID" msprop:Generator_ColumnPropNameInTable="Item_IDColumn" msprop:Generator_UserColumnName="Item ID" type="xs:int" minOccurs="0" />
               <xs:element name="Revision_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnRevision_Number" msprop:Generator_ColumnPropNameInRow="Revision_Number" msprop:Generator_ColumnPropNameInTable="Revision_NumberColumn" msprop:Generator_UserColumnName="Revision Number" type="xs:int" minOccurs="0" />
               <xs:element name="Date_x0020_Created" msprop:Generator_ColumnVarNameInTable="columnDate_Created" msprop:Generator_ColumnPropNameInRow="Date_Created" msprop:Generator_ColumnPropNameInTable="Date_CreatedColumn" msprop:Generator_UserColumnName="Date Created" type="xs:dateTime" minOccurs="0" />
@@ -109,6 +109,13 @@ WHERE        ([Project ID] = @project_id)</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="item_notes" msprop:Generator_ColumnVarNameInTable="columnitem_notes" msprop:Generator_ColumnPropNameInRow="item_notes" msprop:Generator_ColumnPropNameInTable="item_notesColumn" msprop:Generator_UserColumnName="item_notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

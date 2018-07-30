@@ -85,9 +85,24 @@
             this.txt_address_1 = new System.Windows.Forms.TextBox();
             this.grid_addon = new System.Windows.Forms.DataGridView();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labour_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addon_total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_delete_addon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.add_on_item_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_width = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_height = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_material_thickness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_labour_hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_labour_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_removable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_powder_coated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_powder_coat_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_material_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addon_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cViewItemAddOnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Item_Add_On = new JodanQuote.Datasource.DT_Item_Add_On();
@@ -111,17 +126,19 @@
             this.txt_structual_height = new System.Windows.Forms.TextBox();
             this.txt_structual_width = new System.Windows.Forms.TextBox();
             this.cmb_material_thickness = new System.Windows.Forms.ComboBox();
-            this.cmb_jam_style = new System.Windows.Forms.ComboBox();
-            this.cmb_material = new System.Windows.Forms.ComboBox();
             this.cmb_material_edit = new System.Windows.Forms.ComboBox();
             this.dTmaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Material = new JodanQuote.Datasource.DT_Material();
+            this.cmb_material_thickness_edit = new System.Windows.Forms.ComboBox();
+            this.cmb_door_type = new System.Windows.Forms.ComboBox();
             this.cmb_door_type_edit = new System.Windows.Forms.ComboBox();
             this.dTdoorstylesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Door_Type = new JodanQuote.Datasource.DT_Door_Type();
             this.cmb_jam_style_edit = new System.Windows.Forms.ComboBox();
-            this.cmb_material_thickness_edit = new System.Windows.Forms.ComboBox();
-            this.cmb_door_type = new System.Windows.Forms.ComboBox();
+            this.cViewJamStylesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dT_Jam_Styles = new JodanQuote.Datasource.DT_Jam_Styles();
+            this.cmb_jam_style = new System.Windows.Forms.ComboBox();
+            this.cmb_material = new System.Windows.Forms.ComboBox();
             this.dtfinishBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_finish = new JodanQuote.Datasource.DT_finish();
             this.label12 = new System.Windows.Forms.Label();
@@ -134,11 +151,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.panel_handle = new System.Windows.Forms.Panel();
             this.grid_hardware_on_item = new System.Windows.Forms.DataGridView();
-            this.hardwareDescriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hardware_cost_sale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity_hardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hardware_cost_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hardwareIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_hardware = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemHardwareIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_delete_hardware = new System.Windows.Forms.DataGridViewImageColumn();
@@ -150,6 +167,8 @@
             this.ada_materials = new JodanQuote.Datasource.DT_MaterialTableAdapters.ada_materials();
             this.label20 = new System.Windows.Forms.Label();
             this.panel_total = new System.Windows.Forms.Panel();
+            this.txt_labour_total = new System.Windows.Forms.TextBox();
+            this.txt_addon_labour_hours = new System.Windows.Forms.TextBox();
             this.txt_addon = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.btn_view_skins = new System.Windows.Forms.Button();
@@ -165,8 +184,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txt_material_sales_cost = new System.Windows.Forms.TextBox();
             this.txt_hardware_sales_cost = new System.Windows.Forms.TextBox();
+            this.txt_material_labour = new System.Windows.Forms.TextBox();
             this.txt_labour_cost = new System.Windows.Forms.TextBox();
-            this.txt_labour_markup = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txt_material_cost = new System.Windows.Forms.TextBox();
@@ -199,6 +218,8 @@
             this.sALES_LEDGERTableAdapter = new JodanQuote.Datasource.DT_customerTableAdapters.SALES_LEDGERTableAdapter();
             this.ada_Hardware_Item = new JodanQuote.Datasource.Dt_Hardware_ItemTableAdapters.Ada_Hardware_Item();
             this.panel_spec = new System.Windows.Forms.Panel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txt_notes = new System.Windows.Forms.TextBox();
             this.cmb_security = new System.Windows.Forms.ComboBox();
             this.cmb_security_edit = new System.Windows.Forms.ComboBox();
             this.cViewSecurityRatingBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -211,8 +232,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.c_View_Fire_RatingsTableAdapter = new JodanQuote.Datasource.DT_RatingsTableAdapters.C_View_Fire_RatingsTableAdapter();
             this.c_View_Security_RatingTableAdapter = new JodanQuote.Datasource.DT_RatingsTableAdapters.C_View_Security_RatingTableAdapter();
-            this.dT_Jam_Styles = new JodanQuote.Datasource.DT_Jam_Styles();
-            this.cViewJamStylesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ada_Jamb_Styles = new JodanQuote.Datasource.DT_Jam_StylesTableAdapters.Ada_Jamb_Styles();
             this.ada_Item_Details = new JodanQuote.Datasource.DT_Item_DetailsTableAdapters.Ada_Item_Details();
             this.c_View_Item_Add_OnTableAdapter = new JodanQuote.Datasource.DT_Item_Add_OnTableAdapters.C_View_Item_Add_OnTableAdapter();
@@ -234,6 +253,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dT_Material)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTdoorstylesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Door_Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cViewJamStylesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_Jam_Styles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfinishBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_finish)).BeginInit();
             this.panel_addon.SuspendLayout();
@@ -246,8 +267,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cViewSecurityRatingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Ratings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cViewFireRatingsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dT_Jam_Styles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cViewJamStylesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_main
@@ -515,7 +534,7 @@
             this.cmb_finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_finish.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_finish.FormattingEnabled = true;
-            this.cmb_finish.Location = new System.Drawing.Point(168, 105);
+            this.cmb_finish.Location = new System.Drawing.Point(168, 111);
             this.cmb_finish.Name = "cmb_finish";
             this.cmb_finish.Size = new System.Drawing.Size(177, 21);
             this.cmb_finish.TabIndex = 62;
@@ -698,9 +717,24 @@
             this.grid_addon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_addon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.descriptionDataGridViewTextBoxColumn,
-            this.qtyDataGridViewTextBoxColumn,
+            this.labour_cost,
+            this.add_on_qty,
             this.addon_total_cost,
             this.btn_delete_addon,
+            this.add_on_item_id,
+            this.add_on_id,
+            this.add_on_width,
+            this.add_on_height,
+            this.material_id,
+            this.add_on_material_thickness,
+            this.add_on_material_id,
+            this.add_on_labour_hours,
+            this.add_on_labour_cost,
+            this.add_on_position,
+            this.add_on_removable,
+            this.add_on_powder_coated,
+            this.add_on_powder_coat_cost,
+            this.add_on_material_cost,
             this.addon_id});
             this.grid_addon.DataSource = this.cViewItemAddOnBindingSource;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -713,7 +747,7 @@
             this.grid_addon.DefaultCellStyle = dataGridViewCellStyle5;
             this.grid_addon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_addon.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_addon.Location = new System.Drawing.Point(11, 19);
+            this.grid_addon.Location = new System.Drawing.Point(11, 20);
             this.grid_addon.Name = "grid_addon";
             this.grid_addon.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -742,30 +776,39 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.descriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.descriptionDataGridViewTextBoxColumn.FillWeight = 70F;
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = " Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "    Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // qtyDataGridViewTextBoxColumn
+            // labour_cost
             // 
-            this.qtyDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.qtyDataGridViewTextBoxColumn.DataPropertyName = "qty";
+            this.labour_cost.DataPropertyName = "labour_cost";
+            this.labour_cost.HeaderText = "Labour Cost";
+            this.labour_cost.Name = "labour_cost";
+            this.labour_cost.ReadOnly = true;
+            this.labour_cost.Visible = false;
+            // 
+            // add_on_qty
+            // 
+            this.add_on_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.add_on_qty.DataPropertyName = "qty";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.qtyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.qtyDataGridViewTextBoxColumn.FillWeight = 20F;
-            this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
-            this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
-            this.qtyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.add_on_qty.DefaultCellStyle = dataGridViewCellStyle3;
+            this.add_on_qty.FillWeight = 20F;
+            this.add_on_qty.HeaderText = " Qty";
+            this.add_on_qty.Name = "add_on_qty";
+            this.add_on_qty.ReadOnly = true;
             // 
             // addon_total_cost
             // 
             this.addon_total_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.addon_total_cost.DataPropertyName = "unit_material_cost";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Format = "C2";
             dataGridViewCellStyle4.NullValue = "0";
             this.addon_total_cost.DefaultCellStyle = dataGridViewCellStyle4;
-            this.addon_total_cost.FillWeight = 30F;
-            this.addon_total_cost.HeaderText = "Total Cost";
+            this.addon_total_cost.FillWeight = 50F;
+            this.addon_total_cost.HeaderText = " Total Cost";
             this.addon_total_cost.Name = "addon_total_cost";
             this.addon_total_cost.ReadOnly = true;
             // 
@@ -777,6 +820,118 @@
             this.btn_delete_addon.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete_addon.Image")));
             this.btn_delete_addon.Name = "btn_delete_addon";
             this.btn_delete_addon.ReadOnly = true;
+            // 
+            // add_on_item_id
+            // 
+            this.add_on_item_id.DataPropertyName = "item_id";
+            this.add_on_item_id.HeaderText = "";
+            this.add_on_item_id.Name = "add_on_item_id";
+            this.add_on_item_id.ReadOnly = true;
+            this.add_on_item_id.Visible = false;
+            // 
+            // add_on_id
+            // 
+            this.add_on_id.DataPropertyName = "add_on_id";
+            this.add_on_id.HeaderText = "";
+            this.add_on_id.Name = "add_on_id";
+            this.add_on_id.ReadOnly = true;
+            this.add_on_id.Visible = false;
+            // 
+            // add_on_width
+            // 
+            this.add_on_width.DataPropertyName = "add_on_width";
+            this.add_on_width.HeaderText = "";
+            this.add_on_width.Name = "add_on_width";
+            this.add_on_width.ReadOnly = true;
+            this.add_on_width.Visible = false;
+            // 
+            // add_on_height
+            // 
+            this.add_on_height.DataPropertyName = "add_on_height";
+            this.add_on_height.HeaderText = "";
+            this.add_on_height.Name = "add_on_height";
+            this.add_on_height.ReadOnly = true;
+            this.add_on_height.Visible = false;
+            // 
+            // material_id
+            // 
+            this.material_id.DataPropertyName = "material_id";
+            this.material_id.HeaderText = "";
+            this.material_id.Name = "material_id";
+            this.material_id.ReadOnly = true;
+            this.material_id.Visible = false;
+            // 
+            // add_on_material_thickness
+            // 
+            this.add_on_material_thickness.DataPropertyName = "material_thickness";
+            this.add_on_material_thickness.HeaderText = "";
+            this.add_on_material_thickness.Name = "add_on_material_thickness";
+            this.add_on_material_thickness.ReadOnly = true;
+            this.add_on_material_thickness.Visible = false;
+            // 
+            // add_on_material_id
+            // 
+            this.add_on_material_id.DataPropertyName = "add_on_material_id";
+            this.add_on_material_id.HeaderText = "";
+            this.add_on_material_id.Name = "add_on_material_id";
+            this.add_on_material_id.ReadOnly = true;
+            this.add_on_material_id.Visible = false;
+            // 
+            // add_on_labour_hours
+            // 
+            this.add_on_labour_hours.DataPropertyName = "labour_hours";
+            this.add_on_labour_hours.HeaderText = "";
+            this.add_on_labour_hours.Name = "add_on_labour_hours";
+            this.add_on_labour_hours.ReadOnly = true;
+            this.add_on_labour_hours.Visible = false;
+            // 
+            // add_on_labour_cost
+            // 
+            this.add_on_labour_cost.DataPropertyName = "labour_cost";
+            this.add_on_labour_cost.HeaderText = "";
+            this.add_on_labour_cost.Name = "add_on_labour_cost";
+            this.add_on_labour_cost.ReadOnly = true;
+            this.add_on_labour_cost.Visible = false;
+            // 
+            // add_on_position
+            // 
+            this.add_on_position.DataPropertyName = "position";
+            this.add_on_position.HeaderText = "";
+            this.add_on_position.Name = "add_on_position";
+            this.add_on_position.ReadOnly = true;
+            this.add_on_position.Visible = false;
+            // 
+            // add_on_removable
+            // 
+            this.add_on_removable.DataPropertyName = "removable";
+            this.add_on_removable.HeaderText = "";
+            this.add_on_removable.Name = "add_on_removable";
+            this.add_on_removable.ReadOnly = true;
+            this.add_on_removable.Visible = false;
+            // 
+            // add_on_powder_coated
+            // 
+            this.add_on_powder_coated.DataPropertyName = "powder_coated";
+            this.add_on_powder_coated.HeaderText = "";
+            this.add_on_powder_coated.Name = "add_on_powder_coated";
+            this.add_on_powder_coated.ReadOnly = true;
+            this.add_on_powder_coated.Visible = false;
+            // 
+            // add_on_powder_coat_cost
+            // 
+            this.add_on_powder_coat_cost.DataPropertyName = "powder_coat_cost";
+            this.add_on_powder_coat_cost.HeaderText = "";
+            this.add_on_powder_coat_cost.Name = "add_on_powder_coat_cost";
+            this.add_on_powder_coat_cost.ReadOnly = true;
+            this.add_on_powder_coat_cost.Visible = false;
+            // 
+            // add_on_material_cost
+            // 
+            this.add_on_material_cost.DataPropertyName = "material_cost";
+            this.add_on_material_cost.HeaderText = "";
+            this.add_on_material_cost.Name = "add_on_material_cost";
+            this.add_on_material_cost.ReadOnly = true;
+            this.add_on_material_cost.Visible = false;
             // 
             // addon_id
             // 
@@ -820,13 +975,13 @@
             this.panel_door_input.Controls.Add(this.txt_structual_height);
             this.panel_door_input.Controls.Add(this.txt_structual_width);
             this.panel_door_input.Controls.Add(this.cmb_material_thickness);
-            this.panel_door_input.Controls.Add(this.cmb_material);
             this.panel_door_input.Controls.Add(this.cmb_material_edit);
-            this.panel_door_input.Controls.Add(this.cmb_door_type_edit);
-            this.panel_door_input.Controls.Add(this.cmb_jam_style_edit);
             this.panel_door_input.Controls.Add(this.cmb_material_thickness_edit);
             this.panel_door_input.Controls.Add(this.cmb_door_type);
+            this.panel_door_input.Controls.Add(this.cmb_door_type_edit);
+            this.panel_door_input.Controls.Add(this.cmb_jam_style_edit);
             this.panel_door_input.Controls.Add(this.cmb_jam_style);
+            this.panel_door_input.Controls.Add(this.cmb_material);
             this.panel_door_input.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.panel_door_input.Location = new System.Drawing.Point(172, 352);
             this.panel_door_input.Name = "panel_door_input";
@@ -839,9 +994,9 @@
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(185, 260);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(81, 13);
+            this.label35.Size = new System.Drawing.Size(82, 13);
             this.label35.TabIndex = 88;
-            this.label35.Text = "Jamb Height:";
+            this.label35.Text = "Jamb Depth :";
             // 
             // label36
             // 
@@ -933,6 +1088,7 @@
             this.btn_dimensions.Text = "     Enter        Dimensions";
             this.btn_dimensions.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_dimensions.UseVisualStyleBackColor = false;
+            this.btn_dimensions.Visible = false;
             this.btn_dimensions.Click += new System.EventHandler(this.btn_dimensions_Click);
             // 
             // label9
@@ -992,10 +1148,10 @@
             this.txt_frame_height.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_frame_height.Location = new System.Drawing.Point(142, 137);
             this.txt_frame_height.Name = "txt_frame_height";
-            this.txt_frame_height.ReadOnly = true;
             this.txt_frame_height.Size = new System.Drawing.Size(157, 20);
             this.txt_frame_height.TabIndex = 52;
             this.txt_frame_height.Text = "0";
+            this.txt_frame_height.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_frame_height_KeyDown);
             // 
             // txt_frame_width
             // 
@@ -1004,10 +1160,10 @@
             this.txt_frame_width.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_frame_width.Location = new System.Drawing.Point(142, 109);
             this.txt_frame_width.Name = "txt_frame_width";
-            this.txt_frame_width.ReadOnly = true;
             this.txt_frame_width.Size = new System.Drawing.Size(157, 20);
             this.txt_frame_width.TabIndex = 53;
             this.txt_frame_width.Text = "0";
+            this.txt_frame_width.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_frame_width_KeyDown);
             // 
             // txt_structual_height
             // 
@@ -1016,10 +1172,10 @@
             this.txt_structual_height.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_structual_height.Location = new System.Drawing.Point(142, 81);
             this.txt_structual_height.Name = "txt_structual_height";
-            this.txt_structual_height.ReadOnly = true;
             this.txt_structual_height.Size = new System.Drawing.Size(157, 20);
             this.txt_structual_height.TabIndex = 52;
             this.txt_structual_height.Text = "0";
+            this.txt_structual_height.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_structual_height_KeyDown);
             // 
             // txt_structual_width
             // 
@@ -1028,10 +1184,11 @@
             this.txt_structual_width.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_structual_width.Location = new System.Drawing.Point(142, 53);
             this.txt_structual_width.Name = "txt_structual_width";
-            this.txt_structual_width.ReadOnly = true;
             this.txt_structual_width.Size = new System.Drawing.Size(157, 20);
             this.txt_structual_width.TabIndex = 52;
             this.txt_structual_width.Text = "0";
+            this.txt_structual_width.TextChanged += new System.EventHandler(this.txt_structual_width_TextChanged);
+            this.txt_structual_width.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_structual_width_KeyDown);
             // 
             // cmb_material_thickness
             // 
@@ -1048,37 +1205,6 @@
             this.cmb_material_thickness.TabIndex = 77;
             this.cmb_material_thickness.ValueMember = "material_thickness";
             this.cmb_material_thickness.SelectedValueChanged += new System.EventHandler(this.cmb_material_thickness_SelectedValueChanged);
-            // 
-            // cmb_jam_style
-            // 
-            this.cmb_jam_style.DataSource = this.dTItemDetailsBindingSource;
-            this.cmb_jam_style.DisplayMember = "Jamb Style";
-            this.cmb_jam_style.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_jam_style.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_jam_style.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_jam_style.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_jam_style.FormattingEnabled = true;
-            this.cmb_jam_style.Location = new System.Drawing.Point(142, 221);
-            this.cmb_jam_style.Name = "cmb_jam_style";
-            this.cmb_jam_style.Size = new System.Drawing.Size(157, 21);
-            this.cmb_jam_style.TabIndex = 84;
-            this.cmb_jam_style.ValueMember = "jamb_style_id";
-            this.cmb_jam_style.Visible = false;
-            // 
-            // cmb_material
-            // 
-            this.cmb_material.DataSource = this.dTItemDetailsBindingSource;
-            this.cmb_material.DisplayMember = "Material Description";
-            this.cmb_material.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_material.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_material.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_material.FormattingEnabled = true;
-            this.cmb_material.Location = new System.Drawing.Point(142, 165);
-            this.cmb_material.Name = "cmb_material";
-            this.cmb_material.Size = new System.Drawing.Size(157, 21);
-            this.cmb_material.TabIndex = 76;
-            this.cmb_material.ValueMember = "material_id";
             // 
             // cmb_material_edit
             // 
@@ -1107,6 +1233,42 @@
             // 
             this.dT_Material.DataSetName = "DT_Material";
             this.dT_Material.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmb_material_thickness_edit
+            // 
+            this.cmb_material_thickness_edit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTMaterialThicknessBindingSource, "thickness", true));
+            this.cmb_material_thickness_edit.DataSource = this.dTMaterialThicknessBindingSource;
+            this.cmb_material_thickness_edit.DisplayMember = "thickness";
+            this.cmb_material_thickness_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_material_thickness_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_material_thickness_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_material_thickness_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_material_thickness_edit.FormattingEnabled = true;
+            this.cmb_material_thickness_edit.Location = new System.Drawing.Point(141, 193);
+            this.cmb_material_thickness_edit.Name = "cmb_material_thickness_edit";
+            this.cmb_material_thickness_edit.Size = new System.Drawing.Size(157, 21);
+            this.cmb_material_thickness_edit.TabIndex = 78;
+            this.cmb_material_thickness_edit.ValueMember = "thickness";
+            this.cmb_material_thickness_edit.Visible = false;
+            this.cmb_material_thickness_edit.SelectedIndexChanged += new System.EventHandler(this.cmb_material_thickness_edit_SelectedIndexChanged);
+            // 
+            // cmb_door_type
+            // 
+            this.cmb_door_type.DataSource = this.dTItemDetailsBindingSource;
+            this.cmb_door_type.DisplayMember = "Door Type Description";
+            this.cmb_door_type.DropDownHeight = 70;
+            this.cmb_door_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_door_type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_door_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_door_type.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_door_type.FormattingEnabled = true;
+            this.cmb_door_type.IntegralHeight = false;
+            this.cmb_door_type.ItemHeight = 13;
+            this.cmb_door_type.Location = new System.Drawing.Point(142, 26);
+            this.cmb_door_type.Name = "cmb_door_type";
+            this.cmb_door_type.Size = new System.Drawing.Size(157, 21);
+            this.cmb_door_type.TabIndex = 81;
+            this.cmb_door_type.ValueMember = "door_type_id";
             // 
             // cmb_door_type_edit
             // 
@@ -1154,41 +1316,46 @@
             this.cmb_jam_style_edit.ValueMember = "id";
             this.cmb_jam_style_edit.SelectedValueChanged += new System.EventHandler(this.cmb_jam_style_edit_SelectedValueChanged);
             // 
-            // cmb_material_thickness_edit
+            // cViewJamStylesBindingSource
             // 
-            this.cmb_material_thickness_edit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTMaterialThicknessBindingSource, "thickness", true));
-            this.cmb_material_thickness_edit.DataSource = this.dTMaterialThicknessBindingSource;
-            this.cmb_material_thickness_edit.DisplayMember = "thickness";
-            this.cmb_material_thickness_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_material_thickness_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_material_thickness_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_material_thickness_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_material_thickness_edit.FormattingEnabled = true;
-            this.cmb_material_thickness_edit.Location = new System.Drawing.Point(141, 193);
-            this.cmb_material_thickness_edit.Name = "cmb_material_thickness_edit";
-            this.cmb_material_thickness_edit.Size = new System.Drawing.Size(157, 21);
-            this.cmb_material_thickness_edit.TabIndex = 78;
-            this.cmb_material_thickness_edit.ValueMember = "thickness";
-            this.cmb_material_thickness_edit.Visible = false;
-            this.cmb_material_thickness_edit.SelectedIndexChanged += new System.EventHandler(this.cmb_material_thickness_edit_SelectedIndexChanged);
+            this.cViewJamStylesBindingSource.DataMember = "C_View_Jam_Styles";
+            this.cViewJamStylesBindingSource.DataSource = this.dT_Jam_Styles;
             // 
-            // cmb_door_type
+            // dT_Jam_Styles
             // 
-            this.cmb_door_type.DataSource = this.dTItemDetailsBindingSource;
-            this.cmb_door_type.DisplayMember = "Door Type Description";
-            this.cmb_door_type.DropDownHeight = 70;
-            this.cmb_door_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_door_type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_door_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_door_type.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_door_type.FormattingEnabled = true;
-            this.cmb_door_type.IntegralHeight = false;
-            this.cmb_door_type.ItemHeight = 13;
-            this.cmb_door_type.Location = new System.Drawing.Point(142, 26);
-            this.cmb_door_type.Name = "cmb_door_type";
-            this.cmb_door_type.Size = new System.Drawing.Size(157, 21);
-            this.cmb_door_type.TabIndex = 81;
-            this.cmb_door_type.ValueMember = "door_type_id";
+            this.dT_Jam_Styles.DataSetName = "DT_Jam_Styles";
+            this.dT_Jam_Styles.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmb_jam_style
+            // 
+            this.cmb_jam_style.DataSource = this.dTItemDetailsBindingSource;
+            this.cmb_jam_style.DisplayMember = "Jamb Style";
+            this.cmb_jam_style.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_jam_style.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_jam_style.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_jam_style.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_jam_style.FormattingEnabled = true;
+            this.cmb_jam_style.Location = new System.Drawing.Point(142, 221);
+            this.cmb_jam_style.Name = "cmb_jam_style";
+            this.cmb_jam_style.Size = new System.Drawing.Size(157, 21);
+            this.cmb_jam_style.TabIndex = 84;
+            this.cmb_jam_style.ValueMember = "jamb_style_id";
+            this.cmb_jam_style.Visible = false;
+            // 
+            // cmb_material
+            // 
+            this.cmb_material.DataSource = this.dTItemDetailsBindingSource;
+            this.cmb_material.DisplayMember = "Material Description";
+            this.cmb_material.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_material.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_material.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_material.FormattingEnabled = true;
+            this.cmb_material.Location = new System.Drawing.Point(142, 165);
+            this.cmb_material.Name = "cmb_material";
+            this.cmb_material.Size = new System.Drawing.Size(157, 21);
+            this.cmb_material.TabIndex = 76;
+            this.cmb_material.ValueMember = "material_id";
             // 
             // dtfinishBindingSource
             // 
@@ -1204,7 +1371,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(30, 102);
+            this.label12.Location = new System.Drawing.Point(30, 114);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 63;
@@ -1219,7 +1386,7 @@
             this.cmb_finish_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_finish_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_finish_edit.FormattingEnabled = true;
-            this.cmb_finish_edit.Location = new System.Drawing.Point(168, 105);
+            this.cmb_finish_edit.Location = new System.Drawing.Point(168, 111);
             this.cmb_finish_edit.Name = "cmb_finish_edit";
             this.cmb_finish_edit.Size = new System.Drawing.Size(177, 21);
             this.cmb_finish_edit.TabIndex = 80;
@@ -1246,7 +1413,7 @@
             this.panel_addon.Controls.Add(this.grid_addon);
             this.panel_addon.Enabled = false;
             this.panel_addon.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel_addon.Location = new System.Drawing.Point(589, 373);
+            this.panel_addon.Location = new System.Drawing.Point(589, 374);
             this.panel_addon.Name = "panel_addon";
             this.panel_addon.Size = new System.Drawing.Size(380, 290);
             this.panel_addon.TabIndex = 57;
@@ -1259,7 +1426,7 @@
             this.btn_add_item.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_add_item.Image = global::JodanQuote.Properties.Resources.Add1;
             this.btn_add_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_item.Location = new System.Drawing.Point(278, 236);
+            this.btn_add_item.Location = new System.Drawing.Point(278, 239);
             this.btn_add_item.Name = "btn_add_item";
             this.btn_add_item.Size = new System.Drawing.Size(80, 37);
             this.btn_add_item.TabIndex = 72;
@@ -1275,7 +1442,7 @@
             this.btn_view_addons.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_view_addons.Image = global::JodanQuote.Properties.Resources.Search_Small_;
             this.btn_view_addons.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_view_addons.Location = new System.Drawing.Point(192, 236);
+            this.btn_view_addons.Location = new System.Drawing.Point(192, 239);
             this.btn_view_addons.Name = "btn_view_addons";
             this.btn_view_addons.Size = new System.Drawing.Size(80, 37);
             this.btn_view_addons.TabIndex = 73;
@@ -1340,11 +1507,11 @@
             this.grid_hardware_on_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.grid_hardware_on_item.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_hardware_on_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.hardwareDescriptionDataGridViewTextBoxColumn2,
+            this.description,
             this.hardware_cost_sale,
             this.quantity_hardware,
             this.hardware_cost_total,
-            this.hardwareIDDataGridViewTextBoxColumn,
+            this.id_hardware,
             this.itemHardwareIDDataGridViewTextBoxColumn1,
             this.delete_id,
             this.btn_delete_hardware});
@@ -1380,12 +1547,12 @@
             this.grid_hardware_on_item.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_on_item_CellContentClick);
             this.grid_hardware_on_item.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_on_item_CellValueChanged_1);
             // 
-            // hardwareDescriptionDataGridViewTextBoxColumn2
+            // description
             // 
-            this.hardwareDescriptionDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.hardwareDescriptionDataGridViewTextBoxColumn2.DataPropertyName = "Hardware Description";
-            this.hardwareDescriptionDataGridViewTextBoxColumn2.HeaderText = "Hardware Description";
-            this.hardwareDescriptionDataGridViewTextBoxColumn2.Name = "hardwareDescriptionDataGridViewTextBoxColumn2";
+            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.description.DataPropertyName = "Hardware Description";
+            this.description.HeaderText = "Hardware Description";
+            this.description.Name = "description";
             // 
             // hardware_cost_sale
             // 
@@ -1420,13 +1587,13 @@
             this.hardware_cost_total.HeaderText = "Total Cost";
             this.hardware_cost_total.Name = "hardware_cost_total";
             // 
-            // hardwareIDDataGridViewTextBoxColumn
+            // id_hardware
             // 
-            this.hardwareIDDataGridViewTextBoxColumn.DataPropertyName = "Hardware ID";
-            this.hardwareIDDataGridViewTextBoxColumn.HeaderText = "Hardware ID";
-            this.hardwareIDDataGridViewTextBoxColumn.Name = "hardwareIDDataGridViewTextBoxColumn";
-            this.hardwareIDDataGridViewTextBoxColumn.Visible = false;
-            this.hardwareIDDataGridViewTextBoxColumn.Width = 115;
+            this.id_hardware.DataPropertyName = "Hardware ID";
+            this.id_hardware.HeaderText = "Hardware ID";
+            this.id_hardware.Name = "id_hardware";
+            this.id_hardware.Visible = false;
+            this.id_hardware.Width = 115;
             // 
             // itemHardwareIDDataGridViewTextBoxColumn1
             // 
@@ -1492,6 +1659,8 @@
             // panel_total
             // 
             this.panel_total.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_total.Controls.Add(this.txt_labour_total);
+            this.panel_total.Controls.Add(this.txt_addon_labour_hours);
             this.panel_total.Controls.Add(this.txt_addon);
             this.panel_total.Controls.Add(this.label37);
             this.panel_total.Controls.Add(this.btn_view_skins);
@@ -1507,8 +1676,8 @@
             this.panel_total.Controls.Add(this.label26);
             this.panel_total.Controls.Add(this.txt_material_sales_cost);
             this.panel_total.Controls.Add(this.txt_hardware_sales_cost);
+            this.panel_total.Controls.Add(this.txt_material_labour);
             this.panel_total.Controls.Add(this.txt_labour_cost);
-            this.panel_total.Controls.Add(this.txt_labour_markup);
             this.panel_total.Controls.Add(this.label25);
             this.panel_total.Controls.Add(this.label24);
             this.panel_total.Controls.Add(this.txt_material_cost);
@@ -1524,12 +1693,34 @@
             this.panel_total.Size = new System.Drawing.Size(510, 260);
             this.panel_total.TabIndex = 69;
             // 
+            // txt_labour_total
+            // 
+            this.txt_labour_total.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_labour_total.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_labour_total.Location = new System.Drawing.Point(139, 83);
+            this.txt_labour_total.Name = "txt_labour_total";
+            this.txt_labour_total.Size = new System.Drawing.Size(98, 20);
+            this.txt_labour_total.TabIndex = 97;
+            this.txt_labour_total.Text = "0";
+            this.txt_labour_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_addon_labour_hours
+            // 
+            this.txt_addon_labour_hours.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_addon_labour_hours.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_addon_labour_hours.Location = new System.Drawing.Point(139, 111);
+            this.txt_addon_labour_hours.Name = "txt_addon_labour_hours";
+            this.txt_addon_labour_hours.Size = new System.Drawing.Size(98, 20);
+            this.txt_addon_labour_hours.TabIndex = 96;
+            this.txt_addon_labour_hours.Text = "0";
+            this.txt_addon_labour_hours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txt_addon
             // 
             this.txt_addon.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_addon.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "addon_cost", true));
             this.txt_addon.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_addon.Location = new System.Drawing.Point(357, 115);
+            this.txt_addon.Location = new System.Drawing.Point(357, 111);
             this.txt_addon.Name = "txt_addon";
             this.txt_addon.ReadOnly = true;
             this.txt_addon.Size = new System.Drawing.Size(98, 20);
@@ -1541,7 +1732,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(27, 118);
+            this.label37.Location = new System.Drawing.Point(27, 115);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(51, 13);
             this.label37.TabIndex = 94;
@@ -1554,7 +1745,7 @@
             this.btn_view_skins.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_view_skins.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_view_skins.Image = global::JodanQuote.Properties.Resources.Search_Small_;
-            this.btn_view_skins.Location = new System.Drawing.Point(461, 42);
+            this.btn_view_skins.Location = new System.Drawing.Point(461, 26);
             this.btn_view_skins.Name = "btn_view_skins";
             this.btn_view_skins.Size = new System.Drawing.Size(25, 28);
             this.btn_view_skins.TabIndex = 74;
@@ -1566,7 +1757,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(27, 229);
+            this.label33.Location = new System.Drawing.Point(27, 227);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(69, 13);
             this.label33.TabIndex = 93;
@@ -1577,7 +1768,7 @@
             this.txt_security.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_security.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "security_rating_cost", true));
             this.txt_security.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_security.Location = new System.Drawing.Point(357, 196);
+            this.txt_security.Location = new System.Drawing.Point(357, 195);
             this.txt_security.Name = "txt_security";
             this.txt_security.Size = new System.Drawing.Size(98, 20);
             this.txt_security.TabIndex = 91;
@@ -1599,7 +1790,7 @@
             this.txt_fire.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_fire.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "fire_rating_cost", true));
             this.txt_fire.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_fire.Location = new System.Drawing.Point(357, 168);
+            this.txt_fire.Location = new System.Drawing.Point(357, 167);
             this.txt_fire.Name = "txt_fire";
             this.txt_fire.Size = new System.Drawing.Size(98, 20);
             this.txt_fire.TabIndex = 89;
@@ -1621,7 +1812,7 @@
             this.txt_item_total.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_item_total.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "total_cost", true));
             this.txt_item_total.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_item_total.Location = new System.Drawing.Point(357, 229);
+            this.txt_item_total.Location = new System.Drawing.Point(357, 223);
             this.txt_item_total.Name = "txt_item_total";
             this.txt_item_total.ReadOnly = true;
             this.txt_item_total.Size = new System.Drawing.Size(98, 20);
@@ -1634,7 +1825,7 @@
             this.txt_paint_total.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_paint_total.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "paint_cost", true));
             this.txt_paint_total.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_paint_total.Location = new System.Drawing.Point(357, 140);
+            this.txt_paint_total.Location = new System.Drawing.Point(357, 139);
             this.txt_paint_total.Name = "txt_paint_total";
             this.txt_paint_total.ReadOnly = true;
             this.txt_paint_total.Size = new System.Drawing.Size(98, 20);
@@ -1657,7 +1848,7 @@
             this.txt_labour_sales_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_labour_sales_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "labour_cost", true));
             this.txt_labour_sales_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_labour_sales_cost.Location = new System.Drawing.Point(357, 88);
+            this.txt_labour_sales_cost.Location = new System.Drawing.Point(357, 83);
             this.txt_labour_sales_cost.Name = "txt_labour_sales_cost";
             this.txt_labour_sales_cost.ReadOnly = true;
             this.txt_labour_sales_cost.Size = new System.Drawing.Size(98, 20);
@@ -1693,7 +1884,7 @@
             this.txt_hardware_sales_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_hardware_sales_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "hardware_cost", true));
             this.txt_hardware_sales_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_hardware_sales_cost.Location = new System.Drawing.Point(357, 56);
+            this.txt_hardware_sales_cost.Location = new System.Drawing.Point(357, 55);
             this.txt_hardware_sales_cost.Name = "txt_hardware_sales_cost";
             this.txt_hardware_sales_cost.ReadOnly = true;
             this.txt_hardware_sales_cost.Size = new System.Drawing.Size(98, 20);
@@ -1701,30 +1892,31 @@
             this.txt_hardware_sales_cost.Text = "0";
             this.txt_hardware_sales_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txt_material_labour
+            // 
+            this.txt_material_labour.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_material_labour.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_material_labour.Location = new System.Drawing.Point(139, 140);
+            this.txt_material_labour.Name = "txt_material_labour";
+            this.txt_material_labour.Size = new System.Drawing.Size(98, 20);
+            this.txt_material_labour.TabIndex = 81;
+            this.txt_material_labour.Text = "0";
+            this.txt_material_labour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_material_labour.Visible = false;
+            this.txt_material_labour.TextChanged += new System.EventHandler(this.txt_labour_cost_TextChanged);
+            // 
             // txt_labour_cost
             // 
             this.txt_labour_cost.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_labour_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "labour_rate", true));
             this.txt_labour_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_labour_cost.Location = new System.Drawing.Point(248, 88);
+            this.txt_labour_cost.Location = new System.Drawing.Point(248, 83);
             this.txt_labour_cost.Name = "txt_labour_cost";
             this.txt_labour_cost.Size = new System.Drawing.Size(98, 20);
-            this.txt_labour_cost.TabIndex = 81;
+            this.txt_labour_cost.TabIndex = 79;
             this.txt_labour_cost.Text = "0";
             this.txt_labour_cost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_labour_cost.TextChanged += new System.EventHandler(this.txt_labour_cost_TextChanged);
-            // 
-            // txt_labour_markup
-            // 
-            this.txt_labour_markup.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_labour_markup.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "labour_rate", true));
-            this.txt_labour_markup.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_labour_markup.Location = new System.Drawing.Point(139, 88);
-            this.txt_labour_markup.Name = "txt_labour_markup";
-            this.txt_labour_markup.Size = new System.Drawing.Size(98, 20);
-            this.txt_labour_markup.TabIndex = 79;
-            this.txt_labour_markup.Text = "0";
-            this.txt_labour_markup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_labour_markup.TextChanged += new System.EventHandler(this.txt_labour_markup_TextChanged);
+            this.txt_labour_cost.TextChanged += new System.EventHandler(this.txt_labour_markup_TextChanged);
             // 
             // label25
             // 
@@ -1762,7 +1954,7 @@
             // 
             this.txt_hardware_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_hardware_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_hardware_cost.Location = new System.Drawing.Point(248, 58);
+            this.txt_hardware_cost.Location = new System.Drawing.Point(248, 55);
             this.txt_hardware_cost.Name = "txt_hardware_cost";
             this.txt_hardware_cost.Size = new System.Drawing.Size(98, 20);
             this.txt_hardware_cost.TabIndex = 76;
@@ -1784,7 +1976,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(27, 31);
+            this.label21.Location = new System.Drawing.Point(27, 32);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(60, 13);
             this.label21.TabIndex = 74;
@@ -1808,7 +2000,7 @@
             this.txt_hardware_markup.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_hardware_markup.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "markup_hardware", true));
             this.txt_hardware_markup.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_hardware_markup.Location = new System.Drawing.Point(139, 58);
+            this.txt_hardware_markup.Location = new System.Drawing.Point(139, 55);
             this.txt_hardware_markup.Name = "txt_hardware_markup";
             this.txt_hardware_markup.Size = new System.Drawing.Size(98, 20);
             this.txt_hardware_markup.TabIndex = 71;
@@ -1997,6 +2189,8 @@
             // panel_spec
             // 
             this.panel_spec.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_spec.Controls.Add(this.label38);
+            this.panel_spec.Controls.Add(this.txt_notes);
             this.panel_spec.Controls.Add(this.cmb_security);
             this.panel_spec.Controls.Add(this.cmb_security_edit);
             this.panel_spec.Controls.Add(this.label28);
@@ -2012,6 +2206,27 @@
             this.panel_spec.Size = new System.Drawing.Size(380, 239);
             this.panel_spec.TabIndex = 53;
             // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(30, 143);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(44, 13);
+            this.label38.TabIndex = 91;
+            this.label38.Text = "Notes:";
+            // 
+            // txt_notes
+            // 
+            this.txt_notes.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_notes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "item_notes", true));
+            this.txt_notes.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_notes.Location = new System.Drawing.Point(116, 139);
+            this.txt_notes.Multiline = true;
+            this.txt_notes.Name = "txt_notes";
+            this.txt_notes.Size = new System.Drawing.Size(229, 62);
+            this.txt_notes.TabIndex = 90;
+            // 
             // cmb_security
             // 
             this.cmb_security.DataSource = this.dTItemDetailsBindingSource;
@@ -2024,7 +2239,7 @@
             this.cmb_security.FormattingEnabled = true;
             this.cmb_security.IntegralHeight = false;
             this.cmb_security.ItemHeight = 13;
-            this.cmb_security.Location = new System.Drawing.Point(168, 79);
+            this.cmb_security.Location = new System.Drawing.Point(168, 81);
             this.cmb_security.Name = "cmb_security";
             this.cmb_security.Size = new System.Drawing.Size(177, 21);
             this.cmb_security.TabIndex = 89;
@@ -2043,7 +2258,7 @@
             this.cmb_security_edit.FormattingEnabled = true;
             this.cmb_security_edit.IntegralHeight = false;
             this.cmb_security_edit.ItemHeight = 13;
-            this.cmb_security_edit.Location = new System.Drawing.Point(168, 79);
+            this.cmb_security_edit.Location = new System.Drawing.Point(168, 81);
             this.cmb_security_edit.Name = "cmb_security_edit";
             this.cmb_security_edit.Size = new System.Drawing.Size(177, 21);
             this.cmb_security_edit.TabIndex = 86;
@@ -2064,7 +2279,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(30, 79);
+            this.label28.Location = new System.Drawing.Point(30, 85);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(98, 13);
             this.label28.TabIndex = 87;
@@ -2142,16 +2357,6 @@
             // 
             this.c_View_Security_RatingTableAdapter.ClearBeforeFill = true;
             // 
-            // dT_Jam_Styles
-            // 
-            this.dT_Jam_Styles.DataSetName = "DT_Jam_Styles";
-            this.dT_Jam_Styles.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cViewJamStylesBindingSource
-            // 
-            this.cViewJamStylesBindingSource.DataMember = "C_View_Jam_Styles";
-            this.cViewJamStylesBindingSource.DataSource = this.dT_Jam_Styles;
-            // 
             // ada_Jamb_Styles
             // 
             this.ada_Jamb_Styles.ClearBeforeFill = true;
@@ -2215,6 +2420,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dT_Material)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dTdoorstylesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Door_Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cViewJamStylesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_Jam_Styles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfinishBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_finish)).EndInit();
             this.panel_addon.ResumeLayout(false);
@@ -2229,8 +2436,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cViewSecurityRatingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Ratings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cViewFireRatingsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dT_Jam_Styles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cViewJamStylesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2310,8 +2515,8 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txt_material_sales_cost;
         private System.Windows.Forms.TextBox txt_hardware_sales_cost;
+        private System.Windows.Forms.TextBox txt_material_labour;
         private System.Windows.Forms.TextBox txt_labour_cost;
-        private System.Windows.Forms.TextBox txt_labour_markup;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txt_material_cost;
@@ -2363,14 +2568,6 @@
         private System.Windows.Forms.BindingSource dTHardwareItemBindingSource;
         private Datasource.Dt_Hardware_Item dt_Hardware_Item;
         private Datasource.Dt_Hardware_ItemTableAdapters.Ada_Hardware_Item ada_Hardware_Item;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hardwareDescriptionDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hardware_cost_sale;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity_hardware;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hardware_cost_total;
-        private System.Windows.Forms.DataGridViewImageColumn btn_delete_hardware;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hardwareIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemHardwareIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn delete_id;
         private System.Windows.Forms.Panel panel_spec;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmb_security_edit;
@@ -2411,11 +2608,38 @@
         private Datasource.DT_Item_DetailsTableAdapters.Ada_Item_Details ada_Item_Details;
         private System.Windows.Forms.BindingSource cViewItemAddOnBindingSource;
         private Datasource.DT_Item_Add_OnTableAdapters.C_View_Item_Add_OnTableAdapter c_View_Item_Add_OnTableAdapter;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txt_notes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hardware_cost_sale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity_hardware;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hardware_cost_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_hardware;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemHardwareIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn delete_id;
+        private System.Windows.Forms.DataGridViewImageColumn btn_delete_hardware;
+        private System.Windows.Forms.TextBox txt_addon_labour_hours;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn labour_cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn addon_total_cost;
         private System.Windows.Forms.DataGridViewImageColumn btn_delete_addon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_item_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_width;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_height;
+        private System.Windows.Forms.DataGridViewTextBoxColumn material_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_material_thickness;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_material_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_labour_hours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_labour_cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_position;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_removable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_powder_coated;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_powder_coat_cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_on_material_cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn addon_id;
+        private System.Windows.Forms.TextBox txt_labour_total;
         //  private Datasource.DT_Material dT_Item;
         //    private Datasource.DT_ItemTableAdapters.//C_View_Item_DetailsTableAdapter c_View_Item_DetailsTableAdapter;
     }

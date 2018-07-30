@@ -51,6 +51,7 @@
             this.powdercoatedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.materialcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labourcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labour_hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.powdercoatcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitmaterialcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid_addon)).BeginInit();
@@ -87,6 +88,7 @@
             this.powdercoatedDataGridViewCheckBoxColumn,
             this.materialcostDataGridViewTextBoxColumn,
             this.labourcostDataGridViewTextBoxColumn,
+            this.labour_hours,
             this.powdercoatcostDataGridViewTextBoxColumn,
             this.unitmaterialcostDataGridViewTextBoxColumn});
             this.grid_addon.DataSource = this.cViewItemAddOnBindingSource;
@@ -100,7 +102,7 @@
             this.grid_addon.DefaultCellStyle = dataGridViewCellStyle6;
             this.grid_addon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_addon.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_addon.Location = new System.Drawing.Point(17, 37);
+            this.grid_addon.Location = new System.Drawing.Point(46, 33);
             this.grid_addon.Name = "grid_addon";
             this.grid_addon.ReadOnly = true;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -118,7 +120,7 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.grid_addon.Size = new System.Drawing.Size(923, 273);
+            this.grid_addon.Size = new System.Drawing.Size(1026, 273);
             this.grid_addon.TabIndex = 59;
             // 
             // cViewItemAddOnBindingSource
@@ -215,6 +217,13 @@
             this.labourcostDataGridViewTextBoxColumn.Name = "labourcostDataGridViewTextBoxColumn";
             this.labourcostDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // labour_hours
+            // 
+            this.labour_hours.DataPropertyName = "labour_hours";
+            this.labour_hours.HeaderText = "Labour Hours";
+            this.labour_hours.Name = "labour_hours";
+            this.labour_hours.ReadOnly = true;
+            // 
             // powdercoatcostDataGridViewTextBoxColumn
             // 
             this.powdercoatcostDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -242,7 +251,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(967, 337);
+            this.ClientSize = new System.Drawing.Size(1129, 337);
             this.Controls.Add(this.grid_addon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmViewAddon";
@@ -270,6 +279,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn powdercoatedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn materialcostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn labourcostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn labour_hours;
         private System.Windows.Forms.DataGridViewTextBoxColumn powdercoatcostDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitmaterialcostDataGridViewTextBoxColumn;
     }

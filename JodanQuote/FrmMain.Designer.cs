@@ -109,7 +109,7 @@
             this.btn_new_project.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_new_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new_project.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_new_project.Image = global::JodanQuote.Properties.Resources.NewRecord;
+            this.btn_new_project.Image = ((System.Drawing.Image)(resources.GetObject("btn_new_project.Image")));
             this.btn_new_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_new_project.Location = new System.Drawing.Point(885, 30);
             this.btn_new_project.Name = "btn_new_project";
@@ -131,7 +131,7 @@
             // 
             // pct_logo
             // 
-            this.pct_logo.Image = global::JodanQuote.Properties.Resources.Jodan;
+            this.pct_logo.Image = ((System.Drawing.Image)(resources.GetObject("pct_logo.Image")));
             this.pct_logo.Location = new System.Drawing.Point(10, 12);
             this.pct_logo.Margin = new System.Windows.Forms.Padding(300, 3, 3, 3);
             this.pct_logo.Name = "pct_logo";
@@ -184,7 +184,7 @@
             // pct_clear
             // 
             this.pct_clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pct_clear.Image = global::JodanQuote.Properties.Resources.clear;
+            this.pct_clear.Image = ((System.Drawing.Image)(resources.GetObject("pct_clear.Image")));
             this.pct_clear.Location = new System.Drawing.Point(777, 150);
             this.pct_clear.Name = "pct_clear";
             this.pct_clear.Size = new System.Drawing.Size(26, 20);
@@ -297,6 +297,7 @@
             this.date_end.CustomFormat = "00/00/0000";
             this.date_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_end.Location = new System.Drawing.Point(636, 150);
+            this.date_end.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.date_end.Name = "date_end";
             this.date_end.Size = new System.Drawing.Size(98, 20);
             this.date_end.TabIndex = 2;
@@ -313,10 +314,11 @@
             this.date_start.CustomFormat = " 00/00/0000";
             this.date_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_start.Location = new System.Drawing.Point(635, 120);
+            this.date_start.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.date_start.Name = "date_start";
             this.date_start.Size = new System.Drawing.Size(99, 20);
             this.date_start.TabIndex = 43;
-            this.date_start.Value = new System.DateTime(2018, 7, 16, 0, 0, 0, 0);
+            this.date_start.Value = new System.DateTime(2018, 7, 24, 0, 0, 0, 0);
             // 
             // FrmMain
             // 

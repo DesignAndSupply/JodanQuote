@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection ConnectionStringObject="Data Source=DESIGNSVR3\SQLEXPRESS;Initial Catalog=Jodan_quote;Persist Security Info=True;User ID=sa;Password=Dodid1" IsAppSettingsProperty="false" Modifier="Assembly" Name="designsvr3\sqlexpress.Jodan_quote.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=DESIGNSVR3\SQLEXPRESS;Initial Catalog=Jodan_quote;User ID=sa;Password=Dodid1;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" IsAppSettingsProperty="false" Modifier="Assembly" Name="designsvr3\sqlexpress.Jodan_quote.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Ada_Item_Details" GeneratorDataComponentClassName="Ada_Item_Details" Name="DT_Item_Details" UserDataComponentName="Ada_Item_Details">
@@ -14,8 +14,8 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, 
                          frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
-                         addon_cost , [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, 
-                         addon_cost AS security_rating_id, [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description]
+                         addon_cost, [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost AS security_rating_id, 
+                         [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost
 FROM            C_View_Item_Details
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)</CommandText>
                     <Parameters>
@@ -31,42 +31,44 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
               <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="project_id" DataSetColumn="project_id" />
               <Mapping SourceColumn="item_id" DataSetColumn="item_id" />
+              <Mapping SourceColumn="revision_id" DataSetColumn="revision_id" />
               <Mapping SourceColumn="order_id" DataSetColumn="order_id" />
               <Mapping SourceColumn="material_id" DataSetColumn="material_id" />
               <Mapping SourceColumn="finish_id" DataSetColumn="finish_id" />
               <Mapping SourceColumn="item_date" DataSetColumn="item_date" />
               <Mapping SourceColumn="door_ref" DataSetColumn="door_ref" />
+              <Mapping SourceColumn="door_type_id" DataSetColumn="door_type_id" />
               <Mapping SourceColumn="door_style" DataSetColumn="door_style" />
               <Mapping SourceColumn="structual_op_height" DataSetColumn="structual_op_height" />
               <Mapping SourceColumn="structual_op_width" DataSetColumn="structual_op_width" />
               <Mapping SourceColumn="frame_width" DataSetColumn="frame_width" />
               <Mapping SourceColumn="frame_height" DataSetColumn="frame_height" />
+              <Mapping SourceColumn="material_thickness" DataSetColumn="material_thickness" />
               <Mapping SourceColumn="total_cost" DataSetColumn="total_cost" />
               <Mapping SourceColumn="created_by" DataSetColumn="created_by" />
-              <Mapping SourceColumn="material_thickness" DataSetColumn="material_thickness" />
-              <Mapping SourceColumn="revision_id" DataSetColumn="revision_id" />
               <Mapping SourceColumn="markup_material" DataSetColumn="markup_material" />
               <Mapping SourceColumn="markup_hardware" DataSetColumn="markup_hardware" />
               <Mapping SourceColumn="labour_rate" DataSetColumn="labour_rate" />
               <Mapping SourceColumn="hardware_cost" DataSetColumn="hardware_cost" />
               <Mapping SourceColumn="labour_cost" DataSetColumn="labour_cost" />
               <Mapping SourceColumn="material_cost" DataSetColumn="material_cost" />
+              <Mapping SourceColumn="addon_cost" DataSetColumn="addon_cost" />
               <Mapping SourceColumn="Material Description" DataSetColumn="Material Description" />
               <Mapping SourceColumn="Finish Description" DataSetColumn="Finish Description" />
               <Mapping SourceColumn="paint_cost" DataSetColumn="paint_cost" />
               <Mapping SourceColumn="fire_rating_cost" DataSetColumn="fire_rating_cost" />
               <Mapping SourceColumn="security_rating_cost" DataSetColumn="security_rating_cost" />
               <Mapping SourceColumn="fire_rating_id" DataSetColumn="fire_rating_id" />
+              <Mapping SourceColumn="security_rating_id" DataSetColumn="security_rating_id" />
               <Mapping SourceColumn="Security Rating" DataSetColumn="Security Rating" />
               <Mapping SourceColumn="Fire Rating" DataSetColumn="Fire Rating" />
               <Mapping SourceColumn="jamb_style_id" DataSetColumn="jamb_style_id" />
               <Mapping SourceColumn="jamb_width" DataSetColumn="jamb_width" />
               <Mapping SourceColumn="jamb_height" DataSetColumn="jamb_height" />
               <Mapping SourceColumn="Jamb Style" DataSetColumn="Jamb Style" />
-              <Mapping SourceColumn="door_type_id" DataSetColumn="door_type_id" />
-              <Mapping SourceColumn="security_rating_id" DataSetColumn="security_rating_id" />
-              <Mapping SourceColumn="addon_cost" DataSetColumn="addon_cost" />
               <Mapping SourceColumn="Door Type Description" DataSetColumn="Door Type Description" />
+              <Mapping SourceColumn="item_notes" DataSetColumn="item_notes" />
+              <Mapping SourceColumn="converted_cost" DataSetColumn="converted_cost" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -81,9 +83,10 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
         <xs:element name="DT_Item_Details" msprop:Generator_TableClassName="DT_Item_DetailsDataTable" msprop:Generator_TableVarName="tableDT_Item_Details" msprop:Generator_TablePropName="_DT_Item_Details" msprop:Generator_RowDeletingName="DT_Item_DetailsRowDeleting" msprop:Generator_RowChangingName="DT_Item_DetailsRowChanging" msprop:Generator_RowEvHandlerName="DT_Item_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Item_DetailsRowDeleted" msprop:Generator_UserTableName="DT_Item_Details" msprop:Generator_RowChangedName="DT_Item_DetailsRowChanged" msprop:Generator_RowEvArgName="DT_Item_DetailsRowChangeEvent" msprop:Generator_RowClassName="DT_Item_DetailsRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="project_id" msprop:Generator_ColumnVarNameInTable="columnproject_id" msprop:Generator_ColumnPropNameInRow="project_id" msprop:Generator_ColumnPropNameInTable="project_idColumn" msprop:Generator_UserColumnName="project_id" type="xs:int" minOccurs="0" />
               <xs:element name="item_id" msprop:Generator_ColumnVarNameInTable="columnitem_id" msprop:Generator_ColumnPropNameInRow="item_id" msprop:Generator_ColumnPropNameInTable="item_idColumn" msprop:Generator_UserColumnName="item_id" type="xs:int" minOccurs="0" />
+              <xs:element name="revision_id" msprop:Generator_ColumnVarNameInTable="columnrevision_id" msprop:Generator_ColumnPropNameInRow="revision_id" msprop:Generator_ColumnPropNameInTable="revision_idColumn" msprop:Generator_UserColumnName="revision_id" type="xs:int" minOccurs="0" />
               <xs:element name="order_id" msprop:Generator_ColumnVarNameInTable="columnorder_id" msprop:Generator_ColumnPropNameInRow="order_id" msprop:Generator_ColumnPropNameInTable="order_idColumn" msprop:Generator_UserColumnName="order_id" type="xs:int" minOccurs="0" />
               <xs:element name="material_id" msprop:Generator_ColumnVarNameInTable="columnmaterial_id" msprop:Generator_ColumnPropNameInRow="material_id" msprop:Generator_ColumnPropNameInTable="material_idColumn" msprop:Generator_UserColumnName="material_id" type="xs:int" minOccurs="0" />
               <xs:element name="finish_id" msprop:Generator_ColumnVarNameInTable="columnfinish_id" msprop:Generator_ColumnPropNameInRow="finish_id" msprop:Generator_ColumnPropNameInTable="finish_idColumn" msprop:Generator_UserColumnName="finish_id" type="xs:int" minOccurs="0" />
@@ -91,14 +94,15 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
               <xs:element name="door_ref" msprop:Generator_ColumnVarNameInTable="columndoor_ref" msprop:Generator_ColumnPropNameInRow="door_ref" msprop:Generator_ColumnPropNameInTable="door_refColumn" msprop:Generator_UserColumnName="door_ref" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="door_type_id" msprop:Generator_ColumnVarNameInTable="columndoor_type_id" msprop:Generator_ColumnPropNameInRow="door_type_id" msprop:Generator_ColumnPropNameInTable="door_type_idColumn" msprop:Generator_UserColumnName="door_type_id" type="xs:int" minOccurs="0" />
               <xs:element name="door_style" msprop:Generator_ColumnVarNameInTable="columndoor_style" msprop:Generator_ColumnPropNameInRow="door_style" msprop:Generator_ColumnPropNameInTable="door_styleColumn" msprop:Generator_UserColumnName="door_style" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -106,22 +110,22 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
               <xs:element name="structual_op_width" msprop:Generator_ColumnVarNameInTable="columnstructual_op_width" msprop:Generator_ColumnPropNameInRow="structual_op_width" msprop:Generator_ColumnPropNameInTable="structual_op_widthColumn" msprop:Generator_UserColumnName="structual_op_width" type="xs:int" minOccurs="0" />
               <xs:element name="frame_width" msprop:Generator_ColumnVarNameInTable="columnframe_width" msprop:Generator_ColumnPropNameInRow="frame_width" msprop:Generator_ColumnPropNameInTable="frame_widthColumn" msprop:Generator_UserColumnName="frame_width" type="xs:int" minOccurs="0" />
               <xs:element name="frame_height" msprop:Generator_ColumnVarNameInTable="columnframe_height" msprop:Generator_ColumnPropNameInRow="frame_height" msprop:Generator_ColumnPropNameInTable="frame_heightColumn" msprop:Generator_UserColumnName="frame_height" type="xs:int" minOccurs="0" />
+              <xs:element name="material_thickness" msprop:Generator_ColumnVarNameInTable="columnmaterial_thickness" msprop:Generator_ColumnPropNameInRow="material_thickness" msprop:Generator_ColumnPropNameInTable="material_thicknessColumn" msprop:Generator_UserColumnName="material_thickness" type="xs:double" minOccurs="0" />
               <xs:element name="total_cost" msprop:Generator_ColumnVarNameInTable="columntotal_cost" msprop:Generator_ColumnPropNameInRow="total_cost" msprop:Generator_ColumnPropNameInTable="total_costColumn" msprop:Generator_UserColumnName="total_cost" type="xs:double" minOccurs="0" />
               <xs:element name="created_by" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_UserColumnName="created_by" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="material_thickness" msprop:Generator_ColumnVarNameInTable="columnmaterial_thickness" msprop:Generator_ColumnPropNameInRow="material_thickness" msprop:Generator_ColumnPropNameInTable="material_thicknessColumn" msprop:Generator_UserColumnName="material_thickness" type="xs:double" minOccurs="0" />
-              <xs:element name="revision_id" msprop:Generator_ColumnVarNameInTable="columnrevision_id" msprop:Generator_ColumnPropNameInRow="revision_id" msprop:Generator_ColumnPropNameInTable="revision_idColumn" msprop:Generator_UserColumnName="revision_id" type="xs:int" minOccurs="0" />
               <xs:element name="markup_material" msprop:Generator_ColumnVarNameInTable="columnmarkup_material" msprop:Generator_ColumnPropNameInRow="markup_material" msprop:Generator_ColumnPropNameInTable="markup_materialColumn" msprop:Generator_UserColumnName="markup_material" type="xs:double" minOccurs="0" />
               <xs:element name="markup_hardware" msprop:Generator_ColumnVarNameInTable="columnmarkup_hardware" msprop:Generator_ColumnPropNameInRow="markup_hardware" msprop:Generator_ColumnPropNameInTable="markup_hardwareColumn" msprop:Generator_UserColumnName="markup_hardware" type="xs:double" minOccurs="0" />
               <xs:element name="labour_rate" msprop:Generator_ColumnVarNameInTable="columnlabour_rate" msprop:Generator_ColumnPropNameInRow="labour_rate" msprop:Generator_ColumnPropNameInTable="labour_rateColumn" msprop:Generator_UserColumnName="labour_rate" type="xs:double" minOccurs="0" />
               <xs:element name="hardware_cost" msprop:Generator_ColumnVarNameInTable="columnhardware_cost" msprop:Generator_ColumnPropNameInRow="hardware_cost" msprop:Generator_ColumnPropNameInTable="hardware_costColumn" msprop:Generator_UserColumnName="hardware_cost" type="xs:double" minOccurs="0" />
               <xs:element name="labour_cost" msprop:Generator_ColumnVarNameInTable="columnlabour_cost" msprop:Generator_ColumnPropNameInRow="labour_cost" msprop:Generator_ColumnPropNameInTable="labour_costColumn" msprop:Generator_UserColumnName="labour_cost" type="xs:double" minOccurs="0" />
               <xs:element name="material_cost" msprop:Generator_ColumnVarNameInTable="columnmaterial_cost" msprop:Generator_ColumnPropNameInRow="material_cost" msprop:Generator_ColumnPropNameInTable="material_costColumn" msprop:Generator_UserColumnName="material_cost" type="xs:double" minOccurs="0" />
+              <xs:element name="addon_cost" msprop:Generator_ColumnVarNameInTable="columnaddon_cost" msprop:Generator_ColumnPropNameInRow="addon_cost" msprop:Generator_ColumnPropNameInTable="addon_costColumn" msprop:Generator_UserColumnName="addon_cost" type="xs:double" minOccurs="0" />
               <xs:element name="Material_x0020_Description" msprop:Generator_ColumnVarNameInTable="columnMaterial_Description" msprop:Generator_ColumnPropNameInRow="Material_Description" msprop:Generator_ColumnPropNameInTable="Material_DescriptionColumn" msprop:Generator_UserColumnName="Material Description" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -140,6 +144,7 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
               <xs:element name="fire_rating_cost" msprop:Generator_ColumnVarNameInTable="columnfire_rating_cost" msprop:Generator_ColumnPropNameInRow="fire_rating_cost" msprop:Generator_ColumnPropNameInTable="fire_rating_costColumn" msprop:Generator_UserColumnName="fire_rating_cost" type="xs:double" minOccurs="0" />
               <xs:element name="security_rating_cost" msprop:Generator_ColumnVarNameInTable="columnsecurity_rating_cost" msprop:Generator_ColumnPropNameInRow="security_rating_cost" msprop:Generator_ColumnPropNameInTable="security_rating_costColumn" msprop:Generator_UserColumnName="security_rating_cost" type="xs:double" minOccurs="0" />
               <xs:element name="fire_rating_id" msprop:Generator_ColumnVarNameInTable="columnfire_rating_id" msprop:Generator_ColumnPropNameInRow="fire_rating_id" msprop:Generator_ColumnPropNameInTable="fire_rating_idColumn" msprop:Generator_UserColumnName="fire_rating_id" type="xs:int" minOccurs="0" />
+              <xs:element name="security_rating_id" msprop:Generator_ColumnVarNameInTable="columnsecurity_rating_id" msprop:Generator_ColumnPropNameInRow="security_rating_id" msprop:Generator_ColumnPropNameInTable="security_rating_idColumn" msprop:Generator_UserColumnName="security_rating_id" type="xs:double" minOccurs="0" />
               <xs:element name="Security_x0020_Rating" msprop:Generator_ColumnVarNameInTable="columnSecurity_Rating" msprop:Generator_ColumnPropNameInRow="Security_Rating" msprop:Generator_ColumnPropNameInTable="Security_RatingColumn" msprop:Generator_UserColumnName="Security Rating" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -164,9 +169,6 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="door_type_id" msprop:Generator_ColumnVarNameInTable="columndoor_type_id" msprop:Generator_ColumnPropNameInRow="door_type_id" msprop:Generator_ColumnPropNameInTable="door_type_idColumn" msprop:Generator_UserColumnName="door_type_id" type="xs:int" minOccurs="0" />
-              <xs:element name="security_rating_id" msprop:Generator_ColumnVarNameInTable="columnsecurity_rating_id" msprop:Generator_ColumnPropNameInRow="security_rating_id" msprop:Generator_ColumnPropNameInTable="security_rating_idColumn" msprop:Generator_UserColumnName="security_rating_id" type="xs:double" minOccurs="0" />
-              <xs:element name="addon_cost" msprop:Generator_ColumnVarNameInTable="columnaddon_cost" msprop:Generator_ColumnPropNameInRow="addon_cost" msprop:Generator_ColumnPropNameInTable="addon_costColumn" msprop:Generator_UserColumnName="addon_cost" type="xs:double" minOccurs="0" />
               <xs:element name="Door_x0020_Type_x0020_Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDoor_Type_Description" msprop:Generator_ColumnPropNameInRow="Door_Type_Description" msprop:Generator_ColumnPropNameInTable="Door_Type_DescriptionColumn" msprop:Generator_UserColumnName="Door Type Description" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -174,14 +176,18 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="item_notes" msprop:Generator_ColumnVarNameInTable="columnitem_notes" msprop:Generator_ColumnPropNameInRow="item_notes" msprop:Generator_ColumnPropNameInTable="item_notesColumn" msprop:Generator_UserColumnName="item_notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="converted_cost" msprop:Generator_ColumnVarNameInTable="columnconverted_cost" msprop:Generator_ColumnPropNameInRow="converted_cost" msprop:Generator_ColumnPropNameInTable="converted_costColumn" msprop:Generator_UserColumnName="converted_cost" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:DT_Item_Details" />
-      <xs:field xpath="mstns:id" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

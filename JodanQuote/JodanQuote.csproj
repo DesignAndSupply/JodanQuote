@@ -14,7 +14,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>89</ApplicationRevision>
+    <ApplicationRevision>101</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -414,6 +414,7 @@
     <None Include="Datasource\DT_Item_Details.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DT_Item_Details.Designer.cs</LastGenOutput>
     </None>
     <None Include="Datasource\DT_Item_Details.xss">
       <DependentUpon>DT_Item_Details.xsd</DependentUpon>

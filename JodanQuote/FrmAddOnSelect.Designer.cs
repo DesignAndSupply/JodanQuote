@@ -78,7 +78,7 @@
             this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_back.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btn_back.Image = global::JodanQuote.Properties.Resources.ReturnArrow;
+            this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_back.Location = new System.Drawing.Point(454, 229);
             this.btn_back.Name = "btn_back";
@@ -86,6 +86,7 @@
             this.btn_back.TabIndex = 81;
             this.btn_back.Text = "    Back";
             this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // btn_clear
             // 
@@ -358,7 +359,7 @@
             this.txt_qty.Name = "txt_qty";
             this.txt_qty.Size = new System.Drawing.Size(186, 20);
             this.txt_qty.TabIndex = 7;
-            this.txt_qty.Text = "0";
+            this.txt_qty.Text = "1";
             // 
             // txt_position
             // 

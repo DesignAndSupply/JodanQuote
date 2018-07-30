@@ -76,6 +76,52 @@ namespace JodanQuote
            
         }
 
+        void Search()
+        {
+
+
+            if (cmb_type.Text  == ""|| txt_description.Text!="")
+            {
+                DataTable dt_hardware = new DataTable();
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlDataAdapter Search_stock_description = new SqlDataAdapter(Statementsclass.Search_stock_description, conn);
+                Search_stock_description.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
+                Search_stock_description.Fill(dt_hardware);
+                grid_hardware.DataSource = dt_hardware;
+
+            }
+            else if(cmb_type.Text != "" || txt_description.Text == "")
+            {
+               
+
+                DataTable dt_hardware = new DataTable();
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlDataAdapter Search_stock_category = new SqlDataAdapter(Statementsclass.Search_stock_category, conn);
+
+                Search_stock_category.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
+                Search_stock_category.Fill(dt_hardware);
+                grid_hardware.DataSource = dt_hardware;
+
+
+            }
+            else
+            {
+
+
+                DataTable dt_hardware = new DataTable();
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlDataAdapter Search_stock_category_description = new SqlDataAdapter(Statementsclass.Search_stock_category_description, conn);
+                Search_stock_category_description.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
+                Search_stock_category_description.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
+                Search_stock_category_description.Fill(dt_hardware);
+                grid_hardware.DataSource = dt_hardware;
+
+
+
+
+            }
+        }
+
         private void FrmHardwareSelect_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dT_hardware.c_view_hardware' table. You can move, or remove it, as needed.
@@ -128,31 +174,8 @@ namespace JodanQuote
         {
             if(cmb_type.SelectedIndex > 0)
             {
-                if(txt_description.Text == null )
-                {
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.Clear();
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = Statementsclass.Search_stock_category;
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
-                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
-                    grid_hardware.DataSource = dT_hardware.c_view_hardware;
-
-                }
-                else
-                {
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.Clear();
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = Statementsclass.Search_stock_category_description;
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
-                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
-                    grid_hardware.DataSource = dT_hardware.c_view_hardware;
-                    
-
-
-
-                }
-
+                Search();
                 Set_Value();
-
 
             }
         }
@@ -161,11 +184,13 @@ namespace JodanQuote
         {
             txt_description.Text = "";
             cmb_type.SelectedIndex = -1;
-           
-            c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.Clear();
-            c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = "SELECT LEFT(Description, 20) AS Description, Cost FROM c_view_hardware";
-            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
-            grid_hardware.DataSource = dT_hardware.c_view_hardware;
+            DataTable dt_hardware = new DataTable();
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlDataAdapter Search_stock= new SqlDataAdapter("SELECT * FROM c_view_hardware WHERE Jodan_stock = 1", conn);
+   
+            Search_stock.Fill(dt_hardware);
+            grid_hardware.DataSource = dt_hardware;
+            Set_Value();
         }
 
         private void txt_description_KeyDown(object sender, KeyEventArgs e)
@@ -173,28 +198,8 @@ namespace JodanQuote
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
 
-                if (cmb_type.SelectedIndex < 0)
-                {
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.Clear();
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = Statementsclass.Search_stock_description;
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
-                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
-                    grid_hardware.DataSource = dT_hardware.c_view_hardware;
-
-                }
-                else
-                {
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.Clear();
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.CommandText = Statementsclass.Search_stock_category_description;
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
-                    c_view_hardwareTableAdapter.Adapter.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
-                    c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
-                    grid_hardware.DataSource = dT_hardware.c_view_hardware;
-
-
-
-
-                }
+                Search();
+                
                 Set_Value();
             }
         }
@@ -267,9 +272,9 @@ namespace JodanQuote
 
                 int hardware_id = Convert.ToInt32(grid_hardware_selected.Rows[i].Cells["id"].Value);
                 string hardware_description = Convert.ToString(grid_hardware_selected.Rows[i].Cells["Description"].Value);
-                int hardware_cost = Convert.ToInt32(grid_hardware_selected.Rows[i].Cells["Cost"].Value);
+                double hardware_cost = Convert.ToDouble(grid_hardware_selected.Rows[i].Cells["Cost"].Value);
                 int quantity = Convert.ToInt32(grid_hardware_selected.Rows[i].Cells["Quantity"].Value);
-                int total_cost = Convert.ToInt32(grid_hardware_selected.Rows[i].Cells["Total"].Value);
+                double total_cost = Convert.ToDouble(grid_hardware_selected.Rows[i].Cells["Total"].Value);
 
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
@@ -304,5 +309,9 @@ namespace JodanQuote
         
         }
 
+        private void cmb_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Search();
+        }
     }
 }

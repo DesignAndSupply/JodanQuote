@@ -15,21 +15,37 @@ namespace JodanQuote
         public FrmViewSkins()
         {
             InitializeComponent();
-            grid_skins.DataSource = function.Functionsclass.dt_skins;
-            grid_skins.EnableHeadersVisualStyles = false;
-            grid_skins.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_skins.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
-            grid_skins.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
-            grid_skins.DefaultCellStyle.BackColor = Color.AliceBlue;
-            grid_skins.Columns["single_double"].HeaderText = "Door Type";
-            grid_skins.Columns["material_type"].HeaderText = "Material Type";
-            grid_skins.Columns["skin_1_cost"].HeaderText = "Skin 1 Cost";
-            grid_skins.Columns["skin_2_cost"].HeaderText = "Skin 2 Cost";
-            grid_skins.Columns["skin_3_cost"].HeaderText = "skin 3 Cost";
-            grid_skins.Columns["skin_4_cost"].HeaderText = "Skin 4 Cost";
-            grid_skins.Columns["paint_cost"].HeaderText = "Paint Cost";
-            grid_skins.Columns["fire_cost"].HeaderText = "Fire Cost";
-            grid_skins.Columns["security_cost"].HeaderText = "Security Cost";
+            try
+            {
+                grid_skins.DataSource = function.Functionsclass.dt_skins;
+                grid_skins.EnableHeadersVisualStyles = false;
+                grid_skins.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
+                grid_skins.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
+                grid_skins.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
+                grid_skins.DefaultCellStyle.BackColor = Color.AliceBlue;
+                grid_skins.Columns["single_double"].HeaderText = "Door Type";
+                grid_skins.Columns["material_type"].HeaderText = "Material Type";
+                grid_skins.Columns["skin_1_cost"].HeaderText = "Skin 1 Cost";
+                grid_skins.Columns["skin_1_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["skin_2_cost"].HeaderText = "Skin 2 Cost";
+                grid_skins.Columns["skin_2_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["skin_3_cost"].HeaderText = "skin 3 Cost";
+                grid_skins.Columns["skin_3_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["skin_4_cost"].HeaderText = "Skin 4 Cost";
+                grid_skins.Columns["skin_4_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["paint_cost"].HeaderText = "Paint Cost";
+                grid_skins.Columns["paint_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["fire_cost"].HeaderText = "Fire Cost";
+                grid_skins.Columns["fire_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["security_cost"].HeaderText = "Security Cost";
+                grid_skins.Columns["security_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["labour_hours"].HeaderText = "Labour Hours";
+                
+            }
+            catch
+            {
+
+            }
         }
     }
 }

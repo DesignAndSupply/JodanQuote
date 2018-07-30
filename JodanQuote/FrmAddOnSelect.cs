@@ -155,5 +155,10 @@ namespace JodanQuote
         {
             txt_width.Text = Valuesclass.structual_op_width.ToString();
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

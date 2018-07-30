@@ -152,8 +152,8 @@
         private System.Windows.Forms.PictureBox pct_logo;
         private System.Windows.Forms.Panel panel1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Reports.CrRptQuote CrRptQuote1;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_email;
+        private Reports.CrRptQuote CrRptQuote1;
     }
 }
