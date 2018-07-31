@@ -313,6 +313,12 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnitem_notes;
             
+            private global::System.Data.DataColumn columnsurvey_cost;
+            
+            private global::System.Data.DataColumn columninstallation_cost;
+            
+            private global::System.Data.DataColumn columndelivery_cost;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_Quote_ItemsDataTable() {
@@ -484,6 +490,30 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn survey_costColumn {
+                get {
+                    return this.columnsurvey_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn installation_costColumn {
+                get {
+                    return this.columninstallation_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn delivery_costColumn {
+                get {
+                    return this.columndelivery_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -536,7 +566,10 @@ namespace JodanQuote.Datasource {
                         string quote_status, 
                         int ID, 
                         string project_notes, 
-                        string item_notes) {
+                        string item_notes, 
+                        double survey_cost, 
+                        double installation_cost, 
+                        double delivery_cost) {
                 DT_Quote_ItemsRow rowDT_Quote_ItemsRow = ((DT_Quote_ItemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Project_ID,
@@ -555,7 +588,10 @@ namespace JodanQuote.Datasource {
                         quote_status,
                         ID,
                         project_notes,
-                        item_notes};
+                        item_notes,
+                        survey_cost,
+                        installation_cost,
+                        delivery_cost};
                 rowDT_Quote_ItemsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Quote_ItemsRow);
                 return rowDT_Quote_ItemsRow;
@@ -602,6 +638,9 @@ namespace JodanQuote.Datasource {
                 this.columnID = base.Columns["ID"];
                 this.columnproject_notes = base.Columns["project_notes"];
                 this.columnitem_notes = base.Columns["item_notes"];
+                this.columnsurvey_cost = base.Columns["survey_cost"];
+                this.columninstallation_cost = base.Columns["installation_cost"];
+                this.columndelivery_cost = base.Columns["delivery_cost"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -641,6 +680,12 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnproject_notes);
                 this.columnitem_notes = new global::System.Data.DataColumn("item_notes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitem_notes);
+                this.columnsurvey_cost = new global::System.Data.DataColumn("survey_cost", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsurvey_cost);
+                this.columninstallation_cost = new global::System.Data.DataColumn("installation_cost", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninstallation_cost);
+                this.columndelivery_cost = new global::System.Data.DataColumn("delivery_cost", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndelivery_cost);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProject_ID}, true));
                 this.columnProject_ID.AllowDBNull = false;
@@ -1062,6 +1107,54 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double survey_cost {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Quote_Items.survey_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'survey_cost\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.survey_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double installation_cost {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Quote_Items.installation_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'installation_cost\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.installation_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double delivery_cost {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Quote_Items.delivery_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'delivery_cost\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.delivery_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsQuote_IDNull() {
                 return this.IsNull(this.tableDT_Quote_Items.Quote_IDColumn);
             }
@@ -1251,6 +1344,42 @@ namespace JodanQuote.Datasource {
             public void Setitem_notesNull() {
                 this[this.tableDT_Quote_Items.item_notesColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issurvey_costNull() {
+                return this.IsNull(this.tableDT_Quote_Items.survey_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsurvey_costNull() {
+                this[this.tableDT_Quote_Items.survey_costColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isinstallation_costNull() {
+                return this.IsNull(this.tableDT_Quote_Items.installation_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setinstallation_costNull() {
+                this[this.tableDT_Quote_Items.installation_costColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isdelivery_costNull() {
+                return this.IsNull(this.tableDT_Quote_Items.delivery_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setdelivery_costNull() {
+                this[this.tableDT_Quote_Items.delivery_costColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1429,6 +1558,9 @@ namespace JodanQuote.Datasource.DT_QuoteTableAdapters {
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("project_notes", "project_notes");
             tableMapping.ColumnMappings.Add("item_notes", "item_notes");
+            tableMapping.ColumnMappings.Add("survey_cost", "survey_cost");
+            tableMapping.ColumnMappings.Add("installation_cost", "installation_cost");
+            tableMapping.ColumnMappings.Add("delivery_cost", "delivery_cost");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1446,8 +1578,10 @@ namespace JodanQuote.Datasource.DT_QuoteTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT     *\r\nFROM            C_View_Project_Quotation\r\nWHERE        ([Project ID" +
-                "] = @project_id)";
+            this._commandCollection[0].CommandText = @"SELECT        [Project ID], [Quote ID], [Item ID], [Revision Number], [Date Created], [Door Type], [Door Reference], [Total Cost], [Item Date], [Created By], customer_ref, site_ref, 
+                         project_ref, quote_status, ID, project_notes, item_notes, survey_cost, installation_cost, delivery_cost
+FROM            C_View_Project_Quotation
+WHERE        ([Project ID] = @project_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Project ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

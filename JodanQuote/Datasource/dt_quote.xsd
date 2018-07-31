@@ -12,7 +12,8 @@
               <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.C_View_Project_Quotation" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT     *
+                    <CommandText>SELECT        [Project ID], [Quote ID], [Item ID], [Revision Number], [Date Created], [Door Type], [Door Reference], [Total Cost], [Item Date], [Created By], customer_ref, site_ref, 
+                         project_ref, quote_status, ID, project_notes, item_notes, survey_cost, installation_cost, delivery_cost
 FROM            C_View_Project_Quotation
 WHERE        ([Project ID] = @project_id)</CommandText>
                     <Parameters>
@@ -40,6 +41,9 @@ WHERE        ([Project ID] = @project_id)</CommandText>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="project_notes" DataSetColumn="project_notes" />
               <Mapping SourceColumn="item_notes" DataSetColumn="item_notes" />
+              <Mapping SourceColumn="survey_cost" DataSetColumn="survey_cost" />
+              <Mapping SourceColumn="installation_cost" DataSetColumn="installation_cost" />
+              <Mapping SourceColumn="delivery_cost" DataSetColumn="delivery_cost" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -51,7 +55,7 @@ WHERE        ([Project ID] = @project_id)</CommandText>
   <xs:element name="DT_Quote" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Quote" msprop:Generator_UserDSName="DT_Quote">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_Quote_Items" msprop:Generator_TableClassName="DT_Quote_ItemsDataTable" msprop:Generator_TableVarName="tableDT_Quote_Items" msprop:Generator_TablePropName="DT_Quote_Items" msprop:Generator_RowDeletingName="DT_Quote_ItemsRowDeleting" msprop:Generator_RowChangingName="DT_Quote_ItemsRowChanging" msprop:Generator_RowEvHandlerName="DT_Quote_ItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Quote_ItemsRowDeleted" msprop:Generator_UserTableName="DT_Quote_Items" msprop:Generator_RowChangedName="DT_Quote_ItemsRowChanged" msprop:Generator_RowEvArgName="DT_Quote_ItemsRowChangeEvent" msprop:Generator_RowClassName="DT_Quote_ItemsRow">
+        <xs:element name="DT_Quote_Items" msprop:Generator_TableClassName="DT_Quote_ItemsDataTable" msprop:Generator_TableVarName="tableDT_Quote_Items" msprop:Generator_RowChangedName="DT_Quote_ItemsRowChanged" msprop:Generator_TablePropName="DT_Quote_Items" msprop:Generator_RowDeletingName="DT_Quote_ItemsRowDeleting" msprop:Generator_RowChangingName="DT_Quote_ItemsRowChanging" msprop:Generator_RowEvHandlerName="DT_Quote_ItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Quote_ItemsRowDeleted" msprop:Generator_RowClassName="DT_Quote_ItemsRow" msprop:Generator_UserTableName="DT_Quote_Items" msprop:Generator_RowEvArgName="DT_Quote_ItemsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Project_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnProject_ID" msprop:Generator_ColumnPropNameInRow="Project_ID" msprop:Generator_ColumnPropNameInTable="Project_IDColumn" msprop:Generator_UserColumnName="Project ID" type="xs:int" />
@@ -119,6 +123,9 @@ WHERE        ([Project ID] = @project_id)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="survey_cost" msprop:Generator_ColumnVarNameInTable="columnsurvey_cost" msprop:Generator_ColumnPropNameInRow="survey_cost" msprop:Generator_ColumnPropNameInTable="survey_costColumn" msprop:Generator_UserColumnName="survey_cost" type="xs:double" minOccurs="0" />
+              <xs:element name="installation_cost" msprop:Generator_ColumnVarNameInTable="columninstallation_cost" msprop:Generator_ColumnPropNameInRow="installation_cost" msprop:Generator_ColumnPropNameInTable="installation_costColumn" msprop:Generator_UserColumnName="installation_cost" type="xs:double" minOccurs="0" />
+              <xs:element name="delivery_cost" msprop:Generator_ColumnVarNameInTable="columndelivery_cost" msprop:Generator_ColumnPropNameInRow="delivery_cost" msprop:Generator_ColumnPropNameInTable="delivery_costColumn" msprop:Generator_UserColumnName="delivery_cost" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

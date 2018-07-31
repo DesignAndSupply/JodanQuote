@@ -1176,6 +1176,7 @@
             this.txt_structual_height.TabIndex = 52;
             this.txt_structual_height.Text = "0";
             this.txt_structual_height.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_structual_height_KeyDown);
+            this.txt_structual_height.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_structual_height_KeyPress);
             // 
             // txt_structual_width
             // 
@@ -1187,8 +1188,8 @@
             this.txt_structual_width.Size = new System.Drawing.Size(157, 20);
             this.txt_structual_width.TabIndex = 52;
             this.txt_structual_width.Text = "0";
-            this.txt_structual_width.TextChanged += new System.EventHandler(this.txt_structual_width_TextChanged);
             this.txt_structual_width.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_structual_width_KeyDown);
+            this.txt_structual_width.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_structual_width_KeyPress);
             // 
             // cmb_material_thickness
             // 
@@ -1714,6 +1715,7 @@
             this.txt_addon_labour_hours.TabIndex = 96;
             this.txt_addon_labour_hours.Text = "0";
             this.txt_addon_labour_hours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_addon_labour_hours.Visible = false;
             // 
             // txt_addon
             // 

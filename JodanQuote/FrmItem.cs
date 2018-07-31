@@ -41,6 +41,7 @@ namespace JodanQuote
             Format();
          
         }
+
         void Save()
         {
 
@@ -1538,7 +1539,13 @@ namespace JodanQuote
                 txt_frame_width.Text = width.ToString();
                 Calculate_Cost_Edit_Mode();
                 Refresh_Data();
-                Save();
+
+                if (txt_warning.Visible == false)
+                {
+                    Save();
+
+                }
+              
                 Edit_Items();
 
                
@@ -1552,10 +1559,13 @@ namespace JodanQuote
 
                 int height = (Convert.ToInt32(txt_structual_height.Text) - 10);
                 txt_frame_height.Text = height.ToString();
-
                 Calculate_Cost_Edit_Mode();
                 Refresh_Data();
-                Save();
+                if (txt_warning.Visible == false)
+                {
+                    Save();
+
+                }
                 Edit_Items();
 
 
@@ -1586,9 +1596,24 @@ namespace JodanQuote
             }
         }
 
-        private void txt_structual_width_TextChanged(object sender, EventArgs e)
-        {
+       
 
+        private void txt_structual_width_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_structual_height_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
     

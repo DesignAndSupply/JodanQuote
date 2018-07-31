@@ -24,6 +24,7 @@ namespace JodanQuote
             Fill_data();
             btn_edit.PerformClick();
             Format();
+            Textbox_Format();
             
         }
 
@@ -174,8 +175,27 @@ namespace JodanQuote
 
 
             }
+            ;
 
-           
+
+
+
+        }
+
+        void Textbox_Format()
+        {
+
+
+           string delivery_charge = txt_delivery_charge.Text.Replace("£", string.Empty);
+           txt_delivery_charge.Text = "£" + delivery_charge;
+
+            string install_charge = txt_installation.Text.Replace("£", string.Empty);
+            txt_installation.Text = "£" + install_charge;
+
+            string survey_charge = txt_survery_charge.Text.Replace("£", string.Empty);
+            txt_survery_charge.Text = "£" + survey_charge;
+
+
         }
 
         void Copy_hardware()
@@ -403,6 +423,9 @@ namespace JodanQuote
             update_project.Parameters.AddWithValue("@project_ref", txt_project_ref.Text);
             update_project.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
             update_project.Parameters.AddWithValue("@project_notes", txt_notes.Text);
+            update_project.Parameters.AddWithValue("@survey_cost", txt_survery_charge.Text.Replace("£", string.Empty));
+            update_project.Parameters.AddWithValue("@installation_cost", txt_installation.Text.Replace("£", string.Empty));
+            update_project.Parameters.AddWithValue("@delivery_cost", txt_delivery_charge.Text.Replace("£", string.Empty));
             update_project.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
             MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -446,6 +469,7 @@ namespace JodanQuote
             
         private void btn_back_Click(object sender, EventArgs e)
         {
+            Valuesclass.jodan_y_n = 1;
             this.Hide();
             FrmMain main = new FrmMain();
             main.Show();
@@ -601,6 +625,7 @@ namespace JodanQuote
         private void btn_additional_cost_Click(object sender, EventArgs e)
         {
             main_tab_project_additions.SelectedTab = tab_additonal_cost;
+            Textbox_Format();
         }
 
         private void btn_notes_Click(object sender, EventArgs e)
@@ -622,6 +647,7 @@ namespace JodanQuote
         private void btn_edit_Click(object sender, EventArgs e)
         {
             Edit();
+            Textbox_Format();
         }
 
         private void btn_convert_Click(object sender, EventArgs e)
@@ -649,12 +675,13 @@ namespace JodanQuote
                 
                     SqlCommand insert_copied_project = new SqlCommand(Statementsclass.insert_copied_project, conn3);
 
-
+                    insert_copied_project.Parameters.AddWithValue("@convertion_id", dT_Quote.DT_Quote_Items.Rows[0]["Project ID"]);
                     insert_copied_project.Parameters.AddWithValue("@customer_ref", Valuesclass.customer_account_ref);
                     insert_copied_project.Parameters.AddWithValue("@site_ref", reader["site_ref"].ToString());
                     insert_copied_project.Parameters.AddWithValue("@project_ref", reader["project_ref"].ToString());
                     insert_copied_project.Parameters.AddWithValue("@date_created", DateTime.Now);
                     insert_copied_project.Parameters.AddWithValue("@quote_status", reader["quote_status"].ToString());
+
                     insert_copied_project.ExecuteNonQuery();
 
                     ConnectionClass.Dispose_connection(conn3);
@@ -694,6 +721,64 @@ namespace JodanQuote
             
 
 
+        }
+
+        private void txt_delivery_charge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_installation_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+              (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_survery_charge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+              (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_survery_charge_Enter(object sender, EventArgs e)
+        {
+            Textbox_Format();
+        }
+
+        private void txt_delivery_charge_Enter(object sender, EventArgs e)
+        {
+            Textbox_Format();
+        }
+
+        private void txt_installation_Enter(object sender, EventArgs e)
+        {
+            Textbox_Format();
+        }
+
+        private void txt_survery_charge_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                this.ActiveControl = txt_delivery_charge;
+            }
+        }
+
+        private void txt_delivery_charge_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                this.ActiveControl = txt_installation;
+            }
         }
     }
     
