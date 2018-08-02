@@ -15,3 +15,4 @@ namespace JodanQuote.Datasource.DT_QuoteTableAdapters
     {
     }
 }
+

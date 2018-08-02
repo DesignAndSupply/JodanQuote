@@ -263,7 +263,7 @@
             this.cmb_type.Name = "cmb_type";
             this.cmb_type.Size = new System.Drawing.Size(163, 21);
             this.cmb_type.TabIndex = 74;
-            this.cmb_type.SelectedIndexChanged += new System.EventHandler(this.cmb_type_SelectedIndexChanged);
+            this.cmb_type.SelectedValueChanged += new System.EventHandler(this.cmb_type_SelectedValueChanged);
             this.cmb_type.TextChanged += new System.EventHandler(this.cmb_type_TextChanged);
             // 
             // grid_hardware_selected

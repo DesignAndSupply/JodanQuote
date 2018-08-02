@@ -29,6 +29,25 @@ FROM            dsl.dbo.materials</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Ada_Infill" GeneratorDataComponentClassName="Ada_Infill" Name="DT_Infill" UserDataComponentName="Ada_Infill">
+            <MainSource>
+              <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.C_View_Infill_Type" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, description, item_cost_per_sqm
+FROM            C_View_Infill_Type</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="item_cost_per_sqm" DataSetColumn="item_cost_per_sqm" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -37,7 +56,7 @@ FROM            dsl.dbo.materials</CommandText>
   <xs:element name="DT_Material" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Material" msprop:Generator_UserDSName="DT_Material">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_materials" msprop:Generator_TableClassName="DT_materialsDataTable" msprop:Generator_TableVarName="tableDT_materials" msprop:Generator_RowChangedName="DT_materialsRowChanged" msprop:Generator_TablePropName="DT_materials" msprop:Generator_RowDeletingName="DT_materialsRowDeleting" msprop:Generator_RowChangingName="DT_materialsRowChanging" msprop:Generator_RowEvHandlerName="DT_materialsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_materialsRowDeleted" msprop:Generator_RowClassName="DT_materialsRow" msprop:Generator_UserTableName="DT_materials" msprop:Generator_RowEvArgName="DT_materialsRowChangeEvent">
+        <xs:element name="DT_materials" msprop:Generator_TableClassName="DT_materialsDataTable" msprop:Generator_TableVarName="tableDT_materials" msprop:Generator_TablePropName="DT_materials" msprop:Generator_RowDeletingName="DT_materialsRowDeleting" msprop:Generator_RowChangingName="DT_materialsRowChanging" msprop:Generator_RowEvHandlerName="DT_materialsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_materialsRowDeleted" msprop:Generator_UserTableName="DT_materials" msprop:Generator_RowChangedName="DT_materialsRowChanged" msprop:Generator_RowEvArgName="DT_materialsRowChangeEvent" msprop:Generator_RowClassName="DT_materialsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:short" />
@@ -55,10 +74,29 @@ FROM            dsl.dbo.materials</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DT_Infill" msprop:Generator_TableClassName="DT_InfillDataTable" msprop:Generator_TableVarName="tableDT_Infill" msprop:Generator_TablePropName="DT_Infill" msprop:Generator_RowDeletingName="DT_InfillRowDeleting" msprop:Generator_RowChangingName="DT_InfillRowChanging" msprop:Generator_RowEvHandlerName="DT_InfillRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_InfillRowDeleted" msprop:Generator_UserTableName="DT_Infill" msprop:Generator_RowChangedName="DT_InfillRowChanged" msprop:Generator_RowEvArgName="DT_InfillRowChangeEvent" msprop:Generator_RowClassName="DT_InfillRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="item_cost_per_sqm" msprop:Generator_ColumnVarNameInTable="columnitem_cost_per_sqm" msprop:Generator_ColumnPropNameInRow="item_cost_per_sqm" msprop:Generator_ColumnPropNameInTable="item_cost_per_sqmColumn" msprop:Generator_UserColumnName="item_cost_per_sqm" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DT_materials" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="DT_Infill_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DT_Infill" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>

@@ -15,7 +15,8 @@
                     <CommandText>SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, 
                          frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
                          addon_cost, [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost AS security_rating_id, 
-                         [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost
+                         [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost, infill_id, 
+                         [Infill Description]
 FROM            C_View_Item_Details
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)</CommandText>
                     <Parameters>
@@ -69,6 +70,8 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
               <Mapping SourceColumn="Door Type Description" DataSetColumn="Door Type Description" />
               <Mapping SourceColumn="item_notes" DataSetColumn="item_notes" />
               <Mapping SourceColumn="converted_cost" DataSetColumn="converted_cost" />
+              <Mapping SourceColumn="infill_id" DataSetColumn="infill_id" />
+              <Mapping SourceColumn="Infill Description" DataSetColumn="Infill Description" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -184,6 +187,14 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
                 </xs:simpleType>
               </xs:element>
               <xs:element name="converted_cost" msprop:Generator_ColumnVarNameInTable="columnconverted_cost" msprop:Generator_ColumnPropNameInRow="converted_cost" msprop:Generator_ColumnPropNameInTable="converted_costColumn" msprop:Generator_UserColumnName="converted_cost" type="xs:double" minOccurs="0" />
+              <xs:element name="infill_id" msprop:Generator_ColumnVarNameInTable="columninfill_id" msprop:Generator_ColumnPropNameInRow="infill_id" msprop:Generator_ColumnPropNameInTable="infill_idColumn" msprop:Generator_UserColumnName="infill_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Infill_x0020_Description" msprop:Generator_ColumnVarNameInTable="columnInfill_Description" msprop:Generator_ColumnPropNameInRow="Infill_Description" msprop:Generator_ColumnPropNameInTable="Infill_DescriptionColumn" msprop:Generator_UserColumnName="Infill Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

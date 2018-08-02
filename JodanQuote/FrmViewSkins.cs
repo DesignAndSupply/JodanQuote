@@ -29,10 +29,12 @@ namespace JodanQuote
                 grid_skins.Columns["skin_1_cost"].DefaultCellStyle.Format = "C2";
                 grid_skins.Columns["skin_2_cost"].HeaderText = "Skin 2 Cost";
                 grid_skins.Columns["skin_2_cost"].DefaultCellStyle.Format = "C2";
-                grid_skins.Columns["skin_3_cost"].HeaderText = "skin 3 Cost";
+                grid_skins.Columns["skin_3_cost"].HeaderText = "Skin 3 Cost";
                 grid_skins.Columns["skin_3_cost"].DefaultCellStyle.Format = "C2";
                 grid_skins.Columns["skin_4_cost"].HeaderText = "Skin 4 Cost";
                 grid_skins.Columns["skin_4_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["infill_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["infill_cost"].HeaderText = "Infill Cost";
                 grid_skins.Columns["paint_cost"].HeaderText = "Paint Cost";
                 grid_skins.Columns["paint_cost"].DefaultCellStyle.Format = "C2";
                 grid_skins.Columns["fire_cost"].HeaderText = "Fire Cost";

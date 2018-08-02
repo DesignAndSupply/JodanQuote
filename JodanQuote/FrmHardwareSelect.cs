@@ -23,7 +23,7 @@ namespace JodanQuote
             InitializeComponent();
             Fill_data();
             Format();
-           
+            Set_Value();
         }
         void Set_Value()
         {
@@ -66,7 +66,7 @@ namespace JodanQuote
             grid_hardware.DefaultCellStyle.BackColor = Color.AliceBlue;
             grid_hardware.Columns["hardware_Id"].Visible = false;
 
-          grid_hardware_selected.EnableHeadersVisualStyles = false;
+            grid_hardware_selected.EnableHeadersVisualStyles = false;
             grid_hardware_selected.ColumnHeadersDefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_hardware_selected.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_hardware_selected.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
@@ -78,7 +78,7 @@ namespace JodanQuote
 
         void Search()
         {
-
+            
 
             if (cmb_type.Text  == ""|| txt_description.Text!="")
             {
@@ -92,13 +92,13 @@ namespace JodanQuote
             }
             else if(cmb_type.Text != "" || txt_description.Text == "")
             {
-               
 
+                int category = Convert.ToInt16(((DataRowView)cmb_type.SelectedItem)["id"]);
                 DataTable dt_hardware = new DataTable();
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlDataAdapter Search_stock_category = new SqlDataAdapter(Statementsclass.Search_stock_category, conn);
-
-                Search_stock_category.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
+              
+                Search_stock_category.SelectCommand.Parameters.AddWithValue("@category", category);
                 Search_stock_category.Fill(dt_hardware);
                 grid_hardware.DataSource = dt_hardware;
 
@@ -107,12 +107,12 @@ namespace JodanQuote
             else
             {
 
-
+                int category = Convert.ToInt16(((DataRowView)cmb_type.SelectedItem)["id"]);
                 DataTable dt_hardware = new DataTable();
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlDataAdapter Search_stock_category_description = new SqlDataAdapter(Statementsclass.Search_stock_category_description, conn);
                 Search_stock_category_description.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
-                Search_stock_category_description.SelectCommand.Parameters.AddWithValue("@category", cmb_type.SelectedValue);
+                Search_stock_category_description.SelectCommand.Parameters.AddWithValue("@category", category);
                 Search_stock_category_description.Fill(dt_hardware);
                 grid_hardware.DataSource = dt_hardware;
 
@@ -172,7 +172,7 @@ namespace JodanQuote
 
         private void cmb_type_TextChanged(object sender, EventArgs e)
         {
-            if(cmb_type.SelectedIndex > 0)
+            if(cmb_type.SelectedIndex > -1)
             {
                 Search();
                 Set_Value();
@@ -309,9 +309,9 @@ namespace JodanQuote
         
         }
 
-        private void cmb_type_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmb_type_SelectedValueChanged(object sender, EventArgs e)
         {
-            Search();
+            //Search();
         }
     }
 }

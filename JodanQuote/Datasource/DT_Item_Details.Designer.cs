@@ -361,6 +361,10 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnconverted_cost;
             
+            private global::System.Data.DataColumn columninfill_id;
+            
+            private global::System.Data.DataColumn columnInfill_Description;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_Item_DetailsDataTable() {
@@ -724,6 +728,22 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn infill_idColumn {
+                get {
+                    return this.columninfill_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Infill_DescriptionColumn {
+                get {
+                    return this.columnInfill_Description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -800,7 +820,9 @@ namespace JodanQuote.Datasource {
                         string Jamb_Style, 
                         string Door_Type_Description, 
                         string item_notes, 
-                        double converted_cost) {
+                        double converted_cost, 
+                        int infill_id, 
+                        string Infill_Description) {
                 DT_Item_DetailsRow rowDT_Item_DetailsRow = ((DT_Item_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -843,7 +865,9 @@ namespace JodanQuote.Datasource {
                         Jamb_Style,
                         Door_Type_Description,
                         item_notes,
-                        converted_cost};
+                        converted_cost,
+                        infill_id,
+                        Infill_Description};
                 rowDT_Item_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Item_DetailsRow);
                 return rowDT_Item_DetailsRow;
@@ -907,6 +931,8 @@ namespace JodanQuote.Datasource {
                 this.columnDoor_Type_Description = base.Columns["Door Type Description"];
                 this.columnitem_notes = base.Columns["item_notes"];
                 this.columnconverted_cost = base.Columns["converted_cost"];
+                this.columninfill_id = base.Columns["infill_id"];
+                this.columnInfill_Description = base.Columns["Infill Description"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -994,6 +1020,10 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnitem_notes);
                 this.columnconverted_cost = new global::System.Data.DataColumn("converted_cost", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconverted_cost);
+                this.columninfill_id = new global::System.Data.DataColumn("infill_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninfill_id);
+                this.columnInfill_Description = new global::System.Data.DataColumn("Infill Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInfill_Description);
                 this.columnid.AllowDBNull = false;
                 this.columndoor_ref.MaxLength = 2147483647;
                 this.columndoor_style.MaxLength = 50;
@@ -1006,6 +1036,7 @@ namespace JodanQuote.Datasource {
                 this.columnDoor_Type_Description.ReadOnly = true;
                 this.columnDoor_Type_Description.MaxLength = 57;
                 this.columnitem_notes.MaxLength = 50;
+                this.columnInfill_Description.MaxLength = 30;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_DT_Item_Details");
                 this.ExtendedProperties.Add("Generator_UserTableName", "DT_Item_Details");
             }
@@ -1804,6 +1835,38 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int infill_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Item_Details.infill_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'infill_id\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.infill_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Infill_Description {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Item_Details.Infill_DescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Infill Description\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.Infill_DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isproject_idNull() {
                 return this.IsNull(this.tableDT_Item_Details.project_idColumn);
             }
@@ -2281,6 +2344,30 @@ namespace JodanQuote.Datasource {
             public void Setconverted_costNull() {
                 this[this.tableDT_Item_Details.converted_costColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isinfill_idNull() {
+                return this.IsNull(this.tableDT_Item_Details.infill_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setinfill_idNull() {
+                this[this.tableDT_Item_Details.infill_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsInfill_DescriptionNull() {
+                return this.IsNull(this.tableDT_Item_Details.Infill_DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetInfill_DescriptionNull() {
+                this[this.tableDT_Item_Details.Infill_DescriptionColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -2483,6 +2570,8 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             tableMapping.ColumnMappings.Add("Door Type Description", "Door Type Description");
             tableMapping.ColumnMappings.Add("item_notes", "item_notes");
             tableMapping.ColumnMappings.Add("converted_cost", "converted_cost");
+            tableMapping.ColumnMappings.Add("infill_id", "infill_id");
+            tableMapping.ColumnMappings.Add("Infill Description", "Infill Description");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2503,7 +2592,8 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             this._commandCollection[0].CommandText = @"SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, 
                          frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
                          addon_cost, [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost AS security_rating_id, 
-                         [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost
+                         [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost, infill_id, 
+                         [Infill Description]
 FROM            C_View_Item_Details
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;

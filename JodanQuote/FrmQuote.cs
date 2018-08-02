@@ -35,8 +35,8 @@ namespace JodanQuote
             this.ada_quote_items.Fill(dT_Quote.DT_Quote_Items, Valuesclass.project_id);
             this.c_View_StatusTableAdapter.Fill(this.dT_Status.C_View_Status);
             this.ada_setting.Fill(dT_Settings.DT_Setting);
-            this.sALES_LEDGERTableAdapter.Fill(this.dT_customer.SALES_LEDGER,(dT_Quote.DT_Quote_Items.Rows[0]["customer_ref"].ToString()));
             grid_items_on_quote.DataSource = this.dT_Quote.DT_Quote_Items;
+            this.sALES_LEDGERTableAdapter.Fill(this.dT_customer.SALES_LEDGER, (dT_Quote.DT_Quote_Items.Rows[0]["customer_ref"].ToString()));
             Valuesclass.project_ref = txt_project_ref.Text;
             Valuesclass.quote_status = cmb_quote_status.Text;
         }
@@ -604,7 +604,7 @@ namespace JodanQuote
 
 
             }
-            catch(Exception ex )
+            catch(Exception ex  )
             {
                MessageBox.Show(ex.ToString(), "");
             }
