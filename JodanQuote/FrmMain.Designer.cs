@@ -311,14 +311,13 @@
             this.date_start.CalendarTitleForeColor = System.Drawing.Color.CornflowerBlue;
             this.date_start.CalendarTrailingForeColor = System.Drawing.Color.AliceBlue;
             this.date_start.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.date_start.CustomFormat = " 00/00/0000";
+            this.date_start.CustomFormat = "00/00/0000";
             this.date_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_start.Location = new System.Drawing.Point(635, 120);
+            this.date_start.Location = new System.Drawing.Point(636, 124);
             this.date_start.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.date_start.Name = "date_start";
-            this.date_start.Size = new System.Drawing.Size(99, 20);
+            this.date_start.Size = new System.Drawing.Size(98, 20);
             this.date_start.TabIndex = 43;
-            this.date_start.Value = new System.DateTime(2018, 7, 24, 0, 0, 0, 0);
             // 
             // FrmMain
             // 
@@ -371,9 +370,9 @@
         private System.Windows.Forms.TextBox txt_reference;
         private System.Windows.Forms.Button btn_filter;
         private System.Windows.Forms.DateTimePicker date_end;
-        private System.Windows.Forms.DateTimePicker date_start;
         private System.Windows.Forms.Button btn_settings;
         private System.Windows.Forms.DataGridViewButtonColumn btn_open;
+        private System.Windows.Forms.DateTimePicker date_start;
     }
 }
 

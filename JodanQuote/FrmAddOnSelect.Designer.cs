@@ -173,6 +173,7 @@
             this.txt_height.Size = new System.Drawing.Size(186, 20);
             this.txt_height.TabIndex = 6;
             this.txt_height.Text = "0";
+            this.txt_height.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_height_KeyDown);
             // 
             // txt_width
             // 
@@ -183,6 +184,7 @@
             this.txt_width.Size = new System.Drawing.Size(186, 20);
             this.txt_width.TabIndex = 5;
             this.txt_width.Text = "0";
+            this.txt_width.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_width_KeyDown);
             // 
             // cmb_material_thickness_edit
             // 
@@ -360,6 +362,7 @@
             this.txt_qty.Size = new System.Drawing.Size(186, 20);
             this.txt_qty.TabIndex = 7;
             this.txt_qty.Text = "1";
+            this.txt_qty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_qty_KeyDown);
             // 
             // txt_position
             // 

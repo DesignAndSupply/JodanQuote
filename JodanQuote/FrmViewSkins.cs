@@ -42,7 +42,8 @@ namespace JodanQuote
                 grid_skins.Columns["security_cost"].HeaderText = "Security Cost";
                 grid_skins.Columns["security_cost"].DefaultCellStyle.Format = "C2";
                 grid_skins.Columns["labour_hours"].HeaderText = "Labour Hours";
-                
+                grid_skins.Columns["hinge_quantity"].HeaderText = "Hinges Quantity";
+
             }
             catch
             {

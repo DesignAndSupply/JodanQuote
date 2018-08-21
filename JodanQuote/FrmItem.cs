@@ -235,7 +235,13 @@ namespace JodanQuote
                 {
 
                     addon_total += Convert.ToDouble(grid_addon.Rows[i].Cells["addon_total_cost"].Value);
-                    addon_labour_hours += Convert.ToInt32(grid_addon.Rows[i].Cells["add_on_labour_hours"].Value);
+                    var null_check = grid_addon.Rows[i].Cells["add_on_labour_hours"].Value.ToString();
+                    if (null_check != "")
+                    {
+                        addon_labour_hours += Convert.ToInt32(grid_addon.Rows[i].Cells["add_on_labour_hours"].Value);
+
+                    }
+                  
 
                 }
                 txt_hardware_cost.Text = "£" + total.ToString();
@@ -290,7 +296,12 @@ namespace JodanQuote
                     {
 
                         addon_total += Convert.ToDouble(grid_addon.Rows[i].Cells["addon_total_cost"].Value);
-                        addon_labour_hours += Convert.ToInt32(grid_addon.Rows[i].Cells["add_on_labour_hours"].Value);
+                        var null_check = grid_addon.Rows[i].Cells["add_on_labour_hours"].Value.ToString();
+                        if (null_check != "")
+                        {
+                            addon_labour_hours += Convert.ToInt32(grid_addon.Rows[i].Cells["add_on_labour_hours"].Value);
+
+                        }
 
 
                     }
@@ -808,26 +819,16 @@ namespace JodanQuote
                     txt_list.Text = "";
                     txt_warning.Visible = false;
 
-                    for (var i = 0; i < Valuesclass.Calculate_material_list.Count; i++)
-
+                    if(txt_structual_height.Text != "" && txt_structual_width.Text != "" && cmb_door_type_edit.Text != "" && cmb_material_edit.Text != "" && cmb_material_thickness_edit.Text != "")
                     {
-                        object val = dT_Item_Details._DT_Item_Details.Rows[0][Convert.ToString(Valuesclass.Calculate_material_list[i])];
-                        if (val == DBNull.Value)
-                        {
-                            string Null_column = "- " + Valuesclass.Calculate_material_list[i].ToString().Replace("_", " ");
-                            txt_list.AppendText(Environment.NewLine);
-                            txt_list.Text = txt_list.Text + Null_column.ToString();
 
 
-                        }
-
+                        txt_warning.Visible = false;
+                        txt_list.Visible = false;
                     }
-                    if (txt_list.Text != "")
+                    else
                     {
-
-                        txt_warning.Visible = true;
-                        // return;
-
+                        return;
                     }
 
                     int structure_width = 0;
@@ -853,8 +854,8 @@ namespace JodanQuote
                     }
 
 
-
-
+                    
+                    
 
 
                     String sql = "C_Calculate_Material_Cost";
@@ -899,16 +900,45 @@ namespace JodanQuote
                     txt_material_labour.Text =  (Convert.ToString(function.Functionsclass.dt_skins.Rows[0]["labour_hours"]) +" Hours");
 
                     ConnectionClass.Dispose_connection(conn);
-                 
+                    ////////////////////
+
+                    SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
+                    SqlCommand select_item_hinge = new SqlCommand(Statementsclass.select_item_hinge, conn2);
+                    select_item_hinge.Parameters.AddWithValue("@item_id", Valuesclass.quote_id);
+                    SqlDataReader read_item_hinge = select_item_hinge.ExecuteReader();
+
+                    int Current_quantity = 0;
+                    double hinge_cost = 0;
+                    if (read_item_hinge.Read())
+                    {
+                        Current_quantity = Convert.ToInt32(read_item_hinge["quantity"]);
+                        hinge_cost = (Convert.ToDouble(read_item_hinge["hardware_cost"])) ;
+                       read_item_hinge.Close();
+                    }
+                    int hinge_quantity = Convert.ToInt32(function.Functionsclass.dt_skins.Rows[0]["hinge_quantity"].ToString());
+                    ConnectionClass.Dispose_connection(conn2);
+                    int new_quanity = hinge_quantity * Current_quantity;
+                    double new_cost = new_quanity * hinge_cost;                    
+
+                    SqlConnection conn3 = ConnectionClass.GetConnection_jodan_quote();
+                    SqlCommand update_hinge = new SqlCommand(Statementsclass.update_hinge, conn3);
+                    update_hinge.Parameters.AddWithValue("@item_id", Valuesclass.quote_id);
+                    update_hinge.Parameters.AddWithValue("@total_cost", new_cost);
+                    update_hinge.Parameters.AddWithValue("@quantity", new_quanity);
+                    update_hinge.ExecuteNonQuery();
+                    ConnectionClass.Dispose_connection(conn3);
+                    this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
+
                     return;
-                 
+                  
+
                 }
                 
             }
           
              catch(Exception ex)
             {
-               // MessageBox.Show(ex.ToString(), "");
+                MessageBox.Show(ex.ToString(), "");
             }
         }
 
@@ -1683,6 +1713,17 @@ namespace JodanQuote
 
         private void btn_add_item_Click(object sender, EventArgs e)
         {
+
+            if (txt_structual_height.Text == "" | txt_structual_width.Text == "")
+            {
+
+
+             MessageBox.Show("Please Enter A Structure Height And Width", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             return;
+            }
+
+            Update_item();
+            
             Valuesclass.structual_op_width =Convert.ToInt32(txt_structual_width.Text);
             FrmAddOnSelect addon = new FrmAddOnSelect();
             addon.ShowDialog();
@@ -1724,6 +1765,12 @@ namespace JodanQuote
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
+
+                if (txt_structual_width.Text == "")
+                {
+                    return;
+                }
+
                 int width = (Convert.ToInt32(txt_structual_width.Text) - 6);
                 txt_frame_width.Text = width.ToString();
               
@@ -1747,7 +1794,10 @@ namespace JodanQuote
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
-
+                if (txt_structual_height.Text == "")
+                {
+                    return;
+                }
                 int height = (Convert.ToInt32(txt_structual_height.Text) - 10);
                 txt_frame_height.Text = height.ToString();
               //  Edit_Items();
@@ -1806,10 +1856,23 @@ namespace JodanQuote
             }
         }
 
-       
         private void txt_structual_width_Leave(object sender, EventArgs e)
         {
+
             int width = (Convert.ToInt32(txt_structual_width.Text) - 6);
+            
+            if (width < 30 || width > 3000)
+            {
+
+                MessageBox.Show("Width Must Be Between 30 And 3000", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.ActiveControl = txt_structual_width;
+                return;
+            }
+
+
+
+
+          
             txt_frame_width.Text = width.ToString();
             //Edit_Items();
             Calculate_Cost_Edit_Mode();
@@ -1824,7 +1887,19 @@ namespace JodanQuote
 
         private void txt_structual_height_Leave(object sender, EventArgs e)
         {
+
+
             int height = (Convert.ToInt32(txt_structual_height.Text) - 10);
+
+
+            if (height < 30 || height > 3000)
+            {
+
+                MessageBox.Show("Height Must Be Between 30 And 3000", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.ActiveControl = txt_structual_height;
+                return;
+            }
+
             txt_frame_height.Text = height.ToString();
             //Edit_Items();
             Calculate_Cost_Edit_Mode();

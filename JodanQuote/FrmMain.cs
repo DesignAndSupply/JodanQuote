@@ -70,6 +70,8 @@ namespace JodanQuote
             ada.Fill(dt_quote);
             grid_quote_list.DataSource = dt_quote;
             ConnectionClass.Dispose_connection(conn);
+
+        
         }
 
         void Search()
@@ -246,6 +248,7 @@ namespace JodanQuote
             }
 
             Valuesclass.new_item_identifier = 1;
+            
             Valuesclass.customer_account_ref = "JODAN CONTRACTS LTD                                         ";
             Valuesclass.customer_name = "JODAN CONTRACTS LTD                                         ";
             SqlCommand insert_new_project = new SqlCommand(Statementsclass.insert_new_project, conn2);

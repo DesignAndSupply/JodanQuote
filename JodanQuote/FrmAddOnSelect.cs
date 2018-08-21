@@ -160,5 +160,38 @@ namespace JodanQuote
         {
             this.Hide();
         }
+
+        private void txt_width_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+
+                this.ActiveControl = txt_height;
+
+            }
+               
+        }
+
+        private void txt_height_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+
+                this.ActiveControl = txt_qty;
+
+            }
+               
+        }
+
+        private void txt_qty_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+
+                this.ActiveControl = txt_position;
+
+            }
+               
+        }
     }
 }

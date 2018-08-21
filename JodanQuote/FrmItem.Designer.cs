@@ -31,23 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItem));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.txt_revision = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -85,6 +84,26 @@
             this.txt_address_2 = new System.Windows.Forms.TextBox();
             this.txt_address_1 = new System.Windows.Forms.TextBox();
             this.grid_addon = new System.Windows.Forms.DataGridView();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labour_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addon_total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_delete_addon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.add_on_item_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_width = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_height = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_material_thickness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_labour_hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_labour_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_removable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_powder_coated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_powder_coat_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_on_material_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addon_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cViewItemAddOnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Item_Add_On = new JodanQuote.Datasource.DT_Item_Add_On();
             this.panel_door_input = new System.Windows.Forms.Panel();
@@ -213,7 +232,6 @@
             this.dT_Ratings = new JodanQuote.Datasource.DT_Ratings();
             this.label28 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.cmb_fire = new System.Windows.Forms.ComboBox();
             this.cmb_fire_edit = new System.Windows.Forms.ComboBox();
             this.cViewFireRatingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
@@ -224,26 +242,9 @@
             this.ada_Infill = new JodanQuote.Datasource.DT_MaterialTableAdapters.Ada_Infill();
             this.ada_Item_Details = new JodanQuote.Datasource.DT_Item_DetailsTableAdapters.Ada_Item_Details();
             this.tp_skins = new System.Windows.Forms.ToolTip(this.components);
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labour_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addon_total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_delete_addon = new System.Windows.Forms.DataGridViewImageColumn();
-            this.add_on_item_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_width = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_height = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_material_thickness = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_material_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_labour_hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_labour_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_removable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_powder_coated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_powder_coat_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add_on_material_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addon_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label40 = new System.Windows.Forms.Label();
+            this.cmb_fire = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnl_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -546,7 +547,7 @@
             this.cmb_finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_finish.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_finish.FormattingEnabled = true;
-            this.cmb_finish.Location = new System.Drawing.Point(168, 111);
+            this.cmb_finish.Location = new System.Drawing.Point(168, 87);
             this.cmb_finish.Name = "cmb_finish";
             this.cmb_finish.Size = new System.Drawing.Size(177, 21);
             this.cmb_finish.TabIndex = 62;
@@ -749,37 +750,211 @@
             this.add_on_material_cost,
             this.addon_id});
             this.grid_addon.DataSource = this.cViewItemAddOnBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_addon.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_addon.DefaultCellStyle = dataGridViewCellStyle5;
             this.grid_addon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_addon.GridColor = System.Drawing.Color.CornflowerBlue;
             this.grid_addon.Location = new System.Drawing.Point(11, 20);
             this.grid_addon.Name = "grid_addon";
             this.grid_addon.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_addon.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.grid_addon.RowHeadersVisible = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_addon.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.grid_addon.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.grid_addon.Size = new System.Drawing.Size(347, 221);
             this.grid_addon.TabIndex = 58;
             this.grid_addon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_addon_CellContentClick);
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.descriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.descriptionDataGridViewTextBoxColumn.FillWeight = 70F;
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "    Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // labour_cost
+            // 
+            this.labour_cost.DataPropertyName = "labour_cost";
+            this.labour_cost.HeaderText = "Labour Cost";
+            this.labour_cost.Name = "labour_cost";
+            this.labour_cost.ReadOnly = true;
+            this.labour_cost.Visible = false;
+            // 
+            // add_on_qty
+            // 
+            this.add_on_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.add_on_qty.DataPropertyName = "qty";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.add_on_qty.DefaultCellStyle = dataGridViewCellStyle3;
+            this.add_on_qty.FillWeight = 20F;
+            this.add_on_qty.HeaderText = " Qty";
+            this.add_on_qty.Name = "add_on_qty";
+            this.add_on_qty.ReadOnly = true;
+            // 
+            // addon_total_cost
+            // 
+            this.addon_total_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addon_total_cost.DataPropertyName = "unit_material_cost";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.addon_total_cost.DefaultCellStyle = dataGridViewCellStyle4;
+            this.addon_total_cost.FillWeight = 50F;
+            this.addon_total_cost.HeaderText = " Total Cost";
+            this.addon_total_cost.Name = "addon_total_cost";
+            this.addon_total_cost.ReadOnly = true;
+            // 
+            // btn_delete_addon
+            // 
+            this.btn_delete_addon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.btn_delete_addon.FillWeight = 20F;
+            this.btn_delete_addon.HeaderText = "";
+            this.btn_delete_addon.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete_addon.Image")));
+            this.btn_delete_addon.Name = "btn_delete_addon";
+            this.btn_delete_addon.ReadOnly = true;
+            // 
+            // add_on_item_id
+            // 
+            this.add_on_item_id.DataPropertyName = "item_id";
+            this.add_on_item_id.HeaderText = "";
+            this.add_on_item_id.Name = "add_on_item_id";
+            this.add_on_item_id.ReadOnly = true;
+            this.add_on_item_id.Visible = false;
+            // 
+            // add_on_id
+            // 
+            this.add_on_id.DataPropertyName = "add_on_id";
+            this.add_on_id.HeaderText = "";
+            this.add_on_id.Name = "add_on_id";
+            this.add_on_id.ReadOnly = true;
+            this.add_on_id.Visible = false;
+            // 
+            // add_on_width
+            // 
+            this.add_on_width.DataPropertyName = "add_on_width";
+            this.add_on_width.HeaderText = "";
+            this.add_on_width.Name = "add_on_width";
+            this.add_on_width.ReadOnly = true;
+            this.add_on_width.Visible = false;
+            // 
+            // add_on_height
+            // 
+            this.add_on_height.DataPropertyName = "add_on_height";
+            this.add_on_height.HeaderText = "";
+            this.add_on_height.Name = "add_on_height";
+            this.add_on_height.ReadOnly = true;
+            this.add_on_height.Visible = false;
+            // 
+            // material_id
+            // 
+            this.material_id.DataPropertyName = "material_id";
+            this.material_id.HeaderText = "";
+            this.material_id.Name = "material_id";
+            this.material_id.ReadOnly = true;
+            this.material_id.Visible = false;
+            // 
+            // add_on_material_thickness
+            // 
+            this.add_on_material_thickness.DataPropertyName = "material_thickness";
+            this.add_on_material_thickness.HeaderText = "";
+            this.add_on_material_thickness.Name = "add_on_material_thickness";
+            this.add_on_material_thickness.ReadOnly = true;
+            this.add_on_material_thickness.Visible = false;
+            // 
+            // add_on_material_id
+            // 
+            this.add_on_material_id.DataPropertyName = "add_on_material_id";
+            this.add_on_material_id.HeaderText = "";
+            this.add_on_material_id.Name = "add_on_material_id";
+            this.add_on_material_id.ReadOnly = true;
+            this.add_on_material_id.Visible = false;
+            // 
+            // add_on_labour_hours
+            // 
+            this.add_on_labour_hours.DataPropertyName = "labour_hours";
+            this.add_on_labour_hours.HeaderText = "";
+            this.add_on_labour_hours.Name = "add_on_labour_hours";
+            this.add_on_labour_hours.ReadOnly = true;
+            this.add_on_labour_hours.Visible = false;
+            // 
+            // add_on_labour_cost
+            // 
+            this.add_on_labour_cost.DataPropertyName = "labour_cost";
+            this.add_on_labour_cost.HeaderText = "";
+            this.add_on_labour_cost.Name = "add_on_labour_cost";
+            this.add_on_labour_cost.ReadOnly = true;
+            this.add_on_labour_cost.Visible = false;
+            // 
+            // add_on_position
+            // 
+            this.add_on_position.DataPropertyName = "position";
+            this.add_on_position.HeaderText = "";
+            this.add_on_position.Name = "add_on_position";
+            this.add_on_position.ReadOnly = true;
+            this.add_on_position.Visible = false;
+            // 
+            // add_on_removable
+            // 
+            this.add_on_removable.DataPropertyName = "removable";
+            this.add_on_removable.HeaderText = "";
+            this.add_on_removable.Name = "add_on_removable";
+            this.add_on_removable.ReadOnly = true;
+            this.add_on_removable.Visible = false;
+            // 
+            // add_on_powder_coated
+            // 
+            this.add_on_powder_coated.DataPropertyName = "powder_coated";
+            this.add_on_powder_coated.HeaderText = "";
+            this.add_on_powder_coated.Name = "add_on_powder_coated";
+            this.add_on_powder_coated.ReadOnly = true;
+            this.add_on_powder_coated.Visible = false;
+            // 
+            // add_on_powder_coat_cost
+            // 
+            this.add_on_powder_coat_cost.DataPropertyName = "powder_coat_cost";
+            this.add_on_powder_coat_cost.HeaderText = "";
+            this.add_on_powder_coat_cost.Name = "add_on_powder_coat_cost";
+            this.add_on_powder_coat_cost.ReadOnly = true;
+            this.add_on_powder_coat_cost.Visible = false;
+            // 
+            // add_on_material_cost
+            // 
+            this.add_on_material_cost.DataPropertyName = "material_cost";
+            this.add_on_material_cost.HeaderText = "";
+            this.add_on_material_cost.Name = "add_on_material_cost";
+            this.add_on_material_cost.ReadOnly = true;
+            this.add_on_material_cost.Visible = false;
+            // 
+            // addon_id
+            // 
+            this.addon_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.addon_id.DataPropertyName = "id";
+            this.addon_id.FillWeight = 5F;
+            this.addon_id.HeaderText = "";
+            this.addon_id.Name = "addon_id";
+            this.addon_id.ReadOnly = true;
+            this.addon_id.Visible = false;
             // 
             // cViewItemAddOnBindingSource
             // 
@@ -1271,7 +1446,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(30, 114);
+            this.label12.Location = new System.Drawing.Point(30, 90);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 63;
@@ -1286,7 +1461,7 @@
             this.cmb_finish_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_finish_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_finish_edit.FormattingEnabled = true;
-            this.cmb_finish_edit.Location = new System.Drawing.Point(168, 111);
+            this.cmb_finish_edit.Location = new System.Drawing.Point(168, 87);
             this.cmb_finish_edit.Name = "cmb_finish_edit";
             this.cmb_finish_edit.Size = new System.Drawing.Size(177, 21);
             this.cmb_finish_edit.TabIndex = 80;
@@ -1397,14 +1572,14 @@
             this.grid_hardware_on_item.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.grid_hardware_on_item.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.grid_hardware_on_item.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_hardware_on_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_hardware_on_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.grid_hardware_on_item.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_hardware_on_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.description,
@@ -1416,14 +1591,14 @@
             this.delete_id,
             this.btn_delete_hardware});
             this.grid_hardware_on_item.DataSource = this.dTHardwareItemBindingSource;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_hardware_on_item.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_hardware_on_item.DefaultCellStyle = dataGridViewCellStyle12;
             this.grid_hardware_on_item.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_hardware_on_item.GridColor = System.Drawing.Color.CornflowerBlue;
             this.grid_hardware_on_item.Location = new System.Drawing.Point(7, 30);
@@ -1431,14 +1606,14 @@
             this.grid_hardware_on_item.MaximumSize = new System.Drawing.Size(493, 200);
             this.grid_hardware_on_item.MinimumSize = new System.Drawing.Size(443, 200);
             this.grid_hardware_on_item.Name = "grid_hardware_on_item";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_hardware_on_item.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_hardware_on_item.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.grid_hardware_on_item.RowHeadersVisible = false;
             this.grid_hardware_on_item.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_hardware_on_item.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1458,10 +1633,10 @@
             // 
             this.hardware_cost_sale.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost_sale.DataPropertyName = "Hardware Cost";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.hardware_cost_sale.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.hardware_cost_sale.DefaultCellStyle = dataGridViewCellStyle9;
             this.hardware_cost_sale.FillWeight = 57.36304F;
             this.hardware_cost_sale.HeaderText = "Hardware Cost";
             this.hardware_cost_sale.Name = "hardware_cost_sale";
@@ -1470,8 +1645,8 @@
             // 
             this.quantity_hardware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.quantity_hardware.DataPropertyName = "quantity";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.quantity_hardware.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.quantity_hardware.DefaultCellStyle = dataGridViewCellStyle10;
             this.quantity_hardware.FillWeight = 49.16832F;
             this.quantity_hardware.HeaderText = "Quantity";
             this.quantity_hardware.Name = "quantity_hardware";
@@ -1480,9 +1655,9 @@
             // 
             this.hardware_cost_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost_total.DataPropertyName = "Total Cost";
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.hardware_cost_total.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.hardware_cost_total.DefaultCellStyle = dataGridViewCellStyle11;
             this.hardware_cost_total.FillWeight = 50F;
             this.hardware_cost_total.HeaderText = "Total Cost";
             this.hardware_cost_total.Name = "hardware_cost_total";
@@ -1596,7 +1771,6 @@
             // txt_labour_total
             // 
             this.txt_labour_total.BackColor = System.Drawing.Color.AliceBlue;
-            this.txt_labour_total.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "labour_rate", true));
             this.txt_labour_total.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_labour_total.Location = new System.Drawing.Point(139, 83);
             this.txt_labour_total.Name = "txt_labour_total";
@@ -1811,6 +1985,7 @@
             // txt_labour_cost
             // 
             this.txt_labour_cost.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_labour_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "labour_rate", true));
             this.txt_labour_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.txt_labour_cost.Location = new System.Drawing.Point(248, 83);
             this.txt_labour_cost.Name = "txt_labour_cost";
@@ -1924,8 +2099,8 @@
             // 
             this.hardware_description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_description.DataPropertyName = "Hardware Description";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hardware_description.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hardware_description.DefaultCellStyle = dataGridViewCellStyle14;
             this.hardware_description.HeaderText = "Hardware Description";
             this.hardware_description.Name = "hardware_description";
             // 
@@ -1933,10 +2108,10 @@
             // 
             this.hardware_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost.DataPropertyName = "Hardware Cost";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.Format = "C2";
-            dataGridViewCellStyle16.NullValue = null;
-            this.hardware_cost.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.hardware_cost.DefaultCellStyle = dataGridViewCellStyle15;
             this.hardware_cost.HeaderText = "Hardware Cost";
             this.hardware_cost.Name = "hardware_cost";
             // 
@@ -1944,10 +2119,10 @@
             // 
             this.total_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.total_cost.DataPropertyName = "Total Cost";
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.Format = "C2";
-            dataGridViewCellStyle17.NullValue = null;
-            this.total_cost.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.Format = "C2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.total_cost.DefaultCellStyle = dataGridViewCellStyle16;
             this.total_cost.HeaderText = "Total Cost";
             this.total_cost.Name = "total_cost";
             // 
@@ -1955,8 +2130,8 @@
             // 
             this.qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.qty.DataPropertyName = "quantity";
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.qty.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.qty.DefaultCellStyle = dataGridViewCellStyle17;
             this.qty.HeaderText = "Quantity";
             this.qty.Name = "qty";
             // 
@@ -2091,6 +2266,8 @@
             // panel_spec
             // 
             this.panel_spec.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_spec.Controls.Add(this.label40);
+            this.panel_spec.Controls.Add(this.textBox1);
             this.panel_spec.Controls.Add(this.label38);
             this.panel_spec.Controls.Add(this.txt_notes);
             this.panel_spec.Controls.Add(this.cmb_security);
@@ -2098,10 +2275,10 @@
             this.panel_spec.Controls.Add(this.label28);
             this.panel_spec.Controls.Add(this.label12);
             this.panel_spec.Controls.Add(this.label15);
-            this.panel_spec.Controls.Add(this.cmb_fire);
-            this.panel_spec.Controls.Add(this.cmb_fire_edit);
             this.panel_spec.Controls.Add(this.cmb_finish);
             this.panel_spec.Controls.Add(this.cmb_finish_edit);
+            this.panel_spec.Controls.Add(this.cmb_fire);
+            this.panel_spec.Controls.Add(this.cmb_fire_edit);
             this.panel_spec.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.panel_spec.Location = new System.Drawing.Point(589, 118);
             this.panel_spec.Name = "panel_spec";
@@ -2112,7 +2289,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(30, 143);
+            this.label38.Location = new System.Drawing.Point(30, 153);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(44, 13);
             this.label38.TabIndex = 91;
@@ -2123,7 +2300,7 @@
             this.txt_notes.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_notes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "item_notes", true));
             this.txt_notes.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_notes.Location = new System.Drawing.Point(116, 139);
+            this.txt_notes.Location = new System.Drawing.Point(116, 149);
             this.txt_notes.Multiline = true;
             this.txt_notes.Name = "txt_notes";
             this.txt_notes.Size = new System.Drawing.Size(229, 62);
@@ -2141,7 +2318,7 @@
             this.cmb_security.FormattingEnabled = true;
             this.cmb_security.IntegralHeight = false;
             this.cmb_security.ItemHeight = 13;
-            this.cmb_security.Location = new System.Drawing.Point(168, 81);
+            this.cmb_security.Location = new System.Drawing.Point(168, 57);
             this.cmb_security.Name = "cmb_security";
             this.cmb_security.Size = new System.Drawing.Size(177, 21);
             this.cmb_security.TabIndex = 89;
@@ -2160,7 +2337,7 @@
             this.cmb_security_edit.FormattingEnabled = true;
             this.cmb_security_edit.IntegralHeight = false;
             this.cmb_security_edit.ItemHeight = 13;
-            this.cmb_security_edit.Location = new System.Drawing.Point(168, 81);
+            this.cmb_security_edit.Location = new System.Drawing.Point(168, 57);
             this.cmb_security_edit.Name = "cmb_security_edit";
             this.cmb_security_edit.Size = new System.Drawing.Size(177, 21);
             this.cmb_security_edit.TabIndex = 86;
@@ -2181,7 +2358,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(30, 85);
+            this.label28.Location = new System.Drawing.Point(30, 61);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(98, 13);
             this.label28.TabIndex = 87;
@@ -2191,29 +2368,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(30, 56);
+            this.label15.Location = new System.Drawing.Point(30, 32);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 13);
             this.label15.TabIndex = 85;
             this.label15.Text = "Fire Rating:";
-            // 
-            // cmb_fire
-            // 
-            this.cmb_fire.DataSource = this.dTItemDetailsBindingSource;
-            this.cmb_fire.DisplayMember = "Fire Rating";
-            this.cmb_fire.DropDownHeight = 69;
-            this.cmb_fire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_fire.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_fire.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_fire.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.cmb_fire.FormattingEnabled = true;
-            this.cmb_fire.IntegralHeight = false;
-            this.cmb_fire.ItemHeight = 13;
-            this.cmb_fire.Location = new System.Drawing.Point(168, 52);
-            this.cmb_fire.Name = "cmb_fire";
-            this.cmb_fire.Size = new System.Drawing.Size(177, 21);
-            this.cmb_fire.TabIndex = 88;
-            this.cmb_fire.ValueMember = "fire_rating_id";
             // 
             // cmb_fire_edit
             // 
@@ -2228,7 +2387,7 @@
             this.cmb_fire_edit.FormattingEnabled = true;
             this.cmb_fire_edit.IntegralHeight = false;
             this.cmb_fire_edit.ItemHeight = 13;
-            this.cmb_fire_edit.Location = new System.Drawing.Point(168, 52);
+            this.cmb_fire_edit.Location = new System.Drawing.Point(168, 28);
             this.cmb_fire_edit.Name = "cmb_fire_edit";
             this.cmb_fire_edit.Size = new System.Drawing.Size(177, 21);
             this.cmb_fire_edit.TabIndex = 84;
@@ -2281,181 +2440,44 @@
             this.tp_skins.ForeColor = System.Drawing.Color.Blue;
             this.tp_skins.Tag = "View Material Cost";
             // 
-            // descriptionDataGridViewTextBoxColumn
+            // label40
             // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.descriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.descriptionDataGridViewTextBoxColumn.FillWeight = 70F;
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "    Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(31, 122);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(47, 13);
+            this.label40.TabIndex = 93;
+            this.label40.Text = "Colour:";
             // 
-            // labour_cost
+            // cmb_fire
             // 
-            this.labour_cost.DataPropertyName = "labour_cost";
-            this.labour_cost.HeaderText = "Labour Cost";
-            this.labour_cost.Name = "labour_cost";
-            this.labour_cost.ReadOnly = true;
-            this.labour_cost.Visible = false;
+            this.cmb_fire.DataSource = this.dTItemDetailsBindingSource;
+            this.cmb_fire.DisplayMember = "Fire Rating";
+            this.cmb_fire.DropDownHeight = 69;
+            this.cmb_fire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_fire.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_fire.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_fire.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.cmb_fire.FormattingEnabled = true;
+            this.cmb_fire.IntegralHeight = false;
+            this.cmb_fire.ItemHeight = 13;
+            this.cmb_fire.Location = new System.Drawing.Point(168, 28);
+            this.cmb_fire.Name = "cmb_fire";
+            this.cmb_fire.Size = new System.Drawing.Size(177, 21);
+            this.cmb_fire.TabIndex = 88;
+            this.cmb_fire.ValueMember = "fire_rating_id";
             // 
-            // add_on_qty
+            // textBox1
             // 
-            this.add_on_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.add_on_qty.DataPropertyName = "qty";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.add_on_qty.DefaultCellStyle = dataGridViewCellStyle3;
-            this.add_on_qty.FillWeight = 20F;
-            this.add_on_qty.HeaderText = " Qty";
-            this.add_on_qty.Name = "add_on_qty";
-            this.add_on_qty.ReadOnly = true;
-            // 
-            // addon_total_cost
-            // 
-            this.addon_total_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.addon_total_cost.DataPropertyName = "unit_material_cost";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.addon_total_cost.DefaultCellStyle = dataGridViewCellStyle4;
-            this.addon_total_cost.FillWeight = 50F;
-            this.addon_total_cost.HeaderText = " Total Cost";
-            this.addon_total_cost.Name = "addon_total_cost";
-            this.addon_total_cost.ReadOnly = true;
-            // 
-            // btn_delete_addon
-            // 
-            this.btn_delete_addon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.btn_delete_addon.FillWeight = 20F;
-            this.btn_delete_addon.HeaderText = "";
-            this.btn_delete_addon.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete_addon.Image")));
-            this.btn_delete_addon.Name = "btn_delete_addon";
-            this.btn_delete_addon.ReadOnly = true;
-            // 
-            // add_on_item_id
-            // 
-            this.add_on_item_id.DataPropertyName = "item_id";
-            this.add_on_item_id.HeaderText = "";
-            this.add_on_item_id.Name = "add_on_item_id";
-            this.add_on_item_id.ReadOnly = true;
-            this.add_on_item_id.Visible = false;
-            // 
-            // add_on_id
-            // 
-            this.add_on_id.DataPropertyName = "add_on_id";
-            this.add_on_id.HeaderText = "";
-            this.add_on_id.Name = "add_on_id";
-            this.add_on_id.ReadOnly = true;
-            // 
-            // add_on_width
-            // 
-            this.add_on_width.DataPropertyName = "add_on_width";
-            this.add_on_width.HeaderText = "";
-            this.add_on_width.Name = "add_on_width";
-            this.add_on_width.ReadOnly = true;
-            this.add_on_width.Visible = false;
-            // 
-            // add_on_height
-            // 
-            this.add_on_height.DataPropertyName = "add_on_height";
-            this.add_on_height.HeaderText = "";
-            this.add_on_height.Name = "add_on_height";
-            this.add_on_height.ReadOnly = true;
-            this.add_on_height.Visible = false;
-            // 
-            // material_id
-            // 
-            this.material_id.DataPropertyName = "material_id";
-            this.material_id.HeaderText = "";
-            this.material_id.Name = "material_id";
-            this.material_id.ReadOnly = true;
-            this.material_id.Visible = false;
-            // 
-            // add_on_material_thickness
-            // 
-            this.add_on_material_thickness.DataPropertyName = "material_thickness";
-            this.add_on_material_thickness.HeaderText = "";
-            this.add_on_material_thickness.Name = "add_on_material_thickness";
-            this.add_on_material_thickness.ReadOnly = true;
-            this.add_on_material_thickness.Visible = false;
-            // 
-            // add_on_material_id
-            // 
-            this.add_on_material_id.DataPropertyName = "add_on_material_id";
-            this.add_on_material_id.HeaderText = "";
-            this.add_on_material_id.Name = "add_on_material_id";
-            this.add_on_material_id.ReadOnly = true;
-            this.add_on_material_id.Visible = false;
-            // 
-            // add_on_labour_hours
-            // 
-            this.add_on_labour_hours.DataPropertyName = "labour_hours";
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.add_on_labour_hours.DefaultCellStyle = dataGridViewCellStyle5;
-            this.add_on_labour_hours.HeaderText = "";
-            this.add_on_labour_hours.Name = "add_on_labour_hours";
-            this.add_on_labour_hours.ReadOnly = true;
-            this.add_on_labour_hours.Visible = false;
-            // 
-            // add_on_labour_cost
-            // 
-            this.add_on_labour_cost.DataPropertyName = "labour_cost";
-            this.add_on_labour_cost.HeaderText = "";
-            this.add_on_labour_cost.Name = "add_on_labour_cost";
-            this.add_on_labour_cost.ReadOnly = true;
-            this.add_on_labour_cost.Visible = false;
-            // 
-            // add_on_position
-            // 
-            this.add_on_position.DataPropertyName = "position";
-            this.add_on_position.HeaderText = "";
-            this.add_on_position.Name = "add_on_position";
-            this.add_on_position.ReadOnly = true;
-            this.add_on_position.Visible = false;
-            // 
-            // add_on_removable
-            // 
-            this.add_on_removable.DataPropertyName = "removable";
-            this.add_on_removable.HeaderText = "";
-            this.add_on_removable.Name = "add_on_removable";
-            this.add_on_removable.ReadOnly = true;
-            this.add_on_removable.Visible = false;
-            // 
-            // add_on_powder_coated
-            // 
-            this.add_on_powder_coated.DataPropertyName = "powder_coated";
-            this.add_on_powder_coated.HeaderText = "";
-            this.add_on_powder_coated.Name = "add_on_powder_coated";
-            this.add_on_powder_coated.ReadOnly = true;
-            this.add_on_powder_coated.Visible = false;
-            // 
-            // add_on_powder_coat_cost
-            // 
-            this.add_on_powder_coat_cost.DataPropertyName = "powder_coat_cost";
-            this.add_on_powder_coat_cost.HeaderText = "";
-            this.add_on_powder_coat_cost.Name = "add_on_powder_coat_cost";
-            this.add_on_powder_coat_cost.ReadOnly = true;
-            this.add_on_powder_coat_cost.Visible = false;
-            // 
-            // add_on_material_cost
-            // 
-            this.add_on_material_cost.DataPropertyName = "material_cost";
-            this.add_on_material_cost.HeaderText = "";
-            this.add_on_material_cost.Name = "add_on_material_cost";
-            this.add_on_material_cost.ReadOnly = true;
-            this.add_on_material_cost.Visible = false;
-            // 
-            // addon_id
-            // 
-            this.addon_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.addon_id.DataPropertyName = "id";
-            this.addon_id.FillWeight = 5F;
-            this.addon_id.HeaderText = "";
-            this.addon_id.Name = "addon_id";
-            this.addon_id.ReadOnly = true;
-            this.addon_id.Visible = false;
+            this.textBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "item_notes", true));
+            this.textBox1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textBox1.Location = new System.Drawing.Point(168, 114);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(177, 21);
+            this.textBox1.TabIndex = 92;
             // 
             // FrmItem
             // 
@@ -2676,7 +2698,6 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ComboBox cmb_security;
-        private System.Windows.Forms.ComboBox cmb_fire;
         private System.Windows.Forms.Button btn_view_skins;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.ComboBox cmb_jam_style_edit;
@@ -2739,6 +2760,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn add_on_powder_coat_cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn add_on_material_cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn addon_id;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmb_fire;
         //  private Datasource.DT_Material dT_Item;
         //    private Datasource.DT_ItemTableAdapters.//C_View_Item_DetailsTableAdapter c_View_Item_DetailsTableAdapter;
     }

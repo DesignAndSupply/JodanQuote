@@ -34,11 +34,16 @@ namespace JodanQuote
 
         {
             DataSet ds = new DataSet();
+            DataSet ds_item = new DataSet();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter select_quote_report = new SqlDataAdapter(Statementsclass.select_quote_report, conn);
+            SqlDataAdapter select_item_report = new SqlDataAdapter(Statementsclass.select_item_report, conn);
             select_quote_report.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+            select_item_report.SelectCommand.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
             select_quote_report.Fill(ds);
+            select_item_report.Fill(ds_item);
             CrRptQuote1.SetDataSource(ds.Tables[0]);
+            CrRptQuote1.Subreports[0].SetDataSource(ds_item.Tables[0]);
             ConnectionClass.Dispose_connection(conn);
             crystalReportViewer1.ReportSource = CrRptQuote1;
             crystalReportViewer1.Refresh();

@@ -45,7 +45,7 @@
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Location = new System.Drawing.Point(-5, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(186, 636);
+            this.panel2.Size = new System.Drawing.Size(186, 820);
             this.panel2.TabIndex = 24;
             // 
             // panel1
@@ -118,12 +118,11 @@
             this.crystalReportViewer1.ShowGotoPageButton = false;
             this.crystalReportViewer1.ShowGroupTreeButton = false;
             this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowPageNavigateButtons = false;
             this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.ShowRefreshButton = false;
             this.crystalReportViewer1.ShowTextSearchButton = false;
             this.crystalReportViewer1.ShowZoomButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(910, 500);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(910, 653);
             this.crystalReportViewer1.TabIndex = 26;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -131,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 614);
+            this.ClientSize = new System.Drawing.Size(1163, 770);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

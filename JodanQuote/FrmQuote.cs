@@ -16,16 +16,22 @@ namespace JodanQuote
 {
     public partial class FrmQuote : Form
     {
-        public static int locked_identifiter = 1;
-
+       
         public FrmQuote()
         {
             InitializeComponent();
             Fill_data();
-            btn_edit.PerformClick();
-            Format();
             Textbox_Format();
-            
+            Format();
+            Edit();
+         
+
+        }
+
+        private void FrmQuote_Shown(object sender, EventArgs e)
+        {
+            Fill_data();
+ 
         }
 
         void Fill_data()
@@ -36,9 +42,18 @@ namespace JodanQuote
             this.c_View_StatusTableAdapter.Fill(this.dT_Status.C_View_Status);
             this.ada_setting.Fill(dT_Settings.DT_Setting);
             grid_items_on_quote.DataSource = this.dT_Quote.DT_Quote_Items;
-            this.sALES_LEDGERTableAdapter.Fill(this.dT_customer.SALES_LEDGER, (dT_Quote.DT_Quote_Items.Rows[0]["customer_ref"].ToString()));
             Valuesclass.project_ref = txt_project_ref.Text;
             Valuesclass.quote_status = cmb_quote_status.Text;
+            try
+            {
+
+                this.sALES_LEDGERTableAdapter.Fill(this.dT_customer.SALES_LEDGER, (dT_Quote.DT_Quote_Items.Rows[0]["customer_ref"].ToString()));
+            }
+            catch
+            {
+
+            }
+            
         }
 
         void select_max_item()
@@ -102,19 +117,18 @@ namespace JodanQuote
 
         void Edit()
         {
+            
 
-
-            if (locked_identifiter == 0)
+            if (Valuesclass.new_item_identifier == 0)
             {
                 Save();
                 main_tab_project_additions.Enabled = false;
-                locked_identifiter = 1;
+                Valuesclass.new_item_identifier = 1;
                 btn_edit.Text = "         Edit            Details";
                 btn_edit.Image = JodanQuote.Properties.Resources.Revise;
-
                 cmb_quote_status.Visible = false;
                 txt_quote_status.Visible = true;
-
+               
             }
 
             else
@@ -123,12 +137,12 @@ namespace JodanQuote
 
                 main_tab_project_additions.Enabled = true;
 
-                locked_identifiter = 0;
+                Valuesclass.new_item_identifier = 0;
                 btn_edit.Text = "         Save         Quotation";
                 btn_edit.Image = JodanQuote.Properties.Resources.Save;
                 cmb_quote_status.Visible = true;
                 txt_quote_status.Visible = false;
-                // cmb_quote_status.Text = dt_quote.DT_Quote_Items.Rows[0]["quote_status"].ToString();
+          
             }
 
             Fill_data();
@@ -169,32 +183,22 @@ namespace JodanQuote
                 pct_logo.Location = new Point(5, 8);
 
             }
-            if(Valuesclass.new_item_identifier == 1)
-            {
-                Edit();
-
-
-            }
-            ;
-
-
-
+          
 
         }
 
         void Textbox_Format()
         {
-
-
-           string delivery_charge = txt_delivery_charge.Text.Replace("£", string.Empty);
-           txt_delivery_charge.Text = "£" + delivery_charge;
-
+         
+          
+            string delivery_charge = txt_delivery_charge.Text.Replace("£", string.Empty);
             string install_charge = txt_installation.Text.Replace("£", string.Empty);
-            txt_installation.Text = "£" + install_charge;
-
             string survey_charge = txt_survery_charge.Text.Replace("£", string.Empty);
-            txt_survery_charge.Text = "£" + survey_charge;
 
+
+            txt_survery_charge.Text = "£" + survey_charge;
+            txt_delivery_charge.Text = "£" + delivery_charge;
+            txt_installation.Text = "£" + install_charge;
 
         }
 
@@ -211,10 +215,10 @@ namespace JodanQuote
 
                 int? Hardware = ((dt_copy_hardware.Rows[i]["Hardware ID"]) as int?) ?? 0;
                 int? Quantity = ((dt_copy_hardware.Rows[i]["Quantity"]) as int?) ?? 0;
-                int? Total_Cost = ((dt_copy_hardware.Rows[i]["Total Cost"]) as int?) ?? 0;
+                Double? Total_Cost = ((dt_copy_hardware.Rows[i]["Total Cost"]) as Double?) ?? 0;
 
                 SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
-                insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
+                insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id-1);
                 insert_hardware.Parameters.AddWithValue("@hardware_id", Hardware);
                 insert_hardware.Parameters.AddWithValue("@hardware_description", dt_copy_hardware.Rows[i]["Hardware Description"]);
                 insert_hardware.Parameters.AddWithValue("@hardware_cost", dt_copy_hardware.Rows[i]["Hardware cost"]);
@@ -260,7 +264,7 @@ namespace JodanQuote
          
 
                 SqlCommand insert_add_on = new SqlCommand(Statementsclass.insert_add_on, conn);
-                insert_add_on.Parameters.AddWithValue("@quotation_id", Valuesclass.quote_id);
+                insert_add_on.Parameters.AddWithValue("@quotation_id", Valuesclass.quote_id-1);
                 insert_add_on.Parameters.AddWithValue("@add_on_id", dt_copy_addon.Rows[i]["add_on_id"].ToString());
                 insert_add_on.Parameters.AddWithValue("@add_on_width", dt_copy_addon.Rows[i]["add_on_width"].ToString());
                 insert_add_on.Parameters.AddWithValue("@add_on_height", dt_copy_addon.Rows[i]["add_on_height"].ToString());
@@ -328,82 +332,97 @@ namespace JodanQuote
             for (int i = 0; i < dt_copy_item.Rows.Count; i++)
             {
 
-                    
-                    int? door_type_id = ((dt_copy_item.Rows[i]["door_type_id"]) as int?) ?? 0;
-                    int? order_id = ((dt_copy_item.Rows[i]["order_id"]) as int?) ?? 0;
-                    int? material_id = ((dt_copy_item.Rows[i]["material_id"]) as int?) ?? 0;
-                    int? finish_id = ((dt_copy_item.Rows[i]["finish_id"]) as int?) ?? 0;
-                    int? material_thickness = ((dt_copy_item.Rows[i]["material_thickness"]) as int?) ?? 0;
-                    double? total_cost = ((dt_copy_item.Rows[i]["total_cost"]) as double?) ?? 0;
-                    double converted_cost = 0;
-                   SqlConnection conn3 = ConnectionClass.GetConnection_dsl();
-                   SqlCommand Select_door_type = new SqlCommand(Statementsclass.Select_door_type, conn3);
-                   Select_door_type.Parameters.AddWithValue("@id", door_type_id);
-                   SqlDataReader read_door_type = Select_door_type.ExecuteReader();
+                int? door_type_id = ((dt_copy_item.Rows[i]["door_type_id"]) as int?) ?? 0;
+                int? order_id = ((dt_copy_item.Rows[i]["order_id"]) as int?) ?? 0;
+                int? material_id = ((dt_copy_item.Rows[i]["material_id"]) as int?) ?? 0;
+                int? finish_id = ((dt_copy_item.Rows[i]["finish_id"]) as int?) ?? 0;
+                int? fire_rating_id = ((dt_copy_item.Rows[i]["fire_rating_id"]) as int?) ?? 0;
+                int? jamb_style_id = ((dt_copy_item.Rows[i]["jamb_style_id"]) as int?) ?? 0;
+                int? security_rating_id = ((dt_copy_item.Rows[i]["security_rating_id"]) as int?) ?? 0;
+                int? infill_id = ((dt_copy_item.Rows[i]["infill_id"]) as int?) ?? 0;
+                int? material_thickness = ((dt_copy_item.Rows[i]["material_thickness"]) as int?) ?? 0;
+                double? total_cost = ((dt_copy_item.Rows[i]["total_cost"]) as double?) ?? 0;
+                double? security_rating_cost = ((dt_copy_item.Rows[i]["security_rating_cost"]) as double?) ?? 0;
+                double? fire_rating_cost = ((dt_copy_item.Rows[i]["fire_rating_cost"]) as double?) ?? 0;
+                double converted_cost = 0;
+                SqlConnection conn3 = ConnectionClass.GetConnection_dsl();
+                SqlCommand Select_door_type = new SqlCommand(Statementsclass.Select_door_type, conn3);
+                Select_door_type.Parameters.AddWithValue("@id", door_type_id);
+                SqlDataReader read_door_type = Select_door_type.ExecuteReader();
 
-                   if (read_door_type.Read())
-                   {
-                    string door_style= (Convert.ToString(read_door_type["description"])) ;
+                if (read_door_type.Read())
+                {
+                    string door_style = (Convert.ToString(read_door_type["description"]));
                     Valuesclass.double_single = (Convert.ToInt32(read_door_type["double_door"]));
                     read_door_type.Close();
-                   }
-                    SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
+                }
+                SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
 
 
-                    SqlCommand insert_copied_item = new SqlCommand(Statementsclass.insert_copied_item, conn2);
+                SqlCommand insert_copied_item = new SqlCommand(Statementsclass.insert_copied_item, conn2);
 
 
-                    if(Valuesclass.double_single == 1)
-                     {
+                if (Valuesclass.double_single == 1)
+                {
 
                     converted_cost = Convert.ToInt32(dT_Settings.DT_Setting.Rows[0]["double_extra"].ToString());
-                     
-        
-                     }
-                    else 
-                    {
+
+
+                }
+                else
+                {
 
                     converted_cost = Convert.ToInt32(dT_Settings.DT_Setting.Rows[0]["single_extra"].ToString());
 
 
-                     }
+                }
 
 
-                    double? converted_total_cost = total_cost + converted_cost;
-                    insert_copied_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-                    insert_copied_item.Parameters.AddWithValue("@item_id",i+1);
-                    insert_copied_item.Parameters.AddWithValue("@order_id", order_id);
-                    insert_copied_item.Parameters.AddWithValue("@material_id", material_id);
-                    insert_copied_item.Parameters.AddWithValue("@finish_id", finish_id);
-                    insert_copied_item.Parameters.AddWithValue("@item_date", DateTime.Now);
-                    insert_copied_item.Parameters.AddWithValue("@door_ref", dt_copy_item.Rows[i]["door_ref"]);
-                    insert_copied_item.Parameters.AddWithValue("@door_type", door_type_id );
-                    insert_copied_item.Parameters.AddWithValue("@door_style", dt_copy_item.Rows[i]["door_style"]);
-                    insert_copied_item.Parameters.AddWithValue("@structual_op_height", dt_copy_item.Rows[i]["structual_op_height"]);
-                    insert_copied_item.Parameters.AddWithValue("@structual_op_width", dt_copy_item.Rows[i]["structual_op_width"]);
-                    insert_copied_item.Parameters.AddWithValue("@frame_width", dt_copy_item.Rows[i]["frame_width"]);
-                    insert_copied_item.Parameters.AddWithValue("@frame_height", dt_copy_item.Rows[i]["frame_height"]);
-                    insert_copied_item.Parameters.AddWithValue("@finish_description", dt_copy_item.Rows[i]["finish_description"]);
-                    insert_copied_item.Parameters.AddWithValue("@material_thickness", material_thickness);
-                    insert_copied_item.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName);
-                    insert_copied_item.Parameters.AddWithValue("@markup_material", dt_copy_item.Rows[i]["markup_material"]);
-                    insert_copied_item.Parameters.AddWithValue("@material_cost", dt_copy_item.Rows[i]["material_cost"]);
-                    insert_copied_item.Parameters.AddWithValue("@markup_hardware", dt_copy_item.Rows[i]["markup_hardware"]);
-                    insert_copied_item.Parameters.AddWithValue("@hardware_cost", dt_copy_item.Rows[i]["hardware_cost"]);
-                    insert_copied_item.Parameters.AddWithValue("@labour_rate", dt_copy_item.Rows[i]["labour_rate"]);
-                    insert_copied_item.Parameters.AddWithValue("@labour_cost", dt_copy_item.Rows[i]["labour_cost"]);
-                    insert_copied_item.Parameters.AddWithValue("@converted_cost", converted_cost);
-                    insert_copied_item.Parameters.AddWithValue("@total_cost", converted_total_cost);
-                    ConnectionClass.Dispose_connection(conn);
+                double? converted_total_cost = total_cost + converted_cost;
+                insert_copied_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+                insert_copied_item.Parameters.AddWithValue("@item_id", i + 1);
+                insert_copied_item.Parameters.AddWithValue("@order_id", order_id);
+                insert_copied_item.Parameters.AddWithValue("@material_id", material_id);
+                insert_copied_item.Parameters.AddWithValue("@finish_id", finish_id);
+                insert_copied_item.Parameters.AddWithValue("@fire_rating_id", fire_rating_id);
+                insert_copied_item.Parameters.AddWithValue("@security_rating_id", security_rating_id);
+                insert_copied_item.Parameters.AddWithValue("@infill_id", infill_id);
+                insert_copied_item.Parameters.AddWithValue("@jamb_style_id", jamb_style_id);
+                insert_copied_item.Parameters.AddWithValue("@item_date", DateTime.Now);
+                insert_copied_item.Parameters.AddWithValue("@door_ref", dt_copy_item.Rows[i]["door_ref"]);
+                insert_copied_item.Parameters.AddWithValue("@door_type", door_type_id);
+                insert_copied_item.Parameters.AddWithValue("@item_notes", dt_copy_item.Rows[i]["item_notes"]);
+                insert_copied_item.Parameters.AddWithValue("@door_style", dt_copy_item.Rows[i]["door_style"]);
+                insert_copied_item.Parameters.AddWithValue("@structual_op_height", dt_copy_item.Rows[i]["structual_op_height"]);
+                insert_copied_item.Parameters.AddWithValue("@structual_op_width", dt_copy_item.Rows[i]["structual_op_width"]);
+                insert_copied_item.Parameters.AddWithValue("@frame_width", dt_copy_item.Rows[i]["frame_width"]);
+                insert_copied_item.Parameters.AddWithValue("@frame_height", dt_copy_item.Rows[i]["frame_height"]);
+                insert_copied_item.Parameters.AddWithValue("@jamb_width", dt_copy_item.Rows[i]["jamb_width"]);
+                insert_copied_item.Parameters.AddWithValue("@jamb_height", dt_copy_item.Rows[i]["jamb_height"]);
+                insert_copied_item.Parameters.AddWithValue("@finish_description", dt_copy_item.Rows[i]["finish_description"]);
+                insert_copied_item.Parameters.AddWithValue("@material_thickness", material_thickness);
+                insert_copied_item.Parameters.AddWithValue("@created_by", loginclass.Login.globalFullName);
+                insert_copied_item.Parameters.AddWithValue("@markup_material", dt_copy_item.Rows[i]["markup_material"]);
+                insert_copied_item.Parameters.AddWithValue("@material_cost", dt_copy_item.Rows[i]["material_cost"]);
+                insert_copied_item.Parameters.AddWithValue("@markup_hardware", dt_copy_item.Rows[i]["markup_hardware"]);
+                insert_copied_item.Parameters.AddWithValue("@hardware_cost", dt_copy_item.Rows[i]["hardware_cost"]);
+                insert_copied_item.Parameters.AddWithValue("@security_rating_cost", dt_copy_item.Rows[i]["security_rating_cost"]);
+                insert_copied_item.Parameters.AddWithValue("@fire_rating_cost", dt_copy_item.Rows[i]["fire_rating_cost"]);
+                insert_copied_item.Parameters.AddWithValue("@labour_rate", dt_copy_item.Rows[i]["labour_rate"]);
+                insert_copied_item.Parameters.AddWithValue("@labour_cost", dt_copy_item.Rows[i]["labour_cost"]);
+                insert_copied_item.Parameters.AddWithValue("@converted_cost", converted_cost);
+                insert_copied_item.Parameters.AddWithValue("@total_cost", converted_total_cost);
+                ConnectionClass.Dispose_connection(conn);
+         
+
+
+                insert_copied_item.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn2);
 
 
 
-                    insert_copied_item.ExecuteNonQuery();
-                    ConnectionClass.Dispose_connection(conn2);
 
 
-
-                
 
 
 
@@ -428,8 +447,33 @@ namespace JodanQuote
             update_project.Parameters.AddWithValue("@delivery_cost", txt_delivery_charge.Text.Replace("£", string.Empty));
             update_project.ExecuteNonQuery();
             ConnectionClass.Dispose_connection(conn);
-            MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+         
             Fill_data();
+
+        }
+
+        void insert_blank_hardware()
+        {
+
+            int hardware_id = 11;
+            string hardware_description = "Monarch 102x76x 3mm Ball ";
+            double hardware_cost = 3.12;
+            int quantity = 1;
+            double total_cost = 3.12;
+
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
+            insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
+            insert_hardware.Parameters.AddWithValue("@hardware_id", hardware_id);
+            insert_hardware.Parameters.AddWithValue("@hardware_description", hardware_description);
+            insert_hardware.Parameters.AddWithValue("@hardware_cost", hardware_cost);
+            insert_hardware.Parameters.AddWithValue("@quantity", quantity);
+            insert_hardware.Parameters.AddWithValue("@total_cost", total_cost);
+            insert_hardware.ExecuteNonQuery();
+            ConnectionClass.Dispose_connection(conn);
+
+          
+
 
         }
 
@@ -456,6 +500,7 @@ namespace JodanQuote
                 insert_new_project_quote.ExecuteNonQuery();
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
+                insert_blank_hardware();
                 this.Hide();
                 FrmItem item = new FrmItem();
                 item.Show();
@@ -491,9 +536,9 @@ namespace JodanQuote
                 {
 
                     int i = e.RowIndex;
-                    Valuesclass.quote_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Quote ID"].ToString());
-                    Valuesclass.item_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
-                    Valuesclass.revision_number = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Revision Number"].ToString());
+                    Valuesclass.quote_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item Identity"].ToString());
+                    Valuesclass.item_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item_Id"].ToString());
+                    Valuesclass.revision_number = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["revision_id"].ToString());
                     //select_max_revison();
                     Valuesclass.new_item_identifier = 0;
                     Valuesclass.locked_identifiter = 0;
@@ -514,7 +559,7 @@ namespace JodanQuote
 
                     if(delete == DialogResult.Yes)
                     {
-                        int item = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item ID"].ToString());
+                        int item = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item_Id"].ToString());
                         int project_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Project ID"].ToString());
                         SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                         SqlCommand delete_quote_item = new SqlCommand(Statementsclass.delete_quote_item, conn);
@@ -533,12 +578,12 @@ namespace JodanQuote
                 {
                     int i = e.RowIndex;
                     select_max_item();
-                    Select_quote_id();
-                    Valuesclass.item_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item Id"].ToString());
+                 
+                    Valuesclass.item_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item_Id"].ToString());
 
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand copy_item = new SqlCommand(Statementsclass.copy_item, conn);
-                    copy_item.Parameters.AddWithValue("@id", grid_items_on_quote.Rows[i].Cells["Quote_ID"].Value);
+                    copy_item.Parameters.AddWithValue("@id", grid_items_on_quote.Rows[i].Cells["Item_Identity"].Value);
                     SqlDataReader reader = copy_item.ExecuteReader();
 
                     if (reader.Read())
@@ -547,9 +592,17 @@ namespace JodanQuote
                         int? order_id = (reader["order_id"] as int?)?? 0;
                         int? material_id = (reader["material_id"] as int?) ?? 0;
                         int? finish_id = (reader["finish_id"] as int?) ?? 0;
-                        int? material_thickness = (reader["material_thickness"] as int?) ?? 0;
-                        double total_cost = Convert.ToDouble((reader["total_cost"].ToString()));
+                        int? fire_rating_id = (reader["fire_rating_id"] as int?) ?? 0;
+                        int? security_rating_id = (reader["security_rating_id"] as int?) ?? 0;
+                        int? infill_id = (reader["infill_id"] as int?) ?? 0;
+                        int? jamb_style_id = (reader["jamb_style_id"] as int?) ?? 0;
+                        double? material_thickness = (reader["material_thickness"] as double?) ?? 0;
+                        double? total_cost = (reader["total_cost"] as double?)?? 0;
                         double? converted_cost = Convert.ToDouble((reader["converted_cost"]as double? )?? 0);
+                        double? addon_cost = Convert.ToDouble((reader["addon_cost"] as double?) ?? 0);
+                        double? fire_rating_cost = Convert.ToDouble((reader["fire_rating_cost"] as double?) ?? 0);
+                        double? security_rating_cost = Convert.ToDouble((reader["security_rating_cost"] as double?) ?? 0);
+                        double? paint_cost = Convert.ToDouble((reader["paint_cost"] as double?) ?? 0);
                         SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
                         
                       
@@ -560,6 +613,11 @@ namespace JodanQuote
                         insert_copied_item.Parameters.AddWithValue("@order_id", order_id);
                         insert_copied_item.Parameters.AddWithValue("@material_id", material_id);
                         insert_copied_item.Parameters.AddWithValue("@finish_id", finish_id);
+                        insert_copied_item.Parameters.AddWithValue("@fire_rating_id", fire_rating_id);
+                        insert_copied_item.Parameters.AddWithValue("@security_rating_id", security_rating_id);
+                        insert_copied_item.Parameters.AddWithValue("@infill_id", infill_id);
+                        insert_copied_item.Parameters.AddWithValue("@jamb_style_id", jamb_style_id);
+                        insert_copied_item.Parameters.AddWithValue("@item_notes", reader["item_notes"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@item_date",DateTime.Now);
                         insert_copied_item.Parameters.AddWithValue("@door_ref", reader["door_ref"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@door_type", reader["door_type_id"].ToString());
@@ -568,18 +626,23 @@ namespace JodanQuote
                         insert_copied_item.Parameters.AddWithValue("@structual_op_width", reader["structual_op_width"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@frame_width", reader["frame_width"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@frame_height", reader["frame_height"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@jamb_width", reader["jamb_width"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@jamb_height", reader["jamb_height"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@finish_description", reader["finish_description"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@material_thickness", material_thickness);
-                        insert_copied_item.Parameters.AddWithValue("@total_cost", total_cost);
                         insert_copied_item.Parameters.AddWithValue("@created_by",loginclass.Login.globalFullName);
                         insert_copied_item.Parameters.AddWithValue("@markup_material", reader["markup_material"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@material_cost", reader["material_cost"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@markup_hardware", reader["markup_hardware"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@hardware_cost", reader["hardware_cost"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@labour_rate", reader["labour_rate"].ToString());
-                        insert_copied_item.Parameters.AddWithValue("@converted_cost", converted_cost);
                         insert_copied_item.Parameters.AddWithValue("@labour_cost", reader["labour_cost"].ToString());
-
+                        insert_copied_item.Parameters.AddWithValue("@fire_rating_cost", fire_rating_cost);
+                        insert_copied_item.Parameters.AddWithValue("@security_rating_cost", security_rating_cost);
+                        insert_copied_item.Parameters.AddWithValue("@paint_cost", paint_cost);
+                        insert_copied_item.Parameters.AddWithValue("@addon_cost", addon_cost);
+                        insert_copied_item.Parameters.AddWithValue("@converted_cost", converted_cost);
+                        insert_copied_item.Parameters.AddWithValue("@total_cost", total_cost);
                         ConnectionClass.Dispose_connection(conn);
 
                       
@@ -590,7 +653,10 @@ namespace JodanQuote
 
 
                     }
-                    Valuesclass.id = Convert.ToInt32(grid_items_on_quote.Rows[i].Cells["Quote_ID"].Value);
+
+                  
+                    Valuesclass.id = Convert.ToInt32(grid_items_on_quote.Rows[i].Cells["Item_Identity"].Value);
+                    Select_quote_id();
                     Copy_hardware();
                     Copy_addon();
                     Fill_data();
@@ -620,6 +686,7 @@ namespace JodanQuote
         private void btn_quote_details_Click(object sender, EventArgs e)
         {
             main_tab_project_additions.SelectedTab = tab_quote_details;
+            this.ActiveControl = txt_project_ref;
         }
 
         private void btn_additional_cost_Click(object sender, EventArgs e)
@@ -631,6 +698,8 @@ namespace JodanQuote
         private void btn_notes_Click(object sender, EventArgs e)
         {
             main_tab_project_additions.SelectedTab = tab_notes;
+            this.ActiveControl = txt_notes;
+
         }
 
         private void btn_email_project_Click(object sender, EventArgs e)
@@ -639,15 +708,15 @@ namespace JodanQuote
             mail.ShowDialog();
         }
 
-        private void FrmQuote_Shown(object sender, EventArgs e)
-        {
-            Fill_data();
-        }
-
         private void btn_edit_Click(object sender, EventArgs e)
         {
             Edit();
             Textbox_Format();
+            if (Valuesclass.new_item_identifier == 1)
+            {
+                MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
 
         private void btn_convert_Click(object sender, EventArgs e)
@@ -750,6 +819,32 @@ namespace JodanQuote
             }
         }
 
+        private void txt_survery_charge_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                this.ActiveControl = txt_delivery_charge;
+                Textbox_Format();
+            }
+        }
+
+        private void txt_delivery_charge_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                this.ActiveControl = txt_installation;
+                Textbox_Format();
+            }
+        }
+        private void txt_installation_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                this.ActiveControl = txt_survery_charge;
+                Textbox_Format();
+            }
+        }
+
         private void txt_survery_charge_Enter(object sender, EventArgs e)
         {
             Textbox_Format();
@@ -765,21 +860,7 @@ namespace JodanQuote
             Textbox_Format();
         }
 
-        private void txt_survery_charge_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
-            {
-                this.ActiveControl = txt_delivery_charge;
-            }
-        }
-
-        private void txt_delivery_charge_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
-            {
-                this.ActiveControl = txt_installation;
-            }
-        }
+      
     }
     
 }
