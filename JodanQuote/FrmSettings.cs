@@ -37,6 +37,7 @@ namespace JodanQuote
 
             grid_settings.ColumnHeadersDefaultCellStyle.ForeColor = Color.AliceBlue;
             grid_settings.ColumnHeadersDefaultCellStyle.BackColor = Color.CornflowerBlue;
+            grid_settings.DefaultCellStyle.ForeColor = Color.AliceBlue;
             grid_settings.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             grid_settings.EnableHeadersVisualStyles = false;
             grid_stock.ColumnHeadersDefaultCellStyle.ForeColor = Color.AliceBlue;
@@ -59,7 +60,7 @@ namespace JodanQuote
 
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
 
-                SqlDataAdapter hardware = new SqlDataAdapter("SELECT id, LEFT(Description, 25) AS Description, Cost  FROM c_view_hardware WHERE(jodan_stock IS NULL)", conn);
+                SqlDataAdapter hardware = new SqlDataAdapter("SELECT id, LEFT(Description, 25) AS Description, Cost  FROM c_view_hardware WHERE(jodan_stock IS NULL) ORDER BY Description", conn);
                 DataTable dt = new DataTable();
                 hardware.Fill(dt);
                 grid_stock.DataSource = dt;
@@ -75,7 +76,7 @@ namespace JodanQuote
 
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
 
-                SqlDataAdapter hardware = new SqlDataAdapter("SELECT id, LEFT(Description, 25) AS Description, Cost  FROM c_view_hardware WHERE(jodan_stock =1)", conn);
+                SqlDataAdapter hardware = new SqlDataAdapter("SELECT id, LEFT(Description, 25) AS Description, Cost  FROM c_view_hardware WHERE(jodan_stock =1) ORDER BY Description", conn);
                 DataTable dt = new DataTable();
                 hardware.Fill(dt);
                 grid_stock.DataSource = dt;

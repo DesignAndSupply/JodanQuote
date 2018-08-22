@@ -16,7 +16,7 @@
                          frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
                          addon_cost, [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost AS security_rating_id, 
                          [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost, infill_id, 
-                         [Infill Description]
+                         [Infill Description], finish_colour
 FROM            C_View_Item_Details
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)</CommandText>
                     <Parameters>
@@ -72,6 +72,7 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
               <Mapping SourceColumn="converted_cost" DataSetColumn="converted_cost" />
               <Mapping SourceColumn="infill_id" DataSetColumn="infill_id" />
               <Mapping SourceColumn="Infill Description" DataSetColumn="Infill Description" />
+              <Mapping SourceColumn="finish_colour" DataSetColumn="finish_colour" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -83,7 +84,7 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
   <xs:element name="DT_Item_Details" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Item_Details" msprop:Generator_UserDSName="DT_Item_Details">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_Item_Details" msprop:Generator_TableClassName="DT_Item_DetailsDataTable" msprop:Generator_TableVarName="tableDT_Item_Details" msprop:Generator_TablePropName="_DT_Item_Details" msprop:Generator_RowDeletingName="DT_Item_DetailsRowDeleting" msprop:Generator_RowChangingName="DT_Item_DetailsRowChanging" msprop:Generator_RowEvHandlerName="DT_Item_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Item_DetailsRowDeleted" msprop:Generator_UserTableName="DT_Item_Details" msprop:Generator_RowChangedName="DT_Item_DetailsRowChanged" msprop:Generator_RowEvArgName="DT_Item_DetailsRowChangeEvent" msprop:Generator_RowClassName="DT_Item_DetailsRow">
+        <xs:element name="DT_Item_Details" msprop:Generator_TableClassName="DT_Item_DetailsDataTable" msprop:Generator_TableVarName="tableDT_Item_Details" msprop:Generator_RowChangedName="DT_Item_DetailsRowChanged" msprop:Generator_TablePropName="_DT_Item_Details" msprop:Generator_RowDeletingName="DT_Item_DetailsRowDeleting" msprop:Generator_RowChangingName="DT_Item_DetailsRowChanging" msprop:Generator_RowEvHandlerName="DT_Item_DetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_Item_DetailsRowDeleted" msprop:Generator_RowClassName="DT_Item_DetailsRow" msprop:Generator_UserTableName="DT_Item_Details" msprop:Generator_RowEvArgName="DT_Item_DetailsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -192,6 +193,13 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="finish_colour" msprop:Generator_ColumnVarNameInTable="columnfinish_colour" msprop:Generator_ColumnPropNameInRow="finish_colour" msprop:Generator_ColumnPropNameInTable="finish_colourColumn" msprop:Generator_UserColumnName="finish_colour" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

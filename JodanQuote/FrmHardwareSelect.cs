@@ -22,6 +22,7 @@ namespace JodanQuote
         {
             InitializeComponent();
             Fill_data();
+            pct_clear_Click(this.pct_clear, null);
             Format();
             Set_Value();
         }
@@ -53,7 +54,7 @@ namespace JodanQuote
             ConnectionClass.Dispose_connection(conn);
             
             this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
-        
+           
         }
         
         void Format()
@@ -215,7 +216,7 @@ namespace JodanQuote
                     int i = grid_hardware_selected.RowCount;
                     double cost = Convert.ToDouble(grid_hardware.Rows[row].Cells["hardware_cost"].Value);
                     double quantity = Convert.ToInt32(grid_hardware.Rows[row].Cells["hardware_quantity"].Value);
-                    
+                    int Category = Convert.ToInt32(grid_hardware.Rows[row].Cells["hardware_Category"].Value);
                     double row_total = cost * quantity;
                     if (string.IsNullOrEmpty(Convert.ToString(quantity)) || quantity == 0)
                     {
@@ -229,6 +230,7 @@ namespace JodanQuote
                     grid_hardware_selected.Rows.Add(1);
                     grid_hardware_selected.Rows[i].Cells["id"].Value = grid_hardware.Rows[row].Cells["hardware_id"].Value;
                     grid_hardware_selected.Rows[i].Cells["Description"].Value = grid_hardware.Rows[row].Cells["hardware_description"].Value;
+                    grid_hardware_selected.Rows[i].Cells["Category"].Value = grid_hardware.Rows[row].Cells["hardware_category"].Value;
                     grid_hardware_selected.Rows[i].Cells["Cost"].Value = cost;
                     grid_hardware_selected.Rows[i].Cells["Quantity"].Value = quantity;
                     grid_hardware_selected.Rows[i].Cells["Total"].Value = row_total;
@@ -271,6 +273,7 @@ namespace JodanQuote
             {
 
                 int hardware_id = Convert.ToInt32(grid_hardware_selected.Rows[i].Cells["id"].Value);
+                int category_id = Convert.ToInt32(grid_hardware_selected.Rows[i].Cells["category"].Value);
                 string hardware_description = Convert.ToString(grid_hardware_selected.Rows[i].Cells["Description"].Value);
                 double hardware_cost = Convert.ToDouble(grid_hardware_selected.Rows[i].Cells["Cost"].Value);
                 int quantity = Convert.ToInt32(grid_hardware_selected.Rows[i].Cells["Quantity"].Value);
@@ -280,6 +283,7 @@ namespace JodanQuote
                 SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
                 insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
                 insert_hardware.Parameters.AddWithValue("@hardware_id", hardware_id);
+                insert_hardware.Parameters.AddWithValue("@category_id", category_id);
                 insert_hardware.Parameters.AddWithValue("@hardware_description", hardware_description);
                 insert_hardware.Parameters.AddWithValue("@hardware_cost", hardware_cost);
                 insert_hardware.Parameters.AddWithValue("@quantity", quantity);

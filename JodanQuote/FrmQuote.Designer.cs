@@ -60,6 +60,7 @@
             this.dT_Quote = new JodanQuote.Datasource.DT_Quote();
             this.dTQuoteItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnl_header = new System.Windows.Forms.Panel();
+            this.btn_view_original = new System.Windows.Forms.Button();
             this.btn_convert = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.txt_project = new System.Windows.Forms.TextBox();
@@ -242,7 +243,7 @@
             this.grid_items_on_quote.DefaultCellStyle = dataGridViewCellStyle4;
             this.grid_items_on_quote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_items_on_quote.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_items_on_quote.Location = new System.Drawing.Point(67, 70);
+            this.grid_items_on_quote.Location = new System.Drawing.Point(67, 74);
             this.grid_items_on_quote.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_items_on_quote.Name = "grid_items_on_quote";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -361,6 +362,7 @@
             // pnl_header
             // 
             this.pnl_header.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnl_header.Controls.Add(this.btn_view_original);
             this.pnl_header.Controls.Add(this.btn_convert);
             this.pnl_header.Controls.Add(this.btn_edit);
             this.pnl_header.Controls.Add(this.txt_project);
@@ -376,6 +378,22 @@
             this.pnl_header.Name = "pnl_header";
             this.pnl_header.Size = new System.Drawing.Size(1927, 100);
             this.pnl_header.TabIndex = 48;
+            // 
+            // btn_view_original
+            // 
+            this.btn_view_original.BackColor = System.Drawing.Color.AliceBlue;
+            this.btn_view_original.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_view_original.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_view_original.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_view_original.Image = ((System.Drawing.Image)(resources.GetObject("btn_view_original.Image")));
+            this.btn_view_original.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_view_original.Location = new System.Drawing.Point(613, 28);
+            this.btn_view_original.Name = "btn_view_original";
+            this.btn_view_original.Size = new System.Drawing.Size(98, 37);
+            this.btn_view_original.TabIndex = 49;
+            this.btn_view_original.Text = "            View              Original";
+            this.btn_view_original.UseVisualStyleBackColor = false;
+            this.btn_view_original.Click += new System.EventHandler(this.btn_view_original_Click);
             // 
             // btn_convert
             // 
@@ -1021,5 +1039,6 @@
         private System.Windows.Forms.DataGridViewImageColumn btn_copy;
         private System.Windows.Forms.DataGridViewImageColumn btn_delete_item;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item_Identity;
+        private System.Windows.Forms.Button btn_view_original;
     }
 }

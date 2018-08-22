@@ -84,7 +84,7 @@
             this.grid_skins.RowHeadersVisible = false;
             this.grid_skins.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_skins.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_skins.Size = new System.Drawing.Size(1324, 144);
+            this.grid_skins.Size = new System.Drawing.Size(1438, 118);
             this.grid_skins.TabIndex = 72;
             // 
             // FrmViewSkins
@@ -92,7 +92,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1350, 196);
+            this.ClientSize = new System.Drawing.Size(1464, 170);
             this.Controls.Add(this.grid_skins);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

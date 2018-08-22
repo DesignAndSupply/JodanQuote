@@ -51,7 +51,7 @@
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT   Top(1)     markup_hardware, markup_material, labour_rate, single_extra, double_extra, single_flood_extra, double_flood_extra, date_modified, Id
+                    <CommandText>SELECT        TOP (1) markup_hardware, markup_material, labour_rate, single_extra, double_extra, single_flood_extra, double_flood_extra, date_modified, Id
 FROM            Settings
 ORDER BY Id DESC</CommandText>
                     <Parameters />
@@ -113,7 +113,7 @@ ORDER BY Id DESC</CommandText>
   <xs:element name="DT_Settings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Settings" msprop:Generator_UserDSName="DT_Settings">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DT_Setting" msprop:Generator_TableClassName="DT_SettingDataTable" msprop:Generator_TableVarName="tableDT_Setting" msprop:Generator_RowChangedName="DT_SettingRowChanged" msprop:Generator_TablePropName="DT_Setting" msprop:Generator_RowDeletingName="DT_SettingRowDeleting" msprop:Generator_RowChangingName="DT_SettingRowChanging" msprop:Generator_RowEvHandlerName="DT_SettingRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_SettingRowDeleted" msprop:Generator_RowClassName="DT_SettingRow" msprop:Generator_UserTableName="DT_Setting" msprop:Generator_RowEvArgName="DT_SettingRowChangeEvent">
+        <xs:element name="DT_Setting" msprop:Generator_TableClassName="DT_SettingDataTable" msprop:Generator_TableVarName="tableDT_Setting" msprop:Generator_TablePropName="DT_Setting" msprop:Generator_RowDeletingName="DT_SettingRowDeleting" msprop:Generator_RowChangingName="DT_SettingRowChanging" msprop:Generator_RowEvHandlerName="DT_SettingRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_SettingRowDeleted" msprop:Generator_UserTableName="DT_Setting" msprop:Generator_RowChangedName="DT_SettingRowChanged" msprop:Generator_RowEvArgName="DT_SettingRowChangeEvent" msprop:Generator_RowClassName="DT_SettingRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="markup_hardware" msprop:Generator_ColumnVarNameInTable="columnmarkup_hardware" msprop:Generator_ColumnPropNameInRow="markup_hardware" msprop:Generator_ColumnPropNameInTable="markup_hardwareColumn" msprop:Generator_UserColumnName="markup_hardware" type="xs:double" minOccurs="0" />

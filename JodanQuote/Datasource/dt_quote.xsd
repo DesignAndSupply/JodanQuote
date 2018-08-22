@@ -17,7 +17,7 @@
                          item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, frame_width, frame_height, material_thickness, total_cost, created_by, 
                          markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, [Door Type Description], [Material Description], paint_cost, 
                          fire_rating_cost, security_rating_cost, fire_rating_id, security_rating_id, [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], 
-                         addon_cost, item_notes, converted_cost, infill_id, [Infill Description], [Finish Description], [Item Identity]
+                         addon_cost, item_notes, converted_cost, infill_id, [Infill Description], [Finish Description], [Item Identity], finish_colour, convertion_id
 FROM            C_View_Project_Quotation
 WHERE        ([Project ID] = @project_id)</CommandText>
                     <Parameters>
@@ -88,6 +88,8 @@ WHERE        ([Project ID] = @project_id)</CommandText>
               <Mapping SourceColumn="Infill Description" DataSetColumn="Infill Description" />
               <Mapping SourceColumn="Finish Description" DataSetColumn="Finish Description" />
               <Mapping SourceColumn="Item Identity" DataSetColumn="Item Identity" />
+              <Mapping SourceColumn="finish_colour" DataSetColumn="finish_colour" />
+              <Mapping SourceColumn="convertion_id" DataSetColumn="convertion_id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -288,6 +290,14 @@ WHERE        ([Project ID] = @project_id)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Item_x0020_Identity" msprop:Generator_ColumnVarNameInTable="columnItem_Identity" msprop:Generator_ColumnPropNameInRow="Item_Identity" msprop:Generator_ColumnPropNameInTable="Item_IdentityColumn" msprop:Generator_UserColumnName="Item Identity" type="xs:int" minOccurs="0" />
+              <xs:element name="finish_colour" msprop:Generator_ColumnVarNameInTable="columnfinish_colour" msprop:Generator_ColumnPropNameInRow="finish_colour" msprop:Generator_ColumnPropNameInTable="finish_colourColumn" msprop:Generator_UserColumnName="finish_colour" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="convertion_id" msprop:Generator_ColumnVarNameInTable="columnconvertion_id" msprop:Generator_ColumnPropNameInRow="convertion_id" msprop:Generator_ColumnPropNameInTable="convertion_idColumn" msprop:Generator_UserColumnName="convertion_id" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

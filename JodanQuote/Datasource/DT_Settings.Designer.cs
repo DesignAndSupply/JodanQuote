@@ -1144,9 +1144,9 @@ namespace JodanQuote.Datasource.DT_SettingsTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT   Top(1)     markup_hardware, markup_material, labour_rate, single_extra, " +
-                "double_extra, single_flood_extra, double_flood_extra, date_modified, Id\r\nFROM   " +
-                "         Settings\r\nORDER BY Id DESC";
+            this._commandCollection[0].CommandText = "SELECT        TOP (1) markup_hardware, markup_material, labour_rate, single_extra" +
+                ", double_extra, single_flood_extra, double_flood_extra, date_modified, Id\r\nFROM " +
+                "           Settings\r\nORDER BY Id DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -287,6 +287,8 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnjodan_stock;
             
+            private global::System.Data.DataColumn columncategory;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public c_view_hardwareDataTable() {
@@ -354,6 +356,14 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn categoryColumn {
+                get {
+                    return this.columncategory;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow Addc_view_hardwareRow(string Description, double Cost, short jodan_stock) {
+            public c_view_hardwareRow Addc_view_hardwareRow(string Description, double Cost, short jodan_stock, int category) {
                 c_view_hardwareRow rowc_view_hardwareRow = ((c_view_hardwareRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Description,
                         Cost,
                         null,
-                        jodan_stock};
+                        jodan_stock,
+                        category};
                 rowc_view_hardwareRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowc_view_hardwareRow);
                 return rowc_view_hardwareRow;
@@ -429,6 +440,7 @@ namespace JodanQuote.Datasource {
                 this.columnCost = base.Columns["Cost"];
                 this.columnid = base.Columns["id"];
                 this.columnjodan_stock = base.Columns["jodan_stock"];
+                this.columncategory = base.Columns["category"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,6 +454,8 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnid);
                 this.columnjodan_stock = new global::System.Data.DataColumn("jodan_stock", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnjodan_stock);
+                this.columncategory = new global::System.Data.DataColumn("category", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncategory);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnDescription.MaxLength = 100;
@@ -652,6 +666,22 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int category {
+                get {
+                    try {
+                        return ((int)(this[this.tablec_view_hardware.categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'category\' in table \'c_view_hardware\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablec_view_hardware.categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDescriptionNull() {
                 return this.IsNull(this.tablec_view_hardware.DescriptionColumn);
             }
@@ -684,6 +714,18 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setjodan_stockNull() {
                 this[this.tablec_view_hardware.jodan_stockColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscategoryNull() {
+                return this.IsNull(this.tablec_view_hardware.categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcategoryNull() {
+                this[this.tablec_view_hardware.categoryColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -850,6 +892,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             tableMapping.ColumnMappings.Add("Cost", "Cost");
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("jodan_stock", "jodan_stock");
+            tableMapping.ColumnMappings.Add("category", "category");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -867,8 +910,8 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, LEFT(Description, 25) AS Description, Cost, jodan_stock\r\nFROM  " +
-                "          c_view_hardware\r\nwhere jodan_stock = @jodan_stock";
+            this._commandCollection[0].CommandText = "SELECT        id, Description, category, Cost, jodan_stock\r\nFROM            c_vie" +
+                "w_hardware\r\nWHERE        (jodan_stock = @jodan_stock)\r\nORDER BY Description";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jodan_stock", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "jodan_stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

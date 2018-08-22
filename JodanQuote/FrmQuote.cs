@@ -48,6 +48,7 @@ namespace JodanQuote
             {
 
                 this.sALES_LEDGERTableAdapter.Fill(this.dT_customer.SALES_LEDGER, (dT_Quote.DT_Quote_Items.Rows[0]["customer_ref"].ToString()));
+
             }
             catch
             {
@@ -121,7 +122,7 @@ namespace JodanQuote
 
             if (Valuesclass.new_item_identifier == 0)
             {
-                Save();
+                
                 main_tab_project_additions.Enabled = false;
                 Valuesclass.new_item_identifier = 1;
                 btn_edit.Text = "         Edit            Details";
@@ -145,7 +146,7 @@ namespace JodanQuote
           
             }
 
-            Fill_data();
+        
 
         }
 
@@ -174,6 +175,7 @@ namespace JodanQuote
                 pct_logo.Image = JodanQuote.Properties.Resources.Logo;
                 pct_logo.Location = new Point(20, 28);
                 btn_convert.Visible = false;
+                btn_view_original.Visible = true;
             }
             else
             {
@@ -181,6 +183,8 @@ namespace JodanQuote
       
                 pct_logo.Image = JodanQuote.Properties.Resources.Jodan;
                 pct_logo.Location = new Point(5, 8);
+                btn_view_original.Visible = false;
+                btn_convert.Visible = true;
 
             }
           
@@ -292,7 +296,7 @@ namespace JodanQuote
             DataTable dt_copy_hardware = new DataTable();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter copy_hardware = new SqlDataAdapter(Statementsclass.copy_hardware, conn);
-            copy_hardware.SelectCommand.Parameters.AddWithValue("@ID", dT_Quote.DT_Quote_Items.Rows[0]["Quote ID"]);
+            copy_hardware.SelectCommand.Parameters.AddWithValue("@ID", dT_Quote.DT_Quote_Items.Rows[0]["Item Identity"]);
             copy_hardware.Fill(dt_copy_hardware);
 
             for (int i = 0; i < dt_copy_hardware.Rows.Count; i++)
@@ -390,6 +394,7 @@ namespace JodanQuote
                 insert_copied_item.Parameters.AddWithValue("@jamb_style_id", jamb_style_id);
                 insert_copied_item.Parameters.AddWithValue("@item_date", DateTime.Now);
                 insert_copied_item.Parameters.AddWithValue("@door_ref", dt_copy_item.Rows[i]["door_ref"]);
+                insert_copied_item.Parameters.AddWithValue("@finish_colour", dt_copy_item.Rows[i]["finish_colour"]);
                 insert_copied_item.Parameters.AddWithValue("@door_type", door_type_id);
                 insert_copied_item.Parameters.AddWithValue("@item_notes", dt_copy_item.Rows[i]["item_notes"]);
                 insert_copied_item.Parameters.AddWithValue("@door_style", dt_copy_item.Rows[i]["door_style"]);
@@ -406,6 +411,8 @@ namespace JodanQuote
                 insert_copied_item.Parameters.AddWithValue("@material_cost", dt_copy_item.Rows[i]["material_cost"]);
                 insert_copied_item.Parameters.AddWithValue("@markup_hardware", dt_copy_item.Rows[i]["markup_hardware"]);
                 insert_copied_item.Parameters.AddWithValue("@hardware_cost", dt_copy_item.Rows[i]["hardware_cost"]);
+                insert_copied_item.Parameters.AddWithValue("@paint_cost", dt_copy_item.Rows[i]["paint_cost"]);
+                insert_copied_item.Parameters.AddWithValue("@addon_cost", dt_copy_item.Rows[i]["addon_cost"]);
                 insert_copied_item.Parameters.AddWithValue("@security_rating_cost", dt_copy_item.Rows[i]["security_rating_cost"]);
                 insert_copied_item.Parameters.AddWithValue("@fire_rating_cost", dt_copy_item.Rows[i]["fire_rating_cost"]);
                 insert_copied_item.Parameters.AddWithValue("@labour_rate", dt_copy_item.Rows[i]["labour_rate"]);
@@ -629,6 +636,7 @@ namespace JodanQuote
                         insert_copied_item.Parameters.AddWithValue("@jamb_width", reader["jamb_width"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@jamb_height", reader["jamb_height"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@finish_description", reader["finish_description"].ToString());
+                        insert_copied_item.Parameters.AddWithValue("@finish_colour", reader["finish_colour"].ToString());
                         insert_copied_item.Parameters.AddWithValue("@material_thickness", material_thickness);
                         insert_copied_item.Parameters.AddWithValue("@created_by",loginclass.Login.globalFullName);
                         insert_copied_item.Parameters.AddWithValue("@markup_material", reader["markup_material"].ToString());
@@ -711,12 +719,15 @@ namespace JodanQuote
         private void btn_edit_Click(object sender, EventArgs e)
         {
             Edit();
-            Textbox_Format();
+            
             if (Valuesclass.new_item_identifier == 1)
+            
             {
+                Save();
                 MessageBox.Show("Project Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                Textbox_Format();
             }
+
         }
 
         private void btn_convert_Click(object sender, EventArgs e)
@@ -836,6 +847,7 @@ namespace JodanQuote
                 Textbox_Format();
             }
         }
+
         private void txt_installation_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
@@ -860,7 +872,19 @@ namespace JodanQuote
             Textbox_Format();
         }
 
-      
+        private void btn_view_original_Click(object sender, EventArgs e)
+        {
+            Save();
+            Valuesclass.project_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[0]["convertion_id"].ToString());
+            Fill_data();
+            Valuesclass.jodan_y_n = 1;
+            Format();
+            txt_customer.Text = dT_customer.SALES_LEDGER.Rows[0]["customer_name"].ToString();
+
+
+        }
+
+       
     }
     
 }

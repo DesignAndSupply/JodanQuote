@@ -399,6 +399,10 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnItem_Identity;
             
+            private global::System.Data.DataColumn columnfinish_colour;
+            
+            private global::System.Data.DataColumn columnconvertion_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_Quote_ItemsDataTable() {
@@ -914,6 +918,22 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn finish_colourColumn {
+                get {
+                    return this.columnfinish_colour;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn convertion_idColumn {
+                get {
+                    return this.columnconvertion_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1009,7 +1029,9 @@ namespace JodanQuote.Datasource {
                         int infill_id, 
                         string Infill_Description, 
                         string Finish_Description, 
-                        int Item_Identity) {
+                        int Item_Identity, 
+                        string finish_colour, 
+                        int convertion_id) {
                 DT_Quote_ItemsRow rowDT_Quote_ItemsRow = ((DT_Quote_ItemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Project_ID,
@@ -1071,7 +1093,9 @@ namespace JodanQuote.Datasource {
                         infill_id,
                         Infill_Description,
                         Finish_Description,
-                        Item_Identity};
+                        Item_Identity,
+                        finish_colour,
+                        convertion_id};
                 rowDT_Quote_ItemsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Quote_ItemsRow);
                 return rowDT_Quote_ItemsRow;
@@ -1161,6 +1185,8 @@ namespace JodanQuote.Datasource {
                 this.columnInfill_Description = base.Columns["Infill Description"];
                 this.columnFinish_Description = base.Columns["Finish Description"];
                 this.columnItem_Identity = base.Columns["Item Identity"];
+                this.columnfinish_colour = base.Columns["finish_colour"];
+                this.columnconvertion_id = base.Columns["convertion_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1286,6 +1312,10 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnFinish_Description);
                 this.columnItem_Identity = new global::System.Data.DataColumn("Item Identity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItem_Identity);
+                this.columnfinish_colour = new global::System.Data.DataColumn("finish_colour", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfinish_colour);
+                this.columnconvertion_id = new global::System.Data.DataColumn("convertion_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconvertion_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProject_ID}, true));
                 this.columnProject_ID.AllowDBNull = false;
@@ -1311,6 +1341,7 @@ namespace JodanQuote.Datasource {
                 this.columnJamb_Style.MaxLength = 50;
                 this.columnInfill_Description.MaxLength = 30;
                 this.columnFinish_Description.MaxLength = 25;
+                this.columnfinish_colour.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2409,6 +2440,38 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string finish_colour {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Quote_Items.finish_colourColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'finish_colour\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.finish_colourColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int convertion_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Quote_Items.convertion_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'convertion_id\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.convertion_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDate_CreatedNull() {
                 return this.IsNull(this.tableDT_Quote_Items.Date_CreatedColumn);
             }
@@ -3114,6 +3177,30 @@ namespace JodanQuote.Datasource {
             public void SetItem_IdentityNull() {
                 this[this.tableDT_Quote_Items.Item_IdentityColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfinish_colourNull() {
+                return this.IsNull(this.tableDT_Quote_Items.finish_colourColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfinish_colourNull() {
+                this[this.tableDT_Quote_Items.finish_colourColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconvertion_idNull() {
+                return this.IsNull(this.tableDT_Quote_Items.convertion_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconvertion_idNull() {
+                this[this.tableDT_Quote_Items.convertion_idColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -3335,6 +3422,8 @@ namespace JodanQuote.Datasource.DT_QuoteTableAdapters {
             tableMapping.ColumnMappings.Add("Infill Description", "Infill Description");
             tableMapping.ColumnMappings.Add("Finish Description", "Finish Description");
             tableMapping.ColumnMappings.Add("Item Identity", "Item Identity");
+            tableMapping.ColumnMappings.Add("finish_colour", "finish_colour");
+            tableMapping.ColumnMappings.Add("convertion_id", "convertion_id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3357,7 +3446,7 @@ namespace JodanQuote.Datasource.DT_QuoteTableAdapters {
                          item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, frame_width, frame_height, material_thickness, total_cost, created_by, 
                          markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, [Door Type Description], [Material Description], paint_cost, 
                          fire_rating_cost, security_rating_cost, fire_rating_id, security_rating_id, [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], 
-                         addon_cost, item_notes, converted_cost, infill_id, [Infill Description], [Finish Description], [Item Identity]
+                         addon_cost, item_notes, converted_cost, infill_id, [Infill Description], [Finish Description], [Item Identity], finish_colour, convertion_id
 FROM            C_View_Project_Quotation
 WHERE        ([Project ID] = @project_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
