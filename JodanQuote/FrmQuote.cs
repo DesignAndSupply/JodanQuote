@@ -218,12 +218,14 @@ namespace JodanQuote
             {
 
                 int? Hardware = ((dt_copy_hardware.Rows[i]["Hardware ID"]) as int?) ?? 0;
+                int? category = ((dt_copy_hardware.Rows[i]["Category ID"]) as int?) ?? 0;
                 int? Quantity = ((dt_copy_hardware.Rows[i]["Quantity"]) as int?) ?? 0;
                 Double? Total_Cost = ((dt_copy_hardware.Rows[i]["Total Cost"]) as Double?) ?? 0;
 
                 SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
                 insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id-1);
                 insert_hardware.Parameters.AddWithValue("@hardware_id", Hardware);
+                insert_hardware.Parameters.AddWithValue("@category_id", category);
                 insert_hardware.Parameters.AddWithValue("@hardware_description", dt_copy_hardware.Rows[i]["Hardware Description"]);
                 insert_hardware.Parameters.AddWithValue("@hardware_cost", dt_copy_hardware.Rows[i]["Hardware cost"]);
                 insert_hardware.Parameters.AddWithValue("@Quantity", Quantity);
@@ -303,12 +305,14 @@ namespace JodanQuote
             {
 
                 int? Hardware = ((dt_copy_hardware.Rows[i]["Hardware ID"]) as int?) ?? 0;
+                int? category = ((dt_copy_hardware.Rows[i]["category_id"]) as int?) ?? 0;
                 int? Quantity = ((dt_copy_hardware.Rows[i]["Quantity"]) as int?) ?? 0;
                 double? Total_Cost = ((dt_copy_hardware.Rows[i]["Total Cost"]) as double?) ?? 0;
 
                 SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
                 insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
                 insert_hardware.Parameters.AddWithValue("@hardware_id", Hardware);
+                insert_hardware.Parameters.AddWithValue("@category_id", category);
                 insert_hardware.Parameters.AddWithValue("@hardware_description", dt_copy_hardware.Rows[i]["Hardware Description"]);
                 insert_hardware.Parameters.AddWithValue("@hardware_cost", dt_copy_hardware.Rows[i]["Hardware cost"]);
                 insert_hardware.Parameters.AddWithValue("@Quantity", dt_copy_hardware.Rows[i]["Hardware cost"]);
@@ -461,26 +465,46 @@ namespace JodanQuote
 
         void insert_blank_hardware()
         {
+            for (int i =0; i < 1; i++)
+            {
+                string hardware_description = "Monarch 102x76x 3mm Ball ";
+                double hardware_cost = 3.12;
+                int quantity = 1;
+                double total_cost = 3.12;
+                Select_quote_id();
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
+                insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
+                insert_hardware.Parameters.AddWithValue("@hardware_id", 4983);
+                insert_hardware.Parameters.AddWithValue("@category_id", 11);
+                insert_hardware.Parameters.AddWithValue("@hardware_description", hardware_description);
+                insert_hardware.Parameters.AddWithValue("@hardware_cost", hardware_cost);
+                insert_hardware.Parameters.AddWithValue("@quantity", quantity);
+                insert_hardware.Parameters.AddWithValue("@total_cost", total_cost);
+                insert_hardware.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn);
 
-            int hardware_id = 11;
-            string hardware_description = "Monarch 102x76x 3mm Ball ";
-            double hardware_cost = 3.12;
-            int quantity = 1;
-            double total_cost = 3.12;
+                string seal_description = "D Seal 6x8";
 
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
-            insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
-            insert_hardware.Parameters.AddWithValue("@hardware_id", hardware_id);
-            insert_hardware.Parameters.AddWithValue("@hardware_description", hardware_description);
-            insert_hardware.Parameters.AddWithValue("@hardware_cost", hardware_cost);
-            insert_hardware.Parameters.AddWithValue("@quantity", quantity);
-            insert_hardware.Parameters.AddWithValue("@total_cost", total_cost);
-            insert_hardware.ExecuteNonQuery();
-            ConnectionClass.Dispose_connection(conn);
+                total_cost = 47.15;
+
+                SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand insert_seal = new SqlCommand(Statementsclass.insert_hardware, conn2);
+                insert_seal.Parameters.AddWithValue("@id", Valuesclass.quote_id);
+                insert_seal.Parameters.AddWithValue("@hardware_id", 4894);
+                insert_seal.Parameters.AddWithValue("@category_id", 40);
+                insert_seal.Parameters.AddWithValue("@hardware_description", seal_description);
+                insert_seal.Parameters.AddWithValue("@hardware_cost", total_cost);
+                insert_seal.Parameters.AddWithValue("@quantity", quantity);
+                insert_seal.Parameters.AddWithValue("@total_cost", total_cost);
+                insert_seal.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn2);
+            }
+            
+           
+
 
           
-
 
         }
 
@@ -491,6 +515,7 @@ namespace JodanQuote
             DialogResult confirm = MessageBox.Show("Add New Item To This Quotation?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
+                Save();
                 Valuesclass.revision_number = 1;
                 select_max_item();
                 Select_quote_id();
@@ -507,10 +532,10 @@ namespace JodanQuote
                 insert_new_project_quote.ExecuteNonQuery();
                 ConnectionClass.Dispose_connection(conn);
                 Fill_data();
-                insert_blank_hardware();
                 this.Hide();
                 FrmItem item = new FrmItem();
                 item.Show();
+                insert_blank_hardware();
             }
 
             else
@@ -566,6 +591,14 @@ namespace JodanQuote
 
                     if(delete == DialogResult.Yes)
                     {
+
+                        int ID = Convert.ToInt32(grid_items_on_quote.Rows[i].Cells["Item_Identity"].Value);
+                        SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
+                        SqlCommand delete_multiple_item_hardware = new SqlCommand(Statementsclass.delete_multiple_item_hardware, conn2);
+                        delete_multiple_item_hardware.Parameters.AddWithValue("@id", ID);
+                        delete_multiple_item_hardware.ExecuteNonQuery();
+                        ConnectionClass.Dispose_connection(conn2);
+
                         int item = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item_Id"].ToString());
                         int project_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Project ID"].ToString());
                         SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
@@ -574,7 +607,10 @@ namespace JodanQuote
                         delete_quote_item.Parameters.AddWithValue("@project_id", project_id);
                         delete_quote_item.ExecuteNonQuery();
                         Fill_data();
-                        
+
+
+                      
+
 
                     }
 

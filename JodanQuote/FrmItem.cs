@@ -152,6 +152,7 @@ namespace JodanQuote
             update_quotation_item.Parameters.AddWithValue("@markup_hardware", txt_hardware_markup.Text);
             update_quotation_item.Parameters.AddWithValue("@door_type", door_type_id);
             update_quotation_item.Parameters.AddWithValue("@finish_colour", txt_colour.Text);
+            update_quotation_item.Parameters.AddWithValue("@finish_description", cmb_finish_edit.Text);
             update_quotation_item.Parameters.AddWithValue("@item_notes", txt_notes.Text);
             update_quotation_item.Parameters.AddWithValue("@markup_material", txt_material_markup.Text);
             update_quotation_item.Parameters.AddWithValue("@labour_rate", labour_markup);
@@ -213,7 +214,7 @@ namespace JodanQuote
                   
 
                 }
-                txt_hardware_cost.Text = "£" + total.ToString();
+                txt_hardware_cost.Text = "£" +Math.Round(total,2).ToString();
                 txt_addon.Text = "£" + addon_total.ToString();
                 txt_addon_labour_hours.Text = addon_labour_hours.ToString() + " Hours";
                 txt_material_labour.Text = addon_labour_hours + labour_hours.ToString() + " Hours";
@@ -275,7 +276,7 @@ namespace JodanQuote
 
                     }
 
-                    txt_hardware_cost.Text = "£" + total.ToString();
+                    txt_hardware_cost.Text = "£" +Math.Round(total,2).ToString();
                     txt_addon.Text = "£" + addon_total.ToString();
                     txt_addon_labour_hours.Text = addon_labour_hours.ToString() + " Hours";
                     //////////////////////////////////
@@ -757,7 +758,7 @@ namespace JodanQuote
               
                 double total_cost = 0;
                 
-                for (int i = 2; i <= 7; ++i)
+                for (int i = 2; i <= 8; ++i)
                 {
                     
 
@@ -844,8 +845,8 @@ namespace JodanQuote
                     String sql = "C_Calculate_Material_Cost";
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand command = new SqlCommand(sql, conn);
-                    SqlDataAdapter da = new SqlDataAdapter(command); 
-
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    da.SelectCommand.CommandTimeout = 30;
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
                     command.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
@@ -870,7 +871,7 @@ namespace JodanQuote
                     }
                     double total_cost = 0;
 
-                    for (int i = 2; i <= 7; ++i)
+                    for (int i = 2; i <= 8; ++i)
                     {
 
                         total_cost += Convert.ToDouble(function.Functionsclass.dt_skins.Rows[0][i].ToString());
@@ -913,7 +914,15 @@ namespace JodanQuote
                     update_hinge.Parameters.AddWithValue("@quantity", hinge_quantity);
                     update_hinge.ExecuteNonQuery();
                     ConnectionClass.Dispose_connection(conn3);
+                
+              
                     this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
+
+
+
+
+
+
 
                     return;
                   
@@ -1119,6 +1128,7 @@ namespace JodanQuote
                 SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
                 insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
                 insert_hardware.Parameters.AddWithValue("@hardware_id", grid_hardware_on_item.Rows[i].Cells["ID_hardware"].Value);
+                insert_hardware.Parameters.AddWithValue("@category_id", grid_hardware_on_item.Rows[i].Cells["category_id"].Value);
                 insert_hardware.Parameters.AddWithValue("@hardware_description", grid_hardware_on_item.Rows[i].Cells["description"].Value);
                 insert_hardware.Parameters.AddWithValue("@hardware_cost", grid_hardware_on_item.Rows[i].Cells["hardware_cost_sale"].Value);
                 insert_hardware.Parameters.AddWithValue("@Quantity", grid_hardware_on_item.Rows[i].Cells["quantity_hardware"].Value);
@@ -1210,6 +1220,93 @@ namespace JodanQuote
 
         }
 
+        void update_seal()
+        {
+
+            if (string.IsNullOrEmpty(txt_frame_height.Text) || string.IsNullOrEmpty(txt_frame_width.Text))
+            {
+                return;
+            }
+
+            int fire_rating_id = Convert.ToInt16(((DataRowView)cmb_fire_edit.SelectedItem)["id"]);
+            double hardware_cost = 0;
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlCommand select_item_seal = new SqlCommand(Statementsclass.select_item_seal, conn);
+            select_item_seal.Parameters.AddWithValue("@item_id", Valuesclass.quote_id);
+            SqlDataReader read_item_seal = select_item_seal.ExecuteReader();
+
+         
+
+            int frame_width = Convert.ToInt32(txt_frame_width.Text)*2;
+            int frame_height = Convert.ToInt32(txt_frame_height.Text)*2;
+
+            
+
+            int seal_qty = 0;
+            double new_cost = 0;
+
+            if (read_item_seal.Read())
+            {
+
+                seal_qty = (Convert.ToInt32(read_item_seal["quantity"]));
+
+                read_item_seal.Close();
+            }
+
+    
+            ConnectionClass.Dispose_connection(conn);
+
+            SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
+
+            if (fire_rating_id != 0)
+            {
+
+                hardware_cost = 90;
+
+              
+                new_cost = seal_qty * hardware_cost;
+
+                SqlCommand update_seal_firerated = new SqlCommand(Statementsclass.update_seal_firerated, conn2);
+                update_seal_firerated.Parameters.AddWithValue("@item_id", Valuesclass.quote_id);
+                update_seal_firerated.Parameters.AddWithValue("@hardware_cost", 1.15 * (frame_height + frame_width) / 1000);
+                update_seal_firerated.Parameters.AddWithValue("@hardware_description", "Weather Seal 188s Brown");
+                update_seal_firerated.Parameters.AddWithValue("@total_cost", 1.15*(frame_height+frame_width)/1000);
+                update_seal_firerated.Parameters.AddWithValue("@quantity", seal_qty);
+                update_seal_firerated.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn2);
+              
+               
+         
+                
+
+            }
+            else
+            {
+                hardware_cost = 47.15;
+
+                new_cost = seal_qty * hardware_cost;
+                SqlCommand update_seal_non_firerated = new SqlCommand(Statementsclass.update_seal_non_firerated, conn2);
+                update_seal_non_firerated.Parameters.AddWithValue("@item_id", Valuesclass.quote_id);
+                update_seal_non_firerated.Parameters.AddWithValue("@hardware_cost", 0.29 * (frame_height + frame_width) / 1000);
+                update_seal_non_firerated.Parameters.AddWithValue("@hardware_description", "D Seal 6x8");
+                update_seal_non_firerated.Parameters.AddWithValue("@total_cost", 0.29 * (frame_height + frame_width)/1000);
+                update_seal_non_firerated.Parameters.AddWithValue("@quantity", seal_qty);
+                update_seal_non_firerated.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn2);
+             
+             
+             
+          
+
+
+
+            }
+
+    
+            this.ada_Hardware_Item.Fill(dt_Hardware_Item.DT_Hardware_Item, Valuesclass.quote_id);
+
+        }
+
         private void FrmItem_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMain main = new FrmMain();
@@ -1271,14 +1368,14 @@ namespace JodanQuote
         private void btn_printscren_Click(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            int width = this.Width-45;
-            int height = this.Height- 45;
+            int width = this.Width-15;
+            int height = this.Height- 15;
             string path = @"\\designsvr1\apps\Design and Supply CSharp\Source Files\JodanQuote\Temp Folder\Item Printscreen.JPG";
             Bitmap printscreen = new Bitmap(width, height);
 
             Graphics graphics = Graphics.FromImage(printscreen as Image);
 
-            graphics.CopyFromScreen(227, 150, 0, 0, printscreen.Size);
+            graphics.CopyFromScreen(200, 168, 0, 0, printscreen.Size);
 
             printscreen.Save(path, ImageFormat.Jpeg);
 
@@ -1660,9 +1757,10 @@ namespace JodanQuote
         {
             if (cmb_fire_edit.Visible == true && cmb_fire_edit.SelectedItem != null)
             {
-
+                update_seal();
                 Calculate_Cost_Edit_Mode();
                 Refresh_Data();
+               
               
 
             }
@@ -1906,6 +2004,30 @@ namespace JodanQuote
 
             }
         }
+
+        private void txt_colour_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+
+                this.ActiveControl = txt_notes;
+            }
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.c_View_Fire_RatingsTableAdapter.FillBy(this.dT_Ratings.C_View_Fire_Ratings);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+       
     }
     
 }

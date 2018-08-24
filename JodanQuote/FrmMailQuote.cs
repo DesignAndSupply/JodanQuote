@@ -65,7 +65,7 @@ namespace JodanQuote
             string recipients = string.Join("", Functionsclass.Emailrecipients);
             Outlook.Application app = new Outlook.Application();
             Outlook.MailItem mailItem = app.CreateItem(Outlook.OlItemType.olMailItem);
-            mailItem.Subject = "Quote Number: " + Valuesclass.project_id;
+            mailItem.Subject = "Project Number: " + Valuesclass.project_id;
             mailItem.To = recipients;
             //mailItem.Body = "Test";
             mailItem.Attachments.Add(path);

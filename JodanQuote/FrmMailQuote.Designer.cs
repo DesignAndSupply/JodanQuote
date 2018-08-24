@@ -65,7 +65,7 @@
             this.grid_email_recipients.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_email_recipients.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_email_recipients.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_email_recipients.Location = new System.Drawing.Point(56, 37);
+            this.grid_email_recipients.Location = new System.Drawing.Point(23, 26);
             this.grid_email_recipients.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_email_recipients.Name = "grid_email_recipients";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -78,7 +78,7 @@
             this.grid_email_recipients.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grid_email_recipients.RowHeadersVisible = false;
             this.grid_email_recipients.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_email_recipients.Size = new System.Drawing.Size(519, 266);
+            this.grid_email_recipients.Size = new System.Drawing.Size(433, 266);
             this.grid_email_recipients.TabIndex = 25;
             this.grid_email_recipients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_email_recipients_CellContentClick);
             // 
@@ -102,7 +102,7 @@
             this.btn_send.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_send.Image = global::JodanQuote.Properties.Resources.Email;
             this.btn_send.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_send.Location = new System.Drawing.Point(528, 329);
+            this.btn_send.Location = new System.Drawing.Point(473, 253);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(77, 39);
             this.btn_send.TabIndex = 43;
@@ -115,7 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(659, 405);
+            this.ClientSize = new System.Drawing.Size(563, 318);
             this.Controls.Add(this.grid_email_recipients);
             this.Controls.Add(this.btn_send);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -144,7 +144,7 @@
             this.lbl_description.AutoSize = true;
             this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_description.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_description.Location = new System.Drawing.Point(453, 134);
+            this.lbl_description.Location = new System.Drawing.Point(453, 129);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(72, 15);
             this.lbl_description.TabIndex = 39;
@@ -155,7 +155,7 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_id.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_id.Location = new System.Drawing.Point(229, 134);
+            this.lbl_id.Location = new System.Drawing.Point(229, 129);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(74, 15);
             this.lbl_id.TabIndex = 38;
@@ -165,17 +165,18 @@
             // 
             this.txt_quote_id.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_quote_id.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_quote_id.Location = new System.Drawing.Point(229, 151);
+            this.txt_quote_id.Location = new System.Drawing.Point(229, 146);
             this.txt_quote_id.Name = "txt_quote_id";
             this.txt_quote_id.Size = new System.Drawing.Size(86, 20);
             this.txt_quote_id.TabIndex = 37;
             this.txt_quote_id.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_quote_id_KeyDown);
+            this.txt_quote_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_quote_id_KeyPress);
             // 
             // txt_customer
             // 
             this.txt_customer.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_customer.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_customer.Location = new System.Drawing.Point(449, 151);
+            this.txt_customer.Location = new System.Drawing.Point(449, 146);
             this.txt_customer.Name = "txt_customer";
             this.txt_customer.Size = new System.Drawing.Size(163, 20);
             this.txt_customer.TabIndex = 36;
@@ -185,7 +186,7 @@
             // 
             this.pct_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pct_clear.Image = ((System.Drawing.Image)(resources.GetObject("pct_clear.Image")));
-            this.pct_clear.Location = new System.Drawing.Point(777, 150);
+            this.pct_clear.Location = new System.Drawing.Point(746, 150);
             this.pct_clear.Name = "pct_clear";
             this.pct_clear.Size = new System.Drawing.Size(26, 20);
             this.pct_clear.TabIndex = 40;
@@ -269,7 +270,7 @@
             this.Reference.AutoSize = true;
             this.Reference.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reference.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.Reference.Location = new System.Drawing.Point(326, 134);
+            this.Reference.Location = new System.Drawing.Point(326, 129);
             this.Reference.Name = "Reference";
             this.Reference.Size = new System.Drawing.Size(77, 15);
             this.Reference.TabIndex = 42;
@@ -279,7 +280,7 @@
             // 
             this.txt_reference.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_reference.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_reference.Location = new System.Drawing.Point(326, 151);
+            this.txt_reference.Location = new System.Drawing.Point(326, 146);
             this.txt_reference.Name = "txt_reference";
             this.txt_reference.Size = new System.Drawing.Size(106, 20);
             this.txt_reference.TabIndex = 41;
@@ -296,11 +297,12 @@
             this.date_end.Cursor = System.Windows.Forms.Cursors.Hand;
             this.date_end.CustomFormat = "00/00/0000";
             this.date_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_end.Location = new System.Drawing.Point(636, 150);
+            this.date_end.Location = new System.Drawing.Point(636, 159);
             this.date_end.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.date_end.Name = "date_end";
             this.date_end.Size = new System.Drawing.Size(98, 20);
             this.date_end.TabIndex = 2;
+            this.date_end.ValueChanged += new System.EventHandler(this.date_end_ValueChanged);
             // 
             // date_start
             // 
@@ -313,11 +315,12 @@
             this.date_start.Cursor = System.Windows.Forms.Cursors.Hand;
             this.date_start.CustomFormat = "00/00/0000";
             this.date_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_start.Location = new System.Drawing.Point(636, 124);
+            this.date_start.Location = new System.Drawing.Point(636, 133);
             this.date_start.MinDate = new System.DateTime(2018, 6, 1, 0, 0, 0, 0);
             this.date_start.Name = "date_start";
             this.date_start.Size = new System.Drawing.Size(98, 20);
             this.date_start.TabIndex = 43;
+            this.date_start.ValueChanged += new System.EventHandler(this.date_start_ValueChanged);
             // 
             // FrmMain
             // 

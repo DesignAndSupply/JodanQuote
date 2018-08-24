@@ -15,6 +15,12 @@ namespace JodanQuote
         public FrmViewSkins()
         {
             InitializeComponent();
+            format();
+               
+        }
+
+        void format()
+        {
             try
             {
                 grid_skins.DataSource = function.Functionsclass.dt_skins;
@@ -35,6 +41,8 @@ namespace JodanQuote
                 grid_skins.Columns["skin_4_cost"].DefaultCellStyle.Format = "C2";
                 grid_skins.Columns["infill_cost"].DefaultCellStyle.Format = "C2";
                 grid_skins.Columns["infill_cost"].HeaderText = "Infill Cost";
+                grid_skins.Columns["tophat_cost"].DefaultCellStyle.Format = "C2";
+                grid_skins.Columns["tophat_cost"].HeaderText = "Tophat Cost";
                 grid_skins.Columns["paint_cost"].HeaderText = "Paint Cost";
                 grid_skins.Columns["paint_cost"].DefaultCellStyle.Format = "C2";
                 grid_skins.Columns["fire_cost"].HeaderText = "Fire Cost";
@@ -51,6 +59,12 @@ namespace JodanQuote
             {
 
             }
+
+
+
+
         }
+
+       
     }
 }

@@ -79,8 +79,12 @@ namespace JodanQuote
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             DateTime d =  DateTime.Today;
             String today = d.ToShortDateString();
+            DateTime start_date = Convert.ToDateTime(date_start.Text + " 00:00:00".ToString());
+            DateTime end_date = Convert.ToDateTime(date_end.Text + " 23:59:59".ToString());
 
-            if (txt_customer.Text != "" && txt_quote_id.Text != "" && txt_reference.Text == "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
+
+
+            if (string.IsNullOrEmpty(txt_customer.Text) == false && string.IsNullOrEmpty(txt_quote_id.Text) == false && string.IsNullOrEmpty(txt_reference.Text) == true && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
                 dt_quote.Clear();
                 SqlDataAdapter search_quote_customer = new SqlDataAdapter(Statementsclass.search_quote_customer, conn);
@@ -93,7 +97,7 @@ namespace JodanQuote
 
 
             }
-            if (txt_customer.Text != "" && txt_quote_id.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
+            if (string.IsNullOrEmpty(txt_customer.Text) == false && string.IsNullOrEmpty(txt_quote_id.Text) == true && string.IsNullOrEmpty(txt_reference.Text) == true && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
@@ -106,7 +110,7 @@ namespace JodanQuote
 
 
             }
-            if (txt_quote_id.Text != "" && txt_customer.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
+            if (string.IsNullOrEmpty(txt_customer.Text) == true && string.IsNullOrEmpty(txt_quote_id.Text) == false && string.IsNullOrEmpty(txt_reference.Text) == true && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
@@ -119,7 +123,7 @@ namespace JodanQuote
                 return;
 
             }
-            if (txt_quote_id.Text != "" && txt_customer.Text != "" && txt_reference.Text != "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
+            if (string.IsNullOrEmpty(txt_customer.Text) == false && string.IsNullOrEmpty(txt_quote_id.Text) == false && string.IsNullOrEmpty(txt_reference.Text) == false && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
@@ -135,8 +139,7 @@ namespace JodanQuote
                 return;
 
             }
-
-            if (txt_quote_id.Text == "" && txt_customer.Text == "" && txt_reference.Text != "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
+            if (string.IsNullOrEmpty(txt_customer.Text) == true && string.IsNullOrEmpty(txt_quote_id.Text) == true && string.IsNullOrEmpty(txt_reference.Text) == false && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
@@ -150,7 +153,7 @@ namespace JodanQuote
                 return;
 
             }
-            if (txt_quote_id.Text != "" && txt_customer.Text == "" && txt_reference.Text != "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
+            if (string.IsNullOrEmpty(txt_customer.Text) == false && string.IsNullOrEmpty(txt_quote_id.Text) == true && string.IsNullOrEmpty(txt_reference.Text) == false && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
@@ -164,7 +167,7 @@ namespace JodanQuote
                 return;
 
             }
-            if (txt_quote_id.Text == "" && txt_customer.Text != "" && txt_reference.Text != "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
+            if (string.IsNullOrEmpty(txt_customer.Text) == true && string.IsNullOrEmpty(txt_quote_id.Text) == false && string.IsNullOrEmpty(txt_reference.Text) == false && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
 
                 dt_quote.Clear();
@@ -178,17 +181,76 @@ namespace JodanQuote
                 return;
 
             }
-            if (txt_customer.Text == "" && txt_quote_id.Text == "" && txt_reference.Text == "" && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
+            if (string.IsNullOrEmpty(txt_customer.Text) == true && string.IsNullOrEmpty(txt_quote_id.Text) == true && string.IsNullOrEmpty(txt_reference.Text) == true && date_start.Text.ToString() == today && date_end.Text.ToString() == today)
             {
                 dt_quote.Clear();
                 Fill_data();
                 return;
 
             }
+            if (string.IsNullOrEmpty(txt_customer.Text) == true && string.IsNullOrEmpty(txt_quote_id.Text) == true && string.IsNullOrEmpty(txt_reference.Text) == true && date_start.Text.ToString() != today || date_end.Text.ToString() != today)
+            {
+
+                dt_quote.Clear();
+
+                SqlDataAdapter search_dates = new SqlDataAdapter(Statementsclass.search_dates, conn);
+                search_dates.SelectCommand.Parameters.AddWithValue("@start_date",start_date);
+                search_dates.SelectCommand.Parameters.AddWithValue("@end_date", end_date);
+                search_dates.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
+                search_dates.Fill(dt_quote);
+                Format();
+                return;
 
 
+            }
+            if (string.IsNullOrEmpty(txt_customer.Text) == true && string.IsNullOrEmpty(txt_quote_id.Text) == false && string.IsNullOrEmpty(txt_reference.Text) == true && date_start.Text.ToString() != today || date_end.Text.ToString() != today)
+            {
+
+                dt_quote.Clear();
+
+                SqlDataAdapter search_dates_quote = new SqlDataAdapter(Statementsclass.search_dates_quote, conn);
+                search_dates_quote.SelectCommand.Parameters.AddWithValue("@start_date", start_date);
+                search_dates_quote.SelectCommand.Parameters.AddWithValue("@end_date", end_date);
+                search_dates_quote.SelectCommand.Parameters.AddWithValue("@project_id", Convert.ToInt32(txt_quote_id.Text.ToString()));
+                search_dates_quote.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
+                search_dates_quote.Fill(dt_quote);
+                Format();
+                return;
 
 
+            }
+            if (string.IsNullOrWhiteSpace(txt_customer.Text) == false && string.IsNullOrWhiteSpace(txt_quote_id.Text) == true && string.IsNullOrWhiteSpace(txt_reference.Text) == true && date_start.Text.ToString() != today || date_end.Text.ToString() != today)
+            {
+
+                dt_quote.Clear();
+
+                SqlDataAdapter search_dates_customer = new SqlDataAdapter(Statementsclass.search_dates_customer, conn);
+                search_dates_customer.SelectCommand.Parameters.AddWithValue("@start_date", start_date);
+                search_dates_customer.SelectCommand.Parameters.AddWithValue("@end_date", end_date);
+                search_dates_customer.SelectCommand.Parameters.AddWithValue("@customer", txt_customer.Text.ToString());
+                search_dates_customer.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
+                search_dates_customer.Fill(dt_quote);
+                Format();
+                return;
+
+
+            }
+            if (string.IsNullOrWhiteSpace(txt_customer.Text) == true && string.IsNullOrWhiteSpace(txt_quote_id.Text) == true && string.IsNullOrWhiteSpace(txt_reference.Text) == false && date_start.Text.ToString() != today || date_end.Text.ToString() != today)
+            {
+
+                dt_quote.Clear();
+
+                SqlDataAdapter search_dates_reference = new SqlDataAdapter(Statementsclass.search_dates_reference, conn);
+                search_dates_reference.SelectCommand.Parameters.AddWithValue("@start_date", start_date);
+                search_dates_reference.SelectCommand.Parameters.AddWithValue("@end_date", end_date);
+                search_dates_reference.SelectCommand.Parameters.AddWithValue("@reference", txt_reference.Text.ToString());
+                search_dates_reference.SelectCommand.Parameters.AddWithValue("@jodan_Y_N", Valuesclass.jodan_y_n);
+                search_dates_reference.Fill(dt_quote);
+                Format();
+                return;
+
+
+            }
         }
 
         private void grid_quote_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -281,7 +343,8 @@ namespace JodanQuote
 
         private void pct_clear_Click(object sender, EventArgs e)
         {
-            dt_quote.Clear();
+          
+            dt_quote.Rows.Clear();
             txt_customer.Text = "";
             txt_quote_id.Text = "";
             txt_reference.Text = "";
@@ -337,6 +400,25 @@ namespace JodanQuote
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txt_quote_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+             (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void date_start_ValueChanged(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void date_end_ValueChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

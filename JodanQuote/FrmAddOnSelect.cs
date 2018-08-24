@@ -154,6 +154,7 @@ namespace JodanQuote
         private void btn_structure_width_Click(object sender, EventArgs e)
         {
             txt_width.Text = Valuesclass.structual_op_width.ToString();
+            this.ActiveControl = txt_height;
         }
 
         private void btn_back_Click(object sender, EventArgs e)

@@ -17,7 +17,8 @@
                          item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, frame_width, frame_height, material_thickness, total_cost, created_by, 
                          markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, [Door Type Description], [Material Description], paint_cost, 
                          fire_rating_cost, security_rating_cost, fire_rating_id, security_rating_id, [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], 
-                         addon_cost, item_notes, converted_cost, infill_id, [Infill Description], [Finish Description], [Item Identity], finish_colour, convertion_id
+                         addon_cost, item_notes, converted_cost, infill_id, [Infill Description], [Finish Description], [Item Identity], finish_colour, convertion_id, [Structure Width X Height], 
+                         [Frame Width X Height], [Material Thickness Description]
 FROM            C_View_Project_Quotation
 WHERE        ([Project ID] = @project_id)</CommandText>
                     <Parameters>
@@ -90,6 +91,9 @@ WHERE        ([Project ID] = @project_id)</CommandText>
               <Mapping SourceColumn="Item Identity" DataSetColumn="Item Identity" />
               <Mapping SourceColumn="finish_colour" DataSetColumn="finish_colour" />
               <Mapping SourceColumn="convertion_id" DataSetColumn="convertion_id" />
+              <Mapping SourceColumn="Structure Width X Height" DataSetColumn="Structure Width X Height" />
+              <Mapping SourceColumn="Frame Width X Height" DataSetColumn="Frame Width X Height" />
+              <Mapping SourceColumn="Material Thickness Description" DataSetColumn="Material Thickness Description" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -298,6 +302,27 @@ WHERE        ([Project ID] = @project_id)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="convertion_id" msprop:Generator_ColumnVarNameInTable="columnconvertion_id" msprop:Generator_ColumnPropNameInRow="convertion_id" msprop:Generator_ColumnPropNameInTable="convertion_idColumn" msprop:Generator_UserColumnName="convertion_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Structure_x0020_Width_x0020_X_x0020_Height" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStructure_Width_X_Height" msprop:Generator_ColumnPropNameInRow="Structure_Width_X_Height" msprop:Generator_ColumnPropNameInTable="Structure_Width_X_HeightColumn" msprop:Generator_UserColumnName="Structure Width X Height" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Frame_x0020_Width_x0020_X_x0020_Height" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFrame_Width_X_Height" msprop:Generator_ColumnPropNameInRow="Frame_Width_X_Height" msprop:Generator_ColumnPropNameInTable="Frame_Width_X_HeightColumn" msprop:Generator_UserColumnName="Frame Width X Height" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Material_x0020_Thickness_x0020_Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMaterial_Thickness_Description" msprop:Generator_ColumnPropNameInRow="Material_Thickness_Description" msprop:Generator_ColumnPropNameInTable="Material_Thickness_DescriptionColumn" msprop:Generator_UserColumnName="Material Thickness Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

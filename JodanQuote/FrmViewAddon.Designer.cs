@@ -39,6 +39,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewAddon));
             this.grid_addon = new System.Windows.Forms.DataGridView();
+            this.cViewItemAddOnBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dT_Item_Add_On = new JodanQuote.Datasource.DT_Item_Add_On();
+            this.c_View_Item_Add_OnTableAdapter = new JodanQuote.Datasource.DT_Item_Add_OnTableAdapters.C_View_Item_Add_OnTableAdapter();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addonwidthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addonheightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +54,6 @@
             this.labour_hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.powdercoatcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitmaterialcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cViewItemAddOnBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dT_Item_Add_On = new JodanQuote.Datasource.DT_Item_Add_On();
-            this.c_View_Item_Add_OnTableAdapter = new JodanQuote.Datasource.DT_Item_Add_OnTableAdapters.C_View_Item_Add_OnTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grid_addon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cViewItemAddOnBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Item_Add_On)).BeginInit();
@@ -65,8 +65,10 @@
             this.grid_addon.AllowUserToDeleteRows = false;
             this.grid_addon.AllowUserToResizeColumns = false;
             this.grid_addon.AllowUserToResizeRows = false;
-            this.grid_addon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.grid_addon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.grid_addon.AutoGenerateColumns = false;
+            this.grid_addon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.grid_addon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grid_addon.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.grid_addon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -102,7 +104,7 @@
             this.grid_addon.DefaultCellStyle = dataGridViewCellStyle6;
             this.grid_addon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_addon.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_addon.Location = new System.Drawing.Point(37, 19);
+            this.grid_addon.Location = new System.Drawing.Point(6, 5);
             this.grid_addon.Name = "grid_addon";
             this.grid_addon.ReadOnly = true;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -120,8 +122,22 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.grid_addon.Size = new System.Drawing.Size(1026, 200);
+            this.grid_addon.Size = new System.Drawing.Size(1064, 57);
             this.grid_addon.TabIndex = 59;
+            // 
+            // cViewItemAddOnBindingSource
+            // 
+            this.cViewItemAddOnBindingSource.DataMember = "C_View_Item_Add_On";
+            this.cViewItemAddOnBindingSource.DataSource = this.dT_Item_Add_On;
+            // 
+            // dT_Item_Add_On
+            // 
+            this.dT_Item_Add_On.DataSetName = "DT_Item_Add_On";
+            this.dT_Item_Add_On.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // c_View_Item_Add_OnTableAdapter
+            // 
+            this.c_View_Item_Add_OnTableAdapter.ClearBeforeFill = true;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -136,7 +152,7 @@
             // 
             this.addonwidthDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.addonwidthDataGridViewTextBoxColumn.DataPropertyName = "add_on_width";
-            this.addonwidthDataGridViewTextBoxColumn.HeaderText = " Addon Width";
+            this.addonwidthDataGridViewTextBoxColumn.HeaderText = "Addon Width";
             this.addonwidthDataGridViewTextBoxColumn.Name = "addonwidthDataGridViewTextBoxColumn";
             this.addonwidthDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -152,6 +168,7 @@
             // 
             this.positionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.positionDataGridViewTextBoxColumn.DataPropertyName = "position";
+            this.positionDataGridViewTextBoxColumn.FillWeight = 90F;
             this.positionDataGridViewTextBoxColumn.HeaderText = "Position";
             this.positionDataGridViewTextBoxColumn.Name = "positionDataGridViewTextBoxColumn";
             this.positionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -205,7 +222,9 @@
             // 
             // labour_hours
             // 
+            this.labour_hours.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.labour_hours.DataPropertyName = "labour_hours";
+            this.labour_hours.FillWeight = 80F;
             this.labour_hours.HeaderText = "Labour Hours";
             this.labour_hours.Name = "labour_hours";
             this.labour_hours.ReadOnly = true;
@@ -217,6 +236,7 @@
             dataGridViewCellStyle4.Format = "C2";
             dataGridViewCellStyle4.NullValue = null;
             this.powdercoatcostDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.powdercoatcostDataGridViewTextBoxColumn.FillWeight = 110F;
             this.powdercoatcostDataGridViewTextBoxColumn.HeaderText = "Powder Coat Cost";
             this.powdercoatcostDataGridViewTextBoxColumn.Name = "powdercoatcostDataGridViewTextBoxColumn";
             this.powdercoatcostDataGridViewTextBoxColumn.ReadOnly = true;
@@ -232,31 +252,18 @@
             this.unitmaterialcostDataGridViewTextBoxColumn.Name = "unitmaterialcostDataGridViewTextBoxColumn";
             this.unitmaterialcostDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // cViewItemAddOnBindingSource
-            // 
-            this.cViewItemAddOnBindingSource.DataMember = "C_View_Item_Add_On";
-            this.cViewItemAddOnBindingSource.DataSource = this.dT_Item_Add_On;
-            // 
-            // dT_Item_Add_On
-            // 
-            this.dT_Item_Add_On.DataSetName = "DT_Item_Add_On";
-            this.dT_Item_Add_On.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // c_View_Item_Add_OnTableAdapter
-            // 
-            this.c_View_Item_Add_OnTableAdapter.ClearBeforeFill = true;
-            // 
             // FrmViewAddon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1129, 244);
+            this.ClientSize = new System.Drawing.Size(1076, 66);
             this.Controls.Add(this.grid_addon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmViewAddon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmViewAddon";
+            this.Text = "View Addons";
+            this.Shown += new System.EventHandler(this.FrmViewAddon_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.grid_addon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cViewItemAddOnBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dT_Item_Add_On)).EndInit();

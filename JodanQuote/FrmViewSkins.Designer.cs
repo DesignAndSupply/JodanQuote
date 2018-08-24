@@ -45,12 +45,12 @@
             this.grid_skins.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grid_skins.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.grid_skins.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid_skins.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.grid_skins.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.CornflowerBlue;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
@@ -59,7 +59,7 @@
             this.grid_skins.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
@@ -84,7 +84,7 @@
             this.grid_skins.RowHeadersVisible = false;
             this.grid_skins.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_skins.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_skins.Size = new System.Drawing.Size(1438, 118);
+            this.grid_skins.Size = new System.Drawing.Size(1061, 54);
             this.grid_skins.TabIndex = 72;
             // 
             // FrmViewSkins
@@ -92,14 +92,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1464, 170);
+            this.ClientSize = new System.Drawing.Size(1087, 110);
             this.Controls.Add(this.grid_skins);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmViewSkins";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Skins";
+            this.Text = "Material Costs";
+//            this.Shown += new System.EventHandler(this.FrmViewSkins_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.grid_skins)).EndInit();
             this.ResumeLayout(false);
 

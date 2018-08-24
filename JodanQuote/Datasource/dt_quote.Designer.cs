@@ -403,6 +403,12 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnconvertion_id;
             
+            private global::System.Data.DataColumn columnStructure_Width_X_Height;
+            
+            private global::System.Data.DataColumn columnFrame_Width_X_Height;
+            
+            private global::System.Data.DataColumn columnMaterial_Thickness_Description;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_Quote_ItemsDataTable() {
@@ -934,6 +940,30 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Structure_Width_X_HeightColumn {
+                get {
+                    return this.columnStructure_Width_X_Height;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Frame_Width_X_HeightColumn {
+                get {
+                    return this.columnFrame_Width_X_Height;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Material_Thickness_DescriptionColumn {
+                get {
+                    return this.columnMaterial_Thickness_Description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1031,7 +1061,10 @@ namespace JodanQuote.Datasource {
                         string Finish_Description, 
                         int Item_Identity, 
                         string finish_colour, 
-                        int convertion_id) {
+                        int convertion_id, 
+                        string Structure_Width_X_Height, 
+                        string Frame_Width_X_Height, 
+                        string Material_Thickness_Description) {
                 DT_Quote_ItemsRow rowDT_Quote_ItemsRow = ((DT_Quote_ItemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Project_ID,
@@ -1095,7 +1128,10 @@ namespace JodanQuote.Datasource {
                         Finish_Description,
                         Item_Identity,
                         finish_colour,
-                        convertion_id};
+                        convertion_id,
+                        Structure_Width_X_Height,
+                        Frame_Width_X_Height,
+                        Material_Thickness_Description};
                 rowDT_Quote_ItemsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Quote_ItemsRow);
                 return rowDT_Quote_ItemsRow;
@@ -1187,6 +1223,9 @@ namespace JodanQuote.Datasource {
                 this.columnItem_Identity = base.Columns["Item Identity"];
                 this.columnfinish_colour = base.Columns["finish_colour"];
                 this.columnconvertion_id = base.Columns["convertion_id"];
+                this.columnStructure_Width_X_Height = base.Columns["Structure Width X Height"];
+                this.columnFrame_Width_X_Height = base.Columns["Frame Width X Height"];
+                this.columnMaterial_Thickness_Description = base.Columns["Material Thickness Description"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1316,6 +1355,12 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnfinish_colour);
                 this.columnconvertion_id = new global::System.Data.DataColumn("convertion_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconvertion_id);
+                this.columnStructure_Width_X_Height = new global::System.Data.DataColumn("Structure Width X Height", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStructure_Width_X_Height);
+                this.columnFrame_Width_X_Height = new global::System.Data.DataColumn("Frame Width X Height", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFrame_Width_X_Height);
+                this.columnMaterial_Thickness_Description = new global::System.Data.DataColumn("Material Thickness Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaterial_Thickness_Description);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProject_ID}, true));
                 this.columnProject_ID.AllowDBNull = false;
@@ -1342,6 +1387,12 @@ namespace JodanQuote.Datasource {
                 this.columnInfill_Description.MaxLength = 30;
                 this.columnFinish_Description.MaxLength = 25;
                 this.columnfinish_colour.MaxLength = 50;
+                this.columnStructure_Width_X_Height.ReadOnly = true;
+                this.columnStructure_Width_X_Height.MaxLength = 23;
+                this.columnFrame_Width_X_Height.ReadOnly = true;
+                this.columnFrame_Width_X_Height.MaxLength = 23;
+                this.columnMaterial_Thickness_Description.ReadOnly = true;
+                this.columnMaterial_Thickness_Description.MaxLength = 23;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2472,6 +2523,56 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Structure_Width_X_Height {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Quote_Items.Structure_Width_X_HeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Structure Width X Height\' in table \'DT_Quote_Items\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Structure_Width_X_HeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Frame_Width_X_Height {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Quote_Items.Frame_Width_X_HeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Frame Width X Height\' in table \'DT_Quote_Items\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Frame_Width_X_HeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Material_Thickness_Description {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_Quote_Items.Material_Thickness_DescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Material Thickness Description\' in table \'DT_Quote_Items\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Quote_Items.Material_Thickness_DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDate_CreatedNull() {
                 return this.IsNull(this.tableDT_Quote_Items.Date_CreatedColumn);
             }
@@ -3201,6 +3302,42 @@ namespace JodanQuote.Datasource {
             public void Setconvertion_idNull() {
                 this[this.tableDT_Quote_Items.convertion_idColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsStructure_Width_X_HeightNull() {
+                return this.IsNull(this.tableDT_Quote_Items.Structure_Width_X_HeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetStructure_Width_X_HeightNull() {
+                this[this.tableDT_Quote_Items.Structure_Width_X_HeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFrame_Width_X_HeightNull() {
+                return this.IsNull(this.tableDT_Quote_Items.Frame_Width_X_HeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFrame_Width_X_HeightNull() {
+                this[this.tableDT_Quote_Items.Frame_Width_X_HeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMaterial_Thickness_DescriptionNull() {
+                return this.IsNull(this.tableDT_Quote_Items.Material_Thickness_DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetMaterial_Thickness_DescriptionNull() {
+                this[this.tableDT_Quote_Items.Material_Thickness_DescriptionColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -3424,6 +3561,9 @@ namespace JodanQuote.Datasource.DT_QuoteTableAdapters {
             tableMapping.ColumnMappings.Add("Item Identity", "Item Identity");
             tableMapping.ColumnMappings.Add("finish_colour", "finish_colour");
             tableMapping.ColumnMappings.Add("convertion_id", "convertion_id");
+            tableMapping.ColumnMappings.Add("Structure Width X Height", "Structure Width X Height");
+            tableMapping.ColumnMappings.Add("Frame Width X Height", "Frame Width X Height");
+            tableMapping.ColumnMappings.Add("Material Thickness Description", "Material Thickness Description");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3446,7 +3586,8 @@ namespace JodanQuote.Datasource.DT_QuoteTableAdapters {
                          item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, frame_width, frame_height, material_thickness, total_cost, created_by, 
                          markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, [Door Type Description], [Material Description], paint_cost, 
                          fire_rating_cost, security_rating_cost, fire_rating_id, security_rating_id, [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], 
-                         addon_cost, item_notes, converted_cost, infill_id, [Infill Description], [Finish Description], [Item Identity], finish_colour, convertion_id
+                         addon_cost, item_notes, converted_cost, infill_id, [Infill Description], [Finish Description], [Item Identity], finish_colour, convertion_id, [Structure Width X Height], 
+                         [Frame Width X Height], [Material Thickness Description]
 FROM            C_View_Project_Quotation
 WHERE        ([Project ID] = @project_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;

@@ -2631,7 +2631,7 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, 
@@ -2645,6 +2645,19 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@item_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "item_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@revision_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "revision_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        TOP (1) id, project_id, item_id, revision_id, order_id, material_id, finish_id, item_date, door_ref, door_type_id, door_style, structual_op_height, structual_op_width, 
+                         frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
+                         addon_cost, [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost AS security_rating_id, 
+                         [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost, infill_id, 
+                         [Infill Description], finish_colour
+FROM            C_View_Item_Details
+WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@project_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "project_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@item_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "item_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@revision_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "revision_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2705,6 +2718,37 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
             DT_Item_Details.DT_Item_DetailsDataTable dataTable = new DT_Item_Details.DT_Item_DetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DT_Item_Details.DT_Item_DetailsDataTable dataTable, global::System.Nullable<int> project_Id, global::System.Nullable<int> item_id, global::System.Nullable<int> revision_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((project_Id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(project_Id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((item_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(item_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((revision_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(revision_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     

@@ -22,7 +22,17 @@ namespace JodanQuote
             grid_addon.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_addon.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_addon.DefaultCellStyle.BackColor = Color.AliceBlue;
+          
+        }
 
+        private void FrmViewAddon_Shown(object sender, EventArgs e)
+        {
+            int i = grid_addon.Rows.Count * 20;
+
+
+            grid_addon.Height = i + 58;
+
+            this.Size = new Size(1087, grid_addon.Height+55);
         }
     }
 }
