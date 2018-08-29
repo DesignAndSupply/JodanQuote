@@ -289,6 +289,8 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columncategory;
             
+            private global::System.Data.DataColumn columnsec_rating_level;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public c_view_hardwareDataTable() {
@@ -364,6 +366,14 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sec_rating_levelColumn {
+                get {
+                    return this.columnsec_rating_level;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +409,15 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public c_view_hardwareRow Addc_view_hardwareRow(string Description, double Cost, short jodan_stock, int category) {
+            public c_view_hardwareRow Addc_view_hardwareRow(string Description, double Cost, short jodan_stock, int category, short sec_rating_level) {
                 c_view_hardwareRow rowc_view_hardwareRow = ((c_view_hardwareRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Description,
                         Cost,
                         null,
                         jodan_stock,
-                        category};
+                        category,
+                        sec_rating_level};
                 rowc_view_hardwareRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowc_view_hardwareRow);
                 return rowc_view_hardwareRow;
@@ -441,6 +452,7 @@ namespace JodanQuote.Datasource {
                 this.columnid = base.Columns["id"];
                 this.columnjodan_stock = base.Columns["jodan_stock"];
                 this.columncategory = base.Columns["category"];
+                this.columnsec_rating_level = base.Columns["sec_rating_level"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,6 +468,8 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnjodan_stock);
                 this.columncategory = new global::System.Data.DataColumn("category", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncategory);
+                this.columnsec_rating_level = new global::System.Data.DataColumn("sec_rating_level", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsec_rating_level);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnDescription.MaxLength = 100;
@@ -682,6 +696,22 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public short sec_rating_level {
+                get {
+                    try {
+                        return ((short)(this[this.tablec_view_hardware.sec_rating_levelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sec_rating_level\' in table \'c_view_hardware\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablec_view_hardware.sec_rating_levelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDescriptionNull() {
                 return this.IsNull(this.tablec_view_hardware.DescriptionColumn);
             }
@@ -726,6 +756,18 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcategoryNull() {
                 this[this.tablec_view_hardware.categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issec_rating_levelNull() {
+                return this.IsNull(this.tablec_view_hardware.sec_rating_levelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsec_rating_levelNull() {
+                this[this.tablec_view_hardware.sec_rating_levelColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -893,6 +935,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("jodan_stock", "jodan_stock");
             tableMapping.ColumnMappings.Add("category", "category");
+            tableMapping.ColumnMappings.Add("sec_rating_level", "sec_rating_level");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -907,26 +950,42 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, Description, category, Cost, jodan_stock\r\nFROM            c_vie" +
-                "w_hardware\r\nWHERE        (jodan_stock = @jodan_stock)\r\nORDER BY Description";
+            this._commandCollection[0].CommandText = "SELECT        id, Description, category, Cost, jodan_stock, sec_rating_level\r\nFRO" +
+                "M            c_view_hardware\r\nWHERE        (jodan_stock = @jodan_stock) AND (sec" +
+                "_rating_level = @security_rating)\r\nORDER BY Description";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jodan_stock", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "jodan_stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@security_rating", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "sec_rating_level", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        id, Description, category, Cost, jodan_stock, sec_rating_level\r\nFRO" +
+                "M            c_view_hardware\r\nWHERE        (jodan_stock = @jodan_stock) AND (sec" +
+                "_rating_level = @security_rating)\r\nORDER BY Description";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@jodan_stock", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "jodan_stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@security_rating", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "sec_rating_level", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DT_hardware.c_view_hardwareDataTable dataTable, global::System.Nullable<short> jodan_stock) {
+        public virtual int Fill(DT_hardware.c_view_hardwareDataTable dataTable, global::System.Nullable<short> jodan_stock, global::System.Nullable<short> security_rating) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((jodan_stock.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((short)(jodan_stock.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((security_rating.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((short)(security_rating.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -939,7 +998,7 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DT_hardware.c_view_hardwareDataTable GetData(global::System.Nullable<short> jodan_stock) {
+        public virtual DT_hardware.c_view_hardwareDataTable GetData(global::System.Nullable<short> jodan_stock, global::System.Nullable<short> security_rating) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((jodan_stock.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((short)(jodan_stock.Value));
@@ -947,9 +1006,40 @@ namespace JodanQuote.Datasource.DT_hardwareTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
+            if ((security_rating.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((short)(security_rating.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             DT_hardware.c_view_hardwareDataTable dataTable = new DT_hardware.c_view_hardwareDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DT_hardware.c_view_hardwareDataTable dataTable, global::System.Nullable<short> jodan_stock, global::System.Nullable<short> security_rating) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((jodan_stock.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((short)(jodan_stock.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((security_rating.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((short)(security_rating.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     

@@ -65,7 +65,7 @@
             this.grid_email_recipients.DefaultCellStyle = dataGridViewCellStyle3;
             this.grid_email_recipients.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_email_recipients.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_email_recipients.Location = new System.Drawing.Point(23, 26);
+            this.grid_email_recipients.Location = new System.Drawing.Point(15, 26);
             this.grid_email_recipients.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_email_recipients.Name = "grid_email_recipients";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -78,7 +78,7 @@
             this.grid_email_recipients.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grid_email_recipients.RowHeadersVisible = false;
             this.grid_email_recipients.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_email_recipients.Size = new System.Drawing.Size(433, 266);
+            this.grid_email_recipients.Size = new System.Drawing.Size(451, 266);
             this.grid_email_recipients.TabIndex = 25;
             this.grid_email_recipients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_email_recipients_CellContentClick);
             // 

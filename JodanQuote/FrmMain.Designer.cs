@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_settings = new System.Windows.Forms.Button();
             this.btn_filter = new System.Windows.Forms.Button();
@@ -46,15 +47,19 @@
             this.pct_clear = new System.Windows.Forms.PictureBox();
             this.grid_quote_list = new System.Windows.Forms.DataGridView();
             this.btn_open = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_copy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Reference = new System.Windows.Forms.Label();
             this.txt_reference = new System.Windows.Forms.TextBox();
             this.date_end = new System.Windows.Forms.DateTimePicker();
             this.date_start = new System.Windows.Forms.DateTimePicker();
+            this.dT_Settings = new JodanQuote.Datasource.DT_Settings();
+            this.ada_setting = new JodanQuote.Datasource.DT_SettingsTableAdapters.ada_setting();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pct_clear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_Settings)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,7 +136,7 @@
             // 
             // pct_logo
             // 
-            this.pct_logo.Image = ((System.Drawing.Image)(resources.GetObject("pct_logo.Image")));
+            this.pct_logo.Image = global::JodanQuote.Properties.Resources.Logo;
             this.pct_logo.Location = new System.Drawing.Point(10, 12);
             this.pct_logo.Margin = new System.Windows.Forms.Padding(300, 3, 3, 3);
             this.pct_logo.Name = "pct_logo";
@@ -216,15 +221,16 @@
             this.grid_quote_list.ColumnHeadersHeight = 40;
             this.grid_quote_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grid_quote_list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btn_open});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_quote_list.DefaultCellStyle = dataGridViewCellStyle3;
+            this.btn_open,
+            this.btn_copy});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_quote_list.DefaultCellStyle = dataGridViewCellStyle4;
             this.grid_quote_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_quote_list.GridColor = System.Drawing.Color.CornflowerBlue;
             this.grid_quote_list.Location = new System.Drawing.Point(227, 183);
@@ -232,14 +238,14 @@
             this.grid_quote_list.MaximumSize = new System.Drawing.Size(755, 328);
             this.grid_quote_list.MinimumSize = new System.Drawing.Size(455, 328);
             this.grid_quote_list.Name = "grid_quote_list";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_quote_list.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_quote_list.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grid_quote_list.RowHeadersVisible = false;
             this.grid_quote_list.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_quote_list.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -264,6 +270,23 @@
             this.btn_open.HeaderText = "";
             this.btn_open.MinimumWidth = 26;
             this.btn_open.Name = "btn_open";
+            // 
+            // btn_copy
+            // 
+            this.btn_copy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.NullValue = "Copy";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_copy.DefaultCellStyle = dataGridViewCellStyle3;
+            this.btn_copy.FillWeight = 26F;
+            this.btn_copy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_copy.HeaderText = "";
+            this.btn_copy.MinimumWidth = 26;
+            this.btn_copy.Name = "btn_copy";
             // 
             // Reference
             // 
@@ -322,6 +345,15 @@
             this.date_start.TabIndex = 43;
             this.date_start.ValueChanged += new System.EventHandler(this.date_start_ValueChanged);
             // 
+            // dT_Settings
+            // 
+            this.dT_Settings.DataSetName = "DT_Settings";
+            this.dT_Settings.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ada_setting
+            // 
+            this.ada_setting.ClearBeforeFill = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pct_clear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_quote_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dT_Settings)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,8 +407,11 @@
         private System.Windows.Forms.Button btn_filter;
         private System.Windows.Forms.DateTimePicker date_end;
         private System.Windows.Forms.Button btn_settings;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_open;
         private System.Windows.Forms.DateTimePicker date_start;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_open;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_copy;
+        private Datasource.DT_Settings dT_Settings;
+        private Datasource.DT_SettingsTableAdapters.ada_setting ada_setting;
     }
 }
 

@@ -31,6 +31,7 @@ namespace JodanQuote
         private void FrmQuote_Shown(object sender, EventArgs e)
         {
             Fill_data();
+            Format();
  
         }
 
@@ -89,7 +90,7 @@ namespace JodanQuote
 
             if (read_max_quote_id.Read())
             {
-                Valuesclass.quote_id = (Convert.ToInt32(read_max_quote_id["Quote ID"])) + 1;
+                Valuesclass.quote_id = (Convert.ToInt32(read_max_quote_id["Quote ID"])) ;
                 read_max_quote_id.Close();
             }
 
@@ -167,24 +168,25 @@ namespace JodanQuote
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_items_on_quote.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_items_on_quote.DefaultCellStyle.BackColor = Color.AliceBlue;
-         
-            if (Valuesclass.jodan_y_n == 0)
+     
+            if (string.IsNullOrWhiteSpace(dT_Quote.DT_Quote_Items.Rows[0]["convertion_id"].ToString()))
             {
-                Valuesclass.jodan_y_n = 1;
-                
+             
+
+
                 pct_logo.Image = JodanQuote.Properties.Resources.Logo;
                 pct_logo.Location = new Point(20, 28);
-                btn_convert.Visible = false;
-                btn_view_original.Visible = true;
+               
+                btn_view_original.Enabled = false;
             }
-            else
+            if(Valuesclass.jodan_y_n==0)
             {
-                Valuesclass.jodan_y_n = 0;
+                //Valuesclass.jodan_y_n = 0;
       
                 pct_logo.Image = JodanQuote.Properties.Resources.Jodan;
                 pct_logo.Location = new Point(5, 8);
-                btn_view_original.Visible = false;
-                btn_convert.Visible = true;
+                btn_view_original.Enabled = true;
+    
 
             }
           
@@ -223,7 +225,7 @@ namespace JodanQuote
                 Double? Total_Cost = ((dt_copy_hardware.Rows[i]["Total Cost"]) as Double?) ?? 0;
 
                 SqlCommand insert_hardware = new SqlCommand(Statementsclass.insert_hardware, conn);
-                insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id-1);
+                insert_hardware.Parameters.AddWithValue("@id", Valuesclass.quote_id);
                 insert_hardware.Parameters.AddWithValue("@hardware_id", Hardware);
                 insert_hardware.Parameters.AddWithValue("@category_id", category);
                 insert_hardware.Parameters.AddWithValue("@hardware_description", dt_copy_hardware.Rows[i]["Hardware Description"]);
@@ -270,7 +272,7 @@ namespace JodanQuote
          
 
                 SqlCommand insert_add_on = new SqlCommand(Statementsclass.insert_add_on, conn);
-                insert_add_on.Parameters.AddWithValue("@quotation_id", Valuesclass.quote_id-1);
+                insert_add_on.Parameters.AddWithValue("@quotation_id", Valuesclass.quote_id);
                 insert_add_on.Parameters.AddWithValue("@add_on_id", dt_copy_addon.Rows[i]["add_on_id"].ToString());
                 insert_add_on.Parameters.AddWithValue("@add_on_width", dt_copy_addon.Rows[i]["add_on_width"].ToString());
                 insert_add_on.Parameters.AddWithValue("@add_on_height", dt_copy_addon.Rows[i]["add_on_height"].ToString());
@@ -305,7 +307,7 @@ namespace JodanQuote
             {
 
                 int? Hardware = ((dt_copy_hardware.Rows[i]["Hardware ID"]) as int?) ?? 0;
-                int? category = ((dt_copy_hardware.Rows[i]["category_id"]) as int?) ?? 0;
+                int? category = ((dt_copy_hardware.Rows[i]["Category ID"]) as int?) ?? 0;
                 int? Quantity = ((dt_copy_hardware.Rows[i]["Quantity"]) as int?) ?? 0;
                 double? Total_Cost = ((dt_copy_hardware.Rows[i]["Total Cost"]) as double?) ?? 0;
 
@@ -623,7 +625,6 @@ namespace JodanQuote
                     select_max_item();
                  
                     Valuesclass.item_id = Convert.ToInt32(dT_Quote.DT_Quote_Items.Rows[i]["Item_Id"].ToString());
-
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand copy_item = new SqlCommand(Statementsclass.copy_item, conn);
                     copy_item.Parameters.AddWithValue("@id", grid_items_on_quote.Rows[i].Cells["Item_Identity"].Value);
@@ -646,6 +647,8 @@ namespace JodanQuote
                         double? fire_rating_cost = Convert.ToDouble((reader["fire_rating_cost"] as double?) ?? 0);
                         double? security_rating_cost = Convert.ToDouble((reader["security_rating_cost"] as double?) ?? 0);
                         double? paint_cost = Convert.ToDouble((reader["paint_cost"] as double?) ?? 0);
+                        double? additional_cost = Convert.ToDouble((reader["additional_cost"] as double?) ?? 0);
+                        double? discount_percentage = Convert.ToDouble((reader["discount_percentage"] as double?) ?? 0);
                         SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
                         
                       
@@ -687,11 +690,13 @@ namespace JodanQuote
                         insert_copied_item.Parameters.AddWithValue("@addon_cost", addon_cost);
                         insert_copied_item.Parameters.AddWithValue("@converted_cost", converted_cost);
                         insert_copied_item.Parameters.AddWithValue("@total_cost", total_cost);
+                        insert_copied_item.Parameters.AddWithValue("@additional_cost", additional_cost);
+                        insert_copied_item.Parameters.AddWithValue("@discount_percentage", discount_percentage);
                         ConnectionClass.Dispose_connection(conn);
 
                       
 
-                         insert_copied_item.ExecuteNonQuery();
+                        insert_copied_item.ExecuteNonQuery();
                         ConnectionClass.Dispose_connection(conn2);
 
 
@@ -770,12 +775,23 @@ namespace JodanQuote
         {
             try
             {
+
+                Valuesclass.new_item_identifier = 1;
+                DialogResult confirm = MessageBox.Show("Are You Sure You Want To Copy Quotation?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.Yes)
+                {
+                    Valuesclass.customer_name = "";
+                    FrmCustomerSelect select = new FrmCustomerSelect();
+                    select.ShowDialog();
+
+                }
                 Select_max_project_id();
                 Select_quote_id();
 
-                FrmCustomerSelect select = new FrmCustomerSelect();
-                select.ShowDialog();
-                
+                if (string.IsNullOrEmpty(Valuesclass.customer_name) == true)
+                {
+                    return;
+                }
                 SqlConnection conn2 = ConnectionClass.GetConnection_jodan_quote();
                 SqlCommand copy_project = new SqlCommand(Statementsclass.copy_project, conn2);
                 copy_project.Parameters.AddWithValue("@project_Id", dT_Quote.DT_Quote_Items.Rows[0]["Project ID"]);
@@ -797,7 +813,8 @@ namespace JodanQuote
                     insert_copied_project.Parameters.AddWithValue("@project_ref", reader["project_ref"].ToString());
                     insert_copied_project.Parameters.AddWithValue("@date_created", DateTime.Now);
                     insert_copied_project.Parameters.AddWithValue("@quote_status", reader["quote_status"].ToString());
-
+                    insert_copied_project.Parameters.AddWithValue("@jodan_y_n", 1);
+                    
                     insert_copied_project.ExecuteNonQuery();
 
                     ConnectionClass.Dispose_connection(conn3);
@@ -822,8 +839,10 @@ namespace JodanQuote
                 this.ada_quote_items.Fill(dT_Quote.DT_Quote_Items, Valuesclass.project_id);
                 this.sALES_LEDGERTableAdapter.Fill(dT_customer.SALES_LEDGER, Valuesclass.customer_account_ref);
                 txt_customer.Text = Valuesclass.customer_name;
+                Valuesclass.jodan_y_n = 0;
                 Format();
                 btn_convert.Visible = false;
+                btn_view_original.Visible = true;
                 MessageBox.Show("Quotation Successfully Converted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }

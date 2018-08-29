@@ -367,6 +367,10 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columnfinish_colour;
             
+            private global::System.Data.DataColumn columnadditional_cost;
+            
+            private global::System.Data.DataColumn columndiscount_percentage;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DT_Item_DetailsDataTable() {
@@ -754,6 +758,22 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn additional_costColumn {
+                get {
+                    return this.columnadditional_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn discount_percentageColumn {
+                get {
+                    return this.columndiscount_percentage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -833,7 +853,9 @@ namespace JodanQuote.Datasource {
                         double converted_cost, 
                         int infill_id, 
                         string Infill_Description, 
-                        string finish_colour) {
+                        string finish_colour, 
+                        double additional_cost, 
+                        int discount_percentage) {
                 DT_Item_DetailsRow rowDT_Item_DetailsRow = ((DT_Item_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -879,10 +901,19 @@ namespace JodanQuote.Datasource {
                         converted_cost,
                         infill_id,
                         Infill_Description,
-                        finish_colour};
+                        finish_colour,
+                        additional_cost,
+                        discount_percentage};
                 rowDT_Item_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_Item_DetailsRow);
                 return rowDT_Item_DetailsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DT_Item_DetailsRow FindByid(int id) {
+                return ((DT_Item_DetailsRow)(this.Rows.Find(new object[] {
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -946,6 +977,8 @@ namespace JodanQuote.Datasource {
                 this.columninfill_id = base.Columns["infill_id"];
                 this.columnInfill_Description = base.Columns["Infill Description"];
                 this.columnfinish_colour = base.Columns["finish_colour"];
+                this.columnadditional_cost = base.Columns["additional_cost"];
+                this.columndiscount_percentage = base.Columns["discount_percentage"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1039,7 +1072,14 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columnInfill_Description);
                 this.columnfinish_colour = new global::System.Data.DataColumn("finish_colour", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfinish_colour);
+                this.columnadditional_cost = new global::System.Data.DataColumn("additional_cost", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnadditional_cost);
+                this.columndiscount_percentage = new global::System.Data.DataColumn("discount_percentage", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiscount_percentage);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
                 this.columnid.AllowDBNull = false;
+                this.columnid.Unique = true;
                 this.columndoor_ref.MaxLength = 2147483647;
                 this.columndoor_style.MaxLength = 50;
                 this.columncreated_by.MaxLength = 50;
@@ -1899,6 +1939,38 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double additional_cost {
+                get {
+                    try {
+                        return ((double)(this[this.tableDT_Item_Details.additional_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'additional_cost\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.additional_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int discount_percentage {
+                get {
+                    try {
+                        return ((int)(this[this.tableDT_Item_Details.discount_percentageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'discount_percentage\' in table \'DT_Item_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_Item_Details.discount_percentageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isproject_idNull() {
                 return this.IsNull(this.tableDT_Item_Details.project_idColumn);
             }
@@ -2412,6 +2484,30 @@ namespace JodanQuote.Datasource {
             public void Setfinish_colourNull() {
                 this[this.tableDT_Item_Details.finish_colourColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isadditional_costNull() {
+                return this.IsNull(this.tableDT_Item_Details.additional_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setadditional_costNull() {
+                this[this.tableDT_Item_Details.additional_costColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isdiscount_percentageNull() {
+                return this.IsNull(this.tableDT_Item_Details.discount_percentageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setdiscount_percentageNull() {
+                this[this.tableDT_Item_Details.discount_percentageColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -2617,6 +2713,8 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
             tableMapping.ColumnMappings.Add("infill_id", "infill_id");
             tableMapping.ColumnMappings.Add("Infill Description", "Infill Description");
             tableMapping.ColumnMappings.Add("finish_colour", "finish_colour");
+            tableMapping.ColumnMappings.Add("additional_cost", "additional_cost");
+            tableMapping.ColumnMappings.Add("discount_percentage", "discount_percentage");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2638,7 +2736,7 @@ namespace JodanQuote.Datasource.DT_Item_DetailsTableAdapters {
                          frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
                          addon_cost, [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost AS security_rating_id, 
                          [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost, infill_id, 
-                         [Infill Description], finish_colour
+                         [Infill Description], finish_colour, additional_cost, discount_percentage
 FROM            C_View_Item_Details
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -2651,7 +2749,7 @@ WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_i
                          frame_width, frame_height, material_thickness, total_cost, created_by, markup_material, markup_hardware, labour_rate, hardware_cost, labour_cost, material_cost, 
                          addon_cost, [Material Description], [Finish Description], paint_cost, fire_rating_cost, security_rating_cost, fire_rating_id, addon_cost AS security_rating_id, 
                          [Security Rating], [Fire Rating], jamb_style_id, jamb_width, jamb_height, [Jamb Style], [Door Type Description], item_notes, converted_cost, infill_id, 
-                         [Infill Description], finish_colour
+                         [Infill Description], finish_colour, additional_cost, discount_percentage
 FROM            C_View_Item_Details
 WHERE        (project_id = @project_Id) AND (item_id = @item_id) AND (revision_id = @revision_id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;

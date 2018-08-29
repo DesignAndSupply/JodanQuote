@@ -46,7 +46,7 @@
             this.cmb_customers.FormattingEnabled = true;
             this.cmb_customers.IntegralHeight = false;
             this.cmb_customers.ItemHeight = 15;
-            this.cmb_customers.Location = new System.Drawing.Point(120, 82);
+            this.cmb_customers.Location = new System.Drawing.Point(138, 130);
             this.cmb_customers.MaxDropDownItems = 5;
             this.cmb_customers.Name = "cmb_customers";
             this.cmb_customers.Size = new System.Drawing.Size(206, 23);
@@ -56,11 +56,12 @@
             // 
             this.btn_complete.BackColor = System.Drawing.Color.AliceBlue;
             this.btn_complete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_complete.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_complete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_complete.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_complete.Image = global::JodanQuote.Properties.Resources.tick2;
             this.btn_complete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_complete.Location = new System.Drawing.Point(345, 200);
+            this.btn_complete.Location = new System.Drawing.Point(375, 240);
             this.btn_complete.Name = "btn_complete";
             this.btn_complete.Size = new System.Drawing.Size(87, 38);
             this.btn_complete.TabIndex = 30;
@@ -73,7 +74,7 @@
             this.lbl_customer.AutoSize = true;
             this.lbl_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_customer.Location = new System.Drawing.Point(112, 31);
+            this.lbl_customer.Location = new System.Drawing.Point(130, 79);
             this.lbl_customer.Name = "lbl_customer";
             this.lbl_customer.Size = new System.Drawing.Size(223, 31);
             this.lbl_customer.TabIndex = 39;
@@ -84,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(444, 261);
+            this.ClientSize = new System.Drawing.Size(474, 290);
             this.Controls.Add(this.lbl_customer);
             this.Controls.Add(this.btn_complete);
             this.Controls.Add(this.cmb_customers);
@@ -92,8 +93,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCustomerSelect";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCustomerSelect_FormClosed);
+            this.Text = "Select Customer";
+//            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCustomerSelect_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

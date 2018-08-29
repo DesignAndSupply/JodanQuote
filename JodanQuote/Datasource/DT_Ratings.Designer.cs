@@ -586,6 +586,8 @@ namespace JodanQuote.Datasource {
             
             private global::System.Data.DataColumn columndefault_cost_double;
             
+            private global::System.Data.DataColumn columnsecurity_rating;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public C_View_Security_RatingDataTable() {
@@ -653,6 +655,14 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn security_ratingColumn {
+                get {
+                    return this.columnsecurity_rating;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -688,13 +698,14 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public C_View_Security_RatingRow AddC_View_Security_RatingRow(int id, string description, decimal default_cost_single, decimal default_cost_double) {
+            public C_View_Security_RatingRow AddC_View_Security_RatingRow(int id, string description, decimal default_cost_single, decimal default_cost_double, int security_rating) {
                 C_View_Security_RatingRow rowC_View_Security_RatingRow = ((C_View_Security_RatingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         description,
                         default_cost_single,
-                        default_cost_double};
+                        default_cost_double,
+                        security_rating};
                 rowC_View_Security_RatingRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowC_View_Security_RatingRow);
                 return rowC_View_Security_RatingRow;
@@ -721,6 +732,7 @@ namespace JodanQuote.Datasource {
                 this.columndescription = base.Columns["description"];
                 this.columndefault_cost_single = base.Columns["default_cost_single"];
                 this.columndefault_cost_double = base.Columns["default_cost_double"];
+                this.columnsecurity_rating = base.Columns["security_rating"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -734,6 +746,8 @@ namespace JodanQuote.Datasource {
                 base.Columns.Add(this.columndefault_cost_single);
                 this.columndefault_cost_double = new global::System.Data.DataColumn("default_cost_double", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndefault_cost_double);
+                this.columnsecurity_rating = new global::System.Data.DataColumn("security_rating", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsecurity_rating);
                 this.columnid.AllowDBNull = false;
                 this.columndescription.AllowDBNull = false;
                 this.columndescription.MaxLength = 50;
@@ -972,6 +986,23 @@ namespace JodanQuote.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int security_rating {
+                get {
+                    try {
+                        return ((int)(this[this.tableC_View_Security_Rating.security_ratingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'security_rating\' in table \'C_View_Security_Rating\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableC_View_Security_Rating.security_ratingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isdefault_cost_singleNull() {
                 return this.IsNull(this.tableC_View_Security_Rating.default_cost_singleColumn);
             }
@@ -992,6 +1023,18 @@ namespace JodanQuote.Datasource {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setdefault_cost_doubleNull() {
                 this[this.tableC_View_Security_Rating.default_cost_doubleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issecurity_ratingNull() {
+                return this.IsNull(this.tableC_View_Security_Rating.security_ratingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsecurity_ratingNull() {
+                this[this.tableC_View_Security_Rating.security_ratingColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1211,7 +1254,7 @@ namespace JodanQuote.Datasource.DT_RatingsTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        id, description\r\nFROM            C_View_Fire_Ratings\r\nORDER BY id";
+            this._commandCollection[1].CommandText = "SELECT description, id FROM C_View_Fire_Ratings ORDER BY id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1378,6 +1421,7 @@ namespace JodanQuote.Datasource.DT_RatingsTableAdapters {
             tableMapping.ColumnMappings.Add("description", "description");
             tableMapping.ColumnMappings.Add("default_cost_single", "default_cost_single");
             tableMapping.ColumnMappings.Add("default_cost_double", "default_cost_double");
+            tableMapping.ColumnMappings.Add("security_rating", "security_rating");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1392,12 +1436,17 @@ namespace JodanQuote.Datasource.DT_RatingsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, description, default_cost_single, default_cost_double\r\nFROM    " +
-                "        C_View_Security_Rating\r\nORDER BY ID ASC";
+            this._commandCollection[0].CommandText = "SELECT        id, description, default_cost_single, default_cost_double, security" +
+                "_rating\r\nFROM            C_View_Security_Rating";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT default_cost_double, default_cost_single, description, id, security_rating" +
+                " FROM C_View_Security_Rating ORDER BY id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1422,6 +1471,19 @@ namespace JodanQuote.Datasource.DT_RatingsTableAdapters {
             DT_Ratings.C_View_Security_RatingDataTable dataTable = new DT_Ratings.C_View_Security_RatingDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DT_Ratings.C_View_Security_RatingDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     

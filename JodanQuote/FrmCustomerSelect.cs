@@ -19,7 +19,6 @@ namespace JodanQuote
     {
         public FrmCustomerSelect()
         {
-            this.ControlBox = false;
             InitializeComponent();
             Fill_data();
         }
@@ -56,9 +55,6 @@ namespace JodanQuote
          
         }
 
-        private void FrmCustomerSelect_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            return;
-        }
+       
     }
 }

@@ -118,5 +118,11 @@ namespace JodanQuote
             FrmQuote quote = new FrmQuote();
             quote.Show();
         }
+
+        private void FrmQuoteReport_MaximumSizeChanged(object sender, EventArgs e)
+        {
+            panel1.Width = this.Width;
+            panel2.Height = this.Height;
+        }
     }
 }

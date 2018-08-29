@@ -31,6 +31,10 @@ namespace JodanQuote
 
             }
             lock_controls();
+
+
+           
+
         }
 
         private void FrmItem_Shown(object sender, EventArgs e)
@@ -39,72 +43,89 @@ namespace JodanQuote
             Fill_data();
             Calculate_Cost();
             Format();
+           
          
         }
 
         void Update_item()
         {
 
-            int material_id = Convert.ToInt16(((DataRowView)cmb_material_edit.SelectedItem)["id"]);
-            string materialthickness = cmb_material_thickness_edit.Text;
-            int finish_id = Convert.ToInt16(((DataRowView)cmb_finish_edit.SelectedItem)["id"]);
-            int door_type_id = Convert.ToInt16(((DataRowView)cmb_door_type_edit.SelectedItem)["id"]);
-            int jamb_style_id = Convert.ToInt16(((DataRowView)cmb_jam_style_edit.SelectedItem)["id"]);
-            int fire_rating_id = Convert.ToInt16(((DataRowView)cmb_fire_edit.SelectedItem)["id"]);
-            int security_rating_id = Convert.ToInt16(((DataRowView)cmb_security_edit.SelectedItem)["id"]);
-            int infill_id = Convert.ToInt16(((DataRowView)cmb_infill_edit.SelectedItem)["id"]);
-            string material_cost = Convert.ToString(txt_material_sales_cost.Text.Replace("£", string.Empty));
-            string hardware_cost = Convert.ToString(txt_hardware_sales_cost.Text.Replace("£", string.Empty));
-            string addon_cost = Convert.ToString(txt_addon.Text.Replace("£", string.Empty));
-            string labour_cost = Convert.ToString(txt_labour_sales_cost.Text.Replace("£", string.Empty));
-            string labour_markup = Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty));
-            string paint_total = Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty));
-            string total_cost = Convert.ToString(txt_item_total.Text.Replace("£", string.Empty));
-            string fire_cost = Convert.ToString(txt_fire.Text.Replace("£", string.Empty));
-            string security_cost = Convert.ToString(txt_security.Text.Replace("£", string.Empty));
-            string jamb_width = Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty));
-            string jamb_height = Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty));
+            try
+            {
 
-            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlCommand update_quotation_item = new SqlCommand(Statementsclass.update_quotation_item, conn);
-            update_quotation_item.Parameters.AddWithValue("@structure_width", txt_structual_width.Text);
-            update_quotation_item.Parameters.AddWithValue("@structure_height", txt_structual_height.Text);
-            update_quotation_item.Parameters.AddWithValue("@frame_height", txt_frame_height.Text);
-            update_quotation_item.Parameters.AddWithValue("@frame_width", txt_frame_width.Text);
-            update_quotation_item.Parameters.AddWithValue("@finish_id", finish_id);
-            update_quotation_item.Parameters.AddWithValue("@finish_colour", txt_colour.Text);
-            update_quotation_item.Parameters.AddWithValue("@finish_description", cmb_finish_edit.Text);
-            update_quotation_item.Parameters.AddWithValue("@fire_id", fire_rating_id);
-            update_quotation_item.Parameters.AddWithValue("@security_rating_id", security_rating_id);
-            update_quotation_item.Parameters.AddWithValue("@material_thickness", materialthickness);
-            update_quotation_item.Parameters.AddWithValue("@material_id", material_id);
-            update_quotation_item.Parameters.AddWithValue("@jamb_style_id", jamb_style_id);
-            update_quotation_item.Parameters.AddWithValue("@infill_id", infill_id);
-            update_quotation_item.Parameters.AddWithValue("@jamb_width", jamb_width);
-            update_quotation_item.Parameters.AddWithValue("@jamb_height", jamb_height);
-            update_quotation_item.Parameters.AddWithValue("@markup_hardware", txt_hardware_markup.Text);
-            update_quotation_item.Parameters.AddWithValue("@door_type", door_type_id);
-            update_quotation_item.Parameters.AddWithValue("@item_notes", txt_notes.Text);
-            update_quotation_item.Parameters.AddWithValue("@markup_material", txt_material_markup.Text);
-            update_quotation_item.Parameters.AddWithValue("@labour_rate", labour_markup);
-            update_quotation_item.Parameters.AddWithValue("@hardware_cost", hardware_cost);
-            update_quotation_item.Parameters.AddWithValue("@material_cost", material_cost);
-            update_quotation_item.Parameters.AddWithValue("@fire_rating_cost", fire_cost);
-            update_quotation_item.Parameters.AddWithValue("@security_rating_cost", security_cost);
-            update_quotation_item.Parameters.AddWithValue("@labour_cost", labour_cost);
-            update_quotation_item.Parameters.AddWithValue("@paint_cost", paint_total);
-            update_quotation_item.Parameters.AddWithValue("@addon_cost", addon_cost);
-            update_quotation_item.Parameters.AddWithValue("@total_cost", total_cost);
-            update_quotation_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
-            update_quotation_item.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
-            update_quotation_item.Parameters.AddWithValue("@revision_id", Valuesclass.revision_number);
 
-            update_quotation_item.ExecuteNonQuery();
-            ConnectionClass.Dispose_connection(conn);
+                int material_id = Convert.ToInt16(((DataRowView)cmb_material_edit.SelectedItem)["id"]);
+                double materialthickness = Convert.ToDouble(cmb_material_thickness_edit.Text);
+                int finish_id = Convert.ToInt16(((DataRowView)cmb_finish_edit.SelectedItem)["id"]);
+                int door_type_id = Convert.ToInt16(((DataRowView)cmb_door_type_edit.SelectedItem)["id"]);
+                int jamb_style_id = Convert.ToInt16(((DataRowView)cmb_jam_style_edit.SelectedItem)["id"]);
+                int fire_rating_id = Convert.ToInt16(((DataRowView)cmb_fire_edit.SelectedItem)["id"]);
+                int security_rating_id = Convert.ToInt16(((DataRowView)cmb_security_edit.SelectedItem)["id"]);
+                int infill_id = Convert.ToInt16(((DataRowView)cmb_infill_edit.SelectedItem)["id"]);
+                double material_cost = Convert.ToDouble(txt_material_sales_cost.Text.Replace("£", string.Empty));
+                double hardware_cost = Convert.ToDouble(txt_hardware_sales_cost.Text.Replace("£", string.Empty));
+                double addon_cost = Convert.ToDouble(txt_addon.Text.Replace("£", string.Empty));
+                double labour_cost = Convert.ToDouble(txt_labour_sales_cost.Text.Replace("£", string.Empty));
+                double labour_markup = Convert.ToDouble(txt_labour_cost.Text.Replace("£", string.Empty));
+                double paint_total = Convert.ToDouble(txt_paint_total.Text.Replace("£", string.Empty));
+                double total_cost = Convert.ToDouble(txt_item_total.Text.Replace("£", string.Empty));
+                double fire_cost = Convert.ToDouble(txt_fire.Text.Replace("£", string.Empty));
+                double security_cost = Convert.ToDouble(txt_security.Text.Replace("£", string.Empty));
+                double jamb_width = Convert.ToDouble(txt_jamb_width.Text.Replace("m", string.Empty));
+                double jamb_height = Convert.ToDouble(txt_jamb_height.Text.Replace("m", string.Empty));
+                double additional_cost = Convert.ToDouble(txt_additional_cost.Text.Replace("£", string.Empty));
+                double discount = Convert.ToDouble(txt_discount.Text.Replace("%", string.Empty));
 
-            Valuesclass.new_item_identifier = 0;
-            txt_warning.Text = "";
-            txt_list.Text = "";
+
+                SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+                SqlCommand update_quotation_item = new SqlCommand(Statementsclass.update_quotation_item, conn);
+                update_quotation_item.Parameters.AddWithValue("@structure_width", txt_structual_width.Text);
+                update_quotation_item.Parameters.AddWithValue("@structure_height", txt_structual_height.Text);
+                update_quotation_item.Parameters.AddWithValue("@frame_height", txt_frame_height.Text);
+                update_quotation_item.Parameters.AddWithValue("@frame_width", txt_frame_width.Text);
+                update_quotation_item.Parameters.AddWithValue("@finish_id", finish_id);
+                update_quotation_item.Parameters.AddWithValue("@finish_colour", txt_colour.Text);
+                update_quotation_item.Parameters.AddWithValue("@finish_description", cmb_finish_edit.Text);
+                update_quotation_item.Parameters.AddWithValue("@fire_id", fire_rating_id);
+                update_quotation_item.Parameters.AddWithValue("@security_rating_id", security_rating_id);
+                update_quotation_item.Parameters.AddWithValue("@material_thickness", materialthickness);
+                update_quotation_item.Parameters.AddWithValue("@material_id", material_id);
+                update_quotation_item.Parameters.AddWithValue("@jamb_style_id", jamb_style_id);
+                update_quotation_item.Parameters.AddWithValue("@infill_id", infill_id);
+                update_quotation_item.Parameters.AddWithValue("@jamb_width", jamb_width);
+                update_quotation_item.Parameters.AddWithValue("@jamb_height", jamb_height);
+                update_quotation_item.Parameters.AddWithValue("@markup_hardware", txt_hardware_markup.Text);
+                update_quotation_item.Parameters.AddWithValue("@door_type", door_type_id);
+                update_quotation_item.Parameters.AddWithValue("@item_notes", txt_notes.Text);
+                update_quotation_item.Parameters.AddWithValue("@markup_material", txt_material_markup.Text);
+                update_quotation_item.Parameters.AddWithValue("@labour_rate", labour_markup);
+                update_quotation_item.Parameters.AddWithValue("@hardware_cost", hardware_cost);
+                update_quotation_item.Parameters.AddWithValue("@material_cost", material_cost);
+                update_quotation_item.Parameters.AddWithValue("@fire_rating_cost", fire_cost);
+                update_quotation_item.Parameters.AddWithValue("@security_rating_cost", security_cost);
+                update_quotation_item.Parameters.AddWithValue("@labour_cost", labour_cost);
+                update_quotation_item.Parameters.AddWithValue("@paint_cost", paint_total);
+                update_quotation_item.Parameters.AddWithValue("@addon_cost", addon_cost);
+                update_quotation_item.Parameters.AddWithValue("@total_cost", total_cost);
+                update_quotation_item.Parameters.AddWithValue("@project_id", Valuesclass.project_id);
+                update_quotation_item.Parameters.AddWithValue("@item_id", Valuesclass.item_id);
+                update_quotation_item.Parameters.AddWithValue("@revision_id", Valuesclass.revision_number);
+                update_quotation_item.Parameters.AddWithValue("@additional_cost", additional_cost);
+                update_quotation_item.Parameters.AddWithValue("@discount_percentage", discount);
+                update_quotation_item.ExecuteNonQuery();
+                ConnectionClass.Dispose_connection(conn);
+
+                Valuesclass.new_item_identifier = 0;
+                txt_warning.Text = "";
+                txt_list.Text = "";
+
+            }
+            catch
+            {
+
+            }
+          
+
 
         }
 
@@ -114,7 +135,7 @@ namespace JodanQuote
             Refresh_Data();
 
           
-            int material_id = Convert.ToInt16(((DataRowView)cmb_material_edit.SelectedItem)["id"]);
+            int material_id  = Convert.ToInt16(((DataRowView)cmb_material_edit.SelectedItem)["id"]);
             string materialthickness = cmb_material_thickness_edit.Text;
             int finish_id = Convert.ToInt16(((DataRowView)cmb_finish_edit.SelectedItem)["id"]);
             int door_type_id = Convert.ToInt16(((DataRowView)cmb_door_type_edit.SelectedItem)["id"]);
@@ -131,8 +152,10 @@ namespace JodanQuote
             string total_cost = Convert.ToString(txt_item_total.Text.Replace("£", string.Empty));
             string fire_cost = Convert.ToString(txt_fire.Text.Replace("£", string.Empty));
             string security_cost = Convert.ToString(txt_security.Text.Replace("£", string.Empty));
+            string additional_cost = Convert.ToString(txt_additional_cost.Text.Replace("£", string.Empty));
             string jamb_width = Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty));
             string jamb_height = Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty));
+            string discount = Convert.ToString(txt_discount.Text.Replace("%", string.Empty));
 
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlCommand update_quotation_item = new SqlCommand(Statementsclass.update_quotation_item, conn);
@@ -160,6 +183,8 @@ namespace JodanQuote
             update_quotation_item.Parameters.AddWithValue("@material_cost", material_cost);
             update_quotation_item.Parameters.AddWithValue("@fire_rating_cost", fire_cost);
             update_quotation_item.Parameters.AddWithValue("@security_rating_cost", security_cost);
+            update_quotation_item.Parameters.AddWithValue("@additional_cost", additional_cost);
+            update_quotation_item.Parameters.AddWithValue("@discount_percentage", discount);
             update_quotation_item.Parameters.AddWithValue("@labour_cost", labour_cost);
             update_quotation_item.Parameters.AddWithValue("@paint_cost", paint_total);
             update_quotation_item.Parameters.AddWithValue("@addon_cost", addon_cost);
@@ -186,6 +211,9 @@ namespace JodanQuote
             this.ada_Item_Details.Fill(dT_Item_Details._DT_Item_Details, Valuesclass.project_id, Valuesclass.item_id, Valuesclass.revision_number);
             this.c_View_Item_Add_OnTableAdapter.Fill(this.dT_Item_Add_On.C_View_Item_Add_On,Valuesclass.quote_id);
             dT_Door_Type.Clear();
+
+
+
 
             try
             {
@@ -286,12 +314,14 @@ namespace JodanQuote
                     txt_labour_total.Text = (addon_labour_hours + labour_hours).ToString() + " Hours";
 
 
-                
-              
 
-
+                string labour_total_hours = (Convert.ToString(txt_labour_total.Text.Replace(" Hours", string.Empty)));
+                string discount = (Convert.ToString(txt_discount.Text.Replace("%", string.Empty)));
+                string additional = (Convert.ToString(txt_additional_cost.Text.Replace("£", string.Empty)));
                 string material_sales = (Convert.ToString(txt_material_sales_cost.Text.Replace("£", string.Empty)));
+                string material_percent = (Convert.ToString(txt_material_markup.Text.Replace("%", string.Empty)));
                 string hardware_sales = (Convert.ToString(txt_hardware_sales_cost.Text.Replace("£", string.Empty)));
+                string hardware_percent = (Convert.ToString(txt_hardware_markup.Text.Replace("%", string.Empty)));
                 string labour_sales = (Convert.ToString(txt_labour_sales_cost.Text.Replace("£", string.Empty)));
                 string paint_sales = (Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty)));
                 string total_sales = (Convert.ToString(txt_item_total.Text.Replace("£", string.Empty)));
@@ -304,7 +334,7 @@ namespace JodanQuote
                 string jamb_width = (Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty)));
                 string jamb_height = (Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty)));
                 string hours = (Convert.ToString(txt_addon_labour_hours.Text.Replace(" Hours", string.Empty)));
-
+                
                 if (material_sales == "")
                 {
                     material_sales = "0";
@@ -313,6 +343,16 @@ namespace JodanQuote
                 if (hardware_sales == "")
                 {
                     hardware_sales = "0";
+
+                }
+                if (material_percent == "")
+                {
+                    material_percent = "0";
+
+                }
+                if (hardware_percent == "")
+                {
+                    hardware_percent = "0";
 
                 }
                 if (paint_sales == "")
@@ -376,55 +416,80 @@ namespace JodanQuote
                     hours = "0";
 
                 }
+                if (discount == "")
+                {
+                  discount = "0";
 
-                txt_material_sales_cost.Text = "£" + material_sales;
+                }
+
+                if (additional == "")
+                 {
+                    additional = "0";
+
+                  }
+
+                if (labour_total_hours == "")
+                {
+                    labour_total_hours = "0";
+
+                }
+
+                 txt_material_sales_cost.Text = "£" + material_sales;
                 txt_hardware_sales_cost.Text = "£" + hardware_sales;
                 txt_paint_total.Text = "£" + paint_sales;
                 txt_labour_sales_cost.Text = "£" + labour_sales;
                 txt_item_total.Text = "£" + total_sales;
                 txt_material_cost.Text = "£" + material;
+                txt_material_markup.Text = material_percent;
                 txt_hardware_cost.Text = "£" + hardware;
+                txt_hardware_markup.Text =  hardware_percent;
                 txt_addon.Text = "£" + addon;
                 txt_labour_cost.Text = "£" +  labour ;
                 txt_fire.Text = "£" + fire;
                 txt_security.Text = "£" + security;
+                txt_additional_cost.Text = "£" + additional;
+                txt_discount.Text = discount ;
                 txt_jamb_height.Text = jamb_height + "mm";
                 txt_jamb_width.Text = jamb_width + "mm";
                 txt_addon_labour_hours.Text = hours + " Hours";
-
+                   
                
-                    double hardware_markup = Convert.ToDouble(txt_hardware_markup.Text);
+                    double hardware_markup = Convert.ToDouble(hardware_percent);
                     double hardware_cost = Math.Round( Convert.ToDouble(Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty))),2);
                     double sales_hardware = Math.Round((total * hardware_markup),2);
                     txt_hardware_sales_cost.Text = "£" + Convert.ToString(sales_hardware);
 
-                    double material_markup = Convert.ToDouble(txt_material_markup.Text);
-                    double material_cost = Math.Round(Convert.ToDouble(Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty))),2);
+                    double material_markup = Convert.ToDouble(material_percent);
+                    double material_cost = Math.Round(Convert.ToDouble(material),2);
                     double sales_material =Math.Round(material_cost * material_markup,2);
                     txt_material_sales_cost.Text = "£" + Convert.ToString(sales_material);
                     txt_material_cost.Text = "£" + material_cost;
 
-                    double labour_markup = Convert.ToDouble(Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
-                    double labour_cost = Convert.ToDouble(Convert.ToString(txt_labour_total.Text.Replace(" Hours", string.Empty)));
-                    double security_cost = Convert.ToDouble(Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
-                    double fire_cost = Convert.ToDouble(Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
+                    double security_cost = Convert.ToDouble(security);
+                    double fire_cost = Convert.ToDouble(fire);
 
-                    double sales_labour =Math.Round(labour_markup * Convert.ToInt32(labour_cost),2);
+                    double labour_markup = Convert.ToDouble(labour_total_hours);
+                    double labour_cost = Convert.ToDouble(labour);
+                 
+
+                    double sales_labour = Math.Round(labour_markup * labour_cost,2);
                     txt_labour_sales_cost.Text = "£" + Convert.ToString(sales_labour);
-                    txt_labour_total.Text = Convert.ToString(labour_cost) + " Hours";
+                    txt_labour_total.Text = labour_total_hours + " Hours";
 
-                    double paint_cost = Math.Round(Convert.ToDouble(Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty))),2);
-                    double addon_cost = Math.Round( Convert.ToDouble(Convert.ToString(txt_addon.Text.Replace("£", string.Empty))),2);
-                   
+                    double paint_cost = Math.Round(Convert.ToDouble(paint_sales),2);
+                    double addon_cost = Math.Round( Convert.ToDouble(addon),2);
 
 
-                    double item_total =Math.Round((sales_labour + sales_hardware + paint_cost + sales_material)+security_cost + fire_cost+ addon_cost,2);
-                    txt_item_total.Text = "£" + Convert.ToString(item_total);
+                    double discount_percent = Convert.ToInt32(discount);
+                    double additional_cost = Math.Round(Convert.ToDouble(additional), 2);
+                    double item_total =Math.Round((sales_labour + sales_hardware + paint_cost + sales_material)+security_cost + fire_cost+ addon_cost + additional_cost, 2);
+                    double discount_value = item_total*(discount_percent/100);
+                    txt_item_total.Text = "£" + Convert.ToString(Math.Round(item_total - discount_value,2));
                 }
 
-               catch
+               catch (Exception ex)
                {
-                    return;
+                    MessageBox.Show(ex.ToString());
                }
                
 
@@ -442,7 +507,7 @@ namespace JodanQuote
         {
 
             this.ada_finish.Fill(dT_finish.dt_finish);
-
+            cmb_finish_edit.SelectedIndex = 2;
             this.c_View_Security_RatingTableAdapter.Fill(this.dT_Ratings.C_View_Security_Rating);
             this.c_View_Fire_RatingsTableAdapter.Fill(this.dT_Ratings.C_View_Fire_Ratings);
 
@@ -507,10 +572,11 @@ namespace JodanQuote
             txt_item_total.Text = "£" + (Convert.ToString(txt_item_total.Text.Replace("£", string.Empty)));
             txt_addon.Text = "£" + (Convert.ToString(txt_addon.Text.Replace("£", string.Empty)));
             txt_security.Text = "£" + (Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
+            txt_additional_cost.Text = "£" + (Convert.ToString(txt_additional_cost.Text.Replace("£", string.Empty)));
             txt_fire.Text = "£" + (Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
             txt_jamb_height.Text = (Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty))) + "mm";
             txt_jamb_width.Text = (Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty))) + "mm";
-
+            txt_discount.Text = (Convert.ToString(txt_discount.Text.Replace("£", string.Empty)));
             double total = 0;
             double addon_total =0;
             int addon_labour_hours = 0;
@@ -569,21 +635,26 @@ namespace JodanQuote
 
         void Calculate_Cost()
         {
+
+            string labour_total_hours = (Convert.ToString(txt_labour_total.Text.Replace(" Hours", string.Empty)));
+            string discount = (Convert.ToString(txt_discount.Text.Replace("%", string.Empty)));
+            string additional = (Convert.ToString(txt_additional_cost.Text.Replace("£", string.Empty)));
             string material_sales = (Convert.ToString(txt_material_sales_cost.Text.Replace("£", string.Empty)));
+            string material_percent = (Convert.ToString(txt_material_markup.Text.Replace("%", string.Empty)));
             string hardware_sales = (Convert.ToString(txt_hardware_sales_cost.Text.Replace("£", string.Empty)));
+            string hardware_percent = (Convert.ToString(txt_hardware_markup.Text.Replace("%", string.Empty)));
             string labour_sales = (Convert.ToString(txt_labour_sales_cost.Text.Replace("£", string.Empty)));
             string paint_sales = (Convert.ToString(txt_paint_total.Text.Replace("£", string.Empty)));
             string total_sales = (Convert.ToString(txt_item_total.Text.Replace("£", string.Empty)));
             string material = (Convert.ToString(txt_material_cost.Text.Replace("£", string.Empty)));
             string hardware = (Convert.ToString(txt_hardware_cost.Text.Replace("£", string.Empty)));
+            string addon = (Convert.ToString(txt_addon.Text.Replace("£", string.Empty)));
             string labour = (Convert.ToString(txt_labour_cost.Text.Replace("£", string.Empty)));
             string fire = (Convert.ToString(txt_fire.Text.Replace("£", string.Empty)));
             string security = (Convert.ToString(txt_security.Text.Replace("£", string.Empty)));
             string jamb_width = (Convert.ToString(txt_jamb_width.Text.Replace("m", string.Empty)));
             string jamb_height = (Convert.ToString(txt_jamb_height.Text.Replace("m", string.Empty)));
-            string addon = (Convert.ToString(txt_addon.Text.Replace("£", string.Empty)));
-            string hours= (Convert.ToString(txt_labour_total.Text.Replace(" Hours", string.Empty)));
-
+            string hours = (Convert.ToString(txt_addon_labour_hours.Text.Replace(" Hours", string.Empty)));
 
             if (material_sales == "")
             {
@@ -593,6 +664,16 @@ namespace JodanQuote
             if (hardware_sales == "")
             {
                 hardware_sales = "0";
+
+            }
+            if (material_percent == "")
+            {
+                material_percent = "0";
+
+            }
+            if (hardware_percent == "")
+            {
+                hardware_percent = "0";
 
             }
             if (paint_sales == "")
@@ -615,11 +696,6 @@ namespace JodanQuote
                 hardware = "0";
 
             }
-            if (addon == "")
-            {
-                addon = "0";
-
-            }
             if (labour == "")
             {
                 labour = "0";
@@ -630,15 +706,16 @@ namespace JodanQuote
 
                 labour_sales = "0";
             }
+
             if (fire == "")
             {
-
                 fire = "0";
+
             }
             if (security == "")
             {
-
                 security = "0";
+
             }
             if (jamb_height == "")
             {
@@ -650,9 +727,31 @@ namespace JodanQuote
                 jamb_width = "0";
 
             }
+            if (addon == "")
+            {
+                addon = "0";
+
+            }
             if (hours == "")
             {
                 hours = "0";
+
+            }
+            if (discount == "")
+            {
+                discount = "0";
+
+            }
+
+            if (additional == "")
+            {
+                additional = "0";
+
+            }
+
+            if (labour_total_hours == "")
+            {
+                labour_total_hours = "0";
 
             }
 
@@ -660,16 +759,22 @@ namespace JodanQuote
             txt_hardware_sales_cost.Text = "£" + hardware_sales;
             txt_paint_total.Text = "£" + paint_sales;
             txt_labour_sales_cost.Text = "£" + labour_sales;
-            txt_labour_cost.Text = "£" + labour;
             txt_item_total.Text = "£" + total_sales;
             txt_material_cost.Text = "£" + material;
+            txt_material_markup.Text = material_percent;
             txt_hardware_cost.Text = "£" + hardware;
-            txt_labour_total.Text = hours + " Hours" ;
+            txt_hardware_markup.Text = hardware_percent;
             txt_addon.Text = "£" + addon;
+            txt_labour_cost.Text = "£" + labour;
             txt_fire.Text = "£" + fire;
             txt_security.Text = "£" + security;
-            txt_jamb_width.Text = jamb_width + "mm";
+            txt_additional_cost.Text = "£" + additional;
+            txt_discount.Text = discount ;
             txt_jamb_height.Text = jamb_height + "mm";
+            txt_jamb_width.Text = jamb_width + "mm";
+            txt_addon_labour_hours.Text = hours + " Hours";
+
+
             if (dT_Item_Details._DT_Item_Details.Rows.Count > 0)
             {
                 DataTable dt = new DataTable();
@@ -951,10 +1056,8 @@ namespace JodanQuote
                 panel_addon.Enabled = false;
                 panel_total.Enabled = false;
                 panel_handle.Enabled = false;
-                btn_save.Enabled = false;
                 btn_revise.Enabled = false;
                 btn_printscren.Enabled = false;
-                btn_save.Enabled = false;
                 btn_add_hardware.Enabled = true;
                 btn_dimensions.Enabled = true;
                 btn_lock.Enabled = true;
@@ -993,15 +1096,11 @@ namespace JodanQuote
                 panel_total.Enabled = true;
                 btn_lock.Text = "        Lock";
                 btn_lock.Image = JodanQuote.Properties.Resources.locked;
-                btn_save.Enabled = true;
                 btn_revise.Enabled = true;
                 btn_printscren.Enabled = true;
-                btn_save.Enabled = true;
                 Valuesclass.locked_identifiter = 0;
 
                 Edit_Items();
-
-
                 Combobox_values();
                     
 
@@ -1049,7 +1148,7 @@ namespace JodanQuote
             }
             else
             {
-                cmb_finish_edit.SelectedIndex = 1;
+                cmb_finish_edit.SelectedIndex = 3;
             }
             if (cmb_fire.Text != null)
             {
@@ -1096,6 +1195,7 @@ namespace JodanQuote
                 cmb_infill_edit.SelectedIndex = 1;
               
             }
+           
 
         }
 
@@ -1360,6 +1460,10 @@ namespace JodanQuote
 
         private void btn_back_Click(object sender, EventArgs e)
         {
+           
+            Update_item();
+          
+            lock_controls();
             this.Hide();
             FrmQuote quote = new FrmQuote();
             quote.Show();
@@ -1400,30 +1504,18 @@ namespace JodanQuote
 
         }
 
-        private void btn_add_hardware_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FrmHardwareSelect select = new FrmHardwareSelect();
-            select.Show();
-        }
-       
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            Save();
-            lock_controls();
-            MessageBox.Show("Item Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             btn_back.PerformClick();
-        }
-               
         private void btn_add_hardware_Click_1(object sender, EventArgs e)
         {
-            //this.Hide();
+            Valuesclass.security_rating =Convert.ToSByte(dT_Ratings.C_View_Security_Rating.Rows[cmb_security_edit.SelectedIndex]["Security_rating"].ToString());
             FrmHardwareSelect select = new FrmHardwareSelect();
             select.ShowDialog();
             Valuesclass.new_item_identifier = 0;
+            Update_item();
             Fill_data();
+            Combobox_values();
             Refresh_Data();
             Edit_Items();
+            
         }
 
         private void btn_revise_Click(object sender, EventArgs e)
@@ -1467,6 +1559,10 @@ namespace JodanQuote
                     string addon_cost = dT_Item_Details._DT_Item_Details.Rows[0]["addon_cost"].ToString();
                     string converted_cost = dT_Item_Details._DT_Item_Details.Rows[0]["converted_cost"].ToString();
                     string item_total = dT_Item_Details._DT_Item_Details.Rows[0]["total_cost"].ToString();
+                    
+                    //////////////////// 
+
+
 
                     SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                     SqlCommand revise_item = new SqlCommand(Statementsclass.revise_item, conn);
@@ -1804,7 +1900,7 @@ namespace JodanQuote
              return;
             }
 
-            Update_item();
+            
             
             Valuesclass.structual_op_width =Convert.ToInt32(txt_structual_width.Text);
             FrmAddOnSelect addon = new FrmAddOnSelect();
@@ -1812,6 +1908,7 @@ namespace JodanQuote
             this.c_View_Item_Add_OnTableAdapter.Fill(this.dT_Item_Add_On.C_View_Item_Add_On, Valuesclass.quote_id);
             Refresh_Data();
             Calculate_Cost_Edit_Mode();
+            Update_item();
         }
 
         private void grid_addon_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1855,8 +1952,7 @@ namespace JodanQuote
 
                 int width = (Convert.ToInt32(txt_structual_width.Text) - 6);
                 txt_frame_width.Text = width.ToString();
-              
-               // Edit_Items();
+                update_seal();
                 Calculate_Cost_Edit_Mode();
                 Refresh_Data();
 
@@ -1882,7 +1978,7 @@ namespace JodanQuote
                 }
                 int height = (Convert.ToInt32(txt_structual_height.Text) - 10);
                 txt_frame_height.Text = height.ToString();
-              //  Edit_Items();
+                update_seal();
                 Calculate_Cost_Edit_Mode();
                 Refresh_Data();
                 if (txt_warning.Visible == false)
@@ -1922,8 +2018,7 @@ namespace JodanQuote
 
         private void txt_structual_width_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-               (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -1931,8 +2026,8 @@ namespace JodanQuote
 
         private void txt_structual_height_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-               (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+              
             {
                 e.Handled = true;
             }
@@ -2014,20 +2109,48 @@ namespace JodanQuote
             }
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void txt_discount_KeyDown(object sender, KeyEventArgs e)
         {
-            try
+
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
-                this.c_View_Fire_RatingsTableAdapter.FillBy(this.dT_Ratings.C_View_Fire_Ratings);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                Refresh_Data();
+                this.ActiveControl = txt_additional_cost;
             }
 
         }
 
-       
+        private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_additional_cost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_additional_cost_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                Refresh_Data();
+                
+            }
+        }
+
+        private void txt_discount_Leave(object sender, EventArgs e)
+        {
+            Refresh_Data();
+        }
     }
     
 }

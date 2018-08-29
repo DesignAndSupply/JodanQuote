@@ -28,9 +28,7 @@ ORDER BY id</CommandText>
               <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.C_View_Fire_Ratings" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        id, description
-FROM            C_View_Fire_Ratings
-ORDER BY id</CommandText>
+                    <CommandText>SELECT description, id FROM C_View_Fire_Ratings ORDER BY id</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -42,9 +40,8 @@ ORDER BY id</CommandText>
               <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.C_View_Security_Rating" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        id, description, default_cost_single, default_cost_double
-FROM            C_View_Security_Rating
-ORDER BY ID ASC</CommandText>
+                    <CommandText>SELECT        id, description, default_cost_single, default_cost_double, security_rating
+FROM            C_View_Security_Rating</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -55,8 +52,18 @@ ORDER BY ID ASC</CommandText>
               <Mapping SourceColumn="description" DataSetColumn="description" />
               <Mapping SourceColumn="default_cost_single" DataSetColumn="default_cost_single" />
               <Mapping SourceColumn="default_cost_double" DataSetColumn="default_cost_double" />
+              <Mapping SourceColumn="security_rating" DataSetColumn="security_rating" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="designsvr3\sqlexpress.Jodan_quote.dbo" DbObjectName="Jodan_quote.dbo.C_View_Security_Rating" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT default_cost_double, default_cost_single, description, id, security_rating FROM C_View_Security_Rating ORDER BY id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -66,7 +73,7 @@ ORDER BY ID ASC</CommandText>
   <xs:element name="DT_Ratings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_Ratings" msprop:Generator_UserDSName="DT_Ratings">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="C_View_Fire_Ratings" msprop:Generator_TableClassName="C_View_Fire_RatingsDataTable" msprop:Generator_TableVarName="tableC_View_Fire_Ratings" msprop:Generator_TablePropName="C_View_Fire_Ratings" msprop:Generator_RowDeletingName="C_View_Fire_RatingsRowDeleting" msprop:Generator_RowChangingName="C_View_Fire_RatingsRowChanging" msprop:Generator_RowEvHandlerName="C_View_Fire_RatingsRowChangeEventHandler" msprop:Generator_RowDeletedName="C_View_Fire_RatingsRowDeleted" msprop:Generator_UserTableName="C_View_Fire_Ratings" msprop:Generator_RowChangedName="C_View_Fire_RatingsRowChanged" msprop:Generator_RowEvArgName="C_View_Fire_RatingsRowChangeEvent" msprop:Generator_RowClassName="C_View_Fire_RatingsRow">
+        <xs:element name="C_View_Fire_Ratings" msprop:Generator_TableClassName="C_View_Fire_RatingsDataTable" msprop:Generator_TableVarName="tableC_View_Fire_Ratings" msprop:Generator_RowChangedName="C_View_Fire_RatingsRowChanged" msprop:Generator_TablePropName="C_View_Fire_Ratings" msprop:Generator_RowDeletingName="C_View_Fire_RatingsRowDeleting" msprop:Generator_RowChangingName="C_View_Fire_RatingsRowChanging" msprop:Generator_RowEvHandlerName="C_View_Fire_RatingsRowChangeEventHandler" msprop:Generator_RowDeletedName="C_View_Fire_RatingsRowDeleted" msprop:Generator_RowClassName="C_View_Fire_RatingsRow" msprop:Generator_UserTableName="C_View_Fire_Ratings" msprop:Generator_RowEvArgName="C_View_Fire_RatingsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -80,7 +87,7 @@ ORDER BY ID ASC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="C_View_Security_Rating" msprop:Generator_TableClassName="C_View_Security_RatingDataTable" msprop:Generator_TableVarName="tableC_View_Security_Rating" msprop:Generator_TablePropName="C_View_Security_Rating" msprop:Generator_RowDeletingName="C_View_Security_RatingRowDeleting" msprop:Generator_RowChangingName="C_View_Security_RatingRowChanging" msprop:Generator_RowEvHandlerName="C_View_Security_RatingRowChangeEventHandler" msprop:Generator_RowDeletedName="C_View_Security_RatingRowDeleted" msprop:Generator_UserTableName="C_View_Security_Rating" msprop:Generator_RowChangedName="C_View_Security_RatingRowChanged" msprop:Generator_RowEvArgName="C_View_Security_RatingRowChangeEvent" msprop:Generator_RowClassName="C_View_Security_RatingRow">
+        <xs:element name="C_View_Security_Rating" msprop:Generator_TableClassName="C_View_Security_RatingDataTable" msprop:Generator_TableVarName="tableC_View_Security_Rating" msprop:Generator_RowChangedName="C_View_Security_RatingRowChanged" msprop:Generator_TablePropName="C_View_Security_Rating" msprop:Generator_RowDeletingName="C_View_Security_RatingRowDeleting" msprop:Generator_RowChangingName="C_View_Security_RatingRowChanging" msprop:Generator_RowEvHandlerName="C_View_Security_RatingRowChangeEventHandler" msprop:Generator_RowDeletedName="C_View_Security_RatingRowDeleted" msprop:Generator_RowClassName="C_View_Security_RatingRow" msprop:Generator_UserTableName="C_View_Security_Rating" msprop:Generator_RowEvArgName="C_View_Security_RatingRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -93,6 +100,7 @@ ORDER BY ID ASC</CommandText>
               </xs:element>
               <xs:element name="default_cost_single" msprop:Generator_ColumnVarNameInTable="columndefault_cost_single" msprop:Generator_ColumnPropNameInRow="default_cost_single" msprop:Generator_ColumnPropNameInTable="default_cost_singleColumn" msprop:Generator_UserColumnName="default_cost_single" type="xs:decimal" minOccurs="0" />
               <xs:element name="default_cost_double" msprop:Generator_ColumnVarNameInTable="columndefault_cost_double" msprop:Generator_ColumnPropNameInRow="default_cost_double" msprop:Generator_ColumnPropNameInTable="default_cost_doubleColumn" msprop:Generator_UserColumnName="default_cost_double" type="xs:decimal" minOccurs="0" />
+              <xs:element name="security_rating" msprop:Generator_ColumnVarNameInTable="columnsecurity_rating" msprop:Generator_ColumnPropNameInRow="security_rating" msprop:Generator_ColumnPropNameInTable="security_ratingColumn" msprop:Generator_UserColumnName="security_rating" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

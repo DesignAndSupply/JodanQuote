@@ -26,6 +26,7 @@ namespace JodanQuote
             Format();
             Set_Value();
         }
+
         void Set_Value()
         {
 
@@ -53,7 +54,7 @@ namespace JodanQuote
             cmb_type.SelectedIndex = -1;
             ConnectionClass.Dispose_connection(conn);
             
-            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
+            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1,Valuesclass.security_rating);
            
         }
         
@@ -72,7 +73,13 @@ namespace JodanQuote
             grid_hardware_selected.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_hardware_selected.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_hardware_selected.DefaultCellStyle.BackColor = Color.AliceBlue;
-            this.ControlBox = false;
+            
+            if(grid_hardware.Rows.Count == 0)
+            {
+                lbl_warning.Visible = true;
+            }
+
+
 
            
         }
@@ -87,6 +94,7 @@ namespace JodanQuote
                 SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
                 SqlDataAdapter Search_stock_description = new SqlDataAdapter(Statementsclass.Search_stock_description, conn);
                 Search_stock_description.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
+                Search_stock_description.SelectCommand.Parameters.AddWithValue("@security_rating", Valuesclass.security_rating);
                 Search_stock_description.Fill(dt_hardware);
                 grid_hardware.DataSource = dt_hardware;
 
@@ -100,6 +108,7 @@ namespace JodanQuote
                 SqlDataAdapter Search_stock_category = new SqlDataAdapter(Statementsclass.Search_stock_category, conn);
               
                 Search_stock_category.SelectCommand.Parameters.AddWithValue("@category", category);
+                Search_stock_category.SelectCommand.Parameters.AddWithValue("@security_rating", Valuesclass.security_rating);
                 Search_stock_category.Fill(dt_hardware);
                 grid_hardware.DataSource = dt_hardware;
 
@@ -114,6 +123,7 @@ namespace JodanQuote
                 SqlDataAdapter Search_stock_category_description = new SqlDataAdapter(Statementsclass.Search_stock_category_description, conn);
                 Search_stock_category_description.SelectCommand.Parameters.AddWithValue("@description", txt_description.Text);
                 Search_stock_category_description.SelectCommand.Parameters.AddWithValue("@category", category);
+                Search_stock_category_description.SelectCommand.Parameters.AddWithValue("@security_rating", Valuesclass.security_rating);
                 Search_stock_category_description.Fill(dt_hardware);
                 grid_hardware.DataSource = dt_hardware;
 
@@ -125,8 +135,8 @@ namespace JodanQuote
 
         private void FrmHardwareSelect_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dT_hardware.c_view_hardware' table. You can move, or remove it, as needed.
-            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1);
+           
+            this.c_view_hardwareTableAdapter.Fill(this.dT_hardware.c_view_hardware,1,Valuesclass.security_rating);
             Set_Value();
         }
 
@@ -187,8 +197,8 @@ namespace JodanQuote
             cmb_type.SelectedIndex = -1;
             DataTable dt_hardware = new DataTable();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
-            SqlDataAdapter Search_stock= new SqlDataAdapter("SELECT * FROM c_view_hardware WHERE Jodan_stock = 1", conn);
-   
+            SqlDataAdapter Search_stock= new SqlDataAdapter("SELECT * FROM c_view_hardware WHERE Jodan_stock = 1 and sec_rating_level = @security_rating", conn);
+            Search_stock.SelectCommand.Parameters.AddWithValue("@security_rating", Valuesclass.security_rating);
             Search_stock.Fill(dt_hardware);
             grid_hardware.DataSource = dt_hardware;
             Set_Value();
@@ -313,9 +323,7 @@ namespace JodanQuote
         
         }
 
-        private void cmb_type_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //Search();
-        }
+       
+        
     }
 }

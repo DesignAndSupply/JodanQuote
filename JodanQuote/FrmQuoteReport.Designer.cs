@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.pct_logo);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1361, 100);
+            this.panel1.Size = new System.Drawing.Size(1867, 100);
             this.panel1.TabIndex = 25;
             // 
             // btn_email
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 770);
+            this.ClientSize = new System.Drawing.Size(1132, 770);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -138,6 +138,7 @@
             this.Name = "FrmQuoteReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quotation Report";
+            this.MaximumSizeChanged += new System.EventHandler(this.FrmQuoteReport_MaximumSizeChanged);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmQuoteReport_FormClosed);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pct_logo)).EndInit();
