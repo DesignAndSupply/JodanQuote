@@ -114,10 +114,10 @@
             this.grid_hardware.DefaultCellStyle = dataGridViewCellStyle6;
             this.grid_hardware.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_hardware.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_hardware.Location = new System.Drawing.Point(32, 106);
+            this.grid_hardware.Location = new System.Drawing.Point(58, 129);
             this.grid_hardware.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_hardware.MaximumSize = new System.Drawing.Size(480, 465);
-            this.grid_hardware.MinimumSize = new System.Drawing.Size(480, 465);
+            this.grid_hardware.MinimumSize = new System.Drawing.Size(350, 300);
             this.grid_hardware.Name = "grid_hardware";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
@@ -130,7 +130,7 @@
             this.grid_hardware.RowHeadersVisible = false;
             this.grid_hardware.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_hardware.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_hardware.Size = new System.Drawing.Size(480, 465);
+            this.grid_hardware.Size = new System.Drawing.Size(399, 354);
             this.grid_hardware.TabIndex = 68;
             this.grid_hardware.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_CellContentClick);
             this.grid_hardware.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_CellEndEdit);
@@ -225,7 +225,7 @@
             // 
             this.pct_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pct_clear.Image = global::JodanQuote.Properties.Resources.clear;
-            this.pct_clear.Location = new System.Drawing.Point(354, 64);
+            this.pct_clear.Location = new System.Drawing.Point(387, 90);
             this.pct_clear.Name = "pct_clear";
             this.pct_clear.Size = new System.Drawing.Size(26, 20);
             this.pct_clear.TabIndex = 73;
@@ -237,7 +237,7 @@
             this.lbl_description.AutoSize = true;
             this.lbl_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_description.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_description.Location = new System.Drawing.Point(185, 45);
+            this.lbl_description.Location = new System.Drawing.Point(218, 71);
             this.lbl_description.Name = "lbl_description";
             this.lbl_description.Size = new System.Drawing.Size(41, 15);
             this.lbl_description.TabIndex = 72;
@@ -248,7 +248,7 @@
             this.lbl_des.AutoSize = true;
             this.lbl_des.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_des.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_des.Location = new System.Drawing.Point(32, 45);
+            this.lbl_des.Location = new System.Drawing.Point(65, 71);
             this.lbl_des.Name = "lbl_des";
             this.lbl_des.Size = new System.Drawing.Size(84, 15);
             this.lbl_des.TabIndex = 71;
@@ -258,7 +258,7 @@
             // 
             this.txt_description.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_description.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_description.Location = new System.Drawing.Point(32, 64);
+            this.txt_description.Location = new System.Drawing.Point(65, 90);
             this.txt_description.Name = "txt_description";
             this.txt_description.Size = new System.Drawing.Size(110, 20);
             this.txt_description.TabIndex = 70;
@@ -271,7 +271,7 @@
             this.cmb_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_type.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_type.FormattingEnabled = true;
-            this.cmb_type.Location = new System.Drawing.Point(188, 63);
+            this.cmb_type.Location = new System.Drawing.Point(221, 89);
             this.cmb_type.Name = "cmb_type";
             this.cmb_type.Size = new System.Drawing.Size(163, 21);
             this.cmb_type.TabIndex = 74;
@@ -310,10 +310,10 @@
             this.grid_hardware_selected.DefaultCellStyle = dataGridViewCellStyle13;
             this.grid_hardware_selected.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_hardware_selected.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_hardware_selected.Location = new System.Drawing.Point(543, 106);
+            this.grid_hardware_selected.Location = new System.Drawing.Point(529, 129);
             this.grid_hardware_selected.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.grid_hardware_selected.MaximumSize = new System.Drawing.Size(345, 465);
-            this.grid_hardware_selected.MinimumSize = new System.Drawing.Size(345, 465);
+            this.grid_hardware_selected.MaximumSize = new System.Drawing.Size(399, 400);
+            this.grid_hardware_selected.MinimumSize = new System.Drawing.Size(300, 300);
             this.grid_hardware_selected.Name = "grid_hardware_selected";
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
@@ -326,7 +326,7 @@
             this.grid_hardware_selected.RowHeadersVisible = false;
             this.grid_hardware_selected.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_hardware_selected.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_hardware_selected.Size = new System.Drawing.Size(345, 465);
+            this.grid_hardware_selected.Size = new System.Drawing.Size(363, 354);
             this.grid_hardware_selected.TabIndex = 75;
             this.grid_hardware_selected.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_selected_CellContentClick);
             // 
@@ -414,7 +414,7 @@
             this.btn_add_hardware.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_add_hardware.Image = global::JodanQuote.Properties.Resources.Save;
             this.btn_add_hardware.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_hardware.Location = new System.Drawing.Point(911, 505);
+            this.btn_add_hardware.Location = new System.Drawing.Point(846, 500);
             this.btn_add_hardware.Name = "btn_add_hardware";
             this.btn_add_hardware.Size = new System.Drawing.Size(98, 37);
             this.btn_add_hardware.TabIndex = 76;
@@ -430,7 +430,7 @@
             this.btn_clear.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_clear.Image = global::JodanQuote.Properties.Resources.Bin;
             this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clear.Location = new System.Drawing.Point(911, 462);
+            this.btn_clear.Location = new System.Drawing.Point(751, 7);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(98, 37);
             this.btn_clear.TabIndex = 77;
@@ -446,7 +446,7 @@
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_back.Image = global::JodanQuote.Properties.Resources.ReturnArrow;
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(911, 419);
+            this.btn_back.Location = new System.Drawing.Point(855, 7);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(98, 37);
             this.btn_back.TabIndex = 78;
@@ -463,7 +463,7 @@
             this.lbl_warning.AutoSize = true;
             this.lbl_warning.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_warning.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_warning.Location = new System.Drawing.Point(311, 16);
+            this.lbl_warning.Location = new System.Drawing.Point(235, 36);
             this.lbl_warning.Name = "lbl_warning";
             this.lbl_warning.Size = new System.Drawing.Size(445, 24);
             this.lbl_warning.TabIndex = 79;
@@ -476,7 +476,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1038, 629);
+            this.ClientSize = new System.Drawing.Size(956, 549);
             this.Controls.Add(this.lbl_warning);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_clear);

@@ -46,7 +46,7 @@
             this.cmb_customers.FormattingEnabled = true;
             this.cmb_customers.IntegralHeight = false;
             this.cmb_customers.ItemHeight = 15;
-            this.cmb_customers.Location = new System.Drawing.Point(138, 130);
+            this.cmb_customers.Location = new System.Drawing.Point(137, 97);
             this.cmb_customers.MaxDropDownItems = 5;
             this.cmb_customers.Name = "cmb_customers";
             this.cmb_customers.Size = new System.Drawing.Size(206, 23);
@@ -74,7 +74,7 @@
             this.lbl_customer.AutoSize = true;
             this.lbl_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_customer.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_customer.Location = new System.Drawing.Point(130, 79);
+            this.lbl_customer.Location = new System.Drawing.Point(129, 46);
             this.lbl_customer.Name = "lbl_customer";
             this.lbl_customer.Size = new System.Drawing.Size(223, 31);
             this.lbl_customer.TabIndex = 39;
@@ -96,7 +96,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Customer";
-//            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCustomerSelect_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

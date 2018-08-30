@@ -110,6 +110,7 @@ namespace Statements
         public static string update_settings = "Insert into dbo.Settings(markup_hardware,markup_material,labour_rate,single_extra,double_extra,single_flood_extra,double_flood_extra,date_modified) " +
                                                  "Values(@markup_hardware,@markup_material,@labour_rate,@single_extra,@double_extra,@single_flood_extra,@double_flood_extra,@date_modified)";
         public static string update_stock = "Update dbo.Stock Set jodan_stock = 1 , sec_rating_level = @security_rating WHERE id = @id";
+       
         public static string update_stock_null = "Update dbo.Stock Set jodan_stock = NULL , sec_rating_level = @security_rating WHERE id = @id";
         //email
 

@@ -80,7 +80,7 @@
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(454, 229);
+            this.btn_back.Location = new System.Drawing.Point(417, 222);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(98, 37);
             this.btn_back.TabIndex = 81;
@@ -96,7 +96,7 @@
             this.btn_clear.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_clear.Image = global::JodanQuote.Properties.Resources.Bin;
             this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clear.Location = new System.Drawing.Point(454, 272);
+            this.btn_clear.Location = new System.Drawing.Point(417, 265);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(98, 37);
             this.btn_clear.TabIndex = 80;
@@ -112,7 +112,7 @@
             this.btn_add_on.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_add_on.Image = global::JodanQuote.Properties.Resources.Save;
             this.btn_add_on.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_on.Location = new System.Drawing.Point(454, 315);
+            this.btn_add_on.Location = new System.Drawing.Point(417, 308);
             this.btn_add_on.Name = "btn_add_on";
             this.btn_add_on.Size = new System.Drawing.Size(98, 37);
             this.btn_add_on.TabIndex = 79;
@@ -380,12 +380,12 @@
             this.btn_structure_width.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_structure_width.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_structure_width.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_structure_width.Location = new System.Drawing.Point(439, 148);
+            this.btn_structure_width.Location = new System.Drawing.Point(405, 149);
             this.btn_structure_width.Margin = new System.Windows.Forms.Padding(0);
             this.btn_structure_width.Name = "btn_structure_width";
             this.btn_structure_width.Size = new System.Drawing.Size(122, 27);
             this.btn_structure_width.TabIndex = 102;
-            this.btn_structure_width.Text = "Use Structure Width";
+            this.btn_structure_width.Text = "Structure Width";
             this.btn_structure_width.UseVisualStyleBackColor = false;
             this.btn_structure_width.Click += new System.EventHandler(this.btn_structure_width_Click);
             // 
@@ -416,7 +416,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(569, 361);
+            this.ClientSize = new System.Drawing.Size(538, 361);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_structure_width);

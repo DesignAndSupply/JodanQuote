@@ -340,7 +340,7 @@
             this.btn_revise.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_revise.Image = ((System.Drawing.Image)(resources.GetObject("btn_revise.Image")));
             this.btn_revise.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_revise.Location = new System.Drawing.Point(1164, 27);
+            this.btn_revise.Location = new System.Drawing.Point(1164, 28);
             this.btn_revise.Name = "btn_revise";
             this.btn_revise.Size = new System.Drawing.Size(98, 37);
             this.btn_revise.TabIndex = 70;
@@ -767,7 +767,7 @@
             dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
             this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.grid_addon.Size = new System.Drawing.Size(347, 221);
+            this.grid_addon.Size = new System.Drawing.Size(347, 242);
             this.grid_addon.TabIndex = 58;
             this.grid_addon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_addon_CellContentClick);
             // 
@@ -1096,11 +1096,11 @@
             this.btn_dimensions.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_dimensions.Image = global::JodanQuote.Properties.Resources.Add1;
             this.btn_dimensions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dimensions.Location = new System.Drawing.Point(307, 113);
+            this.btn_dimensions.Location = new System.Drawing.Point(315, 6);
             this.btn_dimensions.Name = "btn_dimensions";
-            this.btn_dimensions.Size = new System.Drawing.Size(90, 43);
+            this.btn_dimensions.Size = new System.Drawing.Size(89, 35);
             this.btn_dimensions.TabIndex = 67;
-            this.btn_dimensions.Text = "     Enter        Dimensions";
+            this.btn_dimensions.Text = "       Enter            Dimensions";
             this.btn_dimensions.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_dimensions.UseVisualStyleBackColor = false;
             this.btn_dimensions.Visible = false;
@@ -1490,7 +1490,7 @@
             this.btn_add_item.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_add_item.Image = global::JodanQuote.Properties.Resources.Add1;
             this.btn_add_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_item.Location = new System.Drawing.Point(278, 259);
+            this.btn_add_item.Location = new System.Drawing.Point(293, 296);
             this.btn_add_item.Name = "btn_add_item";
             this.btn_add_item.Size = new System.Drawing.Size(80, 37);
             this.btn_add_item.TabIndex = 72;
@@ -1506,7 +1506,7 @@
             this.btn_view_addons.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_view_addons.Image = global::JodanQuote.Properties.Resources.Search_Small_;
             this.btn_view_addons.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_view_addons.Location = new System.Drawing.Point(192, 259);
+            this.btn_view_addons.Location = new System.Drawing.Point(207, 296);
             this.btn_view_addons.Name = "btn_view_addons";
             this.btn_view_addons.Size = new System.Drawing.Size(80, 37);
             this.btn_view_addons.TabIndex = 73;

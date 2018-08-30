@@ -171,9 +171,6 @@ namespace JodanQuote
      
             if (string.IsNullOrWhiteSpace(dT_Quote.DT_Quote_Items.Rows[0]["convertion_id"].ToString()))
             {
-             
-
-
                 pct_logo.Image = JodanQuote.Properties.Resources.Logo;
                 pct_logo.Location = new Point(20, 28);
                
@@ -297,12 +294,13 @@ namespace JodanQuote
 
         void Copy_converted_hardware()
         {
+            Select_quote_id();
             DataTable dt_copy_hardware = new DataTable();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter copy_hardware = new SqlDataAdapter(Statementsclass.copy_hardware, conn);
-            copy_hardware.SelectCommand.Parameters.AddWithValue("@ID", dT_Quote.DT_Quote_Items.Rows[0]["Item Identity"]);
+            copy_hardware.SelectCommand.Parameters.AddWithValue("@ID", Valuesclass.id);
             copy_hardware.Fill(dt_copy_hardware);
-
+         
             for (int i = 0; i < dt_copy_hardware.Rows.Count; i++)
             {
 
@@ -317,7 +315,7 @@ namespace JodanQuote
                 insert_hardware.Parameters.AddWithValue("@category_id", category);
                 insert_hardware.Parameters.AddWithValue("@hardware_description", dt_copy_hardware.Rows[i]["Hardware Description"]);
                 insert_hardware.Parameters.AddWithValue("@hardware_cost", dt_copy_hardware.Rows[i]["Hardware cost"]);
-                insert_hardware.Parameters.AddWithValue("@Quantity", dt_copy_hardware.Rows[i]["Hardware cost"]);
+                insert_hardware.Parameters.AddWithValue("@Quantity", dt_copy_hardware.Rows[i]["Quantity"]);
                 insert_hardware.Parameters.AddWithValue("@total_cost", (dt_copy_hardware.Rows[i]["Total Cost"]));
                 insert_hardware.ExecuteNonQuery();
 
@@ -332,6 +330,7 @@ namespace JodanQuote
        
         void Copy_Item()
         {
+
             DataTable dt_copy_item = new DataTable();
             SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
             SqlDataAdapter copy_item_convert = new SqlDataAdapter(Statementsclass.copy_item_convert, conn);
@@ -341,7 +340,7 @@ namespace JodanQuote
 
             for (int i = 0; i < dt_copy_item.Rows.Count; i++)
             {
-
+                Valuesclass.id =Convert.ToInt32(dt_copy_item.Rows[i]["id"]);
                 int? door_type_id = ((dt_copy_item.Rows[i]["door_type_id"]) as int?) ?? 0;
                 int? order_id = ((dt_copy_item.Rows[i]["order_id"]) as int?) ?? 0;
                 int? material_id = ((dt_copy_item.Rows[i]["material_id"]) as int?) ?? 0;
@@ -354,6 +353,8 @@ namespace JodanQuote
                 double? total_cost = ((dt_copy_item.Rows[i]["total_cost"]) as double?) ?? 0;
                 double? security_rating_cost = ((dt_copy_item.Rows[i]["security_rating_cost"]) as double?) ?? 0;
                 double? fire_rating_cost = ((dt_copy_item.Rows[i]["fire_rating_cost"]) as double?) ?? 0;
+                double? additional_cost = ((dt_copy_item.Rows[i]["additional_cost"]) as double?) ?? 0;
+                double? discount_percentage = ((dt_copy_item.Rows[i]["discount_percentage"]) as double?) ?? 0;
                 double converted_cost = 0;
                 SqlConnection conn3 = ConnectionClass.GetConnection_dsl();
                 SqlCommand Select_door_type = new SqlCommand(Statementsclass.Select_door_type, conn3);
@@ -424,6 +425,8 @@ namespace JodanQuote
                 insert_copied_item.Parameters.AddWithValue("@labour_rate", dt_copy_item.Rows[i]["labour_rate"]);
                 insert_copied_item.Parameters.AddWithValue("@labour_cost", dt_copy_item.Rows[i]["labour_cost"]);
                 insert_copied_item.Parameters.AddWithValue("@converted_cost", converted_cost);
+                insert_copied_item.Parameters.AddWithValue("@additional_cost", additional_cost);
+                insert_copied_item.Parameters.AddWithValue("@discount_percentage", discount_percentage);
                 insert_copied_item.Parameters.AddWithValue("@total_cost", converted_total_cost);
                 ConnectionClass.Dispose_connection(conn);
          
@@ -433,10 +436,9 @@ namespace JodanQuote
                 ConnectionClass.Dispose_connection(conn2);
 
 
-
-
-
-
+           
+                Copy_converted_hardware();
+                Copy_addon();
 
 
             }
@@ -719,9 +721,9 @@ namespace JodanQuote
 
 
             }
-            catch(Exception ex  )
+            catch
             {
-               MessageBox.Show(ex.ToString(), "");
+              // MessageBox.Show(ex.ToString(), "");
             }
            
         }
@@ -786,7 +788,7 @@ namespace JodanQuote
 
                 }
                 Select_max_project_id();
-                Select_quote_id();
+              
 
                 if (string.IsNullOrEmpty(Valuesclass.customer_name) == true)
                 {
@@ -813,7 +815,7 @@ namespace JodanQuote
                     insert_copied_project.Parameters.AddWithValue("@project_ref", reader["project_ref"].ToString());
                     insert_copied_project.Parameters.AddWithValue("@date_created", DateTime.Now);
                     insert_copied_project.Parameters.AddWithValue("@quote_status", reader["quote_status"].ToString());
-                    insert_copied_project.Parameters.AddWithValue("@jodan_y_n", 1);
+                    insert_copied_project.Parameters.AddWithValue("@jodan_y_n", 0);
                     
                     insert_copied_project.ExecuteNonQuery();
 
@@ -829,7 +831,7 @@ namespace JodanQuote
 
                
                 Copy_Item();
-                Copy_converted_hardware();
+              
                 dT_customer.Clear();
                 dT_Quote.Clear();
                 this.dT_customer.SALES_LEDGER.Clear();
@@ -841,8 +843,6 @@ namespace JodanQuote
                 txt_customer.Text = Valuesclass.customer_name;
                 Valuesclass.jodan_y_n = 0;
                 Format();
-                btn_convert.Visible = false;
-                btn_view_original.Visible = true;
                 MessageBox.Show("Quotation Successfully Converted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }

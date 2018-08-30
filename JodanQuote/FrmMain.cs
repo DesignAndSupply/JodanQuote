@@ -292,6 +292,58 @@ namespace JodanQuote
 
         }
 
+        void Copy_addon()
+        {
+            DataTable dt_copy_addon = new DataTable();
+            SqlConnection conn = ConnectionClass.GetConnection_jodan_quote();
+            SqlDataAdapter copy_addon = new SqlDataAdapter(Statementsclass.copy_addon, conn);
+            copy_addon.SelectCommand.Parameters.AddWithValue("@ID", Valuesclass.id);
+            copy_addon.Fill(dt_copy_addon);
+
+            for (int i = 0; i < dt_copy_addon.Rows.Count; i++)
+            {
+
+                int add_on_id = Convert.ToInt32((dt_copy_addon.Rows[i]["add_on_id"]).ToString());
+                int add_on_width = Convert.ToInt32(dt_copy_addon.Rows[i]["add_on_width"].ToString());
+                int add_on_height = Convert.ToInt32(dt_copy_addon.Rows[i]["add_on_height"].ToString());
+                int material_id = Convert.ToInt32((dt_copy_addon.Rows[i]["material_id"]).ToString());
+                double? material_thickness = ((dt_copy_addon.Rows[i]["material_thickness"]) as double?) ?? 0;
+                int add_on_material_id = Convert.ToInt32((dt_copy_addon.Rows[i]["add_on_material_id"]).ToString());
+                double? material_cost = ((dt_copy_addon.Rows[i]["material_cost"]) as double?) ?? 0;
+                int? labour_hours = ((dt_copy_addon.Rows[i]["labour_hours"]) as int?) ?? 0;
+                double? labour_cost = ((dt_copy_addon.Rows[i]["labour_cost"]) as double?) ?? 0;
+                int? position = ((dt_copy_addon.Rows[i]["position"]) as int?) ?? 0;
+                int? removable = ((dt_copy_addon.Rows[i]["removable"]) as int?) ?? 0;
+                int? qty = ((dt_copy_addon.Rows[i]["qty"]) as int?) ?? 0;
+                int? powder_coated = ((dt_copy_addon.Rows[i]["powder_coated"]) as int?) ?? 0;
+                double? powder_coat_cost = ((dt_copy_addon.Rows[i]["powder_coat_cost"]) as double?) ?? 0;
+                double? unit_material_cost = ((dt_copy_addon.Rows[i]["unit_material_cost"]) as double?) ?? 0;
+
+
+                SqlCommand insert_add_on = new SqlCommand(Statementsclass.insert_add_on, conn);
+                insert_add_on.Parameters.AddWithValue("@quotation_id", Valuesclass.quote_id);
+                insert_add_on.Parameters.AddWithValue("@add_on_id", dt_copy_addon.Rows[i]["add_on_id"].ToString());
+                insert_add_on.Parameters.AddWithValue("@add_on_width", dt_copy_addon.Rows[i]["add_on_width"].ToString());
+                insert_add_on.Parameters.AddWithValue("@add_on_height", dt_copy_addon.Rows[i]["add_on_height"].ToString());
+                insert_add_on.Parameters.AddWithValue("@material_id", material_id);
+                insert_add_on.Parameters.AddWithValue("@material_thickness", material_thickness);
+                insert_add_on.Parameters.AddWithValue("@add_on_material_id", add_on_material_id);
+                insert_add_on.Parameters.AddWithValue("@material_cost", material_cost);
+                insert_add_on.Parameters.AddWithValue("@labour_hours", labour_hours);
+                insert_add_on.Parameters.AddWithValue("@labour_cost", labour_cost);
+                insert_add_on.Parameters.AddWithValue("@position", position);
+                insert_add_on.Parameters.AddWithValue("@removable", removable);
+                insert_add_on.Parameters.AddWithValue("@qty", qty);
+                insert_add_on.Parameters.AddWithValue("@powder_coated", powder_coated);
+                insert_add_on.Parameters.AddWithValue("@powder_coat_cost", powder_coat_cost);
+                insert_add_on.Parameters.AddWithValue("@unit_material_cost", unit_material_cost);
+                insert_add_on.ExecuteNonQuery();
+
+
+            }
+
+        }
+
         void Copy_converted_hardware()
         {
             DataTable dt_copy_hardware = new DataTable();
@@ -412,7 +464,7 @@ namespace JodanQuote
 
 
                 Copy_converted_hardware();
-
+                Copy_addon();
 
 
 
@@ -453,12 +505,12 @@ namespace JodanQuote
                     if (confirm == DialogResult.Yes)
                     {
                         Valuesclass.customer_name = "";
-
                         if (Valuesclass.jodan_y_n == 0)
                         {
 
                             FrmCustomerSelect select = new FrmCustomerSelect();
                             select.ShowDialog();
+
                         }
                         else
                         {
@@ -506,9 +558,9 @@ namespace JodanQuote
                         }
 
                         Copy_Item();
-                        Copy_converted_hardware();
+                       // Copy_converted_hardware();
 
-                        Valuesclass.jodan_y_n = 0;
+                      
 
 
                         MessageBox.Show("Quotation Successfully Converted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

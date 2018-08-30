@@ -1138,7 +1138,7 @@ namespace JodanQuote
             }
             else
             {
-                cmb_material_edit.SelectedIndex = 1;
+                cmb_material_edit.SelectedItem = 1;
                 Fill_material_thickness();
             }
             if(cmb_finish.Text!=null)
@@ -1208,7 +1208,7 @@ namespace JodanQuote
 
             if (read_max_quote_id.Read())
             {
-                Valuesclass.quote_id = (Convert.ToInt32(read_max_quote_id["Quote ID"])) + 1;
+                Valuesclass.quote_id = (Convert.ToInt32(read_max_quote_id["Quote ID"]));
                 read_max_quote_id.Close();
             }
 
@@ -1479,7 +1479,7 @@ namespace JodanQuote
 
             Graphics graphics = Graphics.FromImage(printscreen as Image);
 
-            graphics.CopyFromScreen(200, 168, 0, 0, printscreen.Size);
+            graphics.CopyFromScreen(200, 148, 0, 0, printscreen.Size);
 
             printscreen.Save(path, ImageFormat.Jpeg);
 
@@ -1523,7 +1523,8 @@ namespace JodanQuote
             DialogResult confirm = MessageBox.Show("Are you Sure You Want To Revise This Item?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-
+                Refresh_Data();
+                Update_item();
                 if (Valuesclass.new_item_identifier == 0)
                 {
 

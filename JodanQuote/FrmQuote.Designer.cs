@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuote));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pct_logo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -213,14 +213,14 @@
             this.grid_items_on_quote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.grid_items_on_quote.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.grid_items_on_quote.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_items_on_quote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_items_on_quote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid_items_on_quote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_items_on_quote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -233,27 +233,27 @@
             this.btn_delete_item,
             this.Item_Identity});
             this.grid_items_on_quote.DataSource = this.dTQuoteItemsBindingSource1;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_items_on_quote.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_items_on_quote.DefaultCellStyle = dataGridViewCellStyle4;
             this.grid_items_on_quote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grid_items_on_quote.GridColor = System.Drawing.Color.CornflowerBlue;
             this.grid_items_on_quote.Location = new System.Drawing.Point(67, 74);
             this.grid_items_on_quote.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grid_items_on_quote.Name = "grid_items_on_quote";
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_items_on_quote.RowHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_items_on_quote.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grid_items_on_quote.RowHeadersVisible = false;
             this.grid_items_on_quote.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.grid_items_on_quote.Size = new System.Drawing.Size(591, 237);
@@ -296,9 +296,9 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "total_cost";
-            dataGridViewCellStyle38.Format = "C2";
-            dataGridViewCellStyle38.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn2.FillWeight = 80F;
             this.dataGridViewTextBoxColumn2.HeaderText = "   Total     Value";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -306,14 +306,14 @@
             // btn_view
             // 
             this.btn_view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle39.NullValue = "Open";
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_view.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.NullValue = "Open";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_view.DefaultCellStyle = dataGridViewCellStyle3;
             this.btn_view.FillWeight = 40F;
             this.btn_view.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_view.HeaderText = "";
@@ -387,7 +387,7 @@
             this.btn_view_original.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_view_original.Image = global::JodanQuote.Properties.Resources.Search_Small_;
             this.btn_view_original.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_view_original.Location = new System.Drawing.Point(526, 29);
+            this.btn_view_original.Location = new System.Drawing.Point(566, 30);
             this.btn_view_original.Name = "btn_view_original";
             this.btn_view_original.Size = new System.Drawing.Size(98, 37);
             this.btn_view_original.TabIndex = 49;
@@ -403,7 +403,7 @@
             this.btn_convert.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_convert.Image = ((System.Drawing.Image)(resources.GetObject("btn_convert.Image")));
             this.btn_convert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_convert.Location = new System.Drawing.Point(626, 28);
+            this.btn_convert.Location = new System.Drawing.Point(666, 29);
             this.btn_convert.Name = "btn_convert";
             this.btn_convert.Size = new System.Drawing.Size(98, 37);
             this.btn_convert.TabIndex = 48;
@@ -420,7 +420,7 @@
             this.btn_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.Image")));
             this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_edit.Location = new System.Drawing.Point(921, 28);
+            this.btn_edit.Location = new System.Drawing.Point(961, 29);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(98, 37);
             this.btn_edit.TabIndex = 47;
@@ -484,7 +484,7 @@
             this.btn_email_project.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_email_project.Image = ((System.Drawing.Image)(resources.GetObject("btn_email_project.Image")));
             this.btn_email_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_email_project.Location = new System.Drawing.Point(723, 28);
+            this.btn_email_project.Location = new System.Drawing.Point(763, 29);
             this.btn_email_project.Name = "btn_email_project";
             this.btn_email_project.Size = new System.Drawing.Size(98, 37);
             this.btn_email_project.TabIndex = 41;
@@ -512,7 +512,7 @@
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(1123, 28);
+            this.btn_back.Location = new System.Drawing.Point(1163, 29);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(98, 37);
             this.btn_back.TabIndex = 40;
@@ -528,7 +528,7 @@
             this.btn_new_item.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_new_item.Image = ((System.Drawing.Image)(resources.GetObject("btn_new_item.Image")));
             this.btn_new_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_new_item.Location = new System.Drawing.Point(1023, 28);
+            this.btn_new_item.Location = new System.Drawing.Point(1063, 29);
             this.btn_new_item.Name = "btn_new_item";
             this.btn_new_item.Size = new System.Drawing.Size(98, 37);
             this.btn_new_item.TabIndex = 40;
@@ -545,7 +545,7 @@
             this.btn_print_project.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_print_project.Image = ((System.Drawing.Image)(resources.GetObject("btn_print_project.Image")));
             this.btn_print_project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print_project.Location = new System.Drawing.Point(823, 28);
+            this.btn_print_project.Location = new System.Drawing.Point(863, 29);
             this.btn_print_project.Name = "btn_print_project";
             this.btn_print_project.Size = new System.Drawing.Size(98, 37);
             this.btn_print_project.TabIndex = 39;
@@ -847,12 +847,12 @@
             // 
             this.Item_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Item_id.DataPropertyName = "Item ID";
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.Item_id.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.Item_id.DefaultCellStyle = dataGridViewCellStyle6;
             this.Item_id.FillWeight = 58.38951F;
             this.Item_id.HeaderText = "Item ID";
             this.Item_id.Name = "Item_id";
@@ -861,12 +861,12 @@
             // 
             this.revision_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.revision_number.DataPropertyName = "Revision Number";
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.revision_number.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.revision_number.DefaultCellStyle = dataGridViewCellStyle7;
             this.revision_number.FillWeight = 60.83147F;
             this.revision_number.HeaderText = "Revision Number";
             this.revision_number.Name = "revision_number";
@@ -875,12 +875,12 @@
             // 
             this.dateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "Item Date";
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.dateCreatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.dateCreatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.dateCreatedDataGridViewTextBoxColumn.FillWeight = 88.38951F;
             this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created";
             this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
@@ -889,12 +889,12 @@
             // 
             this.createdByDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.createdByDataGridViewTextBoxColumn.DataPropertyName = "Created By";
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.createdByDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.createdByDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.createdByDataGridViewTextBoxColumn.FillWeight = 88.38951F;
             this.createdByDataGridViewTextBoxColumn.HeaderText = "Created By";
             this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
