@@ -8,7 +8,7 @@ namespace values
 {
     class Valuesclass
     {
-
+        public static string path = @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF";
         public static int project_id;
         public static int quote_id;
         public static int max_item_id;

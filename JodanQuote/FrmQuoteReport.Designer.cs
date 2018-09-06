@@ -45,7 +45,7 @@
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Location = new System.Drawing.Point(-5, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(186, 820);
+            this.panel2.Size = new System.Drawing.Size(186, 1500);
             this.panel2.TabIndex = 24;
             // 
             // panel1
@@ -109,7 +109,7 @@
             this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(208, 116);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(206, 116);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CrRptQuote1;
             this.crystalReportViewer1.ShowCloseButton = false;
@@ -122,7 +122,7 @@
             this.crystalReportViewer1.ShowRefreshButton = false;
             this.crystalReportViewer1.ShowTextSearchButton = false;
             this.crystalReportViewer1.ShowZoomButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(910, 653);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(910, 800);
             this.crystalReportViewer1.TabIndex = 26;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -130,11 +130,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1132, 770);
+            this.ClientSize = new System.Drawing.Size(1132, 962);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmQuoteReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quotation Report";

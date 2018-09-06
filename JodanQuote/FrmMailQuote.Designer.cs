@@ -78,7 +78,7 @@
             this.grid_email_recipients.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grid_email_recipients.RowHeadersVisible = false;
             this.grid_email_recipients.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_email_recipients.Size = new System.Drawing.Size(451, 266);
+            this.grid_email_recipients.Size = new System.Drawing.Size(469, 299);
             this.grid_email_recipients.TabIndex = 25;
             this.grid_email_recipients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_email_recipients_CellContentClick);
             // 
@@ -102,7 +102,7 @@
             this.btn_send.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_send.Image = global::JodanQuote.Properties.Resources.Email;
             this.btn_send.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_send.Location = new System.Drawing.Point(473, 253);
+            this.btn_send.Location = new System.Drawing.Point(433, 346);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(77, 39);
             this.btn_send.TabIndex = 43;
@@ -115,7 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(563, 318);
+            this.ClientSize = new System.Drawing.Size(522, 397);
             this.Controls.Add(this.grid_email_recipients);
             this.Controls.Add(this.btn_send);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

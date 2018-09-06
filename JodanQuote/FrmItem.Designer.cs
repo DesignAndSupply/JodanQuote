@@ -30,23 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItem));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.txt_revision = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -106,6 +106,8 @@
             this.cViewItemAddOnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dT_Item_Add_On = new JodanQuote.Datasource.DT_Item_Add_On();
             this.panel_door_input = new System.Windows.Forms.Panel();
+            this.txt_qty = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -304,7 +306,7 @@
             this.pnl_main.Controls.Add(this.pictureBox1);
             this.pnl_main.Location = new System.Drawing.Point(0, 0);
             this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Size = new System.Drawing.Size(1927, 100);
+            this.pnl_main.Size = new System.Drawing.Size(1927, 94);
             this.pnl_main.TabIndex = 18;
             // 
             // txt_revision
@@ -314,7 +316,7 @@
             this.txt_revision.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_revision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_revision.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_revision.Location = new System.Drawing.Point(473, 73);
+            this.txt_revision.Location = new System.Drawing.Point(473, 70);
             this.txt_revision.MaxLength = 15;
             this.txt_revision.Name = "txt_revision";
             this.txt_revision.Size = new System.Drawing.Size(192, 15);
@@ -340,7 +342,7 @@
             this.btn_revise.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_revise.Image = ((System.Drawing.Image)(resources.GetObject("btn_revise.Image")));
             this.btn_revise.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_revise.Location = new System.Drawing.Point(1164, 28);
+            this.btn_revise.Location = new System.Drawing.Point(1069, 30);
             this.btn_revise.Name = "btn_revise";
             this.btn_revise.Size = new System.Drawing.Size(98, 37);
             this.btn_revise.TabIndex = 70;
@@ -355,7 +357,7 @@
             this.txt_project.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_project.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_project.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_project.Location = new System.Drawing.Point(474, 11);
+            this.txt_project.Location = new System.Drawing.Point(474, 8);
             this.txt_project.MaxLength = 15;
             this.txt_project.Name = "txt_project";
             this.txt_project.Size = new System.Drawing.Size(192, 15);
@@ -368,7 +370,7 @@
             this.txt_item.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_item.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_item.Location = new System.Drawing.Point(474, 40);
+            this.txt_item.Location = new System.Drawing.Point(474, 37);
             this.txt_item.MaxLength = 15;
             this.txt_item.Name = "txt_item";
             this.txt_item.Size = new System.Drawing.Size(192, 15);
@@ -382,7 +384,7 @@
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_back.Image = ((System.Drawing.Image)(resources.GetObject("btn_back.Image")));
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(1372, 26);
+            this.btn_back.Location = new System.Drawing.Point(1277, 30);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(98, 37);
             this.btn_back.TabIndex = 50;
@@ -422,7 +424,7 @@
             this.btn_printscren.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_printscren.Image = ((System.Drawing.Image)(resources.GetObject("btn_printscren.Image")));
             this.btn_printscren.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_printscren.Location = new System.Drawing.Point(1060, 27);
+            this.btn_printscren.Location = new System.Drawing.Point(965, 30);
             this.btn_printscren.Name = "btn_printscren";
             this.btn_printscren.Size = new System.Drawing.Size(98, 37);
             this.btn_printscren.TabIndex = 42;
@@ -438,7 +440,7 @@
             this.btn_lock.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_lock.Image = global::JodanQuote.Properties.Resources.unlock;
             this.btn_lock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_lock.Location = new System.Drawing.Point(1268, 26);
+            this.btn_lock.Location = new System.Drawing.Point(1173, 30);
             this.btn_lock.Name = "btn_lock";
             this.btn_lock.Size = new System.Drawing.Size(98, 37);
             this.btn_lock.TabIndex = 41;
@@ -461,7 +463,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 86);
             this.pictureBox1.TabIndex = 16;
@@ -475,7 +477,7 @@
             this.btn_add_hardware.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_add_hardware.Image = global::JodanQuote.Properties.Resources.Add1;
             this.btn_add_hardware.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_hardware.Location = new System.Drawing.Point(420, 235);
+            this.btn_add_hardware.Location = new System.Drawing.Point(389, 235);
             this.btn_add_hardware.Name = "btn_add_hardware";
             this.btn_add_hardware.Size = new System.Drawing.Size(80, 37);
             this.btn_add_hardware.TabIndex = 71;
@@ -490,9 +492,9 @@
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Controls.Add(this.txt_list);
             this.panel2.Controls.Add(this.txt_warning);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(1, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(167, 812);
+            this.panel2.Size = new System.Drawing.Size(153, 812);
             this.panel2.TabIndex = 24;
             this.tp_skins.SetToolTip(this.panel2, "View Material Cost");
             // 
@@ -503,11 +505,11 @@
             this.txt_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_list.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_list.Location = new System.Drawing.Point(6, 173);
+            this.txt_list.Location = new System.Drawing.Point(7, 173);
             this.txt_list.MaxLength = 15;
             this.txt_list.Multiline = true;
             this.txt_list.Name = "txt_list";
-            this.txt_list.Size = new System.Drawing.Size(154, 184);
+            this.txt_list.Size = new System.Drawing.Size(141, 184);
             this.txt_list.TabIndex = 71;
             // 
             // txt_warning
@@ -517,7 +519,7 @@
             this.txt_warning.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_warning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txt_warning.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_warning.Location = new System.Drawing.Point(12, 120);
+            this.txt_warning.Location = new System.Drawing.Point(8, 120);
             this.txt_warning.MaxLength = 15;
             this.txt_warning.Multiline = true;
             this.txt_warning.Name = "txt_warning";
@@ -536,7 +538,7 @@
             this.cmb_finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_finish.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_finish.FormattingEnabled = true;
-            this.cmb_finish.Location = new System.Drawing.Point(168, 87);
+            this.cmb_finish.Location = new System.Drawing.Point(155, 87);
             this.cmb_finish.Name = "cmb_finish";
             this.cmb_finish.Size = new System.Drawing.Size(177, 21);
             this.cmb_finish.TabIndex = 62;
@@ -567,7 +569,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(180, 106);
+            this.label1.Location = new System.Drawing.Point(167, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 20);
             this.label1.TabIndex = 48;
@@ -587,9 +589,9 @@
             this.panel_customer_information.Controls.Add(this.txt_address_1);
             this.panel_customer_information.Enabled = false;
             this.panel_customer_information.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel_customer_information.Location = new System.Drawing.Point(172, 118);
+            this.panel_customer_information.Location = new System.Drawing.Point(159, 108);
             this.panel_customer_information.Name = "panel_customer_information";
-            this.panel_customer_information.Size = new System.Drawing.Size(411, 227);
+            this.panel_customer_information.Size = new System.Drawing.Size(381, 227);
             this.panel_customer_information.TabIndex = 50;
             // 
             // label18
@@ -708,14 +710,14 @@
             this.grid_addon.AutoGenerateColumns = false;
             this.grid_addon.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.grid_addon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_addon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_addon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid_addon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_addon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.descriptionDataGridViewTextBoxColumn,
@@ -739,35 +741,35 @@
             this.add_on_material_cost,
             this.addon_id});
             this.grid_addon.DataSource = this.cViewItemAddOnBindingSource;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_addon.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_addon.DefaultCellStyle = dataGridViewCellStyle5;
             this.grid_addon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_addon.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_addon.Location = new System.Drawing.Point(19, 32);
+            this.grid_addon.Location = new System.Drawing.Point(8, 15);
             this.grid_addon.Name = "grid_addon";
             this.grid_addon.ReadOnly = true;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_addon.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_addon.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grid_addon.RowHeadersVisible = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.grid_addon.Size = new System.Drawing.Size(347, 242);
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            this.grid_addon.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.grid_addon.Size = new System.Drawing.Size(347, 265);
             this.grid_addon.TabIndex = 58;
             this.grid_addon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_addon_CellContentClick);
             // 
@@ -775,8 +777,8 @@
             // 
             this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.descriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.descriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.descriptionDataGridViewTextBoxColumn.FillWeight = 70F;
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "    Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
@@ -794,8 +796,8 @@
             // 
             this.add_on_qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.add_on_qty.DataPropertyName = "qty";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.add_on_qty.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.add_on_qty.DefaultCellStyle = dataGridViewCellStyle3;
             this.add_on_qty.FillWeight = 20F;
             this.add_on_qty.HeaderText = " Qty";
             this.add_on_qty.Name = "add_on_qty";
@@ -805,10 +807,10 @@
             // 
             this.addon_total_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.addon_total_cost.DataPropertyName = "unit_material_cost";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.Format = "C2";
-            dataGridViewCellStyle21.NullValue = "0";
-            this.addon_total_cost.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.addon_total_cost.DefaultCellStyle = dataGridViewCellStyle4;
             this.addon_total_cost.FillWeight = 50F;
             this.addon_total_cost.HeaderText = " Total Cost";
             this.addon_total_cost.Name = "addon_total_cost";
@@ -958,6 +960,8 @@
             // panel_door_input
             // 
             this.panel_door_input.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_door_input.Controls.Add(this.txt_qty);
+            this.panel_door_input.Controls.Add(this.label43);
             this.panel_door_input.Controls.Add(this.label39);
             this.panel_door_input.Controls.Add(this.label35);
             this.panel_door_input.Controls.Add(this.label36);
@@ -988,16 +992,36 @@
             this.panel_door_input.Controls.Add(this.cmb_material_thickness);
             this.panel_door_input.Controls.Add(this.cmb_door_type);
             this.panel_door_input.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel_door_input.Location = new System.Drawing.Point(172, 352);
+            this.panel_door_input.Location = new System.Drawing.Point(159, 342);
             this.panel_door_input.Name = "panel_door_input";
-            this.panel_door_input.Size = new System.Drawing.Size(411, 363);
+            this.panel_door_input.Size = new System.Drawing.Size(381, 363);
             this.panel_door_input.TabIndex = 51;
+            // 
+            // txt_qty
+            // 
+            this.txt_qty.BackColor = System.Drawing.Color.AliceBlue;
+            this.txt_qty.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.txt_qty.Location = new System.Drawing.Point(141, 42);
+            this.txt_qty.Name = "txt_qty";
+            this.txt_qty.Size = new System.Drawing.Size(157, 20);
+            this.txt_qty.TabIndex = 93;
+            this.txt_qty.Text = "1";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(17, 43);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(58, 13);
+            this.label43.TabIndex = 92;
+            this.label43.Text = "Quantity:";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(17, 250);
+            this.label39.Location = new System.Drawing.Point(17, 262);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(67, 13);
             this.label39.TabIndex = 89;
@@ -1007,7 +1031,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(185, 308);
+            this.label35.Location = new System.Drawing.Point(185, 320);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(82, 13);
             this.label35.TabIndex = 88;
@@ -1017,7 +1041,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(18, 308);
+            this.label36.Location = new System.Drawing.Point(18, 320);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(77, 13);
             this.label36.TabIndex = 87;
@@ -1028,7 +1052,7 @@
             this.txt_jamb_height.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_jamb_height.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "jamb_height", true));
             this.txt_jamb_height.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_jamb_height.Location = new System.Drawing.Point(282, 306);
+            this.txt_jamb_height.Location = new System.Drawing.Point(282, 318);
             this.txt_jamb_height.Name = "txt_jamb_height";
             this.txt_jamb_height.ReadOnly = true;
             this.txt_jamb_height.Size = new System.Drawing.Size(58, 20);
@@ -1040,7 +1064,7 @@
             this.txt_jamb_width.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_jamb_width.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "jamb_width", true));
             this.txt_jamb_width.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_jamb_width.Location = new System.Drawing.Point(111, 306);
+            this.txt_jamb_width.Location = new System.Drawing.Point(111, 318);
             this.txt_jamb_width.Name = "txt_jamb_width";
             this.txt_jamb_width.ReadOnly = true;
             this.txt_jamb_width.Size = new System.Drawing.Size(58, 20);
@@ -1051,7 +1075,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(17, 277);
+            this.label34.Location = new System.Drawing.Point(17, 289);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(72, 13);
             this.label34.TabIndex = 83;
@@ -1061,7 +1085,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 223);
+            this.label2.Location = new System.Drawing.Point(17, 235);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 13);
             this.label2.TabIndex = 75;
@@ -1071,7 +1095,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(17, 196);
+            this.label13.Location = new System.Drawing.Point(17, 208);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 13);
             this.label13.TabIndex = 74;
@@ -1096,9 +1120,9 @@
             this.btn_dimensions.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_dimensions.Image = global::JodanQuote.Properties.Resources.Add1;
             this.btn_dimensions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dimensions.Location = new System.Drawing.Point(315, 6);
+            this.btn_dimensions.Location = new System.Drawing.Point(304, 20);
             this.btn_dimensions.Name = "btn_dimensions";
-            this.btn_dimensions.Size = new System.Drawing.Size(89, 35);
+            this.btn_dimensions.Size = new System.Drawing.Size(59, 35);
             this.btn_dimensions.TabIndex = 67;
             this.btn_dimensions.Text = "       Enter            Dimensions";
             this.btn_dimensions.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1110,7 +1134,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(17, 56);
+            this.label9.Location = new System.Drawing.Point(17, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 13);
             this.label9.TabIndex = 59;
@@ -1120,7 +1144,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(17, 168);
+            this.label8.Location = new System.Drawing.Point(17, 180);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 13);
             this.label8.TabIndex = 57;
@@ -1130,7 +1154,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 140);
+            this.label7.Location = new System.Drawing.Point(17, 152);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 56;
@@ -1140,7 +1164,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 112);
+            this.label6.Location = new System.Drawing.Point(17, 124);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 13);
             this.label6.TabIndex = 55;
@@ -1150,7 +1174,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 84);
+            this.label5.Location = new System.Drawing.Point(17, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 13);
             this.label5.TabIndex = 54;
@@ -1161,7 +1185,7 @@
             this.txt_frame_height.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_frame_height.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "frame_height", true));
             this.txt_frame_height.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_frame_height.Location = new System.Drawing.Point(142, 164);
+            this.txt_frame_height.Location = new System.Drawing.Point(142, 176);
             this.txt_frame_height.Name = "txt_frame_height";
             this.txt_frame_height.Size = new System.Drawing.Size(157, 20);
             this.txt_frame_height.TabIndex = 52;
@@ -1173,7 +1197,7 @@
             this.txt_frame_width.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_frame_width.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "frame_width", true));
             this.txt_frame_width.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_frame_width.Location = new System.Drawing.Point(142, 136);
+            this.txt_frame_width.Location = new System.Drawing.Point(142, 148);
             this.txt_frame_width.Name = "txt_frame_width";
             this.txt_frame_width.Size = new System.Drawing.Size(157, 20);
             this.txt_frame_width.TabIndex = 53;
@@ -1185,7 +1209,7 @@
             this.txt_structual_height.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_structual_height.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "structual_op_height", true));
             this.txt_structual_height.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_structual_height.Location = new System.Drawing.Point(142, 108);
+            this.txt_structual_height.Location = new System.Drawing.Point(142, 120);
             this.txt_structual_height.Name = "txt_structual_height";
             this.txt_structual_height.Size = new System.Drawing.Size(157, 20);
             this.txt_structual_height.TabIndex = 52;
@@ -1199,7 +1223,7 @@
             this.txt_structual_width.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_structual_width.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "structual_op_width", true));
             this.txt_structual_width.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_structual_width.Location = new System.Drawing.Point(142, 80);
+            this.txt_structual_width.Location = new System.Drawing.Point(142, 92);
             this.txt_structual_width.Name = "txt_structual_width";
             this.txt_structual_width.Size = new System.Drawing.Size(157, 20);
             this.txt_structual_width.TabIndex = 52;
@@ -1218,7 +1242,7 @@
             this.cmb_material_thickness_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_material_thickness_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_material_thickness_edit.FormattingEnabled = true;
-            this.cmb_material_thickness_edit.Location = new System.Drawing.Point(141, 220);
+            this.cmb_material_thickness_edit.Location = new System.Drawing.Point(141, 232);
             this.cmb_material_thickness_edit.Name = "cmb_material_thickness_edit";
             this.cmb_material_thickness_edit.Size = new System.Drawing.Size(157, 21);
             this.cmb_material_thickness_edit.TabIndex = 78;
@@ -1239,7 +1263,7 @@
             this.cmb_door_type_edit.FormattingEnabled = true;
             this.cmb_door_type_edit.IntegralHeight = false;
             this.cmb_door_type_edit.ItemHeight = 13;
-            this.cmb_door_type_edit.Location = new System.Drawing.Point(142, 53);
+            this.cmb_door_type_edit.Location = new System.Drawing.Point(142, 65);
             this.cmb_door_type_edit.Name = "cmb_door_type_edit";
             this.cmb_door_type_edit.Size = new System.Drawing.Size(157, 21);
             this.cmb_door_type_edit.TabIndex = 58;
@@ -1265,7 +1289,7 @@
             this.cmb_material_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_material_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_material_edit.FormattingEnabled = true;
-            this.cmb_material_edit.Location = new System.Drawing.Point(142, 192);
+            this.cmb_material_edit.Location = new System.Drawing.Point(142, 204);
             this.cmb_material_edit.Name = "cmb_material_edit";
             this.cmb_material_edit.Size = new System.Drawing.Size(157, 21);
             this.cmb_material_edit.TabIndex = 79;
@@ -1293,7 +1317,7 @@
             this.cmb_jam_style_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_jam_style_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_jam_style_edit.FormattingEnabled = true;
-            this.cmb_jam_style_edit.Location = new System.Drawing.Point(142, 275);
+            this.cmb_jam_style_edit.Location = new System.Drawing.Point(142, 287);
             this.cmb_jam_style_edit.Name = "cmb_jam_style_edit";
             this.cmb_jam_style_edit.Size = new System.Drawing.Size(157, 21);
             this.cmb_jam_style_edit.TabIndex = 82;
@@ -1319,7 +1343,7 @@
             this.cmb_material.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_material.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_material.FormattingEnabled = true;
-            this.cmb_material.Location = new System.Drawing.Point(142, 192);
+            this.cmb_material.Location = new System.Drawing.Point(142, 204);
             this.cmb_material.Name = "cmb_material";
             this.cmb_material.Size = new System.Drawing.Size(157, 21);
             this.cmb_material.TabIndex = 76;
@@ -1334,7 +1358,7 @@
             this.cmb_jam_style.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_jam_style.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_jam_style.FormattingEnabled = true;
-            this.cmb_jam_style.Location = new System.Drawing.Point(142, 275);
+            this.cmb_jam_style.Location = new System.Drawing.Point(142, 287);
             this.cmb_jam_style.Name = "cmb_jam_style";
             this.cmb_jam_style.Size = new System.Drawing.Size(157, 21);
             this.cmb_jam_style.TabIndex = 84;
@@ -1350,7 +1374,7 @@
             this.cmb_infill_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_infill_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_infill_edit.FormattingEnabled = true;
-            this.cmb_infill_edit.Location = new System.Drawing.Point(142, 246);
+            this.cmb_infill_edit.Location = new System.Drawing.Point(142, 258);
             this.cmb_infill_edit.Name = "cmb_infill_edit";
             this.cmb_infill_edit.Size = new System.Drawing.Size(157, 21);
             this.cmb_infill_edit.TabIndex = 91;
@@ -1376,7 +1400,7 @@
             this.cmb_infill.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_infill.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_infill.FormattingEnabled = true;
-            this.cmb_infill.Location = new System.Drawing.Point(142, 246);
+            this.cmb_infill.Location = new System.Drawing.Point(142, 258);
             this.cmb_infill.Name = "cmb_infill";
             this.cmb_infill.Size = new System.Drawing.Size(157, 21);
             this.cmb_infill.TabIndex = 90;
@@ -1391,7 +1415,7 @@
             this.cmb_material_thickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_material_thickness.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_material_thickness.FormattingEnabled = true;
-            this.cmb_material_thickness.Location = new System.Drawing.Point(141, 219);
+            this.cmb_material_thickness.Location = new System.Drawing.Point(141, 231);
             this.cmb_material_thickness.Name = "cmb_material_thickness";
             this.cmb_material_thickness.Size = new System.Drawing.Size(157, 21);
             this.cmb_material_thickness.TabIndex = 77;
@@ -1410,7 +1434,7 @@
             this.cmb_door_type.FormattingEnabled = true;
             this.cmb_door_type.IntegralHeight = false;
             this.cmb_door_type.ItemHeight = 13;
-            this.cmb_door_type.Location = new System.Drawing.Point(142, 53);
+            this.cmb_door_type.Location = new System.Drawing.Point(142, 65);
             this.cmb_door_type.Name = "cmb_door_type";
             this.cmb_door_type.Size = new System.Drawing.Size(157, 21);
             this.cmb_door_type.TabIndex = 81;
@@ -1435,7 +1459,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(30, 90);
+            this.label12.Location = new System.Drawing.Point(17, 90);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 63;
@@ -1450,7 +1474,7 @@
             this.cmb_finish_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_finish_edit.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.cmb_finish_edit.FormattingEnabled = true;
-            this.cmb_finish_edit.Location = new System.Drawing.Point(168, 87);
+            this.cmb_finish_edit.Location = new System.Drawing.Point(155, 87);
             this.cmb_finish_edit.Name = "cmb_finish_edit";
             this.cmb_finish_edit.Size = new System.Drawing.Size(177, 21);
             this.cmb_finish_edit.TabIndex = 80;
@@ -1463,7 +1487,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label16.Location = new System.Drawing.Point(593, 365);
+            this.label16.Location = new System.Drawing.Point(549, 355);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(83, 20);
             this.label16.TabIndex = 56;
@@ -1477,9 +1501,9 @@
             this.panel_addon.Controls.Add(this.grid_addon);
             this.panel_addon.Enabled = false;
             this.panel_addon.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel_addon.Location = new System.Drawing.Point(589, 374);
+            this.panel_addon.Location = new System.Drawing.Point(545, 364);
             this.panel_addon.Name = "panel_addon";
-            this.panel_addon.Size = new System.Drawing.Size(380, 341);
+            this.panel_addon.Size = new System.Drawing.Size(367, 341);
             this.panel_addon.TabIndex = 57;
             // 
             // btn_add_item
@@ -1490,7 +1514,7 @@
             this.btn_add_item.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_add_item.Image = global::JodanQuote.Properties.Resources.Add1;
             this.btn_add_item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_item.Location = new System.Drawing.Point(293, 296);
+            this.btn_add_item.Location = new System.Drawing.Point(280, 296);
             this.btn_add_item.Name = "btn_add_item";
             this.btn_add_item.Size = new System.Drawing.Size(80, 37);
             this.btn_add_item.TabIndex = 72;
@@ -1506,7 +1530,7 @@
             this.btn_view_addons.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_view_addons.Image = global::JodanQuote.Properties.Resources.Search_Small_;
             this.btn_view_addons.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_view_addons.Location = new System.Drawing.Point(207, 296);
+            this.btn_view_addons.Location = new System.Drawing.Point(194, 296);
             this.btn_view_addons.Name = "btn_view_addons";
             this.btn_view_addons.Size = new System.Drawing.Size(80, 37);
             this.btn_view_addons.TabIndex = 73;
@@ -1520,7 +1544,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label31.Location = new System.Drawing.Point(182, 343);
+            this.label31.Location = new System.Drawing.Point(167, 325);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(100, 20);
             this.label31.TabIndex = 66;
@@ -1531,7 +1555,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label17.Location = new System.Drawing.Point(990, 109);
+            this.label17.Location = new System.Drawing.Point(924, 99);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(91, 20);
             this.label17.TabIndex = 58;
@@ -1543,9 +1567,9 @@
             this.panel_handle.Controls.Add(this.grid_hardware_on_item);
             this.panel_handle.Controls.Add(this.btn_add_hardware);
             this.panel_handle.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel_handle.Location = new System.Drawing.Point(984, 118);
+            this.panel_handle.Location = new System.Drawing.Point(918, 108);
             this.panel_handle.Name = "panel_handle";
-            this.panel_handle.Size = new System.Drawing.Size(513, 281);
+            this.panel_handle.Size = new System.Drawing.Size(477, 281);
             this.panel_handle.TabIndex = 67;
             // 
             // grid_hardware_on_item
@@ -1561,14 +1585,14 @@
             this.grid_hardware_on_item.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.grid_hardware_on_item.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.grid_hardware_on_item.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_hardware_on_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_hardware_on_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.grid_hardware_on_item.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_hardware_on_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.description,
@@ -1581,14 +1605,14 @@
             this.category_id,
             this.btn_delete_hardware});
             this.grid_hardware_on_item.DataSource = this.dTHardwareItemBindingSource;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_hardware_on_item.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_hardware_on_item.DefaultCellStyle = dataGridViewCellStyle12;
             this.grid_hardware_on_item.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid_hardware_on_item.GridColor = System.Drawing.Color.CornflowerBlue;
             this.grid_hardware_on_item.Location = new System.Drawing.Point(7, 30);
@@ -1596,18 +1620,18 @@
             this.grid_hardware_on_item.MaximumSize = new System.Drawing.Size(493, 200);
             this.grid_hardware_on_item.MinimumSize = new System.Drawing.Size(443, 200);
             this.grid_hardware_on_item.Name = "grid_hardware_on_item";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_hardware_on_item.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_hardware_on_item.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.grid_hardware_on_item.RowHeadersVisible = false;
             this.grid_hardware_on_item.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_hardware_on_item.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_hardware_on_item.Size = new System.Drawing.Size(493, 200);
+            this.grid_hardware_on_item.Size = new System.Drawing.Size(460, 200);
             this.grid_hardware_on_item.TabIndex = 73;
             this.grid_hardware_on_item.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_on_item_CellContentClick);
             this.grid_hardware_on_item.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_hardware_on_item_CellValueChanged_1);
@@ -1623,10 +1647,10 @@
             // 
             this.hardware_cost_sale.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost_sale.DataPropertyName = "Hardware Cost";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.Format = "C2";
-            dataGridViewCellStyle26.NullValue = null;
-            this.hardware_cost_sale.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.hardware_cost_sale.DefaultCellStyle = dataGridViewCellStyle9;
             this.hardware_cost_sale.FillWeight = 57.36304F;
             this.hardware_cost_sale.HeaderText = "Hardware Cost";
             this.hardware_cost_sale.Name = "hardware_cost_sale";
@@ -1635,8 +1659,8 @@
             // 
             this.quantity_hardware.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.quantity_hardware.DataPropertyName = "quantity";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.quantity_hardware.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.quantity_hardware.DefaultCellStyle = dataGridViewCellStyle10;
             this.quantity_hardware.FillWeight = 49.16832F;
             this.quantity_hardware.HeaderText = "Quantity";
             this.quantity_hardware.Name = "quantity_hardware";
@@ -1645,9 +1669,9 @@
             // 
             this.hardware_cost_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost_total.DataPropertyName = "Total Cost";
-            dataGridViewCellStyle28.Format = "C2";
-            dataGridViewCellStyle28.NullValue = null;
-            this.hardware_cost_total.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.hardware_cost_total.DefaultCellStyle = dataGridViewCellStyle11;
             this.hardware_cost_total.FillWeight = 50F;
             this.hardware_cost_total.HeaderText = "Total Cost";
             this.hardware_cost_total.Name = "hardware_cost_total";
@@ -1723,7 +1747,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label20.Location = new System.Drawing.Point(987, 399);
+            this.label20.Location = new System.Drawing.Point(921, 389);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(63, 20);
             this.label20.TabIndex = 68;
@@ -1765,9 +1789,9 @@
             this.panel_total.Controls.Add(this.txt_hardware_markup);
             this.panel_total.Controls.Add(this.label22);
             this.panel_total.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel_total.Location = new System.Drawing.Point(983, 407);
+            this.panel_total.Location = new System.Drawing.Point(917, 397);
             this.panel_total.Name = "panel_total";
-            this.panel_total.Size = new System.Drawing.Size(510, 308);
+            this.panel_total.Size = new System.Drawing.Size(478, 308);
             this.panel_total.TabIndex = 69;
             // 
             // txt_discount
@@ -1775,7 +1799,7 @@
             this.txt_discount.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_discount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "discount_percentage", true));
             this.txt_discount.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_discount.Location = new System.Drawing.Point(357, 244);
+            this.txt_discount.Location = new System.Drawing.Point(339, 244);
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.Size = new System.Drawing.Size(98, 20);
             this.txt_discount.TabIndex = 92;
@@ -1788,7 +1812,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(27, 226);
+            this.label41.Location = new System.Drawing.Point(12, 226);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(96, 13);
             this.label41.TabIndex = 101;
@@ -1798,7 +1822,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(27, 198);
+            this.label42.Location = new System.Drawing.Point(12, 198);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(98, 13);
             this.label42.TabIndex = 100;
@@ -1809,7 +1833,7 @@
             this.txt_additional_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_additional_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "additional_cost", true));
             this.txt_additional_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_additional_cost.Location = new System.Drawing.Point(357, 217);
+            this.txt_additional_cost.Location = new System.Drawing.Point(339, 217);
             this.txt_additional_cost.Name = "txt_additional_cost";
             this.txt_additional_cost.Size = new System.Drawing.Size(98, 20);
             this.txt_additional_cost.TabIndex = 98;
@@ -1822,7 +1846,7 @@
             // 
             this.txt_labour_total.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_labour_total.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_labour_total.Location = new System.Drawing.Point(139, 84);
+            this.txt_labour_total.Location = new System.Drawing.Point(121, 84);
             this.txt_labour_total.Name = "txt_labour_total";
             this.txt_labour_total.Size = new System.Drawing.Size(98, 20);
             this.txt_labour_total.TabIndex = 97;
@@ -1833,7 +1857,7 @@
             // 
             this.txt_addon_labour_hours.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_addon_labour_hours.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_addon_labour_hours.Location = new System.Drawing.Point(139, 112);
+            this.txt_addon_labour_hours.Location = new System.Drawing.Point(121, 112);
             this.txt_addon_labour_hours.Name = "txt_addon_labour_hours";
             this.txt_addon_labour_hours.Size = new System.Drawing.Size(98, 20);
             this.txt_addon_labour_hours.TabIndex = 96;
@@ -1846,7 +1870,7 @@
             this.txt_addon.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_addon.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "addon_cost", true));
             this.txt_addon.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_addon.Location = new System.Drawing.Point(357, 109);
+            this.txt_addon.Location = new System.Drawing.Point(339, 109);
             this.txt_addon.Name = "txt_addon";
             this.txt_addon.ReadOnly = true;
             this.txt_addon.Size = new System.Drawing.Size(98, 20);
@@ -1858,7 +1882,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(27, 115);
+            this.label37.Location = new System.Drawing.Point(12, 115);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(51, 13);
             this.label37.TabIndex = 94;
@@ -1871,7 +1895,7 @@
             this.btn_view_skins.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_view_skins.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_view_skins.Image = global::JodanQuote.Properties.Resources.Search_Small_;
-            this.btn_view_skins.Location = new System.Drawing.Point(473, 8);
+            this.btn_view_skins.Location = new System.Drawing.Point(443, 3);
             this.btn_view_skins.Name = "btn_view_skins";
             this.btn_view_skins.Size = new System.Drawing.Size(25, 28);
             this.btn_view_skins.TabIndex = 74;
@@ -1884,7 +1908,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(27, 281);
+            this.label33.Location = new System.Drawing.Point(12, 281);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(69, 13);
             this.label33.TabIndex = 93;
@@ -1895,7 +1919,7 @@
             this.txt_security.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_security.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "security_rating_cost", true));
             this.txt_security.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_security.Location = new System.Drawing.Point(357, 190);
+            this.txt_security.Location = new System.Drawing.Point(339, 190);
             this.txt_security.Name = "txt_security";
             this.txt_security.Size = new System.Drawing.Size(98, 20);
             this.txt_security.TabIndex = 91;
@@ -1906,7 +1930,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(27, 253);
+            this.label32.Location = new System.Drawing.Point(12, 253);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(109, 13);
             this.label32.TabIndex = 92;
@@ -1917,7 +1941,7 @@
             this.txt_fire.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_fire.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "fire_rating_cost", true));
             this.txt_fire.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_fire.Location = new System.Drawing.Point(357, 163);
+            this.txt_fire.Location = new System.Drawing.Point(339, 163);
             this.txt_fire.Name = "txt_fire";
             this.txt_fire.Size = new System.Drawing.Size(98, 20);
             this.txt_fire.TabIndex = 89;
@@ -1928,7 +1952,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(27, 171);
+            this.label29.Location = new System.Drawing.Point(12, 171);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(73, 13);
             this.label29.TabIndex = 90;
@@ -1939,7 +1963,7 @@
             this.txt_item_total.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_item_total.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "total_cost", true));
             this.txt_item_total.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_item_total.Location = new System.Drawing.Point(357, 271);
+            this.txt_item_total.Location = new System.Drawing.Point(339, 271);
             this.txt_item_total.Name = "txt_item_total";
             this.txt_item_total.ReadOnly = true;
             this.txt_item_total.Size = new System.Drawing.Size(98, 20);
@@ -1952,7 +1976,7 @@
             this.txt_paint_total.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_paint_total.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "paint_cost", true));
             this.txt_paint_total.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_paint_total.Location = new System.Drawing.Point(357, 136);
+            this.txt_paint_total.Location = new System.Drawing.Point(339, 136);
             this.txt_paint_total.Name = "txt_paint_total";
             this.txt_paint_total.ReadOnly = true;
             this.txt_paint_total.Size = new System.Drawing.Size(98, 20);
@@ -1964,7 +1988,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(27, 143);
+            this.label27.Location = new System.Drawing.Point(12, 143);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(40, 13);
             this.label27.TabIndex = 86;
@@ -1975,7 +1999,7 @@
             this.txt_labour_sales_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_labour_sales_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "labour_cost", true));
             this.txt_labour_sales_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_labour_sales_cost.Location = new System.Drawing.Point(357, 82);
+            this.txt_labour_sales_cost.Location = new System.Drawing.Point(339, 82);
             this.txt_labour_sales_cost.Name = "txt_labour_sales_cost";
             this.txt_labour_sales_cost.ReadOnly = true;
             this.txt_labour_sales_cost.Size = new System.Drawing.Size(98, 20);
@@ -1987,7 +2011,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(372, 8);
+            this.label26.Location = new System.Drawing.Point(354, 8);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(69, 13);
             this.label26.TabIndex = 84;
@@ -1998,7 +2022,7 @@
             this.txt_material_sales_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_material_sales_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "material_cost", true));
             this.txt_material_sales_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_material_sales_cost.Location = new System.Drawing.Point(357, 28);
+            this.txt_material_sales_cost.Location = new System.Drawing.Point(339, 28);
             this.txt_material_sales_cost.Name = "txt_material_sales_cost";
             this.txt_material_sales_cost.ReadOnly = true;
             this.txt_material_sales_cost.Size = new System.Drawing.Size(98, 20);
@@ -2011,7 +2035,7 @@
             this.txt_hardware_sales_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_hardware_sales_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "hardware_cost", true));
             this.txt_hardware_sales_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_hardware_sales_cost.Location = new System.Drawing.Point(357, 55);
+            this.txt_hardware_sales_cost.Location = new System.Drawing.Point(339, 55);
             this.txt_hardware_sales_cost.Name = "txt_hardware_sales_cost";
             this.txt_hardware_sales_cost.ReadOnly = true;
             this.txt_hardware_sales_cost.Size = new System.Drawing.Size(98, 20);
@@ -2023,7 +2047,7 @@
             // 
             this.txt_material_labour.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_material_labour.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_material_labour.Location = new System.Drawing.Point(139, 140);
+            this.txt_material_labour.Location = new System.Drawing.Point(121, 140);
             this.txt_material_labour.Name = "txt_material_labour";
             this.txt_material_labour.Size = new System.Drawing.Size(98, 20);
             this.txt_material_labour.TabIndex = 81;
@@ -2037,7 +2061,7 @@
             this.txt_labour_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_labour_cost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "labour_rate", true));
             this.txt_labour_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_labour_cost.Location = new System.Drawing.Point(248, 82);
+            this.txt_labour_cost.Location = new System.Drawing.Point(230, 82);
             this.txt_labour_cost.Name = "txt_labour_cost";
             this.txt_labour_cost.Size = new System.Drawing.Size(98, 20);
             this.txt_labour_cost.TabIndex = 79;
@@ -2049,7 +2073,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(27, 87);
+            this.label25.Location = new System.Drawing.Point(12, 87);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(50, 13);
             this.label25.TabIndex = 80;
@@ -2059,7 +2083,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(263, 8);
+            this.label24.Location = new System.Drawing.Point(245, 8);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(69, 13);
             this.label24.TabIndex = 78;
@@ -2069,7 +2093,7 @@
             // 
             this.txt_material_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_material_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_material_cost.Location = new System.Drawing.Point(248, 28);
+            this.txt_material_cost.Location = new System.Drawing.Point(230, 28);
             this.txt_material_cost.Name = "txt_material_cost";
             this.txt_material_cost.Size = new System.Drawing.Size(98, 20);
             this.txt_material_cost.TabIndex = 77;
@@ -2081,7 +2105,7 @@
             // 
             this.txt_hardware_cost.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_hardware_cost.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_hardware_cost.Location = new System.Drawing.Point(248, 55);
+            this.txt_hardware_cost.Location = new System.Drawing.Point(230, 55);
             this.txt_hardware_cost.Name = "txt_hardware_cost";
             this.txt_hardware_cost.Size = new System.Drawing.Size(98, 20);
             this.txt_hardware_cost.TabIndex = 76;
@@ -2093,7 +2117,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(157, 8);
+            this.label23.Location = new System.Drawing.Point(139, 8);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(62, 13);
             this.label23.TabIndex = 75;
@@ -2103,7 +2127,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(27, 32);
+            this.label21.Location = new System.Drawing.Point(12, 32);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(60, 13);
             this.label21.TabIndex = 74;
@@ -2114,7 +2138,7 @@
             this.txt_material_markup.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_material_markup.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "markup_material", true));
             this.txt_material_markup.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_material_markup.Location = new System.Drawing.Point(139, 28);
+            this.txt_material_markup.Location = new System.Drawing.Point(121, 28);
             this.txt_material_markup.Name = "txt_material_markup";
             this.txt_material_markup.Size = new System.Drawing.Size(98, 20);
             this.txt_material_markup.TabIndex = 73;
@@ -2127,7 +2151,7 @@
             this.txt_hardware_markup.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_hardware_markup.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "markup_hardware", true));
             this.txt_hardware_markup.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_hardware_markup.Location = new System.Drawing.Point(139, 56);
+            this.txt_hardware_markup.Location = new System.Drawing.Point(121, 56);
             this.txt_hardware_markup.Name = "txt_hardware_markup";
             this.txt_hardware_markup.Size = new System.Drawing.Size(98, 20);
             this.txt_hardware_markup.TabIndex = 71;
@@ -2139,7 +2163,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(27, 59);
+            this.label22.Location = new System.Drawing.Point(12, 59);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(65, 13);
             this.label22.TabIndex = 72;
@@ -2149,8 +2173,8 @@
             // 
             this.hardware_description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_description.DataPropertyName = "Hardware Description";
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hardware_description.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hardware_description.DefaultCellStyle = dataGridViewCellStyle14;
             this.hardware_description.HeaderText = "Hardware Description";
             this.hardware_description.Name = "hardware_description";
             // 
@@ -2158,10 +2182,10 @@
             // 
             this.hardware_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.hardware_cost.DataPropertyName = "Hardware Cost";
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.Format = "C2";
-            dataGridViewCellStyle32.NullValue = null;
-            this.hardware_cost.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.hardware_cost.DefaultCellStyle = dataGridViewCellStyle15;
             this.hardware_cost.HeaderText = "Hardware Cost";
             this.hardware_cost.Name = "hardware_cost";
             // 
@@ -2169,10 +2193,10 @@
             // 
             this.total_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.total_cost.DataPropertyName = "Total Cost";
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.Format = "C2";
-            dataGridViewCellStyle33.NullValue = null;
-            this.total_cost.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.Format = "C2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.total_cost.DefaultCellStyle = dataGridViewCellStyle16;
             this.total_cost.HeaderText = "Total Cost";
             this.total_cost.Name = "total_cost";
             // 
@@ -2180,8 +2204,8 @@
             // 
             this.qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.qty.DataPropertyName = "quantity";
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.qty.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.qty.DefaultCellStyle = dataGridViewCellStyle17;
             this.qty.HeaderText = "Quantity";
             this.qty.Name = "qty";
             // 
@@ -2330,16 +2354,16 @@
             this.panel_spec.Controls.Add(this.cmb_fire);
             this.panel_spec.Controls.Add(this.cmb_security);
             this.panel_spec.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.panel_spec.Location = new System.Drawing.Point(589, 118);
+            this.panel_spec.Location = new System.Drawing.Point(545, 108);
             this.panel_spec.Name = "panel_spec";
-            this.panel_spec.Size = new System.Drawing.Size(380, 239);
+            this.panel_spec.Size = new System.Drawing.Size(367, 239);
             this.panel_spec.TabIndex = 53;
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(31, 122);
+            this.label40.Location = new System.Drawing.Point(18, 122);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(47, 13);
             this.label40.TabIndex = 93;
@@ -2350,7 +2374,7 @@
             this.txt_colour.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_colour.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "finish_colour", true));
             this.txt_colour.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_colour.Location = new System.Drawing.Point(168, 114);
+            this.txt_colour.Location = new System.Drawing.Point(155, 114);
             this.txt_colour.Multiline = true;
             this.txt_colour.Name = "txt_colour";
             this.txt_colour.Size = new System.Drawing.Size(177, 21);
@@ -2361,7 +2385,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(30, 153);
+            this.label38.Location = new System.Drawing.Point(17, 153);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(44, 13);
             this.label38.TabIndex = 91;
@@ -2372,7 +2396,7 @@
             this.txt_notes.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_notes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dTItemDetailsBindingSource, "item_notes", true));
             this.txt_notes.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.txt_notes.Location = new System.Drawing.Point(116, 149);
+            this.txt_notes.Location = new System.Drawing.Point(103, 149);
             this.txt_notes.Multiline = true;
             this.txt_notes.Name = "txt_notes";
             this.txt_notes.Size = new System.Drawing.Size(229, 62);
@@ -2390,7 +2414,7 @@
             this.cmb_security_edit.FormattingEnabled = true;
             this.cmb_security_edit.IntegralHeight = false;
             this.cmb_security_edit.ItemHeight = 13;
-            this.cmb_security_edit.Location = new System.Drawing.Point(168, 57);
+            this.cmb_security_edit.Location = new System.Drawing.Point(155, 57);
             this.cmb_security_edit.Name = "cmb_security_edit";
             this.cmb_security_edit.Size = new System.Drawing.Size(177, 21);
             this.cmb_security_edit.TabIndex = 86;
@@ -2411,7 +2435,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(30, 61);
+            this.label28.Location = new System.Drawing.Point(17, 61);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(98, 13);
             this.label28.TabIndex = 87;
@@ -2421,7 +2445,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(30, 32);
+            this.label15.Location = new System.Drawing.Point(17, 32);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 13);
             this.label15.TabIndex = 85;
@@ -2439,7 +2463,7 @@
             this.cmb_fire_edit.FormattingEnabled = true;
             this.cmb_fire_edit.IntegralHeight = false;
             this.cmb_fire_edit.ItemHeight = 13;
-            this.cmb_fire_edit.Location = new System.Drawing.Point(168, 28);
+            this.cmb_fire_edit.Location = new System.Drawing.Point(155, 28);
             this.cmb_fire_edit.Name = "cmb_fire_edit";
             this.cmb_fire_edit.Size = new System.Drawing.Size(177, 21);
             this.cmb_fire_edit.TabIndex = 84;
@@ -2463,7 +2487,7 @@
             this.cmb_fire.FormattingEnabled = true;
             this.cmb_fire.IntegralHeight = false;
             this.cmb_fire.ItemHeight = 13;
-            this.cmb_fire.Location = new System.Drawing.Point(168, 28);
+            this.cmb_fire.Location = new System.Drawing.Point(155, 28);
             this.cmb_fire.Name = "cmb_fire";
             this.cmb_fire.Size = new System.Drawing.Size(177, 21);
             this.cmb_fire.TabIndex = 88;
@@ -2481,7 +2505,7 @@
             this.cmb_security.FormattingEnabled = true;
             this.cmb_security.IntegralHeight = false;
             this.cmb_security.ItemHeight = 13;
-            this.cmb_security.Location = new System.Drawing.Point(168, 57);
+            this.cmb_security.Location = new System.Drawing.Point(155, 57);
             this.cmb_security.Name = "cmb_security";
             this.cmb_security.Size = new System.Drawing.Size(177, 21);
             this.cmb_security.TabIndex = 89;
@@ -2492,7 +2516,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label14.Location = new System.Drawing.Point(597, 110);
+            this.label14.Location = new System.Drawing.Point(553, 100);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(118, 20);
             this.label14.TabIndex = 52;
@@ -2534,7 +2558,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1516, 727);
+            this.ClientSize = new System.Drawing.Size(1398, 705);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.panel_total);
             this.Controls.Add(this.label31);
@@ -2817,6 +2841,8 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox txt_additional_cost;
         private System.Windows.Forms.TextBox txt_discount;
+        private System.Windows.Forms.TextBox txt_qty;
+        private System.Windows.Forms.Label label43;
         //  private Datasource.DT_Material dT_Item;
         //    private Datasource.DT_ItemTableAdapters.//C_View_Item_DetailsTableAdapter c_View_Item_DetailsTableAdapter;
     }

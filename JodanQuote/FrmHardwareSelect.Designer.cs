@@ -430,7 +430,7 @@
             this.btn_clear.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_clear.Image = global::JodanQuote.Properties.Resources.Bin;
             this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clear.Location = new System.Drawing.Point(751, 7);
+            this.btn_clear.Location = new System.Drawing.Point(729, 23);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(98, 37);
             this.btn_clear.TabIndex = 77;
@@ -446,7 +446,7 @@
             this.btn_back.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.btn_back.Image = global::JodanQuote.Properties.Resources.ReturnArrow;
             this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(855, 7);
+            this.btn_back.Location = new System.Drawing.Point(833, 23);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(98, 37);
             this.btn_back.TabIndex = 78;

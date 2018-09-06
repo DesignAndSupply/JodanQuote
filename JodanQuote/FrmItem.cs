@@ -1036,9 +1036,9 @@ namespace JodanQuote
                 
             }
           
-             catch(Exception ex)
+             catch
             {
-                MessageBox.Show(ex.ToString(), "");
+               // MessageBox.Show(ex.ToString(), "");
             }
         }
 
@@ -1472,22 +1472,34 @@ namespace JodanQuote
         private void btn_printscren_Click(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            int width = this.Width-15;
-            int height = this.Height- 15;
+            int width = this.Width-170;
+            int height = this.Height-32;
             string path = @"\\designsvr1\apps\Design and Supply CSharp\Source Files\JodanQuote\Temp Folder\Item Printscreen.JPG";
             Bitmap printscreen = new Bitmap(width, height);
 
             Graphics graphics = Graphics.FromImage(printscreen as Image);
 
-            graphics.CopyFromScreen(200, 148, 0, 0, printscreen.Size);
-
+            graphics.CopyFromScreen(415, 180, 0, 0, printscreen.Size);
+          
             printscreen.Save(path, ImageFormat.Jpeg);
 
-            PrintDocument pd = new PrintDocument();
-            pd.DefaultPageSettings.Landscape = true;
-            pd.DefaultPageSettings.Color = false;
-            pd.PrintPage += PrintPage;
-            pd.Print();
+            System.Diagnostics.Process.Start(path);
+
+           // PrintPreviewDialog pp = new PrintPreviewDialog();
+          
+           // pp.PrintPreviewControl.StartPage = 0;
+           // pp.PrintPreviewControl.Zoom = 1.0;
+           // pp.PrintPreviewControl.Columns = 10;
+           // pp.PrintPreviewControl.Size = new System.Drawing.Size(200,300);
+
+           // PrintDocument pd = new PrintDocument();
+           // pp.Document = pd;
+           // pd.DefaultPageSettings.Landscape = true;
+           // pd.DefaultPageSettings.Color = false;
+           
+           // pd.PrintPage += PrintPage;
+           // pp.ShowDialog();
+           //// pd.Print();
         }
 
         private void PrintPage(object o, PrintPageEventArgs e)
@@ -1512,7 +1524,7 @@ namespace JodanQuote
             Valuesclass.new_item_identifier = 0;
             Update_item();
             Fill_data();
-            Combobox_values();
+            //Combobox_values();
             Refresh_Data();
             Edit_Items();
             
@@ -2144,7 +2156,7 @@ namespace JodanQuote
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
                 Refresh_Data();
-                
+                this.ActiveControl = txt_discount;
             }
         }
 

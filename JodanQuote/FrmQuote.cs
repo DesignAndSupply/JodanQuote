@@ -32,7 +32,7 @@ namespace JodanQuote
         {
             Fill_data();
             Format();
- 
+         
         }
 
         void Fill_data()
@@ -55,6 +55,7 @@ namespace JodanQuote
             {
 
             }
+            
             
         }
 
@@ -168,7 +169,7 @@ namespace JodanQuote
             grid_items_on_quote.ColumnHeadersDefaultCellStyle.BackColor = Color.AliceBlue;
             grid_items_on_quote.DefaultCellStyle.ForeColor = Color.CornflowerBlue;
             grid_items_on_quote.DefaultCellStyle.BackColor = Color.AliceBlue;
-     
+         
             if (string.IsNullOrWhiteSpace(dT_Quote.DT_Quote_Items.Rows[0]["convertion_id"].ToString()))
             {
                 pct_logo.Image = JodanQuote.Properties.Resources.Logo;
@@ -186,8 +187,8 @@ namespace JodanQuote
     
 
             }
-          
 
+        
         }
 
         void Textbox_Format()
@@ -860,8 +861,7 @@ namespace JodanQuote
 
         private void txt_delivery_charge_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -869,8 +869,7 @@ namespace JodanQuote
 
         private void txt_installation_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-              (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -878,8 +877,7 @@ namespace JodanQuote
 
         private void txt_survery_charge_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-              (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }

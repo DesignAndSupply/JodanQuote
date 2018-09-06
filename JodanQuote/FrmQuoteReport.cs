@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Outlook = Microsoft.Office.Interop.Outlook;
+using CrystalDecisions.CrystalReports.Engine;
+
 using System.IO;
 using Connection;
 using Statements;
@@ -83,7 +85,7 @@ namespace JodanQuote
         {
 
             Save_PDF();
-            MessageBox.Show("  Quotation Saved Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            System.Diagnostics.Process.Start(@"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF");
         }
 
         private void btn_email_Click(object sender, EventArgs e)
@@ -95,22 +97,28 @@ namespace JodanQuote
          void Save_PDF()
         {
 
-           string path = @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF";
+        
 
-           if (File.Exists(path)) 
+           if (File.Exists(@"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF")) 
             {
 
-                File.Delete(path);
-                CrRptQuote1.ExportToDisk(ExportFormatType.RPTR,path);
+                File.Delete(@"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF");
+                CrRptQuote1.ExportToDisk(ExportFormatType.PortableDocFormat, @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF");
             }
            
             else
             {
 
-                CrRptQuote1.ExportToDisk(ExportFormatType.RPTR, path);
+                CrRptQuote1.ExportToDisk(ExportFormatType.PortableDocFormat, @"\\designsvr1\apps\Design and Supply CSharp\Documents\Jodan Quote\Temp Files\Quote" + Valuesclass.project_id + ".PDF");
 
 
             }
+
+                
+
+
+
+
         }
 
         private void FrmQuoteReport_FormClosed(object sender, FormClosedEventArgs e)
@@ -124,5 +132,7 @@ namespace JodanQuote
             panel1.Width = this.Width;
             panel2.Height = this.Height;
         }
+
+       
     }
 }
